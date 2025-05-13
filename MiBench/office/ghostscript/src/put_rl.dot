@@ -1,0 +1,12 @@
+digraph "CFG for 'put_rl' function" {
+	label="CFG for 'put_rl' function";
+
+	Node0x600003ba2120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.stream_s, ptr %5, i32 0, i32 3\l  %7 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %6, i32 0,\l... i32 1\l  %8 = load ptr, ptr %7, align 8\l  %9 = load ptr, ptr %3, align 8\l  %10 = getelementptr inbounds %struct.stream_s, ptr %9, i32 0, i32 3\l  %11 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %10, i32 0,\l... i32 2\l  %12 = load ptr, ptr %11, align 8\l  %13 = icmp uge ptr %8, %12\l  br i1 %13, label %24, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba2120:s0 -> Node0x600003ba21c0[tooltip="2 -> 24\nProbability 50.00%" ];
+	Node0x600003ba2120:s1 -> Node0x600003ba2170[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x600003ba2170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.stream_s, ptr %15, i32 0, i32 3\l  %17 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %16, i32 0,\l... i32 1\l  %18 = load ptr, ptr %17, align 8\l  %19 = getelementptr inbounds i8, ptr %18, i32 1\l  store ptr %19, ptr %17, align 8\l  %20 = load ptr, ptr %3, align 8\l  %21 = getelementptr inbounds %struct.stream_s, ptr %20, i32 0, i32 3\l  %22 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %21, i32 0,\l... i32 1\l  %23 = load ptr, ptr %22, align 8\l  store i8 -59, ptr %23, align 1\l  br label %27\l}"];
+	Node0x600003ba2170 -> Node0x600003ba2210[tooltip="14 -> 27\nProbability 100.00%" ];
+	Node0x600003ba21c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %3, align 8\l  %26 = call i32 @spputc(ptr noundef %25, i8 noundef zeroext -59)\l  br label %27\l}"];
+	Node0x600003ba21c0 -> Node0x600003ba2210[tooltip="24 -> 27\nProbability 100.00%" ];
+	Node0x600003ba2210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = phi i32 [ 0, %14 ], [ %26, %24 ]\l  %29 = load ptr, ptr %3, align 8\l  %30 = load double, ptr %4, align 8\l  call void @put_r(ptr noundef %29, double noundef %30)\l  ret void\l}"];
+}

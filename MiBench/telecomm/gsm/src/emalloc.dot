@@ -1,0 +1,9 @@
+digraph "CFG for 'emalloc' function" {
+	label="CFG for 'emalloc' function";
+
+	Node0x60000253b930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca ptr, align 8\l  store i64 %0, ptr %2, align 8\l  %4 = load i64, ptr %2, align 8\l  %5 = call ptr @malloc(i64 noundef %4) #7\l  store ptr %5, ptr %3, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %12, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x60000253b930:s0 -> Node0x60000253b9d0[tooltip="1 -> 12\nProbability 100.00%" ];
+	Node0x60000253b930:s1 -> Node0x60000253b980[tooltip="1 -> 7\nProbability 0.00%" ];
+	Node0x60000253b980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr @__stderrp, align 8\l  %9 = load ptr, ptr @progname, align 8\l  %10 = load i64, ptr %2, align 8\l  %11 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %8, ptr noundef\l... @.str.46, ptr noundef %9, i64 noundef %10) #8\l  call void @onintr()\l  call void @exit(i32 noundef 1) #9\l  unreachable\l}"];
+	Node0x60000253b9d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  ret ptr %13\l}"];
+}

@@ -1,0 +1,9 @@
+digraph "CFG for '_Z16catStringWithIntPKci' function" {
+	label="CFG for '_Z16catStringWithIntPKci' function";
+
+	Node0x60000035ec60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca [6 x i8], align 1\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %8 = load i32, ptr %4, align 4\l  %9 = icmp sgt i32 %8, 99999\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000035ec60:s0 -> Node0x60000035ecb0[tooltip="2 -> 10\nProbability 0.00%" ];
+	Node0x60000035ec60:s1 -> Node0x60000035ed00[tooltip="2 -> 12\nProbability 100.00%" ];
+	Node0x60000035ecb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{10:\l|  %11 = call i32 (ptr, ...) @printf(ptr noundef @.str.153)\l  call void @exit(i32 noundef -1) #9\l  unreachable\l}"];
+	Node0x60000035ed00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  %14 = call i64 @strlen(ptr noundef %13) #10\l  %15 = add i64 %14, 5\l  %16 = add i64 %15, 1\l  %17 = trunc i64 %16 to i32\l  store i32 %17, ptr %5, align 4\l  %18 = load i32, ptr %5, align 4\l  %19 = sext i32 %18 to i64\l  %20 = mul i64 1, %19\l  %21 = call noundef ptr @_Z5allocm(i64 noundef %20)\l  store ptr %21, ptr %6, align 8\l  %22 = load ptr, ptr %6, align 8\l  %23 = load ptr, ptr %3, align 8\l  %24 = call ptr @strcpy(ptr noundef %22, ptr noundef %23) #10\l  %25 = load ptr, ptr %6, align 8\l  %26 = load i32, ptr %4, align 4\l  %27 = getelementptr inbounds [6 x i8], ptr %7, i64 0, i64 0\l  %28 = call noundef ptr @_Z13itoa_portableiPci(i32 noundef %26, ptr noundef\l... %27, i32 noundef 10)\l  %29 = call ptr @strncat(ptr noundef %25, ptr noundef %28, i64 noundef 5) #10\l  %30 = load ptr, ptr %6, align 8\l  ret ptr %30\l}"];
+}

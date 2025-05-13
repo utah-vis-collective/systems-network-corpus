@@ -1,0 +1,12 @@
+digraph "CFG for 'path_to_root' function" {
+	label="CFG for 'path_to_root' function";
+
+	Node0x60000202fb10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %5, align 4\l  %7 = load ptr, ptr %4, align 8\l  store ptr %7, ptr %6, align 8\l  br label %8\l}"];
+	Node0x60000202fb10 -> Node0x60000202fb60[tooltip="2 -> 8\nProbability 100.00%" ];
+	Node0x60000202fb60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %6, align 8\l  %10 = load ptr, ptr %3, align 8\l  %11 = icmp ne ptr %9, %10\l  br i1 %11, label %12, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000202fb60:s0 -> Node0x60000202fbb0[tooltip="8 -> 12\nProbability 96.88%" ];
+	Node0x60000202fb60:s1 -> Node0x60000202fc00[tooltip="8 -> 18\nProbability 3.12%" ];
+	Node0x60000202fbb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %6, align 8\l  %14 = getelementptr inbounds %struct.node, ptr %13, i32 0, i32 2\l  %15 = load ptr, ptr %14, align 8\l  store ptr %15, ptr %6, align 8\l  %16 = load i32, ptr %5, align 4\l  %17 = add nsw i32 %16, 1\l  store i32 %17, ptr %5, align 4\l  br label %8\l}"];
+	Node0x60000202fbb0 -> Node0x60000202fb60[tooltip="12 -> 8\nProbability 100.00%" ];
+	Node0x60000202fc00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %5, align 4\l  ret i32 %19\l}"];
+}

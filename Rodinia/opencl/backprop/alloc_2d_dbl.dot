@@ -1,0 +1,21 @@
+digraph "CFG for 'alloc_2d_dbl' function" {
+	label="CFG for 'alloc_2d_dbl' function";
+
+	Node0x6000032de300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  %8 = load i32, ptr %4, align 4\l  %9 = sext i32 %8 to i64\l  %10 = mul i64 %9, 8\l  %11 = trunc i64 %10 to i32\l  %12 = zext i32 %11 to i64\l  %13 = call ptr @malloc(i64 noundef %12) #4\l  store ptr %13, ptr %7, align 8\l  %14 = load ptr, ptr %7, align 8\l  %15 = icmp eq ptr %14, null\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000032de300:s0 -> Node0x6000032de350[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x6000032de300:s1 -> Node0x6000032de3a0[tooltip="2 -> 18\nProbability 62.50%" ];
+	Node0x6000032de350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{16:\l|  %17 = call i32 (ptr, ...) @printf(ptr noundef @.str.1)\l  store ptr null, ptr %3, align 8\l  br label %35\l}"];
+	Node0x6000032de350 -> Node0x6000032de530[tooltip="16 -> 35\nProbability 100.00%" ];
+	Node0x6000032de3a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  store i32 0, ptr %6, align 4\l  br label %19\l}"];
+	Node0x6000032de3a0 -> Node0x6000032de3f0[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x6000032de3f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %6, align 4\l  %21 = load i32, ptr %4, align 4\l  %22 = icmp slt i32 %20, %21\l  br i1 %22, label %23, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x6000032de3f0:s0 -> Node0x6000032de440[tooltip="19 -> 23\nProbability 96.88%" ];
+	Node0x6000032de3f0:s1 -> Node0x6000032de4e0[tooltip="19 -> 33\nProbability 3.12%" ];
+	Node0x6000032de440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %5, align 4\l  %25 = call ptr @alloc_1d_dbl(i32 noundef %24)\l  %26 = load ptr, ptr %7, align 8\l  %27 = load i32, ptr %6, align 4\l  %28 = sext i32 %27 to i64\l  %29 = getelementptr inbounds ptr, ptr %26, i64 %28\l  store ptr %25, ptr %29, align 8\l  br label %30\l}"];
+	Node0x6000032de440 -> Node0x6000032de490[tooltip="23 -> 30\nProbability 100.00%" ];
+	Node0x6000032de490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %6, align 4\l  %32 = add nsw i32 %31, 1\l  store i32 %32, ptr %6, align 4\l  br label %19\l}"];
+	Node0x6000032de490 -> Node0x6000032de3f0[tooltip="30 -> 19\nProbability 100.00%" ];
+	Node0x6000032de4e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %7, align 8\l  store ptr %34, ptr %3, align 8\l  br label %35\l}"];
+	Node0x6000032de4e0 -> Node0x6000032de530[tooltip="33 -> 35\nProbability 100.00%" ];
+	Node0x6000032de530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %3, align 8\l  ret ptr %36\l}"];
+}

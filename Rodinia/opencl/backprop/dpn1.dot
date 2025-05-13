@@ -1,0 +1,5 @@
+digraph "CFG for 'dpn1' function" {
+	label="CFG for 'dpn1' function";
+
+	Node0x6000032de120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call float @drnd()\l  %2 = fpext float %1 to double\l  %3 = call double @llvm.fmuladd.f64(double %2, double 2.000000e+00, double\l... -1.000000e+00)\l  %4 = fptrunc double %3 to float\l  ret float %4\l}"];
+}

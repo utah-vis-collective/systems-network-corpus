@@ -1,0 +1,5 @@
+digraph "CFG for 'alloc_bit_array' function" {
+	label="CFG for 'alloc_bit_array' function";
+
+	Node0x600002e31f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca ptr, align 8\l  store i64 %0, ptr %2, align 8\l  %4 = load i64, ptr %2, align 8\l  %5 = add i64 %4, 8\l  %6 = sub i64 %5, 1\l  %7 = udiv i64 %6, 8\l  %8 = call ptr @calloc(i64 noundef %7, i64 noundef 1) #2\l  store ptr %8, ptr %3, align 8\l  %9 = load ptr, ptr %3, align 8\l  ret ptr %9\l}"];
+}

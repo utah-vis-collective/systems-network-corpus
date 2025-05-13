@@ -1,0 +1,5 @@
+digraph "CFG for 'output_message' function" {
+	label="CFG for 'output_message' function";
+
+	Node0x600003a36580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca [200 x i8], align 1\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.jpeg_common_struct, ptr %4, i32 0, i32 0\l  %6 = load ptr, ptr %5, align 8\l  %7 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %6, i32 0, i32 3\l  %8 = load ptr, ptr %7, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds [200 x i8], ptr %3, i64 0, i64 0\l  call void %8(ptr noundef %9, ptr noundef %10)\l  %11 = load ptr, ptr @__stderrp, align 8\l  %12 = getelementptr inbounds [200 x i8], ptr %3, i64 0, i64 0\l  %13 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %11, ptr noundef\l... @.str.120, ptr noundef %12) #5\l  ret void\l}"];
+}

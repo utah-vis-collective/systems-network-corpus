@@ -1,0 +1,5 @@
+digraph "CFG for 'z_foutput' function" {
+	label="CFG for 'z_foutput' function";
+
+	Node0x60000276d090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca %struct.complex, align 8\l  %4 = alloca ptr, align 8\l  store [2 x double] %1, ptr %3, align 8\l  store ptr %0, ptr %4, align 8\l  %5 = load ptr, ptr %4, align 8\l  %6 = load ptr, ptr @zformat, align 8\l  %7 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 0\l  %8 = load double, ptr %7, align 8\l  %9 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 1\l  %10 = load double, ptr %9, align 8\l  %11 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %5, ptr noundef %6,\l... double noundef %8, double noundef %10) #3\l  %12 = load ptr, ptr %4, align 8\l  %13 = call i32 @putc(i32 noundef 10, ptr noundef %12)\l  ret void\l}"];
+}

@@ -1,0 +1,24 @@
+digraph "CFG for 'checkTag' function" {
+	label="CFG for 'checkTag' function";
+
+	Node0x6000005f4cd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca i32, align 4\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  %13 = alloca ptr, align 8\l  store ptr %0, ptr %8, align 8\l  store ptr %1, ptr %9, align 8\l  store i32 %2, ptr %10, align 4\l  store ptr %3, ptr %11, align 8\l  store ptr %4, ptr %12, align 8\l  store ptr %5, ptr %13, align 8\l  %14 = load ptr, ptr %8, align 8\l  %15 = load i32, ptr %10, align 4\l  %16 = sext i32 %15 to i64\l  %17 = load ptr, ptr %12, align 8\l  %18 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %14, i64 noundef\l... %16, ptr noundef %17)\l  %19 = icmp ne i32 %18, 0\l  br i1 %19, label %20, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x6000005f4cd0:s0 -> Node0x6000005f4d20[tooltip="6 -> 20\nProbability 62.50%" ];
+	Node0x6000005f4cd0:s1 -> Node0x6000005f4e10[tooltip="6 -> 33\nProbability 37.50%" ];
+	Node0x6000005f4d20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %9, align 8\l  %22 = load i32, ptr %10, align 4\l  %23 = sext i32 %22 to i64\l  %24 = load ptr, ptr %13, align 8\l  %25 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %21, i64 noundef\l... %23, ptr noundef %24)\l  %26 = icmp ne i32 %25, 0\l  br i1 %26, label %32, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x6000005f4d20:s0 -> Node0x6000005f4dc0[tooltip="20 -> 32\nProbability 62.50%" ];
+	Node0x6000005f4d20:s1 -> Node0x6000005f4d70[tooltip="20 -> 27\nProbability 37.50%" ];
+	Node0x6000005f4d70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %11, align 8\l  %29 = load ptr, ptr %8, align 8\l  %30 = call ptr @TIFFFileName(ptr noundef %29)\l  %31 = call i32 (ptr, ...) @printf(ptr noundef @.str.11, ptr noundef %28, ptr\l... noundef %30)\l  store i32 0, ptr %7, align 4\l  br label %47\l}"];
+	Node0x6000005f4d70 -> Node0x6000005f4f50[tooltip="27 -> 47\nProbability 100.00%" ];
+	Node0x6000005f4dc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{32:\l|  store i32 1, ptr %7, align 4\l  br label %47\l}"];
+	Node0x6000005f4dc0 -> Node0x6000005f4f50[tooltip="32 -> 47\nProbability 100.00%" ];
+	Node0x6000005f4e10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %9, align 8\l  %35 = load i32, ptr %10, align 4\l  %36 = sext i32 %35 to i64\l  %37 = load ptr, ptr %13, align 8\l  %38 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %34, i64 noundef\l... %36, ptr noundef %37)\l  %39 = icmp ne i32 %38, 0\l  br i1 %39, label %40, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x6000005f4e10:s0 -> Node0x6000005f4e60[tooltip="33 -> 40\nProbability 62.50%" ];
+	Node0x6000005f4e10:s1 -> Node0x6000005f4eb0[tooltip="33 -> 45\nProbability 37.50%" ];
+	Node0x6000005f4e60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %11, align 8\l  %42 = load ptr, ptr %9, align 8\l  %43 = call ptr @TIFFFileName(ptr noundef %42)\l  %44 = call i32 (ptr, ...) @printf(ptr noundef @.str.11, ptr noundef %41, ptr\l... noundef %43)\l  store i32 0, ptr %7, align 4\l  br label %47\l}"];
+	Node0x6000005f4e60 -> Node0x6000005f4f50[tooltip="40 -> 47\nProbability 100.00%" ];
+	Node0x6000005f4eb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{45:\l|  br label %46\l}"];
+	Node0x6000005f4eb0 -> Node0x6000005f4f00[tooltip="45 -> 46\nProbability 100.00%" ];
+	Node0x6000005f4f00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{46:\l|  store i32 -1, ptr %7, align 4\l  br label %47\l}"];
+	Node0x6000005f4f00 -> Node0x6000005f4f50[tooltip="46 -> 47\nProbability 100.00%" ];
+	Node0x6000005f4f50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %7, align 4\l  ret i32 %48\l}"];
+}

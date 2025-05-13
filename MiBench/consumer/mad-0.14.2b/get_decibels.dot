@@ -1,0 +1,18 @@
+digraph "CFG for 'get_decibels' function" {
+	label="CFG for 'get_decibels' function";
+
+	Node0x600002e74140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca double, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i32 @parse_decibels(ptr noundef %3, ptr noundef %4)\l  %6 = icmp eq i32 %5, -1\l  br i1 %6, label %7, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600002e74140:s0 -> Node0x600002e74190[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x600002e74140:s1 -> Node0x600002e741e0[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x600002e74190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  call void (ptr, ...) @die(ptr noundef @.str.37, ptr noundef %8)\l  br label %9\l}"];
+	Node0x600002e74190 -> Node0x600002e741e0[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x600002e741e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load double, ptr %3, align 8\l  %11 = fcmp olt double %10, -1.750000e+02\l  br i1 %11, label %15, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600002e741e0:s0 -> Node0x600002e74280[tooltip="9 -> 15\nProbability 50.00%" ];
+	Node0x600002e741e0:s1 -> Node0x600002e74230[tooltip="9 -> 12\nProbability 50.00%" ];
+	Node0x600002e74230 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load double, ptr %3, align 8\l  %14 = fcmp ogt double %13, 1.800000e+01\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600002e74230:s0 -> Node0x600002e74280[tooltip="12 -> 15\nProbability 50.00%" ];
+	Node0x600002e74230:s1 -> Node0x600002e742d0[tooltip="12 -> 16\nProbability 50.00%" ];
+	Node0x600002e74280 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  call void (ptr, ...) @die(ptr noundef @.str.38, i32 noundef -175, i32\l... noundef 18)\l  br label %16\l}"];
+	Node0x600002e74280 -> Node0x600002e742d0[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x600002e742d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load double, ptr %3, align 8\l  %18 = fdiv double %17, 2.000000e+01\l  %19 = call double @llvm.pow.f64(double 1.000000e+01, double %18)\l  %20 = call double @llvm.fmuladd.f64(double %19, double 0x41B0000000000000,\l... double 5.000000e-01)\l  %21 = fptosi double %20 to i32\l  ret i32 %21\l}"];
+}

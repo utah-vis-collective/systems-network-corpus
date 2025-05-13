@@ -1,0 +1,5 @@
+digraph "CFG for '__ledf2' function" {
+	label="CFG for '__ledf2' function";
+
+	Node0x600000b211d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca double, align 8\l  %4 = alloca double, align 8\l  store double %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %5 = call i32 @compared2(ptr noundef %3, ptr noundef %4)\l  ret i32 %5\l}"];
+}

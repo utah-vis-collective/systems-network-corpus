@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__19use_facetB8ne190107INS_5ctypeIcEEEERKT_RKNS_6localeE' function" {
+	label="CFG for '_ZNSt3__19use_facetB8ne190107INS_5ctypeIcEEEERKT_RKNS_6localeE' function";
+
+	Node0x60000093cfa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call noundef ptr @_ZNKSt3__16locale9use_facetERNS0_2idE(ptr noundef\l... nonnull align 8 dereferenceable(8) %3, ptr noundef nonnull align 8\l... dereferenceable(12) @_ZNSt3__15ctypeIcE2idE)\l  ret ptr %4\l}"];
+}

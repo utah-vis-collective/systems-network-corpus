@@ -1,0 +1,5 @@
+digraph "CFG for 'zcolor_remap_color' function" {
+	label="CFG for 'zcolor_remap_color' function";
+
+	Node0x60000189e8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr @igs, align 8\l  %4 = getelementptr inbounds %struct.gs_state_s, ptr %3, i32 0, i32 34\l  %5 = load ptr, ptr %4, align 8\l  %6 = getelementptr inbounds %struct.gx_device_color_s, ptr %5, i32 0, i32 0\l  store ptr @gx_dc_procs_none, ptr %6, align 8\l  ret i32 0\l}"];
+}

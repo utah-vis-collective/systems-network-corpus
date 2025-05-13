@@ -1,0 +1,40 @@
+digraph "CFG for 'gdev_pcl_paper_size' function" {
+	label="CFG for 'gdev_pcl_paper_size' function";
+
+	Node0x60000065db80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca float, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.gx_device_s, ptr %4, i32 0, i32 9\l  %6 = load i32, ptr %5, align 4\l  %7 = sitofp i32 %6 to float\l  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.gx_device_s, ptr %8, i32 0, i32 13\l  %10 = getelementptr inbounds [2 x float], ptr %9, i64 0, i64 1\l  %11 = load float, ptr %10, align 4\l  %12 = fdiv float %7, %11\l  store float %12, ptr %3, align 4\l  %13 = load float, ptr %3, align 4\l  %14 = fpext float %13 to double\l  %15 = fcmp oge double %14, 4.440000e+01\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000065db80:s0 -> Node0x60000065dc20[tooltip="1 -> 16\nProbability 50.00%" ];
+	Node0x60000065db80:s1 -> Node0x60000065dc70[tooltip="1 -> 17\nProbability 50.00%" ];
+	Node0x60000065dc20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  br label %51\l}"];
+	Node0x60000065dc20 -> Node0x60000065e080[tooltip="16 -> 51\nProbability 100.00%" ];
+	Node0x60000065dc70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load float, ptr %3, align 4\l  %19 = fpext float %18 to double\l  %20 = fcmp oge double %19, 3.200000e+01\l  br i1 %20, label %21, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x60000065dc70:s0 -> Node0x60000065dcc0[tooltip="17 -> 21\nProbability 50.00%" ];
+	Node0x60000065dc70:s1 -> Node0x60000065dd10[tooltip="17 -> 22\nProbability 50.00%" ];
+	Node0x60000065dcc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  br label %49\l}"];
+	Node0x60000065dcc0 -> Node0x60000065e030[tooltip="21 -> 49\nProbability 100.00%" ];
+	Node0x60000065dd10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{22:\l|  %23 = load float, ptr %3, align 4\l  %24 = fpext float %23 to double\l  %25 = fcmp oge double %24, 2.220000e+01\l  br i1 %25, label %26, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x60000065dd10:s0 -> Node0x60000065dd60[tooltip="22 -> 26\nProbability 50.00%" ];
+	Node0x60000065dd10:s1 -> Node0x60000065ddb0[tooltip="22 -> 27\nProbability 50.00%" ];
+	Node0x60000065dd60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{26:\l|  br label %47\l}"];
+	Node0x60000065dd60 -> Node0x60000065dfe0[tooltip="26 -> 47\nProbability 100.00%" ];
+	Node0x60000065ddb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{27:\l|  %28 = load float, ptr %3, align 4\l  %29 = fpext float %28 to double\l  %30 = fcmp oge double %29, 1.590000e+01\l  br i1 %30, label %31, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x60000065ddb0:s0 -> Node0x60000065de00[tooltip="27 -> 31\nProbability 50.00%" ];
+	Node0x60000065ddb0:s1 -> Node0x60000065de50[tooltip="27 -> 32\nProbability 50.00%" ];
+	Node0x60000065de00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{31:\l|  br label %45\l}"];
+	Node0x60000065de00 -> Node0x60000065df90[tooltip="31 -> 45\nProbability 100.00%" ];
+	Node0x60000065de50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{32:\l|  %33 = load float, ptr %3, align 4\l  %34 = fpext float %33 to double\l  %35 = fcmp oge double %34, 1.180000e+01\l  br i1 %35, label %36, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x60000065de50:s0 -> Node0x60000065dea0[tooltip="32 -> 36\nProbability 50.00%" ];
+	Node0x60000065de50:s1 -> Node0x60000065def0[tooltip="32 -> 37\nProbability 50.00%" ];
+	Node0x60000065dea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{36:\l|  br label %43\l}"];
+	Node0x60000065dea0 -> Node0x60000065df40[tooltip="36 -> 43\nProbability 100.00%" ];
+	Node0x60000065def0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{37:\l|  %38 = load float, ptr %3, align 4\l  %39 = fpext float %38 to double\l  %40 = fcmp oge double %39, 1.110000e+01\l  %41 = zext i1 %40 to i64\l  %42 = select i1 %40, i32 26, i32 2\l  br label %43\l}"];
+	Node0x60000065def0 -> Node0x60000065df40[tooltip="37 -> 43\nProbability 100.00%" ];
+	Node0x60000065df40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{43:\l|  %44 = phi i32 [ 3, %36 ], [ %42, %37 ]\l  br label %45\l}"];
+	Node0x60000065df40 -> Node0x60000065df90[tooltip="43 -> 45\nProbability 100.00%" ];
+	Node0x60000065df90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{45:\l|  %46 = phi i32 [ 27, %31 ], [ %44, %43 ]\l  br label %47\l}"];
+	Node0x60000065df90 -> Node0x60000065dfe0[tooltip="45 -> 47\nProbability 100.00%" ];
+	Node0x60000065dfe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{47:\l|  %48 = phi i32 [ 28, %26 ], [ %46, %45 ]\l  br label %49\l}"];
+	Node0x60000065dfe0 -> Node0x60000065e030[tooltip="47 -> 49\nProbability 100.00%" ];
+	Node0x60000065e030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{49:\l|  %50 = phi i32 [ 29, %21 ], [ %48, %47 ]\l  br label %51\l}"];
+	Node0x60000065e030 -> Node0x60000065e080[tooltip="49 -> 51\nProbability 100.00%" ];
+	Node0x60000065e080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{51:\l|  %52 = phi i32 [ 30, %16 ], [ %50, %49 ]\l  ret i32 %52\l}"];
+}

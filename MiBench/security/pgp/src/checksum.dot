@@ -1,0 +1,12 @@
+digraph "CFG for 'checksum' function" {
+	label="CFG for 'checksum' function";
+
+	Node0x600000307110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i16, align 2\l  %5 = alloca i16, align 2\l  store ptr %0, ptr %3, align 8\l  store i16 %1, ptr %4, align 2\l  store i16 0, ptr %5, align 2\l  br label %6\l}"];
+	Node0x600000307110 -> Node0x600000307160[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x600000307160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i16, ptr %4, align 2\l  %8 = add i16 %7, -1\l  store i16 %8, ptr %4, align 2\l  %9 = icmp ne i16 %7, 0\l  br i1 %9, label %10, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600000307160:s0 -> Node0x6000003071b0[tooltip="6 -> 10\nProbability 96.88%" ];
+	Node0x600000307160:s1 -> Node0x600000307200[tooltip="6 -> 19\nProbability 3.12%" ];
+	Node0x6000003071b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds i8, ptr %11, i32 1\l  store ptr %12, ptr %3, align 8\l  %13 = load i8, ptr %11, align 1\l  %14 = zext i8 %13 to i32\l  %15 = load i16, ptr %5, align 2\l  %16 = zext i16 %15 to i32\l  %17 = add nsw i32 %16, %14\l  %18 = trunc i32 %17 to i16\l  store i16 %18, ptr %5, align 2\l  br label %6\l}"];
+	Node0x6000003071b0 -> Node0x600000307160[tooltip="10 -> 6\nProbability 100.00%" ];
+	Node0x600000307200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  %20 = load i16, ptr %5, align 2\l  ret i16 %20\l}"];
+}

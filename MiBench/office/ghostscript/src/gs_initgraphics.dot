@@ -1,0 +1,36 @@
+digraph "CFG for 'gs_initgraphics' function" {
+	label="CFG for 'gs_initgraphics' function";
+
+	Node0x600000de4370 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = call i32 @gs_initmatrix(ptr noundef %5)\l  %7 = load ptr, ptr %3, align 8\l  %8 = call i32 @gs_newpath(ptr noundef %7)\l  store i32 %8, ptr %4, align 4\l  %9 = icmp slt i32 %8, 0\l  br i1 %9, label %43, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600000de4370:s0 -> Node0x600000de4640[tooltip="1 -> 43\nProbability 37.50%" ];
+	Node0x600000de4370:s1 -> Node0x600000de43c0[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600000de43c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = call i32 @gs_initclip(ptr noundef %11)\l  store i32 %12, ptr %4, align 4\l  %13 = icmp slt i32 %12, 0\l  br i1 %13, label %43, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600000de43c0:s0 -> Node0x600000de4640[tooltip="10 -> 43\nProbability 37.50%" ];
+	Node0x600000de43c0:s1 -> Node0x600000de4410[tooltip="10 -> 14\nProbability 62.50%" ];
+	Node0x600000de4410 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = call i32 @gs_setlinewidth(ptr noundef %15, double noundef 1.000000e+00)\l  store i32 %16, ptr %4, align 4\l  %17 = icmp slt i32 %16, 0\l  br i1 %17, label %43, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600000de4410:s0 -> Node0x600000de4640[tooltip="14 -> 43\nProbability 37.50%" ];
+	Node0x600000de4410:s1 -> Node0x600000de4460[tooltip="14 -> 18\nProbability 62.50%" ];
+	Node0x600000de4460 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = call i32 @gs_setlinecap(ptr noundef %19, i32 noundef 0)\l  store i32 %20, ptr %4, align 4\l  %21 = icmp slt i32 %20, 0\l  br i1 %21, label %43, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600000de4460:s0 -> Node0x600000de4640[tooltip="18 -> 43\nProbability 37.50%" ];
+	Node0x600000de4460:s1 -> Node0x600000de44b0[tooltip="18 -> 22\nProbability 62.50%" ];
+	Node0x600000de44b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  %24 = call i32 @gs_setlinejoin(ptr noundef %23, i32 noundef 0)\l  store i32 %24, ptr %4, align 4\l  %25 = icmp slt i32 %24, 0\l  br i1 %25, label %43, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000de44b0:s0 -> Node0x600000de4640[tooltip="22 -> 43\nProbability 37.50%" ];
+	Node0x600000de44b0:s1 -> Node0x600000de4500[tooltip="22 -> 26\nProbability 62.50%" ];
+	Node0x600000de4500 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %3, align 8\l  %28 = call i32 @gs_setdash(ptr noundef %27, ptr noundef null, i32 noundef 0,\l... double noundef 0.000000e+00)\l  store i32 %28, ptr %4, align 4\l  %29 = icmp slt i32 %28, 0\l  br i1 %29, label %43, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600000de4500:s0 -> Node0x600000de4640[tooltip="26 -> 43\nProbability 37.50%" ];
+	Node0x600000de4500:s1 -> Node0x600000de4550[tooltip="26 -> 30\nProbability 62.50%" ];
+	Node0x600000de4550 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %3, align 8\l  call void @gs_setdashadapt(ptr noundef %31, i32 noundef 0)\l  %32 = load ptr, ptr %3, align 8\l  %33 = call i32 @gs_setdotlength(ptr noundef %32, double noundef\l... 0.000000e+00, i32 noundef 0)\l  store i32 %33, ptr %4, align 4\l  %34 = icmp slt i32 %33, 0\l  br i1 %34, label %43, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x600000de4550:s0 -> Node0x600000de4640[tooltip="30 -> 43\nProbability 37.50%" ];
+	Node0x600000de4550:s1 -> Node0x600000de45a0[tooltip="30 -> 35\nProbability 62.50%" ];
+	Node0x600000de45a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %3, align 8\l  %37 = call i32 @gs_setgray(ptr noundef %36, double noundef 0.000000e+00)\l  store i32 %37, ptr %4, align 4\l  %38 = icmp slt i32 %37, 0\l  br i1 %38, label %43, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x600000de45a0:s0 -> Node0x600000de4640[tooltip="35 -> 43\nProbability 37.50%" ];
+	Node0x600000de45a0:s1 -> Node0x600000de45f0[tooltip="35 -> 39\nProbability 62.50%" ];
+	Node0x600000de45f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %3, align 8\l  %41 = call i32 @gs_setmiterlimit(ptr noundef %40, double noundef\l... 1.000000e+01)\l  store i32 %41, ptr %4, align 4\l  %42 = icmp slt i32 %41, 0\l  br i1 %42, label %43, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x600000de45f0:s0 -> Node0x600000de4640[tooltip="39 -> 43\nProbability 37.50%" ];
+	Node0x600000de45f0:s1 -> Node0x600000de4690[tooltip="39 -> 45\nProbability 62.50%" ];
+	Node0x600000de4640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %4, align 4\l  store i32 %44, ptr %2, align 4\l  br label %48\l}"];
+	Node0x600000de4640 -> Node0x600000de46e0[tooltip="43 -> 48\nProbability 100.00%" ];
+	Node0x600000de4690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{45:\l|  %46 = load ptr, ptr %3, align 8\l  %47 = getelementptr inbounds %struct.gs_state_s, ptr %46, i32 0, i32 3\l  store i32 252, ptr %47, align 8\l  store i32 0, ptr %2, align 4\l  br label %48\l}"];
+	Node0x600000de4690 -> Node0x600000de46e0[tooltip="45 -> 48\nProbability 100.00%" ];
+	Node0x600000de46e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = load i32, ptr %2, align 4\l  ret i32 %49\l}"];
+}

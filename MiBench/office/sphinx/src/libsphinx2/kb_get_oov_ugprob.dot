@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_oov_ugprob' function" {
+	label="CFG for 'kb_get_oov_ugprob' function";
+
+	Node0x600002a8cd70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load float, ptr @oov_ugprob, align 4\l  %2 = fpext float %1 to double\l  ret double %2\l}"];
+}

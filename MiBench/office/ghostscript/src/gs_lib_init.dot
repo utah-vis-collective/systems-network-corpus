@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_lib_init' function" {
+	label="CFG for 'gs_lib_init' function";
+
+	Node0x60000060de50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @gs_lib_init0(ptr noundef %3)\l  call void @gs_lib_init1(ptr noundef @gs_memory_default)\l  ret void\l}"];
+}

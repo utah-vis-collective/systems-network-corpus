@@ -1,0 +1,10 @@
+digraph "CFG for 'vmsWarningHandler' function" {
+	label="CFG for 'vmsWarningHandler' function";
+
+	Node0x600003532cb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600003532cb0:s0 -> Node0x600003532d00[tooltip="3 -> 9\nProbability 62.50%" ];
+	Node0x600003532cb0:s1 -> Node0x600003532d50[tooltip="3 -> 13\nProbability 37.50%" ];
+	Node0x600003532d00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @__stderrp, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %10, ptr noundef\l... @.str.5, ptr noundef %11) #6\l  br label %13\l}"];
+	Node0x600003532d00 -> Node0x600003532d50[tooltip="9 -> 13\nProbability 100.00%" ];
+	Node0x600003532d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @__stderrp, align 8\l  %15 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %14, ptr noundef\l... @.str.6) #6\l  %16 = load ptr, ptr @__stderrp, align 8\l  %17 = load ptr, ptr %5, align 8\l  %18 = load ptr, ptr %6, align 8\l  %19 = call i32 @vfprintf(ptr noundef %16, ptr noundef %17, ptr noundef %18)\l... #6\l  %20 = load ptr, ptr @__stderrp, align 8\l  %21 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %20, ptr noundef\l... @.str.7) #6\l  ret void\l}"];
+}

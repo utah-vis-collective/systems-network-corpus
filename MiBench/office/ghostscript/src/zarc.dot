@@ -1,0 +1,5 @@
+digraph "CFG for 'zarc' function" {
+	label="CFG for 'zarc' function";
+
+	Node0x600002d6a120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call i32 @common_arc(ptr noundef %3, ptr noundef @gs_arc)\l  ret i32 %4\l}"];
+}

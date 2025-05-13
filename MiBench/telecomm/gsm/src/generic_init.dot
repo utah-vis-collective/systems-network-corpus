@@ -1,0 +1,5 @@
+digraph "CFG for 'generic_init' function" {
+	label="CFG for 'generic_init' function";
+
+	Node0x60000253e760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 0\l}"];
+}

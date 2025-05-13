@@ -1,0 +1,5 @@
+digraph "CFG for 'make_invalid_file' function" {
+	label="CFG for 'make_invalid_file' function";
+
+	Node0x60000212e210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr @invalid_file_entry, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.ref_s, ptr %4, i32 0, i32 1\l  store ptr %3, ptr %5, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = getelementptr inbounds %struct.ref_s, ptr %6, i32 0, i32 0\l  %8 = getelementptr inbounds %struct.tas_s, ptr %7, i32 0, i32 0\l  store i16 772, ptr %8, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.ref_s, ptr %9, i32 0, i32 0\l  %11 = getelementptr inbounds %struct.tas_s, ptr %10, i32 0, i32 1\l  store i16 -1, ptr %11, align 2\l  ret void\l}"];
+}

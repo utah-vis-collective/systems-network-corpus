@@ -1,0 +1,19 @@
+digraph "CFG for 'my_index' function" {
+	label="CFG for 'my_index' function";
+
+	Node0x600000112800 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  br label %6\l}"];
+	Node0x600000112800 -> Node0x6000001128a0[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x6000001128a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %4, align 8\l  %8 = load i8, ptr %7, align 1\l  %9 = icmp ne i8 %8, 0\l  br i1 %9, label %10, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000001128a0:s0 -> Node0x6000001128f0[tooltip="6 -> 10\nProbability 96.88%" ];
+	Node0x6000001128a0:s1 -> Node0x6000001129e0[tooltip="6 -> 21\nProbability 3.12%" ];
+	Node0x6000001128f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  %12 = load i8, ptr %11, align 1\l  %13 = sext i8 %12 to i32\l  %14 = load i32, ptr %5, align 4\l  %15 = icmp eq i32 %13, %14\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000001128f0:s0 -> Node0x600000112940[tooltip="10 -> 16\nProbability 3.12%" ];
+	Node0x6000001128f0:s1 -> Node0x600000112990[tooltip="10 -> 18\nProbability 96.88%" ];
+	Node0x600000112940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  store ptr %17, ptr %3, align 8\l  br label %22\l}"];
+	Node0x600000112940 -> Node0x600000112a30[tooltip="16 -> 22\nProbability 100.00%" ];
+	Node0x600000112990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds i8, ptr %19, i32 1\l  store ptr %20, ptr %4, align 8\l  br label %6, !llvm.loop !6\l}"];
+	Node0x600000112990 -> Node0x6000001128a0[tooltip="18 -> 6\nProbability 100.00%" ];
+	Node0x6000001129e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  store ptr null, ptr %3, align 8\l  br label %22\l}"];
+	Node0x6000001129e0 -> Node0x600000112a30[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x600000112a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  ret ptr %23\l}"];
+}

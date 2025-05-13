@@ -1,0 +1,5 @@
+digraph "CFG for 'swapLong' function" {
+	label="CFG for 'swapLong' function";
+
+	Node0x600000b7df40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load i32, ptr %3, align 4\l  %5 = shl i32 %4, 24\l  %6 = and i32 %5, -16777216\l  %7 = load ptr, ptr %2, align 8\l  %8 = load i32, ptr %7, align 4\l  %9 = shl i32 %8, 8\l  %10 = and i32 %9, 16711680\l  %11 = or i32 %6, %10\l  %12 = load ptr, ptr %2, align 8\l  %13 = load i32, ptr %12, align 4\l  %14 = ashr i32 %13, 8\l  %15 = and i32 %14, 65280\l  %16 = or i32 %11, %15\l  %17 = load ptr, ptr %2, align 8\l  %18 = load i32, ptr %17, align 4\l  %19 = ashr i32 %18, 24\l  %20 = and i32 %19, 255\l  %21 = or i32 %16, %20\l  %22 = load ptr, ptr %2, align 8\l  store i32 %21, ptr %22, align 4\l  ret void\l}"];
+}

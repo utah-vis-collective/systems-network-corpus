@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__14setwB8ne190107Ei' function" {
+	label="CFG for '_ZNSt3__14setwB8ne190107Ei' function";
+
+	Node0x600000dbf480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca %\"class.std::__1::__iom_t6\", align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  %4 = load i32, ptr %3, align 4\l  %5 = call noundef ptr @_ZNSt3__18__iom_t6C1B8ne190107Ei(ptr noundef nonnull\l... align 4 dereferenceable(4) %2, i32 noundef %4)\l  %6 = getelementptr inbounds %\"class.std::__1::__iom_t6\", ptr %2, i32 0, i32 0\l  %7 = load i32, ptr %6, align 4\l  ret i32 %7\l}"];
+}

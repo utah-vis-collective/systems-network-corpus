@@ -1,0 +1,15 @@
+digraph "CFG for 'emit_adobe_app14' function" {
+	label="CFG for 'emit_adobe_app14' function";
+
+	Node0x600000323e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @emit_marker(ptr noundef %3, i32 noundef 238)\l  %4 = load ptr, ptr %2, align 8\l  call void @emit_2bytes(ptr noundef %4, i32 noundef 14)\l  %5 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %5, i32 noundef 65)\l  %6 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %6, i32 noundef 100)\l  %7 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %7, i32 noundef 111)\l  %8 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %8, i32 noundef 98)\l  %9 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %9, i32 noundef 101)\l  %10 = load ptr, ptr %2, align 8\l  call void @emit_2bytes(ptr noundef %10, i32 noundef 100)\l  %11 = load ptr, ptr %2, align 8\l  call void @emit_2bytes(ptr noundef %11, i32 noundef 0)\l  %12 = load ptr, ptr %2, align 8\l  call void @emit_2bytes(ptr noundef %12, i32 noundef 0)\l  %13 = load ptr, ptr %2, align 8\l  %14 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %13, i32 0,\l... i32 13\l  %15 = load i32, ptr %14, align 8\l  switch i32 %15, label %20 [\l    i32 3, label %16\l    i32 5, label %18\l  ]\l|{<s0>def|<s1>3|<s2>5}}"];
+	Node0x600000323e30:s0 -> Node0x600000323f20[tooltip="1 -> 20\nProbability 33.33%" ];
+	Node0x600000323e30:s1 -> Node0x600000323e80[tooltip="1 -> 16\nProbability 33.33%" ];
+	Node0x600000323e30:s2 -> Node0x600000323ed0[tooltip="1 -> 18\nProbability 33.33%" ];
+	Node0x600000323e80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %17, i32 noundef 1)\l  br label %22\l}"];
+	Node0x600000323e80 -> Node0x600000323f70[tooltip="16 -> 22\nProbability 100.00%" ];
+	Node0x600000323ed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %19, i32 noundef 2)\l  br label %22\l}"];
+	Node0x600000323ed0 -> Node0x600000323f70[tooltip="18 -> 22\nProbability 100.00%" ];
+	Node0x600000323f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %2, align 8\l  call void @emit_byte(ptr noundef %21, i32 noundef 0)\l  br label %22\l}"];
+	Node0x600000323f20 -> Node0x600000323f70[tooltip="20 -> 22\nProbability 100.00%" ];
+	Node0x600000323f70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

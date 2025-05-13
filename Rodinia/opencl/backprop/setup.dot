@@ -1,0 +1,13 @@
+digraph "CFG for 'setup' function" {
+	label="CFG for 'setup' function";
+
+	Node0x6000003a2030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store ptr %1, ptr %4, align 8\l  %6 = load i32, ptr %3, align 4\l  %7 = icmp ne i32 %6, 2\l  br i1 %7, label %8, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x6000003a2030:s0 -> Node0x6000003a2080[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x6000003a2030:s1 -> Node0x6000003a20d0[tooltip="2 -> 11\nProbability 50.00%" ];
+	Node0x6000003a2080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr @__stderrp, align 8\l  %10 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %9, ptr noundef @.str.3)\l... #4\l  call void @exit(i32 noundef 0) #5\l  unreachable\l}"];
+	Node0x6000003a20d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds ptr, ptr %12, i64 1\l  %14 = load ptr, ptr %13, align 8\l  %15 = call i32 @atoi(ptr noundef %14)\l  store i32 %15, ptr @layer_size, align 4\l  %16 = load i32, ptr @layer_size, align 4\l  %17 = srem i32 %16, 16\l  %18 = icmp ne i32 %17, 0\l  br i1 %18, label %19, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x6000003a20d0:s0 -> Node0x6000003a2120[tooltip="11 -> 19\nProbability 50.00%" ];
+	Node0x6000003a20d0:s1 -> Node0x6000003a2170[tooltip="11 -> 22\nProbability 50.00%" ];
+	Node0x6000003a2120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr @__stderrp, align 8\l  %21 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %20, ptr noundef\l... @.str.4) #4\l  call void @exit(i32 noundef 0) #5\l  unreachable\l}"];
+	Node0x6000003a2170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{22:\l|  store i32 7, ptr %5, align 4\l  %23 = load i32, ptr %5, align 4\l  call void @bpnn_initialize(i32 noundef %23)\l  call void @backprop_face()\l  call void @exit(i32 noundef 0) #5\l  unreachable\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'NotConfigured' function" {
+	label="CFG for 'NotConfigured' function";
+
+	Node0x600001bfa260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.tiff, ptr %5, i32 0, i32 21\l  store ptr @_notConfigured, ptr %6, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.tiff, ptr %7, i32 0, i32 23\l  store ptr @_notConfigured, ptr %8, align 8\l  ret i32 1\l}"];
+}

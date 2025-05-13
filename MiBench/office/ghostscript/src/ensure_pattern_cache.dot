@@ -1,0 +1,17 @@
+digraph "CFG for 'ensure_pattern_cache' function" {
+	label="CFG for 'ensure_pattern_cache' function";
+
+	Node0x600002d272f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.gs_imager_state_s, ptr %5, i32 0, i32 21\l  %7 = load ptr, ptr %6, align 8\l  %8 = icmp eq ptr %7, null\l  br i1 %8, label %9, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600002d272f0:s0 -> Node0x600002d27340[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x600002d272f0:s1 -> Node0x600002d27430[tooltip="1 -> 23\nProbability 62.50%" ];
+	Node0x600002d27340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds %struct.gs_imager_state_s, ptr %10, i32 0, i32 0\l  %12 = load ptr, ptr %11, align 8\l  %13 = call i32 @gx_pat_cache_default_tiles()\l  %14 = call i64 @gx_pat_cache_default_bits()\l  %15 = call ptr @gx_pattern_alloc_cache(ptr noundef %12, i32 noundef %13, i64\l... noundef %14)\l  store ptr %15, ptr %4, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = icmp eq ptr %16, null\l  br i1 %17, label %18, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600002d27340:s0 -> Node0x600002d27390[tooltip="9 -> 18\nProbability 37.50%" ];
+	Node0x600002d27340:s1 -> Node0x600002d273e0[tooltip="9 -> 19\nProbability 62.50%" ];
+	Node0x600002d27390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{18:\l|  store i32 -25, ptr %2, align 4\l  br label %24\l}"];
+	Node0x600002d27390 -> Node0x600002d27480[tooltip="18 -> 24\nProbability 100.00%" ];
+	Node0x600002d273e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  %21 = load ptr, ptr %3, align 8\l  %22 = getelementptr inbounds %struct.gs_imager_state_s, ptr %21, i32 0, i32\l... 21\l  store ptr %20, ptr %22, align 8\l  br label %23\l}"];
+	Node0x600002d273e0 -> Node0x600002d27430[tooltip="19 -> 23\nProbability 100.00%" ];
+	Node0x600002d27430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  store i32 0, ptr %2, align 4\l  br label %24\l}"];
+	Node0x600002d27430 -> Node0x600002d27480[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x600002d27480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %2, align 4\l  ret i32 %25\l}"];
+}

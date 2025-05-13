@@ -1,0 +1,10 @@
+digraph "CFG for 'herc_close' function" {
+	label="CFG for 'herc_close' function";
+
+	Node0x600003be9f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load i32, ptr @herc_save_mode, align 4\l  %4 = icmp sge i32 %3, 0\l  br i1 %4, label %5, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x600003be9f90:s0 -> Node0x600003be9fe0[tooltip="1 -> 5\nProbability 50.00%" ];
+	Node0x600003be9f90:s1 -> Node0x600003bea030[tooltip="1 -> 7\nProbability 50.00%" ];
+	Node0x600003be9fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr @herc_save_mode, align 4\l  call void @herc_set_mode(i32 noundef %6)\l  br label %7\l}"];
+	Node0x600003be9fe0 -> Node0x600003bea030[tooltip="5 -> 7\nProbability 100.00%" ];
+	Node0x600003bea030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  ret i32 0\l}"];
+}

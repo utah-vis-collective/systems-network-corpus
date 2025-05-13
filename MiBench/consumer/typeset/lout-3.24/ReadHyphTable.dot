@@ -1,0 +1,5 @@
+digraph "CFG for 'ReadHyphTable' function" {
+	label="CFG for 'ReadHyphTable' function";
+
+	Node0x6000003163f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %4 = load i32, ptr %2, align 4\l  %5 = call ptr @TrieRead(i32 noundef %4, ptr noundef %3)\l  %6 = load i32, ptr %2, align 4\l  %7 = zext i32 %6 to i64\l  %8 = getelementptr inbounds [64 x ptr], ptr @HyphTables, i64 0, i64 %7\l  store ptr %5, ptr %8, align 8\l  %9 = load i32, ptr %2, align 4\l  %10 = zext i32 %9 to i64\l  %11 = getelementptr inbounds [64 x i32], ptr @TriedFile, i64 0, i64 %10\l  store i32 1, ptr %11, align 4\l  %12 = load i32, ptr %3, align 4\l  ret i32 %12\l}"];
+}

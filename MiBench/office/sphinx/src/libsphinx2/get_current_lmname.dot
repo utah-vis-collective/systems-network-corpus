@@ -1,0 +1,26 @@
+digraph "CFG for 'get_current_lmname' function" {
+	label="CFG for 'get_current_lmname' function";
+
+	Node0x600002537700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  store i32 0, ptr %1, align 4\l  br label %2\l}"];
+	Node0x600002537700 -> Node0x600002537750[tooltip="0 -> 2\nProbability 100.00%" ];
+	Node0x600002537750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load i32, ptr %1, align 4\l  %4 = load i32, ptr @n_lm, align 4\l  %5 = icmp slt i32 %3, %4\l  br i1 %5, label %6, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600002537750:s0 -> Node0x6000025377a0[tooltip="2 -> 6\nProbability 50.00%" ];
+	Node0x600002537750:s1 -> Node0x6000025377f0[tooltip="2 -> 15\nProbability 50.00%" ];
+	Node0x6000025377a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @lmset, align 8\l  %8 = load i32, ptr %1, align 4\l  %9 = sext i32 %8 to i64\l  %10 = getelementptr inbounds %struct.lmset_s, ptr %7, i64 %9\l  %11 = getelementptr inbounds %struct.lmset_s, ptr %10, i32 0, i32 1\l  %12 = load ptr, ptr %11, align 8\l  %13 = load ptr, ptr @lmp, align 8\l  %14 = icmp ne ptr %12, %13\l  br label %15\l}"];
+	Node0x6000025377a0 -> Node0x6000025377f0[tooltip="6 -> 15\nProbability 100.00%" ];
+	Node0x6000025377f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = phi i1 [ false, %2 ], [ %14, %6 ]\l  br i1 %16, label %17, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000025377f0:s0 -> Node0x600002537840[tooltip="15 -> 17\nProbability 96.88%" ];
+	Node0x6000025377f0:s1 -> Node0x6000025378e0[tooltip="15 -> 21\nProbability 3.12%" ];
+	Node0x600002537840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  br label %18\l}"];
+	Node0x600002537840 -> Node0x600002537890[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x600002537890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %1, align 4\l  %20 = add nsw i32 %19, 1\l  store i32 %20, ptr %1, align 4\l  br label %2\l}"];
+	Node0x600002537890 -> Node0x600002537750[tooltip="18 -> 2\nProbability 100.00%" ];
+	Node0x6000025378e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %1, align 4\l  %23 = load i32, ptr @n_lm, align 4\l  %24 = icmp slt i32 %22, %23\l  br i1 %24, label %25, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x6000025378e0:s0 -> Node0x600002537930[tooltip="21 -> 25\nProbability 50.00%" ];
+	Node0x6000025378e0:s1 -> Node0x600002537980[tooltip="21 -> 32\nProbability 50.00%" ];
+	Node0x600002537930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr @lmset, align 8\l  %27 = load i32, ptr %1, align 4\l  %28 = sext i32 %27 to i64\l  %29 = getelementptr inbounds %struct.lmset_s, ptr %26, i64 %28\l  %30 = getelementptr inbounds %struct.lmset_s, ptr %29, i32 0, i32 0\l  %31 = load ptr, ptr %30, align 8\l  br label %33\l}"];
+	Node0x600002537930 -> Node0x6000025379d0[tooltip="25 -> 33\nProbability 100.00%" ];
+	Node0x600002537980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{32:\l|  br label %33\l}"];
+	Node0x600002537980 -> Node0x6000025379d0[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x6000025379d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{33:\l|  %34 = phi ptr [ %31, %25 ], [ null, %32 ]\l  ret ptr %34\l}"];
+}

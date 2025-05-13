@@ -1,0 +1,32 @@
+digraph "CFG for 'bfin_vec' function" {
+	label="CFG for 'bfin_vec' function";
+
+	Node0x600001ecc3c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = call i32 @skipjunk(ptr noundef %8)\l  %10 = load ptr, ptr %3, align 8\l  %11 = call i32 (ptr, ptr, ...) @fscanf(ptr noundef %10, ptr noundef\l... @.str.23, ptr noundef %6)\l  store i32 %11, ptr %7, align 4\l  %12 = icmp slt i32 %11, 1\l  br i1 %12, label %16, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600001ecc3c0:s0 -> Node0x600001ecc4b0[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x600001ecc3c0:s1 -> Node0x600001ecc460[tooltip="2 -> 13\nProbability 62.50%" ];
+	Node0x600001ecc460 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %6, align 4\l  %15 = icmp ugt i32 %14, 10000001\l  br i1 %15, label %16, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001ecc460:s0 -> Node0x600001ecc4b0[tooltip="13 -> 16\nProbability 50.00%" ];
+	Node0x600001ecc460:s1 -> Node0x600001ecc500[tooltip="13 -> 22\nProbability 50.00%" ];
+	Node0x600001ecc4b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %7, align 4\l  %18 = icmp eq i32 %17, -1\l  %19 = zext i1 %18 to i64\l  %20 = select i1 %18, i32 7, i32 6\l  %21 = call i32 @ev_err(ptr noundef @.str.1, i32 noundef %20, i32 noundef\l... 415, ptr noundef @.str.24, i32 noundef 0)\l  br label %22\l}"];
+	Node0x600001ecc4b0 -> Node0x600001ecc500[tooltip="16 -> 22\nProbability 100.00%" ];
+	Node0x600001ecc500 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %4, align 8\l  %24 = icmp eq ptr %23, null\l  br i1 %24, label %25, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600001ecc500:s0 -> Node0x600001ecc550[tooltip="22 -> 25\nProbability 37.50%" ];
+	Node0x600001ecc500:s1 -> Node0x600001ecc5a0[tooltip="22 -> 29\nProbability 62.50%" ];
+	Node0x600001ecc550 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %4, align 8\l  %27 = load i32, ptr %6, align 4\l  %28 = call ptr @v_resize(ptr noundef %26, i32 noundef %27)\l  store ptr %28, ptr %4, align 8\l  br label %29\l}"];
+	Node0x600001ecc550 -> Node0x600001ecc5a0[tooltip="25 -> 29\nProbability 100.00%" ];
+	Node0x600001ecc5a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %3, align 8\l  %31 = call i32 @skipjunk(ptr noundef %30)\l  store i32 0, ptr %5, align 4\l  br label %32\l}"];
+	Node0x600001ecc5a0 -> Node0x600001ecc5f0[tooltip="29 -> 32\nProbability 100.00%" ];
+	Node0x600001ecc5f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %5, align 4\l  %34 = load i32, ptr %6, align 4\l  %35 = icmp ult i32 %33, %34\l  br i1 %35, label %36, label %56\l|{<s0>T|<s1>F}}"];
+	Node0x600001ecc5f0:s0 -> Node0x600001ecc640[tooltip="32 -> 36\nProbability 96.88%" ];
+	Node0x600001ecc5f0:s1 -> Node0x600001ecc780[tooltip="32 -> 56\nProbability 3.12%" ];
+	Node0x600001ecc640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %3, align 8\l  %38 = load ptr, ptr %4, align 8\l  %39 = getelementptr inbounds %struct.VEC, ptr %38, i32 0, i32 2\l  %40 = load ptr, ptr %39, align 8\l  %41 = load i32, ptr %5, align 4\l  %42 = zext i32 %41 to i64\l  %43 = getelementptr inbounds double, ptr %40, i64 %42\l  %44 = call i32 (ptr, ptr, ...) @fscanf(ptr noundef %37, ptr noundef @.str.7,\l... ptr noundef %43)\l  store i32 %44, ptr %7, align 4\l  %45 = icmp slt i32 %44, 1\l  br i1 %45, label %46, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600001ecc640:s0 -> Node0x600001ecc690[tooltip="36 -> 46\nProbability 37.50%" ];
+	Node0x600001ecc640:s1 -> Node0x600001ecc6e0[tooltip="36 -> 52\nProbability 62.50%" ];
+	Node0x600001ecc690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{46:\l|  %47 = load i32, ptr %7, align 4\l  %48 = icmp eq i32 %47, -1\l  %49 = zext i1 %48 to i64\l  %50 = select i1 %48, i32 7, i32 6\l  %51 = call i32 @ev_err(ptr noundef @.str.1, i32 noundef %50, i32 noundef\l... 429, ptr noundef @.str.24, i32 noundef 0)\l  br label %52\l}"];
+	Node0x600001ecc690 -> Node0x600001ecc6e0[tooltip="46 -> 52\nProbability 100.00%" ];
+	Node0x600001ecc6e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{52:\l|  br label %53\l}"];
+	Node0x600001ecc6e0 -> Node0x600001ecc730[tooltip="52 -> 53\nProbability 100.00%" ];
+	Node0x600001ecc730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{53:\l|  %54 = load i32, ptr %5, align 4\l  %55 = add i32 %54, 1\l  store i32 %55, ptr %5, align 4\l  br label %32\l}"];
+	Node0x600001ecc730 -> Node0x600001ecc5f0[tooltip="53 -> 32\nProbability 100.00%" ];
+	Node0x600001ecc780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{56:\l|  %57 = load ptr, ptr %4, align 8\l  ret ptr %57\l}"];
+}

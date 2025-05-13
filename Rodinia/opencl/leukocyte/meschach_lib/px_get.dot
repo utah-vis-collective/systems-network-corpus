@@ -1,0 +1,43 @@
+digraph "CFG for 'px_get' function" {
+	label="CFG for 'px_get' function";
+
+	Node0x6000030968a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %5 = load i32, ptr %2, align 4\l  %6 = icmp slt i32 %5, 0\l  br i1 %6, label %7, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000030968a0:s0 -> Node0x6000030968f0[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x6000030968a0:s1 -> Node0x600003096940[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x6000030968f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{7:\l|  %8 = call i32 @ev_err(ptr noundef @.str, i32 noundef 20, i32 noundef 112,\l... ptr noundef @.str.2, i32 noundef 0)\l  br label %9\l}"];
+	Node0x6000030968f0 -> Node0x600003096940[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x600003096940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  %10 = call ptr @calloc(i64 noundef 1, i64 noundef 16) #7\l  store ptr %10, ptr %3, align 8\l  %11 = icmp eq ptr %10, null\l  br i1 %11, label %12, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600003096940:s0 -> Node0x600003096990[tooltip="9 -> 12\nProbability 37.50%" ];
+	Node0x600003096940:s1 -> Node0x6000030969e0[tooltip="9 -> 14\nProbability 62.50%" ];
+	Node0x600003096990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{12:\l|  %13 = call i32 @ev_err(ptr noundef @.str, i32 noundef 3, i32 noundef 115,\l... ptr noundef @.str.2, i32 noundef 0)\l  br label %19\l}"];
+	Node0x600003096990 -> Node0x600003096ad0[tooltip="12 -> 19\nProbability 100.00%" ];
+	Node0x6000030969e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{14:\l|  %15 = call i32 @mem_info_is_on()\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000030969e0:s0 -> Node0x600003096a30[tooltip="14 -> 17\nProbability 62.50%" ];
+	Node0x6000030969e0:s1 -> Node0x600003096a80[tooltip="14 -> 18\nProbability 37.50%" ];
+	Node0x600003096a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{17:\l|  call void @mem_bytes_list(i32 noundef 2, i32 noundef 0, i32 noundef 16,\l... i32 noundef 0)\l  call void @mem_numvar_list(i32 noundef 2, i32 noundef 1, i32 noundef 0)\l  br label %18\l}"];
+	Node0x600003096a30 -> Node0x600003096a80[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x600003096a80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{18:\l|  br label %19\l}"];
+	Node0x600003096a80 -> Node0x600003096ad0[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x600003096ad0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %2, align 4\l  %21 = load ptr, ptr %3, align 8\l  %22 = getelementptr inbounds %struct.PERM, ptr %21, i32 0, i32 1\l  store i32 %20, ptr %22, align 4\l  %23 = load ptr, ptr %3, align 8\l  %24 = getelementptr inbounds %struct.PERM, ptr %23, i32 0, i32 0\l  store i32 %20, ptr %24, align 8\l  %25 = load i32, ptr %2, align 4\l  %26 = sext i32 %25 to i64\l  %27 = call ptr @calloc(i64 noundef %26, i64 noundef 4) #7\l  %28 = load ptr, ptr %3, align 8\l  %29 = getelementptr inbounds %struct.PERM, ptr %28, i32 0, i32 2\l  store ptr %27, ptr %29, align 8\l  %30 = icmp eq ptr %27, null\l  br i1 %30, label %31, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600003096ad0:s0 -> Node0x600003096b20[tooltip="19 -> 31\nProbability 37.50%" ];
+	Node0x600003096ad0:s1 -> Node0x600003096b70[tooltip="19 -> 33\nProbability 62.50%" ];
+	Node0x600003096b20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{31:\l|  %32 = call i32 @ev_err(ptr noundef @.str, i32 noundef 3, i32 noundef 123,\l... ptr noundef @.str.2, i32 noundef 0)\l  br label %42\l}"];
+	Node0x600003096b20 -> Node0x600003096c60[tooltip="31 -> 42\nProbability 100.00%" ];
+	Node0x600003096b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{33:\l|  %34 = call i32 @mem_info_is_on()\l  %35 = icmp ne i32 %34, 0\l  br i1 %35, label %36, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600003096b70:s0 -> Node0x600003096bc0[tooltip="33 -> 36\nProbability 62.50%" ];
+	Node0x600003096b70:s1 -> Node0x600003096c10[tooltip="33 -> 41\nProbability 37.50%" ];
+	Node0x600003096bc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %2, align 4\l  %38 = sext i32 %37 to i64\l  %39 = mul i64 %38, 4\l  %40 = trunc i64 %39 to i32\l  call void @mem_bytes_list(i32 noundef 2, i32 noundef 0, i32 noundef %40, i32\l... noundef 0)\l  br label %41\l}"];
+	Node0x600003096bc0 -> Node0x600003096c10[tooltip="36 -> 41\nProbability 100.00%" ];
+	Node0x600003096c10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{41:\l|  br label %42\l}"];
+	Node0x600003096c10 -> Node0x600003096c60[tooltip="41 -> 42\nProbability 100.00%" ];
+	Node0x600003096c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{42:\l|  store i32 0, ptr %4, align 4\l  br label %43\l}"];
+	Node0x600003096c60 -> Node0x600003096cb0[tooltip="42 -> 43\nProbability 100.00%" ];
+	Node0x600003096cb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %4, align 4\l  %45 = load i32, ptr %2, align 4\l  %46 = icmp slt i32 %44, %45\l  br i1 %46, label %47, label %58\l|{<s0>T|<s1>F}}"];
+	Node0x600003096cb0:s0 -> Node0x600003096d00[tooltip="43 -> 47\nProbability 96.88%" ];
+	Node0x600003096cb0:s1 -> Node0x600003096da0[tooltip="43 -> 58\nProbability 3.12%" ];
+	Node0x600003096d00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %4, align 4\l  %49 = load ptr, ptr %3, align 8\l  %50 = getelementptr inbounds %struct.PERM, ptr %49, i32 0, i32 2\l  %51 = load ptr, ptr %50, align 8\l  %52 = load i32, ptr %4, align 4\l  %53 = sext i32 %52 to i64\l  %54 = getelementptr inbounds i32, ptr %51, i64 %53\l  store i32 %48, ptr %54, align 4\l  br label %55\l}"];
+	Node0x600003096d00 -> Node0x600003096d50[tooltip="47 -> 55\nProbability 100.00%" ];
+	Node0x600003096d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{55:\l|  %56 = load i32, ptr %4, align 4\l  %57 = add nsw i32 %56, 1\l  store i32 %57, ptr %4, align 4\l  br label %43\l}"];
+	Node0x600003096d50 -> Node0x600003096cb0[tooltip="55 -> 43\nProbability 100.00%" ];
+	Node0x600003096da0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{58:\l|  %59 = load ptr, ptr %3, align 8\l  ret ptr %59\l}"];
+}

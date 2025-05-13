@@ -1,0 +1,10 @@
+digraph "CFG for 'list_iterator_prev' function" {
+	label="CFG for 'list_iterator_prev' function";
+
+	Node0x60000202c780 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr %3, align 8\l  %5 = icmp ne ptr %4, null\l  br i1 %5, label %6, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000202c780:s0 -> Node0x60000202c7d0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x60000202c780:s1 -> Node0x60000202c820[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x60000202c7d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  %8 = load ptr, ptr %7, align 8\l  %9 = getelementptr inbounds %struct.list_item, ptr %8, i32 0, i32 0\l  %10 = load ptr, ptr %9, align 8\l  %11 = load ptr, ptr %2, align 8\l  store ptr %10, ptr %11, align 8\l  br label %12\l}"];
+	Node0x60000202c7d0 -> Node0x60000202c820[tooltip="6 -> 12\nProbability 100.00%" ];
+	Node0x60000202c820 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  ret void\l}"];
+}

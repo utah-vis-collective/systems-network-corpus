@@ -1,0 +1,12 @@
+digraph "CFG for 'TIFFInitCCITTFax3' function" {
+	label="CFG for 'TIFFInitCCITTFax3' function";
+
+	Node0x6000005e3a70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load ptr, ptr %4, align 8\l  %7 = call i32 @InitCCITTFax3(ptr noundef %6)\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000005e3a70:s0 -> Node0x6000005e3bb0[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x6000005e3a70:s1 -> Node0x6000005e3c00[tooltip="2 -> 13\nProbability 37.50%" ];
+	Node0x6000005e3bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %4, align 8\l  call void @_TIFFMergeFieldInfo(ptr noundef %10, ptr noundef @fax3FieldInfo,\l... i32 noundef 1)\l  %11 = load ptr, ptr %4, align 8\l  %12 = call i32 (ptr, i64, ...) @TIFFSetField(ptr noundef %11, i64 noundef\l... 65536, i32 noundef 1)\l  store i32 %12, ptr %3, align 4\l  br label %14\l}"];
+	Node0x6000005e3bb0 -> Node0x6000005e3c50[tooltip="9 -> 14\nProbability 100.00%" ];
+	Node0x6000005e3c00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  store i32 0, ptr %3, align 4\l  br label %14\l}"];
+	Node0x6000005e3c00 -> Node0x6000005e3c50[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x6000005e3c50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %3, align 4\l  ret i32 %15\l}"];
+}

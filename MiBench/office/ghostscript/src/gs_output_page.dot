@@ -1,0 +1,15 @@
+digraph "CFG for 'gs_output_page' function" {
+	label="CFG for 'gs_output_page' function";
+
+	Node0x600001eecf00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %9 = load ptr, ptr %4, align 8\l  %10 = call ptr @gs_currentdevice(ptr noundef %9)\l  store ptr %10, ptr %7, align 8\l  %11 = load ptr, ptr %7, align 8\l  %12 = getelementptr inbounds %struct.gx_device_s, ptr %11, i32 0, i32 19\l  %13 = load i32, ptr %12, align 8\l  %14 = icmp ne i32 %13, 0\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001eecf00:s0 -> Node0x600001eecf50[tooltip="3 -> 15\nProbability 62.50%" ];
+	Node0x600001eecf00:s1 -> Node0x600001eecfa0[tooltip="3 -> 16\nProbability 37.50%" ];
+	Node0x600001eecf50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  store i32 1, ptr %5, align 4\l  br label %16\l}"];
+	Node0x600001eecf50 -> Node0x600001eecfa0[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x600001eecfa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %7, align 8\l  %18 = getelementptr inbounds %struct.gx_device_s, ptr %17, i32 0, i32 21\l  %19 = getelementptr inbounds %struct.gx_device_procs_s, ptr %18, i32 0, i32 3\l  %20 = load ptr, ptr %19, align 8\l  %21 = load ptr, ptr %7, align 8\l  %22 = load i32, ptr %5, align 4\l  %23 = load i32, ptr %6, align 4\l  %24 = call i32 %20(ptr noundef %21, i32 noundef %22, i32 noundef %23)\l  store i32 %24, ptr %8, align 4\l  %25 = load i32, ptr %8, align 4\l  %26 = icmp sge i32 %25, 0\l  br i1 %26, label %27, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600001eecfa0:s0 -> Node0x600001eecff0[tooltip="16 -> 27\nProbability 50.00%" ];
+	Node0x600001eecfa0:s1 -> Node0x600001eed040[tooltip="16 -> 34\nProbability 50.00%" ];
+	Node0x600001eecff0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %5, align 4\l  %29 = sext i32 %28 to i64\l  %30 = load ptr, ptr %7, align 8\l  %31 = getelementptr inbounds %struct.gx_device_s, ptr %30, i32 0, i32 17\l  %32 = load i64, ptr %31, align 8\l  %33 = add nsw i64 %32, %29\l  store i64 %33, ptr %31, align 8\l  br label %34\l}"];
+	Node0x600001eecff0 -> Node0x600001eed040[tooltip="27 -> 34\nProbability 100.00%" ];
+	Node0x600001eed040 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %8, align 4\l  ret i32 %35\l}"];
+}

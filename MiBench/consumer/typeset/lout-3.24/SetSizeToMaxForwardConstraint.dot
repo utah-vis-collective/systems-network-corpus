@@ -1,0 +1,19 @@
+digraph "CFG for 'SetSizeToMaxForwardConstraint' function" {
+	label="CFG for 'SetSizeToMaxForwardConstraint' function";
+
+	Node0x600001061f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %6, align 8\l  %8 = getelementptr inbounds %struct.CONSTRAINT, ptr %7, i32 0, i32 1\l  %9 = load i32, ptr %8, align 4\l  %10 = load ptr, ptr %6, align 8\l  %11 = getelementptr inbounds %struct.CONSTRAINT, ptr %10, i32 0, i32 2\l  %12 = load i32, ptr %11, align 4\l  %13 = icmp slt i32 %9, %12\l  br i1 %13, label %14, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600001061f90:s0 -> Node0x600001062350[tooltip="3 -> 14\nProbability 50.00%" ];
+	Node0x600001061f90:s1 -> Node0x600001062490[tooltip="3 -> 18\nProbability 50.00%" ];
+	Node0x600001062350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %6, align 8\l  %16 = getelementptr inbounds %struct.CONSTRAINT, ptr %15, i32 0, i32 1\l  %17 = load i32, ptr %16, align 4\l  br label %22\l}"];
+	Node0x600001062350 -> Node0x6000010624e0[tooltip="14 -> 22\nProbability 100.00%" ];
+	Node0x600001062490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.CONSTRAINT, ptr %19, i32 0, i32 2\l  %21 = load i32, ptr %20, align 4\l  br label %22\l}"];
+	Node0x600001062490 -> Node0x6000010624e0[tooltip="18 -> 22\nProbability 100.00%" ];
+	Node0x6000010624e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = phi i32 [ %17, %14 ], [ %21, %18 ]\l  %24 = load ptr, ptr %5, align 8\l  store i32 %23, ptr %24, align 4\l  %25 = load ptr, ptr %6, align 8\l  %26 = getelementptr inbounds %struct.CONSTRAINT, ptr %25, i32 0, i32 0\l  %27 = load i32, ptr %26, align 4\l  %28 = load ptr, ptr %6, align 8\l  %29 = getelementptr inbounds %struct.CONSTRAINT, ptr %28, i32 0, i32 1\l  %30 = load i32, ptr %29, align 4\l  %31 = load ptr, ptr %5, align 8\l  %32 = load i32, ptr %31, align 4\l  %33 = sub nsw i32 %30, %32\l  %34 = icmp slt i32 %27, %33\l  br i1 %34, label %35, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x6000010624e0:s0 -> Node0x600001062530[tooltip="22 -> 35\nProbability 50.00%" ];
+	Node0x6000010624e0:s1 -> Node0x600001062580[tooltip="22 -> 39\nProbability 50.00%" ];
+	Node0x600001062530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %6, align 8\l  %37 = getelementptr inbounds %struct.CONSTRAINT, ptr %36, i32 0, i32 0\l  %38 = load i32, ptr %37, align 4\l  br label %46\l}"];
+	Node0x600001062530 -> Node0x6000010625d0[tooltip="35 -> 46\nProbability 100.00%" ];
+	Node0x600001062580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %6, align 8\l  %41 = getelementptr inbounds %struct.CONSTRAINT, ptr %40, i32 0, i32 1\l  %42 = load i32, ptr %41, align 4\l  %43 = load ptr, ptr %5, align 8\l  %44 = load i32, ptr %43, align 4\l  %45 = sub nsw i32 %42, %44\l  br label %46\l}"];
+	Node0x600001062580 -> Node0x6000010625d0[tooltip="39 -> 46\nProbability 100.00%" ];
+	Node0x6000010625d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{46:\l|  %47 = phi i32 [ %38, %35 ], [ %45, %39 ]\l  %48 = load ptr, ptr %4, align 8\l  store i32 %47, ptr %48, align 4\l  ret void\l}"];
+}

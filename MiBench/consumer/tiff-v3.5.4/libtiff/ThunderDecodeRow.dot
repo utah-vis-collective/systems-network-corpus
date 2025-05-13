@@ -1,0 +1,19 @@
+digraph "CFG for 'ThunderDecodeRow' function" {
+	label="CFG for 'ThunderDecodeRow' function";
+
+	Node0x600002569fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  %9 = alloca i16, align 2\l  %10 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store i64 %2, ptr %8, align 8\l  store i16 %3, ptr %9, align 2\l  %11 = load ptr, ptr %7, align 8\l  store ptr %11, ptr %10, align 8\l  %12 = load i16, ptr %9, align 2\l  br label %13\l}"];
+	Node0x600002569fe0 -> Node0x60000256a030[tooltip="4 -> 13\nProbability 100.00%" ];
+	Node0x60000256a030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i64, ptr %8, align 8\l  %15 = icmp sgt i64 %14, 0\l  br i1 %15, label %16, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x60000256a030:s0 -> Node0x60000256a080[tooltip="13 -> 16\nProbability 96.88%" ];
+	Node0x60000256a030:s1 -> Node0x60000256a170[tooltip="13 -> 37\nProbability 3.12%" ];
+	Node0x60000256a080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %6, align 8\l  %18 = load ptr, ptr %10, align 8\l  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.tiff, ptr %19, i32 0, i32 6\l  %21 = getelementptr inbounds %struct.TIFFDirectory, ptr %20, i32 0, i32 1\l  %22 = load i64, ptr %21, align 8\l  %23 = call i32 @ThunderDecode(ptr noundef %17, ptr noundef %18, i64 noundef\l... %22)\l  %24 = icmp ne i32 %23, 0\l  br i1 %24, label %26, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x60000256a080:s0 -> Node0x60000256a120[tooltip="16 -> 26\nProbability 96.88%" ];
+	Node0x60000256a080:s1 -> Node0x60000256a0d0[tooltip="16 -> 25\nProbability 3.12%" ];
+	Node0x60000256a0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  store i32 0, ptr %5, align 4\l  br label %38\l}"];
+	Node0x60000256a0d0 -> Node0x60000256a1c0[tooltip="25 -> 38\nProbability 100.00%" ];
+	Node0x60000256a120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %6, align 8\l  %28 = getelementptr inbounds %struct.tiff, ptr %27, i32 0, i32 38\l  %29 = load i64, ptr %28, align 8\l  %30 = load i64, ptr %8, align 8\l  %31 = sub nsw i64 %30, %29\l  store i64 %31, ptr %8, align 8\l  %32 = load ptr, ptr %6, align 8\l  %33 = getelementptr inbounds %struct.tiff, ptr %32, i32 0, i32 38\l  %34 = load i64, ptr %33, align 8\l  %35 = load ptr, ptr %10, align 8\l  %36 = getelementptr inbounds i8, ptr %35, i64 %34\l  store ptr %36, ptr %10, align 8\l  br label %13\l}"];
+	Node0x60000256a120 -> Node0x60000256a030[tooltip="26 -> 13\nProbability 100.00%" ];
+	Node0x60000256a170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{37:\l|  store i32 1, ptr %5, align 4\l  br label %38\l}"];
+	Node0x60000256a170 -> Node0x60000256a1c0[tooltip="37 -> 38\nProbability 100.00%" ];
+	Node0x60000256a1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %5, align 4\l  ret i32 %39\l}"];
+}

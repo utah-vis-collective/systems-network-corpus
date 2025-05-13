@@ -1,0 +1,5 @@
+digraph "CFG for 'mem_stat_show_mark' function" {
+	label="CFG for 'mem_stat_show_mark' function";
+
+	Node0x600002578140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @mem_stat_mark_curr, align 4\l  ret i32 %1\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 'PDF_PrintAfterLastPage' function" {
+	label="CFG for 'PDF_PrintAfterLastPage' function";
+
+	Node0x600001620550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @prologue_done, align 4\l  %2 = icmp ne i32 %1, 0\l  br i1 %2, label %3, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x600001620550:s0 -> Node0x6000016205a0[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x600001620550:s1 -> Node0x6000016205f0[tooltip="0 -> 6\nProbability 37.50%" ];
+	Node0x6000016205a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @out_fp, align 8\l  call void @PDFPage_Cleanup(ptr noundef %4)\l  %5 = load ptr, ptr @out_fp, align 8\l  call void @PDFFile_Cleanup(ptr noundef %5)\l  br label %6\l}"];
+	Node0x6000016205a0 -> Node0x6000016205f0[tooltip="3 -> 6\nProbability 100.00%" ];
+	Node0x6000016205f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  ret void\l}"];
+}

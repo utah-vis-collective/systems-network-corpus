@@ -1,0 +1,15 @@
+digraph "CFG for 'gsm_mult' function" {
+	label="CFG for 'gsm_mult' function";
+
+	Node0x60000085ceb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i16, align 2\l  store i16 %0, ptr %4, align 2\l  store i16 %1, ptr %5, align 2\l  %6 = load i16, ptr %4, align 2\l  %7 = sext i16 %6 to i32\l  %8 = icmp eq i32 %7, -32768\l  br i1 %8, label %9, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000085ceb0:s0 -> Node0x60000085cf50[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x60000085ceb0:s1 -> Node0x60000085cff0[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x60000085cf50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i16, ptr %5, align 2\l  %11 = sext i16 %10 to i32\l  %12 = icmp eq i32 %11, -32768\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000085cf50:s0 -> Node0x60000085cfa0[tooltip="9 -> 13\nProbability 50.00%" ];
+	Node0x60000085cf50:s1 -> Node0x60000085cff0[tooltip="9 -> 14\nProbability 50.00%" ];
+	Node0x60000085cfa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  store i16 32767, ptr %3, align 2\l  br label %22\l}"];
+	Node0x60000085cfa0 -> Node0x60000085d040[tooltip="13 -> 22\nProbability 100.00%" ];
+	Node0x60000085cff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load i16, ptr %4, align 2\l  %16 = sext i16 %15 to i64\l  %17 = load i16, ptr %5, align 2\l  %18 = sext i16 %17 to i64\l  %19 = mul nsw i64 %16, %18\l  %20 = call i32 @SASR(i64 noundef %19, i32 noundef 15)\l  %21 = trunc i32 %20 to i16\l  store i16 %21, ptr %3, align 2\l  br label %22\l}"];
+	Node0x60000085cff0 -> Node0x60000085d040[tooltip="14 -> 22\nProbability 100.00%" ];
+	Node0x60000085d040 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i16, ptr %3, align 2\l  ret i16 %23\l}"];
+}

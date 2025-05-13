@@ -1,0 +1,15 @@
+digraph "CFG for 'pc_8bit_map_rgb_color' function" {
+	label="CFG for 'pc_8bit_map_rgb_color' function";
+
+	Node0x600000ae6530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i16, align 2\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store i16 %1, ptr %6, align 2\l  store i16 %2, ptr %7, align 2\l  store i16 %3, ptr %8, align 2\l  %11 = load i16, ptr %6, align 2\l  %12 = zext i16 %11 to i32\l  %13 = sdiv i32 %12, 9363\l  store i32 %13, ptr %9, align 4\l  %14 = load i16, ptr %7, align 2\l  %15 = zext i16 %14 to i32\l  %16 = sdiv i32 %15, 9363\l  store i32 %16, ptr %10, align 4\l  %17 = load i32, ptr %9, align 4\l  %18 = load i32, ptr %10, align 4\l  %19 = icmp eq i32 %17, %18\l  br i1 %19, label %20, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600000ae6530:s0 -> Node0x600000ae6620[tooltip="4 -> 20\nProbability 50.00%" ];
+	Node0x600000ae6530:s1 -> Node0x600000ae66c0[tooltip="4 -> 29\nProbability 50.00%" ];
+	Node0x600000ae6620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %10, align 4\l  %22 = load i16, ptr %8, align 2\l  %23 = zext i16 %22 to i32\l  %24 = sdiv i32 %23, 9363\l  %25 = icmp eq i32 %21, %24\l  br i1 %25, label %26, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600000ae6620:s0 -> Node0x600000ae6670[tooltip="20 -> 26\nProbability 50.00%" ];
+	Node0x600000ae6620:s1 -> Node0x600000ae66c0[tooltip="20 -> 29\nProbability 50.00%" ];
+	Node0x600000ae6670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %9, align 4\l  %28 = add i32 %27, 249\l  br label %39\l}"];
+	Node0x600000ae6670 -> Node0x600000ae6710[tooltip="26 -> 39\nProbability 100.00%" ];
+	Node0x600000ae66c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %9, align 4\l  %31 = mul i32 %30, 7\l  %32 = load i32, ptr %10, align 4\l  %33 = add i32 %31, %32\l  %34 = mul i32 %33, 5\l  %35 = load i16, ptr %8, align 2\l  %36 = zext i16 %35 to i32\l  %37 = sdiv i32 %36, 13108\l  %38 = add i32 %34, %37\l  br label %39\l}"];
+	Node0x600000ae66c0 -> Node0x600000ae6710[tooltip="29 -> 39\nProbability 100.00%" ];
+	Node0x600000ae6710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = phi i32 [ %28, %26 ], [ %38, %29 ]\l  %41 = zext i32 %40 to i64\l  ret i64 %41\l}"];
+}

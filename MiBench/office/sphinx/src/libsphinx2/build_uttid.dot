@@ -1,0 +1,12 @@
+digraph "CFG for 'build_uttid' function" {
+	label="CFG for 'build_uttid' function";
+
+	Node0x6000031f8cd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call ptr @strrchr(ptr noundef %4, i32 noundef 47) #9\l  store ptr %5, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %8, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x6000031f8cd0:s0 -> Node0x6000031f8d20[tooltip="1 -> 8\nProbability 62.50%" ];
+	Node0x6000031f8cd0:s1 -> Node0x6000031f8d70[tooltip="1 -> 11\nProbability 37.50%" ];
+	Node0x6000031f8d20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = getelementptr inbounds i8, ptr %9, i32 1\l  store ptr %10, ptr %3, align 8\l  br label %13\l}"];
+	Node0x6000031f8d20 -> Node0x6000031f8dc0[tooltip="8 -> 13\nProbability 100.00%" ];
+	Node0x6000031f8d70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %2, align 8\l  store ptr %12, ptr %3, align 8\l  br label %13\l}"];
+	Node0x6000031f8d70 -> Node0x6000031f8dc0[tooltip="11 -> 13\nProbability 100.00%" ];
+	Node0x6000031f8dc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = call ptr @__strcpy_chk(ptr noundef @utt_name, ptr noundef %14, i64\l... noundef 1024) #9\l  ret ptr @utt_name\l}"];
+}

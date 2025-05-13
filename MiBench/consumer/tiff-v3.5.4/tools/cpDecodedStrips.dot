@@ -1,0 +1,41 @@
+digraph "CFG for 'cpDecodedStrips' function" {
+	label="CFG for 'cpDecodedStrips' function";
+
+	Node0x600001c486e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{5:\l|  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i64, align 8\l  %10 = alloca i64, align 8\l  %11 = alloca i16, align 2\l  %12 = alloca i64, align 8\l  %13 = alloca ptr, align 8\l  %14 = alloca i64, align 8\l  %15 = alloca i64, align 8\l  %16 = alloca i64, align 8\l  %17 = alloca i64, align 8\l  store ptr %0, ptr %7, align 8\l  store ptr %1, ptr %8, align 8\l  store i64 %2, ptr %9, align 8\l  store i64 %3, ptr %10, align 8\l  store i16 %4, ptr %11, align 2\l  %18 = load ptr, ptr %7, align 8\l  %19 = call i64 @TIFFStripSize(ptr noundef %18)\l  store i64 %19, ptr %12, align 8\l  %20 = load i64, ptr %12, align 8\l  %21 = call ptr @_TIFFmalloc(i64 noundef %20)\l  store ptr %21, ptr %13, align 8\l  %22 = load i64, ptr %10, align 8\l  %23 = load i16, ptr %11, align 2\l  %24 = load ptr, ptr %13, align 8\l  %25 = icmp ne ptr %24, null\l  br i1 %25, label %26, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x600001c486e0:s0 -> Node0x600001c48730[tooltip="5 -> 26\nProbability 62.50%" ];
+	Node0x600001c486e0:s1 -> Node0x600001c48b40[tooltip="5 -> 77\nProbability 37.50%" ];
+	Node0x600001c48730 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %7, align 8\l  %28 = call i64 @TIFFNumberOfStrips(ptr noundef %27)\l  store i64 %28, ptr %15, align 8\l  store i64 0, ptr %16, align 8\l  store i64 0, ptr %14, align 8\l  br label %29\l}"];
+	Node0x600001c48730 -> Node0x600001c48780[tooltip="26 -> 29\nProbability 100.00%" ];
+	Node0x600001c48780 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i64, ptr %14, align 8\l  %31 = load i64, ptr %15, align 8\l  %32 = icmp ult i64 %30, %31\l  br i1 %32, label %33, label %75\l|{<s0>T|<s1>F}}"];
+	Node0x600001c48780:s0 -> Node0x600001c487d0[tooltip="29 -> 33\nProbability 96.88%" ];
+	Node0x600001c48780:s1 -> Node0x600001c48af0[tooltip="29 -> 75\nProbability 3.12%" ];
+	Node0x600001c487d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i64, ptr %16, align 8\l  %35 = load i64, ptr @rowsperstrip, align 8\l  %36 = add i64 %34, %35\l  %37 = load i64, ptr %9, align 8\l  %38 = icmp ugt i64 %36, %37\l  br i1 %38, label %39, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x600001c487d0:s0 -> Node0x600001c48820[tooltip="33 -> 39\nProbability 50.00%" ];
+	Node0x600001c487d0:s1 -> Node0x600001c48870[tooltip="33 -> 45\nProbability 50.00%" ];
+	Node0x600001c48820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %7, align 8\l  %41 = load i64, ptr %9, align 8\l  %42 = load i64, ptr %16, align 8\l  %43 = sub i64 %41, %42\l  %44 = call i64 @TIFFVStripSize(ptr noundef %40, i64 noundef %43)\l  br label %47\l}"];
+	Node0x600001c48820 -> Node0x600001c488c0[tooltip="39 -> 47\nProbability 100.00%" ];
+	Node0x600001c48870 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{45:\l|  %46 = load i64, ptr %12, align 8\l  br label %47\l}"];
+	Node0x600001c48870 -> Node0x600001c488c0[tooltip="45 -> 47\nProbability 100.00%" ];
+	Node0x600001c488c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  %48 = phi i64 [ %44, %39 ], [ %46, %45 ]\l  store i64 %48, ptr %17, align 8\l  %49 = load ptr, ptr %7, align 8\l  %50 = load i64, ptr %14, align 8\l  %51 = load ptr, ptr %13, align 8\l  %52 = load i64, ptr %17, align 8\l  %53 = call i64 @TIFFReadEncodedStrip(ptr noundef %49, i64 noundef %50, ptr\l... noundef %51, i64 noundef %52)\l  %54 = icmp slt i64 %53, 0\l  br i1 %54, label %55, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x600001c488c0:s0 -> Node0x600001c48910[tooltip="47 -> 55\nProbability 37.50%" ];
+	Node0x600001c488c0:s1 -> Node0x600001c489b0[tooltip="47 -> 59\nProbability 62.50%" ];
+	Node0x600001c48910 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{55:\l|  %56 = load i32, ptr @ignore, align 4\l  %57 = icmp ne i32 %56, 0\l  br i1 %57, label %59, label %58\l|{<s0>T|<s1>F}}"];
+	Node0x600001c48910:s0 -> Node0x600001c489b0[tooltip="55 -> 59\nProbability 96.88%" ];
+	Node0x600001c48910:s1 -> Node0x600001c48960[tooltip="55 -> 58\nProbability 3.12%" ];
+	Node0x600001c48960 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{58:\l|  br label %75\l}"];
+	Node0x600001c48960 -> Node0x600001c48af0[tooltip="58 -> 75\nProbability 100.00%" ];
+	Node0x600001c489b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{59:\l|  %60 = load ptr, ptr %8, align 8\l  %61 = load i64, ptr %14, align 8\l  %62 = load ptr, ptr %13, align 8\l  %63 = load i64, ptr %17, align 8\l  %64 = call i64 @TIFFWriteEncodedStrip(ptr noundef %60, i64 noundef %61, ptr\l... noundef %62, i64 noundef %63)\l  %65 = icmp slt i64 %64, 0\l  br i1 %65, label %66, label %68\l|{<s0>T|<s1>F}}"];
+	Node0x600001c489b0:s0 -> Node0x600001c48a00[tooltip="59 -> 66\nProbability 3.12%" ];
+	Node0x600001c489b0:s1 -> Node0x600001c48a50[tooltip="59 -> 68\nProbability 96.88%" ];
+	Node0x600001c48a00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{66:\l|  %67 = load ptr, ptr %13, align 8\l  call void @_TIFFfree(ptr noundef %67)\l  store i32 0, ptr %6, align 4\l  br label %78\l}"];
+	Node0x600001c48a00 -> Node0x600001c48b90[tooltip="66 -> 78\nProbability 100.00%" ];
+	Node0x600001c48a50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{68:\l|  %69 = load i64, ptr @rowsperstrip, align 8\l  %70 = load i64, ptr %16, align 8\l  %71 = add i64 %70, %69\l  store i64 %71, ptr %16, align 8\l  br label %72\l}"];
+	Node0x600001c48a50 -> Node0x600001c48aa0[tooltip="68 -> 72\nProbability 100.00%" ];
+	Node0x600001c48aa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{72:\l|  %73 = load i64, ptr %14, align 8\l  %74 = add i64 %73, 1\l  store i64 %74, ptr %14, align 8\l  br label %29\l}"];
+	Node0x600001c48aa0 -> Node0x600001c48780[tooltip="72 -> 29\nProbability 100.00%" ];
+	Node0x600001c48af0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{75:\l|  %76 = load ptr, ptr %13, align 8\l  call void @_TIFFfree(ptr noundef %76)\l  store i32 1, ptr %6, align 4\l  br label %78\l}"];
+	Node0x600001c48af0 -> Node0x600001c48b90[tooltip="75 -> 78\nProbability 100.00%" ];
+	Node0x600001c48b40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{77:\l|  store i32 0, ptr %6, align 4\l  br label %78\l}"];
+	Node0x600001c48b40 -> Node0x600001c48b90[tooltip="77 -> 78\nProbability 100.00%" ];
+	Node0x600001c48b90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{78:\l|  %79 = load i32, ptr %6, align 4\l  ret i32 %79\l}"];
+}

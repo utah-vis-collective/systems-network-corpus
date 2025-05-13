@@ -1,0 +1,10 @@
+digraph "CFG for 'zcalloc' function" {
+	label="CFG for 'zcalloc' function";
+
+	Node0x600001cf9fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %7 = load ptr, ptr %4, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600001cf9fe0:s0 -> Node0x600001cfa030[tooltip="3 -> 9\nProbability 62.50%" ];
+	Node0x600001cf9fe0:s1 -> Node0x600001cfa080[tooltip="3 -> 15\nProbability 37.50%" ];
+	Node0x600001cfa030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %6, align 4\l  %11 = load i32, ptr %6, align 4\l  %12 = sub i32 %10, %11\l  %13 = load i32, ptr %5, align 4\l  %14 = add i32 %13, %12\l  store i32 %14, ptr %5, align 4\l  br label %15\l}"];
+	Node0x600001cfa030 -> Node0x600001cfa080[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x600001cfa080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %5, align 4\l  %17 = zext i32 %16 to i64\l  %18 = load i32, ptr %6, align 4\l  %19 = zext i32 %18 to i64\l  %20 = call ptr @calloc(i64 noundef %17, i64 noundef %19) #3\l  ret ptr %20\l}"];
+}

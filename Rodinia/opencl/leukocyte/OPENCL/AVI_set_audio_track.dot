@@ -1,0 +1,15 @@
+digraph "CFG for 'AVI_set_audio_track' function" {
+	label="CFG for 'AVI_set_audio_track' function";
+
+	Node0x600000d48050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %5, align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %15, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600000d48050:s0 -> Node0x600000d480f0[tooltip="2 -> 15\nProbability 37.50%" ];
+	Node0x600000d48050:s1 -> Node0x600000d480a0[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x600000d480a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %5, align 4\l  %10 = add nsw i32 %9, 1\l  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.avi_t, ptr %11, i32 0, i32 24\l  %13 = load i32, ptr %12, align 8\l  %14 = icmp sgt i32 %10, %13\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000d480a0:s0 -> Node0x600000d480f0[tooltip="8 -> 15\nProbability 50.00%" ];
+	Node0x600000d480a0:s1 -> Node0x600000d48140[tooltip="8 -> 16\nProbability 50.00%" ];
+	Node0x600000d480f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  store i32 -1, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600000d480f0 -> Node0x600000d48190[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x600000d48140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %5, align 4\l  %18 = load ptr, ptr %4, align 8\l  %19 = getelementptr inbounds %struct.avi_t, ptr %18, i32 0, i32 25\l  store i32 %17, ptr %19, align 4\l  store i32 0, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600000d48140 -> Node0x600000d48190[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600000d48190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  ret i32 %21\l}"];
+}

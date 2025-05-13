@@ -1,0 +1,18 @@
+digraph "CFG for 'cgm_error_code' function" {
+	label="CFG for 'cgm_error_code' function";
+
+	Node0x6000016913b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  %4 = load i32, ptr %3, align 4\l  switch i32 %4, label %5 [\l    i32 -1, label %6\l    i32 -2, label %7\l    i32 -3, label %8\l  ]\l|{<s0>def|<s1>-1|<s2>-2|<s3>-3}}"];
+	Node0x6000016913b0:s0 -> Node0x600001691450[tooltip="1 -> 5\nProbability 25.00%" ];
+	Node0x6000016913b0:s1 -> Node0x6000016914a0[tooltip="1 -> 6\nProbability 25.00%" ];
+	Node0x6000016913b0:s2 -> Node0x6000016914f0[tooltip="1 -> 7\nProbability 25.00%" ];
+	Node0x6000016913b0:s3 -> Node0x600001691540[tooltip="1 -> 8\nProbability 25.00%" ];
+	Node0x600001691450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{5:\l|  br label %6\l}"];
+	Node0x600001691450 -> Node0x6000016914a0[tooltip="5 -> 6\nProbability 100.00%" ];
+	Node0x6000016914a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  store i32 -1, ptr %2, align 4\l  br label %9\l}"];
+	Node0x6000016914a0 -> Node0x600001691590[tooltip="6 -> 9\nProbability 100.00%" ];
+	Node0x6000016914f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{7:\l|  store i32 -15, ptr %2, align 4\l  br label %9\l}"];
+	Node0x6000016914f0 -> Node0x600001691590[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x600001691540 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{8:\l|  store i32 -12, ptr %2, align 4\l  br label %9\l}"];
+	Node0x600001691540 -> Node0x600001691590[tooltip="8 -> 9\nProbability 100.00%" ];
+	Node0x600001691590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %2, align 4\l  ret i32 %10\l}"];
+}

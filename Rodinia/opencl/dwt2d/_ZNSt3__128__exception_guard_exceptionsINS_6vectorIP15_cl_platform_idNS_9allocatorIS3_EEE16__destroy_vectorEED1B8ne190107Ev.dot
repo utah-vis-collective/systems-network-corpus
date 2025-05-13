@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__128__exception_guard_exceptionsINS_6vectorIP15_cl_platform_idNS_9allocatorIS3_EEE16__destroy_vectorEED1B8ne190107Ev' function" {
+	label="CFG for '_ZNSt3__128__exception_guard_exceptionsINS_6vectorIP15_cl_platform_idNS_9allocatorIS3_EEE16__destroy_vectorEED1B8ne190107Ev' function";
+
+	Node0x600000633c50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call noundef ptr\l... @_ZNSt3__128__exception_guard_exceptionsINS_6vectorIP15_cl_platform_idNS_9allo\l...catorIS3_EEE16__destroy_vectorEED2B8ne190107Ev(ptr noundef nonnull align 8\l... dereferenceable(9) %3) #17\l  ret ptr %3\l}"];
+}

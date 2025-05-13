@@ -1,0 +1,15 @@
+digraph "CFG for 'load' function" {
+	label="CFG for 'load' function";
+
+	Node0x600000506e40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  %10 = load ptr, ptr %5, align 8\l  %11 = load i32, ptr %6, align 4\l  %12 = trunc i32 %11 to i8\l  %13 = load ptr, ptr @no_fpos, align 8\l  %14 = load ptr, ptr %7, align 8\l  %15 = load ptr, ptr @no_fpos, align 8\l  %16 = call ptr @MakeWord(i32 noundef 11, ptr noundef @.str.12, ptr noundef\l... %15)\l  %17 = call ptr @InsertSym(ptr noundef %10, i8 noundef zeroext %12, ptr\l... noundef %13, i8 noundef zeroext 100, i32 noundef 0, i32 noundef 0, i32\l... noundef 0, ptr noundef %14, ptr noundef %16)\l  store ptr %17, ptr %9, align 8\l  %18 = load i32, ptr %6, align 4\l  %19 = icmp eq i32 %18, 145\l  br i1 %19, label %20, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600000506e40:s0 -> Node0x600000506e90[tooltip="4 -> 20\nProbability 50.00%" ];
+	Node0x600000506e40:s1 -> Node0x600000506ee0[tooltip="4 -> 27\nProbability 50.00%" ];
+	Node0x600000506e90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %9, align 8\l  %22 = getelementptr inbounds %struct.word_type, ptr %21, i32 0, i32 2\l  %23 = getelementptr inbounds %struct.anon.5, ptr %22, i32 0, i32 2\l  %24 = load i8, ptr %23, align 1\l  %25 = and i8 %24, -2\l  %26 = or i8 %25, 1\l  store i8 %26, ptr %23, align 1\l  br label %27\l}"];
+	Node0x600000506e90 -> Node0x600000506ee0[tooltip="20 -> 27\nProbability 100.00%" ];
+	Node0x600000506ee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %8, align 4\l  %29 = icmp ne i32 %28, 0\l  br i1 %29, label %30, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600000506ee0:s0 -> Node0x600000506f30[tooltip="27 -> 30\nProbability 62.50%" ];
+	Node0x600000506ee0:s1 -> Node0x600000506f80[tooltip="27 -> 40\nProbability 37.50%" ];
+	Node0x600000506f30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %7, align 8\l  %32 = getelementptr inbounds %struct.symbol_type, ptr %31, i32 0, i32 13\l  %33 = load i16, ptr %32, align 2\l  %34 = add i16 %33, 1\l  store i16 %34, ptr %32, align 2\l  %35 = load ptr, ptr %9, align 8\l  %36 = getelementptr inbounds %struct.symbol_type, ptr %35, i32 0, i32 16\l  %37 = load i8, ptr %36, align 2\l  %38 = and i8 %37, -65\l  %39 = or i8 %38, 64\l  store i8 %39, ptr %36, align 2\l  br label %40\l}"];
+	Node0x600000506f30 -> Node0x600000506f80[tooltip="30 -> 40\nProbability 100.00%" ];
+	Node0x600000506f80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %9, align 8\l  ret ptr %41\l}"];
+}

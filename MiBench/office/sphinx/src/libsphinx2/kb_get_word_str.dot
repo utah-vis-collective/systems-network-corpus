@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_word_str' function" {
+	label="CFG for 'kb_get_word_str' function";
+
+	Node0x600002a8c870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load ptr, ptr @word_dict, align 8\l  %4 = getelementptr inbounds %struct._dict, ptr %3, i32 0, i32 2\l  %5 = load ptr, ptr %4, align 8\l  %6 = load i32, ptr %2, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds ptr, ptr %5, i64 %7\l  %9 = load ptr, ptr %8, align 8\l  %10 = getelementptr inbounds %struct.dict_entry, ptr %9, i32 0, i32 0\l  %11 = load ptr, ptr %10, align 8\l  ret ptr %11\l}"];
+}

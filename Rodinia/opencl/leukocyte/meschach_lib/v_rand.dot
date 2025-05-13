@@ -1,0 +1,10 @@
+digraph "CFG for 'v_rand' function" {
+	label="CFG for 'v_rand' function";
+
+	Node0x600000611e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %7, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x600000611e50:s0 -> Node0x600000611f90[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x600000611e50:s1 -> Node0x600000611f40[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x600000611f40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  %6 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 257,\l... ptr noundef @.str.6, i32 noundef 0)\l  br label %7\l}"];
+	Node0x600000611f40 -> Node0x600000611f90[tooltip="5 -> 7\nProbability 100.00%" ];
+	Node0x600000611f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.VEC, ptr %8, i32 0, i32 2\l  %10 = load ptr, ptr %9, align 8\l  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds %struct.VEC, ptr %11, i32 0, i32 0\l  %13 = load i32, ptr %12, align 8\l  call void @mrandlist(ptr noundef %10, i32 noundef %13)\l  %14 = load ptr, ptr %2, align 8\l  ret ptr %14\l}"];
+}

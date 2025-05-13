@@ -1,0 +1,5 @@
+digraph "CFG for 'fbs_end' function" {
+	label="CFG for 'fbs_end' function";
+
+	Node0x6000031e6490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 @uttproc_end()\l  ret i32 0\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'os_get_params' function" {
+	label="CFG for 'os_get_params' function";
+
+	Node0x60000199e710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 1, ptr %7, align 4\l  %8 = load ptr, ptr %5, align 8\l  %9 = getelementptr inbounds %struct.gs_param_list_s, ptr %8, i32 0, i32 0\l  %10 = load ptr, ptr %9, align 8\l  %11 = getelementptr inbounds %struct.gs_param_list_procs_s, ptr %10, i32 0,\l... i32 1\l  %12 = load ptr, ptr %11, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = call i32 %12(ptr noundef %13, ptr noundef @.str.3, ptr noundef %7)\l  store i32 %14, ptr %6, align 4\l  %15 = icmp slt i32 %14, 0\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000199e710:s0 -> Node0x60000199e760[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x60000199e710:s1 -> Node0x60000199e7b0[tooltip="2 -> 18\nProbability 62.50%" ];
+	Node0x60000199e760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %6, align 4\l  store i32 %17, ptr %3, align 4\l  br label %19\l}"];
+	Node0x60000199e760 -> Node0x60000199e800[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x60000199e7b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  store i32 0, ptr %3, align 4\l  br label %19\l}"];
+	Node0x60000199e7b0 -> Node0x60000199e800[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x60000199e800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %3, align 4\l  ret i32 %20\l}"];
+}

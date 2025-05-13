@@ -1,0 +1,12 @@
+digraph "CFG for 'TIFFWriteTile' function" {
+	label="CFG for 'TIFFWriteTile' function";
+
+	Node0x6000024389b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca i64, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca i64, align 8\l  %11 = alloca i64, align 8\l  %12 = alloca i64, align 8\l  %13 = alloca i16, align 2\l  store ptr %0, ptr %8, align 8\l  store ptr %1, ptr %9, align 8\l  store i64 %2, ptr %10, align 8\l  store i64 %3, ptr %11, align 8\l  store i64 %4, ptr %12, align 8\l  store i16 %5, ptr %13, align 2\l  %14 = load ptr, ptr %8, align 8\l  %15 = load i64, ptr %10, align 8\l  %16 = load i64, ptr %11, align 8\l  %17 = load i64, ptr %12, align 8\l  %18 = load i16, ptr %13, align 2\l  %19 = call i32 @TIFFCheckTile(ptr noundef %14, i64 noundef %15, i64 noundef\l... %16, i64 noundef %17, i16 noundef zeroext %18)\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %22, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000024389b0:s0 -> Node0x600002438a50[tooltip="6 -> 22\nProbability 62.50%" ];
+	Node0x6000024389b0:s1 -> Node0x600002438a00[tooltip="6 -> 21\nProbability 37.50%" ];
+	Node0x600002438a00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{21:\l|  store i64 -1, ptr %7, align 8\l  br label %32\l}"];
+	Node0x600002438a00 -> Node0x600002438aa0[tooltip="21 -> 32\nProbability 100.00%" ];
+	Node0x600002438a50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %8, align 8\l  %24 = load ptr, ptr %8, align 8\l  %25 = load i64, ptr %10, align 8\l  %26 = load i64, ptr %11, align 8\l  %27 = load i64, ptr %12, align 8\l  %28 = load i16, ptr %13, align 2\l  %29 = call i64 @TIFFComputeTile(ptr noundef %24, i64 noundef %25, i64\l... noundef %26, i64 noundef %27, i16 noundef zeroext %28)\l  %30 = load ptr, ptr %9, align 8\l  %31 = call i64 @TIFFWriteEncodedTile(ptr noundef %23, i64 noundef %29, ptr\l... noundef %30, i64 noundef -1)\l  store i64 %31, ptr %7, align 8\l  br label %32\l}"];
+	Node0x600002438a50 -> Node0x600002438aa0[tooltip="22 -> 32\nProbability 100.00%" ];
+	Node0x600002438aa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i64, ptr %7, align 8\l  ret i64 %33\l}"];
+}

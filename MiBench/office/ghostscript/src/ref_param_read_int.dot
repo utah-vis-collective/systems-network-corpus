@@ -1,0 +1,12 @@
+digraph "CFG for 'ref_param_read_int' function" {
+	label="CFG for 'ref_param_read_int' function";
+
+	Node0x6000017a9720 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca %struct.iparam_loc_s, align 8\l  %9 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %10 = load ptr, ptr %5, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = call i32 @ref_param_read(ptr noundef %10, ptr noundef %11, ptr noundef\l... %8, i32 noundef 11)\l  store i32 %12, ptr %9, align 4\l  %13 = load i32, ptr %9, align 4\l  %14 = icmp ne i32 %13, 0\l  br i1 %14, label %15, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000017a9720:s0 -> Node0x6000017a9770[tooltip="3 -> 15\nProbability 62.50%" ];
+	Node0x6000017a9720:s1 -> Node0x6000017a97c0[tooltip="3 -> 17\nProbability 37.50%" ];
+	Node0x6000017a9770 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %9, align 4\l  store i32 %16, ptr %4, align 4\l  br label %24\l}"];
+	Node0x6000017a9770 -> Node0x6000017a9810[tooltip="15 -> 24\nProbability 100.00%" ];
+	Node0x6000017a97c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = getelementptr inbounds %struct.iparam_loc_s, ptr %8, i32 0, i32 0\l  %19 = load ptr, ptr %18, align 8\l  %20 = getelementptr inbounds %struct.ref_s, ptr %19, i32 0, i32 1\l  %21 = load i64, ptr %20, align 8\l  %22 = trunc i64 %21 to i32\l  %23 = load ptr, ptr %7, align 8\l  store i32 %22, ptr %23, align 4\l  store i32 0, ptr %4, align 4\l  br label %24\l}"];
+	Node0x6000017a97c0 -> Node0x6000017a9810[tooltip="17 -> 24\nProbability 100.00%" ];
+	Node0x6000017a9810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %4, align 4\l  ret i32 %25\l}"];
+}

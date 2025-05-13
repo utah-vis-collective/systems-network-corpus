@@ -1,0 +1,5 @@
+digraph "CFG for 'new_list' function" {
+	label="CFG for 'new_list' function";
+
+	Node0x600001c76170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call ptr @calloc(i64 noundef 1, i64 noundef 24) #7\l  ret ptr %1\l}"];
+}

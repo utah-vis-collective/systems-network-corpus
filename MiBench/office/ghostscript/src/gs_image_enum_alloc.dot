@@ -1,0 +1,10 @@
+digraph "CFG for 'gs_image_enum_alloc' function" {
+	label="CFG for 'gs_image_enum_alloc' function";
+
+	Node0x6000035aa080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.gs_memory_s, ptr %6, i32 0, i32 0\l  %8 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %7, i32 0, i32 2\l  %9 = load ptr, ptr %8, align 8\l  %10 = load ptr, ptr %3, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = call ptr %9(ptr noundef %10, ptr noundef @st_gs_image_enum, ptr\l... noundef %11)\l  store ptr %12, ptr %5, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = icmp ne ptr %13, null\l  br i1 %14, label %15, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000035aa080:s0 -> Node0x6000035aa0d0[tooltip="2 -> 15\nProbability 62.50%" ];
+	Node0x6000035aa080:s1 -> Node0x6000035aa120[tooltip="2 -> 20\nProbability 37.50%" ];
+	Node0x6000035aa0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %3, align 8\l  %17 = load ptr, ptr %5, align 8\l  %18 = getelementptr inbounds %struct.gs_image_enum_s, ptr %17, i32 0, i32 0\l  store ptr %16, ptr %18, align 8\l  %19 = load ptr, ptr %5, align 8\l  call void @image_enum_init(ptr noundef %19)\l  br label %20\l}"];
+	Node0x6000035aa0d0 -> Node0x6000035aa120[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x6000035aa120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %5, align 8\l  ret ptr %21\l}"];
+}

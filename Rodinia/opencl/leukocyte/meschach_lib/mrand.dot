@@ -1,0 +1,29 @@
+digraph "CFG for 'mrand' function" {
+	label="CFG for 'mrand' function";
+
+	Node0x600000611220 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i64, align 8\l  %2 = load i32, ptr @started, align 4\l  %3 = icmp ne i32 %2, 0\l  br i1 %3, label %5, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x600000611220:s0 -> Node0x6000006112c0[tooltip="0 -> 5\nProbability 62.50%" ];
+	Node0x600000611220:s1 -> Node0x600000611270[tooltip="0 -> 4\nProbability 37.50%" ];
+	Node0x600000611270 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{4:\l|  call void @smrand(i32 noundef 3127)\l  br label %5\l}"];
+	Node0x600000611270 -> Node0x6000006112c0[tooltip="4 -> 5\nProbability 100.00%" ];
+	Node0x6000006112c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr @inext, align 4\l  %7 = icmp sge i32 %6, 54\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000006112c0:s0 -> Node0x600000611310[tooltip="5 -> 8\nProbability 50.00%" ];
+	Node0x6000006112c0:s1 -> Node0x600000611360[tooltip="5 -> 9\nProbability 50.00%" ];
+	Node0x600000611310 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  br label %12\l}"];
+	Node0x600000611310 -> Node0x6000006113b0[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x600000611360 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr @inext, align 4\l  %11 = add nsw i32 %10, 1\l  br label %12\l}"];
+	Node0x600000611360 -> Node0x6000006113b0[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x6000006113b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = phi i32 [ 0, %8 ], [ %11, %9 ]\l  store i32 %13, ptr @inext, align 4\l  %14 = load i32, ptr @inextp, align 4\l  %15 = icmp sge i32 %14, 54\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000006113b0:s0 -> Node0x600000611400[tooltip="12 -> 16\nProbability 50.00%" ];
+	Node0x6000006113b0:s1 -> Node0x600000611450[tooltip="12 -> 17\nProbability 50.00%" ];
+	Node0x600000611400 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  br label %20\l}"];
+	Node0x600000611400 -> Node0x6000006114a0[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600000611450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load i32, ptr @inextp, align 4\l  %19 = add nsw i32 %18, 1\l  br label %20\l}"];
+	Node0x600000611450 -> Node0x6000006114a0[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x6000006114a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = phi i32 [ 0, %16 ], [ %19, %17 ]\l  store i32 %21, ptr @inextp, align 4\l  %22 = load i32, ptr @inext, align 4\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds [56 x i64], ptr @mrand_list, i64 0, i64 %23\l  %25 = load i64, ptr %24, align 8\l  %26 = load i32, ptr @inextp, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds [56 x i64], ptr @mrand_list, i64 0, i64 %27\l  %29 = load i64, ptr %28, align 8\l  %30 = sub nsw i64 %25, %29\l  store i64 %30, ptr %1, align 8\l  %31 = load i64, ptr %1, align 8\l  %32 = icmp slt i64 %31, 0\l  br i1 %32, label %33, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x6000006114a0:s0 -> Node0x6000006114f0[tooltip="20 -> 33\nProbability 37.50%" ];
+	Node0x6000006114a0:s1 -> Node0x600000611540[tooltip="20 -> 36\nProbability 62.50%" ];
+	Node0x6000006114f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{33:\l|  %34 = load i64, ptr %1, align 8\l  %35 = add nsw i64 %34, 9223372036854775807\l  store i64 %35, ptr %1, align 8\l  br label %36\l}"];
+	Node0x6000006114f0 -> Node0x600000611540[tooltip="33 -> 36\nProbability 100.00%" ];
+	Node0x600000611540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i64, ptr %1, align 8\l  %38 = load i32, ptr @inext, align 4\l  %39 = sext i32 %38 to i64\l  %40 = getelementptr inbounds [56 x i64], ptr @mrand_list, i64 0, i64 %39\l  store i64 %37, ptr %40, align 8\l  %41 = load i64, ptr %1, align 8\l  %42 = sitofp i64 %41 to double\l  %43 = load double, ptr @mrand.factor, align 8\l  %44 = fmul double %42, %43\l  ret double %44\l}"];
+}

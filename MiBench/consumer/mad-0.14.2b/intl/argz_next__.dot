@@ -1,0 +1,29 @@
+digraph "CFG for 'argz_next__' function" {
+	label="CFG for 'argz_next__' function";
+
+	Node0x600000a501e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i64 %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %8 = load ptr, ptr %7, align 8\l  %9 = icmp ne ptr %8, null\l  br i1 %9, label %10, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600000a501e0:s0 -> Node0x600000a50230[tooltip="3 -> 10\nProbability 62.50%" ];
+	Node0x600000a501e0:s1 -> Node0x600000a50410[tooltip="3 -> 31\nProbability 37.50%" ];
+	Node0x600000a50230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %7, align 8\l  %12 = load ptr, ptr %5, align 8\l  %13 = load i64, ptr %6, align 8\l  %14 = getelementptr inbounds i8, ptr %12, i64 %13\l  %15 = icmp ult ptr %11, %14\l  br i1 %15, label %16, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600000a50230:s0 -> Node0x600000a50280[tooltip="10 -> 16\nProbability 50.00%" ];
+	Node0x600000a50230:s1 -> Node0x600000a502d0[tooltip="10 -> 20\nProbability 50.00%" ];
+	Node0x600000a50280 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %7, align 8\l  %18 = call ptr @index(ptr noundef %17, i32 noundef 0) #6\l  %19 = getelementptr inbounds i8, ptr %18, i64 1\l  store ptr %19, ptr %7, align 8\l  br label %20\l}"];
+	Node0x600000a50280 -> Node0x600000a502d0[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600000a502d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %7, align 8\l  %22 = load ptr, ptr %5, align 8\l  %23 = load i64, ptr %6, align 8\l  %24 = getelementptr inbounds i8, ptr %22, i64 %23\l  %25 = icmp uge ptr %21, %24\l  br i1 %25, label %26, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600000a502d0:s0 -> Node0x600000a50320[tooltip="20 -> 26\nProbability 50.00%" ];
+	Node0x600000a502d0:s1 -> Node0x600000a50370[tooltip="20 -> 27\nProbability 50.00%" ];
+	Node0x600000a50320 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  br label %29\l}"];
+	Node0x600000a50320 -> Node0x600000a503c0[tooltip="26 -> 29\nProbability 100.00%" ];
+	Node0x600000a50370 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %7, align 8\l  br label %29\l}"];
+	Node0x600000a50370 -> Node0x600000a503c0[tooltip="27 -> 29\nProbability 100.00%" ];
+	Node0x600000a503c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  %30 = phi ptr [ null, %26 ], [ %28, %27 ]\l  store ptr %30, ptr %4, align 8\l  br label %37\l}"];
+	Node0x600000a503c0 -> Node0x600000a50500[tooltip="29 -> 37\nProbability 100.00%" ];
+	Node0x600000a50410 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{31:\l|  %32 = load i64, ptr %6, align 8\l  %33 = icmp ugt i64 %32, 0\l  br i1 %33, label %34, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x600000a50410:s0 -> Node0x600000a50460[tooltip="31 -> 34\nProbability 50.00%" ];
+	Node0x600000a50410:s1 -> Node0x600000a504b0[tooltip="31 -> 36\nProbability 50.00%" ];
+	Node0x600000a50460 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %5, align 8\l  store ptr %35, ptr %4, align 8\l  br label %37\l}"];
+	Node0x600000a50460 -> Node0x600000a50500[tooltip="34 -> 37\nProbability 100.00%" ];
+	Node0x600000a504b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{36:\l|  store ptr null, ptr %4, align 8\l  br label %37\l}"];
+	Node0x600000a504b0 -> Node0x600000a50500[tooltip="36 -> 37\nProbability 100.00%" ];
+	Node0x600000a50500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %4, align 8\l  ret ptr %38\l}"];
+}

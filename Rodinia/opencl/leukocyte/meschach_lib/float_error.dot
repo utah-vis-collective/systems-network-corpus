@@ -1,0 +1,5 @@
+digraph "CFG for 'float_error' function" {
+	label="CFG for 'float_error' function";
+
+	Node0x600001be8730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = call ptr @signal(i32 noundef 8, ptr noundef @float_error)\l  %4 = call i32 @ev_err(ptr noundef @.str.41, i32 noundef 16, i32 noundef 0,\l... ptr noundef @.str.9, i32 noundef 0)\l  ret void\l}"];
+}

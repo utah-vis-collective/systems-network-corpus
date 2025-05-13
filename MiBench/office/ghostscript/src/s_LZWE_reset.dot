@@ -1,0 +1,5 @@
+digraph "CFG for 's_LZWE_reset' function" {
+	label="CFG for 's_LZWE_reset' function";
+
+	Node0x600003755e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.stream_LZW_state_s, ptr %3, i32 0, i32 3\l  %5 = load i32, ptr %4, align 8\l  %6 = add nsw i32 %5, 1\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.stream_LZW_state_s, ptr %7, i32 0, i32 12\l  store i32 %6, ptr %8, align 4\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.stream_LZW_state_s, ptr %9, i32 0, i32 8\l  store i32 8, ptr %10, align 4\l  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds %struct.stream_LZW_state_s, ptr %11, i32 0, i32\l... 3\l  %13 = load i32, ptr %12, align 8\l  %14 = shl i32 1, %13\l  %15 = add nsw i32 %14, 2\l  %16 = load ptr, ptr %2, align 8\l  %17 = getelementptr inbounds %struct.stream_LZW_state_s, ptr %16, i32 0, i32\l... 11\l  store i32 %15, ptr %17, align 8\l  ret i32 0\l}"];
+}

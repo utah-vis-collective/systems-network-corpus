@@ -1,0 +1,5 @@
+digraph "CFG for 'BodyParAllowed' function" {
+	label="CFG for 'BodyParAllowed' function";
+
+	Node0x60000037eda0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @scope_top, align 4\l  %2 = sub nsw i32 %1, 1\l  %3 = sext i32 %2 to i64\l  %4 = getelementptr inbounds [300 x i32], ptr @body_ok, i64 0, i64 %3\l  store i32 1, ptr %4, align 4\l  ret void\l}"];
+}

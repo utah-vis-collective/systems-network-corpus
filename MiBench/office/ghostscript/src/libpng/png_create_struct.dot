@@ -1,0 +1,26 @@
+digraph "CFG for 'png_create_struct' function" {
+	label="CFG for 'png_create_struct' function";
+
+	Node0x600001a520d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i64, align 8\l  %5 = alloca ptr, align 8\l  store i32 %0, ptr %3, align 4\l  %6 = load i32, ptr %3, align 4\l  %7 = icmp eq i32 %6, 2\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600001a520d0:s0 -> Node0x600001a52120[tooltip="1 -> 8\nProbability 50.00%" ];
+	Node0x600001a520d0:s1 -> Node0x600001a52170[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x600001a52120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  store i64 208, ptr %4, align 8\l  br label %15\l}"];
+	Node0x600001a52120 -> Node0x600001a522b0[tooltip="8 -> 15\nProbability 100.00%" ];
+	Node0x600001a52170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %3, align 4\l  %11 = icmp eq i32 %10, 1\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52170:s0 -> Node0x600001a521c0[tooltip="9 -> 12\nProbability 50.00%" ];
+	Node0x600001a52170:s1 -> Node0x600001a52210[tooltip="9 -> 13\nProbability 50.00%" ];
+	Node0x600001a521c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{12:\l|  store i64 824, ptr %4, align 8\l  br label %14\l}"];
+	Node0x600001a521c0 -> Node0x600001a52260[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x600001a52210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  store ptr null, ptr %2, align 8\l  br label %27\l}"];
+	Node0x600001a52210 -> Node0x600001a523a0[tooltip="13 -> 27\nProbability 100.00%" ];
+	Node0x600001a52260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x600001a52260 -> Node0x600001a522b0[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x600001a522b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load i64, ptr %4, align 8\l  %17 = call ptr @malloc(i64 noundef %16) #6\l  store ptr %17, ptr %5, align 8\l  %18 = icmp ne ptr %17, null\l  br i1 %18, label %19, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600001a522b0:s0 -> Node0x600001a52300[tooltip="15 -> 19\nProbability 62.50%" ];
+	Node0x600001a522b0:s1 -> Node0x600001a52350[tooltip="15 -> 25\nProbability 37.50%" ];
+	Node0x600001a52300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %5, align 8\l  %21 = load i64, ptr %4, align 8\l  %22 = load ptr, ptr %5, align 8\l  %23 = call i64 @llvm.objectsize.i64.p0(ptr %22, i1 false, i1 true, i1 false)\l  %24 = call ptr @__memset_chk(ptr noundef %20, i32 noundef 0, i64 noundef\l... %21, i64 noundef %23) #7\l  br label %25\l}"];
+	Node0x600001a52300 -> Node0x600001a52350[tooltip="19 -> 25\nProbability 100.00%" ];
+	Node0x600001a52350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %5, align 8\l  store ptr %26, ptr %2, align 8\l  br label %27\l}"];
+	Node0x600001a52350 -> Node0x600001a523a0[tooltip="25 -> 27\nProbability 100.00%" ];
+	Node0x600001a523a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %2, align 8\l  ret ptr %28\l}"];
+}

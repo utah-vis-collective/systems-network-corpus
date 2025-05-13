@@ -1,0 +1,17 @@
+digraph "CFG for 'string_length' function" {
+	label="CFG for 'string_length' function";
+
+	Node0x600000306850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  store i32 0, ptr %3, align 4\l  %4 = load ptr, ptr %2, align 8\l  %5 = icmp ne ptr %4, null\l  br i1 %5, label %6, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000306850:s0 -> Node0x6000003068a0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x600000306850:s1 -> Node0x6000003069e0[tooltip="1 -> 16\nProbability 37.50%" ];
+	Node0x6000003068a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{6:\l|  br label %7\l}"];
+	Node0x6000003068a0 -> Node0x6000003068f0[tooltip="6 -> 7\nProbability 100.00%" ];
+	Node0x6000003068f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds i8, ptr %8, i32 1\l  store ptr %9, ptr %2, align 8\l  %10 = load i8, ptr %8, align 1\l  %11 = icmp ne i8 %10, 0\l  br i1 %11, label %12, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000003068f0:s0 -> Node0x600000306940[tooltip="7 -> 12\nProbability 96.88%" ];
+	Node0x6000003068f0:s1 -> Node0x600000306990[tooltip="7 -> 15\nProbability 3.12%" ];
+	Node0x600000306940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %3, align 4\l  %14 = add nsw i32 %13, 1\l  store i32 %14, ptr %3, align 4\l  br label %7\l}"];
+	Node0x600000306940 -> Node0x6000003068f0[tooltip="12 -> 7\nProbability 100.00%" ];
+	Node0x600000306990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{15:\l|  br label %16\l}"];
+	Node0x600000306990 -> Node0x6000003069e0[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x6000003069e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %3, align 4\l  ret i32 %17\l}"];
+}

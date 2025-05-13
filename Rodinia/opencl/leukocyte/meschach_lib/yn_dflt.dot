@@ -1,0 +1,5 @@
+digraph "CFG for 'yn_dflt' function" {
+	label="CFG for 'yn_dflt' function";
+
+	Node0x6000035c6530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  store i32 %3, ptr @y_n_dflt, align 4\l  ret i32 %3\l}"];
+}

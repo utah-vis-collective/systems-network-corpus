@@ -1,0 +1,24 @@
+digraph "CFG for '__cxx_global_var_init.1' function" {
+	label="CFG for '__cxx_global_var_init.1' function";
+
+	Node0x6000005d0eb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr @kernel_names, ptr %1, align 8\l  %4 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) @kernel_names, ptr\l... noundef @.str)\l          to label %5 unwind label %9\l}"];
+	Node0x6000005d0eb0 -> Node0x6000005d0f00[tooltip="0 -> 5\nProbability 100.00%" ];
+	Node0x6000005d0eb0 -> Node0x6000005d0fa0[tooltip="0 -> 9\nProbability 0.00%" ];
+	Node0x6000005d0f00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  store ptr getelementptr inbounds (%\"class.std::__1::basic_string\", ptr\l... @kernel_names, i64 1), ptr %1, align 8\l  %6 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) getelementptr\l... inbounds (%\"class.std::__1::basic_string\", ptr @kernel_names, i64 1), ptr\l... noundef @.str.2)\l          to label %7 unwind label %9\l}"];
+	Node0x6000005d0f00 -> Node0x6000005d0f50[tooltip="5 -> 7\nProbability 100.00%" ];
+	Node0x6000005d0f00 -> Node0x6000005d0fa0[tooltip="5 -> 9\nProbability 0.00%" ];
+	Node0x6000005d0f50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = call i32 @__cxa_atexit(ptr @__cxx_global_array_dtor, ptr null, ptr\l... @__dso_handle) #2\l  ret void\l}"];
+	Node0x6000005d0fa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6bfa670" fontname="Courier",label="{9:\l|  %10 = landingpad \{ ptr, i32 \}\l          cleanup\l  %11 = extractvalue \{ ptr, i32 \} %10, 0\l  store ptr %11, ptr %2, align 8\l  %12 = extractvalue \{ ptr, i32 \} %10, 1\l  store i32 %12, ptr %3, align 4\l  %13 = load ptr, ptr %1, align 8\l  %14 = icmp eq ptr @kernel_names, %13\l  br i1 %14, label %22, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000005d0fa0:s0 -> Node0x6000005d10e0[tooltip="9 -> 22\nProbability 37.50%" ];
+	Node0x6000005d0fa0:s1 -> Node0x6000005d0ff0[tooltip="9 -> 15\nProbability 62.50%" ];
+	Node0x6000005d0ff0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f5c1a970" fontname="Courier",label="{15:\l|  br label %16\l}"];
+	Node0x6000005d0ff0 -> Node0x6000005d1040[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x6000005d1040 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6a38570" fontname="Courier",label="{16:\l|  %17 = phi ptr [ %18, %16 ], [ %13, %15 ]\l  %18 = getelementptr inbounds %\"class.std::__1::basic_string\", ptr %17, i64 -1\l  %19 = call noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(ptr\l... noundef nonnull align 8 dereferenceable(24) %18) #2\l  %20 = icmp eq ptr %18, @kernel_names\l  br i1 %20, label %21, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000005d1040:s0 -> Node0x6000005d1090[tooltip="16 -> 21\nProbability 3.12%" ];
+	Node0x6000005d1040:s1 -> Node0x6000005d1040[tooltip="16 -> 16\nProbability 96.88%" ];
+	Node0x6000005d1090 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f5c1a970" fontname="Courier",label="{21:\l|  br label %22\l}"];
+	Node0x6000005d1090 -> Node0x6000005d10e0[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x6000005d10e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6bfa670" fontname="Courier",label="{22:\l|  br label %23\l}"];
+	Node0x6000005d10e0 -> Node0x6000005d1130[tooltip="22 -> 23\nProbability 100.00%" ];
+	Node0x6000005d1130 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6bfa670" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %2, align 8\l  %25 = load i32, ptr %3, align 4\l  %26 = insertvalue \{ ptr, i32 \} poison, ptr %24, 0\l  %27 = insertvalue \{ ptr, i32 \} %26, i32 %25, 1\l  resume \{ ptr, i32 \} %27\l}"];
+}

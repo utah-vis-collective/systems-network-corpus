@@ -1,0 +1,5 @@
+digraph "CFG for '_Z16writeNStage2DDWTIfEiPT_iiiPKcS3_' function" {
+	label="CFG for '_Z16writeNStage2DDWTIfEiPT_iiiPKcS3_' function";
+
+	Node0x600002ec27b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  store ptr %0, ptr %7, align 8\l  store i32 %1, ptr %8, align 4\l  store i32 %2, ptr %9, align 4\l  store i32 %3, ptr %10, align 4\l  store ptr %4, ptr %11, align 8\l  store ptr %5, ptr %12, align 8\l  call void @llvm.trap()\l  unreachable\l}"];
+}

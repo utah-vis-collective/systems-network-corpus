@@ -1,0 +1,13 @@
+digraph "CFG for 'buildfilename' function" {
+	label="CFG for 'buildfilename' function";
+
+	Node0x600001970000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store ptr @.str.4, ptr %5, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds i8, ptr %6, i64 0\l  store i8 0, ptr %7, align 1\l  %8 = load ptr, ptr %5, align 8\l  %9 = icmp ne ptr %8, null\l  br i1 %9, label %10, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001970000:s0 -> Node0x600001970050[tooltip="2 -> 10\nProbability 62.50%" ];
+	Node0x600001970000:s1 -> Node0x6000019700f0[tooltip="2 -> 20\nProbability 37.50%" ];
+	Node0x600001970050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %5, align 8\l  %12 = call i64 @strlen(ptr noundef %11) #8\l  %13 = icmp ule i64 %12, 50\l  br i1 %13, label %14, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001970050:s0 -> Node0x6000019700a0[tooltip="10 -> 14\nProbability 50.00%" ];
+	Node0x600001970050:s1 -> Node0x6000019700f0[tooltip="10 -> 20\nProbability 50.00%" ];
+	Node0x6000019700a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = load ptr, ptr %5, align 8\l  %17 = load ptr, ptr %3, align 8\l  %18 = call i64 @llvm.objectsize.i64.p0(ptr %17, i1 false, i1 true, i1 false)\l  %19 = call ptr @__strcpy_chk(ptr noundef %15, ptr noundef %16, i64 noundef\l... %18) #8\l  br label %20\l}"];
+	Node0x6000019700a0 -> Node0x6000019700f0[tooltip="14 -> 20\nProbability 100.00%" ];
+	Node0x6000019700f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %3, align 8\l  call void @addslash(ptr noundef %21)\l  %22 = load ptr, ptr %3, align 8\l  %23 = load ptr, ptr %4, align 8\l  %24 = load ptr, ptr %3, align 8\l  %25 = call i64 @llvm.objectsize.i64.p0(ptr %24, i1 false, i1 true, i1 false)\l  %26 = call ptr @__strcat_chk(ptr noundef %22, ptr noundef %23, i64 noundef\l... %25) #8\l  %27 = load ptr, ptr %3, align 8\l  ret ptr %27\l}"];
+}

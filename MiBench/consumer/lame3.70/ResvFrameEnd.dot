@@ -1,0 +1,23 @@
+digraph "CFG for 'ResvFrameEnd' function" {
+	label="CFG for 'ResvFrameEnd' function";
+
+	Node0x600003522850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.lame_global_flags, ptr %9, i32 0, i32 46\l  %11 = load i32, ptr %10, align 4\l  %12 = icmp eq i32 %11, 2\l  br i1 %12, label %13, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600003522850:s0 -> Node0x6000035228a0[tooltip="3 -> 13\nProbability 50.00%" ];
+	Node0x600003522850:s1 -> Node0x600003522940[tooltip="3 -> 20\nProbability 50.00%" ];
+	Node0x6000035228a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %6, align 4\l  %15 = and i32 %14, 1\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000035228a0:s0 -> Node0x6000035228f0[tooltip="13 -> 17\nProbability 50.00%" ];
+	Node0x6000035228a0:s1 -> Node0x600003522940[tooltip="13 -> 20\nProbability 50.00%" ];
+	Node0x6000035228f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load i32, ptr @ResvSize, align 4\l  %19 = add nsw i32 %18, 1\l  store i32 %19, ptr @ResvSize, align 4\l  br label %20\l}"];
+	Node0x6000035228f0 -> Node0x600003522940[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x600003522940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr @ResvSize, align 4\l  %22 = load i32, ptr @ResvMax, align 4\l  %23 = sub nsw i32 %21, %22\l  store i32 %23, ptr %8, align 4\l  %24 = load i32, ptr %8, align 4\l  %25 = icmp slt i32 %24, 0\l  br i1 %25, label %26, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600003522940:s0 -> Node0x600003522990[tooltip="20 -> 26\nProbability 37.50%" ];
+	Node0x600003522940:s1 -> Node0x6000035229e0[tooltip="20 -> 27\nProbability 62.50%" ];
+	Node0x600003522990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  store i32 0, ptr %8, align 4\l  br label %27\l}"];
+	Node0x600003522990 -> Node0x6000035229e0[tooltip="26 -> 27\nProbability 100.00%" ];
+	Node0x6000035229e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %8, align 4\l  %29 = load i32, ptr @ResvSize, align 4\l  %30 = sub nsw i32 %29, %28\l  store i32 %30, ptr @ResvSize, align 4\l  %31 = load i32, ptr %8, align 4\l  store i32 %31, ptr %7, align 4\l  %32 = load i32, ptr @ResvSize, align 4\l  %33 = srem i32 %32, 8\l  store i32 %33, ptr %8, align 4\l  %34 = icmp ne i32 %33, 0\l  br i1 %34, label %35, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x6000035229e0:s0 -> Node0x600003522a30[tooltip="27 -> 35\nProbability 62.50%" ];
+	Node0x6000035229e0:s1 -> Node0x600003522a80[tooltip="27 -> 42\nProbability 37.50%" ];
+	Node0x600003522a30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %8, align 4\l  %37 = load i32, ptr %7, align 4\l  %38 = add nsw i32 %37, %36\l  store i32 %38, ptr %7, align 4\l  %39 = load i32, ptr %8, align 4\l  %40 = load i32, ptr @ResvSize, align 4\l  %41 = sub nsw i32 %40, %39\l  store i32 %41, ptr @ResvSize, align 4\l  br label %42\l}"];
+	Node0x600003522a30 -> Node0x600003522a80[tooltip="35 -> 42\nProbability 100.00%" ];
+	Node0x600003522a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{42:\l|  %43 = load i32, ptr %7, align 4\l  %44 = load ptr, ptr %5, align 8\l  %45 = getelementptr inbounds %struct.III_side_info_t, ptr %44, i32 0, i32 2\l  store i32 %43, ptr %45, align 8\l  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'Usage' function" {
+	label="CFG for 'Usage' function";
+
+	Node0x600001f94050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @__stderrp, align 8\l  %2 = load ptr, ptr @programName, align 8\l  %3 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %1, ptr noundef @.str.3,\l... ptr noundef %2) #6\l  call void @exit(i32 noundef 0) #7\l  unreachable\l}"];
+}

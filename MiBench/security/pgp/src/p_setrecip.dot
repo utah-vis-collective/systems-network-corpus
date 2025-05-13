@@ -1,0 +1,5 @@
+digraph "CFG for 'p_setrecip' function" {
+	label="CFG for 'p_setrecip' function";
+
+	Node0x6000015b5400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i16, align 2\l  %5 = alloca i16, align 2\l  %6 = alloca i32, align 4\l  store i16 %0, ptr %4, align 2\l  store i16 %1, ptr %5, align 2\l  store i32 %2, ptr %6, align 4\l  %7 = load i16, ptr %4, align 2\l  store i16 %7, ptr @reciph, align 2\l  %8 = load i16, ptr %5, align 2\l  store i16 %8, ptr @recipl, align 2\l  %9 = load i32, ptr %6, align 4\l  store i32 %9, ptr @mshift, align 4\l  ret void\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 'Read16BitsLowHigh' function" {
+	label="CFG for 'Read16BitsLowHigh' function";
+
+	Node0x600003e0a490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = call i32 @getc(ptr noundef %6)\l  %8 = and i32 255, %7\l  store i32 %8, ptr %3, align 4\l  %9 = load ptr, ptr %2, align 8\l  %10 = call i32 @getc(ptr noundef %9)\l  %11 = and i32 255, %10\l  store i32 %11, ptr %4, align 4\l  %12 = load i32, ptr %4, align 4\l  %13 = shl i32 %12, 8\l  %14 = load i32, ptr %3, align 4\l  %15 = add nsw i32 %13, %14\l  store i32 %15, ptr %5, align 4\l  %16 = load i32, ptr %5, align 4\l  %17 = and i32 %16, 32768\l  %18 = icmp ne i32 %17, 0\l  br i1 %18, label %19, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600003e0a490:s0 -> Node0x600003e0a4e0[tooltip="1 -> 19\nProbability 50.00%" ];
+	Node0x600003e0a490:s1 -> Node0x600003e0a530[tooltip="1 -> 22\nProbability 50.00%" ];
+	Node0x600003e0a4e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %5, align 4\l  %21 = sub nsw i32 %20, 65536\l  store i32 %21, ptr %5, align 4\l  br label %22\l}"];
+	Node0x600003e0a4e0 -> Node0x600003e0a530[tooltip="19 -> 22\nProbability 100.00%" ];
+	Node0x600003e0a530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %5, align 4\l  ret i32 %23\l}"];
+}

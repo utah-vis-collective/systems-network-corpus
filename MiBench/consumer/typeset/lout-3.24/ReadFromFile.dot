@@ -1,0 +1,18 @@
+digraph "CFG for 'ReadFromFile' function" {
+	label="CFG for 'ReadFromFile' function";
+
+	Node0x600003195a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i16, align 2\l  %5 = alloca i64, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store i16 %0, ptr %4, align 2\l  store i64 %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %9 = load i16, ptr %4, align 2\l  %10 = load i64, ptr %5, align 8\l  %11 = trunc i64 %10 to i32\l  %12 = load i32, ptr %6, align 4\l  call void @LexPush(i16 noundef zeroext %9, i32 noundef %11, i32 noundef 3,\l... i32 noundef %12, i32 noundef 0)\l  %13 = call ptr @LexGetToken()\l  store ptr %13, ptr %7, align 8\l  %14 = load ptr, ptr %7, align 8\l  %15 = getelementptr inbounds %struct.word_type, ptr %14, i32 0, i32 1\l  %16 = getelementptr inbounds %struct.anon, ptr %15, i32 0, i32 0\l  %17 = load i8, ptr %16, align 8\l  %18 = zext i8 %17 to i32\l  %19 = icmp ne i32 %18, 102\l  br i1 %19, label %20, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600003195a90:s0 -> Node0x600003195ae0[tooltip="3 -> 20\nProbability 50.00%" ];
+	Node0x600003195a90:s1 -> Node0x600003195b30[tooltip="3 -> 24\nProbability 50.00%" ];
+	Node0x600003195ae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %7, align 8\l  %22 = getelementptr inbounds %struct.word_type, ptr %21, i32 0, i32 1\l  %23 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 41, i32\l... noundef 1, ptr noundef @.str, i32 noundef 1, ptr noundef %22)\l  br label %24\l}"];
+	Node0x600003195ae0 -> Node0x600003195b30[tooltip="20 -> 24\nProbability 100.00%" ];
+	Node0x600003195b30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr @StartSym, align 8\l  %26 = call ptr @Parse(ptr noundef %7, ptr noundef %25, i32 noundef 0, i32\l... noundef 0)\l  store ptr %26, ptr %8, align 8\l  %27 = load ptr, ptr %7, align 8\l  %28 = icmp ne ptr %27, null\l  br i1 %28, label %36, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600003195b30:s0 -> Node0x600003195bd0[tooltip="24 -> 36\nProbability 62.50%" ];
+	Node0x600003195b30:s1 -> Node0x600003195b80[tooltip="24 -> 29\nProbability 37.50%" ];
+	Node0x600003195b80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %8, align 8\l  %31 = getelementptr inbounds %struct.word_type, ptr %30, i32 0, i32 1\l  %32 = getelementptr inbounds %struct.anon, ptr %31, i32 0, i32 0\l  %33 = load i8, ptr %32, align 8\l  %34 = zext i8 %33 to i32\l  %35 = icmp ne i32 %34, 2\l  br i1 %35, label %36, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600003195b80:s0 -> Node0x600003195bd0[tooltip="29 -> 36\nProbability 50.00%" ];
+	Node0x600003195b80:s1 -> Node0x600003195c20[tooltip="29 -> 40\nProbability 50.00%" ];
+	Node0x600003195bd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %8, align 8\l  %38 = getelementptr inbounds %struct.word_type, ptr %37, i32 0, i32 1\l  %39 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 41, i32\l... noundef 2, ptr noundef @.str.1, i32 noundef 1, ptr noundef %38)\l  br label %40\l}"];
+	Node0x600003195bd0 -> Node0x600003195c20[tooltip="36 -> 40\nProbability 100.00%" ];
+	Node0x600003195c20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  call void @LexPop()\l  %41 = load ptr, ptr %8, align 8\l  ret ptr %41\l}"];
+}

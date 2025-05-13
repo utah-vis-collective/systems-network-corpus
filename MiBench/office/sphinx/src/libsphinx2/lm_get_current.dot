@@ -1,0 +1,5 @@
+digraph "CFG for 'lm_get_current' function" {
+	label="CFG for 'lm_get_current' function";
+
+	Node0x6000025376b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @lmp, align 8\l  ret ptr %1\l}"];
+}

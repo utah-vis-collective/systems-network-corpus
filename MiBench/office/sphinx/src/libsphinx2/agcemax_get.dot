@@ -1,0 +1,5 @@
+digraph "CFG for 'agcemax_get' function" {
+	label="CFG for 'agcemax_get' function";
+
+	Node0x6000018e9ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load float, ptr @max, align 4\l  %2 = fpext float %1 to double\l  ret double %2\l}"];
+}

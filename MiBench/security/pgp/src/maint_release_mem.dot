@@ -1,0 +1,5 @@
+digraph "CFG for 'maint_release_mem' function" {
+	label="CFG for 'maint_release_mem' function";
+
+	Node0x600003b03390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store i32 0, ptr @nleft, align 4\l  store i32 0, ptr @strleft, align 4\l  store ptr null, ptr @pkhash, align 8\l  call void @freebufpool()\l  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'SCVQNewUtt' function" {
+	label="CFG for 'SCVQNewUtt' function";
+
+	Node0x600001f5ee90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store i32 0, ptr @num_frames, align 4\l  ret void\l}"];
+}

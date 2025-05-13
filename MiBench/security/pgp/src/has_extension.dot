@@ -1,0 +1,12 @@
+digraph "CFG for 'has_extension' function" {
+	label="CFG for 'has_extension' function";
+
+	Node0x6000019771b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i8, align 1\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = call i64 @strlen(ptr noundef %8) #8\l  %10 = trunc i64 %9 to i32\l  store i32 %10, ptr %6, align 4\l  %11 = load ptr, ptr %5, align 8\l  %12 = call i64 @strlen(ptr noundef %11) #8\l  %13 = trunc i64 %12 to i32\l  store i32 %13, ptr %7, align 4\l  %14 = load i32, ptr %6, align 4\l  %15 = load i32, ptr %7, align 4\l  %16 = icmp sle i32 %14, %15\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000019771b0:s0 -> Node0x600001977200[tooltip="2 -> 17\nProbability 50.00%" ];
+	Node0x6000019771b0:s1 -> Node0x600001977250[tooltip="2 -> 18\nProbability 50.00%" ];
+	Node0x600001977200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  store i8 0, ptr %3, align 1\l  br label %33\l}"];
+	Node0x600001977200 -> Node0x6000019772a0[tooltip="17 -> 33\nProbability 100.00%" ];
+	Node0x600001977250 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  %20 = load i32, ptr %6, align 4\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds i8, ptr %19, i64 %21\l  %23 = load i32, ptr %7, align 4\l  %24 = sext i32 %23 to i64\l  %25 = sub i64 0, %24\l  %26 = getelementptr inbounds i8, ptr %22, i64 %25\l  %27 = load ptr, ptr %5, align 8\l  %28 = call i32 @strcmp(ptr noundef %26, ptr noundef %27) #8\l  %29 = icmp ne i32 %28, 0\l  %30 = xor i1 %29, true\l  %31 = zext i1 %30 to i32\l  %32 = trunc i32 %31 to i8\l  store i8 %32, ptr %3, align 1\l  br label %33\l}"];
+	Node0x600001977250 -> Node0x6000019772a0[tooltip="18 -> 33\nProbability 100.00%" ];
+	Node0x6000019772a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i8, ptr %3, align 1\l  ret i8 %34\l}"];
+}

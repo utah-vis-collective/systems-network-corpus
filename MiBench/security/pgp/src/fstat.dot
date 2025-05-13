@@ -1,0 +1,15 @@
+digraph "CFG for 'fstat' function" {
+	label="CFG for 'fstat' function";
+
+	Node0x6000009d3de0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca %struct.fldata_t, align 4\l  store i32 %0, ptr %4, align 4\l  store ptr %1, ptr %5, align 8\l  %7 = load i32, ptr %4, align 4\l  %8 = icmp ne i32 %7, -1\l  br i1 %8, label %9, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d3de0:s0 -> Node0x6000009d3e30[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x6000009d3de0:s1 -> Node0x6000009d3ed0[tooltip="2 -> 32\nProbability 37.50%" ];
+	Node0x6000009d3e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %4, align 4\l  %11 = sext i32 %10 to i64\l  %12 = inttoptr i64 %11 to ptr\l  %13 = load ptr, ptr %5, align 8\l  %14 = getelementptr inbounds %struct.stat, ptr %13, i32 0, i32 11\l  %15 = getelementptr inbounds [1024 x i8], ptr %14, i64 0, i64 0\l  %16 = call i32 @fldata(ptr noundef %12, ptr noundef %15, ptr noundef %6)\l  %17 = icmp eq i32 %16, 0\l  br i1 %17, label %18, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d3e30:s0 -> Node0x6000009d3e80[tooltip="9 -> 18\nProbability 37.50%" ];
+	Node0x6000009d3e30:s1 -> Node0x6000009d3ed0[tooltip="9 -> 32\nProbability 62.50%" ];
+	Node0x6000009d3e80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  %19 = getelementptr inbounds %struct.fldata_t, ptr %6, i32 0, i32 0\l  %20 = load i32, ptr %19, align 4\l  %21 = trunc i32 %20 to i16\l  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds %struct.stat, ptr %22, i32 0, i32 0\l  store i16 %21, ptr %23, align 8\l  %24 = load i16, ptr %6, align 4\l  %25 = load ptr, ptr %5, align 8\l  %26 = getelementptr inbounds %struct.stat, ptr %25, i32 0, i32 2\l  store i16 %24, ptr %26, align 4\l  %27 = load i32, ptr %4, align 4\l  %28 = sext i32 %27 to i64\l  %29 = inttoptr i64 %28 to ptr\l  %30 = load ptr, ptr %5, align 8\l  %31 = getelementptr inbounds %struct.stat, ptr %30, i32 0, i32 10\l  store ptr %29, ptr %31, align 8\l  store i32 0, ptr %3, align 4\l  br label %33\l}"];
+	Node0x6000009d3e80 -> Node0x6000009d3f20[tooltip="18 -> 33\nProbability 100.00%" ];
+	Node0x6000009d3ed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{32:\l|  store i32 -1, ptr %3, align 4\l  br label %33\l}"];
+	Node0x6000009d3ed0 -> Node0x6000009d3f20[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x6000009d3f20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %3, align 4\l  ret i32 %34\l}"];
+}

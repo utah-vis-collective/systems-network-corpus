@@ -1,0 +1,12 @@
+digraph "CFG for 'set_format' function" {
+	label="CFG for 'set_format' function";
+
+	Node0x60000253f070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr @f_format, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000253f070:s0 -> Node0x60000253f3e0[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x60000253f070:s1 -> Node0x60000253f4d0[tooltip="1 -> 14\nProbability 37.50%" ];
+	Node0x60000253f3e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr @f_format, align 8\l  %7 = load ptr, ptr %2, align 8\l  %8 = icmp ne ptr %6, %7\l  br i1 %8, label %9, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000253f3e0:s0 -> Node0x60000253f480[tooltip="5 -> 9\nProbability 0.00%" ];
+	Node0x60000253f3e0:s1 -> Node0x60000253f4d0[tooltip="5 -> 14\nProbability 100.00%" ];
+	Node0x60000253f480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @__stderrp, align 8\l  %11 = load ptr, ptr @progname, align 8\l  %12 = load ptr, ptr @progname, align 8\l  %13 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %10, ptr noundef\l... @.str.17, ptr noundef %11, ptr noundef %12) #7\l  call void @exit(i32 noundef 1) #8\l  unreachable\l}"];
+	Node0x60000253f4d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %2, align 8\l  store ptr %15, ptr @f_format, align 8\l  ret void\l}"];
+}

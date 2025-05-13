@@ -1,0 +1,5 @@
+digraph "CFG for 'UnSuppressScope' function" {
+	label="CFG for 'UnSuppressScope' function";
+
+	Node0x60000037e710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store i32 0, ptr @suppress_scope, align 4\l  ret void\l}"];
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'gsm_mult_r' function" {
+	label="CFG for 'gsm_mult_r' function";
+
+	Node0x60000085d090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i16, align 2\l  %6 = alloca i64, align 8\l  store i16 %0, ptr %4, align 2\l  store i16 %1, ptr %5, align 2\l  %7 = load i16, ptr %5, align 2\l  %8 = sext i16 %7 to i32\l  %9 = icmp eq i32 %8, -32768\l  br i1 %9, label %10, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000085d090:s0 -> Node0x60000085d0e0[tooltip="2 -> 10\nProbability 50.00%" ];
+	Node0x60000085d090:s1 -> Node0x60000085d180[tooltip="2 -> 15\nProbability 50.00%" ];
+	Node0x60000085d0e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load i16, ptr %4, align 2\l  %12 = sext i16 %11 to i32\l  %13 = icmp eq i32 %12, -32768\l  br i1 %13, label %14, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000085d0e0:s0 -> Node0x60000085d130[tooltip="10 -> 14\nProbability 50.00%" ];
+	Node0x60000085d0e0:s1 -> Node0x60000085d180[tooltip="10 -> 15\nProbability 50.00%" ];
+	Node0x60000085d130 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{14:\l|  store i16 32767, ptr %3, align 2\l  br label %27\l}"];
+	Node0x60000085d130 -> Node0x60000085d1d0[tooltip="14 -> 27\nProbability 100.00%" ];
+	Node0x60000085d180 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load i16, ptr %4, align 2\l  %17 = sext i16 %16 to i64\l  %18 = load i16, ptr %5, align 2\l  %19 = sext i16 %18 to i64\l  %20 = mul nsw i64 %17, %19\l  %21 = add nsw i64 %20, 16384\l  store i64 %21, ptr %6, align 8\l  %22 = load i64, ptr %6, align 8\l  %23 = ashr i64 %22, 15\l  store i64 %23, ptr %6, align 8\l  %24 = load i64, ptr %6, align 8\l  %25 = and i64 %24, 65535\l  %26 = trunc i64 %25 to i16\l  store i16 %26, ptr %3, align 2\l  br label %27\l}"];
+	Node0x60000085d180 -> Node0x60000085d1d0[tooltip="15 -> 27\nProbability 100.00%" ];
+	Node0x60000085d1d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i16, ptr %3, align 2\l  ret i16 %28\l}"];
+}

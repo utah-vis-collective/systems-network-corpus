@@ -1,0 +1,5 @@
+digraph "CFG for 'ztoken_op_defs' function" {
+	label="CFG for 'ztoken_op_defs' function";
+
+	Node0x600001b27e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @ztoken_op_defs.op_defs_\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_dist_prob_bytes' function" {
+	label="CFG for 'kb_get_dist_prob_bytes' function";
+
+	Node0x600002a8c7d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 4\l}"];
+}

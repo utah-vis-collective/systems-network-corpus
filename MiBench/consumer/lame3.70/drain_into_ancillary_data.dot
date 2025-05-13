@@ -1,0 +1,19 @@
+digraph "CFG for 'drain_into_ancillary_data' function" {
+	label="CFG for 'drain_into_ancillary_data' function";
+
+	Node0x60000334eb20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %6 = load i32, ptr %2, align 4\l  %7 = sdiv i32 %6, 32\l  store i32 %7, ptr %3, align 4\l  %8 = load i32, ptr %2, align 4\l  %9 = srem i32 %8, 32\l  store i32 %9, ptr %4, align 4\l  %10 = load ptr, ptr @userFrameDataPH, align 8\l  %11 = getelementptr inbounds %struct.BF_PartHolder, ptr %10, i32 0, i32 1\l  %12 = load ptr, ptr %11, align 8\l  %13 = getelementptr inbounds %struct.BF_BitstreamPart, ptr %12, i32 0, i32 0\l  store i32 0, ptr %13, align 8\l  store i32 0, ptr %5, align 4\l  br label %14\l}"];
+	Node0x60000334eb20 -> Node0x60000334eb70[tooltip="1 -> 14\nProbability 100.00%" ];
+	Node0x60000334eb70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %5, align 4\l  %16 = load i32, ptr %3, align 4\l  %17 = icmp slt i32 %15, %16\l  br i1 %17, label %18, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x60000334eb70:s0 -> Node0x60000334ebc0[tooltip="14 -> 18\nProbability 96.88%" ];
+	Node0x60000334eb70:s1 -> Node0x60000334ec60[tooltip="14 -> 24\nProbability 3.12%" ];
+	Node0x60000334ebc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr @userFrameDataPH, align 8\l  %20 = call ptr @BF_addEntry(ptr noundef %19, i32 noundef 0, i32 noundef 32)\l  store ptr %20, ptr @userFrameDataPH, align 8\l  br label %21\l}"];
+	Node0x60000334ebc0 -> Node0x60000334ec10[tooltip="18 -> 21\nProbability 100.00%" ];
+	Node0x60000334ec10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %5, align 4\l  %23 = add nsw i32 %22, 1\l  store i32 %23, ptr %5, align 4\l  br label %14, !llvm.loop !6\l}"];
+	Node0x60000334ec10 -> Node0x60000334eb70[tooltip="21 -> 14\nProbability 100.00%" ];
+	Node0x60000334ec60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %4, align 4\l  %26 = icmp ne i32 %25, 0\l  br i1 %26, label %27, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x60000334ec60:s0 -> Node0x60000334ecb0[tooltip="24 -> 27\nProbability 62.50%" ];
+	Node0x60000334ec60:s1 -> Node0x60000334ed00[tooltip="24 -> 31\nProbability 37.50%" ];
+	Node0x60000334ecb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr @userFrameDataPH, align 8\l  %29 = load i32, ptr %4, align 4\l  %30 = call ptr @BF_addEntry(ptr noundef %28, i32 noundef 0, i32 noundef %29)\l  store ptr %30, ptr @userFrameDataPH, align 8\l  br label %31\l}"];
+	Node0x60000334ecb0 -> Node0x60000334ed00[tooltip="27 -> 31\nProbability 100.00%" ];
+	Node0x60000334ed00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  ret void\l}"];
+}

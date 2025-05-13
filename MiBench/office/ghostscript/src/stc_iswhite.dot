@@ -1,0 +1,25 @@
+digraph "CFG for 'stc_iswhite' function" {
+	label="CFG for 'stc_iswhite' function";
+
+	Node0x6000016a2120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  %10 = load i32, ptr %5, align 4\l  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.stcolor_device_s, ptr %11, i32 0, i32 7\l  %13 = getelementptr inbounds %struct.gx_device_color_info_s, ptr %12, i32 0,\l... i32 1\l  %14 = load i32, ptr %13, align 4\l  %15 = mul nsw i32 %10, %14\l  %16 = add nsw i32 %15, 7\l  %17 = ashr i32 %16, 3\l  %18 = sext i32 %17 to i64\l  store i64 %18, ptr %7, align 8\l  store i32 12, ptr %8, align 4\l  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds %struct.stcolor_device_s, ptr %19, i32 0, i32 36\l  %21 = getelementptr inbounds %struct.stc_s, ptr %20, i32 0, i32 10\l  %22 = getelementptr inbounds [3 x i64], ptr %21, i64 0, i64 0\l  store ptr %22, ptr %9, align 8\l  br label %23\l}"];
+	Node0x6000016a2120 -> Node0x6000016a2170[tooltip="3 -> 23\nProbability 100.00%" ];
+	Node0x6000016a2170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i64, ptr %7, align 8\l  %25 = load i32, ptr %8, align 4\l  %26 = sext i32 %25 to i64\l  %27 = icmp sge i64 %24, %26\l  br i1 %27, label %28, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x6000016a2170:s0 -> Node0x6000016a21c0[tooltip="23 -> 28\nProbability 96.88%" ];
+	Node0x6000016a2170:s1 -> Node0x6000016a22b0[tooltip="23 -> 45\nProbability 3.12%" ];
+	Node0x6000016a21c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %6, align 8\l  %30 = load ptr, ptr %9, align 8\l  %31 = load i32, ptr %8, align 4\l  %32 = sext i32 %31 to i64\l  %33 = call i32 @memcmp(ptr noundef %29, ptr noundef %30, i64 noundef %32)\l  %34 = icmp ne i32 %33, 0\l  br i1 %34, label %35, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x6000016a21c0:s0 -> Node0x6000016a2210[tooltip="28 -> 35\nProbability 3.12%" ];
+	Node0x6000016a21c0:s1 -> Node0x6000016a2260[tooltip="28 -> 36\nProbability 96.88%" ];
+	Node0x6000016a2210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{35:\l|  br label %45\l}"];
+	Node0x6000016a2210 -> Node0x6000016a22b0[tooltip="35 -> 45\nProbability 100.00%" ];
+	Node0x6000016a2260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %8, align 4\l  %38 = load ptr, ptr %6, align 8\l  %39 = sext i32 %37 to i64\l  %40 = getelementptr inbounds i8, ptr %38, i64 %39\l  store ptr %40, ptr %6, align 8\l  %41 = load i32, ptr %8, align 4\l  %42 = sext i32 %41 to i64\l  %43 = load i64, ptr %7, align 8\l  %44 = sub nsw i64 %43, %42\l  store i64 %44, ptr %7, align 8\l  br label %23\l}"];
+	Node0x6000016a2260 -> Node0x6000016a2170[tooltip="36 -> 23\nProbability 100.00%" ];
+	Node0x6000016a22b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{45:\l|  %46 = load i64, ptr %7, align 8\l  %47 = icmp sgt i64 %46, 0\l  br i1 %47, label %48, label %62\l|{<s0>T|<s1>F}}"];
+	Node0x6000016a22b0:s0 -> Node0x6000016a2300[tooltip="45 -> 48\nProbability 62.50%" ];
+	Node0x6000016a22b0:s1 -> Node0x6000016a23a0[tooltip="45 -> 62\nProbability 37.50%" ];
+	Node0x6000016a2300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{48:\l|  %49 = load i64, ptr %7, align 8\l  %50 = load i32, ptr %8, align 4\l  %51 = sext i32 %50 to i64\l  %52 = icmp slt i64 %49, %51\l  br i1 %52, label %53, label %62\l|{<s0>T|<s1>F}}"];
+	Node0x6000016a2300:s0 -> Node0x6000016a2350[tooltip="48 -> 53\nProbability 50.00%" ];
+	Node0x6000016a2300:s1 -> Node0x6000016a23a0[tooltip="48 -> 62\nProbability 50.00%" ];
+	Node0x6000016a2350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{53:\l|  %54 = load ptr, ptr %6, align 8\l  %55 = load ptr, ptr %4, align 8\l  %56 = getelementptr inbounds %struct.stcolor_device_s, ptr %55, i32 0, i32 36\l  %57 = getelementptr inbounds %struct.stc_s, ptr %56, i32 0, i32 11\l  %58 = getelementptr inbounds [3 x i64], ptr %57, i64 0, i64 0\l  %59 = load i64, ptr %7, align 8\l  %60 = call i32 @memcmp(ptr noundef %54, ptr noundef %58, i64 noundef %59)\l  %61 = sext i32 %60 to i64\l  store i64 %61, ptr %7, align 8\l  br label %62\l}"];
+	Node0x6000016a2350 -> Node0x6000016a23a0[tooltip="53 -> 62\nProbability 100.00%" ];
+	Node0x6000016a23a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{62:\l|  %63 = load i64, ptr %7, align 8\l  %64 = icmp ne i64 %63, 0\l  %65 = zext i1 %64 to i64\l  %66 = select i1 %64, i32 0, i32 1\l  ret i32 %66\l}"];
+}

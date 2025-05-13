@@ -1,0 +1,13 @@
+digraph "CFG for '_TIFFSwab16BitData' function" {
+	label="CFG for '_TIFFSwab16BitData' function";
+
+	Node0x600002f0bc00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = load i64, ptr %6, align 8\l  %9 = and i64 %8, 1\l  %10 = icmp eq i64 %9, 0\l  %11 = xor i1 %10, true\l  %12 = zext i1 %11 to i32\l  %13 = sext i32 %12 to i64\l  %14 = icmp ne i64 %13, 0\l  br i1 %14, label %15, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600002f0bc00:s0 -> Node0x600002f0bc50[tooltip="3 -> 15\nProbability 0.00%" ];
+	Node0x600002f0bc00:s1 -> Node0x600002f0bcf0[tooltip="3 -> 17\nProbability 100.00%" ];
+	Node0x600002f0bc50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{15:\l|  call void @__assert_rtn(ptr noundef @__func__._TIFFSwab16BitData, ptr\l... noundef @.str.6, i32 noundef 608, ptr noundef @.str.7) #3\l  unreachable\l}"];
+	Node0x600002f0bca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{16:\l|  br label %18\l}"];
+	Node0x600002f0bca0 -> Node0x600002f0bd40[tooltip="16 -> 18\nProbability 100.00%" ];
+	Node0x600002f0bcf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  br label %18\l}"];
+	Node0x600002f0bcf0 -> Node0x600002f0bd40[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x600002f0bd40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %5, align 8\l  %20 = load i64, ptr %6, align 8\l  %21 = sdiv i64 %20, 2\l  call void @TIFFSwabArrayOfShort(ptr noundef %19, i64 noundef %21)\l  ret void\l}"];
+}

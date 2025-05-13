@@ -1,0 +1,25 @@
+digraph "CFG for 'AVI_get_video_position' function" {
+	label="CFG for 'AVI_get_video_position' function";
+
+	Node0x600000d40c80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i64, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = getelementptr inbounds %struct.avi_t, ptr %6, i32 0, i32 1\l  %8 = load i64, ptr %7, align 8\l  %9 = icmp eq i64 %8, 0\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600000d40c80:s0 -> Node0x600000d40cd0[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x600000d40c80:s1 -> Node0x600000d40d20[tooltip="2 -> 11\nProbability 62.50%" ];
+	Node0x600000d40cd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  store i64 7, ptr @AVI_errno, align 8\l  store i64 -1, ptr %3, align 8\l  br label %35\l}"];
+	Node0x600000d40cd0 -> Node0x600000d40f00[tooltip="10 -> 35\nProbability 100.00%" ];
+	Node0x600000d40d20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.avi_t, ptr %12, i32 0, i32 19\l  %14 = load ptr, ptr %13, align 8\l  %15 = icmp ne ptr %14, null\l  br i1 %15, label %17, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000d40d20:s0 -> Node0x600000d40dc0[tooltip="11 -> 17\nProbability 62.50%" ];
+	Node0x600000d40d20:s1 -> Node0x600000d40d70[tooltip="11 -> 16\nProbability 37.50%" ];
+	Node0x600000d40d70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  store i64 13, ptr @AVI_errno, align 8\l  store i64 -1, ptr %3, align 8\l  br label %35\l}"];
+	Node0x600000d40d70 -> Node0x600000d40f00[tooltip="16 -> 35\nProbability 100.00%" ];
+	Node0x600000d40dc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load i64, ptr %5, align 8\l  %19 = icmp slt i64 %18, 0\l  br i1 %19, label %26, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600000d40dc0:s0 -> Node0x600000d40e60[tooltip="17 -> 26\nProbability 37.50%" ];
+	Node0x600000d40dc0:s1 -> Node0x600000d40e10[tooltip="17 -> 20\nProbability 62.50%" ];
+	Node0x600000d40e10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  %21 = load i64, ptr %5, align 8\l  %22 = load ptr, ptr %4, align 8\l  %23 = getelementptr inbounds %struct.avi_t, ptr %22, i32 0, i32 8\l  %24 = load i64, ptr %23, align 8\l  %25 = icmp sge i64 %21, %24\l  br i1 %25, label %26, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600000d40e10:s0 -> Node0x600000d40e60[tooltip="20 -> 26\nProbability 50.00%" ];
+	Node0x600000d40e10:s1 -> Node0x600000d40eb0[tooltip="20 -> 27\nProbability 50.00%" ];
+	Node0x600000d40e60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  store i64 0, ptr %3, align 8\l  br label %35\l}"];
+	Node0x600000d40e60 -> Node0x600000d40f00[tooltip="26 -> 35\nProbability 100.00%" ];
+	Node0x600000d40eb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %4, align 8\l  %29 = getelementptr inbounds %struct.avi_t, ptr %28, i32 0, i32 19\l  %30 = load ptr, ptr %29, align 8\l  %31 = load i64, ptr %5, align 8\l  %32 = getelementptr inbounds %struct.video_index_entry, ptr %30, i64 %31\l  %33 = getelementptr inbounds %struct.video_index_entry, ptr %32, i32 0, i32 1\l  %34 = load i64, ptr %33, align 8\l  store i64 %34, ptr %3, align 8\l  br label %35\l}"];
+	Node0x600000d40eb0 -> Node0x600000d40f00[tooltip="27 -> 35\nProbability 100.00%" ];
+	Node0x600000d40f00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i64, ptr %3, align 8\l  ret i64 %36\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for '_Z20cl_allocBufferPinnedm' function" {
+	label="CFG for '_Z20cl_allocBufferPinnedm' function";
+
+	Node0x60000331af30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store i64 %0, ptr %2, align 8\l  %5 = load ptr, ptr @_ZL7context, align 8\l  %6 = load i64, ptr %2, align 8\l  %7 = call ptr @clCreateBuffer(ptr noundef %5, i64 noundef 17, i64 noundef\l... %6, ptr noundef null, ptr noundef %4)\l  store ptr %7, ptr %3, align 8\l  %8 = load i32, ptr %4, align 4\l  %9 = call noundef i32 @_Z9cl_errChkiPKcb(i32 noundef %8, ptr noundef\l... @.str.44, i1 noundef zeroext true)\l  %10 = load ptr, ptr %3, align 8\l  ret ptr %10\l}"];
+}

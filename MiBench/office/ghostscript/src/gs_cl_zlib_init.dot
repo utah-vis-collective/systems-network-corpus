@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_cl_zlib_init' function" {
+	label="CFG for 'gs_cl_zlib_init' function";
+
+	Node0x600001c99e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  call void @s_zlib_set_defaults(ptr noundef @cl_zlibE_state)\l  store i32 1, ptr getelementptr inbounds (%struct.stream_zlib_state_s, ptr\l... @cl_zlibE_state, i32 0, i32 4), align 4\l  store ptr @s_zlibE_template, ptr @cl_zlibE_state, align 8\l  call void @s_zlib_set_defaults(ptr noundef @cl_zlibD_state)\l  store i32 1, ptr getelementptr inbounds (%struct.stream_zlib_state_s, ptr\l... @cl_zlibD_state, i32 0, i32 4), align 4\l  store ptr @s_zlibD_template, ptr @cl_zlibD_state, align 8\l  ret void\l}"];
+}

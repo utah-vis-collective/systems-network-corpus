@@ -1,0 +1,14 @@
+digraph "CFG for 'emitFont' function" {
+	label="CFG for 'emitFont' function";
+
+	Node0x600000e21270 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  store i32 0, ptr %3, align 4\l  br label %4\l}"];
+	Node0x600000e21270 -> Node0x600000e212c0[tooltip="1 -> 4\nProbability 100.00%" ];
+	Node0x600000e212c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load i32, ptr %3, align 4\l  %6 = sext i32 %5 to i64\l  %7 = getelementptr inbounds [22 x ptr], ptr @emitFont.fontPrologue, i64 0,\l... i64 %6\l  %8 = load ptr, ptr %7, align 8\l  %9 = icmp ne ptr %8, null\l  br i1 %9, label %10, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600000e212c0:s0 -> Node0x600000e21310[tooltip="4 -> 10\nProbability 96.88%" ];
+	Node0x600000e212c0:s1 -> Node0x600000e213b0[tooltip="4 -> 20\nProbability 3.12%" ];
+	Node0x600000e21310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = load i32, ptr %3, align 4\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds [22 x ptr], ptr @emitFont.fontPrologue, i64 0,\l... i64 %13\l  %15 = load ptr, ptr %14, align 8\l  %16 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %11, ptr noundef\l... @.str.69, ptr noundef %15) #7\l  br label %17\l}"];
+	Node0x600000e21310 -> Node0x600000e21360[tooltip="10 -> 17\nProbability 100.00%" ];
+	Node0x600000e21360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %3, align 4\l  %19 = add nsw i32 %18, 1\l  store i32 %19, ptr %3, align 4\l  br label %4\l}"];
+	Node0x600000e21360 -> Node0x600000e212c0[tooltip="17 -> 4\nProbability 100.00%" ];
+	Node0x600000e213b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

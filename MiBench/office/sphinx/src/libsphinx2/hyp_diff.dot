@@ -1,0 +1,27 @@
+digraph "CFG for 'hyp_diff' function" {
+	label="CFG for 'hyp_diff' function";
+
+	Node0x600002afc460 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  store ptr %7, ptr %5, align 8\l  %8 = load ptr, ptr %4, align 8\l  store ptr %8, ptr %6, align 8\l  br label %9\l}"];
+	Node0x600002afc460 -> Node0x600002afc4b0[tooltip="2 -> 9\nProbability 100.00%" ];
+	Node0x600002afc4b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %5, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %12, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600002afc4b0:s0 -> Node0x600002afc500[tooltip="9 -> 12\nProbability 62.50%" ];
+	Node0x600002afc4b0:s1 -> Node0x600002afc5a0[tooltip="9 -> 23\nProbability 37.50%" ];
+	Node0x600002afc500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %6, align 8\l  %14 = icmp ne ptr %13, null\l  br i1 %14, label %15, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600002afc500:s0 -> Node0x600002afc550[tooltip="12 -> 15\nProbability 62.50%" ];
+	Node0x600002afc500:s1 -> Node0x600002afc5a0[tooltip="12 -> 23\nProbability 37.50%" ];
+	Node0x600002afc550 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %5, align 8\l  %17 = getelementptr inbounds %struct.search_hyp_s, ptr %16, i32 0, i32 1\l  %18 = load i32, ptr %17, align 8\l  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.search_hyp_s, ptr %19, i32 0, i32 1\l  %21 = load i32, ptr %20, align 8\l  %22 = icmp eq i32 %18, %21\l  br label %23\l}"];
+	Node0x600002afc550 -> Node0x600002afc5a0[tooltip="15 -> 23\nProbability 100.00%" ];
+	Node0x600002afc5a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = phi i1 [ false, %12 ], [ false, %9 ], [ %22, %15 ]\l  br i1 %24, label %25, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600002afc5a0:s0 -> Node0x600002afc5f0[tooltip="23 -> 25\nProbability 96.88%" ];
+	Node0x600002afc5a0:s1 -> Node0x600002afc690[tooltip="23 -> 33\nProbability 3.12%" ];
+	Node0x600002afc5f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  br label %26\l}"];
+	Node0x600002afc5f0 -> Node0x600002afc640[tooltip="25 -> 26\nProbability 100.00%" ];
+	Node0x600002afc640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = getelementptr inbounds %struct.search_hyp_s, ptr %27, i32 0, i32 7\l  %29 = load ptr, ptr %28, align 8\l  store ptr %29, ptr %5, align 8\l  %30 = load ptr, ptr %6, align 8\l  %31 = getelementptr inbounds %struct.search_hyp_s, ptr %30, i32 0, i32 7\l  %32 = load ptr, ptr %31, align 8\l  store ptr %32, ptr %6, align 8\l  br label %9\l}"];
+	Node0x600002afc640 -> Node0x600002afc4b0[tooltip="26 -> 9\nProbability 100.00%" ];
+	Node0x600002afc690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %5, align 8\l  %35 = icmp ne ptr %34, null\l  br i1 %35, label %39, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x600002afc690:s0 -> Node0x600002afc730[tooltip="33 -> 39\nProbability 62.50%" ];
+	Node0x600002afc690:s1 -> Node0x600002afc6e0[tooltip="33 -> 36\nProbability 37.50%" ];
+	Node0x600002afc6e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %6, align 8\l  %38 = icmp ne ptr %37, null\l  br label %39\l}"];
+	Node0x600002afc6e0 -> Node0x600002afc730[tooltip="36 -> 39\nProbability 100.00%" ];
+	Node0x600002afc730 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{39:\l|  %40 = phi i1 [ true, %33 ], [ %38, %36 ]\l  %41 = zext i1 %40 to i64\l  %42 = select i1 %40, i32 1, i32 0\l  ret i32 %42\l}"];
+}

@@ -1,0 +1,26 @@
+digraph "CFG for 'L16toGry' function" {
+	label="CFG for 'L16toGry' function";
+
+	Node0x600000632d50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca double, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %10 = load ptr, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.logLuvState, ptr %10, i32 0, i32 2\l  %12 = load ptr, ptr %11, align 8\l  store ptr %12, ptr %7, align 8\l  %13 = load ptr, ptr %5, align 8\l  store ptr %13, ptr %8, align 8\l  br label %14\l}"];
+	Node0x600000632d50 -> Node0x600000632da0[tooltip="3 -> 14\nProbability 100.00%" ];
+	Node0x600000632da0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %6, align 4\l  %16 = add nsw i32 %15, -1\l  store i32 %16, ptr %6, align 4\l  %17 = icmp sgt i32 %15, 0\l  br i1 %17, label %18, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x600000632da0:s0 -> Node0x600000632df0[tooltip="14 -> 18\nProbability 96.88%" ];
+	Node0x600000632da0:s1 -> Node0x600000633020[tooltip="14 -> 43\nProbability 3.12%" ];
+	Node0x600000632df0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %7, align 8\l  %20 = getelementptr inbounds i16, ptr %19, i32 1\l  store ptr %20, ptr %7, align 8\l  %21 = load i16, ptr %19, align 2\l  %22 = sext i16 %21 to i32\l  %23 = call double @pix16toY(i32 noundef %22)\l  store double %23, ptr %9, align 8\l  %24 = load double, ptr %9, align 8\l  %25 = fcmp ole double %24, 0.000000e+00\l  br i1 %25, label %26, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600000632df0:s0 -> Node0x600000632e40[tooltip="18 -> 26\nProbability 50.00%" ];
+	Node0x600000632df0:s1 -> Node0x600000632e90[tooltip="18 -> 27\nProbability 50.00%" ];
+	Node0x600000632e40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  br label %38\l}"];
+	Node0x600000632e40 -> Node0x600000632fd0[tooltip="26 -> 38\nProbability 100.00%" ];
+	Node0x600000632e90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load double, ptr %9, align 8\l  %29 = fcmp oge double %28, 1.000000e+00\l  br i1 %29, label %30, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600000632e90:s0 -> Node0x600000632ee0[tooltip="27 -> 30\nProbability 50.00%" ];
+	Node0x600000632e90:s1 -> Node0x600000632f30[tooltip="27 -> 31\nProbability 50.00%" ];
+	Node0x600000632ee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{30:\l|  br label %36\l}"];
+	Node0x600000632ee0 -> Node0x600000632f80[tooltip="30 -> 36\nProbability 100.00%" ];
+	Node0x600000632f30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  %32 = load double, ptr %9, align 8\l  %33 = call double @llvm.sqrt.f64(double %32)\l  %34 = fmul double 2.560000e+02, %33\l  %35 = fptosi double %34 to i32\l  br label %36\l}"];
+	Node0x600000632f30 -> Node0x600000632f80[tooltip="31 -> 36\nProbability 100.00%" ];
+	Node0x600000632f80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{36:\l|  %37 = phi i32 [ 255, %30 ], [ %35, %31 ]\l  br label %38\l}"];
+	Node0x600000632f80 -> Node0x600000632fd0[tooltip="36 -> 38\nProbability 100.00%" ];
+	Node0x600000632fd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = phi i32 [ 0, %26 ], [ %37, %36 ]\l  %40 = trunc i32 %39 to i8\l  %41 = load ptr, ptr %8, align 8\l  %42 = getelementptr inbounds i8, ptr %41, i32 1\l  store ptr %42, ptr %8, align 8\l  store i8 %40, ptr %41, align 1\l  br label %14\l}"];
+	Node0x600000632fd0 -> Node0x600000632da0[tooltip="38 -> 14\nProbability 100.00%" ];
+	Node0x600000633020 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{43:\l|  ret void\l}"];
+}

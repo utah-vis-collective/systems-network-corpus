@@ -1,0 +1,20 @@
+digraph "CFG for 'TeX_skip_parens' function" {
+	label="CFG for 'TeX_skip_parens' function";
+
+	Node0x6000019845a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  br label %3\l}"];
+	Node0x6000019845a0 -> Node0x6000019845f0[tooltip="1 -> 3\nProbability 100.00%" ];
+	Node0x6000019845f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr %2, align 8\l  %5 = load ptr, ptr %4, align 8\l  %6 = load i8, ptr %5, align 1\l  %7 = sext i8 %6 to i32\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000019845f0:s0 -> Node0x600001984640[tooltip="3 -> 9\nProbability 62.50%" ];
+	Node0x6000019845f0:s1 -> Node0x6000019846e0[tooltip="3 -> 25\nProbability 37.50%" ];
+	Node0x600001984640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %2, align 8\l  %11 = load ptr, ptr %10, align 8\l  %12 = load i8, ptr %11, align 1\l  %13 = sext i8 %12 to i32\l  %14 = load i8, ptr getelementptr inbounds ([13 x i8], ptr getelementptr\l... inbounds (%struct.hashheader, ptr @hashheader, i32 0, i32 16), i64 0, i64 5),\l... align 1\l  %15 = sext i8 %14 to i32\l  %16 = icmp ne i32 %13, %15\l  br i1 %16, label %17, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600001984640:s0 -> Node0x600001984690[tooltip="9 -> 17\nProbability 50.00%" ];
+	Node0x600001984640:s1 -> Node0x6000019846e0[tooltip="9 -> 25\nProbability 50.00%" ];
+	Node0x600001984690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %2, align 8\l  %19 = load ptr, ptr %18, align 8\l  %20 = load i8, ptr %19, align 1\l  %21 = sext i8 %20 to i32\l  %22 = load i8, ptr getelementptr inbounds ([13 x i8], ptr getelementptr\l... inbounds (%struct.hashheader, ptr @hashheader, i32 0, i32 16), i64 0, i64 9),\l... align 1\l  %23 = sext i8 %22 to i32\l  %24 = icmp ne i32 %21, %23\l  br label %25\l}"];
+	Node0x600001984690 -> Node0x6000019846e0[tooltip="17 -> 25\nProbability 100.00%" ];
+	Node0x6000019846e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = phi i1 [ false, %9 ], [ false, %3 ], [ %24, %17 ]\l  br i1 %26, label %27, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x6000019846e0:s0 -> Node0x600001984730[tooltip="25 -> 27\nProbability 96.88%" ];
+	Node0x6000019846e0:s1 -> Node0x600001984780[tooltip="25 -> 31\nProbability 3.12%" ];
+	Node0x600001984730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %2, align 8\l  %29 = load ptr, ptr %28, align 8\l  %30 = getelementptr inbounds i8, ptr %29, i32 1\l  store ptr %30, ptr %28, align 8\l  br label %3\l}"];
+	Node0x600001984730 -> Node0x6000019845f0[tooltip="27 -> 3\nProbability 100.00%" ];
+	Node0x600001984780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  ret void\l}"];
+}

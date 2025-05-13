@@ -1,0 +1,17 @@
+digraph "CFG for 'zstringwidth' function" {
+	label="CFG for 'zstringwidth' function";
+
+	Node0x600003fb40a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = call i32 @op_show_setup(ptr noundef %6, ptr noundef %4)\l  store i32 %7, ptr %5, align 4\l  %8 = load i32, ptr %5, align 4\l  %9 = icmp ne i32 %8, 0\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600003fb40a0:s0 -> Node0x600003fb40f0[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600003fb40a0:s1 -> Node0x600003fb4140[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x600003fb40f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %5, align 4\l  store i32 %11, ptr %2, align 4\l  br label %38\l}"];
+	Node0x600003fb40f0 -> Node0x600003fb4230[tooltip="10 -> 38\nProbability 100.00%" ];
+	Node0x600003fb4140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %4, align 8\l  %14 = load ptr, ptr @igs, align 8\l  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.ref_s, ptr %15, i32 0, i32 1\l  %17 = load ptr, ptr %16, align 8\l  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds %struct.ref_s, ptr %18, i32 0, i32 0\l  %20 = getelementptr inbounds %struct.tas_s, ptr %19, i32 0, i32 1\l  %21 = load i16, ptr %20, align 2\l  %22 = zext i16 %21 to i32\l  %23 = call i32 @gs_stringwidth_n_init(ptr noundef %13, ptr noundef %14, ptr\l... noundef %17, i32 noundef %22)\l  store i32 %23, ptr %5, align 4\l  %24 = icmp slt i32 %23, 0\l  br i1 %24, label %25, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600003fb4140:s0 -> Node0x600003fb4190[tooltip="12 -> 25\nProbability 37.50%" ];
+	Node0x600003fb4140:s1 -> Node0x600003fb41e0[tooltip="12 -> 33\nProbability 62.50%" ];
+	Node0x600003fb4190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr @gs_imemory, align 8\l  %27 = getelementptr inbounds %struct.gs_memory_s, ptr %26, i32 0, i32 0\l  %28 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %27, i32 0, i32\l... 11\l  %29 = load ptr, ptr %28, align 8\l  %30 = load ptr, ptr @gs_imemory, align 8\l  %31 = load ptr, ptr %4, align 8\l  call void %29(ptr noundef %30, ptr noundef %31, ptr noundef @.str.15)\l  %32 = load i32, ptr %5, align 4\l  store i32 %32, ptr %2, align 4\l  br label %38\l}"];
+	Node0x600003fb4190 -> Node0x600003fb4230[tooltip="25 -> 38\nProbability 100.00%" ];
+	Node0x600003fb41e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %4, align 8\l  call void @op_show_finish_setup(ptr noundef %34, i32 noundef 1, ptr noundef\l... @finish_stringwidth)\l  %35 = load ptr, ptr %3, align 8\l  %36 = getelementptr inbounds %struct.ref_s, ptr %35, i64 -1\l  %37 = call i32 @op_show_continue(ptr noundef %36)\l  store i32 %37, ptr %2, align 4\l  br label %38\l}"];
+	Node0x600003fb41e0 -> Node0x600003fb4230[tooltip="33 -> 38\nProbability 100.00%" ];
+	Node0x600003fb4230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %2, align 4\l  ret i32 %39\l}"];
+}

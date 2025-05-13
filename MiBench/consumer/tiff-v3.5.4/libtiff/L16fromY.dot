@@ -1,0 +1,12 @@
+digraph "CFG for 'L16fromY' function" {
+	label="CFG for 'L16fromY' function";
+
+	Node0x6000006384b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.logLuvState, ptr %9, i32 0, i32 2\l  %11 = load ptr, ptr %10, align 8\l  store ptr %11, ptr %7, align 8\l  %12 = load ptr, ptr %5, align 8\l  store ptr %12, ptr %8, align 8\l  br label %13\l}"];
+	Node0x6000006384b0 -> Node0x600000638500[tooltip="3 -> 13\nProbability 100.00%" ];
+	Node0x600000638500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %6, align 4\l  %15 = add nsw i32 %14, -1\l  store i32 %15, ptr %6, align 4\l  %16 = icmp sgt i32 %14, 0\l  br i1 %16, label %17, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000638500:s0 -> Node0x600000638550[tooltip="13 -> 17\nProbability 96.88%" ];
+	Node0x600000638500:s1 -> Node0x6000006385a0[tooltip="13 -> 26\nProbability 3.12%" ];
+	Node0x600000638550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %8, align 8\l  %19 = getelementptr inbounds float, ptr %18, i32 1\l  store ptr %19, ptr %8, align 8\l  %20 = load float, ptr %18, align 4\l  %21 = fpext float %20 to double\l  %22 = call i32 @pix16fromY(double noundef %21)\l  %23 = trunc i32 %22 to i16\l  %24 = load ptr, ptr %7, align 8\l  %25 = getelementptr inbounds i16, ptr %24, i32 1\l  store ptr %25, ptr %7, align 8\l  store i16 %23, ptr %24, align 2\l  br label %13\l}"];
+	Node0x600000638550 -> Node0x600000638500[tooltip="17 -> 13\nProbability 100.00%" ];
+	Node0x6000006385a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{26:\l|  ret void\l}"];
+}

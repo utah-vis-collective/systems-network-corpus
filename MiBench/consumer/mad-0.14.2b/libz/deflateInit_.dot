@@ -1,0 +1,5 @@
+digraph "CFG for 'deflateInit_' function" {
+	label="CFG for 'deflateInit_' function";
+
+	Node0x600000a26170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  %9 = load ptr, ptr %5, align 8\l  %10 = load i32, ptr %6, align 4\l  %11 = load ptr, ptr %7, align 8\l  %12 = load i32, ptr %8, align 4\l  %13 = call i32 @deflateInit2_(ptr noundef %9, i32 noundef %10, i32 noundef\l... 8, i32 noundef 15, i32 noundef 8, i32 noundef 0, ptr noundef %11, i32 noundef\l... %12)\l  ret i32 %13\l}"];
+}

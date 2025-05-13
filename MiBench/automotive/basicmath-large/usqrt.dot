@@ -1,0 +1,19 @@
+digraph "CFG for 'usqrt' function" {
+	label="CFG for 'usqrt' function";
+
+	Node0x6000024f5ef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i64, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca i32, align 4\l  store i64 %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i64 0, ptr %5, align 8\l  store i64 0, ptr %6, align 8\l  store i64 0, ptr %7, align 8\l  store i32 0, ptr %8, align 4\l  br label %9\l}"];
+	Node0x6000024f5ef0 -> Node0x6000024f5f40[tooltip="2 -> 9\nProbability 100.00%" ];
+	Node0x6000024f5f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %8, align 4\l  %11 = icmp slt i32 %10, 32\l  br i1 %11, label %12, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x6000024f5f40:s0 -> Node0x6000024f5f90[tooltip="9 -> 12\nProbability 96.88%" ];
+	Node0x6000024f5f40:s1 -> Node0x6000024f60d0[tooltip="9 -> 39\nProbability 3.12%" ];
+	Node0x6000024f5f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i64, ptr %6, align 8\l  %14 = shl i64 %13, 2\l  %15 = load i64, ptr %3, align 8\l  %16 = and i64 %15, 3221225472\l  %17 = lshr i64 %16, 30\l  %18 = add i64 %14, %17\l  store i64 %18, ptr %6, align 8\l  %19 = load i64, ptr %3, align 8\l  %20 = shl i64 %19, 2\l  store i64 %20, ptr %3, align 8\l  %21 = load i64, ptr %5, align 8\l  %22 = shl i64 %21, 1\l  store i64 %22, ptr %5, align 8\l  %23 = load i64, ptr %5, align 8\l  %24 = shl i64 %23, 1\l  %25 = add i64 %24, 1\l  store i64 %25, ptr %7, align 8\l  %26 = load i64, ptr %6, align 8\l  %27 = load i64, ptr %7, align 8\l  %28 = icmp uge i64 %26, %27\l  br i1 %28, label %29, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x6000024f5f90:s0 -> Node0x6000024f5fe0[tooltip="12 -> 29\nProbability 50.00%" ];
+	Node0x6000024f5f90:s1 -> Node0x6000024f6030[tooltip="12 -> 35\nProbability 50.00%" ];
+	Node0x6000024f5fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{29:\l|  %30 = load i64, ptr %7, align 8\l  %31 = load i64, ptr %6, align 8\l  %32 = sub i64 %31, %30\l  store i64 %32, ptr %6, align 8\l  %33 = load i64, ptr %5, align 8\l  %34 = add i64 %33, 1\l  store i64 %34, ptr %5, align 8\l  br label %35\l}"];
+	Node0x6000024f5fe0 -> Node0x6000024f6030[tooltip="29 -> 35\nProbability 100.00%" ];
+	Node0x6000024f6030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  br label %36\l}"];
+	Node0x6000024f6030 -> Node0x6000024f6080[tooltip="35 -> 36\nProbability 100.00%" ];
+	Node0x6000024f6080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %8, align 4\l  %38 = add nsw i32 %37, 1\l  store i32 %38, ptr %8, align 4\l  br label %9, !llvm.loop !6\l}"];
+	Node0x6000024f6080 -> Node0x6000024f5f40[tooltip="36 -> 9\nProbability 100.00%" ];
+	Node0x6000024f60d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %4, align 8\l  %41 = load ptr, ptr %4, align 8\l  %42 = call i64 @llvm.objectsize.i64.p0(ptr %41, i1 false, i1 true, i1 false)\l  %43 = call ptr @__memcpy_chk(ptr noundef %40, ptr noundef %5, i64 noundef 8,\l... i64 noundef %42) #3\l  ret void\l}"];
+}

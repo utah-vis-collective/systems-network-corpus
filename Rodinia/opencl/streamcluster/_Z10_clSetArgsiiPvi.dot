@@ -1,0 +1,25 @@
+digraph "CFG for '_Z10_clSetArgsiiPvi' function" {
+	label="CFG for '_Z10_clSetArgsiiPvi' function";
+
+	Node0x60000090e030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  %10 = alloca i32, align 4\l  store i32 %0, ptr %5, align 4\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  %11 = load i32, ptr %8, align 4\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %30, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x60000090e030:s0 -> Node0x60000090e210[tooltip="4 -> 30\nProbability 62.50%" ];
+	Node0x60000090e030:s1 -> Node0x60000090e080[tooltip="4 -> 13\nProbability 37.50%" ];
+	Node0x60000090e080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %5, align 4\l  %15 = sext i32 %14 to i64\l  %16 = call noundef nonnull align 8 dereferenceable(8) ptr\l... @_ZNSt3__16vectorIP10_cl_kernelNS_9allocatorIS2_EEEixB8ne190107Em(ptr noundef\l... nonnull align 8 dereferenceable(24) getelementptr inbounds\l... (%struct.oclHandleStruct, ptr @oclHandles, i32 0, i32 6), i64 noundef %15) #4\l  %17 = load ptr, ptr %16, align 8\l  %18 = load i32, ptr %6, align 4\l  %19 = invoke i32 @clSetKernelArg(ptr noundef %17, i32 noundef %18, i64\l... noundef 8, ptr noundef %7)\l          to label %20 unwind label %21\l}"];
+	Node0x60000090e080 -> Node0x60000090e0d0[tooltip="13 -> 20\nProbability 100.00%" ];
+	Node0x60000090e080 -> Node0x60000090e120[tooltip="13 -> 21\nProbability 0.00%" ];
+	Node0x60000090e0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  store i32 %19, ptr getelementptr inbounds (%struct.oclHandleStruct, ptr\l... @oclHandles, i32 0, i32 4), align 8\l  br label %41\l}"];
+	Node0x60000090e0d0 -> Node0x60000090e2b0[tooltip="20 -> 41\nProbability 100.00%" ];
+	Node0x60000090e120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{21:\l|  %22 = landingpad \{ ptr, i32 \}\l          filter [1 x ptr] [ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE]\l  %23 = extractvalue \{ ptr, i32 \} %22, 0\l  store ptr %23, ptr %9, align 8\l  %24 = extractvalue \{ ptr, i32 \} %22, 1\l  store i32 %24, ptr %10, align 4\l  br label %25\l}"];
+	Node0x60000090e120 -> Node0x60000090e170[tooltip="21 -> 25\nProbability 100.00%" ];
+	Node0x60000090e170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %10, align 4\l  %27 = icmp slt i32 %26, 0\l  br i1 %27, label %28, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x60000090e170:s0 -> Node0x60000090e1c0[tooltip="25 -> 28\nProbability 0.00%" ];
+	Node0x60000090e170:s1 -> Node0x60000090e300[tooltip="25 -> 42\nProbability 100.00%" ];
+	Node0x60000090e1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#93b5fe70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %9, align 8\l  call void @__cxa_call_unexpected(ptr %29) #21\l  unreachable\l}"];
+	Node0x60000090e210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %5, align 4\l  %32 = sext i32 %31 to i64\l  %33 = call noundef nonnull align 8 dereferenceable(8) ptr\l... @_ZNSt3__16vectorIP10_cl_kernelNS_9allocatorIS2_EEEixB8ne190107Em(ptr noundef\l... nonnull align 8 dereferenceable(24) getelementptr inbounds\l... (%struct.oclHandleStruct, ptr @oclHandles, i32 0, i32 6), i64 noundef %32) #4\l  %34 = load ptr, ptr %33, align 8\l  %35 = load i32, ptr %6, align 4\l  %36 = load i32, ptr %8, align 4\l  %37 = sext i32 %36 to i64\l  %38 = load ptr, ptr %7, align 8\l  %39 = invoke i32 @clSetKernelArg(ptr noundef %34, i32 noundef %35, i64\l... noundef %37, ptr noundef %38)\l          to label %40 unwind label %21\l}"];
+	Node0x60000090e210 -> Node0x60000090e260[tooltip="30 -> 40\nProbability 100.00%" ];
+	Node0x60000090e210 -> Node0x60000090e120[tooltip="30 -> 21\nProbability 0.00%" ];
+	Node0x60000090e260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{40:\l|  store i32 %39, ptr getelementptr inbounds (%struct.oclHandleStruct, ptr\l... @oclHandles, i32 0, i32 4), align 8\l  br label %41\l}"];
+	Node0x60000090e260 -> Node0x60000090e2b0[tooltip="40 -> 41\nProbability 100.00%" ];
+	Node0x60000090e2b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  ret void\l}"];
+	Node0x60000090e300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{42:\l|  %43 = load ptr, ptr %9, align 8\l  %44 = load i32, ptr %10, align 4\l  %45 = insertvalue \{ ptr, i32 \} poison, ptr %43, 0\l  %46 = insertvalue \{ ptr, i32 \} %45, i32 %44, 1\l  resume \{ ptr, i32 \} %46\l}"];
+}

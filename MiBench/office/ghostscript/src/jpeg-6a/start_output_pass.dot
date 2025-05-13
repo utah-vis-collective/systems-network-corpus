@@ -1,0 +1,20 @@
+digraph "CFG for 'start_output_pass' function" {
+	label="CFG for 'start_output_pass' function";
+
+	Node0x600001242530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %4, i32 0,\l... i32 75\l  %6 = load ptr, ptr %5, align 8\l  store ptr %6, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.my_coef_controller, ptr %7, i32 0, i32 0\l  %9 = getelementptr inbounds %struct.jpeg_d_coef_controller, ptr %8, i32 0,\l... i32 4\l  %10 = load ptr, ptr %9, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %12, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600001242530:s0 -> Node0x600001242580[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x600001242530:s1 -> Node0x600001242710[tooltip="1 -> 30\nProbability 37.50%" ];
+	Node0x600001242580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  %14 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %13, i32 0,\l... i32 18\l  %15 = load i32, ptr %14, align 8\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600001242580:s0 -> Node0x6000012425d0[tooltip="12 -> 17\nProbability 62.50%" ];
+	Node0x600001242580:s1 -> Node0x600001242670[tooltip="12 -> 25\nProbability 37.50%" ];
+	Node0x6000012425d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %2, align 8\l  %19 = call i32 @smoothing_ok(ptr noundef %18)\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000012425d0:s0 -> Node0x600001242620[tooltip="17 -> 21\nProbability 62.50%" ];
+	Node0x6000012425d0:s1 -> Node0x600001242670[tooltip="17 -> 25\nProbability 37.50%" ];
+	Node0x600001242620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds %struct.my_coef_controller, ptr %22, i32 0, i32\l... 0\l  %24 = getelementptr inbounds %struct.jpeg_d_coef_controller, ptr %23, i32 0,\l... i32 3\l  store ptr @decompress_smooth_data, ptr %24, align 8\l  br label %29\l}"];
+	Node0x600001242620 -> Node0x6000012426c0[tooltip="21 -> 29\nProbability 100.00%" ];
+	Node0x600001242670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %3, align 8\l  %27 = getelementptr inbounds %struct.my_coef_controller, ptr %26, i32 0, i32\l... 0\l  %28 = getelementptr inbounds %struct.jpeg_d_coef_controller, ptr %27, i32 0,\l... i32 3\l  store ptr @decompress_data, ptr %28, align 8\l  br label %29\l}"];
+	Node0x600001242670 -> Node0x6000012426c0[tooltip="25 -> 29\nProbability 100.00%" ];
+	Node0x6000012426c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  br label %30\l}"];
+	Node0x6000012426c0 -> Node0x600001242710[tooltip="29 -> 30\nProbability 100.00%" ];
+	Node0x600001242710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %2, align 8\l  %32 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %31, i32 0,\l... i32 37\l  store i32 0, ptr %32, align 8\l  ret void\l}"];
+}

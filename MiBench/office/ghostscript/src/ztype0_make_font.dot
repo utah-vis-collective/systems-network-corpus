@@ -1,0 +1,22 @@
+digraph "CFG for 'ztype0_make_font' function" {
+	label="CFG for 'ztype0_make_font' function";
+
+	Node0x60000299fca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  %11 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store ptr %3, ptr %9, align 8\l  %12 = load ptr, ptr %9, align 8\l  %13 = load ptr, ptr %12, align 8\l  %14 = getelementptr inbounds %struct.gs_font_type0_s, ptr %13, i32 0, i32 18\l  %15 = getelementptr inbounds %struct.gs_type0_data_s, ptr %14, i32 0, i32 9\l  %16 = load ptr, ptr %15, align 8\l  store ptr %16, ptr %10, align 8\l  %17 = load ptr, ptr %6, align 8\l  %18 = load ptr, ptr %7, align 8\l  %19 = load ptr, ptr %8, align 8\l  %20 = load ptr, ptr %9, align 8\l  %21 = call i32 @zdefault_make_font(ptr noundef %17, ptr noundef %18, ptr\l... noundef %19, ptr noundef %20)\l  store i32 %21, ptr %11, align 4\l  %22 = load i32, ptr %11, align 4\l  %23 = icmp slt i32 %22, 0\l  br i1 %23, label %24, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000299fca0:s0 -> Node0x60000299fcf0[tooltip="4 -> 24\nProbability 37.50%" ];
+	Node0x60000299fca0:s1 -> Node0x60000299fd40[tooltip="4 -> 26\nProbability 62.50%" ];
+	Node0x60000299fcf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %11, align 4\l  store i32 %25, ptr %5, align 4\l  br label %49\l}"];
+	Node0x60000299fcf0 -> Node0x60000299fed0[tooltip="24 -> 49\nProbability 100.00%" ];
+	Node0x60000299fd40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %6, align 8\l  %28 = load ptr, ptr %7, align 8\l  %29 = load ptr, ptr %8, align 8\l  %30 = load ptr, ptr %9, align 8\l  %31 = call i32 @gs_type0_make_font(ptr noundef %27, ptr noundef %28, ptr\l... noundef %29, ptr noundef %30)\l  store i32 %31, ptr %11, align 4\l  %32 = load i32, ptr %11, align 4\l  %33 = icmp slt i32 %32, 0\l  br i1 %33, label %34, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x60000299fd40:s0 -> Node0x60000299fd90[tooltip="26 -> 34\nProbability 37.50%" ];
+	Node0x60000299fd40:s1 -> Node0x60000299fde0[tooltip="26 -> 36\nProbability 62.50%" ];
+	Node0x60000299fd90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %11, align 4\l  store i32 %35, ptr %5, align 4\l  br label %49\l}"];
+	Node0x60000299fd90 -> Node0x60000299fed0[tooltip="34 -> 49\nProbability 100.00%" ];
+	Node0x60000299fde0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %9, align 8\l  %38 = load ptr, ptr %37, align 8\l  %39 = getelementptr inbounds %struct.gs_font_type0_s, ptr %38, i32 0, i32 18\l  %40 = getelementptr inbounds %struct.gs_type0_data_s, ptr %39, i32 0, i32 9\l  %41 = load ptr, ptr %40, align 8\l  %42 = load ptr, ptr %10, align 8\l  %43 = icmp eq ptr %41, %42\l  br i1 %43, label %44, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x60000299fde0:s0 -> Node0x60000299fe30[tooltip="36 -> 44\nProbability 37.50%" ];
+	Node0x60000299fde0:s1 -> Node0x60000299fe80[tooltip="36 -> 45\nProbability 62.50%" ];
+	Node0x60000299fe30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{44:\l|  store i32 0, ptr %5, align 4\l  br label %49\l}"];
+	Node0x60000299fe30 -> Node0x60000299fed0[tooltip="44 -> 49\nProbability 100.00%" ];
+	Node0x60000299fe80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{45:\l|  %46 = load ptr, ptr %9, align 8\l  %47 = load ptr, ptr %46, align 8\l  %48 = call i32 @ztype0_adjust_FDepVector(ptr noundef %47)\l  store i32 %48, ptr %5, align 4\l  br label %49\l}"];
+	Node0x60000299fe80 -> Node0x60000299fed0[tooltip="45 -> 49\nProbability 100.00%" ];
+	Node0x60000299fed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{49:\l|  %50 = load i32, ptr %5, align 4\l  ret i32 %50\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'init_crc' function" {
+	label="CFG for 'init_crc' function";
+
+	Node0x6000017e2350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  call void @mk_crctbl(i64 noundef 8801531)\l  ret void\l}"];
+}

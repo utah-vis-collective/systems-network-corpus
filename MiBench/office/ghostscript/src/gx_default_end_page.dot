@@ -1,0 +1,5 @@
+digraph "CFG for 'gx_default_end_page' function" {
+	label="CFG for 'gx_default_end_page' function";
+
+	Node0x600000046df0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  %7 = load i32, ptr %5, align 4\l  %8 = icmp ne i32 %7, 2\l  %9 = zext i1 %8 to i64\l  %10 = select i1 %8, i32 1, i32 0\l  ret i32 %10\l}"];
+}

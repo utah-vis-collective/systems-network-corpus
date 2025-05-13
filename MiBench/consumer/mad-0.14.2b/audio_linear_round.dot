@@ -1,0 +1,5 @@
+digraph "CFG for 'audio_linear_round' function" {
+	label="CFG for 'audio_linear_round' function";
+
+	Node0x6000022debc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  %7 = load i32, ptr %4, align 4\l  %8 = sub i32 28, %7\l  %9 = zext i32 %8 to i64\l  %10 = shl i64 1, %9\l  %11 = load i32, ptr %5, align 4\l  %12 = sext i32 %11 to i64\l  %13 = add nsw i64 %12, %10\l  %14 = trunc i64 %13 to i32\l  store i32 %14, ptr %5, align 4\l  %15 = load ptr, ptr %6, align 8\l  call void @clip(ptr noundef %5, ptr noundef %15)\l  %16 = load i32, ptr %5, align 4\l  %17 = load i32, ptr %4, align 4\l  %18 = sub i32 29, %17\l  %19 = ashr i32 %16, %18\l  %20 = sext i32 %19 to i64\l  ret i64 %20\l}"];
+}

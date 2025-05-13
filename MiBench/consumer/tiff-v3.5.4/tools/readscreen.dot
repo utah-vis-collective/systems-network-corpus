@@ -1,0 +1,10 @@
+digraph "CFG for 'readscreen' function" {
+	label="CFG for 'readscreen' function";
+
+	Node0x600003633b10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca [7 x i8], align 1\l  %2 = getelementptr inbounds [7 x i8], ptr %1, i64 0, i64 0\l  %3 = load ptr, ptr @infile, align 8\l  %4 = call i64 @fread(ptr noundef %2, i64 noundef 1, i64 noundef 7, ptr\l... noundef %3)\l  %5 = getelementptr inbounds [7 x i8], ptr %1, i64 0, i64 4\l  %6 = load i8, ptr %5, align 1\l  %7 = zext i8 %6 to i32\l  %8 = and i32 %7, 128\l  store i32 %8, ptr @global, align 4\l  %9 = load i32, ptr @global, align 4\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600003633b10:s0 -> Node0x600003633b60[tooltip="0 -> 11\nProbability 62.50%" ];
+	Node0x600003633b10:s1 -> Node0x600003633bb0[tooltip="0 -> 22\nProbability 37.50%" ];
+	Node0x600003633b60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = getelementptr inbounds [7 x i8], ptr %1, i64 0, i64 4\l  %13 = load i8, ptr %12, align 1\l  %14 = zext i8 %13 to i32\l  %15 = and i32 %14, 7\l  %16 = add nsw i32 %15, 1\l  store i32 %16, ptr @globalbits, align 4\l  %17 = load i32, ptr @globalbits, align 4\l  %18 = shl i32 1, %17\l  %19 = sext i32 %18 to i64\l  %20 = load ptr, ptr @infile, align 8\l  %21 = call i64 @fread(ptr noundef @globalmap, i64 noundef 3, i64 noundef\l... %19, ptr noundef %20)\l  br label %22\l}"];
+	Node0x600003633b60 -> Node0x600003633bb0[tooltip="11 -> 22\nProbability 100.00%" ];
+	Node0x600003633bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

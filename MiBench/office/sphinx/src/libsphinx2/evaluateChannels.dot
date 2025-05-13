@@ -1,0 +1,15 @@
+digraph "CFG for 'evaluateChannels' function" {
+	label="CFG for 'evaluateChannels' function";
+
+	Node0x60000203de00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = call i32 @eval_root_chan()\l  store i32 %2, ptr @BestScore, align 4\l  %3 = call i32 @eval_nonroot_chan()\l  store i32 %3, ptr %1, align 4\l  %4 = load i32, ptr @BestScore, align 4\l  %5 = icmp sgt i32 %3, %4\l  br i1 %5, label %6, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x60000203de00:s0 -> Node0x60000203df40[tooltip="0 -> 6\nProbability 50.00%" ];
+	Node0x60000203de00:s1 -> Node0x60000203df90[tooltip="0 -> 8\nProbability 50.00%" ];
+	Node0x60000203df40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %1, align 4\l  store i32 %7, ptr @BestScore, align 4\l  br label %8\l}"];
+	Node0x60000203df40 -> Node0x60000203df90[tooltip="6 -> 8\nProbability 100.00%" ];
+	Node0x60000203df90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = call i32 @eval_word_chan()\l  store i32 %9, ptr %1, align 4\l  %10 = load i32, ptr @BestScore, align 4\l  %11 = icmp sgt i32 %9, %10\l  br i1 %11, label %12, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000203df90:s0 -> Node0x60000203dfe0[tooltip="8 -> 12\nProbability 50.00%" ];
+	Node0x60000203df90:s1 -> Node0x60000203e030[tooltip="8 -> 14\nProbability 50.00%" ];
+	Node0x60000203dfe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %1, align 4\l  store i32 %13, ptr @BestScore, align 4\l  br label %14\l}"];
+	Node0x60000203dfe0 -> Node0x60000203e030[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x60000203e030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %1, align 4\l  store i32 %15, ptr @LastPhoneBestScore, align 4\l  %16 = load i32, ptr @BestScore, align 4\l  %17 = load i32, ptr @CurrentFrame, align 4\l  %18 = sext i32 %17 to i64\l  %19 = getelementptr inbounds [8000 x i32], ptr @BestScoreTable, i64 0, i64\l... %18\l  store i32 %16, ptr %19, align 4\l  ret void\l}"];
+}

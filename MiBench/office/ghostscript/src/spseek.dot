@@ -1,0 +1,9 @@
+digraph "CFG for 'spseek' function" {
+	label="CFG for 'spseek' function";
+
+	Node0x60000320fb10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  br label %5\l}"];
+	Node0x60000320fb10 -> Node0x60000320fbb0[tooltip="2 -> 5\nProbability 100.00%" ];
+	Node0x60000320fbb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  br label %6\l}"];
+	Node0x60000320fbb0 -> Node0x60000320fc00[tooltip="5 -> 6\nProbability 100.00%" ];
+	Node0x60000320fc00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.stream_s, ptr %7, i32 0, i32 12\l  %9 = getelementptr inbounds %struct.stream_procs, ptr %8, i32 0, i32 1\l  %10 = load ptr, ptr %9, align 8\l  %11 = load ptr, ptr %3, align 8\l  %12 = load i64, ptr %4, align 8\l  %13 = call i32 %10(ptr noundef %11, i64 noundef %12)\l  ret i32 %13\l}"];
+}

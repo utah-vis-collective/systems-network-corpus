@@ -1,0 +1,5 @@
+digraph "CFG for '_Z5usagev' function" {
+	label="CFG for '_Z5usagev' function";
+
+	Node0x60000062ebc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 (ptr, ...) @printf(ptr noundef @.str.12)\l  ret void\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'ReverseBits' function" {
+	label="CFG for 'ReverseBits' function";
+
+	Node0x600001cea2b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  store i32 0, ptr %6, align 4\l  store i32 0, ptr %5, align 4\l  br label %7\l}"];
+	Node0x600001cea2b0 -> Node0x600001cea300[tooltip="2 -> 7\nProbability 100.00%" ];
+	Node0x600001cea300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %5, align 4\l  %9 = load i32, ptr %4, align 4\l  %10 = icmp ult i32 %8, %9\l  br i1 %10, label %11, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001cea300:s0 -> Node0x600001cea350[tooltip="7 -> 11\nProbability 96.88%" ];
+	Node0x600001cea300:s1 -> Node0x600001cea3f0[tooltip="7 -> 22\nProbability 3.12%" ];
+	Node0x600001cea350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %6, align 4\l  %13 = shl i32 %12, 1\l  %14 = load i32, ptr %3, align 4\l  %15 = and i32 %14, 1\l  %16 = or i32 %13, %15\l  store i32 %16, ptr %6, align 4\l  %17 = load i32, ptr %3, align 4\l  %18 = lshr i32 %17, 1\l  store i32 %18, ptr %3, align 4\l  br label %19\l}"];
+	Node0x600001cea350 -> Node0x600001cea3a0[tooltip="11 -> 19\nProbability 100.00%" ];
+	Node0x600001cea3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %5, align 4\l  %21 = add i32 %20, 1\l  store i32 %21, ptr %5, align 4\l  br label %7\l}"];
+	Node0x600001cea3a0 -> Node0x600001cea300[tooltip="19 -> 7\nProbability 100.00%" ];
+	Node0x600001cea3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %6, align 4\l  ret i32 %23\l}"];
+}

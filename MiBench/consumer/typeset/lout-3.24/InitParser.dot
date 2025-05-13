@@ -1,0 +1,17 @@
+digraph "CFG for 'InitParser' function" {
+	label="CFG for 'InitParser' function";
+
+	Node0x6000037204b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call i64 @strlen(ptr noundef %3) #3\l  %5 = icmp uge i64 %4, 2048\l  br i1 %5, label %6, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000037204b0:s0 -> Node0x6000037205a0[tooltip="1 -> 6\nProbability 50.00%" ];
+	Node0x6000037204b0:s1 -> Node0x6000037205f0[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x6000037205a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @no_fpos, align 8\l  %8 = load ptr, ptr %2, align 8\l  %9 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 6, i32\l... noundef 10, ptr noundef @.str, i32 noundef 1, ptr noundef %7, ptr noundef %8)\l  br label %10\l}"];
+	Node0x6000037205a0 -> Node0x6000037205f0[tooltip="6 -> 10\nProbability 100.00%" ];
+	Node0x6000037205f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = load ptr, ptr @no_fpos, align 8\l  %13 = call ptr @MakeWord(i32 noundef 11, ptr noundef %11, ptr noundef %12)\l  store ptr %13, ptr @cross_name, align 8\l  %14 = load i32, ptr @ttop, align 4\l  %15 = add nsw i32 %14, 1\l  store i32 %15, ptr @ttop, align 4\l  %16 = icmp slt i32 %15, 100\l  br i1 %16, label %17, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000037205f0:s0 -> Node0x600003720640[tooltip="10 -> 17\nProbability 50.00%" ];
+	Node0x6000037205f0:s1 -> Node0x600003720690[tooltip="10 -> 24\nProbability 50.00%" ];
+	Node0x600003720640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr @no_fpos, align 8\l  %19 = load ptr, ptr @StartSym, align 8\l  %20 = call ptr @NewToken(i8 noundef zeroext 110, ptr noundef %18, i8 noundef\l... zeroext 0, i8 noundef zeroext 0, i8 noundef zeroext 100, ptr noundef %19)\l  %21 = load i32, ptr @ttop, align 4\l  %22 = sext i32 %21 to i64\l  %23 = getelementptr inbounds [100 x ptr], ptr @tok_stack, i64 0, i64 %22\l  store ptr %20, ptr %23, align 8\l  br label %32\l}"];
+	Node0x600003720640 -> Node0x6000037206e0[tooltip="17 -> 32\nProbability 100.00%" ];
+	Node0x600003720690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load i32, ptr @ttop, align 4\l  %26 = sub nsw i32 %25, 1\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds [100 x ptr], ptr @tok_stack, i64 0, i64 %27\l  %29 = load ptr, ptr %28, align 8\l  %30 = getelementptr inbounds %struct.word_type, ptr %29, i32 0, i32 1\l  %31 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 6, i32\l... noundef 2, ptr noundef @.str.1, i32 noundef 1, ptr noundef %30)\l  br label %32\l}"];
+	Node0x600003720690 -> Node0x6000037206e0[tooltip="24 -> 32\nProbability 100.00%" ];
+	Node0x6000037206e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  ret void\l}"];
+}

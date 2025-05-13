@@ -1,0 +1,12 @@
+digraph "CFG for 'PDFText_OpenString' function" {
+	label="CFG for 'PDFText_OpenString' function";
+
+	Node0x600000529180 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load i32, ptr @g_TJ_pending, align 4\l  %4 = icmp ne i32 %3, 0\l  br i1 %4, label %5, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x600000529180:s0 -> Node0x6000005291d0[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x600000529180:s1 -> Node0x600000529220[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x6000005291d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  store i32 0, ptr @g_TJ_pending, align 4\l  br label %8\l}"];
+	Node0x6000005291d0 -> Node0x600000529270[tooltip="5 -> 8\nProbability 100.00%" ];
+	Node0x600000529220 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  call void @PDFPage_Write(ptr noundef %7, ptr noundef @.str.78)\l  br label %8\l}"];
+	Node0x600000529220 -> Node0x600000529270[tooltip="6 -> 8\nProbability 100.00%" ];
+	Node0x600000529270 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  ret void\l}"];
+}

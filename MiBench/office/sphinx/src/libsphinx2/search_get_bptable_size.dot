@@ -1,0 +1,5 @@
+digraph "CFG for 'search_get_bptable_size' function" {
+	label="CFG for 'search_get_bptable_size' function";
+
+	Node0x6000020014a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @BPIdx, align 4\l  ret i32 %1\l}"];
+}

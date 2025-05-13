@@ -1,0 +1,17 @@
+digraph "CFG for 'is_shifting_signed' function" {
+	label="CFG for 'is_shifting_signed' function";
+
+	Node0x600003452670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i64, align 8\l  %4 = alloca i64, align 8\l  store i64 %0, ptr %3, align 8\l  %5 = load i64, ptr %3, align 8\l  %6 = ashr i64 %5, 4\l  store i64 %6, ptr %4, align 8\l  %7 = load i64, ptr %4, align 8\l  %8 = icmp eq i64 %7, -133687308\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600003452670:s0 -> Node0x6000034526c0[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x600003452670:s1 -> Node0x600003452710[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x6000034526c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i32 1, ptr %2, align 4\l  br label %19\l}"];
+	Node0x6000034526c0 -> Node0x600003452800[tooltip="9 -> 19\nProbability 100.00%" ];
+	Node0x600003452710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load i64, ptr %4, align 8\l  %12 = or i64 %11, -268435456\l  store i64 %12, ptr %4, align 8\l  %13 = load i64, ptr %4, align 8\l  %14 = icmp eq i64 %13, -133687308\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600003452710:s0 -> Node0x600003452760[tooltip="10 -> 15\nProbability 50.00%" ];
+	Node0x600003452710:s1 -> Node0x6000034527b0[tooltip="10 -> 16\nProbability 50.00%" ];
+	Node0x600003452760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{15:\l|  store i32 0, ptr %2, align 4\l  br label %19\l}"];
+	Node0x600003452760 -> Node0x600003452800[tooltip="15 -> 19\nProbability 100.00%" ];
+	Node0x6000034527b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = call i32 (ptr, ...) @printf(ptr noundef @.str.2)\l  %18 = call i32 (ptr, ...) @printf(ptr noundef @.str.1)\l  store i32 0, ptr %2, align 4\l  br label %19\l}"];
+	Node0x6000034527b0 -> Node0x600003452800[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x600003452800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %2, align 4\l  ret i32 %20\l}"];
+}

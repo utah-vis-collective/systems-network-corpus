@@ -1,0 +1,15 @@
+digraph "CFG for 'gs_setrenderalgorithm' function" {
+	label="CFG for 'gs_setrenderalgorithm' function";
+
+	Node0x600001ac2580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %5, align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %11, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600001ac2580:s0 -> Node0x600001ac2620[tooltip="2 -> 11\nProbability 37.50%" ];
+	Node0x600001ac2580:s1 -> Node0x600001ac25d0[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x600001ac25d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %5, align 4\l  %10 = icmp sgt i32 %9, 14\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001ac25d0:s0 -> Node0x600001ac2620[tooltip="8 -> 11\nProbability 50.00%" ];
+	Node0x600001ac25d0:s1 -> Node0x600001ac2670[tooltip="8 -> 12\nProbability 50.00%" ];
+	Node0x600001ac2620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  store i32 -15, ptr %3, align 4\l  br label %22\l}"];
+	Node0x600001ac2620 -> Node0x600001ac26c0[tooltip="11 -> 22\nProbability 100.00%" ];
+	Node0x600001ac2670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %5, align 4\l  %14 = shl i32 %13, 10\l  %15 = load ptr, ptr %4, align 8\l  %16 = getelementptr inbounds %struct.gs_state_s, ptr %15, i32 0, i32 3\l  %17 = load i32, ptr %16, align 8\l  %18 = and i32 %17, -15361\l  %19 = or i32 %14, %18\l  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds %struct.gs_state_s, ptr %20, i32 0, i32 3\l  store i32 %19, ptr %21, align 8\l  store i32 0, ptr %3, align 4\l  br label %22\l}"];
+	Node0x600001ac2670 -> Node0x600001ac26c0[tooltip="12 -> 22\nProbability 100.00%" ];
+	Node0x600001ac26c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %3, align 4\l  ret i32 %23\l}"];
+}

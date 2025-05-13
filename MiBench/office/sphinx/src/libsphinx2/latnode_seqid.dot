@@ -1,0 +1,27 @@
+digraph "CFG for 'latnode_seqid' function" {
+	label="CFG for 'latnode_seqid' function";
+
+	Node0x600002affc00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  store i32 0, ptr %3, align 4\l  %5 = load ptr, ptr @latnode_list, align 8\l  store ptr %5, ptr %4, align 8\l  br label %6\l}"];
+	Node0x600002affc00 -> Node0x600002affc50[tooltip="1 -> 6\nProbability 100.00%" ];
+	Node0x600002affc50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %4, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600002affc50:s0 -> Node0x600002affca0[tooltip="6 -> 9\nProbability 62.50%" ];
+	Node0x600002affc50:s1 -> Node0x600002affcf0[tooltip="6 -> 13\nProbability 37.50%" ];
+	Node0x600002affca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %4, align 8\l  %11 = load ptr, ptr %2, align 8\l  %12 = icmp ne ptr %10, %11\l  br label %13\l}"];
+	Node0x600002affca0 -> Node0x600002affcf0[tooltip="9 -> 13\nProbability 100.00%" ];
+	Node0x600002affcf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = phi i1 [ false, %6 ], [ %12, %9 ]\l  br i1 %14, label %15, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600002affcf0:s0 -> Node0x600002affd40[tooltip="13 -> 15\nProbability 96.88%" ];
+	Node0x600002affcf0:s1 -> Node0x600002affde0[tooltip="13 -> 22\nProbability 3.12%" ];
+	Node0x600002affd40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  br label %16\l}"];
+	Node0x600002affd40 -> Node0x600002affd90[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x600002affd90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.latnode_s, ptr %17, i32 0, i32 8\l  %19 = load ptr, ptr %18, align 8\l  store ptr %19, ptr %4, align 8\l  %20 = load i32, ptr %3, align 4\l  %21 = add nsw i32 %20, 1\l  store i32 %21, ptr %3, align 4\l  br label %6\l}"];
+	Node0x600002affd90 -> Node0x600002affc50[tooltip="16 -> 6\nProbability 100.00%" ];
+	Node0x600002affde0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %4, align 8\l  %24 = icmp ne ptr %23, null\l  %25 = xor i1 %24, true\l  %26 = zext i1 %25 to i32\l  %27 = sext i32 %26 to i64\l  %28 = icmp ne i64 %27, 0\l  br i1 %28, label %29, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600002affde0:s0 -> Node0x600002affe30[tooltip="22 -> 29\nProbability 0.00%" ];
+	Node0x600002affde0:s1 -> Node0x600002affed0[tooltip="22 -> 31\nProbability 100.00%" ];
+	Node0x600002affe30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{29:\l|  call void @__assert_rtn(ptr noundef @__func__.latnode_seqid, ptr noundef\l... @.str.6, i32 noundef 366, ptr noundef @.str.31) #7\l  unreachable\l}"];
+	Node0x600002affe80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{30:\l|  br label %32\l}"];
+	Node0x600002affe80 -> Node0x600002afff20[tooltip="30 -> 32\nProbability 100.00%" ];
+	Node0x600002affed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  br label %32\l}"];
+	Node0x600002affed0 -> Node0x600002afff20[tooltip="31 -> 32\nProbability 100.00%" ];
+	Node0x600002afff20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %3, align 4\l  ret i32 %33\l}"];
+}

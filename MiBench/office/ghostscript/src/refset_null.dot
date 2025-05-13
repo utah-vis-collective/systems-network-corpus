@@ -1,0 +1,12 @@
+digraph "CFG for 'refset_null' function" {
+	label="CFG for 'refset_null' function";
+
+	Node0x600003592df0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  br label %5\l}"];
+	Node0x600003592df0 -> Node0x600003592e40[tooltip="2 -> 5\nProbability 100.00%" ];
+	Node0x600003592e40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %4, align 4\l  %7 = add i32 %6, -1\l  store i32 %7, ptr %4, align 4\l  %8 = icmp ne i32 %6, 0\l  br i1 %8, label %9, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600003592e40:s0 -> Node0x600003592e90[tooltip="5 -> 9\nProbability 96.88%" ];
+	Node0x600003592e40:s1 -> Node0x600003592ee0[tooltip="5 -> 18\nProbability 3.12%" ];
+	Node0x600003592e90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr getelementptr inbounds (%struct.gs_dual_memory_s, ptr\l... @gs_imemory, i32 0, i32 6), align 4\l  %11 = add i32 3584, %10\l  %12 = trunc i32 %11 to i16\l  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds %struct.ref_s, ptr %13, i32 0, i32 0\l  %15 = getelementptr inbounds %struct.tas_s, ptr %14, i32 0, i32 0\l  store i16 %12, ptr %15, align 8\l  %16 = load ptr, ptr %3, align 8\l  %17 = getelementptr inbounds %struct.ref_s, ptr %16, i32 1\l  store ptr %17, ptr %3, align 8\l  br label %5\l}"];
+	Node0x600003592e90 -> Node0x600003592e40[tooltip="9 -> 5\nProbability 100.00%" ];
+	Node0x600003592ee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  ret void\l}"];
+}

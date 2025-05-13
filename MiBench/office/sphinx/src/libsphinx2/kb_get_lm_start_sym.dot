@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_lm_start_sym' function" {
+	label="CFG for 'kb_get_lm_start_sym' function";
+
+	Node0x600002a8ca00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @lm_start_sym, align 8\l  ret ptr %1\l}"];
+}

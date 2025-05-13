@@ -1,0 +1,17 @@
+digraph "CFG for 'FlushOutput' function" {
+	label="CFG for 'FlushOutput' function";
+
+	Node0x600002cfe0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = load i32, ptr @outcnt, align 4\l  %4 = icmp ne i32 %3, 0\l  br i1 %4, label %5, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002cfe0d0:s0 -> Node0x600002cfe120[tooltip="0 -> 5\nProbability 62.50%" ];
+	Node0x600002cfe0d0:s1 -> Node0x600002cfe210[tooltip="0 -> 20\nProbability 37.50%" ];
+	Node0x600002cfe120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr @outcnt, align 4\l  store i32 %6, ptr %2, align 4\l  %7 = load i32, ptr @outfd, align 4\l  %8 = load ptr, ptr @outout, align 8\l  %9 = load i32, ptr %2, align 4\l  %10 = call i32 @write(i32 noundef %7, ptr noundef %8, i32 noundef %9)\l  %11 = load i32, ptr %2, align 4\l  %12 = icmp ne i32 %10, %11\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600002cfe120:s0 -> Node0x600002cfe170[tooltip="5 -> 13\nProbability 50.00%" ];
+	Node0x600002cfe120:s1 -> Node0x600002cfe1c0[tooltip="5 -> 14\nProbability 50.00%" ];
+	Node0x600002cfe170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  store i32 50, ptr %1, align 4\l  br label %21\l}"];
+	Node0x600002cfe170 -> Node0x600002cfe260[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x600002cfe1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load i32, ptr @outcnt, align 4\l  %16 = sext i32 %15 to i64\l  %17 = load i64, ptr @outpos, align 8\l  %18 = add nsw i64 %17, %16\l  store i64 %18, ptr @outpos, align 8\l  store i32 0, ptr @outcnt, align 4\l  %19 = load ptr, ptr @outbuf, align 8\l  store ptr %19, ptr @outptr, align 8\l  br label %20\l}"];
+	Node0x600002cfe1c0 -> Node0x600002cfe210[tooltip="14 -> 20\nProbability 100.00%" ];
+	Node0x600002cfe210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  store i32 0, ptr %1, align 4\l  br label %21\l}"];
+	Node0x600002cfe210 -> Node0x600002cfe260[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x600002cfe260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %1, align 4\l  ret i32 %22\l}"];
+}

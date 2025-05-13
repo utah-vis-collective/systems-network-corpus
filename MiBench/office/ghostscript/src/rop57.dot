@@ -1,0 +1,5 @@
+digraph "CFG for 'rop57' function" {
+	label="CFG for 'rop57' function";
+
+	Node0x6000015c7070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %7 = load i32, ptr %5, align 4\l  %8 = load i32, ptr %6, align 4\l  %9 = load i32, ptr %4, align 4\l  %10 = xor i32 %9, -1\l  %11 = or i32 %8, %10\l  %12 = xor i32 %7, %11\l  ret i32 %12\l}"];
+}

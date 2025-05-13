@@ -1,0 +1,31 @@
+digraph "CFG for 'TIFFReadRGBAStrip' function" {
+	label="CFG for 'TIFFReadRGBAStrip' function";
+
+	Node0x600002a2cb40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca [1024 x i8], align 1\l  %9 = alloca %struct._TIFFRGBAImage, align 8\l  %10 = alloca i32, align 4\l  %11 = alloca i64, align 8\l  %12 = alloca i64, align 8\l  store ptr %0, ptr %5, align 8\l  store i64 %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = call i32 @TIFFIsTiled(ptr noundef %13)\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %16, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600002a2cb40:s0 -> Node0x600002a2cb90[tooltip="3 -> 16\nProbability 62.50%" ];
+	Node0x600002a2cb40:s1 -> Node0x600002a2cbe0[tooltip="3 -> 19\nProbability 37.50%" ];
+	Node0x600002a2cb90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %5, align 8\l  %18 = call ptr @TIFFFileName(ptr noundef %17)\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %18, ptr noundef @.str.20)\l  store i32 0, ptr %4, align 4\l  br label %64\l}"];
+	Node0x600002a2cb90 -> Node0x600002a2ceb0[tooltip="16 -> 64\nProbability 100.00%" ];
+	Node0x600002a2cbe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %5, align 8\l  %21 = call i32 (ptr, i64, ...) @TIFFGetFieldDefaulted(ptr noundef %20, i64\l... noundef 278, ptr noundef %11)\l  %22 = load i64, ptr %6, align 8\l  %23 = load i64, ptr %11, align 8\l  %24 = urem i64 %22, %23\l  %25 = icmp ne i64 %24, 0\l  br i1 %25, label %26, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600002a2cbe0:s0 -> Node0x600002a2cc30[tooltip="19 -> 26\nProbability 62.50%" ];
+	Node0x600002a2cbe0:s1 -> Node0x600002a2cc80[tooltip="19 -> 29\nProbability 37.50%" ];
+	Node0x600002a2cc30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = call ptr @TIFFFileName(ptr noundef %27)\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %28, ptr noundef @.str.21)\l  store i32 0, ptr %4, align 4\l  br label %64\l}"];
+	Node0x600002a2cc30 -> Node0x600002a2ceb0[tooltip="26 -> 64\nProbability 100.00%" ];
+	Node0x600002a2cc80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %5, align 8\l  %31 = getelementptr inbounds [1024 x i8], ptr %8, i64 0, i64 0\l  %32 = call i32 @TIFFRGBAImageBegin(ptr noundef %9, ptr noundef %30, i32\l... noundef 0, ptr noundef %31)\l  %33 = icmp ne i32 %32, 0\l  br i1 %33, label %34, label %58\l|{<s0>T|<s1>F}}"];
+	Node0x600002a2cc80:s0 -> Node0x600002a2ccd0[tooltip="29 -> 34\nProbability 62.50%" ];
+	Node0x600002a2cc80:s1 -> Node0x600002a2ce10[tooltip="29 -> 58\nProbability 37.50%" ];
+	Node0x600002a2ccd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{34:\l|  %35 = load i64, ptr %6, align 8\l  %36 = trunc i64 %35 to i32\l  %37 = getelementptr inbounds %struct._TIFFRGBAImage, ptr %9, i32 0, i32 19\l  store i32 %36, ptr %37, align 8\l  %38 = getelementptr inbounds %struct._TIFFRGBAImage, ptr %9, i32 0, i32 20\l  store i32 0, ptr %38, align 4\l  %39 = load i64, ptr %6, align 8\l  %40 = load i64, ptr %11, align 8\l  %41 = add i64 %39, %40\l  %42 = getelementptr inbounds %struct._TIFFRGBAImage, ptr %9, i32 0, i32 5\l  %43 = load i64, ptr %42, align 8\l  %44 = icmp ugt i64 %41, %43\l  br i1 %44, label %45, label %50\l|{<s0>T|<s1>F}}"];
+	Node0x600002a2ccd0:s0 -> Node0x600002a2cd20[tooltip="34 -> 45\nProbability 50.00%" ];
+	Node0x600002a2ccd0:s1 -> Node0x600002a2cd70[tooltip="34 -> 50\nProbability 50.00%" ];
+	Node0x600002a2cd20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{45:\l|  %46 = getelementptr inbounds %struct._TIFFRGBAImage, ptr %9, i32 0, i32 5\l  %47 = load i64, ptr %46, align 8\l  %48 = load i64, ptr %6, align 8\l  %49 = sub i64 %47, %48\l  store i64 %49, ptr %12, align 8\l  br label %52\l}"];
+	Node0x600002a2cd20 -> Node0x600002a2cdc0[tooltip="45 -> 52\nProbability 100.00%" ];
+	Node0x600002a2cd70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{50:\l|  %51 = load i64, ptr %11, align 8\l  store i64 %51, ptr %12, align 8\l  br label %52\l}"];
+	Node0x600002a2cd70 -> Node0x600002a2cdc0[tooltip="50 -> 52\nProbability 100.00%" ];
+	Node0x600002a2cdc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{52:\l|  %53 = load ptr, ptr %7, align 8\l  %54 = getelementptr inbounds %struct._TIFFRGBAImage, ptr %9, i32 0, i32 4\l  %55 = load i64, ptr %54, align 8\l  %56 = load i64, ptr %12, align 8\l  %57 = call i32 @TIFFRGBAImageGet(ptr noundef %9, ptr noundef %53, i64\l... noundef %55, i64 noundef %56)\l  store i32 %57, ptr %10, align 4\l  call void @TIFFRGBAImageEnd(ptr noundef %9)\l  br label %62\l}"];
+	Node0x600002a2cdc0 -> Node0x600002a2ce60[tooltip="52 -> 62\nProbability 100.00%" ];
+	Node0x600002a2ce10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{58:\l|  %59 = load ptr, ptr %5, align 8\l  %60 = call ptr @TIFFFileName(ptr noundef %59)\l  %61 = getelementptr inbounds [1024 x i8], ptr %8, i64 0, i64 0\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %60, ptr noundef %61)\l  store i32 0, ptr %10, align 4\l  br label %62\l}"];
+	Node0x600002a2ce10 -> Node0x600002a2ce60[tooltip="58 -> 62\nProbability 100.00%" ];
+	Node0x600002a2ce60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{62:\l|  %63 = load i32, ptr %10, align 4\l  store i32 %63, ptr %4, align 4\l  br label %64\l}"];
+	Node0x600002a2ce60 -> Node0x600002a2ceb0[tooltip="62 -> 64\nProbability 100.00%" ];
+	Node0x600002a2ceb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{64:\l|  %65 = load i32, ptr %4, align 4\l  ret i32 %65\l}"];
+}

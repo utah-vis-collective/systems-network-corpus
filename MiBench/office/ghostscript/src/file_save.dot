@@ -1,0 +1,14 @@
+digraph "CFG for 'file_save' function" {
+	label="CFG for 'file_save' function";
+
+	Node0x600002134320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  br label %1\l}"];
+	Node0x600002134320 -> Node0x600002134370[tooltip="0 -> 1\nProbability 100.00%" ];
+	Node0x600002134370 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  br label %2\l}"];
+	Node0x600002134370 -> Node0x6000021343c0[tooltip="1 -> 2\nProbability 100.00%" ];
+	Node0x6000021343c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load ptr, ptr @file_list, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000021343c0:s0 -> Node0x600002134410[tooltip="2 -> 5\nProbability 62.50%" ];
+	Node0x6000021343c0:s1 -> Node0x600002134460[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x600002134410 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr @file_list, align 8\l  %7 = getelementptr inbounds %struct.stream_s, ptr %6, i32 0, i32 21\l  %8 = load i32, ptr %7, align 8\l  %9 = add nsw i32 %8, 1\l  store i32 %9, ptr %7, align 8\l  br label %10\l}"];
+	Node0x600002134410 -> Node0x600002134460[tooltip="5 -> 10\nProbability 100.00%" ];
+	Node0x600002134460 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  ret void\l}"];
+}

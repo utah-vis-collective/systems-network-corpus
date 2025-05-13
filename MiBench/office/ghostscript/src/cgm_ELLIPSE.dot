@@ -1,0 +1,5 @@
+digraph "CFG for 'cgm_ELLIPSE' function" {
+	label="CFG for 'cgm_ELLIPSE' function";
+
+	Node0x6000024c1090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store ptr %3, ptr %8, align 8\l  %9 = load ptr, ptr %5, align 8\l  call void @begin_command(ptr noundef %9, i32 noundef 529)\l  %10 = load ptr, ptr %5, align 8\l  %11 = load ptr, ptr %6, align 8\l  call void @put_point(ptr noundef %10, ptr noundef %11)\l  %12 = load ptr, ptr %5, align 8\l  %13 = load ptr, ptr %7, align 8\l  call void @put_point(ptr noundef %12, ptr noundef %13)\l  %14 = load ptr, ptr %5, align 8\l  %15 = load ptr, ptr %8, align 8\l  call void @put_point(ptr noundef %14, ptr noundef %15)\l  %16 = load ptr, ptr %5, align 8\l  %17 = call i32 @end_command(ptr noundef %16)\l  ret i32 %17\l}"];
+}

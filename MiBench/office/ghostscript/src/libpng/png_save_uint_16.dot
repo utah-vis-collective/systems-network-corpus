@@ -1,0 +1,5 @@
+digraph "CFG for 'png_save_uint_16' function" {
+	label="CFG for 'png_save_uint_16' function";
+
+	Node0x6000023b23f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i16, align 2\l  store ptr %0, ptr %3, align 8\l  store i16 %1, ptr %4, align 2\l  %5 = load i16, ptr %4, align 2\l  %6 = zext i16 %5 to i32\l  %7 = ashr i32 %6, 8\l  %8 = and i32 %7, 255\l  %9 = trunc i32 %8 to i8\l  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds i8, ptr %10, i64 0\l  store i8 %9, ptr %11, align 1\l  %12 = load i16, ptr %4, align 2\l  %13 = zext i16 %12 to i32\l  %14 = and i32 %13, 255\l  %15 = trunc i32 %14 to i8\l  %16 = load ptr, ptr %3, align 8\l  %17 = getelementptr inbounds i8, ptr %16, i64 1\l  store i8 %15, ptr %17, align 1\l  ret void\l}"];
+}

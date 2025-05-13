@@ -1,0 +1,22 @@
+digraph "CFG for 'cgm_close' function" {
+	label="CFG for 'cgm_close' function";
+
+	Node0x600001696850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  store ptr %7, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = call i32 @cgm_output_page(ptr noundef %8, i32 noundef 1, i32 noundef 0)\l  store i32 %9, ptr %5, align 4\l  %10 = load i32, ptr %5, align 4\l  %11 = icmp slt i32 %10, 0\l  br i1 %11, label %12, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001696850:s0 -> Node0x6000016968a0[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x600001696850:s1 -> Node0x6000016968f0[tooltip="1 -> 14\nProbability 62.50%" ];
+	Node0x6000016968a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %5, align 4\l  store i32 %13, ptr %2, align 4\l  br label %43\l}"];
+	Node0x6000016968a0 -> Node0x600001696a80[tooltip="12 -> 43\nProbability 100.00%" ];
+	Node0x6000016968f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %4, align 8\l  %16 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %15, i32 0, i32 24\l  %17 = load ptr, ptr %16, align 8\l  %18 = call i32 @cgm_END_METAFILE(ptr noundef %17)\l  store i32 %18, ptr %6, align 4\l  %19 = load i32, ptr %6, align 4\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000016968f0:s0 -> Node0x600001696940[tooltip="14 -> 21\nProbability 62.50%" ];
+	Node0x6000016968f0:s1 -> Node0x600001696990[tooltip="14 -> 24\nProbability 37.50%" ];
+	Node0x600001696940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %6, align 4\l  %23 = call i32 @cgm_error_code(i32 noundef %22)\l  store i32 %23, ptr %2, align 4\l  br label %43\l}"];
+	Node0x600001696940 -> Node0x600001696a80[tooltip="21 -> 43\nProbability 100.00%" ];
+	Node0x600001696990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %4, align 8\l  %26 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %25, i32 0, i32 24\l  %27 = load ptr, ptr %26, align 8\l  %28 = call i32 @cgm_terminate(ptr noundef %27)\l  store i32 %28, ptr %6, align 4\l  %29 = load i32, ptr %6, align 4\l  %30 = icmp ne i32 %29, 0\l  br i1 %30, label %31, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600001696990:s0 -> Node0x6000016969e0[tooltip="24 -> 31\nProbability 62.50%" ];
+	Node0x600001696990:s1 -> Node0x600001696a30[tooltip="24 -> 34\nProbability 37.50%" ];
+	Node0x6000016969e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %6, align 4\l  %33 = call i32 @cgm_error_code(i32 noundef %32)\l  store i32 %33, ptr %2, align 4\l  br label %43\l}"];
+	Node0x6000016969e0 -> Node0x600001696a80[tooltip="31 -> 43\nProbability 100.00%" ];
+	Node0x600001696a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %4, align 8\l  %36 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %35, i32 0, i32 24\l  store ptr null, ptr %36, align 8\l  %37 = load ptr, ptr %4, align 8\l  %38 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %37, i32 0, i32 23\l  %39 = load ptr, ptr %38, align 8\l  %40 = call i32 @fclose(ptr noundef %39)\l  %41 = load ptr, ptr %4, align 8\l  %42 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %41, i32 0, i32 23\l  store ptr null, ptr %42, align 8\l  store i32 0, ptr %2, align 4\l  br label %43\l}"];
+	Node0x600001696a30 -> Node0x600001696a80[tooltip="34 -> 43\nProbability 100.00%" ];
+	Node0x600001696a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %2, align 4\l  ret i32 %44\l}"];
+}

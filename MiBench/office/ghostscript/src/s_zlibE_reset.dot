@@ -1,0 +1,12 @@
+digraph "CFG for 's_zlibE_reset' function" {
+	label="CFG for 's_zlibE_reset' function";
+
+	Node0x60000306a8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr %3, align 8\l  %5 = getelementptr inbounds %struct.stream_zlib_state_s, ptr %4, i32 0, i32 9\l  %6 = call i32 @deflateReset(ptr noundef %5)\l  %7 = icmp ne i32 %6, 0\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000306a8a0:s0 -> Node0x60000306a8f0[tooltip="1 -> 8\nProbability 62.50%" ];
+	Node0x60000306a8a0:s1 -> Node0x60000306a940[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x60000306a8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  store i32 -2, ptr %2, align 4\l  br label %10\l}"];
+	Node0x60000306a8f0 -> Node0x60000306a990[tooltip="8 -> 10\nProbability 100.00%" ];
+	Node0x60000306a940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  store i32 0, ptr %2, align 4\l  br label %10\l}"];
+	Node0x60000306a940 -> Node0x60000306a990[tooltip="9 -> 10\nProbability 100.00%" ];
+	Node0x60000306a990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %2, align 4\l  ret i32 %11\l}"];
+}

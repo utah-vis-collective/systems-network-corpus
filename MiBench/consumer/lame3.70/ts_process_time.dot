@@ -1,0 +1,10 @@
+digraph "CFG for 'ts_process_time' function" {
+	label="CFG for 'ts_process_time' function";
+
+	Node0x600000a4a030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca i64, align 8\l  store i64 %0, ptr %2, align 8\l  %4 = call i64 @\"\\01_clock\"()\l  store i64 %4, ptr %3, align 8\l  %5 = load i64, ptr %2, align 8\l  %6 = icmp eq i64 %5, 0\l  br i1 %6, label %7, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600000a4a030:s0 -> Node0x600000a4a080[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x600000a4a030:s1 -> Node0x600000a4a0d0[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x600000a4a080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{7:\l|  %8 = load i64, ptr %3, align 8\l  store i64 %8, ptr @ts_process_time.initial_time, align 8\l  br label %9\l}"];
+	Node0x600000a4a080 -> Node0x600000a4a0d0[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x600000a4a0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i64, ptr %3, align 8\l  %11 = load i64, ptr @ts_process_time.initial_time, align 8\l  %12 = sub i64 %10, %11\l  %13 = uitofp i64 %12 to float\l  %14 = fdiv float %13, 1.000000e+06\l  ret float %14\l}"];
+}

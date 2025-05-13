@@ -1,0 +1,12 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x60000392cb40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca i32, align 4\l  store i32 0, ptr %3, align 4\l  store i32 %0, ptr %4, align 4\l  store ptr %1, ptr %5, align 8\l  store i32 0, ptr %8, align 4\l  br label %9\l}"];
+	Node0x60000392cb40 -> Node0x60000392cb90[tooltip="2 -> 9\nProbability 100.00%" ];
+	Node0x60000392cb90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %4, align 4\l  %11 = add nsw i32 %10, -1\l  store i32 %11, ptr %4, align 4\l  %12 = icmp sgt i32 %11, 0\l  br i1 %12, label %13, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x60000392cb90:s0 -> Node0x60000392cbe0[tooltip="9 -> 13\nProbability 96.88%" ];
+	Node0x60000392cb90:s1 -> Node0x60000392cc30[tooltip="9 -> 25\nProbability 3.12%" ];
+	Node0x60000392cbe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds ptr, ptr %14, i32 1\l  store ptr %15, ptr %5, align 8\l  %16 = load ptr, ptr %15, align 8\l  %17 = call i32 @crc32file(ptr noundef %16, ptr noundef %6, ptr noundef %7)\l  %18 = load i32, ptr %8, align 4\l  %19 = or i32 %18, %17\l  store i32 %19, ptr %8, align 4\l  %20 = load i64, ptr %6, align 8\l  %21 = load i64, ptr %7, align 8\l  %22 = load ptr, ptr %5, align 8\l  %23 = load ptr, ptr %22, align 8\l  %24 = call i32 (ptr, ...) @printf(ptr noundef @.str.1, i64 noundef %20, i64\l... noundef %21, ptr noundef %23)\l  br label %9\l}"];
+	Node0x60000392cbe0 -> Node0x60000392cb90[tooltip="13 -> 9\nProbability 100.00%" ];
+	Node0x60000392cc30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %8, align 4\l  %27 = icmp ne i32 %26, 0\l  %28 = zext i1 %27 to i32\l  ret i32 %28\l}"];
+}

@@ -1,0 +1,36 @@
+digraph "CFG for 'zv_mlt' function" {
+	label="CFG for 'zv_mlt' function";
+
+	Node0x600000d8ce10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca %struct.complex, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store [2 x double] %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %8 = load ptr, ptr %6, align 8\l  %9 = icmp eq ptr %8, null\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8ce10:s0 -> Node0x600000d8d180[tooltip="3 -> 10\nProbability 37.50%" ];
+	Node0x600000d8ce10:s1 -> Node0x600000d8d1d0[tooltip="3 -> 12\nProbability 62.50%" ];
+	Node0x600000d8d180 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 70,\l... ptr noundef @.str.2, i32 noundef 0)\l  br label %12\l}"];
+	Node0x600000d8d180 -> Node0x600000d8d1d0[tooltip="10 -> 12\nProbability 100.00%" ];
+	Node0x600000d8d1d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %7, align 8\l  %14 = icmp eq ptr %13, null\l  br i1 %14, label %23, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8d1d0:s0 -> Node0x600000d8d270[tooltip="12 -> 23\nProbability 37.50%" ];
+	Node0x600000d8d1d0:s1 -> Node0x600000d8d220[tooltip="12 -> 15\nProbability 62.50%" ];
+	Node0x600000d8d220 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %7, align 8\l  %17 = getelementptr inbounds %struct.ZVEC, ptr %16, i32 0, i32 0\l  %18 = load i32, ptr %17, align 8\l  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.ZVEC, ptr %19, i32 0, i32 0\l  %21 = load i32, ptr %20, align 8\l  %22 = icmp ne i32 %18, %21\l  br i1 %22, label %23, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8d220:s0 -> Node0x600000d8d270[tooltip="15 -> 23\nProbability 50.00%" ];
+	Node0x600000d8d220:s1 -> Node0x600000d8d2c0[tooltip="15 -> 29\nProbability 50.00%" ];
+	Node0x600000d8d270 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %7, align 8\l  %25 = load ptr, ptr %6, align 8\l  %26 = getelementptr inbounds %struct.ZVEC, ptr %25, i32 0, i32 0\l  %27 = load i32, ptr %26, align 8\l  %28 = call ptr @zv_resize(ptr noundef %24, i32 noundef %27)\l  store ptr %28, ptr %7, align 8\l  br label %29\l}"];
+	Node0x600000d8d270 -> Node0x600000d8d2c0[tooltip="23 -> 29\nProbability 100.00%" ];
+	Node0x600000d8d2c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = getelementptr inbounds %struct.complex, ptr %5, i32 0, i32 0\l  %31 = load double, ptr %30, align 8\l  %32 = fcmp oeq double %31, 0.000000e+00\l  br i1 %32, label %33, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8d2c0:s0 -> Node0x600000d8d310[tooltip="29 -> 33\nProbability 62.50%" ];
+	Node0x600000d8d2c0:s1 -> Node0x600000d8d3b0[tooltip="29 -> 40\nProbability 37.50%" ];
+	Node0x600000d8d310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{33:\l|  %34 = getelementptr inbounds %struct.complex, ptr %5, i32 0, i32 1\l  %35 = load double, ptr %34, align 8\l  %36 = fcmp oeq double %35, 0.000000e+00\l  br i1 %36, label %37, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8d310:s0 -> Node0x600000d8d360[tooltip="33 -> 37\nProbability 62.50%" ];
+	Node0x600000d8d310:s1 -> Node0x600000d8d3b0[tooltip="33 -> 40\nProbability 37.50%" ];
+	Node0x600000d8d360 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %7, align 8\l  %39 = call ptr @zv_zero(ptr noundef %38)\l  store ptr %39, ptr %4, align 8\l  br label %64\l}"];
+	Node0x600000d8d360 -> Node0x600000d8d4f0[tooltip="37 -> 64\nProbability 100.00%" ];
+	Node0x600000d8d3b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{40:\l|  %41 = getelementptr inbounds %struct.complex, ptr %5, i32 0, i32 0\l  %42 = load double, ptr %41, align 8\l  %43 = fcmp oeq double %42, 1.000000e+00\l  br i1 %43, label %44, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8d3b0:s0 -> Node0x600000d8d400[tooltip="40 -> 44\nProbability 62.50%" ];
+	Node0x600000d8d3b0:s1 -> Node0x600000d8d4a0[tooltip="40 -> 52\nProbability 37.50%" ];
+	Node0x600000d8d400 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{44:\l|  %45 = getelementptr inbounds %struct.complex, ptr %5, i32 0, i32 1\l  %46 = load double, ptr %45, align 8\l  %47 = fcmp oeq double %46, 0.000000e+00\l  br i1 %47, label %48, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8d400:s0 -> Node0x600000d8d450[tooltip="44 -> 48\nProbability 62.50%" ];
+	Node0x600000d8d400:s1 -> Node0x600000d8d4a0[tooltip="44 -> 52\nProbability 37.50%" ];
+	Node0x600000d8d450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{48:\l|  %49 = load ptr, ptr %6, align 8\l  %50 = load ptr, ptr %7, align 8\l  %51 = call ptr @_zv_copy(ptr noundef %49, ptr noundef %50, i32 noundef 0)\l  store ptr %51, ptr %4, align 8\l  br label %64\l}"];
+	Node0x600000d8d450 -> Node0x600000d8d4f0[tooltip="48 -> 64\nProbability 100.00%" ];
+	Node0x600000d8d4a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{52:\l|  %53 = load ptr, ptr %6, align 8\l  %54 = getelementptr inbounds %struct.ZVEC, ptr %53, i32 0, i32 2\l  %55 = load ptr, ptr %54, align 8\l  %56 = load ptr, ptr %7, align 8\l  %57 = getelementptr inbounds %struct.ZVEC, ptr %56, i32 0, i32 2\l  %58 = load ptr, ptr %57, align 8\l  %59 = load ptr, ptr %6, align 8\l  %60 = getelementptr inbounds %struct.ZVEC, ptr %59, i32 0, i32 0\l  %61 = load i32, ptr %60, align 8\l  %62 = load [2 x double], ptr %5, align 8\l  call void @__zmlt__(ptr noundef %55, [2 x double] %62, ptr noundef %58, i32\l... noundef %61)\l  %63 = load ptr, ptr %7, align 8\l  store ptr %63, ptr %4, align 8\l  br label %64\l}"];
+	Node0x600000d8d4a0 -> Node0x600000d8d4f0[tooltip="52 -> 64\nProbability 100.00%" ];
+	Node0x600000d8d4f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{64:\l|  %65 = load ptr, ptr %4, align 8\l  ret ptr %65\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'NewTrieNode' function" {
+	label="CFG for 'NewTrieNode' function";
+
+	Node0x60000030f8e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = getelementptr inbounds %struct.trie_rec, ptr %5, i32 0, i32 5\l  %7 = load i32, ptr %6, align 4\l  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.trie_rec, ptr %8, i32 0, i32 1\l  %10 = load i32, ptr %9, align 4\l  %11 = add nsw i32 %7, %10\l  %12 = load ptr, ptr %2, align 8\l  %13 = getelementptr inbounds %struct.trie_rec, ptr %12, i32 0, i32 4\l  %14 = load i32, ptr %13, align 8\l  %15 = icmp sgt i32 %11, %14\l  br i1 %15, label %16, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000030f8e0:s0 -> Node0x60000030fc50[tooltip="1 -> 16\nProbability 50.00%" ];
+	Node0x60000030f8e0:s1 -> Node0x60000030fca0[tooltip="1 -> 19\nProbability 50.00%" ];
+	Node0x60000030fc50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr @no_fpos, align 8\l  %18 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 36, i32\l... noundef 5, ptr noundef @.str.165, i32 noundef 0, ptr noundef %17)\l  br label %19\l}"];
+	Node0x60000030fc50 -> Node0x60000030fca0[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x60000030fca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %2, align 8\l  %21 = getelementptr inbounds %struct.trie_rec, ptr %20, i32 0, i32 5\l  %22 = load i32, ptr %21, align 4\l  store i32 %22, ptr %4, align 4\l  %23 = load ptr, ptr %2, align 8\l  %24 = getelementptr inbounds %struct.trie_rec, ptr %23, i32 0, i32 1\l  %25 = load i32, ptr %24, align 4\l  %26 = load ptr, ptr %2, align 8\l  %27 = getelementptr inbounds %struct.trie_rec, ptr %26, i32 0, i32 5\l  %28 = load i32, ptr %27, align 4\l  %29 = add nsw i32 %28, %25\l  store i32 %29, ptr %27, align 4\l  %30 = load i32, ptr %4, align 4\l  store i32 %30, ptr %3, align 4\l  br label %31\l}"];
+	Node0x60000030fca0 -> Node0x60000030fcf0[tooltip="19 -> 31\nProbability 100.00%" ];
+	Node0x60000030fcf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %3, align 4\l  %33 = load ptr, ptr %2, align 8\l  %34 = getelementptr inbounds %struct.trie_rec, ptr %33, i32 0, i32 5\l  %35 = load i32, ptr %34, align 4\l  %36 = icmp slt i32 %32, %35\l  br i1 %36, label %37, label %47\l|{<s0>T|<s1>F}}"];
+	Node0x60000030fcf0:s0 -> Node0x60000030fd40[tooltip="31 -> 37\nProbability 96.88%" ];
+	Node0x60000030fcf0:s1 -> Node0x60000030fde0[tooltip="31 -> 47\nProbability 3.12%" ];
+	Node0x60000030fd40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %2, align 8\l  %39 = getelementptr inbounds %struct.trie_rec, ptr %38, i32 0, i32 3\l  %40 = load ptr, ptr %39, align 8\l  %41 = load i32, ptr %3, align 4\l  %42 = sext i32 %41 to i64\l  %43 = getelementptr inbounds i16, ptr %40, i64 %42\l  store i16 0, ptr %43, align 2\l  br label %44\l}"];
+	Node0x60000030fd40 -> Node0x60000030fd90[tooltip="37 -> 44\nProbability 100.00%" ];
+	Node0x60000030fd90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{44:\l|  %45 = load i32, ptr %3, align 4\l  %46 = add nsw i32 %45, 1\l  store i32 %46, ptr %3, align 4\l  br label %31\l}"];
+	Node0x60000030fd90 -> Node0x60000030fcf0[tooltip="44 -> 31\nProbability 100.00%" ];
+	Node0x60000030fde0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %4, align 4\l  ret i32 %48\l}"];
+}

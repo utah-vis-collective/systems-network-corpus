@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_num_models' function" {
+	label="CFG for 'kb_get_num_models' function";
+
+	Node0x600002a8be80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 @hmm_num_sseq()\l  ret i32 %1\l}"];
+}

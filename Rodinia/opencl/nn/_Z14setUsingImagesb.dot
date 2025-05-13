@@ -1,0 +1,5 @@
+digraph "CFG for '_Z14setUsingImagesb' function" {
+	label="CFG for '_Z14setUsingImagesb' function";
+
+	Node0x600001eeef80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i8, align 1\l  %3 = zext i1 %0 to i8\l  store i8 %3, ptr %2, align 1\l  %4 = load i8, ptr %2, align 1\l  %5 = trunc i8 %4 to i1\l  %6 = zext i1 %5 to i8\l  store i8 %6, ptr @_ZL11usingImages, align 1\l  ret void\l}"];
+}

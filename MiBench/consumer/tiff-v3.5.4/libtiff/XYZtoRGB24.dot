@@ -1,0 +1,47 @@
+digraph "CFG for 'XYZtoRGB24' function" {
+	label="CFG for 'XYZtoRGB24' function";
+
+	Node0x600000633c50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca double, align 8\l  %6 = alloca double, align 8\l  %7 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds float, ptr %8, i64 0\l  %10 = load float, ptr %9, align 4\l  %11 = fpext float %10 to double\l  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds float, ptr %12, i64 1\l  %14 = load float, ptr %13, align 4\l  %15 = fpext float %14 to double\l  %16 = fmul double -1.276000e+00, %15\l  %17 = call double @llvm.fmuladd.f64(double 2.690000e+00, double %11, double\l... %16)\l  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds float, ptr %18, i64 2\l  %20 = load float, ptr %19, align 4\l  %21 = fpext float %20 to double\l  %22 = call double @llvm.fmuladd.f64(double -4.140000e-01, double %21, double\l... %17)\l  store double %22, ptr %5, align 8\l  %23 = load ptr, ptr %3, align 8\l  %24 = getelementptr inbounds float, ptr %23, i64 0\l  %25 = load float, ptr %24, align 4\l  %26 = fpext float %25 to double\l  %27 = load ptr, ptr %3, align 8\l  %28 = getelementptr inbounds float, ptr %27, i64 1\l  %29 = load float, ptr %28, align 4\l  %30 = fpext float %29 to double\l  %31 = fmul double 1.978000e+00, %30\l  %32 = call double @llvm.fmuladd.f64(double -1.022000e+00, double %26, double\l... %31)\l  %33 = load ptr, ptr %3, align 8\l  %34 = getelementptr inbounds float, ptr %33, i64 2\l  %35 = load float, ptr %34, align 4\l  %36 = fpext float %35 to double\l  %37 = call double @llvm.fmuladd.f64(double 4.400000e-02, double %36, double\l... %32)\l  store double %37, ptr %6, align 8\l  %38 = load ptr, ptr %3, align 8\l  %39 = getelementptr inbounds float, ptr %38, i64 0\l  %40 = load float, ptr %39, align 4\l  %41 = fpext float %40 to double\l  %42 = load ptr, ptr %3, align 8\l  %43 = getelementptr inbounds float, ptr %42, i64 1\l  %44 = load float, ptr %43, align 4\l  %45 = fpext float %44 to double\l  %46 = fmul double -2.240000e-01, %45\l  %47 = call double @llvm.fmuladd.f64(double 6.100000e-02, double %41, double\l... %46)\l  %48 = load ptr, ptr %3, align 8\l  %49 = getelementptr inbounds float, ptr %48, i64 2\l  %50 = load float, ptr %49, align 4\l  %51 = fpext float %50 to double\l  %52 = call double @llvm.fmuladd.f64(double 1.163000e+00, double %51, double\l... %47)\l  store double %52, ptr %7, align 8\l  %53 = load double, ptr %5, align 8\l  %54 = fcmp ole double %53, 0.000000e+00\l  br i1 %54, label %55, label %56\l|{<s0>T|<s1>F}}"];
+	Node0x600000633c50:s0 -> Node0x600000633ca0[tooltip="2 -> 55\nProbability 50.00%" ];
+	Node0x600000633c50:s1 -> Node0x600000633cf0[tooltip="2 -> 56\nProbability 50.00%" ];
+	Node0x600000633ca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{55:\l|  br label %67\l}"];
+	Node0x600000633ca0 -> Node0x600000633e30[tooltip="55 -> 67\nProbability 100.00%" ];
+	Node0x600000633cf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{56:\l|  %57 = load double, ptr %5, align 8\l  %58 = fcmp oge double %57, 1.000000e+00\l  br i1 %58, label %59, label %60\l|{<s0>T|<s1>F}}"];
+	Node0x600000633cf0:s0 -> Node0x600000633d40[tooltip="56 -> 59\nProbability 50.00%" ];
+	Node0x600000633cf0:s1 -> Node0x600000633d90[tooltip="56 -> 60\nProbability 50.00%" ];
+	Node0x600000633d40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{59:\l|  br label %65\l}"];
+	Node0x600000633d40 -> Node0x600000633de0[tooltip="59 -> 65\nProbability 100.00%" ];
+	Node0x600000633d90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{60:\l|  %61 = load double, ptr %5, align 8\l  %62 = call double @llvm.sqrt.f64(double %61)\l  %63 = fmul double 2.560000e+02, %62\l  %64 = fptosi double %63 to i32\l  br label %65\l}"];
+	Node0x600000633d90 -> Node0x600000633de0[tooltip="60 -> 65\nProbability 100.00%" ];
+	Node0x600000633de0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{65:\l|  %66 = phi i32 [ 255, %59 ], [ %64, %60 ]\l  br label %67\l}"];
+	Node0x600000633de0 -> Node0x600000633e30[tooltip="65 -> 67\nProbability 100.00%" ];
+	Node0x600000633e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{67:\l|  %68 = phi i32 [ 0, %55 ], [ %66, %65 ]\l  %69 = trunc i32 %68 to i8\l  %70 = load ptr, ptr %4, align 8\l  %71 = getelementptr inbounds i8, ptr %70, i64 0\l  store i8 %69, ptr %71, align 1\l  %72 = load double, ptr %6, align 8\l  %73 = fcmp ole double %72, 0.000000e+00\l  br i1 %73, label %74, label %75\l|{<s0>T|<s1>F}}"];
+	Node0x600000633e30:s0 -> Node0x600000633e80[tooltip="67 -> 74\nProbability 50.00%" ];
+	Node0x600000633e30:s1 -> Node0x600000633ed0[tooltip="67 -> 75\nProbability 50.00%" ];
+	Node0x600000633e80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{74:\l|  br label %86\l}"];
+	Node0x600000633e80 -> Node0x600000634050[tooltip="74 -> 86\nProbability 100.00%" ];
+	Node0x600000633ed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{75:\l|  %76 = load double, ptr %6, align 8\l  %77 = fcmp oge double %76, 1.000000e+00\l  br i1 %77, label %78, label %79\l|{<s0>T|<s1>F}}"];
+	Node0x600000633ed0:s0 -> Node0x600000633f20[tooltip="75 -> 78\nProbability 50.00%" ];
+	Node0x600000633ed0:s1 -> Node0x600000633f70[tooltip="75 -> 79\nProbability 50.00%" ];
+	Node0x600000633f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{78:\l|  br label %84\l}"];
+	Node0x600000633f20 -> Node0x600000634000[tooltip="78 -> 84\nProbability 100.00%" ];
+	Node0x600000633f70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{79:\l|  %80 = load double, ptr %6, align 8\l  %81 = call double @llvm.sqrt.f64(double %80)\l  %82 = fmul double 2.560000e+02, %81\l  %83 = fptosi double %82 to i32\l  br label %84\l}"];
+	Node0x600000633f70 -> Node0x600000634000[tooltip="79 -> 84\nProbability 100.00%" ];
+	Node0x600000634000 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{84:\l|  %85 = phi i32 [ 255, %78 ], [ %83, %79 ]\l  br label %86\l}"];
+	Node0x600000634000 -> Node0x600000634050[tooltip="84 -> 86\nProbability 100.00%" ];
+	Node0x600000634050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{86:\l|  %87 = phi i32 [ 0, %74 ], [ %85, %84 ]\l  %88 = trunc i32 %87 to i8\l  %89 = load ptr, ptr %4, align 8\l  %90 = getelementptr inbounds i8, ptr %89, i64 1\l  store i8 %88, ptr %90, align 1\l  %91 = load double, ptr %7, align 8\l  %92 = fcmp ole double %91, 0.000000e+00\l  br i1 %92, label %93, label %94\l|{<s0>T|<s1>F}}"];
+	Node0x600000634050:s0 -> Node0x6000006340a0[tooltip="86 -> 93\nProbability 50.00%" ];
+	Node0x600000634050:s1 -> Node0x6000006340f0[tooltip="86 -> 94\nProbability 50.00%" ];
+	Node0x6000006340a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{93:\l|  br label %105\l}"];
+	Node0x6000006340a0 -> Node0x600000634230[tooltip="93 -> 105\nProbability 100.00%" ];
+	Node0x6000006340f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{94:\l|  %95 = load double, ptr %7, align 8\l  %96 = fcmp oge double %95, 1.000000e+00\l  br i1 %96, label %97, label %98\l|{<s0>T|<s1>F}}"];
+	Node0x6000006340f0:s0 -> Node0x600000634140[tooltip="94 -> 97\nProbability 50.00%" ];
+	Node0x6000006340f0:s1 -> Node0x600000634190[tooltip="94 -> 98\nProbability 50.00%" ];
+	Node0x600000634140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{97:\l|  br label %103\l}"];
+	Node0x600000634140 -> Node0x6000006341e0[tooltip="97 -> 103\nProbability 100.00%" ];
+	Node0x600000634190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{98:\l|  %99 = load double, ptr %7, align 8\l  %100 = call double @llvm.sqrt.f64(double %99)\l  %101 = fmul double 2.560000e+02, %100\l  %102 = fptosi double %101 to i32\l  br label %103\l}"];
+	Node0x600000634190 -> Node0x6000006341e0[tooltip="98 -> 103\nProbability 100.00%" ];
+	Node0x6000006341e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{103:\l|  %104 = phi i32 [ 255, %97 ], [ %102, %98 ]\l  br label %105\l}"];
+	Node0x6000006341e0 -> Node0x600000634230[tooltip="103 -> 105\nProbability 100.00%" ];
+	Node0x600000634230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{105:\l|  %106 = phi i32 [ 0, %93 ], [ %104, %103 ]\l  %107 = trunc i32 %106 to i8\l  %108 = load ptr, ptr %4, align 8\l  %109 = getelementptr inbounds i8, ptr %108, i64 2\l  store i8 %107, ptr %109, align 1\l  ret void\l}"];
+}

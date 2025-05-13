@@ -1,0 +1,21 @@
+digraph "CFG for 'getScreenSize' function" {
+	label="CFG for 'getScreenSize' function";
+
+	Node0x6000038eb8e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = alloca i64, align 8\l  %4 = alloca i64, align 8\l  store i64 0, ptr %3, align 8\l  store i64 0, ptr %4, align 8\l  %5 = call ptr @getenv(ptr noundef @.str.12)\l  store ptr %5, ptr %1, align 8\l  %6 = load ptr, ptr %1, align 8\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %8, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000038eb8e0:s0 -> Node0x6000038eb9d0[tooltip="0 -> 8\nProbability 62.50%" ];
+	Node0x6000038eb8e0:s1 -> Node0x6000038eba70[tooltip="0 -> 15\nProbability 37.50%" ];
+	Node0x6000038eb9d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %1, align 8\l  %10 = call i64 @atol(ptr noundef %9)\l  store i64 %10, ptr %3, align 8\l  %11 = icmp sgt i64 %10, 0\l  br i1 %11, label %12, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000038eb9d0:s0 -> Node0x6000038eba20[tooltip="8 -> 12\nProbability 62.50%" ];
+	Node0x6000038eb9d0:s1 -> Node0x6000038eba70[tooltip="8 -> 15\nProbability 37.50%" ];
+	Node0x6000038eba20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load i64, ptr %3, align 8\l  %14 = trunc i64 %13 to i32\l  store i32 %14, ptr @screen_lines, align 4\l  br label %15\l}"];
+	Node0x6000038eba20 -> Node0x6000038eba70[tooltip="12 -> 15\nProbability 100.00%" ];
+	Node0x6000038eba70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = call ptr @getenv(ptr noundef @.str.13)\l  store ptr %16, ptr %2, align 8\l  %17 = load ptr, ptr %2, align 8\l  %18 = icmp ne ptr %17, null\l  br i1 %18, label %19, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000038eba70:s0 -> Node0x6000038ebac0[tooltip="15 -> 19\nProbability 62.50%" ];
+	Node0x6000038eba70:s1 -> Node0x6000038ebb60[tooltip="15 -> 26\nProbability 37.50%" ];
+	Node0x6000038ebac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %2, align 8\l  %21 = call i64 @atol(ptr noundef %20)\l  store i64 %21, ptr %4, align 8\l  %22 = icmp sgt i64 %21, 0\l  br i1 %22, label %23, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000038ebac0:s0 -> Node0x6000038ebb10[tooltip="19 -> 23\nProbability 62.50%" ];
+	Node0x6000038ebac0:s1 -> Node0x6000038ebb60[tooltip="19 -> 26\nProbability 37.50%" ];
+	Node0x6000038ebb10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{23:\l|  %24 = load i64, ptr %4, align 8\l  %25 = trunc i64 %24 to i32\l  store i32 %25, ptr @screen_columns, align 4\l  br label %26\l}"];
+	Node0x6000038ebb10 -> Node0x6000038ebb60[tooltip="23 -> 26\nProbability 100.00%" ];
+	Node0x6000038ebb60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  ret void\l}"];
+}

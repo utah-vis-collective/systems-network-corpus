@@ -1,0 +1,19 @@
+digraph "CFG for 'cfont_ref_dict_create' function" {
+	label="CFG for 'cfont_ref_dict_create' function";
+
+	Node0x600001706350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca %struct.key_enum, align 8\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  %13 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store ptr %3, ptr %9, align 8\l  %14 = load ptr, ptr %9, align 8\l  store ptr %14, ptr %11, align 8\l  %15 = getelementptr inbounds %struct.key_enum, ptr %10, i32 0, i32 0\l  %16 = load ptr, ptr %7, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %15, ptr align 8 %16, i64 32,\l... i1 false)\l  %17 = load ptr, ptr %8, align 8\l  %18 = getelementptr inbounds %struct.key_enum, ptr %10, i32 0, i32 1\l  %19 = getelementptr inbounds %struct.str_enum, ptr %18, i32 0, i32 0\l  store ptr %17, ptr %19, align 8\l  %20 = load ptr, ptr %6, align 8\l  %21 = getelementptr inbounds %struct.ref_s, ptr %20, i32 0, i32 1\l  store ptr null, ptr %21, align 8\l  br label %22\l}"];
+	Node0x600001706350 -> Node0x6000017063a0[tooltip="4 -> 22\nProbability 100.00%" ];
+	Node0x6000017063a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = getelementptr inbounds %struct.key_enum, ptr %10, i32 0, i32 0\l  %24 = getelementptr inbounds %struct.cfont_dict_keys, ptr %23, i32 0, i32 1\l  %25 = load i32, ptr %24, align 8\l  %26 = getelementptr inbounds %struct.key_enum, ptr %10, i32 0, i32 0\l  %27 = getelementptr inbounds %struct.cfont_dict_keys, ptr %26, i32 0, i32 2\l  %28 = load i32, ptr %27, align 4\l  %29 = or i32 %25, %28\l  %30 = icmp ne i32 %29, 0\l  br i1 %30, label %31, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x6000017063a0:s0 -> Node0x6000017063f0[tooltip="22 -> 31\nProbability 96.88%" ];
+	Node0x6000017063a0:s1 -> Node0x6000017064e0[tooltip="22 -> 42\nProbability 3.12%" ];
+	Node0x6000017063f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %11, align 8\l  %33 = getelementptr inbounds %struct.ref_s, ptr %32, i32 1\l  store ptr %33, ptr %11, align 8\l  store ptr %32, ptr %12, align 8\l  %34 = load ptr, ptr %6, align 8\l  %35 = load ptr, ptr %12, align 8\l  %36 = call i32 @cfont_put_next(ptr noundef %34, ptr noundef %10, ptr noundef\l... %35)\l  store i32 %36, ptr %13, align 4\l  %37 = load i32, ptr %13, align 4\l  %38 = icmp slt i32 %37, 0\l  br i1 %38, label %39, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x6000017063f0:s0 -> Node0x600001706440[tooltip="31 -> 39\nProbability 3.12%" ];
+	Node0x6000017063f0:s1 -> Node0x600001706490[tooltip="31 -> 41\nProbability 96.88%" ];
+	Node0x600001706440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{39:\l|  %40 = load i32, ptr %13, align 4\l  store i32 %40, ptr %5, align 4\l  br label %43\l}"];
+	Node0x600001706440 -> Node0x600001706530[tooltip="39 -> 43\nProbability 100.00%" ];
+	Node0x600001706490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  br label %22\l}"];
+	Node0x600001706490 -> Node0x6000017063a0[tooltip="41 -> 22\nProbability 100.00%" ];
+	Node0x6000017064e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{42:\l|  store i32 0, ptr %5, align 4\l  br label %43\l}"];
+	Node0x6000017064e0 -> Node0x600001706530[tooltip="42 -> 43\nProbability 100.00%" ];
+	Node0x600001706530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %5, align 4\l  ret i32 %44\l}"];
+}

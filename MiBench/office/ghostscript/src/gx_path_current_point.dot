@@ -1,0 +1,12 @@
+digraph "CFG for 'gx_path_current_point' function" {
+	label="CFG for 'gx_path_current_point' function";
+
+	Node0x600000876350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = getelementptr inbounds %struct.gx_path_s, ptr %6, i32 0, i32 11\l  %8 = load i8, ptr %7, align 1\l  %9 = zext i8 %8 to i32\l  %10 = and i32 %9, 1\l  %11 = icmp ne i32 %10, 0\l  br i1 %11, label %13, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600000876350:s0 -> Node0x6000008763f0[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x600000876350:s1 -> Node0x6000008763a0[tooltip="2 -> 12\nProbability 50.00%" ];
+	Node0x6000008763a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  store i32 -14, ptr %3, align 4\l  br label %26\l}"];
+	Node0x6000008763a0 -> Node0x600000876440[tooltip="12 -> 26\nProbability 100.00%" ];
+	Node0x6000008763f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  %15 = getelementptr inbounds %struct.gx_path_s, ptr %14, i32 0, i32 7\l  %16 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %15, i32 0, i32 0\l  %17 = load i64, ptr %16, align 8\l  %18 = load ptr, ptr %5, align 8\l  %19 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %18, i32 0, i32 0\l  store i64 %17, ptr %19, align 8\l  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds %struct.gx_path_s, ptr %20, i32 0, i32 7\l  %22 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %21, i32 0, i32 1\l  %23 = load i64, ptr %22, align 8\l  %24 = load ptr, ptr %5, align 8\l  %25 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %24, i32 0, i32 1\l  store i64 %23, ptr %25, align 8\l  store i32 0, ptr %3, align 4\l  br label %26\l}"];
+	Node0x6000008763f0 -> Node0x600000876440[tooltip="13 -> 26\nProbability 100.00%" ];
+	Node0x600000876440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %3, align 4\l  ret i32 %27\l}"];
+}

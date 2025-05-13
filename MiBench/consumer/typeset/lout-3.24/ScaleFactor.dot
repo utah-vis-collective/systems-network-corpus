@@ -1,0 +1,19 @@
+digraph "CFG for 'ScaleFactor' function" {
+	label="CFG for 'ScaleFactor' function";
+
+	Node0x600003bb0690 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca float, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  %6 = load i32, ptr %3, align 4\l  %7 = icmp sle i32 %6, 0\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600003bb0690:s0 -> Node0x600003bb06e0[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x600003bb0690:s1 -> Node0x600003bb0730[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x600003bb06e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  br label %21\l}"];
+	Node0x600003bb06e0 -> Node0x600003bb0870[tooltip="8 -> 21\nProbability 100.00%" ];
+	Node0x600003bb0730 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %4, align 4\l  %11 = icmp sle i32 %10, 0\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600003bb0730:s0 -> Node0x600003bb0780[tooltip="9 -> 12\nProbability 50.00%" ];
+	Node0x600003bb0730:s1 -> Node0x600003bb07d0[tooltip="9 -> 13\nProbability 50.00%" ];
+	Node0x600003bb0780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{12:\l|  br label %19\l}"];
+	Node0x600003bb0780 -> Node0x600003bb0820[tooltip="12 -> 19\nProbability 100.00%" ];
+	Node0x600003bb07d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %3, align 4\l  %15 = sitofp i32 %14 to float\l  %16 = load i32, ptr %4, align 4\l  %17 = sitofp i32 %16 to float\l  %18 = fdiv float %15, %17\l  br label %19\l}"];
+	Node0x600003bb07d0 -> Node0x600003bb0820[tooltip="13 -> 19\nProbability 100.00%" ];
+	Node0x600003bb0820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = phi float [ 0.000000e+00, %12 ], [ %18, %13 ]\l  br label %21\l}"];
+	Node0x600003bb0820 -> Node0x600003bb0870[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x600003bb0870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = phi float [ 0.000000e+00, %8 ], [ %20, %19 ]\l  store float %22, ptr %5, align 4\l  %23 = load float, ptr %5, align 4\l  ret float %23\l}"];
+}

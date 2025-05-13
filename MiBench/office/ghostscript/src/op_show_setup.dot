@@ -1,0 +1,19 @@
+digraph "CFG for 'op_show_setup' function" {
+	label="CFG for 'op_show_setup' function";
+
+	Node0x600003fb4e10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = getelementptr inbounds %struct.ref_s, ptr %6, i32 0, i32 0\l  %8 = getelementptr inbounds %struct.tas_s, ptr %7, i32 0, i32 0\l  %9 = load i16, ptr %8, align 8\l  %10 = zext i16 %9 to i32\l  %11 = and i32 %10, 16160\l  %12 = icmp eq i32 %11, 4640\l  br i1 %12, label %27, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600003fb4e10:s0 -> Node0x600003fb4fa0[tooltip="2 -> 27\nProbability 50.00%" ];
+	Node0x600003fb4e10:s1 -> Node0x600003fb4e60[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x600003fb4e60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  %15 = getelementptr inbounds %struct.ref_s, ptr %14, i32 0, i32 0\l  %16 = getelementptr inbounds %struct.tas_s, ptr %15, i32 0, i32 0\l  %17 = getelementptr inbounds i8, ptr %16, i64 1\l  %18 = load i8, ptr %17, align 1\l  %19 = zext i8 %18 to i32\l  %20 = icmp eq i32 %19, 18\l  br i1 %20, label %24, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600003fb4e60:s0 -> Node0x600003fb4f00[tooltip="13 -> 24\nProbability 50.00%" ];
+	Node0x600003fb4e60:s1 -> Node0x600003fb4eb0[tooltip="13 -> 21\nProbability 50.00%" ];
+	Node0x600003fb4eb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %4, align 8\l  %23 = call i32 @check_type_failed(ptr noundef %22)\l  br label %25\l}"];
+	Node0x600003fb4eb0 -> Node0x600003fb4f50[tooltip="21 -> 25\nProbability 100.00%" ];
+	Node0x600003fb4f00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{24:\l|  br label %25\l}"];
+	Node0x600003fb4f00 -> Node0x600003fb4f50[tooltip="24 -> 25\nProbability 100.00%" ];
+	Node0x600003fb4f50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{25:\l|  %26 = phi i32 [ %23, %21 ], [ -7, %24 ]\l  store i32 %26, ptr %3, align 4\l  br label %31\l}"];
+	Node0x600003fb4f50 -> Node0x600003fb4ff0[tooltip="25 -> 31\nProbability 100.00%" ];
+	Node0x600003fb4fa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %4, align 8\l  %29 = load ptr, ptr %5, align 8\l  %30 = call i32 @op_show_enum_setup(ptr noundef %28, ptr noundef %29)\l  store i32 %30, ptr %3, align 4\l  br label %31\l}"];
+	Node0x600003fb4fa0 -> Node0x600003fb4ff0[tooltip="27 -> 31\nProbability 100.00%" ];
+	Node0x600003fb4ff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %3, align 4\l  ret i32 %32\l}"];
+}

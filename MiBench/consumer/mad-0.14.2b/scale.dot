@@ -1,0 +1,17 @@
+digraph "CFG for 'scale' function" {
+	label="CFG for 'scale' function";
+
+	Node0x600000166800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = sext i32 %3 to i64\l  %5 = add nsw i64 %4, 4096\l  %6 = trunc i64 %5 to i32\l  store i32 %6, ptr %2, align 4\l  %7 = load i32, ptr %2, align 4\l  %8 = icmp sge i32 %7, 268435456\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600000166800:s0 -> Node0x600000166850[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x600000166800:s1 -> Node0x6000001668a0[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x600000166850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i32 268435455, ptr %2, align 4\l  br label %15\l}"];
+	Node0x600000166850 -> Node0x600000166990[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x6000001668a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %2, align 4\l  %12 = icmp slt i32 %11, -268435456\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000001668a0:s0 -> Node0x6000001668f0[tooltip="10 -> 13\nProbability 50.00%" ];
+	Node0x6000001668a0:s1 -> Node0x600000166940[tooltip="10 -> 14\nProbability 50.00%" ];
+	Node0x6000001668f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  store i32 -268435456, ptr %2, align 4\l  br label %14\l}"];
+	Node0x6000001668f0 -> Node0x600000166940[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x600000166940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x600000166940 -> Node0x600000166990[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x600000166990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %2, align 4\l  %17 = ashr i32 %16, 13\l  ret i32 %17\l}"];
+}

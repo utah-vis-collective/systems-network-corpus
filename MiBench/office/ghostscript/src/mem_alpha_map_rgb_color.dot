@@ -1,0 +1,15 @@
+digraph "CFG for 'mem_alpha_map_rgb_color' function" {
+	label="CFG for 'mem_alpha_map_rgb_color' function";
+
+	Node0x600002aea300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i16, align 2\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  %9 = alloca i64, align 8\l  store ptr %0, ptr %5, align 8\l  store i16 %1, ptr %6, align 2\l  store i16 %2, ptr %7, align 2\l  store i16 %3, ptr %8, align 2\l  %10 = load ptr, ptr %5, align 8\l  %11 = load i16, ptr %6, align 2\l  %12 = load i16, ptr %7, align 2\l  %13 = load i16, ptr %8, align 2\l  %14 = call i64 @gx_forward_map_rgb_color(ptr noundef %10, i16 noundef\l... zeroext %11, i16 noundef zeroext %12, i16 noundef zeroext %13)\l  store i64 %14, ptr %9, align 8\l  %15 = load i64, ptr %9, align 8\l  %16 = icmp eq i64 %15, 0\l  br i1 %16, label %20, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600002aea300:s0 -> Node0x600002aea3a0[tooltip="4 -> 20\nProbability 37.50%" ];
+	Node0x600002aea300:s1 -> Node0x600002aea350[tooltip="4 -> 17\nProbability 62.50%" ];
+	Node0x600002aea350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load i64, ptr %9, align 8\l  %19 = icmp eq i64 %18, -1\l  br i1 %19, label %20, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600002aea350:s0 -> Node0x600002aea3a0[tooltip="17 -> 20\nProbability 37.50%" ];
+	Node0x600002aea350:s1 -> Node0x600002aea3f0[tooltip="17 -> 22\nProbability 62.50%" ];
+	Node0x600002aea3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load i64, ptr %9, align 8\l  br label %29\l}"];
+	Node0x600002aea3a0 -> Node0x600002aea440[tooltip="20 -> 29\nProbability 100.00%" ];
+	Node0x600002aea3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %5, align 8\l  %24 = getelementptr inbounds %struct.gx_device_memory_s, ptr %23, i32 0, i32\l... 32\l  %25 = load i32, ptr %24, align 8\l  %26 = shl i32 1, %25\l  %27 = sub nsw i32 %26, 1\l  %28 = sext i32 %27 to i64\l  br label %29\l}"];
+	Node0x600002aea3f0 -> Node0x600002aea440[tooltip="22 -> 29\nProbability 100.00%" ];
+	Node0x600002aea440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = phi i64 [ %21, %20 ], [ %28, %22 ]\l  ret i64 %30\l}"];
+}

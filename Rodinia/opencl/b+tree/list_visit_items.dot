@@ -1,0 +1,14 @@
+digraph "CFG for 'list_visit_items' function" {
+	label="CFG for 'list_visit_items' function";
+
+	Node0x60000202c1e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.list_t, ptr %6, i32 0, i32 0\l  %8 = load ptr, ptr %7, align 8\l  store ptr %8, ptr %5, align 8\l  br label %9\l}"];
+	Node0x60000202c1e0 -> Node0x60000202c230[tooltip="2 -> 9\nProbability 100.00%" ];
+	Node0x60000202c230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %5, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %12, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x60000202c230:s0 -> Node0x60000202c280[tooltip="9 -> 12\nProbability 96.88%" ];
+	Node0x60000202c230:s1 -> Node0x60000202c320[tooltip="9 -> 20\nProbability 3.12%" ];
+	Node0x60000202c280 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %4, align 8\l  %14 = load ptr, ptr %5, align 8\l  %15 = call ptr @list_item_get_datum(ptr noundef %14)\l  call void %13(ptr noundef %15)\l  br label %16\l}"];
+	Node0x60000202c280 -> Node0x60000202c2d0[tooltip="12 -> 16\nProbability 100.00%" ];
+	Node0x60000202c2d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %5, align 8\l  %18 = getelementptr inbounds %struct.list_item, ptr %17, i32 0, i32 1\l  %19 = load ptr, ptr %18, align 8\l  store ptr %19, ptr %5, align 8\l  br label %9\l}"];
+	Node0x60000202c2d0 -> Node0x60000202c230[tooltip="16 -> 9\nProbability 100.00%" ];
+	Node0x60000202c320 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

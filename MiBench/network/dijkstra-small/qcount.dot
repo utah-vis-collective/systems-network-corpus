@@ -1,0 +1,5 @@
+digraph "CFG for 'qcount' function" {
+	label="CFG for 'qcount' function";
+
+	Node0x600003e8d1d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @g_qCount, align 4\l  ret i32 %1\l}"];
+}

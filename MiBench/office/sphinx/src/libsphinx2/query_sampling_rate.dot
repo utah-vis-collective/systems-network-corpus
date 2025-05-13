@@ -1,0 +1,5 @@
+digraph "CFG for 'query_sampling_rate' function" {
+	label="CFG for 'query_sampling_rate' function";
+
+	Node0x6000031faad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @sampling_rate, align 4\l  ret i32 %1\l}"];
+}

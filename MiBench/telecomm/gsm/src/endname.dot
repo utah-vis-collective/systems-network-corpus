@@ -1,0 +1,18 @@
+digraph "CFG for 'endname' function" {
+	label="CFG for 'endname' function";
+
+	Node0x600002538cd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = icmp ne ptr %4, null\l  br i1 %5, label %6, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600002538cd0:s0 -> Node0x600002538eb0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x600002538cd0:s1 -> Node0x600002538ff0[tooltip="1 -> 21\nProbability 37.50%" ];
+	Node0x600002538eb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  %8 = call ptr @strrchr(ptr noundef %7, i32 noundef 47) #7\l  store ptr %8, ptr %3, align 8\l  %9 = load ptr, ptr %3, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002538eb0:s0 -> Node0x600002538f00[tooltip="6 -> 11\nProbability 62.50%" ];
+	Node0x600002538eb0:s1 -> Node0x600002538fa0[tooltip="6 -> 20\nProbability 37.50%" ];
+	Node0x600002538f00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds i8, ptr %12, i64 1\l  %14 = load i8, ptr %13, align 1\l  %15 = sext i8 %14 to i32\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002538f00:s0 -> Node0x600002538f50[tooltip="11 -> 17\nProbability 62.50%" ];
+	Node0x600002538f00:s1 -> Node0x600002538fa0[tooltip="11 -> 20\nProbability 37.50%" ];
+	Node0x600002538f50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds i8, ptr %18, i64 1\l  store ptr %19, ptr %2, align 8\l  br label %20\l}"];
+	Node0x600002538f50 -> Node0x600002538fa0[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x600002538fa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  br label %21\l}"];
+	Node0x600002538fa0 -> Node0x600002538ff0[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x600002538ff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %2, align 8\l  ret ptr %22\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'choose_GPU' function" {
+	label="CFG for 'choose_GPU' function";
+
+	Node0x600002c129e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  call void @select_device()\l  ret void\l}"];
+}

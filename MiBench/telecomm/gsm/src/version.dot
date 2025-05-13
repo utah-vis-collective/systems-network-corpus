@@ -1,0 +1,5 @@
+digraph "CFG for 'version' function" {
+	label="CFG for 'version' function";
+
+	Node0x60000253f5c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @progname, align 8\l  %2 = call i32 (ptr, ...) @printf(ptr noundef @.str.18, ptr noundef %1, ptr\l... noundef @.str.19)\l  ret void\l}"];
+}

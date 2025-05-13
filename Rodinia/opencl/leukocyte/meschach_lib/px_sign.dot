@@ -1,0 +1,10 @@
+digraph "CFG for 'px_sign' function" {
+	label="CFG for 'px_sign' function";
+
+	Node0x6000018c8140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = icmp eq ptr %5, null\l  br i1 %6, label %7, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000018c8140:s0 -> Node0x6000018c8190[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x6000018c8140:s1 -> Node0x6000018c81e0[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x6000018c8190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{7:\l|  %8 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 303,\l... ptr noundef @.str.6, i32 noundef 0)\l  br label %9\l}"];
+	Node0x6000018c8190 -> Node0x6000018c81e0[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x6000018c81e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %2, align 8\l  %11 = call ptr @px_copy(ptr noundef %10, ptr noundef null)\l  store ptr %11, ptr %4, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.PERM, ptr %12, i32 0, i32 2\l  %14 = load ptr, ptr %13, align 8\l  %15 = load ptr, ptr %4, align 8\l  %16 = getelementptr inbounds %struct.PERM, ptr %15, i32 0, i32 0\l  %17 = load i32, ptr %16, align 8\l  %18 = call i32 @myqsort(ptr noundef %14, i32 noundef %17)\l  store i32 %18, ptr %3, align 4\l  %19 = load ptr, ptr %4, align 8\l  %20 = call i32 @px_free(ptr noundef %19)\l  %21 = load i32, ptr %3, align 4\l  %22 = srem i32 %21, 2\l  %23 = icmp ne i32 %22, 0\l  %24 = zext i1 %23 to i64\l  %25 = select i1 %23, i32 -1, i32 1\l  ret i32 %25\l}"];
+}

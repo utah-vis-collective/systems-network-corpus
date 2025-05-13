@@ -1,0 +1,19 @@
+digraph "CFG for 'px_rand' function" {
+	label="CFG for 'px_rand' function";
+
+	Node0x600000f6f0c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %10, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600000f6f0c0:s0 -> Node0x600000f6f160[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600000f6f0c0:s1 -> Node0x600000f6f110[tooltip="1 -> 8\nProbability 37.50%" ];
+	Node0x600000f6f110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{8:\l|  %9 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 74,\l... ptr noundef @.str.2, i32 noundef 0)\l  br label %10\l}"];
+	Node0x600000f6f110 -> Node0x600000f6f160[tooltip="8 -> 10\nProbability 100.00%" ];
+	Node0x600000f6f160 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{10:\l|  store i32 0, ptr %3, align 4\l  br label %11\l}"];
+	Node0x600000f6f160 -> Node0x600000f6f1b0[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x600000f6f1b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %3, align 4\l  %13 = load ptr, ptr %2, align 8\l  %14 = getelementptr inbounds %struct.PERM, ptr %13, i32 0, i32 0\l  %15 = load i32, ptr %14, align 8\l  %16 = mul i32 3, %15\l  %17 = icmp ult i32 %12, %16\l  br i1 %17, label %18, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x600000f6f1b0:s0 -> Node0x600000f6f200[tooltip="11 -> 18\nProbability 96.88%" ];
+	Node0x600000f6f1b0:s1 -> Node0x600000f6f2a0[tooltip="11 -> 38\nProbability 3.12%" ];
+	Node0x600000f6f200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = call i32 @rand()\l  %20 = ashr i32 %19, 8\l  %21 = load ptr, ptr %2, align 8\l  %22 = getelementptr inbounds %struct.PERM, ptr %21, i32 0, i32 0\l  %23 = load i32, ptr %22, align 8\l  %24 = urem i32 %20, %23\l  store i32 %24, ptr %4, align 4\l  %25 = call i32 @rand()\l  %26 = ashr i32 %25, 8\l  %27 = load ptr, ptr %2, align 8\l  %28 = getelementptr inbounds %struct.PERM, ptr %27, i32 0, i32 0\l  %29 = load i32, ptr %28, align 8\l  %30 = urem i32 %26, %29\l  store i32 %30, ptr %5, align 4\l  %31 = load ptr, ptr %2, align 8\l  %32 = load i32, ptr %4, align 4\l  %33 = load i32, ptr %5, align 4\l  %34 = call ptr @px_transp(ptr noundef %31, i32 noundef %32, i32 noundef %33)\l  br label %35\l}"];
+	Node0x600000f6f200 -> Node0x600000f6f250[tooltip="18 -> 35\nProbability 100.00%" ];
+	Node0x600000f6f250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %3, align 4\l  %37 = add nsw i32 %36, 1\l  store i32 %37, ptr %3, align 4\l  br label %11\l}"];
+	Node0x600000f6f250 -> Node0x600000f6f1b0[tooltip="35 -> 11\nProbability 100.00%" ];
+	Node0x600000f6f2a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{38:\l|  %39 = load ptr, ptr %2, align 8\l  ret ptr %39\l}"];
+}

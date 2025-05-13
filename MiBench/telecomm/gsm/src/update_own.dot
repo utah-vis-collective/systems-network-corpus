@@ -1,0 +1,12 @@
+digraph "CFG for 'update_own' function" {
+	label="CFG for 'update_own' function";
+
+	Node0x60000253b480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i16, ptr getelementptr inbounds (%struct.stat, ptr @instat, i32\l... 0, i32 2), align 2\l  %2 = icmp ne i16 %1, 0\l  br i1 %2, label %4, label %3\l|{<s0>T|<s1>F}}"];
+	Node0x60000253b480:s0 -> Node0x60000253b520[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x60000253b480:s1 -> Node0x60000253b4d0[tooltip="0 -> 3\nProbability 37.50%" ];
+	Node0x60000253b4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{3:\l|  br label %10\l}"];
+	Node0x60000253b4d0 -> Node0x60000253b570[tooltip="3 -> 10\nProbability 100.00%" ];
+	Node0x60000253b520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr @out, align 8\l  %6 = call i32 @fileno(ptr noundef %5)\l  %7 = load i32, ptr getelementptr inbounds (%struct.stat, ptr @instat, i32 0,\l... i32 4), align 8\l  %8 = load i32, ptr getelementptr inbounds (%struct.stat, ptr @instat, i32 0,\l... i32 5), align 4\l  %9 = call i32 @fchown(i32 noundef %6, i32 noundef %7, i32 noundef %8)\l  br label %10\l}"];
+	Node0x60000253b520 -> Node0x60000253b570[tooltip="4 -> 10\nProbability 100.00%" ];
+	Node0x60000253b570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  ret void\l}"];
+}

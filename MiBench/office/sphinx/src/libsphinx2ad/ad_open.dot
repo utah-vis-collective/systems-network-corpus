@@ -1,0 +1,5 @@
+digraph "CFG for 'ad_open' function" {
+	label="CFG for 'ad_open' function";
+
+	Node0x6000029b9f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call ptr @ad_open_sps(i32 noundef 16000)\l  ret ptr %1\l}"];
+}

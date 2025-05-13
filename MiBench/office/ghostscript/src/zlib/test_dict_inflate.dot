@@ -1,0 +1,42 @@
+digraph "CFG for 'test_dict_inflate' function" {
+	label="CFG for 'test_dict_inflate' function";
+
+	Node0x600002d80eb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca %struct.z_stream_s, align 8\l  store ptr %0, ptr %5, align 8\l  store i64 %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store i64 %3, ptr %8, align 8\l  %11 = load ptr, ptr %7, align 8\l  %12 = load ptr, ptr %7, align 8\l  %13 = call i64 @llvm.objectsize.i64.p0(ptr %12, i1 false, i1 true, i1 false)\l  %14 = call ptr @__strcpy_chk(ptr noundef %11, ptr noundef @.str.2, i64\l... noundef %13) #6\l  %15 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 8\l  store ptr null, ptr %15, align 8\l  %16 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 9\l  store ptr null, ptr %16, align 8\l  %17 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 10\l  store ptr null, ptr %17, align 8\l  %18 = call i32 @inflateInit_(ptr noundef %10, ptr noundef @.str.13, i32\l... noundef 112)\l  store i32 %18, ptr %9, align 4\l  %19 = load i32, ptr %9, align 4\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600002d80eb0:s0 -> Node0x600002d81310[tooltip="4 -> 21\nProbability 0.00%" ];
+	Node0x600002d80eb0:s1 -> Node0x600002d81360[tooltip="4 -> 25\nProbability 100.00%" ];
+	Node0x600002d81310 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr @__stderrp, align 8\l  %23 = load i32, ptr %9, align 4\l  %24 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %22, ptr noundef @.str,\l... ptr noundef @.str.17, i32 noundef %23) #6\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x600002d81360 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %5, align 8\l  %27 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 0\l  store ptr %26, ptr %27, align 8\l  %28 = load i64, ptr %6, align 8\l  %29 = trunc i64 %28 to i32\l  %30 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 1\l  store i32 %29, ptr %30, align 8\l  %31 = load ptr, ptr %7, align 8\l  %32 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 3\l  store ptr %31, ptr %32, align 8\l  %33 = load i64, ptr %8, align 8\l  %34 = trunc i64 %33 to i32\l  %35 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 4\l  store i32 %34, ptr %35, align 8\l  br label %36\l}"];
+	Node0x600002d81360 -> Node0x600002d813b0[tooltip="25 -> 36\nProbability 100.00%" ];
+	Node0x600002d813b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = call i32 @inflate(ptr noundef %10, i32 noundef 0)\l  store i32 %37, ptr %9, align 4\l  %38 = load i32, ptr %9, align 4\l  %39 = icmp eq i32 %38, 1\l  br i1 %39, label %40, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600002d813b0:s0 -> Node0x600002d81400[tooltip="36 -> 40\nProbability 3.12%" ];
+	Node0x600002d813b0:s1 -> Node0x600002d81450[tooltip="36 -> 41\nProbability 96.88%" ];
+	Node0x600002d81400 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{40:\l|  br label %62\l}"];
+	Node0x600002d81400 -> Node0x600002d81680[tooltip="40 -> 62\nProbability 100.00%" ];
+	Node0x600002d81450 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %9, align 4\l  %43 = icmp eq i32 %42, 2\l  br i1 %43, label %44, label %54\l|{<s0>T|<s1>F}}"];
+	Node0x600002d81450:s0 -> Node0x600002d814a0[tooltip="41 -> 44\nProbability 50.00%" ];
+	Node0x600002d81450:s1 -> Node0x600002d81590[tooltip="41 -> 54\nProbability 50.00%" ];
+	Node0x600002d814a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{44:\l|  %45 = getelementptr inbounds %struct.z_stream_s, ptr %10, i32 0, i32 12\l  %46 = load i64, ptr %45, align 8\l  %47 = load i64, ptr @dictId, align 8\l  %48 = icmp ne i64 %46, %47\l  br i1 %48, label %49, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600002d814a0:s0 -> Node0x600002d814f0[tooltip="44 -> 49\nProbability 0.00%" ];
+	Node0x600002d814a0:s1 -> Node0x600002d81540[tooltip="44 -> 52\nProbability 100.00%" ];
+	Node0x600002d814f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f2cab570" fontname="Courier",label="{49:\l|  %50 = load ptr, ptr @__stderrp, align 8\l  %51 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %50, ptr noundef\l... @.str.31) #6\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x600002d81540 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{52:\l|  %53 = call i32 @inflateSetDictionary(ptr noundef %10, ptr noundef\l... @dictionary, i32 noundef 6)\l  store i32 %53, ptr %9, align 4\l  br label %54\l}"];
+	Node0x600002d81540 -> Node0x600002d81590[tooltip="52 -> 54\nProbability 100.00%" ];
+	Node0x600002d81590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{54:\l|  %55 = load i32, ptr %9, align 4\l  %56 = icmp ne i32 %55, 0\l  br i1 %56, label %57, label %61\l|{<s0>T|<s1>F}}"];
+	Node0x600002d81590:s0 -> Node0x600002d815e0[tooltip="54 -> 57\nProbability 0.00%" ];
+	Node0x600002d81590:s1 -> Node0x600002d81630[tooltip="54 -> 61\nProbability 100.00%" ];
+	Node0x600002d815e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{57:\l|  %58 = load ptr, ptr @__stderrp, align 8\l  %59 = load i32, ptr %9, align 4\l  %60 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %58, ptr noundef @.str,\l... ptr noundef @.str.32, i32 noundef %59) #6\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x600002d81630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{61:\l|  br label %36\l}"];
+	Node0x600002d81630 -> Node0x600002d813b0[tooltip="61 -> 36\nProbability 100.00%" ];
+	Node0x600002d81680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{62:\l|  %63 = call i32 @inflateEnd(ptr noundef %10)\l  store i32 %63, ptr %9, align 4\l  %64 = load i32, ptr %9, align 4\l  %65 = icmp ne i32 %64, 0\l  br i1 %65, label %66, label %70\l|{<s0>T|<s1>F}}"];
+	Node0x600002d81680:s0 -> Node0x600002d816d0[tooltip="62 -> 66\nProbability 0.00%" ];
+	Node0x600002d81680:s1 -> Node0x600002d81720[tooltip="62 -> 70\nProbability 100.00%" ];
+	Node0x600002d816d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{66:\l|  %67 = load ptr, ptr @__stderrp, align 8\l  %68 = load i32, ptr %9, align 4\l  %69 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %67, ptr noundef @.str,\l... ptr noundef @.str.19, i32 noundef %68) #6\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x600002d81720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{70:\l|  %71 = load ptr, ptr %7, align 8\l  %72 = call i32 @strcmp(ptr noundef %71, ptr noundef @hello) #6\l  %73 = icmp ne i32 %72, 0\l  br i1 %73, label %74, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x600002d81720:s0 -> Node0x600002d81770[tooltip="70 -> 74\nProbability 62.50%" ];
+	Node0x600002d81720:s1 -> Node0x600002d817c0[tooltip="70 -> 77\nProbability 37.50%" ];
+	Node0x600002d81770 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{74:\l|  %75 = load ptr, ptr @__stderrp, align 8\l  %76 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %75, ptr noundef\l... @.str.33) #6\l  br label %80\l}"];
+	Node0x600002d81770 -> Node0x600002d81810[tooltip="74 -> 80\nProbability 100.00%" ];
+	Node0x600002d817c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{77:\l|  %78 = load ptr, ptr %7, align 8\l  %79 = call i32 (ptr, ...) @printf(ptr noundef @.str.34, ptr noundef %78)\l  br label %80\l}"];
+	Node0x600002d817c0 -> Node0x600002d81810[tooltip="77 -> 80\nProbability 100.00%" ];
+	Node0x600002d81810 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{80:\l|  ret void\l}"];
+}

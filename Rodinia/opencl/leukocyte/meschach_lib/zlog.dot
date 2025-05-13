@@ -1,0 +1,5 @@
+digraph "CFG for 'zlog' function" {
+	label="CFG for 'zlog' function";
+
+	Node0x600000bd7070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca %struct.complex, align 8\l  %3 = alloca %struct.complex, align 8\l  store [2 x double] %0, ptr %3, align 8\l  %4 = load [2 x double], ptr %3, align 8\l  %5 = call double @zabs([2 x double] %4)\l  %6 = call double @llvm.log.f64(double %5)\l  %7 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 0\l  store double %6, ptr %7, align 8\l  %8 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 1\l  %9 = load double, ptr %8, align 8\l  %10 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 0\l  %11 = load double, ptr %10, align 8\l  %12 = call double @atan2(double noundef %9, double noundef %11) #6\l  %13 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 1\l  store double %12, ptr %13, align 8\l  %14 = load %struct.complex, ptr %2, align 8\l  ret %struct.complex %14\l}"];
+}

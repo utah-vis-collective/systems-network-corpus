@@ -1,0 +1,14 @@
+digraph "CFG for 'buildsieve' function" {
+	label="CFG for 'buildsieve' function";
+
+	Node0x600003ba06e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i16, align 2\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i16 1, ptr %5, align 2\l  br label %6\l}"];
+	Node0x600003ba06e0 -> Node0x600003ba0730[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x600003ba0730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i16, ptr %5, align 2\l  %8 = sext i16 %7 to i64\l  %9 = getelementptr inbounds [1029 x i16], ptr @primetable, i64 0, i64 %8\l  %10 = load i16, ptr %9, align 2\l  %11 = icmp ne i16 %10, 0\l  br i1 %11, label %12, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba0730:s0 -> Node0x600003ba0780[tooltip="6 -> 12\nProbability 96.88%" ];
+	Node0x600003ba0730:s1 -> Node0x600003ba0820[tooltip="6 -> 26\nProbability 3.12%" ];
+	Node0x600003ba0780 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  %14 = load i16, ptr %5, align 2\l  %15 = sext i16 %14 to i64\l  %16 = getelementptr inbounds [1029 x i16], ptr @primetable, i64 0, i64 %15\l  %17 = load i16, ptr %16, align 2\l  %18 = call zeroext i16 @mp_shortmod(ptr noundef %13, i16 noundef zeroext %17)\l  %19 = load ptr, ptr %4, align 8\l  %20 = load i16, ptr %5, align 2\l  %21 = sext i16 %20 to i64\l  %22 = getelementptr inbounds i16, ptr %19, i64 %21\l  store i16 %18, ptr %22, align 2\l  br label %23\l}"];
+	Node0x600003ba0780 -> Node0x600003ba07d0[tooltip="12 -> 23\nProbability 100.00%" ];
+	Node0x600003ba07d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i16, ptr %5, align 2\l  %25 = add i16 %24, 1\l  store i16 %25, ptr %5, align 2\l  br label %6\l}"];
+	Node0x600003ba07d0 -> Node0x600003ba0730[tooltip="23 -> 6\nProbability 100.00%" ];
+	Node0x600003ba0820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{26:\l|  ret void\l}"];
+}

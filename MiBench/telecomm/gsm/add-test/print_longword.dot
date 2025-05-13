@@ -1,0 +1,5 @@
+digraph "CFG for 'print_longword' function" {
+	label="CFG for 'print_longword' function";
+
+	Node0x600000841680 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  store i64 %0, ptr %2, align 8\l  %3 = load ptr, ptr @__stdoutp, align 8\l  %4 = load i64, ptr %2, align 8\l  call void @fprint_longword(ptr noundef %3, i64 noundef %4)\l  ret void\l}"];
+}

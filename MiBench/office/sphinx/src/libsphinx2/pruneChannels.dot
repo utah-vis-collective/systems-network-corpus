@@ -1,0 +1,5 @@
+digraph "CFG for 'pruneChannels' function" {
+	label="CFG for 'pruneChannels' function";
+
+	Node0x60000203e0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store i32 0, ptr @n_lastphn_cand, align 4\l  call void @prune_root_chan()\l  call void @prune_nonroot_chan()\l  call void @last_phone_transition()\l  call void @prune_word_chan()\l  ret void\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'gs_setgstate' function" {
+	label="CFG for 'gs_setgstate' function";
+
+	Node0x600000dfbd40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.gs_state_s, ptr %9, i32 0, i32 41\l  %11 = load ptr, ptr %10, align 8\l  store ptr %11, ptr %6, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.gs_state_s, ptr %12, i32 0, i32 42\l  %14 = load i32, ptr %13, align 8\l  store i32 %14, ptr %7, align 4\l  %15 = load ptr, ptr %4, align 8\l  %16 = load ptr, ptr %5, align 8\l  %17 = call i32 @gstate_copy(ptr noundef %15, ptr noundef %16, i32 noundef 3,\l... ptr noundef @.str.10)\l  store i32 %17, ptr %8, align 4\l  %18 = load i32, ptr %8, align 4\l  %19 = icmp slt i32 %18, 0\l  br i1 %19, label %20, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600000dfbd40:s0 -> Node0x600000dfbd90[tooltip="2 -> 20\nProbability 37.50%" ];
+	Node0x600000dfbd40:s1 -> Node0x600000dfbde0[tooltip="2 -> 22\nProbability 62.50%" ];
+	Node0x600000dfbd90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %8, align 4\l  store i32 %21, ptr %3, align 4\l  br label %39\l}"];
+	Node0x600000dfbd90 -> Node0x600000dfbf20[tooltip="20 -> 39\nProbability 100.00%" ];
+	Node0x600000dfbde0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %7, align 4\l  %24 = load ptr, ptr %4, align 8\l  %25 = getelementptr inbounds %struct.gs_state_s, ptr %24, i32 0, i32 42\l  store i32 %23, ptr %25, align 8\l  %26 = load ptr, ptr %4, align 8\l  %27 = getelementptr inbounds %struct.gs_state_s, ptr %26, i32 0, i32 41\l  %28 = load ptr, ptr %27, align 8\l  %29 = load ptr, ptr %5, align 8\l  %30 = icmp eq ptr %28, %29\l  br i1 %30, label %31, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600000dfbde0:s0 -> Node0x600000dfbe30[tooltip="22 -> 31\nProbability 37.50%" ];
+	Node0x600000dfbde0:s1 -> Node0x600000dfbe80[tooltip="22 -> 33\nProbability 62.50%" ];
+	Node0x600000dfbe30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %4, align 8\l  br label %35\l}"];
+	Node0x600000dfbe30 -> Node0x600000dfbed0[tooltip="31 -> 35\nProbability 100.00%" ];
+	Node0x600000dfbe80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %6, align 8\l  br label %35\l}"];
+	Node0x600000dfbe80 -> Node0x600000dfbed0[tooltip="33 -> 35\nProbability 100.00%" ];
+	Node0x600000dfbed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{35:\l|  %36 = phi ptr [ %32, %31 ], [ %34, %33 ]\l  %37 = load ptr, ptr %4, align 8\l  %38 = getelementptr inbounds %struct.gs_state_s, ptr %37, i32 0, i32 41\l  store ptr %36, ptr %38, align 8\l  store i32 0, ptr %3, align 4\l  br label %39\l}"];
+	Node0x600000dfbed0 -> Node0x600000dfbf20[tooltip="35 -> 39\nProbability 100.00%" ];
+	Node0x600000dfbf20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load i32, ptr %3, align 4\l  ret i32 %40\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'timing_init' function" {
+	label="CFG for 'timing_init' function";
+
+	Node0x6000008bb250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store float 0.000000e+00, ptr @TotalSpeechTime, align 4\l  store float 0.000000e+00, ptr @TotalElapsedTime, align 4\l  store float 0.000000e+00, ptr @TotalCPUTime, align 4\l  ret void\l}"];
+}

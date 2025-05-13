@@ -1,0 +1,37 @@
+digraph "CFG for 'gsm_div' function" {
+	label="CFG for 'gsm_div' function";
+
+	Node0x60000085f110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i16, align 2\l  %6 = alloca i64, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca i16, align 2\l  %9 = alloca i32, align 4\l  store i16 %0, ptr %4, align 2\l  store i16 %1, ptr %5, align 2\l  %10 = load i16, ptr %4, align 2\l  %11 = sext i16 %10 to i64\l  store i64 %11, ptr %6, align 8\l  %12 = load i16, ptr %5, align 2\l  %13 = sext i16 %12 to i64\l  store i64 %13, ptr %7, align 8\l  store i16 0, ptr %8, align 2\l  store i32 15, ptr %9, align 4\l  %14 = load i16, ptr %4, align 2\l  %15 = sext i16 %14 to i32\l  %16 = icmp sge i32 %15, 0\l  br i1 %16, label %17, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f110:s0 -> Node0x60000085f480[tooltip="2 -> 17\nProbability 50.00%" ];
+	Node0x60000085f110:s1 -> Node0x60000085f4d0[tooltip="2 -> 23\nProbability 50.00%" ];
+	Node0x60000085f480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{17:\l|  %18 = load i16, ptr %5, align 2\l  %19 = sext i16 %18 to i32\l  %20 = load i16, ptr %4, align 2\l  %21 = sext i16 %20 to i32\l  %22 = icmp sge i32 %19, %21\l  br label %23\l}"];
+	Node0x60000085f480 -> Node0x60000085f4d0[tooltip="17 -> 23\nProbability 100.00%" ];
+	Node0x60000085f4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{23:\l|  %24 = phi i1 [ false, %2 ], [ %22, %17 ]\l  %25 = xor i1 %24, true\l  %26 = zext i1 %25 to i32\l  %27 = sext i32 %26 to i64\l  %28 = icmp ne i64 %27, 0\l  br i1 %28, label %29, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f4d0:s0 -> Node0x60000085f520[tooltip="23 -> 29\nProbability 0.00%" ];
+	Node0x60000085f4d0:s1 -> Node0x60000085f5c0[tooltip="23 -> 31\nProbability 100.00%" ];
+	Node0x60000085f520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e8d6cc70" fontname="Courier",label="{29:\l|  call void @__assert_rtn(ptr noundef @__func__.gsm_div, ptr noundef @.str,\l... i32 noundef 220, ptr noundef @.str.3) #6\l  unreachable\l}"];
+	Node0x60000085f570 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{30:\l|  br label %32\l}"];
+	Node0x60000085f570 -> Node0x60000085f610[tooltip="30 -> 32\nProbability 100.00%" ];
+	Node0x60000085f5c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{31:\l|  br label %32\l}"];
+	Node0x60000085f5c0 -> Node0x60000085f610[tooltip="31 -> 32\nProbability 100.00%" ];
+	Node0x60000085f610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{32:\l|  %33 = load i16, ptr %4, align 2\l  %34 = sext i16 %33 to i32\l  %35 = icmp eq i32 %34, 0\l  br i1 %35, label %36, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f610:s0 -> Node0x60000085f660[tooltip="32 -> 36\nProbability 37.50%" ];
+	Node0x60000085f610:s1 -> Node0x60000085f6b0[tooltip="32 -> 37\nProbability 62.50%" ];
+	Node0x60000085f660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{36:\l|  store i16 0, ptr %3, align 2\l  br label %61\l}"];
+	Node0x60000085f660 -> Node0x60000085f890[tooltip="36 -> 61\nProbability 100.00%" ];
+	Node0x60000085f6b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{37:\l|  br label %38\l}"];
+	Node0x60000085f6b0 -> Node0x60000085f700[tooltip="37 -> 38\nProbability 100.00%" ];
+	Node0x60000085f700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %9, align 4\l  %40 = add nsw i32 %39, -1\l  store i32 %40, ptr %9, align 4\l  %41 = icmp ne i32 %39, 0\l  br i1 %41, label %42, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f700:s0 -> Node0x60000085f750[tooltip="38 -> 42\nProbability 96.88%" ];
+	Node0x60000085f700:s1 -> Node0x60000085f840[tooltip="38 -> 59\nProbability 3.12%" ];
+	Node0x60000085f750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{42:\l|  %43 = load i16, ptr %8, align 2\l  %44 = sext i16 %43 to i32\l  %45 = shl i32 %44, 1\l  %46 = trunc i32 %45 to i16\l  store i16 %46, ptr %8, align 2\l  %47 = load i64, ptr %6, align 8\l  %48 = shl i64 %47, 1\l  store i64 %48, ptr %6, align 8\l  %49 = load i64, ptr %6, align 8\l  %50 = load i64, ptr %7, align 8\l  %51 = icmp sge i64 %49, %50\l  br i1 %51, label %52, label %58\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f750:s0 -> Node0x60000085f7a0[tooltip="42 -> 52\nProbability 50.00%" ];
+	Node0x60000085f750:s1 -> Node0x60000085f7f0[tooltip="42 -> 58\nProbability 50.00%" ];
+	Node0x60000085f7a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{52:\l|  %53 = load i64, ptr %7, align 8\l  %54 = load i64, ptr %6, align 8\l  %55 = sub nsw i64 %54, %53\l  store i64 %55, ptr %6, align 8\l  %56 = load i16, ptr %8, align 2\l  %57 = add i16 %56, 1\l  store i16 %57, ptr %8, align 2\l  br label %58\l}"];
+	Node0x60000085f7a0 -> Node0x60000085f7f0[tooltip="52 -> 58\nProbability 100.00%" ];
+	Node0x60000085f7f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{58:\l|  br label %38\l}"];
+	Node0x60000085f7f0 -> Node0x60000085f700[tooltip="58 -> 38\nProbability 100.00%" ];
+	Node0x60000085f840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{59:\l|  %60 = load i16, ptr %8, align 2\l  store i16 %60, ptr %3, align 2\l  br label %61\l}"];
+	Node0x60000085f840 -> Node0x60000085f890[tooltip="59 -> 61\nProbability 100.00%" ];
+	Node0x60000085f890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{61:\l|  %62 = load i16, ptr %3, align 2\l  ret i16 %62\l}"];
+}

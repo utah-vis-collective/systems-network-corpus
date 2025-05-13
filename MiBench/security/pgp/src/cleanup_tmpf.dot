@@ -1,0 +1,19 @@
+digraph "CFG for 'cleanup_tmpf' function" {
+	label="CFG for 'cleanup_tmpf' function";
+
+	Node0x60000196e5d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  store i32 0, ptr %1, align 4\l  br label %2\l}"];
+	Node0x60000196e5d0 -> Node0x60000196e620[tooltip="0 -> 2\nProbability 100.00%" ];
+	Node0x60000196e620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load i32, ptr %1, align 4\l  %4 = icmp slt i32 %3, 8\l  br i1 %4, label %5, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x60000196e620:s0 -> Node0x60000196e670[tooltip="2 -> 5\nProbability 96.88%" ];
+	Node0x60000196e620:s1 -> Node0x60000196e7b0[tooltip="2 -> 22\nProbability 3.12%" ];
+	Node0x60000196e670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %1, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds [8 x %struct.anon], ptr @tmpf, i64 0, i64 %7\l  %9 = getelementptr inbounds %struct.anon, ptr %8, i32 0, i32 1\l  %10 = load i32, ptr %9, align 4\l  %11 = icmp ne i32 %10, 0\l  br i1 %11, label %12, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000196e670:s0 -> Node0x60000196e6c0[tooltip="5 -> 12\nProbability 62.50%" ];
+	Node0x60000196e670:s1 -> Node0x60000196e710[tooltip="5 -> 18\nProbability 37.50%" ];
+	Node0x60000196e6c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %1, align 4\l  %14 = sext i32 %13 to i64\l  %15 = getelementptr inbounds [8 x %struct.anon], ptr @tmpf, i64 0, i64 %14\l  %16 = getelementptr inbounds %struct.anon, ptr %15, i32 0, i32 0\l  %17 = getelementptr inbounds [256 x i8], ptr %16, i64 0, i64 0\l  call void @rmtemp(ptr noundef %17)\l  br label %18\l}"];
+	Node0x60000196e6c0 -> Node0x60000196e710[tooltip="12 -> 18\nProbability 100.00%" ];
+	Node0x60000196e710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  br label %19\l}"];
+	Node0x60000196e710 -> Node0x60000196e760[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x60000196e760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %1, align 4\l  %21 = add nsw i32 %20, 1\l  store i32 %21, ptr %1, align 4\l  br label %2\l}"];
+	Node0x60000196e760 -> Node0x60000196e620[tooltip="19 -> 2\nProbability 100.00%" ];
+	Node0x60000196e7b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

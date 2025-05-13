@@ -1,0 +1,33 @@
+digraph "CFG for 'iter_free' function" {
+	label="CFG for 'iter_free' function";
+
+	Node0x60000353a8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr %3, align 8\l  %5 = icmp eq ptr %4, null\l  br i1 %5, label %6, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x60000353a8a0:s0 -> Node0x60000353a8f0[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x60000353a8a0:s1 -> Node0x60000353a940[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x60000353a8f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  store i32 -1, ptr %2, align 4\l  br label %43\l}"];
+	Node0x60000353a8f0 -> Node0x60000353ac10[tooltip="6 -> 43\nProbability 100.00%" ];
+	Node0x60000353a940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = call i32 @mem_info_is_on()\l  %9 = icmp ne i32 %8, 0\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x60000353a940:s0 -> Node0x60000353a990[tooltip="7 -> 10\nProbability 62.50%" ];
+	Node0x60000353a940:s1 -> Node0x60000353a9e0[tooltip="7 -> 11\nProbability 37.50%" ];
+	Node0x60000353a990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  call void @mem_bytes_list(i32 noundef 5, i32 noundef 136, i32 noundef 0,\l... i32 noundef 0)\l  call void @mem_numvar_list(i32 noundef 5, i32 noundef -1, i32 noundef 0)\l  br label %11\l}"];
+	Node0x60000353a990 -> Node0x60000353a9e0[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x60000353a9e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.Iter_data, ptr %12, i32 0, i32 0\l  %14 = load i32, ptr %13, align 8\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %26, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x60000353a9e0:s0 -> Node0x60000353aad0[tooltip="11 -> 26\nProbability 62.50%" ];
+	Node0x60000353a9e0:s1 -> Node0x60000353aa30[tooltip="11 -> 16\nProbability 37.50%" ];
+	Node0x60000353aa30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds %struct.Iter_data, ptr %17, i32 0, i32 6\l  %19 = load ptr, ptr %18, align 8\l  %20 = icmp ne ptr %19, null\l  br i1 %20, label %21, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000353aa30:s0 -> Node0x60000353aa80[tooltip="16 -> 21\nProbability 62.50%" ];
+	Node0x60000353aa30:s1 -> Node0x60000353aad0[tooltip="16 -> 26\nProbability 37.50%" ];
+	Node0x60000353aa80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds %struct.Iter_data, ptr %22, i32 0, i32 6\l  %24 = load ptr, ptr %23, align 8\l  %25 = call i32 @v_free(ptr noundef %24)\l  br label %26\l}"];
+	Node0x60000353aa80 -> Node0x60000353aad0[tooltip="21 -> 26\nProbability 100.00%" ];
+	Node0x60000353aad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %3, align 8\l  %28 = getelementptr inbounds %struct.Iter_data, ptr %27, i32 0, i32 1\l  %29 = load i32, ptr %28, align 4\l  %30 = icmp ne i32 %29, 0\l  br i1 %30, label %41, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x60000353aad0:s0 -> Node0x60000353abc0[tooltip="26 -> 41\nProbability 62.50%" ];
+	Node0x60000353aad0:s1 -> Node0x60000353ab20[tooltip="26 -> 31\nProbability 37.50%" ];
+	Node0x60000353ab20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %3, align 8\l  %33 = getelementptr inbounds %struct.Iter_data, ptr %32, i32 0, i32 7\l  %34 = load ptr, ptr %33, align 8\l  %35 = icmp ne ptr %34, null\l  br i1 %35, label %36, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x60000353ab20:s0 -> Node0x60000353ab70[tooltip="31 -> 36\nProbability 62.50%" ];
+	Node0x60000353ab20:s1 -> Node0x60000353abc0[tooltip="31 -> 41\nProbability 37.50%" ];
+	Node0x60000353ab70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %3, align 8\l  %38 = getelementptr inbounds %struct.Iter_data, ptr %37, i32 0, i32 7\l  %39 = load ptr, ptr %38, align 8\l  %40 = call i32 @v_free(ptr noundef %39)\l  br label %41\l}"];
+	Node0x60000353ab70 -> Node0x60000353abc0[tooltip="36 -> 41\nProbability 100.00%" ];
+	Node0x60000353abc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr %3, align 8\l  call void @free(ptr noundef %42)\l  store i32 0, ptr %2, align 4\l  br label %43\l}"];
+	Node0x60000353abc0 -> Node0x60000353ac10[tooltip="41 -> 43\nProbability 100.00%" ];
+	Node0x60000353ac10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %2, align 4\l  ret i32 %44\l}"];
+}

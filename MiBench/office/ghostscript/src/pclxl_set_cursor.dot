@@ -1,0 +1,13 @@
+digraph "CFG for 'pclxl_set_cursor' function" {
+	label="CFG for 'pclxl_set_cursor' function";
+
+	Node0x600003bac050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %8 = load ptr, ptr %4, align 8\l  %9 = call ptr @gdev_vector_stream(ptr noundef %8)\l  store ptr %9, ptr %7, align 8\l  %10 = load ptr, ptr %7, align 8\l  %11 = load i32, ptr %5, align 4\l  %12 = load i32, ptr %6, align 4\l  call void @put_ssp(ptr noundef %10, i32 noundef %11, i32 noundef %12)\l  br label %13\l}"];
+	Node0x600003bac050 -> Node0x600003bac0a0[tooltip="3 -> 13\nProbability 100.00%" ];
+	Node0x600003bac0a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  br label %14\l}"];
+	Node0x600003bac0a0 -> Node0x600003bac0f0[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x600003bac0f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %7, align 8\l  call void @put_bytes(ptr noundef %15, ptr noundef @pclxl_set_cursor.ac_, i32\l... noundef 3)\l  br label %16\l}"];
+	Node0x600003bac0f0 -> Node0x600003bac140[tooltip="14 -> 16\nProbability 100.00%" ];
+	Node0x600003bac140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  br label %17\l}"];
+	Node0x600003bac140 -> Node0x600003bac190[tooltip="16 -> 17\nProbability 100.00%" ];
+	Node0x600003bac190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  ret i32 0\l}"];
+}

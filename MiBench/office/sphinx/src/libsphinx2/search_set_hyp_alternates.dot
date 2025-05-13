@@ -1,0 +1,12 @@
+digraph "CFG for 'search_set_hyp_alternates' function" {
+	label="CFG for 'search_set_hyp_alternates' function";
+
+	Node0x600002005bd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  store i32 %3, ptr @hyp_alternates, align 4\l  %4 = load i32, ptr @hyp_alternates, align 4\l  %5 = icmp ne i32 %4, 0\l  br i1 %5, label %6, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x600002005bd0:s0 -> Node0x600002005cc0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x600002005bd0:s1 -> Node0x600002005d10[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x600002005cc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  call void (ptr, ...) @log_info(ptr noundef @.str.56)\l  br label %8\l}"];
+	Node0x600002005cc0 -> Node0x600002005d60[tooltip="6 -> 8\nProbability 100.00%" ];
+	Node0x600002005d10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{7:\l|  call void (ptr, ...) @log_info(ptr noundef @.str.57)\l  br label %8\l}"];
+	Node0x600002005d10 -> Node0x600002005d60[tooltip="7 -> 8\nProbability 100.00%" ];
+	Node0x600002005d60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  ret void\l}"];
+}

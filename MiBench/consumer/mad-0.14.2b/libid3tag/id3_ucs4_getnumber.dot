@@ -1,0 +1,17 @@
+digraph "CFG for 'id3_ucs4_getnumber' function" {
+	label="CFG for 'id3_ucs4_getnumber' function";
+
+	Node0x600002fd14f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i64, align 8\l  store ptr %0, ptr %2, align 8\l  store i64 0, ptr %3, align 8\l  br label %4\l}"];
+	Node0x600002fd14f0 -> Node0x600002fd1540[tooltip="1 -> 4\nProbability 100.00%" ];
+	Node0x600002fd1540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr %2, align 8\l  %6 = load i64, ptr %5, align 8\l  %7 = icmp uge i64 %6, 48\l  br i1 %7, label %8, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600002fd1540:s0 -> Node0x600002fd1590[tooltip="4 -> 8\nProbability 50.00%" ];
+	Node0x600002fd1540:s1 -> Node0x600002fd15e0[tooltip="4 -> 12\nProbability 50.00%" ];
+	Node0x600002fd1590 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  %10 = load i64, ptr %9, align 8\l  %11 = icmp ule i64 %10, 57\l  br label %12\l}"];
+	Node0x600002fd1590 -> Node0x600002fd15e0[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x600002fd15e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = phi i1 [ false, %4 ], [ %11, %8 ]\l  br i1 %13, label %14, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600002fd15e0:s0 -> Node0x600002fd1630[tooltip="12 -> 14\nProbability 96.88%" ];
+	Node0x600002fd15e0:s1 -> Node0x600002fd1680[tooltip="12 -> 22\nProbability 3.12%" ];
+	Node0x600002fd1630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i64, ptr %3, align 8\l  %16 = mul i64 10, %15\l  %17 = load ptr, ptr %2, align 8\l  %18 = getelementptr inbounds i64, ptr %17, i32 1\l  store ptr %18, ptr %2, align 8\l  %19 = load i64, ptr %17, align 8\l  %20 = sub i64 %19, 48\l  %21 = add i64 %16, %20\l  store i64 %21, ptr %3, align 8\l  br label %4\l}"];
+	Node0x600002fd1630 -> Node0x600002fd1540[tooltip="14 -> 4\nProbability 100.00%" ];
+	Node0x600002fd1680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  %23 = load i64, ptr %3, align 8\l  ret i64 %23\l}"];
+}

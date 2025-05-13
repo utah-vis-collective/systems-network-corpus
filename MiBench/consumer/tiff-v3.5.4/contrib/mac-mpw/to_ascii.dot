@@ -1,0 +1,19 @@
+digraph "CFG for 'to_ascii' function" {
+	label="CFG for 'to_ascii' function";
+
+	Node0x60000069e3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i8, align 1\l  %2 = alloca i32, align 4\l  br label %3\l}"];
+	Node0x60000069e3f0 -> Node0x60000069e440[tooltip="0 -> 3\nProbability 100.00%" ];
+	Node0x60000069e440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = call i32 @getchar()\l  %5 = trunc i32 %4 to i8\l  store i8 %5, ptr %1, align 1\l  %6 = sext i8 %5 to i32\l  %7 = icmp ne i32 %6, -1\l  br i1 %7, label %8, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x60000069e440:s0 -> Node0x60000069e490[tooltip="3 -> 8\nProbability 96.88%" ];
+	Node0x60000069e440:s1 -> Node0x60000069e5d0[tooltip="3 -> 23\nProbability 3.12%" ];
+	Node0x60000069e490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i8, ptr %1, align 1\l  %10 = sext i8 %9 to i32\l  %11 = call i32 @isascii(i32 noundef %10)\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000069e490:s0 -> Node0x60000069e4e0[tooltip="8 -> 13\nProbability 62.50%" ];
+	Node0x60000069e490:s1 -> Node0x60000069e530[tooltip="8 -> 17\nProbability 37.50%" ];
+	Node0x60000069e4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load i8, ptr %1, align 1\l  %15 = sext i8 %14 to i32\l  %16 = call i32 @putchar(i32 noundef %15)\l  br label %22\l}"];
+	Node0x60000069e4e0 -> Node0x60000069e580[tooltip="13 -> 22\nProbability 100.00%" ];
+	Node0x60000069e530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load i8, ptr %1, align 1\l  %19 = zext i8 %18 to i32\l  store i32 %19, ptr %2, align 4\l  %20 = load i32, ptr %2, align 4\l  %21 = call i32 (ptr, ...) @printf(ptr noundef @.str.1, i32 noundef %20)\l  br label %22\l}"];
+	Node0x60000069e530 -> Node0x60000069e580[tooltip="17 -> 22\nProbability 100.00%" ];
+	Node0x60000069e580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  br label %3\l}"];
+	Node0x60000069e580 -> Node0x60000069e440[tooltip="22 -> 3\nProbability 100.00%" ];
+	Node0x60000069e5d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{23:\l|  ret void\l}"];
+}

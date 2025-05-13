@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__18ios_base4setfB8ne190107Ejj' function" {
+	label="CFG for '_ZNSt3__18ios_base4setfB8ne190107Ejj' function";
+
+	Node0x600000dbfb60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %8 = load ptr, ptr %4, align 8\l  %9 = getelementptr inbounds %\"class.std::__1::ios_base\", ptr %8, i32 0, i32 1\l  %10 = load i32, ptr %9, align 8\l  store i32 %10, ptr %7, align 4\l  %11 = load i32, ptr %6, align 4\l  call void @_ZNSt3__18ios_base6unsetfB8ne190107Ej(ptr noundef nonnull align 8\l... dereferenceable(136) %8, i32 noundef %11)\l  %12 = load i32, ptr %5, align 4\l  %13 = load i32, ptr %6, align 4\l  %14 = and i32 %12, %13\l  %15 = getelementptr inbounds %\"class.std::__1::ios_base\", ptr %8, i32 0, i32\l... 1\l  %16 = load i32, ptr %15, align 8\l  %17 = or i32 %16, %14\l  store i32 %17, ptr %15, align 8\l  %18 = load i32, ptr %7, align 4\l  ret i32 %18\l}"];
+}

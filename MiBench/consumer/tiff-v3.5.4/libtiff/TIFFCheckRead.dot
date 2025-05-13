@@ -1,0 +1,17 @@
+digraph "CFG for 'TIFFCheckRead' function" {
+	label="CFG for 'TIFFCheckRead' function";
+
+	Node0x600002f08730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load ptr, ptr %4, align 8\l  %7 = getelementptr inbounds %struct.tiff, ptr %6, i32 0, i32 2\l  %8 = load i32, ptr %7, align 4\l  %9 = icmp eq i32 %8, 1\l  br i1 %9, label %10, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600002f08730:s0 -> Node0x600002f08780[tooltip="2 -> 10\nProbability 50.00%" ];
+	Node0x600002f08730:s1 -> Node0x600002f087d0[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x600002f08780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.tiff, ptr %11, i32 0, i32 0\l  %13 = load ptr, ptr %12, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %13, ptr noundef @.str.22)\l  store i32 0, ptr %3, align 4\l  br label %33\l}"];
+	Node0x600002f08780 -> Node0x600002f088c0[tooltip="10 -> 33\nProbability 100.00%" ];
+	Node0x600002f087d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %5, align 4\l  %16 = load ptr, ptr %4, align 8\l  %17 = getelementptr inbounds %struct.tiff, ptr %16, i32 0, i32 3\l  %18 = load i64, ptr %17, align 8\l  %19 = and i64 %18, 1024\l  %20 = icmp ne i64 %19, 0\l  %21 = zext i1 %20 to i32\l  %22 = xor i32 %15, %21\l  %23 = icmp ne i32 %22, 0\l  br i1 %23, label %24, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600002f087d0:s0 -> Node0x600002f08820[tooltip="14 -> 24\nProbability 62.50%" ];
+	Node0x600002f087d0:s1 -> Node0x600002f08870[tooltip="14 -> 32\nProbability 37.50%" ];
+	Node0x600002f08820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %4, align 8\l  %26 = getelementptr inbounds %struct.tiff, ptr %25, i32 0, i32 0\l  %27 = load ptr, ptr %26, align 8\l  %28 = load i32, ptr %5, align 4\l  %29 = icmp ne i32 %28, 0\l  %30 = zext i1 %29 to i64\l  %31 = select i1 %29, ptr @.str.23, ptr @.str.24\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %27, ptr noundef %31)\l  store i32 0, ptr %3, align 4\l  br label %33\l}"];
+	Node0x600002f08820 -> Node0x600002f088c0[tooltip="24 -> 33\nProbability 100.00%" ];
+	Node0x600002f08870 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{32:\l|  store i32 1, ptr %3, align 4\l  br label %33\l}"];
+	Node0x600002f08870 -> Node0x600002f088c0[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x600002f088c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %3, align 4\l  ret i32 %34\l}"];
+}

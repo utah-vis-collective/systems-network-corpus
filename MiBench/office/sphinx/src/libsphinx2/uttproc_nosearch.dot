@@ -1,0 +1,5 @@
+digraph "CFG for 'uttproc_nosearch' function" {
+	label="CFG for 'uttproc_nosearch' function";
+
+	Node0x6000008a2440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  call void @warn_notidle(ptr noundef @.str.52)\l  %3 = load i32, ptr %2, align 4\l  store i32 %3, ptr @nosearch, align 4\l  ret i32 0\l}"];
+}

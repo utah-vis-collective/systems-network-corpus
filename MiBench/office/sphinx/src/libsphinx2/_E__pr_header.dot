@@ -1,0 +1,12 @@
+digraph "CFG for '_E__pr_header' function" {
+	label="CFG for '_E__pr_header' function";
+
+	Node0x6000038edf40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load i32, ptr @verbosity_level, align 4\l  %8 = icmp slt i32 %7, 1\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000038edf40:s0 -> Node0x6000038edf90[tooltip="3 -> 9\nProbability 37.50%" ];
+	Node0x6000038edf40:s1 -> Node0x6000038edfe0[tooltip="3 -> 10\nProbability 62.50%" ];
+	Node0x6000038edf90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  br label %18\l}"];
+	Node0x6000038edf90 -> Node0x6000038ee030[tooltip="9 -> 18\nProbability 100.00%" ];
+	Node0x6000038edfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @__stdoutp, align 8\l  %12 = call i32 @fflush(ptr noundef %11)\l  %13 = load ptr, ptr @__stderrp, align 8\l  %14 = load ptr, ptr %6, align 8\l  %15 = load ptr, ptr %4, align 8\l  %16 = load i64, ptr %5, align 8\l  %17 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %13, ptr noundef @.str,\l... ptr noundef %14, ptr noundef %15, i64 noundef %16) #7\l  br label %18\l}"];
+	Node0x6000038edfe0 -> Node0x6000038ee030[tooltip="10 -> 18\nProbability 100.00%" ];
+	Node0x6000038ee030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  ret void\l}"];
+}

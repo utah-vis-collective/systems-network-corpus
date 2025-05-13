@@ -1,0 +1,18 @@
+digraph "CFG for 'NumberOfBitsNeeded' function" {
+	label="CFG for 'NumberOfBitsNeeded' function";
+
+	Node0x600001cea030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %4 = load i32, ptr %2, align 4\l  %5 = icmp ult i32 %4, 2\l  br i1 %5, label %6, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001cea030:s0 -> Node0x600001cea080[tooltip="1 -> 6\nProbability 0.00%" ];
+	Node0x600001cea030:s1 -> Node0x600001cea0d0[tooltip="1 -> 10\nProbability 100.00%" ];
+	Node0x600001cea080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @__stderrp, align 8\l  %8 = load i32, ptr %2, align 4\l  %9 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %7, ptr noundef @.str,\l... i32 noundef %8) #3\l  call void @exit(i32 noundef 1) #4\l  unreachable\l}"];
+	Node0x600001cea0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{10:\l|  store i32 0, ptr %3, align 4\l  br label %11\l}"];
+	Node0x600001cea0d0 -> Node0x600001cea120[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x600001cea120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %2, align 4\l  %13 = load i32, ptr %3, align 4\l  %14 = shl i32 1, %13\l  %15 = and i32 %12, %14\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600001cea120:s0 -> Node0x600001cea170[tooltip="11 -> 17\nProbability 3.12%" ];
+	Node0x600001cea120:s1 -> Node0x600001cea1c0[tooltip="11 -> 19\nProbability 96.88%" ];
+	Node0x600001cea170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %3, align 4\l  ret i32 %18\l}"];
+	Node0x600001cea1c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  br label %20\l}"];
+	Node0x600001cea1c0 -> Node0x600001cea210[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x600001cea210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  %22 = add i32 %21, 1\l  store i32 %22, ptr %3, align 4\l  br label %11\l}"];
+	Node0x600001cea210 -> Node0x600001cea120[tooltip="20 -> 11\nProbability 100.00%" ];
+}

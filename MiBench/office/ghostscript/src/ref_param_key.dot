@@ -1,0 +1,17 @@
+digraph "CFG for 'ref_param_key' function" {
+	label="CFG for 'ref_param_key' function";
+
+	Node0x6000017a8f00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = getelementptr inbounds %struct.iparam_list_s, ptr %9, i32 0, i32 4\l  %11 = load i32, ptr %10, align 4\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000017a8f00:s0 -> Node0x6000017a8f50[tooltip="3 -> 13\nProbability 62.50%" ];
+	Node0x6000017a8f00:s1 -> Node0x6000017a9040[tooltip="3 -> 25\nProbability 37.50%" ];
+	Node0x6000017a8f50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %6, align 8\l  %15 = call i32 (ptr, ptr, ...) @sscanf(ptr noundef %14, ptr noundef @.str,\l... ptr noundef %8)\l  %16 = icmp ne i32 %15, 1\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000017a8f50:s0 -> Node0x6000017a8fa0[tooltip="13 -> 17\nProbability 50.00%" ];
+	Node0x6000017a8f50:s1 -> Node0x6000017a8ff0[tooltip="13 -> 18\nProbability 50.00%" ];
+	Node0x6000017a8fa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  store i32 -15, ptr %4, align 4\l  br label %32\l}"];
+	Node0x6000017a8fa0 -> Node0x6000017a9090[tooltip="17 -> 32\nProbability 100.00%" ];
+	Node0x6000017a8ff0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  %19 = load i64, ptr %8, align 8\l  %20 = load ptr, ptr %7, align 8\l  %21 = getelementptr inbounds %struct.ref_s, ptr %20, i32 0, i32 1\l  store i64 %19, ptr %21, align 8\l  %22 = load ptr, ptr %7, align 8\l  %23 = getelementptr inbounds %struct.ref_s, ptr %22, i32 0, i32 0\l  %24 = getelementptr inbounds %struct.tas_s, ptr %23, i32 0, i32 0\l  store i16 2816, ptr %24, align 8\l  store i32 0, ptr %4, align 4\l  br label %32\l}"];
+	Node0x6000017a8ff0 -> Node0x6000017a9090[tooltip="18 -> 32\nProbability 100.00%" ];
+	Node0x6000017a9040 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %6, align 8\l  %27 = load ptr, ptr %6, align 8\l  %28 = call i64 @strlen(ptr noundef %27) #5\l  %29 = trunc i64 %28 to i32\l  %30 = load ptr, ptr %7, align 8\l  %31 = call i32 @name_ref(ptr noundef %26, i32 noundef %29, ptr noundef %30,\l... i32 noundef 0)\l  store i32 %31, ptr %4, align 4\l  br label %32\l}"];
+	Node0x6000017a9040 -> Node0x6000017a9090[tooltip="25 -> 32\nProbability 100.00%" ];
+	Node0x6000017a9090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %4, align 4\l  ret i32 %33\l}"];
+}

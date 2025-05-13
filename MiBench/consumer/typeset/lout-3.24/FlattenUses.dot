@@ -1,0 +1,5 @@
+digraph "CFG for 'FlattenUses' function" {
+	label="CFG for 'FlattenUses' function";
+
+	Node0x6000002cd360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @StartSym, align 8\l  call void @GatherAllUses(ptr noundef %1)\l  ret void\l}"];
+}

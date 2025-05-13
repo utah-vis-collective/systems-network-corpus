@@ -1,0 +1,14 @@
+digraph "CFG for 'mem_init' function" {
+	label="CFG for 'mem_init' function";
+
+	Node0x600002833f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  store i32 0, ptr %1, align 4\l  br label %2\l}"];
+	Node0x600002833f20 -> Node0x600002833f70[tooltip="0 -> 2\nProbability 100.00%" ];
+	Node0x600002833f70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load i32, ptr %1, align 4\l  %4 = icmp slt i32 %3, 20\l  br i1 %4, label %5, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600002833f70:s0 -> Node0x600002834000[tooltip="2 -> 5\nProbability 96.88%" ];
+	Node0x600002833f70:s1 -> Node0x6000028340a0[tooltip="2 -> 21\nProbability 3.12%" ];
+	Node0x600002834000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %1, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds [20 x i64], ptr @fds, i64 0, i64 %7\l  store i64 -1, ptr %8, align 8\l  %9 = load i32, ptr %1, align 4\l  %10 = sext i32 %9 to i64\l  %11 = getelementptr inbounds [20 x ptr], ptr @buf, i64 0, i64 %10\l  store ptr null, ptr %11, align 8\l  %12 = load i32, ptr %1, align 4\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds [20 x i64], ptr @buf_size, i64 0, i64 %13\l  store i64 0, ptr %14, align 8\l  %15 = load i32, ptr %1, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds [20 x i64], ptr @buf_off, i64 0, i64 %16\l  store i64 0, ptr %17, align 8\l  br label %18\l}"];
+	Node0x600002834000 -> Node0x600002834050[tooltip="5 -> 18\nProbability 100.00%" ];
+	Node0x600002834050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %1, align 4\l  %20 = add nsw i32 %19, 1\l  store i32 %20, ptr %1, align 4\l  br label %2\l}"];
+	Node0x600002834050 -> Node0x600002833f70[tooltip="18 -> 2\nProbability 100.00%" ];
+	Node0x6000028340a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  ret void\l}"];
+}

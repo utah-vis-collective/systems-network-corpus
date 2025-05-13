@@ -1,0 +1,21 @@
+digraph "CFG for 'DebugScope' function" {
+	label="CFG for 'DebugScope' function";
+
+	Node0x60000037eee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = load i32, ptr @suppress_scope, align 4\l  %3 = icmp ne i32 %2, 0\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x60000037eee0:s0 -> Node0x60000037ef30[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x60000037eee0:s1 -> Node0x60000037ef80[tooltip="0 -> 5\nProbability 37.50%" ];
+	Node0x60000037ef30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{4:\l|  br label %15\l}"];
+	Node0x60000037ef30 -> Node0x60000037f110[tooltip="4 -> 15\nProbability 100.00%" ];
+	Node0x60000037ef80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{5:\l|  store i32 0, ptr %1, align 4\l  br label %6\l}"];
+	Node0x60000037ef80 -> Node0x60000037efd0[tooltip="5 -> 6\nProbability 100.00%" ];
+	Node0x60000037efd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %1, align 4\l  %8 = load i32, ptr @scope_top, align 4\l  %9 = icmp slt i32 %7, %8\l  br i1 %9, label %10, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000037efd0:s0 -> Node0x60000037f020[tooltip="6 -> 10\nProbability 96.88%" ];
+	Node0x60000037efd0:s1 -> Node0x60000037f0c0[tooltip="6 -> 14\nProbability 3.12%" ];
+	Node0x60000037f020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  br label %11\l}"];
+	Node0x60000037f020 -> Node0x60000037f070[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x60000037f070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %1, align 4\l  %13 = add nsw i32 %12, 1\l  store i32 %13, ptr %1, align 4\l  br label %6\l}"];
+	Node0x60000037f070 -> Node0x60000037efd0[tooltip="11 -> 6\nProbability 100.00%" ];
+	Node0x60000037f0c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x60000037f0c0 -> Node0x60000037f110[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x60000037f110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{15:\l|  ret void\l}"];
+}

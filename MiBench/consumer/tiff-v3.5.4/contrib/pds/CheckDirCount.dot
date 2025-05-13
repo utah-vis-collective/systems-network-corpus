@@ -1,0 +1,12 @@
+digraph "CFG for 'CheckDirCount' function" {
+	label="CFG for 'CheckDirCount' function";
+
+	Node0x600003047930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i64, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store i64 %2, ptr %7, align 8\l  %8 = load i64, ptr %7, align 8\l  %9 = load ptr, ptr %6, align 8\l  %10 = getelementptr inbounds %struct.TIFFDirEntry, ptr %9, i32 0, i32 2\l  %11 = load i64, ptr %10, align 8\l  %12 = icmp ne i64 %8, %11\l  br i1 %12, label %13, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600003047930:s0 -> Node0x600003047980[tooltip="3 -> 13\nProbability 50.00%" ];
+	Node0x600003047930:s1 -> Node0x6000030479d0[tooltip="3 -> 29\nProbability 50.00%" ];
+	Node0x600003047980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds %struct.tiff, ptr %14, i32 0, i32 0\l  %16 = load ptr, ptr %15, align 8\l  %17 = load ptr, ptr %5, align 8\l  %18 = load ptr, ptr %6, align 8\l  %19 = getelementptr inbounds %struct.TIFFDirEntry, ptr %18, i32 0, i32 0\l  %20 = load i16, ptr %19, align 8\l  %21 = zext i16 %20 to i64\l  %22 = call ptr @_TIFFFieldWithTag(ptr noundef %17, i64 noundef %21)\l  %23 = getelementptr inbounds %struct.TIFFFieldInfo, ptr %22, i32 0, i32 7\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %6, align 8\l  %26 = getelementptr inbounds %struct.TIFFDirEntry, ptr %25, i32 0, i32 2\l  %27 = load i64, ptr %26, align 8\l  %28 = load i64, ptr %7, align 8\l  call void (ptr, ptr, ...) @TIFFWarning(ptr noundef %16, ptr noundef @.str.8,\l... ptr noundef %24, i64 noundef %27, i64 noundef %28)\l  store i32 0, ptr %4, align 4\l  br label %30\l}"];
+	Node0x600003047980 -> Node0x600003047a20[tooltip="13 -> 30\nProbability 100.00%" ];
+	Node0x6000030479d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{29:\l|  store i32 1, ptr %4, align 4\l  br label %30\l}"];
+	Node0x6000030479d0 -> Node0x600003047a20[tooltip="29 -> 30\nProbability 100.00%" ];
+	Node0x600003047a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %4, align 4\l  ret i32 %31\l}"];
+}

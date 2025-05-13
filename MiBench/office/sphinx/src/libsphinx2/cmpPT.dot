@@ -1,0 +1,5 @@
+digraph "CFG for 'cmpPT' function" {
+	label="CFG for 'cmpPT' function";
+
+	Node0x600002450a50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr @linkTable, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load i32, ptr %6, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds i32, ptr %5, i64 %8\l  %10 = load i32, ptr %9, align 4\l  %11 = load ptr, ptr @linkTable, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = load i32, ptr %12, align 4\l  %14 = sext i32 %13 to i64\l  %15 = getelementptr inbounds i32, ptr %11, i64 %14\l  %16 = load i32, ptr %15, align 4\l  %17 = sub nsw i32 %10, %16\l  ret i32 %17\l}"];
+}

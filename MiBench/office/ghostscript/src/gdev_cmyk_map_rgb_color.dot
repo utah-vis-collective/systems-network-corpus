@@ -1,0 +1,22 @@
+digraph "CFG for 'gdev_cmyk_map_rgb_color' function" {
+	label="CFG for 'gdev_cmyk_map_rgb_color' function";
+
+	Node0x6000015038e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  %9 = alloca i16, align 2\l  %10 = alloca i16, align 2\l  %11 = alloca i16, align 2\l  %12 = alloca i16, align 2\l  store ptr %0, ptr %6, align 8\l  store i16 %1, ptr %7, align 2\l  store i16 %2, ptr %8, align 2\l  store i16 %3, ptr %9, align 2\l  %13 = load i16, ptr %7, align 2\l  %14 = zext i16 %13 to i32\l  %15 = load i16, ptr %8, align 2\l  %16 = zext i16 %15 to i32\l  %17 = and i32 %14, %16\l  %18 = load i16, ptr %9, align 2\l  %19 = zext i16 %18 to i32\l  %20 = and i32 %17, %19\l  %21 = ashr i32 %20, 8\l  %22 = icmp eq i32 %21, 255\l  br i1 %22, label %23, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000015038e0:s0 -> Node0x600001503930[tooltip="4 -> 23\nProbability 50.00%" ];
+	Node0x6000015038e0:s1 -> Node0x600001503980[tooltip="4 -> 24\nProbability 50.00%" ];
+	Node0x600001503930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{23:\l|  store i64 0, ptr %5, align 8\l  br label %71\l}"];
+	Node0x600001503930 -> Node0x600001503b10[tooltip="23 -> 71\nProbability 100.00%" ];
+	Node0x600001503980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load i16, ptr %7, align 2\l  %26 = zext i16 %25 to i32\l  %27 = sub nsw i32 65535, %26\l  %28 = trunc i32 %27 to i16\l  store i16 %28, ptr %10, align 2\l  %29 = load i16, ptr %8, align 2\l  %30 = zext i16 %29 to i32\l  %31 = sub nsw i32 65535, %30\l  %32 = trunc i32 %31 to i16\l  store i16 %32, ptr %11, align 2\l  %33 = load i16, ptr %9, align 2\l  %34 = zext i16 %33 to i32\l  %35 = sub nsw i32 65535, %34\l  %36 = trunc i32 %35 to i16\l  store i16 %36, ptr %12, align 2\l  %37 = load ptr, ptr %6, align 8\l  %38 = getelementptr inbounds %struct.gx_device_s, ptr %37, i32 0, i32 7\l  %39 = getelementptr inbounds %struct.gx_device_color_info_s, ptr %38, i32 0,\l... i32 1\l  %40 = load i32, ptr %39, align 4\l  switch i32 %40, label %69 [\l    i32 1, label %41\l    i32 8, label %53\l  ]\l|{<s0>def|<s1>1|<s2>8}}"];
+	Node0x600001503980:s0 -> Node0x600001503a70[tooltip="24 -> 69\nProbability 33.33%" ];
+	Node0x600001503980:s1 -> Node0x6000015039d0[tooltip="24 -> 41\nProbability 33.33%" ];
+	Node0x600001503980:s2 -> Node0x600001503a20[tooltip="24 -> 53\nProbability 33.33%" ];
+	Node0x6000015039d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{41:\l|  %42 = load i16, ptr %10, align 2\l  %43 = zext i16 %42 to i32\l  %44 = load i16, ptr %11, align 2\l  %45 = zext i16 %44 to i32\l  %46 = or i32 %43, %45\l  %47 = load i16, ptr %12, align 2\l  %48 = zext i16 %47 to i32\l  %49 = or i32 %46, %48\l  %50 = icmp sgt i32 %49, 32767\l  %51 = zext i1 %50 to i64\l  %52 = select i1 %50, i64 1, i64 0\l  store i64 %52, ptr %5, align 8\l  br label %71\l}"];
+	Node0x6000015039d0 -> Node0x600001503b10[tooltip="41 -> 71\nProbability 100.00%" ];
+	Node0x600001503a20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{53:\l|  %54 = load i16, ptr %10, align 2\l  %55 = zext i16 %54 to i64\l  %56 = mul i64 %55, 30\l  %57 = mul i64 %56, 10\l  %58 = load i16, ptr %11, align 2\l  %59 = zext i16 %58 to i64\l  %60 = mul i64 %59, 59\l  %61 = mul i64 %60, 10\l  %62 = add i64 %57, %61\l  %63 = load i16, ptr %12, align 2\l  %64 = zext i16 %63 to i64\l  %65 = mul i64 %64, 11\l  %66 = mul i64 %65, 10\l  %67 = add i64 %62, %66\l  %68 = lshr i64 %67, 18\l  store i64 %68, ptr %5, align 8\l  br label %71\l}"];
+	Node0x600001503a20 -> Node0x600001503b10[tooltip="53 -> 71\nProbability 100.00%" ];
+	Node0x600001503a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{69:\l|  br label %70\l}"];
+	Node0x600001503a70 -> Node0x600001503ac0[tooltip="69 -> 70\nProbability 100.00%" ];
+	Node0x600001503ac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{70:\l|  store i64 0, ptr %5, align 8\l  br label %71\l}"];
+	Node0x600001503ac0 -> Node0x600001503b10[tooltip="70 -> 71\nProbability 100.00%" ];
+	Node0x600001503b10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{71:\l|  %72 = load i64, ptr %5, align 8\l  ret i64 %72\l}"];
+}

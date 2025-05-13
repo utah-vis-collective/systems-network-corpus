@@ -1,0 +1,40 @@
+digraph "CFG for 's_proc_write_continue' function" {
+	label="CFG for 's_proc_write_continue' function";
+
+	Node0x6000029e3890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.ref_s, ptr %7, i64 -1\l  store ptr %8, ptr %4, align 8\l  br label %9\l}"];
+	Node0x6000029e3890 -> Node0x6000029e38e0[tooltip="1 -> 9\nProbability 100.00%" ];
+	Node0x6000029e38e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds %struct.ref_s, ptr %10, i32 0, i32 0\l  %12 = getelementptr inbounds %struct.tas_s, ptr %11, i32 0, i32 0\l  %13 = getelementptr inbounds i8, ptr %12, i64 1\l  %14 = load i8, ptr %13, align 1\l  %15 = zext i8 %14 to i32\l  %16 = icmp eq i32 %15, 3\l  br i1 %16, label %20, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000029e38e0:s0 -> Node0x6000029e3980[tooltip="9 -> 20\nProbability 50.00%" ];
+	Node0x6000029e38e0:s1 -> Node0x6000029e3930[tooltip="9 -> 17\nProbability 50.00%" ];
+	Node0x6000029e3930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = call i32 @check_type_failed(ptr noundef %18)\l  store i32 %19, ptr %2, align 4\l  br label %86\l}"];
+	Node0x6000029e3930 -> Node0x6000029e3d40[tooltip="17 -> 86\nProbability 100.00%" ];
+	Node0x6000029e3980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %3, align 8\l  %22 = getelementptr inbounds %struct.ref_s, ptr %21, i32 0, i32 1\l  %23 = load ptr, ptr %22, align 8\l  store ptr %23, ptr %5, align 8\l  %24 = load ptr, ptr %5, align 8\l  %25 = getelementptr inbounds %struct.stream_s, ptr %24, i32 0, i32 17\l  %26 = load i16, ptr %25, align 8\l  %27 = zext i16 %26 to i32\l  %28 = load ptr, ptr %5, align 8\l  %29 = getelementptr inbounds %struct.stream_s, ptr %28, i32 0, i32 18\l  %30 = load i16, ptr %29, align 2\l  %31 = zext i16 %30 to i32\l  %32 = or i32 %27, %31\l  %33 = load ptr, ptr %3, align 8\l  %34 = getelementptr inbounds %struct.ref_s, ptr %33, i32 0, i32 0\l  %35 = getelementptr inbounds %struct.tas_s, ptr %34, i32 0, i32 1\l  %36 = load i16, ptr %35, align 2\l  %37 = zext i16 %36 to i32\l  %38 = icmp eq i32 %32, %37\l  br i1 %38, label %40, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x6000029e3980:s0 -> Node0x6000029e3a20[tooltip="20 -> 40\nProbability 50.00%" ];
+	Node0x6000029e3980:s1 -> Node0x6000029e39d0[tooltip="20 -> 39\nProbability 50.00%" ];
+	Node0x6000029e39d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{39:\l|  store i32 -7, ptr %2, align 4\l  br label %86\l}"];
+	Node0x6000029e39d0 -> Node0x6000029e3d40[tooltip="39 -> 86\nProbability 100.00%" ];
+	Node0x6000029e3a20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{40:\l|  br label %41\l}"];
+	Node0x6000029e3a20 -> Node0x6000029e3a70[tooltip="40 -> 41\nProbability 100.00%" ];
+	Node0x6000029e3a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr %4, align 8\l  %43 = getelementptr inbounds %struct.ref_s, ptr %42, i32 0, i32 0\l  %44 = getelementptr inbounds %struct.tas_s, ptr %43, i32 0, i32 0\l  %45 = load i16, ptr %44, align 8\l  %46 = zext i16 %45 to i32\l  %47 = and i32 %46, 16144\l  %48 = icmp eq i32 %47, 4624\l  br i1 %48, label %63, label %49\l|{<s0>T|<s1>F}}"];
+	Node0x6000029e3a70:s0 -> Node0x6000029e3c00[tooltip="41 -> 63\nProbability 50.00%" ];
+	Node0x6000029e3a70:s1 -> Node0x6000029e3ac0[tooltip="41 -> 49\nProbability 50.00%" ];
+	Node0x6000029e3ac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{49:\l|  %50 = load ptr, ptr %4, align 8\l  %51 = getelementptr inbounds %struct.ref_s, ptr %50, i32 0, i32 0\l  %52 = getelementptr inbounds %struct.tas_s, ptr %51, i32 0, i32 0\l  %53 = getelementptr inbounds i8, ptr %52, i64 1\l  %54 = load i8, ptr %53, align 1\l  %55 = zext i8 %54 to i32\l  %56 = icmp eq i32 %55, 18\l  br i1 %56, label %60, label %57\l|{<s0>T|<s1>F}}"];
+	Node0x6000029e3ac0:s0 -> Node0x6000029e3b60[tooltip="49 -> 60\nProbability 50.00%" ];
+	Node0x6000029e3ac0:s1 -> Node0x6000029e3b10[tooltip="49 -> 57\nProbability 50.00%" ];
+	Node0x6000029e3b10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{57:\l|  %58 = load ptr, ptr %4, align 8\l  %59 = call i32 @check_type_failed(ptr noundef %58)\l  br label %61\l}"];
+	Node0x6000029e3b10 -> Node0x6000029e3bb0[tooltip="57 -> 61\nProbability 100.00%" ];
+	Node0x6000029e3b60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{60:\l|  br label %61\l}"];
+	Node0x6000029e3b60 -> Node0x6000029e3bb0[tooltip="60 -> 61\nProbability 100.00%" ];
+	Node0x6000029e3bb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{61:\l|  %62 = phi i32 [ %59, %57 ], [ -7, %60 ]\l  store i32 %62, ptr %2, align 4\l  br label %86\l}"];
+	Node0x6000029e3bb0 -> Node0x6000029e3d40[tooltip="61 -> 86\nProbability 100.00%" ];
+	Node0x6000029e3c00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{63:\l|  br label %64\l}"];
+	Node0x6000029e3c00 -> Node0x6000029e3c50[tooltip="63 -> 64\nProbability 100.00%" ];
+	Node0x6000029e3c50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{64:\l|  %65 = load ptr, ptr %5, align 8\l  %66 = getelementptr inbounds %struct.stream_s, ptr %65, i32 0, i32 7\l  store i16 0, ptr %66, align 8\l  %67 = load ptr, ptr %5, align 8\l  %68 = getelementptr inbounds %struct.stream_s, ptr %67, i32 0, i32 13\l  %69 = load ptr, ptr %68, align 8\l  %70 = icmp ne ptr %69, null\l  br i1 %70, label %71, label %75\l|{<s0>T|<s1>F}}"];
+	Node0x6000029e3c50:s0 -> Node0x6000029e3ca0[tooltip="64 -> 71\nProbability 96.88%" ];
+	Node0x6000029e3c50:s1 -> Node0x6000029e3cf0[tooltip="64 -> 75\nProbability 3.12%" ];
+	Node0x6000029e3ca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{71:\l|  %72 = load ptr, ptr %5, align 8\l  %73 = getelementptr inbounds %struct.stream_s, ptr %72, i32 0, i32 13\l  %74 = load ptr, ptr %73, align 8\l  store ptr %74, ptr %5, align 8\l  br label %64\l}"];
+	Node0x6000029e3ca0 -> Node0x6000029e3c50[tooltip="71 -> 64\nProbability 100.00%" ];
+	Node0x6000029e3cf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{75:\l|  %76 = load ptr, ptr %5, align 8\l  %77 = getelementptr inbounds %struct.stream_s, ptr %76, i32 0, i32 16\l  %78 = load ptr, ptr %77, align 8\l  store ptr %78, ptr %6, align 8\l  %79 = load ptr, ptr %6, align 8\l  %80 = getelementptr inbounds %struct.stream_proc_state_s, ptr %79, i32 0,\l... i32 6\l  %81 = load ptr, ptr %4, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %80, ptr align 8 %81, i64 16,\l... i1 false)\l  %82 = load ptr, ptr %6, align 8\l  %83 = getelementptr inbounds %struct.stream_proc_state_s, ptr %82, i32 0,\l... i32 4\l  store i32 0, ptr %83, align 4\l  %84 = load ptr, ptr @o_stack, align 8\l  %85 = getelementptr inbounds %struct.ref_s, ptr %84, i64 -2\l  store ptr %85, ptr @o_stack, align 8\l  store i32 0, ptr %2, align 4\l  br label %86\l}"];
+	Node0x6000029e3cf0 -> Node0x6000029e3d40[tooltip="75 -> 86\nProbability 100.00%" ];
+	Node0x6000029e3d40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{86:\l|  %87 = load i32, ptr %2, align 4\l  ret i32 %87\l}"];
+}

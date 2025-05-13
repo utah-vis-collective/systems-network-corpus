@@ -1,0 +1,12 @@
+digraph "CFG for 'abs' function" {
+	label="CFG for 'abs' function";
+
+	Node0x600003893250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = icmp slt i32 %3, 0\l  br i1 %4, label %5, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600003893250:s0 -> Node0x600003893660[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x600003893250:s1 -> Node0x6000038936b0[tooltip="1 -> 8\nProbability 62.50%" ];
+	Node0x600003893660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %2, align 4\l  %7 = sub nsw i32 0, %6\l  br label %10\l}"];
+	Node0x600003893660 -> Node0x600003893700[tooltip="5 -> 10\nProbability 100.00%" ];
+	Node0x6000038936b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %2, align 4\l  br label %10\l}"];
+	Node0x6000038936b0 -> Node0x600003893700[tooltip="8 -> 10\nProbability 100.00%" ];
+	Node0x600003893700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = phi i32 [ %7, %5 ], [ %9, %8 ]\l  ret i32 %11\l}"];
+}

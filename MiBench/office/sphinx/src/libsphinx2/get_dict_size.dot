@@ -1,0 +1,16 @@
+digraph "CFG for 'get_dict_size' function" {
+	label="CFG for 'get_dict_size' function";
+
+	Node0x60000244bb10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca [1024 x i8], align 1\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = call ptr @_CM_fopen(ptr noundef %6, ptr noundef @.str.11, ptr noundef\l... @.str.1, i32 noundef 208)\l  store ptr %7, ptr %3, align 8\l  store i32 0, ptr %5, align 4\l  br label %8\l}"];
+	Node0x60000244bb10 -> Node0x60000244bb60[tooltip="1 -> 8\nProbability 100.00%" ];
+	Node0x60000244bb60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = getelementptr inbounds [1024 x i8], ptr %4, i64 0, i64 0\l  %10 = load ptr, ptr %3, align 8\l  %11 = call ptr @fgets(ptr noundef %9, i32 noundef 1024, ptr noundef %10)\l  %12 = icmp eq ptr %11, null\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000244bb60:s0 -> Node0x60000244bbb0[tooltip="8 -> 13\nProbability 3.12%" ];
+	Node0x60000244bb60:s1 -> Node0x60000244bc00[tooltip="8 -> 14\nProbability 96.88%" ];
+	Node0x60000244bbb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{13:\l|  br label %18\l}"];
+	Node0x60000244bbb0 -> Node0x60000244bca0[tooltip="13 -> 18\nProbability 100.00%" ];
+	Node0x60000244bc00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x60000244bc00 -> Node0x60000244bc50[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x60000244bc50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %5, align 4\l  %17 = add nsw i32 %16, 1\l  store i32 %17, ptr %5, align 4\l  br label %8\l}"];
+	Node0x60000244bc50 -> Node0x60000244bb60[tooltip="15 -> 8\nProbability 100.00%" ];
+	Node0x60000244bca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = call i32 @fclose(ptr noundef %19)\l  %21 = load i32, ptr %5, align 4\l  ret i32 %21\l}"];
+}

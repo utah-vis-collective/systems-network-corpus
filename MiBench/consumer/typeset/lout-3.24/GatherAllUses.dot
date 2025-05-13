@@ -1,0 +1,28 @@
+digraph "CFG for 'GatherAllUses' function" {
+	label="CFG for 'GatherAllUses' function";
+
+	Node0x6000002cd400 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = getelementptr inbounds %struct.word_type, ptr %5, i32 0, i32 0\l  %7 = getelementptr inbounds [2 x %struct.LIST], ptr %6, i64 0, i64 0\l  %8 = getelementptr inbounds %struct.LIST, ptr %7, i32 0, i32 1\l  %9 = load ptr, ptr %8, align 8\l  store ptr %9, ptr %3, align 8\l  br label %10\l}"];
+	Node0x6000002cd400 -> Node0x6000002cd450[tooltip="1 -> 10\nProbability 100.00%" ];
+	Node0x6000002cd450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = load ptr, ptr %2, align 8\l  %13 = icmp ne ptr %11, %12\l  br i1 %13, label %14, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x6000002cd450:s0 -> Node0x6000002cd4a0[tooltip="10 -> 14\nProbability 96.88%" ];
+	Node0x6000002cd450:s1 -> Node0x6000002cd720[tooltip="10 -> 52\nProbability 3.12%" ];
+	Node0x6000002cd4a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.word_type, ptr %15, i32 0, i32 0\l  %17 = getelementptr inbounds [2 x %struct.LIST], ptr %16, i64 0, i64 1\l  %18 = getelementptr inbounds %struct.LIST, ptr %17, i32 0, i32 0\l  %19 = load ptr, ptr %18, align 8\l  store ptr %19, ptr %4, align 8\l  br label %20\l}"];
+	Node0x6000002cd4a0 -> Node0x6000002cd4f0[tooltip="14 -> 20\nProbability 100.00%" ];
+	Node0x6000002cd4f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %4, align 8\l  %22 = getelementptr inbounds %struct.word_type, ptr %21, i32 0, i32 1\l  %23 = getelementptr inbounds %struct.anon, ptr %22, i32 0, i32 0\l  %24 = load i8, ptr %23, align 8\l  %25 = zext i8 %24 to i32\l  %26 = icmp eq i32 %25, 0\l  br i1 %26, label %27, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x6000002cd4f0:s0 -> Node0x6000002cd540[tooltip="20 -> 27\nProbability 96.88%" ];
+	Node0x6000002cd4f0:s1 -> Node0x6000002cd5e0[tooltip="20 -> 34\nProbability 3.12%" ];
+	Node0x6000002cd540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  br label %28\l}"];
+	Node0x6000002cd540 -> Node0x6000002cd590[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x6000002cd590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds %struct.word_type, ptr %29, i32 0, i32 0\l  %31 = getelementptr inbounds [2 x %struct.LIST], ptr %30, i64 0, i64 1\l  %32 = getelementptr inbounds %struct.LIST, ptr %31, i32 0, i32 0\l  %33 = load ptr, ptr %32, align 8\l  store ptr %33, ptr %4, align 8\l  br label %20\l}"];
+	Node0x6000002cd590 -> Node0x6000002cd4f0[tooltip="28 -> 20\nProbability 100.00%" ];
+	Node0x6000002cd5e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %4, align 8\l  %36 = getelementptr inbounds %struct.word_type, ptr %35, i32 0, i32 1\l  %37 = getelementptr inbounds %struct.anon, ptr %36, i32 0, i32 0\l  %38 = load i8, ptr %37, align 8\l  %39 = zext i8 %38 to i32\l  %40 = icmp eq i32 %39, 143\l  br i1 %40, label %41, label %44\l|{<s0>T|<s1>F}}"];
+	Node0x6000002cd5e0:s0 -> Node0x6000002cd630[tooltip="34 -> 41\nProbability 50.00%" ];
+	Node0x6000002cd5e0:s1 -> Node0x6000002cd680[tooltip="34 -> 44\nProbability 50.00%" ];
+	Node0x6000002cd630 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr %4, align 8\l  %43 = load ptr, ptr %4, align 8\l  call void @GatherUses(ptr noundef %42, ptr noundef %43)\l  br label %44\l}"];
+	Node0x6000002cd630 -> Node0x6000002cd680[tooltip="41 -> 44\nProbability 100.00%" ];
+	Node0x6000002cd680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{44:\l|  %45 = load ptr, ptr %4, align 8\l  call void @GatherAllUses(ptr noundef %45)\l  br label %46\l}"];
+	Node0x6000002cd680 -> Node0x6000002cd6d0[tooltip="44 -> 46\nProbability 100.00%" ];
+	Node0x6000002cd6d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{46:\l|  %47 = load ptr, ptr %3, align 8\l  %48 = getelementptr inbounds %struct.word_type, ptr %47, i32 0, i32 0\l  %49 = getelementptr inbounds [2 x %struct.LIST], ptr %48, i64 0, i64 0\l  %50 = getelementptr inbounds %struct.LIST, ptr %49, i32 0, i32 1\l  %51 = load ptr, ptr %50, align 8\l  store ptr %51, ptr %3, align 8\l  br label %10\l}"];
+	Node0x6000002cd6d0 -> Node0x6000002cd450[tooltip="46 -> 10\nProbability 100.00%" ];
+	Node0x6000002cd720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{52:\l|  ret void\l}"];
+}

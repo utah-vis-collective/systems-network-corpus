@@ -1,0 +1,23 @@
+digraph "CFG for 'MEMFILE_enum_ptrs' function" {
+	label="CFG for 'MEMFILE_enum_ptrs' function";
+
+	Node0x600000e1dd60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store ptr %3, ptr %9, align 8\l  %10 = load i32, ptr %8, align 4\l  switch i32 %10, label %11 [\l    i32 0, label %12\l    i32 1, label %19\l  ]\l|{<s0>def|<s1>0|<s2>1}}"];
+	Node0x600000e1dd60:s0 -> Node0x600000e1ddb0[tooltip="4 -> 11\nProbability 33.33%" ];
+	Node0x600000e1dd60:s1 -> Node0x600000e1de00[tooltip="4 -> 12\nProbability 33.33%" ];
+	Node0x600000e1dd60:s2 -> Node0x600000e1def0[tooltip="4 -> 19\nProbability 33.33%" ];
+	Node0x600000e1ddb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  store ptr null, ptr %5, align 8\l  br label %26\l}"];
+	Node0x600000e1ddb0 -> Node0x600000e1dfe0[tooltip="11 -> 26\nProbability 100.00%" ];
+	Node0x600000e1de00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x600000e1de00 -> Node0x600000e1de50[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x600000e1de50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %6, align 8\l  %15 = getelementptr inbounds %struct.MEMFILE, ptr %14, i32 0, i32 17\l  %16 = load ptr, ptr %15, align 8\l  %17 = load ptr, ptr %9, align 8\l  store ptr %16, ptr %17, align 8\l  store ptr @ptr_struct_procs, ptr %5, align 8\l  br label %26\l}"];
+	Node0x600000e1de50 -> Node0x600000e1dfe0[tooltip="13 -> 26\nProbability 100.00%" ];
+	Node0x600000e1dea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{18:\l|  br label %19\l}"];
+	Node0x600000e1dea0 -> Node0x600000e1def0[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x600000e1def0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  br label %20\l}"];
+	Node0x600000e1def0 -> Node0x600000e1df40[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x600000e1df40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %6, align 8\l  %22 = getelementptr inbounds %struct.MEMFILE, ptr %21, i32 0, i32 18\l  %23 = load ptr, ptr %22, align 8\l  %24 = load ptr, ptr %9, align 8\l  store ptr %23, ptr %24, align 8\l  store ptr @ptr_struct_procs, ptr %5, align 8\l  br label %26\l}"];
+	Node0x600000e1df40 -> Node0x600000e1dfe0[tooltip="20 -> 26\nProbability 100.00%" ];
+	Node0x600000e1df90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{25:\l|  br label %26\l}"];
+	Node0x600000e1df90 -> Node0x600000e1dfe0[tooltip="25 -> 26\nProbability 100.00%" ];
+	Node0x600000e1dfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  ret ptr %27\l}"];
+}

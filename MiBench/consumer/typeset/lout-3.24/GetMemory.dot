@@ -1,0 +1,15 @@
+digraph "CFG for 'GetMemory' function" {
+	label="CFG for 'GetMemory' function";
+
+	Node0x600001a1c050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store i32 %0, ptr %3, align 4\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr @GetMemory.next_free, align 8\l  %7 = load i32, ptr %3, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds ptr, ptr %6, i64 %8\l  %10 = load ptr, ptr @GetMemory.top_free, align 8\l  %11 = icmp ugt ptr %9, %10\l  br i1 %11, label %12, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001a1c050:s0 -> Node0x600001a1c0a0[tooltip="2 -> 12\nProbability 50.00%" ];
+	Node0x600001a1c050:s1 -> Node0x600001a1c190[tooltip="2 -> 22\nProbability 50.00%" ];
+	Node0x600001a1c0a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = call ptr @calloc(i64 noundef 1020, i64 noundef 8) #3\l  store ptr %13, ptr @GetMemory.next_free, align 8\l  %14 = load ptr, ptr @GetMemory.next_free, align 8\l  %15 = icmp eq ptr %14, null\l  br i1 %15, label %16, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600001a1c0a0:s0 -> Node0x600001a1c0f0[tooltip="12 -> 16\nProbability 37.50%" ];
+	Node0x600001a1c0a0:s1 -> Node0x600001a1c140[tooltip="12 -> 19\nProbability 62.50%" ];
+	Node0x600001a1c0f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 31, i32\l... noundef 1, ptr noundef @.str, i32 noundef 1, ptr noundef %17)\l  br label %19\l}"];
+	Node0x600001a1c0f0 -> Node0x600001a1c140[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x600001a1c140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr @GetMemory.next_free, align 8\l  %21 = getelementptr inbounds ptr, ptr %20, i64 1020\l  store ptr %21, ptr @GetMemory.top_free, align 8\l  br label %22\l}"];
+	Node0x600001a1c140 -> Node0x600001a1c190[tooltip="19 -> 22\nProbability 100.00%" ];
+	Node0x600001a1c190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr @GetMemory.next_free, align 8\l  store ptr %23, ptr %5, align 8\l  %24 = load ptr, ptr @GetMemory.next_free, align 8\l  %25 = load i32, ptr %3, align 4\l  %26 = sext i32 %25 to i64\l  %27 = getelementptr inbounds ptr, ptr %24, i64 %26\l  store ptr %27, ptr @GetMemory.next_free, align 8\l  %28 = load ptr, ptr %5, align 8\l  ret ptr %28\l}"];
+}

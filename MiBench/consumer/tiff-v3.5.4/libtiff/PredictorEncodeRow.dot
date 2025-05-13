@@ -1,0 +1,29 @@
+digraph "CFG for 'PredictorEncodeRow' function" {
+	label="CFG for 'PredictorEncodeRow' function";
+
+	Node0x6000002e5400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca i16, align 2\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store i64 %2, ptr %7, align 8\l  store i16 %3, ptr %8, align 2\l  %10 = load ptr, ptr %5, align 8\l  %11 = getelementptr inbounds %struct.tiff, ptr %10, i32 0, i32 37\l  %12 = load ptr, ptr %11, align 8\l  store ptr %12, ptr %9, align 8\l  %13 = load ptr, ptr %9, align 8\l  %14 = icmp ne ptr %13, null\l  %15 = xor i1 %14, true\l  %16 = zext i1 %15 to i32\l  %17 = sext i32 %16 to i64\l  %18 = icmp ne i64 %17, 0\l  br i1 %18, label %19, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000002e5400:s0 -> Node0x6000002e5450[tooltip="4 -> 19\nProbability 0.00%" ];
+	Node0x6000002e5400:s1 -> Node0x6000002e54f0[tooltip="4 -> 21\nProbability 100.00%" ];
+	Node0x6000002e5450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{19:\l|  call void @__assert_rtn(ptr noundef @__func__.PredictorEncodeRow, ptr\l... noundef @.str.7, i32 noundef 350, ptr noundef @.str.8) #4\l  unreachable\l}"];
+	Node0x6000002e54a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{20:\l|  br label %22\l}"];
+	Node0x6000002e54a0 -> Node0x6000002e5540[tooltip="20 -> 22\nProbability 100.00%" ];
+	Node0x6000002e54f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  br label %22\l}"];
+	Node0x6000002e54f0 -> Node0x6000002e5540[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x6000002e5540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %9, align 8\l  %24 = getelementptr inbounds %struct.TIFFPredictorState, ptr %23, i32 0, i32\l... 3\l  %25 = load ptr, ptr %24, align 8\l  %26 = icmp ne ptr %25, null\l  %27 = xor i1 %26, true\l  %28 = zext i1 %27 to i32\l  %29 = sext i32 %28 to i64\l  %30 = icmp ne i64 %29, 0\l  br i1 %30, label %31, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x6000002e5540:s0 -> Node0x6000002e5590[tooltip="22 -> 31\nProbability 0.00%" ];
+	Node0x6000002e5540:s1 -> Node0x6000002e5630[tooltip="22 -> 33\nProbability 100.00%" ];
+	Node0x6000002e5590 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{31:\l|  call void @__assert_rtn(ptr noundef @__func__.PredictorEncodeRow, ptr\l... noundef @.str.7, i32 noundef 351, ptr noundef @.str.10) #4\l  unreachable\l}"];
+	Node0x6000002e55e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{32:\l|  br label %34\l}"];
+	Node0x6000002e55e0 -> Node0x6000002e5680[tooltip="32 -> 34\nProbability 100.00%" ];
+	Node0x6000002e5630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  br label %34\l}"];
+	Node0x6000002e5630 -> Node0x6000002e5680[tooltip="33 -> 34\nProbability 100.00%" ];
+	Node0x6000002e5680 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %9, align 8\l  %36 = getelementptr inbounds %struct.TIFFPredictorState, ptr %35, i32 0, i32\l... 4\l  %37 = load ptr, ptr %36, align 8\l  %38 = icmp ne ptr %37, null\l  %39 = xor i1 %38, true\l  %40 = zext i1 %39 to i32\l  %41 = sext i32 %40 to i64\l  %42 = icmp ne i64 %41, 0\l  br i1 %42, label %43, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x6000002e5680:s0 -> Node0x6000002e56d0[tooltip="34 -> 43\nProbability 0.00%" ];
+	Node0x6000002e5680:s1 -> Node0x6000002e5770[tooltip="34 -> 45\nProbability 100.00%" ];
+	Node0x6000002e56d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{43:\l|  call void @__assert_rtn(ptr noundef @__func__.PredictorEncodeRow, ptr\l... noundef @.str.7, i32 noundef 352, ptr noundef @.str.9) #4\l  unreachable\l}"];
+	Node0x6000002e5720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{44:\l|  br label %46\l}"];
+	Node0x6000002e5720 -> Node0x6000002e57c0[tooltip="44 -> 46\nProbability 100.00%" ];
+	Node0x6000002e5770 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{45:\l|  br label %46\l}"];
+	Node0x6000002e5770 -> Node0x6000002e57c0[tooltip="45 -> 46\nProbability 100.00%" ];
+	Node0x6000002e57c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{46:\l|  %47 = load ptr, ptr %9, align 8\l  %48 = getelementptr inbounds %struct.TIFFPredictorState, ptr %47, i32 0, i32\l... 3\l  %49 = load ptr, ptr %48, align 8\l  %50 = load ptr, ptr %5, align 8\l  %51 = load ptr, ptr %6, align 8\l  %52 = load i64, ptr %7, align 8\l  call void %49(ptr noundef %50, ptr noundef %51, i64 noundef %52)\l  %53 = load ptr, ptr %9, align 8\l  %54 = getelementptr inbounds %struct.TIFFPredictorState, ptr %53, i32 0, i32\l... 4\l  %55 = load ptr, ptr %54, align 8\l  %56 = load ptr, ptr %5, align 8\l  %57 = load ptr, ptr %6, align 8\l  %58 = load i64, ptr %7, align 8\l  %59 = load i16, ptr %8, align 2\l  %60 = call i32 %55(ptr noundef %56, ptr noundef %57, i64 noundef %58, i16\l... noundef zeroext %59)\l  ret i32 %60\l}"];
+}

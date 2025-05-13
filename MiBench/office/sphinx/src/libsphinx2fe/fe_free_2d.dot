@@ -1,0 +1,10 @@
+digraph "CFG for 'fe_free_2d' function" {
+	label="CFG for 'fe_free_2d' function";
+
+	Node0x600003339a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600003339a90:s0 -> Node0x600003339ae0[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x600003339a90:s1 -> Node0x600003339b30[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600003339ae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %2, align 8\l  %7 = getelementptr inbounds ptr, ptr %6, i64 0\l  %8 = load ptr, ptr %7, align 8\l  call void @free(ptr noundef %8)\l  %9 = load ptr, ptr %2, align 8\l  call void @free(ptr noundef %9)\l  br label %10\l}"];
+	Node0x600003339ae0 -> Node0x600003339b30[tooltip="5 -> 10\nProbability 100.00%" ];
+	Node0x600003339b30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  ret void\l}"];
+}

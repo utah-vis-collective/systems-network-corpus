@@ -1,0 +1,12 @@
+digraph "CFG for 'ReadBytes' function" {
+	label="CFG for 'ReadBytes' function";
+
+	Node0x600003e0abc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  br label %7\l}"];
+	Node0x600003e0abc0 -> Node0x600003e0ac10[tooltip="3 -> 7\nProbability 100.00%" ];
+	Node0x600003e0ac10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %4, align 8\l  %9 = call i32 @feof(ptr noundef %8)\l  %10 = icmp ne i32 %9, 0\l  %11 = xor i1 %10, true\l  %12 = zext i1 %11 to i32\l  %13 = load i32, ptr %6, align 4\l  %14 = add nsw i32 %13, -1\l  store i32 %14, ptr %6, align 4\l  %15 = icmp sgt i32 %13, 0\l  %16 = zext i1 %15 to i32\l  %17 = and i32 %12, %16\l  %18 = icmp ne i32 %17, 0\l  br i1 %18, label %19, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600003e0ac10:s0 -> Node0x600003e0ac60[tooltip="7 -> 19\nProbability 96.88%" ];
+	Node0x600003e0ac10:s1 -> Node0x600003e0acb0[tooltip="7 -> 25\nProbability 3.12%" ];
+	Node0x600003e0ac60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  %21 = call i32 @getc(ptr noundef %20)\l  %22 = trunc i32 %21 to i8\l  %23 = load ptr, ptr %5, align 8\l  %24 = getelementptr inbounds i8, ptr %23, i32 1\l  store ptr %24, ptr %5, align 8\l  store i8 %22, ptr %23, align 1\l  br label %7, !llvm.loop !6\l}"];
+	Node0x600003e0ac60 -> Node0x600003e0ac10[tooltip="19 -> 7\nProbability 100.00%" ];
+	Node0x600003e0acb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  ret void\l}"];
+}

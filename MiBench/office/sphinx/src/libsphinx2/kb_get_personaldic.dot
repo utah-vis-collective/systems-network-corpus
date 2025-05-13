@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_personaldic' function" {
+	label="CFG for 'kb_get_personaldic' function";
+
+	Node0x600002a8cd20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @personal_dict_file_name, align 8\l  ret ptr %1\l}"];
+}

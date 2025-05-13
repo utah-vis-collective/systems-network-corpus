@@ -1,0 +1,5 @@
+digraph "CFG for 'job_end' function" {
+	label="CFG for 'job_end' function";
+
+	Node0x600002c5d450 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  call void @gs_interp_reset()\l  %1 = load ptr, ptr @o_stack, align 8\l  %2 = getelementptr inbounds %struct.ref_s, ptr %1, i32 1\l  store ptr %2, ptr @o_stack, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %2, ptr align 8 @job_save, i64\l... 16, i1 false)\l  %3 = load ptr, ptr @o_stack, align 8\l  %4 = call i32 @zrestore(ptr noundef %3)\l  ret i32 %4\l}"];
+}

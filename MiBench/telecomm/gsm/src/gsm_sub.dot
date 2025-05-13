@@ -1,0 +1,19 @@
+digraph "CFG for 'gsm_sub' function" {
+	label="CFG for 'gsm_sub' function";
+
+	Node0x60000256a4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i64, align 8\l  store i16 %0, ptr %3, align 2\l  store i16 %1, ptr %4, align 2\l  %6 = load i16, ptr %3, align 2\l  %7 = sext i16 %6 to i64\l  %8 = load i16, ptr %4, align 2\l  %9 = sext i16 %8 to i64\l  %10 = sub nsw i64 %7, %9\l  store i64 %10, ptr %5, align 8\l  %11 = load i64, ptr %5, align 8\l  %12 = icmp slt i64 %11, -32768\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000256a4e0:s0 -> Node0x60000256a580[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x60000256a4e0:s1 -> Node0x60000256a5d0[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x60000256a580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  br label %22\l}"];
+	Node0x60000256a580 -> Node0x60000256a710[tooltip="13 -> 22\nProbability 100.00%" ];
+	Node0x60000256a5d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load i64, ptr %5, align 8\l  %16 = icmp sgt i64 %15, 32767\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000256a5d0:s0 -> Node0x60000256a620[tooltip="14 -> 17\nProbability 50.00%" ];
+	Node0x60000256a5d0:s1 -> Node0x60000256a670[tooltip="14 -> 18\nProbability 50.00%" ];
+	Node0x60000256a620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  br label %20\l}"];
+	Node0x60000256a620 -> Node0x60000256a6c0[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x60000256a670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  %19 = load i64, ptr %5, align 8\l  br label %20\l}"];
+	Node0x60000256a670 -> Node0x60000256a6c0[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x60000256a6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = phi i64 [ 32767, %17 ], [ %19, %18 ]\l  br label %22\l}"];
+	Node0x60000256a6c0 -> Node0x60000256a710[tooltip="20 -> 22\nProbability 100.00%" ];
+	Node0x60000256a710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = phi i64 [ -32768, %13 ], [ %21, %20 ]\l  %24 = trunc i64 %23 to i16\l  ret i16 %24\l}"];
+}

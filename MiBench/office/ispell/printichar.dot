@@ -1,0 +1,12 @@
+digraph "CFG for 'printichar' function" {
+	label="CFG for 'printichar' function";
+
+	Node0x6000000d2c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = icmp slt i32 %3, 256\l  br i1 %4, label %5, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x6000000d2c10:s0 -> Node0x6000000d2c60[tooltip="1 -> 5\nProbability 50.00%" ];
+	Node0x6000000d2c10:s1 -> Node0x6000000d2cb0[tooltip="1 -> 8\nProbability 50.00%" ];
+	Node0x6000000d2c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %2, align 4\l  %7 = trunc i32 %6 to i8\l  store i8 %7, ptr @printichar.out, align 1\l  store i8 0, ptr getelementptr inbounds ([129 x i8], ptr @printichar.out, i64\l... 0, i64 1), align 1\l  br label %15\l}"];
+	Node0x6000000d2c60 -> Node0x6000000d2d00[tooltip="5 -> 15\nProbability 100.00%" ];
+	Node0x6000000d2cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %2, align 4\l  %10 = sub i32 %9, 256\l  %11 = zext i32 %10 to i64\l  %12 = getelementptr inbounds [1024 x [129 x i8]], ptr getelementptr inbounds\l... (%struct.hashheader, ptr @hashheader, i32 0, i32 28), i64 0, i64 %11\l  %13 = getelementptr inbounds [129 x i8], ptr %12, i64 0, i64 0\l  %14 = call ptr @__strcpy_chk(ptr noundef @printichar.out, ptr noundef %13,\l... i64 noundef 129) #5\l  br label %15\l}"];
+	Node0x6000000d2cb0 -> Node0x6000000d2d00[tooltip="8 -> 15\nProbability 100.00%" ];
+	Node0x6000000d2d00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  ret ptr @printichar.out\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'stopwatch_start' function" {
+	label="CFG for 'stopwatch_start' function";
+
+	Node0x6000025e5b30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp eq ptr %3, null\l  br i1 %4, label %5, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x6000025e5b30:s0 -> Node0x6000025e5b80[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x6000025e5b30:s1 -> Node0x6000025e5bd0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x6000025e5b80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  br label %22\l}"];
+	Node0x6000025e5b80 -> Node0x6000025e5c20[tooltip="5 -> 22\nProbability 100.00%" ];
+	Node0x6000025e5bd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.__stopwatch_t, ptr %7, i32 0, i32 0\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.__stopwatch_t, ptr %9, i32 0, i32 0\l  %11 = call i64 @llvm.objectsize.i64.p0(ptr %10, i1 false, i1 true, i1 false)\l  %12 = call ptr @__memset_chk(ptr noundef %8, i32 noundef 0, i64 noundef 16,\l... i64 noundef %11) #6\l  %13 = load ptr, ptr %2, align 8\l  %14 = getelementptr inbounds %struct.__stopwatch_t, ptr %13, i32 0, i32 1\l  %15 = load ptr, ptr %2, align 8\l  %16 = getelementptr inbounds %struct.__stopwatch_t, ptr %15, i32 0, i32 1\l  %17 = call i64 @llvm.objectsize.i64.p0(ptr %16, i1 false, i1 true, i1 false)\l  %18 = call ptr @__memset_chk(ptr noundef %14, i32 noundef 0, i64 noundef 16,\l... i64 noundef %17) #6\l  %19 = load ptr, ptr %2, align 8\l  %20 = getelementptr inbounds %struct.__stopwatch_t, ptr %19, i32 0, i32 0\l  %21 = call i32 @gettimeofday(ptr noundef %20, ptr noundef null)\l  br label %22\l}"];
+	Node0x6000025e5bd0 -> Node0x6000025e5c20[tooltip="6 -> 22\nProbability 100.00%" ];
+	Node0x6000025e5c20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

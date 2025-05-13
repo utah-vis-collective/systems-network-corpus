@@ -1,0 +1,18 @@
+digraph "CFG for 'HashInsert' function" {
+	label="CFG for 'HashInsert' function";
+
+	Node0x6000005a7a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = load i32, ptr @HashTableCount, align 4\l  %5 = icmp sge i32 %4, 589\l  br i1 %5, label %6, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000005a7a70:s0 -> Node0x6000005a7ac0[tooltip="1 -> 6\nProbability 0.00%" ];
+	Node0x6000005a7a70:s1 -> Node0x6000005a7b10[tooltip="1 -> 10\nProbability 100.00%" ];
+	Node0x6000005a7ac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @err_fp, align 8\l  %8 = call ptr @ErrorHeader()\l  %9 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %7, ptr noundef\l... @.str.1142, ptr noundef %8) #8\l  call void @abort() #9\l  unreachable\l}"];
+	Node0x6000005a7b10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = call i32 @hash(ptr noundef %11)\l  store i32 %12, ptr %3, align 4\l  br label %13\l}"];
+	Node0x6000005a7b10 -> Node0x6000005a7b60[tooltip="10 -> 13\nProbability 100.00%" ];
+	Node0x6000005a7b60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %3, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds [609 x ptr], ptr @HashTable, i64 0, i64 %15\l  %17 = load ptr, ptr %16, align 8\l  %18 = icmp ne ptr %17, null\l  br i1 %18, label %19, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000005a7b60:s0 -> Node0x6000005a7bb0[tooltip="13 -> 19\nProbability 96.88%" ];
+	Node0x6000005a7b60:s1 -> Node0x6000005a7c50[tooltip="13 -> 24\nProbability 3.12%" ];
+	Node0x6000005a7bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  br label %20\l}"];
+	Node0x6000005a7bb0 -> Node0x6000005a7c00[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x6000005a7c00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  %22 = add nsw i32 %21, 1\l  %23 = srem i32 %22, 609\l  store i32 %23, ptr %3, align 4\l  br label %13\l}"];
+	Node0x6000005a7c00 -> Node0x6000005a7b60[tooltip="20 -> 13\nProbability 100.00%" ];
+	Node0x6000005a7c50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %2, align 8\l  %26 = load i32, ptr %3, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds [609 x ptr], ptr @HashTable, i64 0, i64 %27\l  store ptr %25, ptr %28, align 8\l  %29 = load i32, ptr @HashTableCount, align 4\l  %30 = add nsw i32 %29, 1\l  store i32 %30, ptr @HashTableCount, align 4\l  ret void\l}"];
+}

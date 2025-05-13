@@ -1,0 +1,21 @@
+digraph "CFG for 'quantize_xrpow_ISO' function" {
+	label="CFG for 'quantize_xrpow_ISO' function";
+
+	Node0x600001609220 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca double, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca double, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = getelementptr inbounds %struct.gr_info, ptr %10, i32 0, i32 3\l  %12 = load i32, ptr %11, align 4\l  %13 = zext i32 %12 to i64\l  %14 = getelementptr inbounds [256 x double], ptr @ipow20, i64 0, i64 %13\l  %15 = load double, ptr %14, align 8\l  store double %15, ptr %7, align 8\l  %16 = load double, ptr %7, align 8\l  %17 = fdiv double 5.946000e-01, %16\l  store double %17, ptr %9, align 8\l  store i32 576, ptr %8, align 4\l  br label %18\l}"];
+	Node0x600001609220 -> Node0x600001609270[tooltip="3 -> 18\nProbability 100.00%" ];
+	Node0x600001609270 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %8, align 4\l  %20 = icmp sgt i32 %19, 0\l  br i1 %20, label %21, label %44\l|{<s0>T|<s1>F}}"];
+	Node0x600001609270:s0 -> Node0x6000016092c0[tooltip="18 -> 21\nProbability 96.88%" ];
+	Node0x600001609270:s1 -> Node0x600001609450[tooltip="18 -> 44\nProbability 3.12%" ];
+	Node0x6000016092c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load double, ptr %9, align 8\l  %23 = load ptr, ptr %4, align 8\l  %24 = load double, ptr %23, align 8\l  %25 = fcmp ogt double %22, %24\l  br i1 %25, label %26, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x6000016092c0:s0 -> Node0x600001609310[tooltip="21 -> 26\nProbability 50.00%" ];
+	Node0x6000016092c0:s1 -> Node0x600001609360[tooltip="21 -> 31\nProbability 50.00%" ];
+	Node0x600001609310 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = getelementptr inbounds i32, ptr %27, i32 1\l  store ptr %28, ptr %5, align 8\l  store i32 0, ptr %27, align 4\l  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds double, ptr %29, i32 1\l  store ptr %30, ptr %4, align 8\l  br label %40\l}"];
+	Node0x600001609310 -> Node0x6000016093b0[tooltip="26 -> 40\nProbability 100.00%" ];
+	Node0x600001609360 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{31:\l|  %32 = load double, ptr %7, align 8\l  %33 = load ptr, ptr %4, align 8\l  %34 = getelementptr inbounds double, ptr %33, i32 1\l  store ptr %34, ptr %4, align 8\l  %35 = load double, ptr %33, align 8\l  %36 = call double @llvm.fmuladd.f64(double %32, double %35, double\l... 4.054000e-01)\l  %37 = fptosi double %36 to i32\l  %38 = load ptr, ptr %5, align 8\l  %39 = getelementptr inbounds i32, ptr %38, i32 1\l  store ptr %39, ptr %5, align 8\l  store i32 %37, ptr %38, align 4\l  br label %40\l}"];
+	Node0x600001609360 -> Node0x6000016093b0[tooltip="31 -> 40\nProbability 100.00%" ];
+	Node0x6000016093b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  br label %41\l}"];
+	Node0x6000016093b0 -> Node0x600001609400[tooltip="40 -> 41\nProbability 100.00%" ];
+	Node0x600001609400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %8, align 4\l  %43 = add nsw i32 %42, -1\l  store i32 %43, ptr %8, align 4\l  br label %18, !llvm.loop !6\l}"];
+	Node0x600001609400 -> Node0x600001609270[tooltip="41 -> 18\nProbability 100.00%" ];
+	Node0x600001609450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{44:\l|  ret void\l}"];
+}

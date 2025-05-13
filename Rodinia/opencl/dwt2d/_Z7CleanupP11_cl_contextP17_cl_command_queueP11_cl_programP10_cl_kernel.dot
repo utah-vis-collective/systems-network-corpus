@@ -1,0 +1,25 @@
+digraph "CFG for '_Z7CleanupP11_cl_contextP17_cl_command_queueP11_cl_programP10_cl_kernel' function" {
+	label="CFG for '_Z7CleanupP11_cl_contextP17_cl_command_queueP11_cl_programP10_cl_kernel' function";
+
+	Node0x60000062e710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store ptr %3, ptr %8, align 8\l  %9 = load ptr, ptr %6, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000062e710:s0 -> Node0x60000062e760[tooltip="4 -> 11\nProbability 62.50%" ];
+	Node0x60000062e710:s1 -> Node0x60000062e7b0[tooltip="4 -> 14\nProbability 37.50%" ];
+	Node0x60000062e760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %6, align 8\l  %13 = call i32 @clReleaseCommandQueue(ptr noundef %12)\l  br label %14\l}"];
+	Node0x60000062e760 -> Node0x60000062e7b0[tooltip="11 -> 14\nProbability 100.00%" ];
+	Node0x60000062e7b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %8, align 8\l  %16 = icmp ne ptr %15, null\l  br i1 %16, label %17, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x60000062e7b0:s0 -> Node0x60000062e800[tooltip="14 -> 17\nProbability 62.50%" ];
+	Node0x60000062e7b0:s1 -> Node0x60000062e850[tooltip="14 -> 20\nProbability 37.50%" ];
+	Node0x60000062e800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %8, align 8\l  %19 = call i32 @clReleaseKernel(ptr noundef %18)\l  br label %20\l}"];
+	Node0x60000062e800 -> Node0x60000062e850[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x60000062e850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %7, align 8\l  %22 = icmp ne ptr %21, null\l  br i1 %22, label %23, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000062e850:s0 -> Node0x60000062e8a0[tooltip="20 -> 23\nProbability 62.50%" ];
+	Node0x60000062e850:s1 -> Node0x60000062e8f0[tooltip="20 -> 26\nProbability 37.50%" ];
+	Node0x60000062e8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %7, align 8\l  %25 = call i32 @clReleaseProgram(ptr noundef %24)\l  br label %26\l}"];
+	Node0x60000062e8a0 -> Node0x60000062e8f0[tooltip="23 -> 26\nProbability 100.00%" ];
+	Node0x60000062e8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = icmp ne ptr %27, null\l  br i1 %28, label %29, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x60000062e8f0:s0 -> Node0x60000062e940[tooltip="26 -> 29\nProbability 62.50%" ];
+	Node0x60000062e8f0:s1 -> Node0x60000062e990[tooltip="26 -> 32\nProbability 37.50%" ];
+	Node0x60000062e940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %5, align 8\l  %31 = call i32 @clReleaseContext(ptr noundef %30)\l  br label %32\l}"];
+	Node0x60000062e940 -> Node0x60000062e990[tooltip="29 -> 32\nProbability 100.00%" ];
+	Node0x60000062e990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  ret void\l}"];
+}

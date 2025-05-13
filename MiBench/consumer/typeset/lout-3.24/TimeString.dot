@@ -1,0 +1,5 @@
+digraph "CFG for 'TimeString' function" {
+	label="CFG for 'TimeString' function";
+
+	Node0x6000032a1f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @time_string\l}"];
+}

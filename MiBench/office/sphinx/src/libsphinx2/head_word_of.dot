@@ -1,0 +1,5 @@
+digraph "CFG for 'head_word_of' function" {
+	label="CFG for 'head_word_of' function";
+
+	Node0x600000d22850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  %5 = load ptr, ptr @WordDict, align 8\l  %6 = getelementptr inbounds %struct._dict, ptr %5, i32 0, i32 2\l  %7 = load ptr, ptr %6, align 8\l  %8 = load i32, ptr %2, align 4\l  %9 = sext i32 %8 to i64\l  %10 = getelementptr inbounds ptr, ptr %7, i64 %9\l  %11 = load ptr, ptr %10, align 8\l  store ptr %11, ptr %3, align 8\l  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.dict_entry, ptr %12, i32 0, i32 0\l  %14 = load ptr, ptr %13, align 8\l  %15 = call ptr @__strcpy_chk(ptr noundef @head_word_of.head_word, ptr\l... noundef %14, i64 noundef 1024) #9\l  %16 = call ptr @strchr(ptr noundef @head_word_of.head_word, i32 noundef 95)\l... #9\l  store ptr %16, ptr %4, align 8\l  %17 = load ptr, ptr %4, align 8\l  store i8 0, ptr %17, align 1\l  ret ptr @head_word_of.head_word\l}"];
+}

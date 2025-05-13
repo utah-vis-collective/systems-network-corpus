@@ -1,0 +1,5 @@
+digraph "CFG for 'ReadIeeeExtendedLowHigh' function" {
+	label="CFG for 'ReadIeeeExtendedLowHigh' function";
+
+	Node0x600003e0b4d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca [10 x i8], align 1\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds [10 x i8], ptr %3, i64 0, i64 0\l  call void @ReadBytesSwapped(ptr noundef %4, ptr noundef %5, i32 noundef 10)\l  %6 = getelementptr inbounds [10 x i8], ptr %3, i64 0, i64 0\l  %7 = call double @ConvertFromIeeeExtended(ptr noundef %6)\l  ret double %7\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'mem_stat_reg_vars' function" {
+	label="CFG for 'mem_stat_reg_vars' function";
+
+	Node0x6000025781e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  %10 = alloca i32, align 4\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  store i32 %0, ptr %5, align 4\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  store i32 0, ptr %10, align 4\l  call void @llvm.va_start.p0(ptr %9)\l  br label %13\l}"];
+	Node0x6000025781e0 -> Node0x600002578230[tooltip="4 -> 13\nProbability 100.00%" ];
+	Node0x600002578230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = va_arg ptr %9, ptr\l  store ptr %14, ptr %12, align 8\l  %15 = load ptr, ptr %12, align 8\l  store ptr %15, ptr %11, align 8\l  %16 = icmp ne ptr %15, null\l  br i1 %16, label %17, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600002578230:s0 -> Node0x600002578280[tooltip="13 -> 17\nProbability 96.88%" ];
+	Node0x600002578230:s1 -> Node0x6000025782d0[tooltip="13 -> 26\nProbability 3.12%" ];
+	Node0x600002578280 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %11, align 8\l  %19 = load i32, ptr %6, align 4\l  %20 = load i32, ptr %5, align 4\l  %21 = load ptr, ptr %7, align 8\l  %22 = load i32, ptr %8, align 4\l  %23 = call i32 @mem_stat_reg_list(ptr noundef %18, i32 noundef %19, i32\l... noundef %20, ptr noundef %21, i32 noundef %22)\l  %24 = load i32, ptr %10, align 4\l  %25 = add nsw i32 %24, 1\l  store i32 %25, ptr %10, align 4\l  br label %13\l}"];
+	Node0x600002578280 -> Node0x600002578230[tooltip="17 -> 13\nProbability 100.00%" ];
+	Node0x6000025782d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{26:\l|  call void @llvm.va_end.p0(ptr %9)\l  %27 = load i32, ptr %10, align 4\l  ret i32 %27\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'puthexw16' function" {
+	label="CFG for 'puthexw16' function";
+
+	Node0x600000307070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i16, align 2\l  store i16 %0, ptr %2, align 2\l  %3 = load i16, ptr %2, align 2\l  %4 = zext i16 %3 to i32\l  %5 = ashr i32 %4, 8\l  %6 = trunc i32 %5 to i8\l  call void @puthexbyte(i8 noundef zeroext %6)\l  %7 = load i16, ptr %2, align 2\l  %8 = zext i16 %7 to i32\l  %9 = and i32 %8, 255\l  %10 = trunc i32 %9 to i8\l  call void @puthexbyte(i8 noundef zeroext %10)\l  ret void\l}"];
+}

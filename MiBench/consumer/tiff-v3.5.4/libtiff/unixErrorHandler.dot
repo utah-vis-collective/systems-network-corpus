@@ -1,0 +1,10 @@
+digraph "CFG for 'unixErrorHandler' function" {
+	label="CFG for 'unixErrorHandler' function";
+
+	Node0x600001136bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600001136bc0:s0 -> Node0x600001136c10[tooltip="3 -> 9\nProbability 62.50%" ];
+	Node0x600001136bc0:s1 -> Node0x600001136c60[tooltip="3 -> 13\nProbability 37.50%" ];
+	Node0x600001136c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @__stderrp, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %10, ptr noundef\l... @.str.1, ptr noundef %11) #6\l  br label %13\l}"];
+	Node0x600001136c10 -> Node0x600001136c60[tooltip="9 -> 13\nProbability 100.00%" ];
+	Node0x600001136c60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @__stderrp, align 8\l  %15 = load ptr, ptr %5, align 8\l  %16 = load ptr, ptr %6, align 8\l  %17 = call i32 @vfprintf(ptr noundef %14, ptr noundef %15, ptr noundef %16)\l... #6\l  %18 = load ptr, ptr @__stderrp, align 8\l  %19 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %18, ptr noundef\l... @.str.3) #6\l  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for '__cxx_global_var_init' function" {
+	label="CFG for '__cxx_global_var_init' function";
+
+	Node0x600002b0a440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @rows, align 4\l  %2 = load i32, ptr @cols, align 4\l  %3 = mul nsw i32 %1, %2\l  store i32 %3, ptr @Ne, align 4\l  ret void\l}"];
+}

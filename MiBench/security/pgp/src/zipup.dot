@@ -1,0 +1,10 @@
+digraph "CFG for 'zipup' function" {
+	label="CFG for 'zipup' function";
+
+	Node0x600003ca5fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i64, align 8\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i64 -1, ptr %6, align 8\l  %9 = load ptr, ptr %3, align 8\l  %10 = call i32 @fileno(ptr noundef %9)\l  store i32 %10, ptr @ifile, align 4\l  %11 = load i32, ptr @ifile, align 4\l  %12 = call i64 @lseek(i32 noundef %11, i64 noundef 0, i32 noundef 2)\l  store i64 %12, ptr %6, align 8\l  %13 = load i32, ptr @ifile, align 4\l  %14 = call i64 @lseek(i32 noundef %13, i64 noundef 0, i32 noundef 0)\l  %15 = load i64, ptr %6, align 8\l  %16 = icmp eq i64 %15, 0\l  %17 = zext i1 %16 to i64\l  %18 = select i1 %16, i32 0, i32 8\l  store i32 %18, ptr %5, align 4\l  %19 = load i32, ptr %5, align 4\l  %20 = icmp eq i32 %19, 8\l  br i1 %20, label %21, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600003ca5fe0:s0 -> Node0x600003ca6030[tooltip="2 -> 21\nProbability 50.00%" ];
+	Node0x600003ca5fe0:s1 -> Node0x600003ca6080[tooltip="2 -> 25\nProbability 50.00%" ];
+	Node0x600003ca6030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %4, align 8\l  call void @bi_init(ptr noundef %22)\l  store i16 -1, ptr %7, align 2\l  call void @ct_init(ptr noundef %7, ptr noundef %5)\l  %23 = load i32, ptr @level, align 4\l  call void @lm_init(i32 noundef %23, ptr noundef %8)\l  %24 = call i64 @deflate()\l  br label %25\l}"];
+	Node0x600003ca6030 -> Node0x600003ca6080[tooltip="21 -> 25\nProbability 100.00%" ];
+	Node0x600003ca6080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  call void @lm_free()\l  call void @ct_free()\l  ret i32 0\l}"];
+}

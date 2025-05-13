@@ -1,0 +1,34 @@
+digraph "CFG for 'trueRandEvent' function" {
+	label="CFG for 'trueRandEvent' function";
+
+	Node0x6000012c76b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i64, align 8\l  %4 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %5 = call i64 @noise()\l  store i64 %5, ptr %3, align 8\l  call void @randPoolAddBytes(ptr noundef %2, i32 noundef 4)\l  %6 = load i32, ptr %2, align 4\l  %7 = load i32, ptr @trueRandEvent.event1, align 4\l  %8 = icmp eq i32 %6, %7\l  br i1 %8, label %9, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c76b0:s0 -> Node0x6000012c7a20[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x6000012c76b0:s1 -> Node0x6000012c7ac0[tooltip="1 -> 14\nProbability 50.00%" ];
+	Node0x6000012c7a20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %2, align 4\l  %11 = load i32, ptr @trueRandEvent.event2, align 4\l  %12 = icmp eq i32 %10, %11\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7a20:s0 -> Node0x6000012c7a70[tooltip="9 -> 13\nProbability 50.00%" ];
+	Node0x6000012c7a20:s1 -> Node0x6000012c7ac0[tooltip="9 -> 14\nProbability 50.00%" ];
+	Node0x6000012c7a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{13:\l|  store i32 0, ptr %4, align 4\l  br label %31\l}"];
+	Node0x6000012c7a70 -> Node0x6000012c7cf0[tooltip="13 -> 31\nProbability 100.00%" ];
+	Node0x6000012c7ac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{14:\l|  %15 = load i32, ptr @trueRandEvent.event1, align 4\l  store i32 %15, ptr @trueRandEvent.event2, align 4\l  %16 = load i32, ptr %2, align 4\l  store i32 %16, ptr @trueRandEvent.event1, align 4\l  store i32 0, ptr %4, align 4\l  br label %17\l}"];
+	Node0x6000012c7ac0 -> Node0x6000012c7b10[tooltip="14 -> 17\nProbability 100.00%" ];
+	Node0x6000012c7b10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i64, ptr %3, align 8\l  %19 = icmp ne i64 %18, 0\l  br i1 %19, label %20, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7b10:s0 -> Node0x6000012c7b60[tooltip="17 -> 20\nProbability 96.88%" ];
+	Node0x6000012c7b10:s1 -> Node0x6000012c7c00[tooltip="17 -> 26\nProbability 3.12%" ];
+	Node0x6000012c7b60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i64, ptr %3, align 8\l  %22 = lshr i64 %21, 1\l  store i64 %22, ptr %3, align 8\l  br label %23\l}"];
+	Node0x6000012c7b60 -> Node0x6000012c7bb0[tooltip="20 -> 23\nProbability 100.00%" ];
+	Node0x6000012c7bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %4, align 4\l  %25 = add i32 %24, 1\l  store i32 %25, ptr %4, align 4\l  br label %17\l}"];
+	Node0x6000012c7bb0 -> Node0x6000012c7b10[tooltip="23 -> 17\nProbability 100.00%" ];
+	Node0x6000012c7c00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %4, align 4\l  %28 = icmp ugt i32 %27, 8\l  br i1 %28, label %29, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7c00:s0 -> Node0x6000012c7c50[tooltip="26 -> 29\nProbability 50.00%" ];
+	Node0x6000012c7c00:s1 -> Node0x6000012c7ca0[tooltip="26 -> 30\nProbability 50.00%" ];
+	Node0x6000012c7c50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{29:\l|  store i32 8, ptr %4, align 4\l  br label %30\l}"];
+	Node0x6000012c7c50 -> Node0x6000012c7ca0[tooltip="29 -> 30\nProbability 100.00%" ];
+	Node0x6000012c7ca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{30:\l|  br label %31\l}"];
+	Node0x6000012c7ca0 -> Node0x6000012c7cf0[tooltip="30 -> 31\nProbability 100.00%" ];
+	Node0x6000012c7cf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %4, align 4\l  %33 = load i32, ptr @trueRandBits, align 4\l  %34 = add i32 %33, %32\l  store i32 %34, ptr @trueRandBits, align 4\l  %35 = load i32, ptr @trueRandBits, align 4\l  %36 = icmp ugt i32 %35, 3072\l  br i1 %36, label %37, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7cf0:s0 -> Node0x6000012c7d40[tooltip="31 -> 37\nProbability 50.00%" ];
+	Node0x6000012c7cf0:s1 -> Node0x6000012c7d90[tooltip="31 -> 38\nProbability 50.00%" ];
+	Node0x6000012c7d40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{37:\l|  store i32 3072, ptr @trueRandBits, align 4\l  br label %38\l}"];
+	Node0x6000012c7d40 -> Node0x6000012c7d90[tooltip="37 -> 38\nProbability 100.00%" ];
+	Node0x6000012c7d90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %4, align 4\l  ret i32 %39\l}"];
+}

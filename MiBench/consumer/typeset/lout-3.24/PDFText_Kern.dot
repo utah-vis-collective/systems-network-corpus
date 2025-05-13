@@ -1,0 +1,5 @@
+digraph "CFG for 'PDFText_Kern' function" {
+	label="CFG for 'PDFText_Kern' function";
+
+	Node0x600000529310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca [512 x i8], align 1\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = getelementptr inbounds [512 x i8], ptr %5, i64 0, i64 0\l  %7 = load i32, ptr %4, align 4\l  %8 = sub nsw i32 0, %7\l  %9 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %6, i32\l... noundef 0, i64 noundef 512, ptr noundef @.str.12, i32 noundef %8)\l  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds [512 x i8], ptr %5, i64 0, i64 0\l  call void @PDFPage_Write(ptr noundef %10, ptr noundef %11)\l  ret void\l}"];
+}

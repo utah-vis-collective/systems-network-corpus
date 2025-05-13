@@ -1,0 +1,5 @@
+digraph "CFG for 'clist_space_available' function" {
+	label="CFG for 'clist_space_available' function";
+
+	Node0x6000021da530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  store i64 %0, ptr %2, align 8\l  %3 = load i64, ptr %2, align 8\l  ret i64 %3\l}"];
+}

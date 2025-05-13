@@ -1,0 +1,5 @@
+digraph "CFG for 'MapEncodingName' function" {
+	label="CFG for 'MapEncodingName' function";
+
+	Node0x60000269c640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = zext i32 %3 to i64\l  %5 = getelementptr inbounds [20 x ptr], ptr @MapTable, i64 0, i64 %4\l  %6 = load ptr, ptr %5, align 8\l  %7 = getelementptr inbounds %struct.mapvec, ptr %6, i32 0, i32 4\l  %8 = load ptr, ptr %7, align 8\l  %9 = getelementptr inbounds %struct.word_type, ptr %8, i32 0, i32 4\l  %10 = getelementptr inbounds [4 x i8], ptr %9, i64 0, i64 0\l  ret ptr %10\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'mk_viterbi_decode_models' function" {
+	label="CFG for 'mk_viterbi_decode_models' function";
+
+	Node0x600000d23de0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  %11 = load i32, ptr %5, align 4\l  %12 = sext i32 %11 to i64\l  %13 = call ptr @calloc(i64 noundef %12, i64 noundef 120) #9\l  store ptr %13, ptr %7, align 8\l  store i32 0, ptr %8, align 4\l  store i32 0, ptr %10, align 4\l  br label %14\l}"];
+	Node0x600000d23de0 -> Node0x600000d23e30[tooltip="3 -> 14\nProbability 100.00%" ];
+	Node0x600000d23e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %8, align 4\l  %16 = load i32, ptr %5, align 4\l  %17 = icmp slt i32 %15, %16\l  br i1 %17, label %18, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600000d23e30:s0 -> Node0x600000d23e80[tooltip="14 -> 18\nProbability 96.88%" ];
+	Node0x600000d23e30:s1 -> Node0x600000d23f20[tooltip="14 -> 40\nProbability 3.12%" ];
+	Node0x600000d23e80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %6, align 8\l  %20 = load i32, ptr %8, align 4\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds i32, ptr %19, i64 %21\l  %23 = load i32, ptr %22, align 4\l  %24 = call ptr @phone_from_id(i32 noundef %23)\l  %25 = call ptr @salloc(ptr noundef %24)\l  %26 = load i32, ptr %8, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds [1024 x ptr], ptr @model_name, i64 0, i64 %27\l  store ptr %25, ptr %28, align 8\l  %29 = load ptr, ptr %4, align 8\l  %30 = load i32, ptr %8, align 4\l  %31 = load i32, ptr %5, align 4\l  %32 = load ptr, ptr %7, align 8\l  %33 = load ptr, ptr %6, align 8\l  call void @mk_model(ptr noundef %29, i32 noundef %30, i32 noundef %31, ptr\l... noundef %32, ptr noundef %33, ptr noundef %9)\l  %34 = load i32, ptr %9, align 4\l  %35 = load i32, ptr %10, align 4\l  %36 = add nsw i32 %35, %34\l  store i32 %36, ptr %10, align 4\l  br label %37\l}"];
+	Node0x600000d23e80 -> Node0x600000d23ed0[tooltip="18 -> 37\nProbability 100.00%" ];
+	Node0x600000d23ed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load i32, ptr %8, align 4\l  %39 = add nsw i32 %38, 1\l  store i32 %39, ptr %8, align 4\l  br label %14\l}"];
+	Node0x600000d23ed0 -> Node0x600000d23e30[tooltip="37 -> 14\nProbability 100.00%" ];
+	Node0x600000d23f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %7, align 8\l  ret ptr %41\l}"];
+}

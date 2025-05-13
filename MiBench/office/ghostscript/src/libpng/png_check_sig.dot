@@ -1,0 +1,17 @@
+digraph "CFG for 'png_check_sig' function" {
+	label="CFG for 'png_check_sig' function";
+
+	Node0x60000005e030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %5, align 4\l  %7 = icmp sgt i32 %6, 8\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000005e030:s0 -> Node0x60000005e080[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x60000005e030:s1 -> Node0x60000005e0d0[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x60000005e080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  store i32 8, ptr %5, align 4\l  br label %9\l}"];
+	Node0x60000005e080 -> Node0x60000005e0d0[tooltip="8 -> 9\nProbability 100.00%" ];
+	Node0x60000005e0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %5, align 4\l  %11 = icmp slt i32 %10, 1\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x60000005e0d0:s0 -> Node0x60000005e120[tooltip="9 -> 12\nProbability 37.50%" ];
+	Node0x60000005e0d0:s1 -> Node0x60000005e170[tooltip="9 -> 13\nProbability 62.50%" ];
+	Node0x60000005e120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  store i32 0, ptr %3, align 4\l  br label %21\l}"];
+	Node0x60000005e120 -> Node0x60000005e1c0[tooltip="12 -> 21\nProbability 100.00%" ];
+	Node0x60000005e170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  %15 = load i32, ptr %5, align 4\l  %16 = sext i32 %15 to i64\l  %17 = call i32 @memcmp(ptr noundef %14, ptr noundef @png_sig, i64 noundef\l... %16)\l  %18 = icmp ne i32 %17, 0\l  %19 = xor i1 %18, true\l  %20 = zext i1 %19 to i32\l  store i32 %20, ptr %3, align 4\l  br label %21\l}"];
+	Node0x60000005e170 -> Node0x60000005e1c0[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x60000005e1c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %3, align 4\l  ret i32 %22\l}"];
+}

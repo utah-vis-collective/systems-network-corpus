@@ -1,0 +1,24 @@
+digraph "CFG for 'pdf_open_page' function" {
+	label="CFG for 'pdf_open_page' function";
+
+	Node0x6000020b29e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load ptr, ptr %4, align 8\l  %7 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %6, i32 0, i32 54\l  %8 = load i32, ptr %7, align 8\l  %9 = icmp ne i32 %8, 0\l  br i1 %9, label %21, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000020b29e0:s0 -> Node0x6000020b2b20[tooltip="2 -> 21\nProbability 62.50%" ];
+	Node0x6000020b29e0:s1 -> Node0x6000020b2a30[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x6000020b2a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %12, i32 0, i32 52\l  %14 = load i32, ptr %13, align 8\l  %15 = add nsw i32 %14, 1\l  %16 = call i64 @pdf_page_id(ptr noundef %11, i32 noundef %15)\l  %17 = icmp eq i64 %16, 0\l  br i1 %17, label %18, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000020b2a30:s0 -> Node0x6000020b2a80[tooltip="10 -> 18\nProbability 37.50%" ];
+	Node0x6000020b2a30:s1 -> Node0x6000020b2ad0[tooltip="10 -> 19\nProbability 62.50%" ];
+	Node0x6000020b2a80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{18:\l|  store i32 -25, ptr %3, align 4\l  br label %33\l}"];
+	Node0x6000020b2a80 -> Node0x6000020b2c60[tooltip="18 -> 33\nProbability 100.00%" ];
+	Node0x6000020b2ad0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  call void @pdf_open_document(ptr noundef %20)\l  br label %21\l}"];
+	Node0x6000020b2ad0 -> Node0x6000020b2b20[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x6000020b2b20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %5, align 4\l  %23 = icmp ne i32 %22, 0\l  br i1 %23, label %24, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x6000020b2b20:s0 -> Node0x6000020b2b70[tooltip="21 -> 24\nProbability 62.50%" ];
+	Node0x6000020b2b20:s1 -> Node0x6000020b2bc0[tooltip="21 -> 28\nProbability 37.50%" ];
+	Node0x6000020b2b70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %4, align 8\l  %26 = load i32, ptr %5, align 4\l  %27 = call i32 @pdf_open_contents(ptr noundef %25, i32 noundef %26)\l  br label %31\l}"];
+	Node0x6000020b2b70 -> Node0x6000020b2c10[tooltip="24 -> 31\nProbability 100.00%" ];
+	Node0x6000020b2bc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %4, align 8\l  %30 = call i32 @pdf_close_contents(ptr noundef %29, i32 noundef 0)\l  br label %31\l}"];
+	Node0x6000020b2bc0 -> Node0x6000020b2c10[tooltip="28 -> 31\nProbability 100.00%" ];
+	Node0x6000020b2c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = phi i32 [ %27, %24 ], [ %30, %28 ]\l  store i32 %32, ptr %3, align 4\l  br label %33\l}"];
+	Node0x6000020b2c10 -> Node0x6000020b2c60[tooltip="31 -> 33\nProbability 100.00%" ];
+	Node0x6000020b2c60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %3, align 4\l  ret i32 %34\l}"];
+}

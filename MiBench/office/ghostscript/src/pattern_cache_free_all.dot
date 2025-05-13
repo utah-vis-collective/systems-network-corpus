@@ -1,0 +1,5 @@
+digraph "CFG for 'pattern_cache_free_all' function" {
+	label="CFG for 'pattern_cache_free_all' function";
+
+	Node0x600002d26440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @gx_pattern_cache_winnow(ptr noundef %3, ptr noundef\l... @pattern_cache_choose_all, ptr noundef null)\l  ret void\l}"];
+}

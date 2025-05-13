@@ -1,0 +1,5 @@
+digraph "CFG for 'png_info_init' function" {
+	label="CFG for 'png_info_init' function";
+
+	Node0x60000005e8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i64 @llvm.objectsize.i64.p0(ptr %4, i1 false, i1 true, i1 false)\l  %6 = call ptr @__memset_chk(ptr noundef %3, i32 noundef 0, i64 noundef 208,\l... i64 noundef %5) #4\l  ret void\l}"];
+}

@@ -1,0 +1,22 @@
+digraph "CFG for 'png_read_tRNS' function" {
+	label="CFG for 'png_read_tRNS' function";
+
+	Node0x600002336b20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store i32 %3, ptr %9, align 4\l  store ptr %4, ptr %10, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600002336b20:s0 -> Node0x600002336b70[tooltip="5 -> 13\nProbability 62.50%" ];
+	Node0x600002336b20:s1 -> Node0x600002336bc0[tooltip="5 -> 16\nProbability 37.50%" ];
+	Node0x600002336b70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %7, align 8\l  %15 = icmp ne ptr %14, null\l  br i1 %15, label %17, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600002336b70:s0 -> Node0x600002336c10[tooltip="13 -> 17\nProbability 62.50%" ];
+	Node0x600002336b70:s1 -> Node0x600002336bc0[tooltip="13 -> 16\nProbability 37.50%" ];
+	Node0x600002336bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  br label %41\l}"];
+	Node0x600002336bc0 -> Node0x600002336d50[tooltip="16 -> 41\nProbability 100.00%" ];
+	Node0x600002336c10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %8, align 8\l  %19 = icmp ne ptr %18, null\l  br i1 %19, label %20, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600002336c10:s0 -> Node0x600002336c60[tooltip="17 -> 20\nProbability 62.50%" ];
+	Node0x600002336c10:s1 -> Node0x600002336cb0[tooltip="17 -> 24\nProbability 37.50%" ];
+	Node0x600002336c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %8, align 8\l  %22 = load ptr, ptr %7, align 8\l  %23 = getelementptr inbounds %struct.png_info_struct, ptr %22, i32 0, i32 21\l  store ptr %21, ptr %23, align 8\l  br label %32\l}"];
+	Node0x600002336c60 -> Node0x600002336d00[tooltip="20 -> 32\nProbability 100.00%" ];
+	Node0x600002336cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %7, align 8\l  %26 = getelementptr inbounds %struct.png_info_struct, ptr %25, i32 0, i32 22\l  %27 = load ptr, ptr %10, align 8\l  %28 = load ptr, ptr %7, align 8\l  %29 = getelementptr inbounds %struct.png_info_struct, ptr %28, i32 0, i32 22\l  %30 = call i64 @llvm.objectsize.i64.p0(ptr %29, i1 false, i1 true, i1 false)\l  %31 = call ptr @__memcpy_chk(ptr noundef %26, ptr noundef %27, i64 noundef\l... 10, i64 noundef %30) #4\l  br label %32\l}"];
+	Node0x600002336cb0 -> Node0x600002336d00[tooltip="24 -> 32\nProbability 100.00%" ];
+	Node0x600002336d00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %9, align 4\l  %34 = trunc i32 %33 to i16\l  %35 = load ptr, ptr %7, align 8\l  %36 = getelementptr inbounds %struct.png_info_struct, ptr %35, i32 0, i32 6\l  store i16 %34, ptr %36, align 2\l  %37 = load ptr, ptr %7, align 8\l  %38 = getelementptr inbounds %struct.png_info_struct, ptr %37, i32 0, i32 2\l  %39 = load i64, ptr %38, align 8\l  %40 = or i64 %39, 16\l  store i64 %40, ptr %38, align 8\l  br label %41\l}"];
+	Node0x600002336d00 -> Node0x600002336d50[tooltip="32 -> 41\nProbability 100.00%" ];
+	Node0x600002336d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  ret void\l}"];
+}

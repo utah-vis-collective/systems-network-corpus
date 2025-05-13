@@ -1,0 +1,12 @@
+digraph "CFG for 'gcd' function" {
+	label="CFG for 'gcd' function";
+
+	Node0x6000004bfb60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i64, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca i64, align 8\l  store i64 %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  br label %6\l}"];
+	Node0x6000004bfb60 -> Node0x6000004bfbb0[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x6000004bfbb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i64, ptr %4, align 8\l  %8 = icmp ne i64 %7, 0\l  br i1 %8, label %9, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000004bfbb0:s0 -> Node0x6000004bfc00[tooltip="6 -> 9\nProbability 96.88%" ];
+	Node0x6000004bfbb0:s1 -> Node0x6000004bfc50[tooltip="6 -> 15\nProbability 3.12%" ];
+	Node0x6000004bfc00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i64, ptr %4, align 8\l  store i64 %10, ptr %5, align 8\l  %11 = load i64, ptr %3, align 8\l  %12 = load i64, ptr %4, align 8\l  %13 = urem i64 %11, %12\l  store i64 %13, ptr %4, align 8\l  %14 = load i64, ptr %5, align 8\l  store i64 %14, ptr %3, align 8\l  br label %6\l}"];
+	Node0x6000004bfc00 -> Node0x6000004bfbb0[tooltip="9 -> 6\nProbability 100.00%" ];
+	Node0x6000004bfc50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{15:\l|  %16 = load i64, ptr %3, align 8\l  ret i64 %16\l}"];
+}

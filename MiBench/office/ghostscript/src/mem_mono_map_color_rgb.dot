@@ -1,0 +1,5 @@
+digraph "CFG for 'mem_mono_map_color_rgb' function" {
+	label="CFG for 'mem_mono_map_color_rgb' function";
+
+	Node0x6000014fa1c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = load i64, ptr %5, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.gx_device_memory_s, ptr %9, i32 0, i32\l... 29\l  %11 = getelementptr inbounds %struct.gs_const_string_s, ptr %10, i32 0, i32 0\l  %12 = load ptr, ptr %11, align 8\l  %13 = getelementptr inbounds i8, ptr %12, i64 0\l  %14 = load i8, ptr %13, align 1\l  %15 = zext i8 %14 to i64\l  %16 = xor i64 %8, %15\l  %17 = and i64 %16, 1\l  %18 = load ptr, ptr %6, align 8\l  %19 = call i32 @gx_default_w_b_map_color_rgb(ptr noundef %7, i64 noundef\l... %17, ptr noundef %18)\l  ret i32 %19\l}"];
+}

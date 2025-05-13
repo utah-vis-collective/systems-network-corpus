@@ -1,0 +1,27 @@
+digraph "CFG for 'jpeg_default_colorspace' function" {
+	label="CFG for 'jpeg_default_colorspace' function";
+
+	Node0x6000025bac60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %3, i32 0, i32\l... 9\l  %5 = load i32, ptr %4, align 4\l  switch i32 %5, label %18 [\l    i32 1, label %6\l    i32 2, label %8\l    i32 3, label %10\l    i32 4, label %12\l    i32 5, label %14\l    i32 0, label %16\l  ]\l|{<s0>def|<s1>1|<s2>2|<s3>3|<s4>4|<s5>5|<s6>0}}"];
+	Node0x6000025bac60:s0 -> Node0x6000025bae90[tooltip="1 -> 18\nProbability 14.29%" ];
+	Node0x6000025bac60:s1 -> Node0x6000025bacb0[tooltip="1 -> 6\nProbability 14.29%" ];
+	Node0x6000025bac60:s2 -> Node0x6000025bad00[tooltip="1 -> 8\nProbability 14.29%" ];
+	Node0x6000025bac60:s3 -> Node0x6000025bad50[tooltip="1 -> 10\nProbability 14.29%" ];
+	Node0x6000025bac60:s4 -> Node0x6000025bada0[tooltip="1 -> 12\nProbability 14.29%" ];
+	Node0x6000025bac60:s5 -> Node0x6000025badf0[tooltip="1 -> 14\nProbability 14.29%" ];
+	Node0x6000025bac60:s6 -> Node0x6000025bae40[tooltip="1 -> 16\nProbability 14.29%" ];
+	Node0x6000025bacb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  call void @jpeg_set_colorspace(ptr noundef %7, i32 noundef 1)\l  br label %29\l}"];
+	Node0x6000025bacb0 -> Node0x6000025baee0[tooltip="6 -> 29\nProbability 100.00%" ];
+	Node0x6000025bad00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  call void @jpeg_set_colorspace(ptr noundef %9, i32 noundef 3)\l  br label %29\l}"];
+	Node0x6000025bad00 -> Node0x6000025baee0[tooltip="8 -> 29\nProbability 100.00%" ];
+	Node0x6000025bad50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  call void @jpeg_set_colorspace(ptr noundef %11, i32 noundef 3)\l  br label %29\l}"];
+	Node0x6000025bad50 -> Node0x6000025baee0[tooltip="10 -> 29\nProbability 100.00%" ];
+	Node0x6000025bada0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  call void @jpeg_set_colorspace(ptr noundef %13, i32 noundef 4)\l  br label %29\l}"];
+	Node0x6000025bada0 -> Node0x6000025baee0[tooltip="12 -> 29\nProbability 100.00%" ];
+	Node0x6000025badf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %2, align 8\l  call void @jpeg_set_colorspace(ptr noundef %15, i32 noundef 5)\l  br label %29\l}"];
+	Node0x6000025badf0 -> Node0x6000025baee0[tooltip="14 -> 29\nProbability 100.00%" ];
+	Node0x6000025bae40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %2, align 8\l  call void @jpeg_set_colorspace(ptr noundef %17, i32 noundef 0)\l  br label %29\l}"];
+	Node0x6000025bae40 -> Node0x6000025baee0[tooltip="16 -> 29\nProbability 100.00%" ];
+	Node0x6000025bae90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %2, align 8\l  %20 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %19, i32 0,\l... i32 0\l  %21 = load ptr, ptr %20, align 8\l  %22 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %21, i32 0, i32 5\l  store i32 7, ptr %22, align 8\l  %23 = load ptr, ptr %2, align 8\l  %24 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %23, i32 0,\l... i32 0\l  %25 = load ptr, ptr %24, align 8\l  %26 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %25, i32 0, i32 0\l  %27 = load ptr, ptr %26, align 8\l  %28 = load ptr, ptr %2, align 8\l  call void %27(ptr noundef %28)\l  br label %29\l}"];
+	Node0x6000025bae90 -> Node0x6000025baee0[tooltip="18 -> 29\nProbability 100.00%" ];
+	Node0x6000025baee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  ret void\l}"];
+}

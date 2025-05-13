@@ -1,0 +1,18 @@
+digraph "CFG for 'list_lookup' function" {
+	label="CFG for 'list_lookup' function";
+
+	Node0x600001c76670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load ptr, ptr %4, align 8\l  %7 = icmp eq ptr %6, null\l  br i1 %7, label %17, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600001c76670:s0 -> Node0x600001c76760[tooltip="2 -> 17\nProbability 37.50%" ];
+	Node0x600001c76670:s1 -> Node0x600001c766c0[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x600001c766c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %5, align 4\l  %10 = load ptr, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.list_t, ptr %10, i32 0, i32 1\l  %12 = load i32, ptr %11, align 4\l  %13 = icmp sge i32 %9, %12\l  br i1 %13, label %17, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001c766c0:s0 -> Node0x600001c76760[tooltip="8 -> 17\nProbability 50.00%" ];
+	Node0x600001c766c0:s1 -> Node0x600001c76710[tooltip="8 -> 14\nProbability 50.00%" ];
+	Node0x600001c76710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %5, align 4\l  %16 = icmp slt i32 %15, 0\l  br i1 %16, label %17, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001c76710:s0 -> Node0x600001c76760[tooltip="14 -> 17\nProbability 37.50%" ];
+	Node0x600001c76710:s1 -> Node0x600001c767b0[tooltip="14 -> 22\nProbability 62.50%" ];
+	Node0x600001c76760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr @list_lookup.rname, align 8\l  %19 = call i32 @exception(ptr noundef %18, ptr noundef @.str.3, i32 noundef\l... 1)\l  %20 = sext i32 %19 to i64\l  %21 = inttoptr i64 %20 to ptr\l  store ptr %21, ptr %3, align 8\l  br label %30\l}"];
+	Node0x600001c76760 -> Node0x600001c76800[tooltip="17 -> 30\nProbability 100.00%" ];
+	Node0x600001c767b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %4, align 8\l  %24 = getelementptr inbounds %struct.list_t, ptr %23, i32 0, i32 3\l  %25 = load ptr, ptr %24, align 8\l  %26 = load i32, ptr %5, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds ptr, ptr %25, i64 %27\l  %29 = load ptr, ptr %28, align 8\l  store ptr %29, ptr %3, align 8\l  br label %30\l}"];
+	Node0x600001c767b0 -> Node0x600001c76800[tooltip="22 -> 30\nProbability 100.00%" ];
+	Node0x600001c76800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %3, align 8\l  ret ptr %31\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'deg2rad' function" {
+	label="CFG for 'deg2rad' function";
+
+	Node0x6000000d5ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  store double %0, ptr %2, align 8\l  %3 = call double @llvm.atan.f64(double 1.000000e+00)\l  %4 = fmul double 4.000000e+00, %3\l  %5 = load double, ptr %2, align 8\l  %6 = fmul double %4, %5\l  %7 = fdiv double %6, 1.800000e+02\l  ret double %7\l}"];
+}

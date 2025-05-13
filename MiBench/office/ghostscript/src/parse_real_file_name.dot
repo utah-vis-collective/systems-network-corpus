@@ -1,0 +1,17 @@
+digraph "CFG for 'parse_real_file_name' function" {
+	label="CFG for 'parse_real_file_name' function";
+
+	Node0x60000066e620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = call i32 @parse_file_name(ptr noundef %9, ptr noundef %10)\l  store i32 %11, ptr %8, align 4\l  %12 = load i32, ptr %8, align 4\l  %13 = icmp slt i32 %12, 0\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x60000066e620:s0 -> Node0x60000066e670[tooltip="3 -> 14\nProbability 37.50%" ];
+	Node0x60000066e620:s1 -> Node0x60000066e6c0[tooltip="3 -> 16\nProbability 62.50%" ];
+	Node0x60000066e670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %8, align 4\l  store i32 %15, ptr %4, align 4\l  br label %26\l}"];
+	Node0x60000066e670 -> Node0x60000066e7b0[tooltip="14 -> 26\nProbability 100.00%" ];
+	Node0x60000066e6c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %6, align 8\l  %18 = getelementptr inbounds %struct.parsed_file_name_s, ptr %17, i32 0, i32\l... 2\l  %19 = load i32, ptr %18, align 8\l  %20 = icmp eq i32 %19, 0\l  br i1 %20, label %21, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x60000066e6c0:s0 -> Node0x60000066e710[tooltip="16 -> 21\nProbability 37.50%" ];
+	Node0x60000066e6c0:s1 -> Node0x60000066e760[tooltip="16 -> 22\nProbability 62.50%" ];
+	Node0x60000066e710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  store i32 -9, ptr %4, align 4\l  br label %26\l}"];
+	Node0x60000066e710 -> Node0x60000066e7b0[tooltip="21 -> 26\nProbability 100.00%" ];
+	Node0x60000066e760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %6, align 8\l  %24 = load ptr, ptr %7, align 8\l  %25 = call i32 @terminate_file_name(ptr noundef %23, ptr noundef %24)\l  store i32 %25, ptr %4, align 4\l  br label %26\l}"];
+	Node0x60000066e760 -> Node0x60000066e7b0[tooltip="22 -> 26\nProbability 100.00%" ];
+	Node0x60000066e7b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %4, align 4\l  ret i32 %27\l}"];
+}

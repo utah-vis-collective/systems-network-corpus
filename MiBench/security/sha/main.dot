@@ -1,0 +1,26 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x600003b81fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca %struct.SHA_INFO, align 8\l  store i32 0, ptr %3, align 4\l  store i32 %0, ptr %4, align 4\l  store ptr %1, ptr %5, align 8\l  %8 = load i32, ptr %4, align 4\l  %9 = icmp slt i32 %8, 2\l  br i1 %9, label %10, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600003b81fe0:s0 -> Node0x600003b82030[tooltip="2 -> 10\nProbability 50.00%" ];
+	Node0x600003b81fe0:s1 -> Node0x600003b82080[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x600003b82030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @__stdinp, align 8\l  store ptr %11, ptr %6, align 8\l  %12 = load ptr, ptr %6, align 8\l  call void @sha_stream(ptr noundef %7, ptr noundef %12)\l  call void @sha_print(ptr noundef %7)\l  br label %35\l}"];
+	Node0x600003b82030 -> Node0x600003b822b0[tooltip="10 -> 35\nProbability 100.00%" ];
+	Node0x600003b82080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{13:\l|  br label %14\l}"];
+	Node0x600003b82080 -> Node0x600003b820d0[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x600003b820d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %4, align 4\l  %16 = add nsw i32 %15, -1\l  store i32 %16, ptr %4, align 4\l  %17 = icmp ne i32 %16, 0\l  br i1 %17, label %18, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600003b820d0:s0 -> Node0x600003b82120[tooltip="14 -> 18\nProbability 96.88%" ];
+	Node0x600003b820d0:s1 -> Node0x600003b82260[tooltip="14 -> 34\nProbability 3.12%" ];
+	Node0x600003b82120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %5, align 8\l  %20 = getelementptr inbounds ptr, ptr %19, i32 1\l  store ptr %20, ptr %5, align 8\l  %21 = load ptr, ptr %20, align 8\l  %22 = call ptr @\"\\01_fopen\"(ptr noundef %21, ptr noundef @.str)\l  store ptr %22, ptr %6, align 8\l  %23 = load ptr, ptr %6, align 8\l  %24 = icmp eq ptr %23, null\l  br i1 %24, label %25, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600003b82120:s0 -> Node0x600003b82170[tooltip="18 -> 25\nProbability 37.50%" ];
+	Node0x600003b82120:s1 -> Node0x600003b821c0[tooltip="18 -> 29\nProbability 62.50%" ];
+	Node0x600003b82170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %5, align 8\l  %27 = load ptr, ptr %26, align 8\l  %28 = call i32 (ptr, ...) @printf(ptr noundef @.str.1, ptr noundef %27)\l  br label %33\l}"];
+	Node0x600003b82170 -> Node0x600003b82210[tooltip="25 -> 33\nProbability 100.00%" ];
+	Node0x600003b821c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %6, align 8\l  call void @sha_stream(ptr noundef %7, ptr noundef %30)\l  call void @sha_print(ptr noundef %7)\l  %31 = load ptr, ptr %6, align 8\l  %32 = call i32 @fclose(ptr noundef %31)\l  br label %33\l}"];
+	Node0x600003b821c0 -> Node0x600003b82210[tooltip="29 -> 33\nProbability 100.00%" ];
+	Node0x600003b82210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  br label %14\l}"];
+	Node0x600003b82210 -> Node0x600003b820d0[tooltip="33 -> 14\nProbability 100.00%" ];
+	Node0x600003b82260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{34:\l|  br label %35\l}"];
+	Node0x600003b82260 -> Node0x600003b822b0[tooltip="34 -> 35\nProbability 100.00%" ];
+	Node0x600003b822b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{35:\l|  ret i32 0\l}"];
+}

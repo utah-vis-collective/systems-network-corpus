@@ -1,0 +1,5 @@
+digraph "CFG for 'dict_new' function" {
+	label="CFG for 'dict_new' function";
+
+	Node0x60000244fca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call ptr @_CM_calloc(i32 noundef 56, i32 noundef 1, ptr noundef\l... @.str.1, i32 noundef 996)\l  ret ptr %1\l}"];
+}

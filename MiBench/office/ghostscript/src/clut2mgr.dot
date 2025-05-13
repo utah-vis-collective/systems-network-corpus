@@ -1,0 +1,5 @@
+digraph "CFG for 'clut2mgr' function" {
+	label="CFG for 'clut2mgr' function";
+
+	Node0x6000010699a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = shl i32 1, %6\l  %8 = sub nsw i32 %7, 1\l  %9 = udiv i32 -1, %8\l  store i32 %9, ptr %5, align 4\l  %10 = load i32, ptr %3, align 4\l  %11 = load i32, ptr %5, align 4\l  %12 = mul i32 %10, %11\l  %13 = udiv i32 %12, 65536\l  ret i32 %13\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'squash' function" {
+	label="CFG for 'squash' function";
+
+	Node0x6000032de170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca float, align 4\l  %3 = alloca float, align 4\l  store float %0, ptr %2, align 4\l  %4 = load float, ptr %2, align 4\l  %5 = fneg float %4\l  %6 = fpext float %5 to double\l  %7 = call double @llvm.exp.f64(double %6)\l  %8 = fadd double 1.000000e+00, %7\l  %9 = fdiv double 1.000000e+00, %8\l  %10 = fptrunc double %9 to float\l  ret float %10\l}"];
+}

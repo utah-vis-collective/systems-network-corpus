@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_exit' function" {
+	label="CFG for 'gs_exit' function";
+
+	Node0x600003c46120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  call void @exit(i32 noundef %3) #6\l  unreachable\l}"];
+}

@@ -1,0 +1,17 @@
+digraph "CFG for 'stat_test3' function" {
+	label="CFG for 'stat_test3' function";
+
+	Node0x6000036c3a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load ptr, ptr @stat_test3.AT, align 8\l  %4 = icmp eq ptr %3, null\l  br i1 %4, label %5, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x6000036c3a20:s0 -> Node0x6000036c3a70[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x6000036c3a20:s1 -> Node0x6000036c3ac0[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x6000036c3a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  %6 = call ptr @gen_non_symm(i32 noundef 100, i32 noundef 100)\l  store ptr %6, ptr @stat_test3.AT, align 8\l  br label %10\l}"];
+	Node0x6000036c3a70 -> Node0x6000036c3b10[tooltip="5 -> 10\nProbability 100.00%" ];
+	Node0x6000036c3ac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr @stat_test3.AT, align 8\l  %9 = call ptr @sp_resize(ptr noundef %8, i32 noundef 100, i32 noundef 100)\l  store ptr %9, ptr @stat_test3.AT, align 8\l  br label %10\l}"];
+	Node0x6000036c3ac0 -> Node0x6000036c3b10[tooltip="7 -> 10\nProbability 100.00%" ];
+	Node0x6000036c3b10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @stat_test3.xt, align 8\l  %12 = call ptr @v_resize(ptr noundef %11, i32 noundef 100)\l  store ptr %12, ptr @stat_test3.xt, align 8\l  %13 = load ptr, ptr @stat_test3.yt, align 8\l  %14 = call ptr @v_resize(ptr noundef %13, i32 noundef 100)\l  store ptr %14, ptr @stat_test3.yt, align 8\l  %15 = load ptr, ptr @stat_test3.r, align 8\l  %16 = icmp eq ptr %15, null\l  br i1 %16, label %17, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000036c3b10:s0 -> Node0x6000036c3b60[tooltip="10 -> 17\nProbability 37.50%" ];
+	Node0x6000036c3b10:s1 -> Node0x6000036c3bb0[tooltip="10 -> 19\nProbability 62.50%" ];
+	Node0x6000036c3b60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = call ptr @sprow_get(i32 noundef 100)\l  store ptr %18, ptr @stat_test3.r, align 8\l  br label %19\l}"];
+	Node0x6000036c3b60 -> Node0x6000036c3bb0[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x6000036c3bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = call i32 @mem_stat_reg_list(ptr noundef @stat_test3.AT, i32 noundef\l... 7, i32 noundef 0, ptr noundef @.str, i32 noundef 310)\l  %21 = call i32 @mem_stat_reg_list(ptr noundef @stat_test3.xt, i32 noundef 3,\l... i32 noundef 0, ptr noundef @.str, i32 noundef 311)\l  %22 = call i32 @mem_stat_reg_list(ptr noundef @stat_test3.yt, i32 noundef 3,\l... i32 noundef 0, ptr noundef @.str, i32 noundef 312)\l  %23 = call i32 @mem_stat_reg_list(ptr noundef @stat_test3.r, i32 noundef 6,\l... i32 noundef 0, ptr noundef @.str, i32 noundef 313)\l  %24 = load ptr, ptr @stat_test3.xt, align 8\l  %25 = call ptr @v_rand(ptr noundef %24)\l  %26 = load ptr, ptr @stat_test3.AT, align 8\l  %27 = load ptr, ptr @stat_test3.xt, align 8\l  %28 = load ptr, ptr @stat_test3.yt, align 8\l  %29 = call ptr @sp_mv_mlt(ptr noundef %26, ptr noundef %27, ptr noundef %28)\l  ret void\l}"];
+}

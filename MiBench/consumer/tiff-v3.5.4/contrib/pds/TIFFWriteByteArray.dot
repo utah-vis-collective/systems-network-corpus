@@ -1,0 +1,19 @@
+digraph "CFG for 'TIFFWriteByteArray' function" {
+	label="CFG for 'TIFFWriteByteArray' function";
+
+	Node0x600002e5ae90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %8 = load ptr, ptr %6, align 8\l  %9 = getelementptr inbounds %struct.TIFFDirEntry, ptr %8, i32 0, i32 2\l  %10 = load i64, ptr %9, align 8\l  %11 = icmp ugt i64 %10, 4\l  br i1 %11, label %12, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002e5ae90:s0 -> Node0x600002e5aee0[tooltip="3 -> 12\nProbability 50.00%" ];
+	Node0x600002e5ae90:s1 -> Node0x600002e5afd0[tooltip="3 -> 20\nProbability 50.00%" ];
+	Node0x600002e5aee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = load ptr, ptr %6, align 8\l  %15 = load ptr, ptr %7, align 8\l  %16 = call i32 @TIFFWriteData(ptr noundef %13, ptr noundef %14, ptr noundef\l... %15)\l  %17 = icmp ne i32 %16, 0\l  br i1 %17, label %19, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600002e5aee0:s0 -> Node0x600002e5af80[tooltip="12 -> 19\nProbability 62.50%" ];
+	Node0x600002e5aee0:s1 -> Node0x600002e5af30[tooltip="12 -> 18\nProbability 37.50%" ];
+	Node0x600002e5af30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  store i32 0, ptr %4, align 4\l  br label %28\l}"];
+	Node0x600002e5af30 -> Node0x600002e5b070[tooltip="18 -> 28\nProbability 100.00%" ];
+	Node0x600002e5af80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  br label %27\l}"];
+	Node0x600002e5af80 -> Node0x600002e5b020[tooltip="19 -> 27\nProbability 100.00%" ];
+	Node0x600002e5afd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %6, align 8\l  %22 = getelementptr inbounds %struct.TIFFDirEntry, ptr %21, i32 0, i32 3\l  %23 = load ptr, ptr %7, align 8\l  %24 = load ptr, ptr %6, align 8\l  %25 = getelementptr inbounds %struct.TIFFDirEntry, ptr %24, i32 0, i32 2\l  %26 = load i64, ptr %25, align 8\l  call void @_TIFFmemcpy(ptr noundef %22, ptr noundef %23, i64 noundef %26)\l  br label %27\l}"];
+	Node0x600002e5afd0 -> Node0x600002e5b020[tooltip="20 -> 27\nProbability 100.00%" ];
+	Node0x600002e5b020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{27:\l|  store i32 1, ptr %4, align 4\l  br label %28\l}"];
+	Node0x600002e5b020 -> Node0x600002e5b070[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x600002e5b070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %4, align 4\l  ret i32 %29\l}"];
+}

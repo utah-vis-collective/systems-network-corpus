@@ -1,0 +1,5 @@
+digraph "CFG for 'op_show_cleanup' function" {
+	label="CFG for 'op_show_cleanup' function";
+
+	Node0x600003fb5450 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = call i32 @op_show_restore(i32 noundef 1)\l  ret i32 %3\l}"];
+}

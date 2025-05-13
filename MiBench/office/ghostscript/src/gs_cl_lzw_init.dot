@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_cl_lzw_init' function" {
+	label="CFG for 'gs_cl_lzw_init' function";
+
+	Node0x600003489e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  call void @s_LZW_set_defaults(ptr noundef @cl_LZWE_state)\l  store ptr @s_LZWE_template, ptr @cl_LZWE_state, align 8\l  call void @s_LZW_set_defaults(ptr noundef @cl_LZWD_state)\l  store ptr @s_LZWD_template, ptr @cl_LZWD_state, align 8\l  ret void\l}"];
+}

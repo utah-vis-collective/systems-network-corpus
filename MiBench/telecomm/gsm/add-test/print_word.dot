@@ -1,0 +1,5 @@
+digraph "CFG for 'print_word' function" {
+	label="CFG for 'print_word' function";
+
+	Node0x600000841130 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i16, align 2\l  store i16 %0, ptr %2, align 2\l  %3 = load ptr, ptr @__stdoutp, align 8\l  %4 = load i16, ptr %2, align 2\l  call void @fprint_word(ptr noundef %3, i16 noundef signext %4)\l  ret void\l}"];
+}

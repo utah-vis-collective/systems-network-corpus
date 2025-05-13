@@ -1,0 +1,12 @@
+digraph "CFG for 's_LZWD_init' function" {
+	label="CFG for 's_LZWD_init' function";
+
+	Node0x600000302030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.stream_state_s, ptr %5, i32 0, i32 1\l  %7 = load ptr, ptr %6, align 8\l  %8 = getelementptr inbounds %struct.gs_memory_s, ptr %7, i32 0, i32 0\l  %9 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %8, i32 0, i32 6\l  %10 = load ptr, ptr %9, align 8\l  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds %struct.stream_state_s, ptr %11, i32 0, i32 1\l  %13 = load ptr, ptr %12, align 8\l  %14 = call ptr %10(ptr noundef %13, i32 noundef 4097, ptr noundef\l... @st_lzw_decode, ptr noundef @.str)\l  store ptr %14, ptr %4, align 8\l  %15 = load ptr, ptr %4, align 8\l  %16 = icmp eq ptr %15, null\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600000302030:s0 -> Node0x600000302080[tooltip="1 -> 17\nProbability 37.50%" ];
+	Node0x600000302030:s1 -> Node0x6000003020d0[tooltip="1 -> 18\nProbability 62.50%" ];
+	Node0x600000302080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  store i32 -2, ptr %2, align 4\l  br label %24\l}"];
+	Node0x600000302080 -> Node0x600000302120[tooltip="17 -> 24\nProbability 100.00%" ];
+	Node0x6000003020d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  %20 = load ptr, ptr %3, align 8\l  %21 = getelementptr inbounds %struct.stream_LZW_state_s, ptr %20, i32 0, i32\l... 10\l  store ptr %19, ptr %21, align 8\l  %22 = load ptr, ptr %3, align 8\l  %23 = call i32 @s_LZWD_reset(ptr noundef %22)\l  store i32 %23, ptr %2, align 4\l  br label %24\l}"];
+	Node0x6000003020d0 -> Node0x600000302120[tooltip="18 -> 24\nProbability 100.00%" ];
+	Node0x600000302120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %2, align 4\l  ret i32 %25\l}"];
+}

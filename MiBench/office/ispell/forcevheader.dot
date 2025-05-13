@@ -1,0 +1,20 @@
+digraph "CFG for 'forcevheader' function" {
+	label="CFG for 'forcevheader' function";
+
+	Node0x6000000d10e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.dent, ptr %7, i32 0, i32 3\l  %9 = load i8, ptr %8, align 8\l  %10 = sext i8 %9 to i32\l  %11 = and i32 %10, 28\l  %12 = icmp eq i32 %11, 4\l  br i1 %12, label %13, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000000d10e0:s0 -> Node0x6000000d1130[tooltip="3 -> 13\nProbability 50.00%" ];
+	Node0x6000000d10e0:s1 -> Node0x6000000d11d0[tooltip="3 -> 26\nProbability 50.00%" ];
+	Node0x6000000d1130 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds %struct.dent, ptr %14, i32 0, i32 3\l  %16 = load i8, ptr %15, align 8\l  %17 = sext i8 %16 to i32\l  %18 = load ptr, ptr %6, align 8\l  %19 = getelementptr inbounds %struct.dent, ptr %18, i32 0, i32 3\l  %20 = load i8, ptr %19, align 8\l  %21 = sext i8 %20 to i32\l  %22 = xor i32 %17, %21\l  %23 = and i32 %22, 2\l  %24 = icmp eq i32 %23, 0\l  br i1 %24, label %25, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000000d1130:s0 -> Node0x6000000d1180[tooltip="13 -> 25\nProbability 50.00%" ];
+	Node0x6000000d1130:s1 -> Node0x6000000d11d0[tooltip="13 -> 26\nProbability 50.00%" ];
+	Node0x6000000d1180 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  br label %37\l}"];
+	Node0x6000000d1180 -> Node0x6000000d12c0[tooltip="25 -> 37\nProbability 100.00%" ];
+	Node0x6000000d11d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %4, align 8\l  %28 = getelementptr inbounds %struct.dent, ptr %27, i32 0, i32 3\l  %29 = load i8, ptr %28, align 8\l  %30 = sext i8 %29 to i32\l  %31 = and i32 %30, 28\l  %32 = icmp ne i32 %31, 20\l  br i1 %32, label %33, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x6000000d11d0:s0 -> Node0x6000000d1220[tooltip="26 -> 33\nProbability 50.00%" ];
+	Node0x6000000d11d0:s1 -> Node0x6000000d1270[tooltip="26 -> 36\nProbability 50.00%" ];
+	Node0x6000000d1220 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %4, align 8\l  %35 = call i32 @addvheader(ptr noundef %34)\l  br label %36\l}"];
+	Node0x6000000d1220 -> Node0x6000000d1270[tooltip="33 -> 36\nProbability 100.00%" ];
+	Node0x6000000d1270 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{36:\l|  br label %37\l}"];
+	Node0x6000000d1270 -> Node0x6000000d12c0[tooltip="36 -> 37\nProbability 100.00%" ];
+	Node0x6000000d12c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  ret void\l}"];
+}

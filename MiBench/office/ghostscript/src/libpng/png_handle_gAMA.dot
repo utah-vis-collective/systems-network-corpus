@@ -1,0 +1,29 @@
+digraph "CFG for 'png_handle_gAMA' function" {
+	label="CFG for 'png_handle_gAMA' function";
+
+	Node0x600001f7b660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca float, align 4\l  %9 = alloca [4 x i8], align 1\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.png_struct_def, ptr %10, i32 0, i32 7\l  %12 = load i8, ptr %11, align 8\l  %13 = zext i8 %12 to i32\l  %14 = and i32 %13, 1\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %18, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001f7b660:s0 -> Node0x600001f7b700[tooltip="3 -> 18\nProbability 50.00%" ];
+	Node0x600001f7b660:s1 -> Node0x600001f7b6b0[tooltip="3 -> 16\nProbability 50.00%" ];
+	Node0x600001f7b6b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  call void @png_error(ptr noundef %17, ptr noundef @.str.13)\l  br label %28\l}"];
+	Node0x600001f7b6b0 -> Node0x600001f7b7f0[tooltip="16 -> 28\nProbability 100.00%" ];
+	Node0x600001f7b700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds %struct.png_struct_def, ptr %19, i32 0, i32 7\l  %21 = load i8, ptr %20, align 8\l  %22 = zext i8 %21 to i32\l  %23 = and i32 %22, 2\l  %24 = icmp ne i32 %23, 0\l  br i1 %24, label %25, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600001f7b700:s0 -> Node0x600001f7b750[tooltip="18 -> 25\nProbability 50.00%" ];
+	Node0x600001f7b700:s1 -> Node0x600001f7b7a0[tooltip="18 -> 27\nProbability 50.00%" ];
+	Node0x600001f7b750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %4, align 8\l  call void @png_warning(ptr noundef %26, ptr noundef @.str.14)\l  br label %27\l}"];
+	Node0x600001f7b750 -> Node0x600001f7b7a0[tooltip="25 -> 27\nProbability 100.00%" ];
+	Node0x600001f7b7a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  br label %28\l}"];
+	Node0x600001f7b7a0 -> Node0x600001f7b7f0[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x600001f7b7f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i64, ptr %6, align 8\l  %30 = icmp ne i64 %29, 4\l  br i1 %30, label %31, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x600001f7b7f0:s0 -> Node0x600001f7b840[tooltip="28 -> 31\nProbability 50.00%" ];
+	Node0x600001f7b7f0:s1 -> Node0x600001f7b890[tooltip="28 -> 35\nProbability 50.00%" ];
+	Node0x600001f7b840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %4, align 8\l  call void @png_warning(ptr noundef %32, ptr noundef @.str.15)\l  %33 = load ptr, ptr %4, align 8\l  %34 = load i64, ptr %6, align 8\l  call void @png_crc_skip(ptr noundef %33, i64 noundef %34)\l  br label %54\l}"];
+	Node0x600001f7b840 -> Node0x600001f7b980[tooltip="31 -> 54\nProbability 100.00%" ];
+	Node0x600001f7b890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %4, align 8\l  %37 = getelementptr inbounds [4 x i8], ptr %9, i64 0, i64 0\l  call void @png_crc_read(ptr noundef %36, ptr noundef %37, i64 noundef 4)\l  %38 = getelementptr inbounds [4 x i8], ptr %9, i64 0, i64 0\l  %39 = call i64 @png_get_uint_32(ptr noundef %38)\l  store i64 %39, ptr %7, align 8\l  %40 = load i64, ptr %7, align 8\l  %41 = icmp ne i64 %40, 0\l  br i1 %41, label %43, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x600001f7b890:s0 -> Node0x600001f7b930[tooltip="35 -> 43\nProbability 62.50%" ];
+	Node0x600001f7b890:s1 -> Node0x600001f7b8e0[tooltip="35 -> 42\nProbability 37.50%" ];
+	Node0x600001f7b8e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{42:\l|  br label %54\l}"];
+	Node0x600001f7b8e0 -> Node0x600001f7b980[tooltip="42 -> 54\nProbability 100.00%" ];
+	Node0x600001f7b930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{43:\l|  %44 = load i64, ptr %7, align 8\l  %45 = uitofp i64 %44 to float\l  %46 = fdiv float %45, 1.000000e+05\l  store float %46, ptr %8, align 4\l  %47 = load ptr, ptr %4, align 8\l  %48 = load ptr, ptr %5, align 8\l  %49 = load float, ptr %8, align 4\l  %50 = fpext float %49 to double\l  call void @png_read_gAMA(ptr noundef %47, ptr noundef %48, double noundef\l... %50)\l  %51 = load float, ptr %8, align 4\l  %52 = load ptr, ptr %4, align 8\l  %53 = getelementptr inbounds %struct.png_struct_def, ptr %52, i32 0, i32 59\l  store float %51, ptr %53, align 4\l  br label %54\l}"];
+	Node0x600001f7b930 -> Node0x600001f7b980[tooltip="43 -> 54\nProbability 100.00%" ];
+	Node0x600001f7b980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{54:\l|  ret void\l}"];
+}

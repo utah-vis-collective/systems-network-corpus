@@ -1,0 +1,17 @@
+digraph "CFG for 'zconcat' function" {
+	label="CFG for 'zconcat' function";
+
+	Node0x600001bd22b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca %struct.gs_matrix_s, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = call i32 @read_matrix(ptr noundef %6, ptr noundef %4)\l  store i32 %7, ptr %5, align 4\l  %8 = load i32, ptr %5, align 4\l  %9 = icmp slt i32 %8, 0\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd22b0:s0 -> Node0x600001bd2300[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600001bd22b0:s1 -> Node0x600001bd2350[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x600001bd2300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %5, align 4\l  store i32 %11, ptr %2, align 4\l  br label %22\l}"];
+	Node0x600001bd2300 -> Node0x600001bd2440[tooltip="10 -> 22\nProbability 100.00%" ];
+	Node0x600001bd2350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr @igs, align 8\l  %14 = call i32 @gs_concat(ptr noundef %13, ptr noundef %4)\l  store i32 %14, ptr %5, align 4\l  %15 = load i32, ptr %5, align 4\l  %16 = icmp slt i32 %15, 0\l  br i1 %16, label %17, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd2350:s0 -> Node0x600001bd23a0[tooltip="12 -> 17\nProbability 37.50%" ];
+	Node0x600001bd2350:s1 -> Node0x600001bd23f0[tooltip="12 -> 19\nProbability 62.50%" ];
+	Node0x600001bd23a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %5, align 4\l  store i32 %18, ptr %2, align 4\l  br label %22\l}"];
+	Node0x600001bd23a0 -> Node0x600001bd2440[tooltip="17 -> 22\nProbability 100.00%" ];
+	Node0x600001bd23f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr @o_stack, align 8\l  %21 = getelementptr inbounds %struct.ref_s, ptr %20, i64 -1\l  store ptr %21, ptr @o_stack, align 8\l  store i32 0, ptr %2, align 4\l  br label %22\l}"];
+	Node0x600001bd23f0 -> Node0x600001bd2440[tooltip="19 -> 22\nProbability 100.00%" ];
+	Node0x600001bd2440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %2, align 4\l  ret i32 %23\l}"];
+}

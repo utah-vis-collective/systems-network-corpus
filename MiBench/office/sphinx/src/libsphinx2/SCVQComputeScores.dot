@@ -1,0 +1,32 @@
+digraph "CFG for 'SCVQComputeScores' function" {
+	label="CFG for 'SCVQComputeScores' function";
+
+	Node0x600001f461c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load i32, ptr @prob_size, align 4\l  %7 = icmp eq i32 %6, 8\l  br i1 %7, label %8, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600001f461c0:s0 -> Node0x600001f46210[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x600001f461c0:s1 -> Node0x600001f463a0[tooltip="2 -> 23\nProbability 50.00%" ];
+	Node0x600001f46210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr @topN, align 4\l  switch i32 %9, label %18 [\l    i32 4, label %10\l    i32 1, label %14\l  ]\l|{<s0>def|<s1>4|<s2>1}}"];
+	Node0x600001f46210:s0 -> Node0x600001f46300[tooltip="8 -> 18\nProbability 33.33%" ];
+	Node0x600001f46210:s1 -> Node0x600001f46260[tooltip="8 -> 10\nProbability 33.33%" ];
+	Node0x600001f46210:s2 -> Node0x600001f462b0[tooltip="8 -> 14\nProbability 33.33%" ];
+	Node0x600001f46260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = call i32 @get_scores4_8b(ptr noundef %11, ptr noundef %12)\l  store i32 %13, ptr %5, align 4\l  br label %22\l}"];
+	Node0x600001f46260 -> Node0x600001f46350[tooltip="10 -> 22\nProbability 100.00%" ];
+	Node0x600001f462b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = call i32 @get_scores1_8b(ptr noundef %15, ptr noundef %16)\l  store i32 %17, ptr %5, align 4\l  br label %22\l}"];
+	Node0x600001f462b0 -> Node0x600001f46350[tooltip="14 -> 22\nProbability 100.00%" ];
+	Node0x600001f46300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = load ptr, ptr %4, align 8\l  %21 = call i32 @get_scores_8b(ptr noundef %19, ptr noundef %20)\l  store i32 %21, ptr %5, align 4\l  br label %22\l}"];
+	Node0x600001f46300 -> Node0x600001f46350[tooltip="18 -> 22\nProbability 100.00%" ];
+	Node0x600001f46350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{22:\l|  br label %38\l}"];
+	Node0x600001f46350 -> Node0x600001f46530[tooltip="22 -> 38\nProbability 100.00%" ];
+	Node0x600001f463a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{23:\l|  %24 = load i32, ptr @topN, align 4\l  switch i32 %24, label %33 [\l    i32 4, label %25\l    i32 1, label %29\l  ]\l|{<s0>def|<s1>4|<s2>1}}"];
+	Node0x600001f463a0:s0 -> Node0x600001f46490[tooltip="23 -> 33\nProbability 33.33%" ];
+	Node0x600001f463a0:s1 -> Node0x600001f463f0[tooltip="23 -> 25\nProbability 33.33%" ];
+	Node0x600001f463a0:s2 -> Node0x600001f46440[tooltip="23 -> 29\nProbability 33.33%" ];
+	Node0x600001f463f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %3, align 8\l  %27 = load ptr, ptr %4, align 8\l  %28 = call i32 @get_scores4(ptr noundef %26, ptr noundef %27)\l  store i32 %28, ptr %5, align 4\l  br label %37\l}"];
+	Node0x600001f463f0 -> Node0x600001f464e0[tooltip="25 -> 37\nProbability 100.00%" ];
+	Node0x600001f46440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %3, align 8\l  %31 = load ptr, ptr %4, align 8\l  %32 = call i32 @get_scores1(ptr noundef %30, ptr noundef %31)\l  store i32 %32, ptr %5, align 4\l  br label %37\l}"];
+	Node0x600001f46440 -> Node0x600001f464e0[tooltip="29 -> 37\nProbability 100.00%" ];
+	Node0x600001f46490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %3, align 8\l  %35 = load ptr, ptr %4, align 8\l  %36 = call i32 @get_scores(ptr noundef %34, ptr noundef %35)\l  store i32 %36, ptr %5, align 4\l  br label %37\l}"];
+	Node0x600001f46490 -> Node0x600001f464e0[tooltip="33 -> 37\nProbability 100.00%" ];
+	Node0x600001f464e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{37:\l|  br label %38\l}"];
+	Node0x600001f464e0 -> Node0x600001f46530[tooltip="37 -> 38\nProbability 100.00%" ];
+	Node0x600001f46530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %5, align 4\l  ret i32 %39\l}"];
+}

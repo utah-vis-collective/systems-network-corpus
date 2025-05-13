@@ -1,0 +1,5 @@
+digraph "CFG for 'int32' function" {
+	label="CFG for 'int32' function";
+
+	Node0x600001190cd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  %5 = load i64, ptr %4, align 8\l  %6 = lshr i64 %5, 0\l  %7 = trunc i64 %6 to i8\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds i8, ptr %8, i64 0\l  store i8 %7, ptr %9, align 1\l  %10 = load i64, ptr %4, align 8\l  %11 = lshr i64 %10, 8\l  %12 = trunc i64 %11 to i8\l  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds i8, ptr %13, i64 1\l  store i8 %12, ptr %14, align 1\l  %15 = load i64, ptr %4, align 8\l  %16 = lshr i64 %15, 16\l  %17 = trunc i64 %16 to i8\l  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds i8, ptr %18, i64 2\l  store i8 %17, ptr %19, align 1\l  %20 = load i64, ptr %4, align 8\l  %21 = lshr i64 %20, 24\l  %22 = trunc i64 %21 to i8\l  %23 = load ptr, ptr %3, align 8\l  %24 = getelementptr inbounds i8, ptr %23, i64 3\l  store i8 %22, ptr %24, align 1\l  ret void\l}"];
+}

@@ -1,0 +1,24 @@
+digraph "CFG for 'uttproc_stop_utt' function" {
+	label="CFG for 'uttproc_stop_utt' function";
+
+	Node0x6000008a77a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = load i32, ptr @uttstate, align 4\l  %3 = icmp ne i32 %2, 1\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a77a0:s0 -> Node0x6000008a77f0[tooltip="0 -> 4\nProbability 50.00%" ];
+	Node0x6000008a77a0:s1 -> Node0x6000008a7840[tooltip="0 -> 5\nProbability 50.00%" ];
+	Node0x6000008a77f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{4:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 1201, ptr noundef\l... @.str.1)\l  call void (ptr, ...) @_E__pr_warn(ptr noundef @.str.30)\l  store i32 -1, ptr %1, align 4\l  br label %15\l}"];
+	Node0x6000008a77f0 -> Node0x6000008a7a20[tooltip="4 -> 15\nProbability 100.00%" ];
+	Node0x6000008a7840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  store i32 3, ptr @uttstate, align 4\l  %6 = load i32, ptr @nosearch, align 4\l  %7 = icmp ne i32 %6, 0\l  br i1 %7, label %14, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a7840:s0 -> Node0x6000008a79d0[tooltip="5 -> 14\nProbability 62.50%" ];
+	Node0x6000008a7840:s1 -> Node0x6000008a7890[tooltip="5 -> 8\nProbability 37.50%" ];
+	Node0x6000008a7890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{8:\l|  %9 = call i32 @query_fwdtree_flag()\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a7890:s0 -> Node0x6000008a78e0[tooltip="8 -> 11\nProbability 62.50%" ];
+	Node0x6000008a7890:s1 -> Node0x6000008a7930[tooltip="8 -> 12\nProbability 37.50%" ];
+	Node0x6000008a78e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{11:\l|  call void @search_finish_fwd()\l  br label %13\l}"];
+	Node0x6000008a78e0 -> Node0x6000008a7980[tooltip="11 -> 13\nProbability 100.00%" ];
+	Node0x6000008a7930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{12:\l|  call void @search_fwdflat_finish()\l  br label %13\l}"];
+	Node0x6000008a7930 -> Node0x6000008a7980[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x6000008a7980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  br label %14\l}"];
+	Node0x6000008a7980 -> Node0x6000008a79d0[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x6000008a79d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  store i32 0, ptr %1, align 4\l  br label %15\l}"];
+	Node0x6000008a79d0 -> Node0x6000008a7a20[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x6000008a7a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %1, align 4\l  ret i32 %16\l}"];
+}

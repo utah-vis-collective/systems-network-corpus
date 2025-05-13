@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x60000069df40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  store i32 0, ptr %3, align 4\l  store i32 %0, ptr %4, align 4\l  store ptr %1, ptr %5, align 8\l  %6 = load i32, ptr %4, align 4\l  %7 = icmp slt i32 %6, 2\l  br i1 %7, label %16, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x60000069df40:s0 -> Node0x60000069dfe0[tooltip="2 -> 16\nProbability 50.00%" ];
+	Node0x60000069df40:s1 -> Node0x60000069df90[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x60000069df90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %5, align 8\l  %10 = getelementptr inbounds ptr, ptr %9, i64 1\l  %11 = load ptr, ptr %10, align 8\l  %12 = getelementptr inbounds i8, ptr %11, i64 1\l  %13 = load i8, ptr %12, align 1\l  %14 = sext i8 %13 to i32\l  %15 = icmp eq i32 %14, 102\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000069df90:s0 -> Node0x60000069dfe0[tooltip="8 -> 16\nProbability 50.00%" ];
+	Node0x60000069df90:s1 -> Node0x60000069e030[tooltip="8 -> 17\nProbability 50.00%" ];
+	Node0x60000069dfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  call void @from_ascii()\l  br label %18\l}"];
+	Node0x60000069dfe0 -> Node0x60000069e080[tooltip="16 -> 18\nProbability 100.00%" ];
+	Node0x60000069e030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  call void @to_ascii()\l  br label %18\l}"];
+	Node0x60000069e030 -> Node0x60000069e080[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x60000069e080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  call void @exit(i32 noundef 0) #3\l  unreachable\l}"];
+}

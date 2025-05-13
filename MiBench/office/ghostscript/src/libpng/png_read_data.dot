@@ -1,0 +1,12 @@
+digraph "CFG for 'png_read_data' function" {
+	label="CFG for 'png_read_data' function";
+
+	Node0x600002a7def0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.png_struct_def, ptr %7, i32 0, i32 5\l  %9 = load ptr, ptr %8, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600002a7def0:s0 -> Node0x600002a7df40[tooltip="3 -> 11\nProbability 62.50%" ];
+	Node0x600002a7def0:s1 -> Node0x600002a7df90[tooltip="3 -> 18\nProbability 37.50%" ];
+	Node0x600002a7df40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.png_struct_def, ptr %12, i32 0, i32 5\l  %14 = load ptr, ptr %13, align 8\l  %15 = load ptr, ptr %4, align 8\l  %16 = load ptr, ptr %5, align 8\l  %17 = load i64, ptr %6, align 8\l  call void %14(ptr noundef %15, ptr noundef %16, i64 noundef %17)\l  br label %20\l}"];
+	Node0x600002a7df40 -> Node0x600002a7dfe0[tooltip="11 -> 20\nProbability 100.00%" ];
+	Node0x600002a7df90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  call void @png_error(ptr noundef %19, ptr noundef @.str)\l  br label %20\l}"];
+	Node0x600002a7df90 -> Node0x600002a7dfe0[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x600002a7dfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 'onintr' function" {
+	label="CFG for 'onintr' function";
+
+	Node0x60000253f7a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = load ptr, ptr @outname, align 8\l  store ptr %2, ptr %1, align 8\l  store ptr null, ptr @outname, align 8\l  %3 = load ptr, ptr %1, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x60000253f7a0:s0 -> Node0x60000253f7f0[tooltip="0 -> 5\nProbability 50.00%" ];
+	Node0x60000253f7a0:s1 -> Node0x60000253f840[tooltip="0 -> 8\nProbability 50.00%" ];
+	Node0x60000253f7f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %1, align 8\l  %7 = call i32 @unlink(ptr noundef %6)\l  br label %8\l}"];
+	Node0x60000253f7f0 -> Node0x60000253f840[tooltip="5 -> 8\nProbability 100.00%" ];
+	Node0x60000253f840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+}

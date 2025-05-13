@@ -1,0 +1,10 @@
+digraph "CFG for 'agc_emax_proc' function" {
+	label="CFG for 'agc_emax_proc' function";
+
+	Node0x6000018e9f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %7 = load ptr, ptr %5, align 8\l  %8 = getelementptr inbounds float, ptr %7, i64 0\l  %9 = load float, ptr %8, align 4\l  %10 = load float, ptr @obs_max, align 4\l  %11 = fcmp ogt float %9, %10\l  br i1 %11, label %12, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000018e9f40:s0 -> Node0x6000018e9f90[tooltip="3 -> 12\nProbability 50.00%" ];
+	Node0x6000018e9f40:s1 -> Node0x6000018e9fe0[tooltip="3 -> 16\nProbability 50.00%" ];
+	Node0x6000018e9f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = getelementptr inbounds float, ptr %13, i64 0\l  %15 = load float, ptr %14, align 4\l  store float %15, ptr @obs_max, align 4\l  store i32 1, ptr @obs_frame, align 4\l  br label %16\l}"];
+	Node0x6000018e9f90 -> Node0x6000018e9fe0[tooltip="12 -> 16\nProbability 100.00%" ];
+	Node0x6000018e9fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = load ptr, ptr %5, align 8\l  %19 = load i32, ptr %6, align 4\l  %20 = sext i32 %19 to i64\l  %21 = mul i64 4, %20\l  %22 = load ptr, ptr %4, align 8\l  %23 = call i64 @llvm.objectsize.i64.p0(ptr %22, i1 false, i1 true, i1 false)\l  %24 = call ptr @__memcpy_chk(ptr noundef %17, ptr noundef %18, i64 noundef\l... %21, i64 noundef %23) #4\l  %25 = load float, ptr @max, align 4\l  %26 = load ptr, ptr %4, align 8\l  %27 = getelementptr inbounds float, ptr %26, i64 0\l  %28 = load float, ptr %27, align 4\l  %29 = fsub float %28, %25\l  store float %29, ptr %27, align 4\l  ret i32 1\l}"];
+}

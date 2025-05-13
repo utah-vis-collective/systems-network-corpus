@@ -1,0 +1,10 @@
+digraph "CFG for 'png_default_flush' function" {
+	label="CFG for 'png_default_flush' function";
+
+	Node0x60000160e580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.png_struct_def, ptr %3, i32 0, i32 6\l  %5 = load ptr, ptr %4, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %7, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000160e580:s0 -> Node0x60000160e5d0[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x60000160e580:s1 -> Node0x60000160e620[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x60000160e5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.png_struct_def, ptr %8, i32 0, i32 6\l  %10 = load ptr, ptr %9, align 8\l  %11 = call i32 @fflush(ptr noundef %10)\l  br label %12\l}"];
+	Node0x60000160e5d0 -> Node0x60000160e620[tooltip="7 -> 12\nProbability 100.00%" ];
+	Node0x60000160e620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  ret void\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'TIFFFetchDoubleArray' function" {
+	label="CFG for 'TIFFFetchDoubleArray' function";
+
+	Node0x6000036afe30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = load ptr, ptr %6, align 8\l  %10 = load ptr, ptr %7, align 8\l  %11 = call i64 @TIFFFetchData(ptr noundef %8, ptr noundef %9, ptr noundef\l... %10)\l  %12 = icmp ne i64 %11, 0\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000036afe30:s0 -> Node0x6000036afe80[tooltip="3 -> 13\nProbability 62.50%" ];
+	Node0x6000036afe30:s1 -> Node0x6000036afed0[tooltip="3 -> 14\nProbability 37.50%" ];
+	Node0x6000036afe80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  store i32 1, ptr %4, align 4\l  br label %15\l}"];
+	Node0x6000036afe80 -> Node0x6000036aff20[tooltip="13 -> 15\nProbability 100.00%" ];
+	Node0x6000036afed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  store i32 0, ptr %4, align 4\l  br label %15\l}"];
+	Node0x6000036afed0 -> Node0x6000036aff20[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x6000036aff20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %4, align 4\l  ret i32 %16\l}"];
+}

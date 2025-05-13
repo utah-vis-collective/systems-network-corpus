@@ -1,0 +1,17 @@
+digraph "CFG for 'PDFText_OpenBT' function" {
+	label="CFG for 'PDFText_OpenBT' function";
+
+	Node0x600000528be0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @PDFPage_FlushBuffer(ptr noundef %3)\l  store i32 1, ptr @g_page_has_text, align 4\l  %4 = load i32, ptr @g_TJ_pending, align 4\l  %5 = icmp ne i32 %4, 0\l  br i1 %5, label %6, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600000528be0:s0 -> Node0x600000528c30[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x600000528be0:s1 -> Node0x600000528c80[tooltip="1 -> 8\nProbability 37.50%" ];
+	Node0x600000528c30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  store i32 0, ptr @g_TJ_pending, align 4\l  %7 = load ptr, ptr %2, align 8\l  call void @PDFPage_WriteStream(ptr noundef %7, ptr noundef @.str.5)\l  br label %8\l}"];
+	Node0x600000528c30 -> Node0x600000528c80[tooltip="6 -> 8\nProbability 100.00%" ];
+	Node0x600000528c80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i32, ptr @g_ET_pending, align 4\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600000528c80:s0 -> Node0x600000528cd0[tooltip="8 -> 11\nProbability 62.50%" ];
+	Node0x600000528c80:s1 -> Node0x600000528d20[tooltip="8 -> 12\nProbability 37.50%" ];
+	Node0x600000528cd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  store i32 0, ptr @g_ET_pending, align 4\l  br label %14\l}"];
+	Node0x600000528cd0 -> Node0x600000528d70[tooltip="11 -> 14\nProbability 100.00%" ];
+	Node0x600000528d20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  call void @PDFPage_Write(ptr noundef %13, ptr noundef @.str.75)\l  store i32 1, ptr @g_valid_text_matrix, align 4\l  br label %14\l}"];
+	Node0x600000528d20 -> Node0x600000528d70[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x600000528d70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  ret void\l}"];
+}

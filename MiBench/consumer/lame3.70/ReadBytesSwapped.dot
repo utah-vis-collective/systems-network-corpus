@@ -1,0 +1,21 @@
+digraph "CFG for 'ReadBytesSwapped' function" {
+	label="CFG for 'ReadBytesSwapped' function";
+
+	Node0x600003e0ad50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %8 = load ptr, ptr %5, align 8\l  store ptr %8, ptr %7, align 8\l  br label %9\l}"];
+	Node0x600003e0ad50 -> Node0x600003e0ada0[tooltip="3 -> 9\nProbability 100.00%" ];
+	Node0x600003e0ada0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %4, align 8\l  %11 = call i32 @feof(ptr noundef %10)\l  %12 = icmp ne i32 %11, 0\l  %13 = xor i1 %12, true\l  %14 = zext i1 %13 to i32\l  %15 = load i32, ptr %6, align 4\l  %16 = add nsw i32 %15, -1\l  store i32 %16, ptr %6, align 4\l  %17 = icmp sgt i32 %15, 0\l  %18 = zext i1 %17 to i32\l  %19 = and i32 %14, %18\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600003e0ada0:s0 -> Node0x600003e0adf0[tooltip="9 -> 21\nProbability 96.88%" ];
+	Node0x600003e0ada0:s1 -> Node0x600003e0ae40[tooltip="9 -> 27\nProbability 3.12%" ];
+	Node0x600003e0adf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %4, align 8\l  %23 = call i32 @getc(ptr noundef %22)\l  %24 = trunc i32 %23 to i8\l  %25 = load ptr, ptr %7, align 8\l  %26 = getelementptr inbounds i8, ptr %25, i32 1\l  store ptr %26, ptr %7, align 8\l  store i8 %24, ptr %25, align 1\l  br label %9, !llvm.loop !6\l}"];
+	Node0x600003e0adf0 -> Node0x600003e0ada0[tooltip="21 -> 9\nProbability 100.00%" ];
+	Node0x600003e0ae40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %7, align 8\l  %29 = getelementptr inbounds i8, ptr %28, i32 -1\l  store ptr %29, ptr %7, align 8\l  br label %30\l}"];
+	Node0x600003e0ae40 -> Node0x600003e0ae90[tooltip="27 -> 30\nProbability 100.00%" ];
+	Node0x600003e0ae90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %5, align 8\l  %32 = load ptr, ptr %7, align 8\l  %33 = icmp ult ptr %31, %32\l  br i1 %33, label %34, label %49\l|{<s0>T|<s1>F}}"];
+	Node0x600003e0ae90:s0 -> Node0x600003e0aee0[tooltip="30 -> 34\nProbability 96.88%" ];
+	Node0x600003e0ae90:s1 -> Node0x600003e0af80[tooltip="30 -> 49\nProbability 3.12%" ];
+	Node0x600003e0aee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %5, align 8\l  %36 = load i8, ptr %35, align 1\l  %37 = sext i8 %36 to i32\l  store i32 %37, ptr %6, align 4\l  %38 = load ptr, ptr %7, align 8\l  %39 = load i8, ptr %38, align 1\l  %40 = load ptr, ptr %5, align 8\l  store i8 %39, ptr %40, align 1\l  %41 = load i32, ptr %6, align 4\l  %42 = trunc i32 %41 to i8\l  %43 = load ptr, ptr %7, align 8\l  store i8 %42, ptr %43, align 1\l  br label %44\l}"];
+	Node0x600003e0aee0 -> Node0x600003e0af30[tooltip="34 -> 44\nProbability 100.00%" ];
+	Node0x600003e0af30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{44:\l|  %45 = load ptr, ptr %5, align 8\l  %46 = getelementptr inbounds i8, ptr %45, i32 1\l  store ptr %46, ptr %5, align 8\l  %47 = load ptr, ptr %7, align 8\l  %48 = getelementptr inbounds i8, ptr %47, i32 -1\l  store ptr %48, ptr %7, align 8\l  br label %30, !llvm.loop !8\l}"];
+	Node0x600003e0af30 -> Node0x600003e0ae90[tooltip="44 -> 30\nProbability 100.00%" ];
+	Node0x600003e0af80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{49:\l|  ret void\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'gzflush' function" {
+	label="CFG for 'gzflush' function";
+
+	Node0x600001036260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %8 = load ptr, ptr %4, align 8\l  store ptr %8, ptr %6, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = load i32, ptr %5, align 4\l  %11 = call i32 @do_flush(ptr noundef %9, i32 noundef %10)\l  store i32 %11, ptr %7, align 4\l  %12 = load i32, ptr %7, align 4\l  %13 = icmp ne i32 %12, 0\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001036260:s0 -> Node0x6000010362b0[tooltip="2 -> 14\nProbability 62.50%" ];
+	Node0x600001036260:s1 -> Node0x600001036300[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x6000010362b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %7, align 4\l  store i32 %15, ptr %3, align 4\l  br label %32\l}"];
+	Node0x6000010362b0 -> Node0x600001036440[tooltip="14 -> 32\nProbability 100.00%" ];
+	Node0x600001036300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %6, align 8\l  %18 = getelementptr inbounds %struct.gz_stream, ptr %17, i32 0, i32 3\l  %19 = load ptr, ptr %18, align 8\l  %20 = call i32 @fflush(ptr noundef %19)\l  %21 = load ptr, ptr %6, align 8\l  %22 = getelementptr inbounds %struct.gz_stream, ptr %21, i32 0, i32 1\l  %23 = load i32, ptr %22, align 8\l  %24 = icmp eq i32 %23, 1\l  br i1 %24, label %25, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600001036300:s0 -> Node0x600001036350[tooltip="16 -> 25\nProbability 50.00%" ];
+	Node0x600001036300:s1 -> Node0x6000010363a0[tooltip="16 -> 26\nProbability 50.00%" ];
+	Node0x600001036350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  br label %30\l}"];
+	Node0x600001036350 -> Node0x6000010363f0[tooltip="25 -> 30\nProbability 100.00%" ];
+	Node0x6000010363a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %6, align 8\l  %28 = getelementptr inbounds %struct.gz_stream, ptr %27, i32 0, i32 1\l  %29 = load i32, ptr %28, align 8\l  br label %30\l}"];
+	Node0x6000010363a0 -> Node0x6000010363f0[tooltip="26 -> 30\nProbability 100.00%" ];
+	Node0x6000010363f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{30:\l|  %31 = phi i32 [ 0, %25 ], [ %29, %26 ]\l  store i32 %31, ptr %3, align 4\l  br label %32\l}"];
+	Node0x6000010363f0 -> Node0x600001036440[tooltip="30 -> 32\nProbability 100.00%" ];
+	Node0x600001036440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %3, align 4\l  ret i32 %33\l}"];
+}

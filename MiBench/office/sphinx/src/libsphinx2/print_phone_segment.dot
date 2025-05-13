@@ -1,0 +1,12 @@
+digraph "CFG for 'print_phone_segment' function" {
+	label="CFG for 'print_phone_segment' function";
+
+	Node0x600000d3cd70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca ptr, align 8\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  %13 = alloca ptr, align 8\l  store i32 %0, ptr %6, align 4\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store i32 %3, ptr %9, align 4\l  store ptr %4, ptr %10, align 8\l  %14 = load i32, ptr %6, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds [1024 x ptr], ptr @model_name, i64 0, i64 %15\l  %17 = load ptr, ptr %16, align 8\l  store ptr %17, ptr %11, align 8\l  %18 = va_arg ptr %10, ptr\l  store ptr %18, ptr %13, align 8\l  %19 = load ptr, ptr %13, align 8\l  store ptr %19, ptr %12, align 8\l  %20 = load ptr, ptr %12, align 8\l  %21 = icmp ne ptr %20, null\l  br i1 %21, label %22, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600000d3cd70:s0 -> Node0x600000d3cdc0[tooltip="5 -> 22\nProbability 62.50%" ];
+	Node0x600000d3cd70:s1 -> Node0x600000d3ce10[tooltip="5 -> 24\nProbability 37.50%" ];
+	Node0x600000d3cdc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %12, align 8\l  br label %25\l}"];
+	Node0x600000d3cdc0 -> Node0x600000d3ce60[tooltip="22 -> 25\nProbability 100.00%" ];
+	Node0x600000d3ce10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  br label %25\l}"];
+	Node0x600000d3ce10 -> Node0x600000d3ce60[tooltip="24 -> 25\nProbability 100.00%" ];
+	Node0x600000d3ce60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = phi ptr [ %23, %22 ], [ @.str.18, %24 ]\l  %27 = load ptr, ptr %11, align 8\l  %28 = load i32, ptr %7, align 4\l  %29 = load i32, ptr %8, align 4\l  %30 = load i32, ptr %9, align 4\l  %31 = call i32 (ptr, ...) @printf(ptr noundef @.str.20, ptr noundef %26, ptr\l... noundef %27, i32 noundef %28, i32 noundef %29, i32 noundef %30)\l  %32 = load i32, ptr @n_phone_segments, align 4\l  %33 = add nsw i32 %32, 1\l  store i32 %33, ptr @n_phone_segments, align 4\l  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'zdefaultmatrix' function" {
+	label="CFG for 'zdefaultmatrix' function";
+
+	Node0x600001bd2760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca %struct.gs_matrix_s, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr @igs, align 8\l  %5 = call i32 @gs_defaultmatrix(ptr noundef %4, ptr noundef %3)\l  %6 = load ptr, ptr %2, align 8\l  %7 = call i32 @write_matrix(ptr noundef %6, ptr noundef %3)\l  ret i32 %7\l}"];
+}

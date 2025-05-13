@@ -1,0 +1,5 @@
+digraph "CFG for 'search_get_hyp' function" {
+	label="CFG for 'search_get_hyp' function";
+
+	Node0x600002006670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @hyp\l}"];
+}

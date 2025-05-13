@@ -1,0 +1,10 @@
+digraph "CFG for 'gdev_prn_close_printer' function" {
+	label="CFG for 'gdev_prn_close_printer' function";
+
+	Node0x600001403430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.gx_device_printer_s, ptr %3, i32 0, i32\l... 25\l  %5 = getelementptr inbounds [80 x i8], ptr %4, i64 0, i64 0\l  %6 = call ptr @strchr(ptr noundef %5, i32 noundef 37) #6\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %8, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001403430:s0 -> Node0x600001403480[tooltip="1 -> 8\nProbability 62.50%" ];
+	Node0x600001403430:s1 -> Node0x6000014034d0[tooltip="1 -> 17\nProbability 37.50%" ];
+	Node0x600001403480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.gx_device_printer_s, ptr %9, i32 0, i32\l... 32\l  %11 = load ptr, ptr %10, align 8\l  %12 = load ptr, ptr %2, align 8\l  %13 = getelementptr inbounds %struct.gx_device_printer_s, ptr %12, i32 0,\l... i32 25\l  %14 = getelementptr inbounds [80 x i8], ptr %13, i64 0, i64 0\l  call void @gp_close_printer(ptr noundef %11, ptr noundef %14)\l  %15 = load ptr, ptr %2, align 8\l  %16 = getelementptr inbounds %struct.gx_device_printer_s, ptr %15, i32 0,\l... i32 32\l  store ptr null, ptr %16, align 8\l  br label %17\l}"];
+	Node0x600001403480 -> Node0x6000014034d0[tooltip="8 -> 17\nProbability 100.00%" ];
+	Node0x6000014034d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  ret i32 0\l}"];
+}

@@ -1,0 +1,24 @@
+digraph "CFG for '_Z12_clSetDevicei' function" {
+	label="CFG for '_Z12_clSetDevicei' function";
+
+	Node0x600000915fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %5 = load i32, ptr %2, align 4\l  %6 = load i32, ptr @number_devices, align 4\l  %7 = sub nsw i32 %6, 1\l  %8 = icmp sgt i32 %5, %7\l  br i1 %8, label %9, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000915fe0:s0 -> Node0x600000916030[tooltip="1 -> 9\nProbability 0.00%" ];
+	Node0x600000915fe0:s1 -> Node0x600000916210[tooltip="1 -> 26\nProbability 100.00%" ];
+	Node0x600000916030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{9:\l|  %10 = call ptr @__cxa_allocate_exception(i64 24) #4\l  %11 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) %10, ptr noundef\l... @.str.3)\l          to label %12 unwind label %13\l}"];
+	Node0x600000916030 -> Node0x600000916080[tooltip="9 -> 12\nProbability 50.00%" ];
+	Node0x600000916030 -> Node0x6000009160d0[tooltip="9 -> 13\nProbability 50.00%" ];
+	Node0x600000916080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{12:\l|  invoke void @__cxa_throw(ptr %10, ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev) #21\l          to label %33 unwind label %17\l}"];
+	Node0x600000916080 -> Node0x6000009162b0[tooltip="12 -> 33\nProbability 0.00%" ];
+	Node0x600000916080 -> Node0x600000916120[tooltip="12 -> 17\nProbability 100.00%" ];
+	Node0x6000009160d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{13:\l|  %14 = landingpad \{ ptr, i32 \}\l          cleanup\l          filter [1 x ptr] [ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE]\l  %15 = extractvalue \{ ptr, i32 \} %14, 0\l  store ptr %15, ptr %3, align 8\l  %16 = extractvalue \{ ptr, i32 \} %14, 1\l  store i32 %16, ptr %4, align 4\l  call void @__cxa_free_exception(ptr %10) #4\l  br label %21\l}"];
+	Node0x6000009160d0 -> Node0x600000916170[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x600000916120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f2cab570" fontname="Courier",label="{17:\l|  %18 = landingpad \{ ptr, i32 \}\l          filter [1 x ptr] [ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE]\l  %19 = extractvalue \{ ptr, i32 \} %18, 0\l  store ptr %19, ptr %3, align 8\l  %20 = extractvalue \{ ptr, i32 \} %18, 1\l  store i32 %20, ptr %4, align 4\l  br label %21\l}"];
+	Node0x600000916120 -> Node0x600000916170[tooltip="17 -> 21\nProbability 100.00%" ];
+	Node0x600000916170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %4, align 4\l  %23 = icmp slt i32 %22, 0\l  br i1 %23, label %24, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600000916170:s0 -> Node0x6000009161c0[tooltip="21 -> 24\nProbability 0.00%" ];
+	Node0x600000916170:s1 -> Node0x600000916260[tooltip="21 -> 28\nProbability 100.00%" ];
+	Node0x6000009161c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#93b5fe70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %3, align 8\l  call void @__cxa_call_unexpected(ptr %25) #21\l  unreachable\l}"];
+	Node0x600000916210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %2, align 4\l  store i32 %27, ptr @device_id_inused, align 4\l  ret void\l}"];
+	Node0x600000916260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %3, align 8\l  %30 = load i32, ptr %4, align 4\l  %31 = insertvalue \{ ptr, i32 \} poison, ptr %29, 0\l  %32 = insertvalue \{ ptr, i32 \} %31, i32 %30, 1\l  resume \{ ptr, i32 \} %32\l}"];
+	Node0x6000009162b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#4961d270" fontname="Courier",label="{33:\l|  unreachable\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'unlimit' function" {
+	label="CFG for 'unlimit' function";
+
+	Node0x600002b39f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca %struct.rlimit, align 8\l  %2 = call i32 @\"\\01_getrlimit\"(i32 noundef 2, ptr noundef %1)\l  %3 = getelementptr inbounds %struct.rlimit, ptr %1, i32 0, i32 1\l  %4 = load i64, ptr %3, align 8\l  %5 = getelementptr inbounds %struct.rlimit, ptr %1, i32 0, i32 0\l  store i64 %4, ptr %5, align 8\l  %6 = call i32 @\"\\01_setrlimit\"(i32 noundef 2, ptr noundef %1)\l  ret void\l}"];
+}

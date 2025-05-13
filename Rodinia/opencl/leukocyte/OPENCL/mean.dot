@@ -1,0 +1,14 @@
+digraph "CFG for 'mean' function" {
+	label="CFG for 'mean' function";
+
+	Node0x6000012368f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca double, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  store double 0.000000e+00, ptr %3, align 8\l  store i32 0, ptr %4, align 4\l  br label %5\l}"];
+	Node0x6000012368f0 -> Node0x600001236940[tooltip="1 -> 5\nProbability 100.00%" ];
+	Node0x600001236940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %4, align 4\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.VEC, ptr %7, i32 0, i32 0\l  %9 = load i32, ptr %8, align 8\l  %10 = icmp ult i32 %6, %9\l  br i1 %10, label %11, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600001236940:s0 -> Node0x600001236990[tooltip="5 -> 11\nProbability 96.88%" ];
+	Node0x600001236940:s1 -> Node0x600001236a30[tooltip="5 -> 24\nProbability 3.12%" ];
+	Node0x600001236990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %2, align 8\l  %13 = getelementptr inbounds %struct.VEC, ptr %12, i32 0, i32 2\l  %14 = load ptr, ptr %13, align 8\l  %15 = load i32, ptr %4, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds double, ptr %14, i64 %16\l  %18 = load double, ptr %17, align 8\l  %19 = load double, ptr %3, align 8\l  %20 = fadd double %19, %18\l  store double %20, ptr %3, align 8\l  br label %21\l}"];
+	Node0x600001236990 -> Node0x6000012369e0[tooltip="11 -> 21\nProbability 100.00%" ];
+	Node0x6000012369e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %4, align 4\l  %23 = add nsw i32 %22, 1\l  store i32 %23, ptr %4, align 4\l  br label %5\l}"];
+	Node0x6000012369e0 -> Node0x600001236940[tooltip="21 -> 5\nProbability 100.00%" ];
+	Node0x600001236a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  %25 = load double, ptr %3, align 8\l  %26 = load ptr, ptr %2, align 8\l  %27 = getelementptr inbounds %struct.VEC, ptr %26, i32 0, i32 0\l  %28 = load i32, ptr %27, align 8\l  %29 = uitofp i32 %28 to double\l  %30 = fdiv double %25, %29\l  ret double %30\l}"];
+}

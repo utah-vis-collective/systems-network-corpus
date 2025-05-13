@@ -1,0 +1,22 @@
+digraph "CFG for 'id3_field_addstring' function" {
+	label="CFG for 'id3_field_addstring' function";
+
+	Node0x600001e52670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load i32, ptr %8, align 8\l  %10 = icmp ne i32 %9, 6\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001e52670:s0 -> Node0x600001e526c0[tooltip="2 -> 11\nProbability 50.00%" ];
+	Node0x600001e52670:s1 -> Node0x600001e52710[tooltip="2 -> 12\nProbability 50.00%" ];
+	Node0x600001e526c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  store i32 -1, ptr %3, align 4\l  br label %47\l}"];
+	Node0x600001e526c0 -> Node0x600001e528a0[tooltip="11 -> 47\nProbability 100.00%" ];
+	Node0x600001e52710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = call ptr @id3_ucs4_duplicate(ptr noundef %13)\l  store ptr %14, ptr %6, align 8\l  %15 = load ptr, ptr %6, align 8\l  %16 = icmp eq ptr %15, null\l  br i1 %16, label %17, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600001e52710:s0 -> Node0x600001e52760[tooltip="12 -> 17\nProbability 37.50%" ];
+	Node0x600001e52710:s1 -> Node0x600001e527b0[tooltip="12 -> 18\nProbability 62.50%" ];
+	Node0x600001e52760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  store i32 -1, ptr %3, align 4\l  br label %47\l}"];
+	Node0x600001e52760 -> Node0x600001e528a0[tooltip="17 -> 47\nProbability 100.00%" ];
+	Node0x600001e527b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds %struct.anon.3, ptr %19, i32 0, i32 2\l  %21 = load ptr, ptr %20, align 8\l  %22 = load ptr, ptr %4, align 8\l  %23 = getelementptr inbounds %struct.anon.3, ptr %22, i32 0, i32 1\l  %24 = load i32, ptr %23, align 4\l  %25 = add i32 %24, 1\l  %26 = zext i32 %25 to i64\l  %27 = mul i64 %26, 8\l  %28 = call ptr @realloc(ptr noundef %21, i64 noundef %27) #7\l  store ptr %28, ptr %7, align 8\l  %29 = load ptr, ptr %7, align 8\l  %30 = icmp eq ptr %29, null\l  br i1 %30, label %31, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600001e527b0:s0 -> Node0x600001e52800[tooltip="18 -> 31\nProbability 37.50%" ];
+	Node0x600001e527b0:s1 -> Node0x600001e52850[tooltip="18 -> 33\nProbability 62.50%" ];
+	Node0x600001e52800 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %6, align 8\l  call void @free(ptr noundef %32)\l  store i32 -1, ptr %3, align 4\l  br label %47\l}"];
+	Node0x600001e52800 -> Node0x600001e528a0[tooltip="31 -> 47\nProbability 100.00%" ];
+	Node0x600001e52850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %7, align 8\l  %35 = load ptr, ptr %4, align 8\l  %36 = getelementptr inbounds %struct.anon.3, ptr %35, i32 0, i32 2\l  store ptr %34, ptr %36, align 8\l  %37 = load ptr, ptr %6, align 8\l  %38 = load ptr, ptr %4, align 8\l  %39 = getelementptr inbounds %struct.anon.3, ptr %38, i32 0, i32 2\l  %40 = load ptr, ptr %39, align 8\l  %41 = load ptr, ptr %4, align 8\l  %42 = getelementptr inbounds %struct.anon.3, ptr %41, i32 0, i32 1\l  %43 = load i32, ptr %42, align 4\l  %44 = add i32 %43, 1\l  store i32 %44, ptr %42, align 4\l  %45 = zext i32 %43 to i64\l  %46 = getelementptr inbounds ptr, ptr %40, i64 %45\l  store ptr %37, ptr %46, align 8\l  store i32 0, ptr %3, align 4\l  br label %47\l}"];
+	Node0x600001e52850 -> Node0x600001e528a0[tooltip="33 -> 47\nProbability 100.00%" ];
+	Node0x600001e528a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %3, align 4\l  ret i32 %48\l}"];
+}

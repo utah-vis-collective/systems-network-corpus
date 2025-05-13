@@ -1,0 +1,5 @@
+digraph "CFG for 'png_write_uint_16' function" {
+	label="CFG for 'png_write_uint_16' function";
+
+	Node0x6000023b2530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i16, align 2\l  %5 = alloca [2 x i8], align 1\l  store ptr %0, ptr %3, align 8\l  store i16 %1, ptr %4, align 2\l  %6 = load i16, ptr %4, align 2\l  %7 = zext i16 %6 to i32\l  %8 = ashr i32 %7, 8\l  %9 = and i32 %8, 255\l  %10 = trunc i32 %9 to i8\l  %11 = getelementptr inbounds [2 x i8], ptr %5, i64 0, i64 0\l  store i8 %10, ptr %11, align 1\l  %12 = load i16, ptr %4, align 2\l  %13 = zext i16 %12 to i32\l  %14 = and i32 %13, 255\l  %15 = trunc i32 %14 to i8\l  %16 = getelementptr inbounds [2 x i8], ptr %5, i64 0, i64 1\l  store i8 %15, ptr %16, align 1\l  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds [2 x i8], ptr %5, i64 0, i64 0\l  call void @png_write_data(ptr noundef %17, ptr noundef %18, i64 noundef 2)\l  ret void\l}"];
+}

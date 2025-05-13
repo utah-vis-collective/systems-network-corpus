@@ -1,0 +1,12 @@
+digraph "CFG for 'TIFFNoDecode' function" {
+	label="CFG for 'TIFFNoDecode' function";
+
+	Node0x6000007da580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.tiff, ptr %6, i32 0, i32 6\l  %8 = getelementptr inbounds %struct.TIFFDirectory, ptr %7, i32 0, i32 10\l  %9 = load i16, ptr %8, align 4\l  %10 = call ptr @TIFFFindCODEC(i16 noundef zeroext %9)\l  store ptr %10, ptr %5, align 8\l  %11 = load ptr, ptr %5, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000007da580:s0 -> Node0x6000007da5d0[tooltip="2 -> 13\nProbability 62.50%" ];
+	Node0x6000007da580:s1 -> Node0x6000007da620[tooltip="2 -> 21\nProbability 37.50%" ];
+	Node0x6000007da5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = getelementptr inbounds %struct.tiff, ptr %14, i32 0, i32 0\l  %16 = load ptr, ptr %15, align 8\l  %17 = load ptr, ptr %5, align 8\l  %18 = getelementptr inbounds %struct.TIFFCodec, ptr %17, i32 0, i32 0\l  %19 = load ptr, ptr %18, align 8\l  %20 = load ptr, ptr %4, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %16, ptr noundef @.str.12,\l... ptr noundef %19, ptr noundef %20)\l  br label %31\l}"];
+	Node0x6000007da5d0 -> Node0x6000007da670[tooltip="13 -> 31\nProbability 100.00%" ];
+	Node0x6000007da620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds %struct.tiff, ptr %22, i32 0, i32 0\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %3, align 8\l  %26 = getelementptr inbounds %struct.tiff, ptr %25, i32 0, i32 6\l  %27 = getelementptr inbounds %struct.TIFFDirectory, ptr %26, i32 0, i32 10\l  %28 = load i16, ptr %27, align 4\l  %29 = zext i16 %28 to i32\l  %30 = load ptr, ptr %4, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %24, ptr noundef @.str.13,\l... i32 noundef %29, ptr noundef %30)\l  br label %31\l}"];
+	Node0x6000007da620 -> Node0x6000007da670[tooltip="21 -> 31\nProbability 100.00%" ];
+	Node0x6000007da670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  ret i32 -1\l}"];
+}

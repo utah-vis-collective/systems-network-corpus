@@ -1,0 +1,29 @@
+digraph "CFG for 'tiffinfo' function" {
+	label="CFG for 'tiffinfo' function";
+
+	Node0x6000034075c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i16, align 2\l  %6 = alloca i64, align 8\l  %7 = alloca i16, align 2\l  store ptr %0, ptr %4, align 8\l  store i16 %1, ptr %5, align 2\l  store i64 %2, ptr %6, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load ptr, ptr @__stdoutp, align 8\l  %10 = load i64, ptr %6, align 8\l  call void @TIFFPrintDirectory(ptr noundef %8, ptr noundef %9, i64 noundef\l... %10)\l  %11 = load i32, ptr @readdata, align 4\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %14, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000034075c0:s0 -> Node0x600003407660[tooltip="3 -> 14\nProbability 62.50%" ];
+	Node0x6000034075c0:s1 -> Node0x600003407610[tooltip="3 -> 13\nProbability 37.50%" ];
+	Node0x600003407610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  br label %43\l}"];
+	Node0x600003407610 -> Node0x6000034078e0[tooltip="13 -> 43\nProbability 100.00%" ];
+	Node0x600003407660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load i32, ptr @rawdata, align 4\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600003407660:s0 -> Node0x6000034076b0[tooltip="14 -> 17\nProbability 62.50%" ];
+	Node0x600003407660:s1 -> Node0x6000034077f0[tooltip="14 -> 33\nProbability 37.50%" ];
+	Node0x6000034076b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load i16, ptr %5, align 2\l  %19 = icmp ne i16 %18, 0\l  br i1 %19, label %20, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x6000034076b0:s0 -> Node0x600003407700[tooltip="17 -> 20\nProbability 62.50%" ];
+	Node0x6000034076b0:s1 -> Node0x600003407750[tooltip="17 -> 30\nProbability 37.50%" ];
+	Node0x600003407700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %4, align 8\l  %22 = call i32 (ptr, i64, ...) @TIFFGetFieldDefaulted(ptr noundef %21, i64\l... noundef 266, ptr noundef %7)\l  %23 = load ptr, ptr %4, align 8\l  %24 = load i16, ptr %7, align 2\l  %25 = zext i16 %24 to i32\l  %26 = load i16, ptr %5, align 2\l  %27 = zext i16 %26 to i32\l  %28 = icmp ne i32 %25, %27\l  %29 = zext i1 %28 to i32\l  call void @TIFFReadRawData(ptr noundef %23, i32 noundef %29)\l  br label %32\l}"];
+	Node0x600003407700 -> Node0x6000034077a0[tooltip="20 -> 32\nProbability 100.00%" ];
+	Node0x600003407750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %4, align 8\l  call void @TIFFReadRawData(ptr noundef %31, i32 noundef 0)\l  br label %32\l}"];
+	Node0x600003407750 -> Node0x6000034077a0[tooltip="30 -> 32\nProbability 100.00%" ];
+	Node0x6000034077a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{32:\l|  br label %43\l}"];
+	Node0x6000034077a0 -> Node0x6000034078e0[tooltip="32 -> 43\nProbability 100.00%" ];
+	Node0x6000034077f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{33:\l|  %34 = load i16, ptr %5, align 2\l  %35 = icmp ne i16 %34, 0\l  br i1 %35, label %36, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x6000034077f0:s0 -> Node0x600003407840[tooltip="33 -> 36\nProbability 62.50%" ];
+	Node0x6000034077f0:s1 -> Node0x600003407890[tooltip="33 -> 41\nProbability 37.50%" ];
+	Node0x600003407840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %4, align 8\l  %38 = load i16, ptr %5, align 2\l  %39 = zext i16 %38 to i32\l  %40 = call i32 (ptr, i64, ...) @TIFFSetField(ptr noundef %37, i64 noundef\l... 266, i32 noundef %39)\l  br label %41\l}"];
+	Node0x600003407840 -> Node0x600003407890[tooltip="36 -> 41\nProbability 100.00%" ];
+	Node0x600003407890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr %4, align 8\l  call void @TIFFReadData(ptr noundef %42)\l  br label %43\l}"];
+	Node0x600003407890 -> Node0x6000034078e0[tooltip="41 -> 43\nProbability 100.00%" ];
+	Node0x6000034078e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  ret void\l}"];
+}

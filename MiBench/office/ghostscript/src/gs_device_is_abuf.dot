@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_device_is_abuf' function" {
+	label="CFG for 'gs_device_is_abuf' function";
+
+	Node0x600002aeac10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.gx_device_s, ptr %3, i32 0, i32 2\l  %5 = load ptr, ptr %4, align 8\l  %6 = load ptr, ptr getelementptr inbounds (%struct.gx_device_memory_s, ptr\l... @mem_alpha_buffer_device, i32 0, i32 2), align 8\l  %7 = icmp eq ptr %5, %6\l  %8 = zext i1 %7 to i32\l  ret i32 %8\l}"];
+}

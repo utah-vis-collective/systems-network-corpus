@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_server_terminate' function" {
+	label="CFG for 'gs_server_terminate' function";
+
+	Node0x600002c5d4a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call ptr @gs_main_instance_default()\l  call void @gs_main_finit(ptr noundef %1, i32 noundef 0, i32 noundef 0)\l  ret i32 0\l}"];
+}

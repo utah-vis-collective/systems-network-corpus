@@ -1,0 +1,5 @@
+digraph "CFG for 'zmatrix_op_defs' function" {
+	label="CFG for 'zmatrix_op_defs' function";
+
+	Node0x600001bd2260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zmatrix_op_defs.op_defs_\l}"];
+}

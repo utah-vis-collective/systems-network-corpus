@@ -1,0 +1,10 @@
+digraph "CFG for 'png_error' function" {
+	label="CFG for 'png_error' function";
+
+	Node0x600000c85a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.png_struct_def, ptr %5, i32 0, i32 1\l  %7 = load ptr, ptr %6, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600000c85a90:s0 -> Node0x600000c85ae0[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x600000c85a90:s1 -> Node0x600000c85b30[tooltip="2 -> 15\nProbability 37.50%" ];
+	Node0x600000c85ae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds %struct.png_struct_def, ptr %10, i32 0, i32 1\l  %12 = load ptr, ptr %11, align 8\l  %13 = load ptr, ptr %3, align 8\l  %14 = load ptr, ptr %4, align 8\l  call void %12(ptr noundef %13, ptr noundef %14)\l  br label %15\l}"];
+	Node0x600000c85ae0 -> Node0x600000c85b30[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x600000c85b30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %3, align 8\l  %17 = load ptr, ptr %4, align 8\l  call void @png_default_error(ptr noundef %16, ptr noundef %17)\l  ret void\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'get_scores4_8b_all' function" {
+	label="CFG for 'get_scores4_8b_all' function";
+
+	Node0x600001f434d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %5, align 4\l  br label %7\l}"];
+	Node0x600001f434d0 -> Node0x600001f43520[tooltip="2 -> 7\nProbability 100.00%" ];
+	Node0x600001f43520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %5, align 4\l  %9 = load i32, ptr @CdWdPDFMod, align 4\l  %10 = icmp slt i32 %8, %9\l  br i1 %10, label %11, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001f43520:s0 -> Node0x600001f43570[tooltip="7 -> 11\nProbability 96.88%" ];
+	Node0x600001f43520:s1 -> Node0x600001f43610[tooltip="7 -> 20\nProbability 3.12%" ];
+	Node0x600001f43570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %5, align 4\l  %13 = load ptr, ptr @senone_active, align 8\l  %14 = load i32, ptr %5, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds i32, ptr %13, i64 %15\l  store i32 %12, ptr %16, align 4\l  br label %17\l}"];
+	Node0x600001f43570 -> Node0x600001f435c0[tooltip="11 -> 17\nProbability 100.00%" ];
+	Node0x600001f435c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %5, align 4\l  %19 = add nsw i32 %18, 1\l  store i32 %19, ptr %5, align 4\l  br label %7\l}"];
+	Node0x600001f435c0 -> Node0x600001f43520[tooltip="17 -> 7\nProbability 100.00%" ];
+	Node0x600001f43610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  %21 = load i32, ptr @CdWdPDFMod, align 4\l  store i32 %21, ptr @n_senone_active, align 4\l  %22 = load ptr, ptr %3, align 8\l  %23 = load ptr, ptr %4, align 8\l  %24 = call i32 @get_scores4_8b(ptr noundef %22, ptr noundef %23)\l  %25 = load ptr, ptr %3, align 8\l  %26 = call i32 @compute_bestpscr(ptr noundef %25)\l  ret i32 %26\l}"];
+}

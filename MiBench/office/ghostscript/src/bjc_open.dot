@@ -1,0 +1,5 @@
+digraph "CFG for 'bjc_open' function" {
+	label="CFG for 'bjc_open' function";
+
+	Node0x60000151cdc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %4, i32 0, i32 39\l  %6 = load i32, ptr %5, align 4\l  %7 = call i32 @hp_colour_open(ptr noundef %3, i32 noundef %6)\l  ret i32 %7\l}"];
+}

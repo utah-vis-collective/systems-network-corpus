@@ -1,0 +1,5 @@
+digraph "CFG for 'phoneWdCount' function" {
+	label="CFG for 'phoneWdCount' function";
+
+	Node0x6000012f6d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @numWdPhones, align 4\l  ret i32 %1\l}"];
+}

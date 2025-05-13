@@ -1,0 +1,25 @@
+digraph "CFG for 'emit_message' function" {
+	label="CFG for 'emit_message' function";
+
+	Node0x60000270a120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.jpeg_common_struct, ptr %6, i32 0, i32 0\l  %8 = load ptr, ptr %7, align 8\l  store ptr %8, ptr %5, align 8\l  %9 = load i32, ptr %4, align 4\l  %10 = icmp slt i32 %9, 0\l  br i1 %10, label %11, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x60000270a120:s0 -> Node0x60000270a170[tooltip="2 -> 11\nProbability 37.50%" ];
+	Node0x60000270a120:s1 -> Node0x60000270a2b0[tooltip="2 -> 31\nProbability 62.50%" ];
+	Node0x60000270a170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %12, i32 0, i32 8\l  %14 = load i64, ptr %13, align 8\l  %15 = icmp eq i64 %14, 0\l  br i1 %15, label %21, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x60000270a170:s0 -> Node0x60000270a210[tooltip="11 -> 21\nProbability 37.50%" ];
+	Node0x60000270a170:s1 -> Node0x60000270a1c0[tooltip="11 -> 16\nProbability 62.50%" ];
+	Node0x60000270a1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %5, align 8\l  %18 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %17, i32 0, i32 7\l  %19 = load i32, ptr %18, align 4\l  %20 = icmp sge i32 %19, 3\l  br i1 %20, label %21, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000270a1c0:s0 -> Node0x60000270a210[tooltip="16 -> 21\nProbability 50.00%" ];
+	Node0x60000270a1c0:s1 -> Node0x60000270a260[tooltip="16 -> 26\nProbability 50.00%" ];
+	Node0x60000270a210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %22, i32 0, i32 2\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %3, align 8\l  call void %24(ptr noundef %25)\l  br label %26\l}"];
+	Node0x60000270a210 -> Node0x60000270a260[tooltip="21 -> 26\nProbability 100.00%" ];
+	Node0x60000270a260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %27, i32 0, i32 8\l  %29 = load i64, ptr %28, align 8\l  %30 = add nsw i64 %29, 1\l  store i64 %30, ptr %28, align 8\l  br label %43\l}"];
+	Node0x60000270a260 -> Node0x60000270a3a0[tooltip="26 -> 43\nProbability 100.00%" ];
+	Node0x60000270a2b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %5, align 8\l  %33 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %32, i32 0, i32 7\l  %34 = load i32, ptr %33, align 4\l  %35 = load i32, ptr %4, align 4\l  %36 = icmp sge i32 %34, %35\l  br i1 %36, label %37, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x60000270a2b0:s0 -> Node0x60000270a300[tooltip="31 -> 37\nProbability 50.00%" ];
+	Node0x60000270a2b0:s1 -> Node0x60000270a350[tooltip="31 -> 42\nProbability 50.00%" ];
+	Node0x60000270a300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %5, align 8\l  %39 = getelementptr inbounds %struct.jpeg_error_mgr, ptr %38, i32 0, i32 2\l  %40 = load ptr, ptr %39, align 8\l  %41 = load ptr, ptr %3, align 8\l  call void %40(ptr noundef %41)\l  br label %42\l}"];
+	Node0x60000270a300 -> Node0x60000270a350[tooltip="37 -> 42\nProbability 100.00%" ];
+	Node0x60000270a350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{42:\l|  br label %43\l}"];
+	Node0x60000270a350 -> Node0x60000270a3a0[tooltip="42 -> 43\nProbability 100.00%" ];
+	Node0x60000270a3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  ret void\l}"];
+}

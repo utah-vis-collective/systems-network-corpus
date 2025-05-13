@@ -1,0 +1,10 @@
+digraph "CFG for 'recordMissingTriphone' function" {
+	label="CFG for 'recordMissingTriphone' function";
+
+	Node0x6000024507d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = call i32 @hash_lookup(ptr noundef @mtpHT, ptr noundef %5, ptr noundef\l... %3)\l  %7 = icmp eq i32 -1, %6\l  br i1 %7, label %8, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000024507d0:s0 -> Node0x600002450820[tooltip="1 -> 8\nProbability 50.00%" ];
+	Node0x6000024507d0:s1 -> Node0x600002450870[tooltip="1 -> 14\nProbability 50.00%" ];
+	Node0x600002450820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  %10 = call ptr @salloc(ptr noundef %9)\l  store ptr %10, ptr %4, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = call i32 @hash_add(ptr noundef @mtpHT, ptr noundef %11, ptr noundef\l... %12)\l  br label %14\l}"];
+	Node0x600002450820 -> Node0x600002450870[tooltip="8 -> 14\nProbability 100.00%" ];
+	Node0x600002450870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  ret void\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'first_marker' function" {
+	label="CFG for 'first_marker' function";
+
+	Node0x60000226c820 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = load ptr, ptr @infile, align 8\l  %4 = call i32 @getc(ptr noundef %3)\l  store i32 %4, ptr %1, align 4\l  %5 = load ptr, ptr @infile, align 8\l  %6 = call i32 @getc(ptr noundef %5)\l  store i32 %6, ptr %2, align 4\l  %7 = load i32, ptr %1, align 4\l  %8 = icmp ne i32 %7, 255\l  br i1 %8, label %12, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000226c820:s0 -> Node0x60000226c8c0[tooltip="0 -> 12\nProbability 0.00%" ];
+	Node0x60000226c820:s1 -> Node0x60000226c870[tooltip="0 -> 9\nProbability 100.00%" ];
+	Node0x60000226c870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %2, align 4\l  %11 = icmp ne i32 %10, 216\l  br i1 %11, label %12, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000226c870:s0 -> Node0x60000226c8c0[tooltip="9 -> 12\nProbability 0.00%" ];
+	Node0x60000226c870:s1 -> Node0x60000226c910[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x60000226c8c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6bfa670" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr @__stderrp, align 8\l  %14 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %13, ptr noundef\l... @.str.6, ptr noundef @.str.30) #7\l  call void @exit(i32 noundef 1) #8\l  unreachable\l}"];
+	Node0x60000226c910 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %2, align 4\l  ret i32 %16\l}"];
+}

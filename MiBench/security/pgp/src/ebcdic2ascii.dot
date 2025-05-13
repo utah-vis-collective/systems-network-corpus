@@ -1,0 +1,12 @@
+digraph "CFG for 'ebcdic2ascii' function" {
+	label="CFG for 'ebcdic2ascii' function";
+
+	Node0x6000009d4b40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  br label %5\l}"];
+	Node0x6000009d4b40 -> Node0x6000009d4b90[tooltip="2 -> 5\nProbability 100.00%" ];
+	Node0x6000009d4b90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %4, align 4\l  %7 = add i32 %6, -1\l  store i32 %7, ptr %4, align 4\l  %8 = icmp ne i32 %6, 0\l  br i1 %8, label %9, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d4b90:s0 -> Node0x6000009d4be0[tooltip="5 -> 9\nProbability 96.88%" ];
+	Node0x6000009d4b90:s1 -> Node0x6000009d4c30[tooltip="5 -> 22\nProbability 3.12%" ];
+	Node0x6000009d4be0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = load i32, ptr %4, align 4\l  %12 = zext i32 %11 to i64\l  %13 = getelementptr inbounds i8, ptr %10, i64 %12\l  %14 = load i8, ptr %13, align 1\l  %15 = zext i8 %14 to i64\l  %16 = getelementptr inbounds [256 x i8], ptr @ebcdic_ascii, i64 0, i64 %15\l  %17 = load i8, ptr %16, align 1\l  %18 = load ptr, ptr %3, align 8\l  %19 = load i32, ptr %4, align 4\l  %20 = zext i32 %19 to i64\l  %21 = getelementptr inbounds i8, ptr %18, i64 %20\l  store i8 %17, ptr %21, align 1\l  br label %5\l}"];
+	Node0x6000009d4be0 -> Node0x6000009d4b90[tooltip="9 -> 5\nProbability 100.00%" ];
+	Node0x6000009d4c30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

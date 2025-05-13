@@ -1,0 +1,25 @@
+digraph "CFG for '_ZL8shutdownv' function" {
+	label="CFG for '_ZL8shutdownv' function";
+
+	Node0x60000068fe80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @_ZL9cmd_queue, align 8\l  %2 = icmp ne ptr %1, null\l  br i1 %2, label %3, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x60000068fe80:s0 -> Node0x60000068fed0[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x60000068fe80:s1 -> Node0x60000068ff20[tooltip="0 -> 6\nProbability 37.50%" ];
+	Node0x60000068fed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @_ZL9cmd_queue, align 8\l  %5 = call i32 @clReleaseCommandQueue(ptr noundef %4)\l  br label %6\l}"];
+	Node0x60000068fed0 -> Node0x60000068ff20[tooltip="3 -> 6\nProbability 100.00%" ];
+	Node0x60000068ff20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @_ZL7context, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000068ff20:s0 -> Node0x60000068ff70[tooltip="6 -> 9\nProbability 62.50%" ];
+	Node0x60000068ff20:s1 -> Node0x600000688000[tooltip="6 -> 12\nProbability 37.50%" ];
+	Node0x60000068ff70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @_ZL7context, align 8\l  %11 = call i32 @clReleaseContext(ptr noundef %10)\l  br label %12\l}"];
+	Node0x60000068ff70 -> Node0x600000688000[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x600000688000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr @_ZL11device_list, align 8\l  %14 = icmp ne ptr %13, null\l  br i1 %14, label %15, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600000688000:s0 -> Node0x600000688050[tooltip="12 -> 15\nProbability 62.50%" ];
+	Node0x600000688000:s1 -> Node0x600000688140[tooltip="12 -> 20\nProbability 37.50%" ];
+	Node0x600000688050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr @_ZL11device_list, align 8\l  %17 = icmp eq ptr %16, null\l  br i1 %17, label %19, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600000688050:s0 -> Node0x6000006880f0[tooltip="15 -> 19\nProbability 37.50%" ];
+	Node0x600000688050:s1 -> Node0x6000006880a0[tooltip="15 -> 18\nProbability 62.50%" ];
+	Node0x6000006880a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  call void @_ZdlPv(ptr noundef %16) #10\l  br label %19\l}"];
+	Node0x6000006880a0 -> Node0x6000006880f0[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x6000006880f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  br label %20\l}"];
+	Node0x6000006880f0 -> Node0x600000688140[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x600000688140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  store ptr null, ptr @_ZL9cmd_queue, align 8\l  store ptr null, ptr @_ZL7context, align 8\l  store ptr null, ptr @_ZL11device_list, align 8\l  store i32 0, ptr @_ZL11num_devices, align 4\l  store i64 0, ptr @_ZL11device_type, align 8\l  ret i32 0\l}"];
+}

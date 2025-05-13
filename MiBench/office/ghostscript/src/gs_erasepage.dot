@@ -1,0 +1,17 @@
+digraph "CFG for 'gs_erasepage' function" {
+	label="CFG for 'gs_erasepage' function";
+
+	Node0x600001915d10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = call i32 @gs_gsave(ptr noundef %5)\l  store i32 %6, ptr %4, align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %8, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001915d10:s0 -> Node0x600001915d60[tooltip="1 -> 8\nProbability 37.50%" ];
+	Node0x600001915d10:s1 -> Node0x600001915db0[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600001915d60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %4, align 4\l  store i32 %9, ptr %2, align 4\l  br label %21\l}"];
+	Node0x600001915d60 -> Node0x600001915ea0[tooltip="8 -> 21\nProbability 100.00%" ];
+	Node0x600001915db0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = call i32 @gs_setgray(ptr noundef %11, double noundef 1.000000e+00)\l  store i32 %12, ptr %4, align 4\l  %13 = icmp sge i32 %12, 0\l  br i1 %13, label %14, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001915db0:s0 -> Node0x600001915e00[tooltip="10 -> 14\nProbability 50.00%" ];
+	Node0x600001915db0:s1 -> Node0x600001915e50[tooltip="10 -> 17\nProbability 50.00%" ];
+	Node0x600001915e00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = call i32 @gs_fillpage(ptr noundef %15)\l  store i32 %16, ptr %4, align 4\l  br label %17\l}"];
+	Node0x600001915e00 -> Node0x600001915e50[tooltip="14 -> 17\nProbability 100.00%" ];
+	Node0x600001915e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = call i32 @gs_grestore(ptr noundef %18)\l  %20 = load i32, ptr %4, align 4\l  store i32 %20, ptr %2, align 4\l  br label %21\l}"];
+	Node0x600001915e50 -> Node0x600001915ea0[tooltip="17 -> 21\nProbability 100.00%" ];
+	Node0x600001915ea0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %2, align 4\l  ret i32 %22\l}"];
+}

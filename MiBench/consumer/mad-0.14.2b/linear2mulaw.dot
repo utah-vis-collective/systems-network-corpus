@@ -1,0 +1,26 @@
+digraph "CFG for 'linear2mulaw' function" {
+	label="CFG for 'linear2mulaw' function";
+
+	Node0x6000022db390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i64, align 8\l  store i32 %0, ptr %2, align 4\l  %7 = load i32, ptr %2, align 4\l  %8 = icmp slt i32 %7, 0\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000022db390:s0 -> Node0x6000022db3e0[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x6000022db390:s1 -> Node0x6000022db430[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x6000022db3e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %2, align 4\l  %11 = sub nsw i32 1081344, %10\l  store i32 %11, ptr %2, align 4\l  store i32 127, ptr %3, align 4\l  br label %15\l}"];
+	Node0x6000022db3e0 -> Node0x6000022db480[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x6000022db430 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %2, align 4\l  %14 = add nsw i32 1081344, %13\l  store i32 %14, ptr %2, align 4\l  store i32 255, ptr %3, align 4\l  br label %15\l}"];
+	Node0x6000022db430 -> Node0x6000022db480[tooltip="12 -> 15\nProbability 100.00%" ];
+	Node0x6000022db480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{15:\l|  store i32 127, ptr %4, align 4\l  %16 = load i32, ptr %2, align 4\l  %17 = icmp slt i32 %16, 268435456\l  br i1 %17, label %18, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x6000022db480:s0 -> Node0x6000022db4d0[tooltip="15 -> 18\nProbability 50.00%" ];
+	Node0x6000022db480:s1 -> Node0x6000022db660[tooltip="15 -> 43\nProbability 50.00%" ];
+	Node0x6000022db4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  store i32 7, ptr %5, align 4\l  store i64 134217728, ptr %6, align 8\l  br label %19\l}"];
+	Node0x6000022db4d0 -> Node0x6000022db520[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x6000022db520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %2, align 4\l  %21 = sext i32 %20 to i64\l  %22 = load i64, ptr %6, align 8\l  %23 = and i64 %21, %22\l  %24 = icmp ne i64 %23, 0\l  %25 = xor i1 %24, true\l  br i1 %25, label %26, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x6000022db520:s0 -> Node0x6000022db570[tooltip="19 -> 26\nProbability 96.88%" ];
+	Node0x6000022db520:s1 -> Node0x6000022db610[tooltip="19 -> 32\nProbability 3.12%" ];
+	Node0x6000022db570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %5, align 4\l  %28 = add i32 %27, -1\l  store i32 %28, ptr %5, align 4\l  br label %29\l}"];
+	Node0x6000022db570 -> Node0x6000022db5c0[tooltip="26 -> 29\nProbability 100.00%" ];
+	Node0x6000022db5c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i64, ptr %6, align 8\l  %31 = lshr i64 %30, 1\l  store i64 %31, ptr %6, align 8\l  br label %19, !llvm.loop !6\l}"];
+	Node0x6000022db5c0 -> Node0x6000022db520[tooltip="29 -> 19\nProbability 100.00%" ];
+	Node0x6000022db610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %5, align 4\l  %34 = shl i32 %33, 4\l  %35 = load i32, ptr %2, align 4\l  %36 = load i32, ptr %5, align 4\l  %37 = sub i32 7, %36\l  %38 = sub i32 27, %37\l  %39 = sub i32 %38, 4\l  %40 = ashr i32 %35, %39\l  %41 = and i32 %40, 15\l  %42 = or i32 %34, %41\l  store i32 %42, ptr %4, align 4\l  br label %43\l}"];
+	Node0x6000022db610 -> Node0x6000022db660[tooltip="32 -> 43\nProbability 100.00%" ];
+	Node0x6000022db660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %3, align 4\l  %45 = load i32, ptr %4, align 4\l  %46 = xor i32 %45, %44\l  store i32 %46, ptr %4, align 4\l  %47 = load i32, ptr %4, align 4\l  %48 = trunc i32 %47 to i8\l  ret i8 %48\l}"];
+}

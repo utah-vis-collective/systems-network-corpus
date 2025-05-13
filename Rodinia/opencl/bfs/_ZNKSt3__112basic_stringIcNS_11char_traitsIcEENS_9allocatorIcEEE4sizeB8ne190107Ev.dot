@@ -1,0 +1,12 @@
+digraph "CFG for '_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeB8ne190107Ev' function" {
+	label="CFG for '_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeB8ne190107Ev' function";
+
+	Node0x6000005c5400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call noundef zeroext i1\l... @_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB8n\l...e190107Ev(ptr noundef nonnull align 8 dereferenceable(24) %3) #2\l  br i1 %4, label %5, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x6000005c5400:s0 -> Node0x6000005c5450[tooltip="1 -> 5\nProbability 50.00%" ];
+	Node0x6000005c5400:s1 -> Node0x6000005c54a0[tooltip="1 -> 7\nProbability 50.00%" ];
+	Node0x6000005c5450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  %6 = call noundef i64\l... @_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE15__get_long_\l...sizeB8ne190107Ev(ptr noundef nonnull align 8 dereferenceable(24) %3) #2\l  br label %9\l}"];
+	Node0x6000005c5450 -> Node0x6000005c54f0[tooltip="5 -> 9\nProbability 100.00%" ];
+	Node0x6000005c54a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{7:\l|  %8 = call noundef i64\l... @_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE16__get_short\l..._sizeB8ne190107Ev(ptr noundef nonnull align 8 dereferenceable(24) %3) #2\l  br label %9\l}"];
+	Node0x6000005c54a0 -> Node0x6000005c54f0[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x6000005c54f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = phi i64 [ %6, %5 ], [ %8, %7 ]\l  ret i64 %10\l}"];
+}

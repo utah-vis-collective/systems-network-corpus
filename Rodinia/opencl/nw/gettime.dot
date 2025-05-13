@@ -1,0 +1,5 @@
+digraph "CFG for 'gettime' function" {
+	label="CFG for 'gettime' function";
+
+	Node0x600001f9e4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca %struct.timeval, align 8\l  %2 = call i32 @gettimeofday(ptr noundef %1, ptr noundef null)\l  %3 = getelementptr inbounds %struct.timeval, ptr %1, i32 0, i32 0\l  %4 = load i64, ptr %3, align 8\l  %5 = sitofp i64 %4 to double\l  %6 = getelementptr inbounds %struct.timeval, ptr %1, i32 0, i32 1\l  %7 = load i32, ptr %6, align 8\l  %8 = sitofp i32 %7 to double\l  %9 = call double @llvm.fmuladd.f64(double %8, double 0x3EB0C6F7A0B5ED8D,\l... double %5)\l  ret double %9\l}"];
+}

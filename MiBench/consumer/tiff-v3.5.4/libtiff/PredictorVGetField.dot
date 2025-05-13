@@ -1,0 +1,14 @@
+digraph "CFG for 'PredictorVGetField' function" {
+	label="CFG for 'PredictorVGetField' function";
+
+	Node0x6000002f8f50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i64 %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %10 = load ptr, ptr %5, align 8\l  %11 = getelementptr inbounds %struct.tiff, ptr %10, i32 0, i32 37\l  %12 = load ptr, ptr %11, align 8\l  store ptr %12, ptr %8, align 8\l  %13 = load i64, ptr %6, align 8\l  switch i64 %13, label %21 [\l    i64 317, label %14\l  ]\l|{<s0>def|<s1>317}}"];
+	Node0x6000002f8f50:s0 -> Node0x6000002f8ff0[tooltip="3 -> 21\nProbability 50.00%" ];
+	Node0x6000002f8f50:s1 -> Node0x6000002f8fa0[tooltip="3 -> 14\nProbability 50.00%" ];
+	Node0x6000002f8fa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %8, align 8\l  %16 = getelementptr inbounds %struct.TIFFPredictorState, ptr %15, i32 0, i32\l... 0\l  %17 = load i32, ptr %16, align 8\l  %18 = trunc i32 %17 to i16\l  %19 = va_arg ptr %7, ptr\l  store ptr %19, ptr %9, align 8\l  %20 = load ptr, ptr %9, align 8\l  store i16 %18, ptr %20, align 2\l  br label %29\l}"];
+	Node0x6000002f8fa0 -> Node0x6000002f9040[tooltip="14 -> 29\nProbability 100.00%" ];
+	Node0x6000002f8ff0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %8, align 8\l  %23 = getelementptr inbounds %struct.TIFFPredictorState, ptr %22, i32 0, i32\l... 7\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %5, align 8\l  %26 = load i64, ptr %6, align 8\l  %27 = load ptr, ptr %7, align 8\l  %28 = call i32 %24(ptr noundef %25, i64 noundef %26, ptr noundef %27)\l  store i32 %28, ptr %4, align 4\l  br label %30\l}"];
+	Node0x6000002f8ff0 -> Node0x6000002f9090[tooltip="21 -> 30\nProbability 100.00%" ];
+	Node0x6000002f9040 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{29:\l|  store i32 1, ptr %4, align 4\l  br label %30\l}"];
+	Node0x6000002f9040 -> Node0x6000002f9090[tooltip="29 -> 30\nProbability 100.00%" ];
+	Node0x6000002f9090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %4, align 4\l  ret i32 %31\l}"];
+}

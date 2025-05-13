@@ -1,0 +1,12 @@
+digraph "CFG for 'put_string' function" {
+	label="CFG for 'put_string' function";
+
+	Node0x600003baf070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store i32 %2, ptr %7, align 4\l  store i32 %3, ptr %8, align 4\l  %9 = load i32, ptr %8, align 4\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600003baf070:s0 -> Node0x600003baf0c0[tooltip="4 -> 11\nProbability 62.50%" ];
+	Node0x600003baf070:s1 -> Node0x600003baf110[tooltip="4 -> 20\nProbability 37.50%" ];
+	Node0x600003baf0c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = call i32 @spputc(ptr noundef %12, i8 noundef zeroext -55)\l  %14 = load ptr, ptr %5, align 8\l  %15 = load i32, ptr %7, align 4\l  call void @put_u(ptr noundef %14, i32 noundef %15)\l  %16 = load ptr, ptr %5, align 8\l  %17 = load ptr, ptr %6, align 8\l  %18 = load i32, ptr %7, align 4\l  %19 = mul i32 %18, 2\l  call void @put_bytes(ptr noundef %16, ptr noundef %17, i32 noundef %19)\l  br label %28\l}"];
+	Node0x600003baf0c0 -> Node0x600003baf160[tooltip="11 -> 28\nProbability 100.00%" ];
+	Node0x600003baf110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %5, align 8\l  %22 = call i32 @spputc(ptr noundef %21, i8 noundef zeroext -56)\l  %23 = load ptr, ptr %5, align 8\l  %24 = load i32, ptr %7, align 4\l  call void @put_u(ptr noundef %23, i32 noundef %24)\l  %25 = load ptr, ptr %5, align 8\l  %26 = load ptr, ptr %6, align 8\l  %27 = load i32, ptr %7, align 4\l  call void @put_bytes(ptr noundef %25, ptr noundef %26, i32 noundef %27)\l  br label %28\l}"];
+	Node0x600003baf110 -> Node0x600003baf160[tooltip="20 -> 28\nProbability 100.00%" ];
+	Node0x600003baf160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  ret void\l}"];
+}

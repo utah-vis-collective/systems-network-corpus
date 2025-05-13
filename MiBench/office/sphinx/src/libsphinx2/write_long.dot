@@ -1,0 +1,27 @@
+digraph "CFG for 'write_long' function" {
+	label="CFG for 'write_long' function";
+
+	Node0x6000037d22b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  %6 = load i64, ptr %5, align 8\l  %7 = ashr i64 %6, 24\l  %8 = trunc i64 %7 to i32\l  %9 = load ptr, ptr %4, align 8\l  %10 = call i32 @putc(i32 noundef %8, ptr noundef %9)\l  %11 = icmp eq i32 %10, -1\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000037d22b0:s0 -> Node0x6000037d2300[tooltip="2 -> 12\nProbability 37.50%" ];
+	Node0x6000037d22b0:s1 -> Node0x6000037d2350[tooltip="2 -> 13\nProbability 62.50%" ];
+	Node0x6000037d2300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  store i32 -1, ptr %3, align 4\l  br label %37\l}"];
+	Node0x6000037d2300 -> Node0x6000037d2580[tooltip="12 -> 37\nProbability 100.00%" ];
+	Node0x6000037d2350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load i64, ptr %5, align 8\l  %15 = ashr i64 %14, 16\l  %16 = trunc i64 %15 to i32\l  %17 = load ptr, ptr %4, align 8\l  %18 = call i32 @putc(i32 noundef %16, ptr noundef %17)\l  %19 = icmp eq i32 %18, -1\l  br i1 %19, label %20, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000037d2350:s0 -> Node0x6000037d23a0[tooltip="13 -> 20\nProbability 37.50%" ];
+	Node0x6000037d2350:s1 -> Node0x6000037d23f0[tooltip="13 -> 21\nProbability 62.50%" ];
+	Node0x6000037d23a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  store i32 -1, ptr %3, align 4\l  br label %37\l}"];
+	Node0x6000037d23a0 -> Node0x6000037d2580[tooltip="20 -> 37\nProbability 100.00%" ];
+	Node0x6000037d23f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load i64, ptr %5, align 8\l  %23 = ashr i64 %22, 8\l  %24 = trunc i64 %23 to i32\l  %25 = load ptr, ptr %4, align 8\l  %26 = call i32 @putc(i32 noundef %24, ptr noundef %25)\l  %27 = icmp eq i32 %26, -1\l  br i1 %27, label %28, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x6000037d23f0:s0 -> Node0x6000037d2440[tooltip="21 -> 28\nProbability 37.50%" ];
+	Node0x6000037d23f0:s1 -> Node0x6000037d2490[tooltip="21 -> 29\nProbability 62.50%" ];
+	Node0x6000037d2440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{28:\l|  store i32 -1, ptr %3, align 4\l  br label %37\l}"];
+	Node0x6000037d2440 -> Node0x6000037d2580[tooltip="28 -> 37\nProbability 100.00%" ];
+	Node0x6000037d2490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{29:\l|  %30 = load i64, ptr %5, align 8\l  %31 = trunc i64 %30 to i32\l  %32 = load ptr, ptr %4, align 8\l  %33 = call i32 @putc(i32 noundef %31, ptr noundef %32)\l  %34 = icmp eq i32 %33, -1\l  br i1 %34, label %35, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x6000037d2490:s0 -> Node0x6000037d24e0[tooltip="29 -> 35\nProbability 37.50%" ];
+	Node0x6000037d2490:s1 -> Node0x6000037d2530[tooltip="29 -> 36\nProbability 62.50%" ];
+	Node0x6000037d24e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{35:\l|  store i32 -1, ptr %3, align 4\l  br label %37\l}"];
+	Node0x6000037d24e0 -> Node0x6000037d2580[tooltip="35 -> 37\nProbability 100.00%" ];
+	Node0x6000037d2530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{36:\l|  store i32 0, ptr %3, align 4\l  br label %37\l}"];
+	Node0x6000037d2530 -> Node0x6000037d2580[tooltip="36 -> 37\nProbability 100.00%" ];
+	Node0x6000037d2580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load i32, ptr %3, align 4\l  ret i32 %38\l}"];
+}

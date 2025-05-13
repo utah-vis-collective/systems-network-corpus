@@ -1,0 +1,20 @@
+digraph "CFG for 'inner_loop' function" {
+	label="CFG for 'inner_loop' function";
+
+	Node0x6000016149b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{5:\l|  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca ptr, align 8\l  %11 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store i32 %3, ptr %9, align 4\l  store ptr %4, ptr %10, align 8\l  %12 = load i32, ptr %9, align 4\l  %13 = icmp sge i32 %12, 0\l  %14 = xor i1 %13, true\l  %15 = zext i1 %14 to i32\l  %16 = sext i32 %15 to i64\l  %17 = icmp ne i64 %16, 0\l  br i1 %17, label %18, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000016149b0:s0 -> Node0x600001614a50[tooltip="5 -> 18\nProbability 0.00%" ];
+	Node0x6000016149b0:s1 -> Node0x600001614af0[tooltip="5 -> 20\nProbability 100.00%" ];
+	Node0x600001614a50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{18:\l|  call void @__assert_rtn(ptr noundef @__func__.inner_loop, ptr noundef\l... @.str, i32 noundef 431, ptr noundef @.str.1) #6\l  unreachable\l}"];
+	Node0x600001614aa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{19:\l|  br label %21\l}"];
+	Node0x600001614aa0 -> Node0x600001614b40[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x600001614af0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  br label %21\l}"];
+	Node0x600001614af0 -> Node0x600001614b40[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x600001614b40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %10, align 8\l  %23 = getelementptr inbounds %struct.gr_info, ptr %22, i32 0, i32 3\l  %24 = load i32, ptr %23, align 4\l  %25 = add i32 %24, -1\l  store i32 %25, ptr %23, align 4\l  br label %26\l}"];
+	Node0x600001614b40 -> Node0x600001614b90[tooltip="21 -> 26\nProbability 100.00%" ];
+	Node0x600001614b90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %10, align 8\l  %28 = getelementptr inbounds %struct.gr_info, ptr %27, i32 0, i32 3\l  %29 = load i32, ptr %28, align 4\l  %30 = add i32 %29, 1\l  store i32 %30, ptr %28, align 4\l  %31 = load ptr, ptr %6, align 8\l  %32 = load ptr, ptr %8, align 8\l  %33 = load ptr, ptr %7, align 8\l  %34 = load ptr, ptr %10, align 8\l  %35 = call i32 @count_bits(ptr noundef %31, ptr noundef %32, ptr noundef\l... %33, ptr noundef %34)\l  store i32 %35, ptr %11, align 4\l  br label %36\l}"];
+	Node0x600001614b90 -> Node0x600001614be0[tooltip="26 -> 36\nProbability 100.00%" ];
+	Node0x600001614be0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %11, align 4\l  %38 = load i32, ptr %9, align 4\l  %39 = icmp sgt i32 %37, %38\l  br i1 %39, label %26, label %40, !llvm.loop !6\l|{<s0>T|<s1>F}}"];
+	Node0x600001614be0:s0 -> Node0x600001614b90[tooltip="36 -> 26\nProbability 96.88%" ];
+	Node0x600001614be0:s1 -> Node0x600001614c30[tooltip="36 -> 40\nProbability 3.12%" ];
+	Node0x600001614c30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{40:\l|  %41 = load i32, ptr %11, align 4\l  ret i32 %41\l}"];
+}

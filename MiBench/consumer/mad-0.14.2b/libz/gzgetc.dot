@@ -1,0 +1,12 @@
+digraph "CFG for 'gzgetc' function" {
+	label="CFG for 'gzgetc' function";
+
+	Node0x600001035360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i8, align 1\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i32 @gzread(ptr noundef %4, ptr noundef %3, i32 noundef 1)\l  %6 = icmp eq i32 %5, 1\l  br i1 %6, label %7, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001035360:s0 -> Node0x6000010354a0[tooltip="1 -> 7\nProbability 50.00%" ];
+	Node0x600001035360:s1 -> Node0x6000010354f0[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x6000010354a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{7:\l|  %8 = load i8, ptr %3, align 1\l  %9 = zext i8 %8 to i32\l  br label %11\l}"];
+	Node0x6000010354a0 -> Node0x600001035540[tooltip="7 -> 11\nProbability 100.00%" ];
+	Node0x6000010354f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  br label %11\l}"];
+	Node0x6000010354f0 -> Node0x600001035540[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x600001035540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = phi i32 [ %9, %7 ], [ -1, %10 ]\l  ret i32 %12\l}"];
+}

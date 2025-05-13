@@ -1,0 +1,14 @@
+digraph "CFG for 'sig_list_clear' function" {
+	label="CFG for 'sig_list_clear' function";
+
+	Node0x600001f6dae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = load ptr, ptr @siglist, align 8\l  store ptr %3, ptr %1, align 8\l  br label %4\l}"];
+	Node0x600001f6dae0 -> Node0x600001f6db30[tooltip="0 -> 4\nProbability 100.00%" ];
+	Node0x600001f6db30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr %1, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %7, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001f6db30:s0 -> Node0x600001f6db80[tooltip="4 -> 7\nProbability 96.88%" ];
+	Node0x600001f6db30:s1 -> Node0x600001f6dc20[tooltip="4 -> 14\nProbability 3.12%" ];
+	Node0x600001f6db80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %1, align 8\l  %9 = getelementptr inbounds %struct.sig_list, ptr %8, i32 0, i32 0\l  %10 = load ptr, ptr %9, align 8\l  store ptr %10, ptr %2, align 8\l  %11 = load ptr, ptr %1, align 8\l  call void @free(ptr noundef %11)\l  br label %12\l}"];
+	Node0x600001f6db80 -> Node0x600001f6dbd0[tooltip="7 -> 12\nProbability 100.00%" ];
+	Node0x600001f6dbd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  store ptr %13, ptr %1, align 8\l  br label %4\l}"];
+	Node0x600001f6dbd0 -> Node0x600001f6db30[tooltip="12 -> 4\nProbability 100.00%" ];
+	Node0x600001f6dc20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{14:\l|  store ptr null, ptr @siglist, align 8\l  ret void\l}"];
+}

@@ -1,0 +1,9 @@
+digraph "CFG for 'newentry' function" {
+	label="CFG for 'newentry' function";
+
+	Node0x6000022dee40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = call ptr @malloc(i64 noundef 24) #6\l  %7 = load ptr, ptr %4, align 8\l  store ptr %6, ptr %7, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load ptr, ptr %8, align 8\l  %10 = icmp eq ptr %9, null\l  br i1 %10, label %11, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000022dee40:s0 -> Node0x6000022dee90[tooltip="2 -> 11\nProbability 0.00%" ];
+	Node0x6000022dee40:s1 -> Node0x6000022deee0[tooltip="2 -> 14\nProbability 100.00%" ];
+	Node0x6000022dee90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @__stderrp, align 8\l  %13 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %12, ptr noundef\l... @.str.1) #7\l  call void @exit(i32 noundef 3) #8\l  unreachable\l}"];
+	Node0x6000022deee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %5, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = load ptr, ptr %16, align 8\l  %18 = getelementptr inbounds %struct.strbuf, ptr %17, i32 0, i32 0\l  store ptr %15, ptr %18, align 8\l  %19 = load ptr, ptr %4, align 8\l  %20 = load ptr, ptr %19, align 8\l  %21 = getelementptr inbounds %struct.strbuf, ptr %20, i32 0, i32 2\l  store ptr null, ptr %21, align 8\l  %22 = load ptr, ptr %4, align 8\l  %23 = load ptr, ptr %22, align 8\l  %24 = getelementptr inbounds %struct.strbuf, ptr %23, i32 0, i32 1\l  store ptr null, ptr %24, align 8\l  %25 = load i32, ptr %3, align 4\l  ret i32 %25\l}"];
+}

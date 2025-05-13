@@ -1,0 +1,12 @@
+digraph "CFG for 'zm_free_vars' function" {
+	label="CFG for 'zm_free_vars' function";
+
+	Node0x6000014c1a40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  store i32 1, ptr %4, align 4\l  %7 = load ptr, ptr %2, align 8\l  %8 = load ptr, ptr %7, align 8\l  %9 = call i32 @zm_free(ptr noundef %8)\l  %10 = load ptr, ptr %2, align 8\l  store ptr null, ptr %10, align 8\l  call void @llvm.va_start.p0(ptr %3)\l  br label %11\l}"];
+	Node0x6000014c1a40 -> Node0x6000014c1a90[tooltip="1 -> 11\nProbability 100.00%" ];
+	Node0x6000014c1a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = va_arg ptr %3, ptr\l  store ptr %12, ptr %6, align 8\l  %13 = load ptr, ptr %6, align 8\l  store ptr %13, ptr %5, align 8\l  %14 = icmp ne ptr %13, null\l  br i1 %14, label %15, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x6000014c1a90:s0 -> Node0x6000014c1ae0[tooltip="11 -> 15\nProbability 96.88%" ];
+	Node0x6000014c1a90:s1 -> Node0x6000014c1b30[tooltip="11 -> 22\nProbability 3.12%" ];
+	Node0x6000014c1ae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %5, align 8\l  %17 = load ptr, ptr %16, align 8\l  %18 = call i32 @zm_free(ptr noundef %17)\l  %19 = load ptr, ptr %5, align 8\l  store ptr null, ptr %19, align 8\l  %20 = load i32, ptr %4, align 4\l  %21 = add nsw i32 %20, 1\l  store i32 %21, ptr %4, align 4\l  br label %11\l}"];
+	Node0x6000014c1ae0 -> Node0x6000014c1a90[tooltip="15 -> 11\nProbability 100.00%" ];
+	Node0x6000014c1b30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  call void @llvm.va_end.p0(ptr %3)\l  %23 = load i32, ptr %4, align 4\l  ret i32 %23\l}"];
+}

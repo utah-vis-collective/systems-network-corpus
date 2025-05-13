@@ -1,0 +1,5 @@
+digraph "CFG for 'bj200_open' function" {
+	label="CFG for 'bj200_open' function";
+
+	Node0x600003a9be30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.gx_device_s, ptr %4, i32 0, i32 8\l  %6 = load i32, ptr %5, align 8\l  %7 = sitofp i32 %6 to float\l  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.gx_device_s, ptr %8, i32 0, i32 13\l  %10 = getelementptr inbounds [2 x float], ptr %9, i64 0, i64 0\l  %11 = load float, ptr %10, align 4\l  %12 = fdiv float %7, %11\l  %13 = fpext float %12 to double\l  %14 = fcmp ole double %13, 8.400000e+00\l  %15 = zext i1 %14 to i64\l  %16 = select i1 %14, ptr @bj200_open.a4_margins, ptr\l... @bj200_open.letter_margins\l  call void @gx_device_set_margins(ptr noundef %3, ptr noundef %16, i32\l... noundef 1)\l  %17 = load ptr, ptr %2, align 8\l  %18 = call i32 @gdev_prn_open(ptr noundef %17)\l  ret i32 %18\l}"];
+}

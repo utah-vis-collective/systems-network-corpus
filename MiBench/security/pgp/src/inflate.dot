@@ -1,0 +1,5 @@
+digraph "CFG for 'inflate' function" {
+	label="CFG for 'inflate' function";
+
+	Node0x6000031c51d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = call i32 @inflate_entry()\l  store i32 %2, ptr %1, align 4\l  %3 = load i32, ptr %1, align 4\l  ret i32 %3\l}"];
+}

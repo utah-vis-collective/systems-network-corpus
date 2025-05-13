@@ -1,0 +1,12 @@
+digraph "CFG for 'hiloswap' function" {
+	label="CFG for 'hiloswap' function";
+
+	Node0x6000003073e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i16, align 2\l  %5 = alloca ptr, align 8\l  %6 = alloca i8, align 1\l  store ptr %0, ptr %3, align 8\l  store i16 %1, ptr %4, align 2\l  %7 = load ptr, ptr %3, align 8\l  %8 = load i16, ptr %4, align 2\l  %9 = sext i16 %8 to i32\l  %10 = sub nsw i32 %9, 1\l  %11 = sext i32 %10 to i64\l  %12 = getelementptr inbounds i8, ptr %7, i64 %11\l  store ptr %12, ptr %5, align 8\l  br label %13\l}"];
+	Node0x6000003073e0 -> Node0x600000307430[tooltip="2 -> 13\nProbability 100.00%" ];
+	Node0x600000307430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = load ptr, ptr %5, align 8\l  %16 = icmp ult ptr %14, %15\l  br i1 %16, label %17, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600000307430:s0 -> Node0x600000307480[tooltip="13 -> 17\nProbability 96.88%" ];
+	Node0x600000307430:s1 -> Node0x6000003074d0[tooltip="13 -> 27\nProbability 3.12%" ];
+	Node0x600000307480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = load i8, ptr %18, align 1\l  store i8 %19, ptr %6, align 1\l  %20 = load ptr, ptr %5, align 8\l  %21 = load i8, ptr %20, align 1\l  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds i8, ptr %22, i32 1\l  store ptr %23, ptr %3, align 8\l  store i8 %21, ptr %22, align 1\l  %24 = load i8, ptr %6, align 1\l  %25 = load ptr, ptr %5, align 8\l  %26 = getelementptr inbounds i8, ptr %25, i32 -1\l  store ptr %26, ptr %5, align 8\l  store i8 %24, ptr %25, align 1\l  br label %13\l}"];
+	Node0x600000307480 -> Node0x600000307430[tooltip="17 -> 13\nProbability 100.00%" ];
+	Node0x6000003074d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  ret void\l}"];
+}

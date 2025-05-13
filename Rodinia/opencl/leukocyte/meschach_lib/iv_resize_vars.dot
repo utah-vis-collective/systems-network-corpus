@@ -1,0 +1,12 @@
+digraph "CFG for 'iv_resize_vars' function" {
+	label="CFG for 'iv_resize_vars' function";
+
+	Node0x6000030929e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  store i32 0, ptr %4, align 4\l  call void @llvm.va_start.p0(ptr %3)\l  br label %7\l}"];
+	Node0x6000030929e0 -> Node0x600003092a30[tooltip="1 -> 7\nProbability 100.00%" ];
+	Node0x600003092a30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = va_arg ptr %3, ptr\l  store ptr %8, ptr %6, align 8\l  %9 = load ptr, ptr %6, align 8\l  store ptr %9, ptr %5, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600003092a30:s0 -> Node0x600003092a80[tooltip="7 -> 11\nProbability 96.88%" ];
+	Node0x600003092a30:s1 -> Node0x600003092ad0[tooltip="7 -> 19\nProbability 3.12%" ];
+	Node0x600003092a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = load ptr, ptr %12, align 8\l  %14 = load i32, ptr %2, align 4\l  %15 = call ptr @iv_resize(ptr noundef %13, i32 noundef %14)\l  %16 = load ptr, ptr %5, align 8\l  store ptr %15, ptr %16, align 8\l  %17 = load i32, ptr %4, align 4\l  %18 = add nsw i32 %17, 1\l  store i32 %18, ptr %4, align 4\l  br label %7\l}"];
+	Node0x600003092a80 -> Node0x600003092a30[tooltip="11 -> 7\nProbability 100.00%" ];
+	Node0x600003092ad0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  call void @llvm.va_end.p0(ptr %3)\l  %20 = load i32, ptr %4, align 4\l  ret i32 %20\l}"];
+}

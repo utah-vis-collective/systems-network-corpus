@@ -1,0 +1,5 @@
+digraph "CFG for 'message_crc' function" {
+	label="CFG for 'message_crc' function";
+
+	Node0x60000274afd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i64 @strlen(ptr noundef %4) #6\l  %6 = trunc i64 %5 to i32\l  %7 = call i64 @crcbytes(ptr noundef %3, i32 noundef %6, i64 noundef 0)\l  ret i64 %7\l}"];
+}

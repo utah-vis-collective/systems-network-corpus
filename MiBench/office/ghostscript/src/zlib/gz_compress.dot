@@ -1,0 +1,28 @@
+digraph "CFG for 'gz_compress' function" {
+	label="CFG for 'gz_compress' function";
+
+	Node0x600002e3df40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  br label %7\l}"];
+	Node0x600002e3df40 -> Node0x600002e3df90[tooltip="2 -> 7\nProbability 100.00%" ];
+	Node0x600002e3df90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %3, align 8\l  %9 = call i64 @fread(ptr noundef @gz_compress.buf, i64 noundef 1, i64\l... noundef 4096, ptr noundef %8)\l  %10 = trunc i64 %9 to i32\l  store i32 %10, ptr %5, align 4\l  %11 = load ptr, ptr %3, align 8\l  %12 = call i32 @ferror(ptr noundef %11)\l  %13 = icmp ne i32 %12, 0\l  br i1 %13, label %14, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600002e3df90:s0 -> Node0x600002e3dfe0[tooltip="7 -> 14\nProbability 0.00%" ];
+	Node0x600002e3df90:s1 -> Node0x600002e3e030[tooltip="7 -> 15\nProbability 100.00%" ];
+	Node0x600002e3dfe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{14:\l|  call void @perror(ptr noundef @.str.1) #6\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x600002e3e030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %5, align 4\l  %17 = icmp eq i32 %16, 0\l  br i1 %17, label %18, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600002e3e030:s0 -> Node0x600002e3e080[tooltip="15 -> 18\nProbability 3.12%" ];
+	Node0x600002e3e030:s1 -> Node0x600002e3e0d0[tooltip="15 -> 19\nProbability 96.88%" ];
+	Node0x600002e3e080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  br label %29\l}"];
+	Node0x600002e3e080 -> Node0x600002e3e1c0[tooltip="18 -> 29\nProbability 100.00%" ];
+	Node0x600002e3e0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  %21 = load i32, ptr %5, align 4\l  %22 = call i32 @gzwrite(ptr noundef %20, ptr noundef @gz_compress.buf, i32\l... noundef %21)\l  %23 = load i32, ptr %5, align 4\l  %24 = icmp ne i32 %22, %23\l  br i1 %24, label %25, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600002e3e0d0:s0 -> Node0x600002e3e120[tooltip="19 -> 25\nProbability 50.00%" ];
+	Node0x600002e3e0d0:s1 -> Node0x600002e3e170[tooltip="19 -> 28\nProbability 50.00%" ];
+	Node0x600002e3e120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %4, align 8\l  %27 = call ptr @gzerror(ptr noundef %26, ptr noundef %6)\l  call void @error(ptr noundef %27)\l  br label %28\l}"];
+	Node0x600002e3e120 -> Node0x600002e3e170[tooltip="25 -> 28\nProbability 100.00%" ];
+	Node0x600002e3e170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  br label %7\l}"];
+	Node0x600002e3e170 -> Node0x600002e3df90[tooltip="28 -> 7\nProbability 100.00%" ];
+	Node0x600002e3e1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %3, align 8\l  %31 = call i32 @fclose(ptr noundef %30)\l  %32 = load ptr, ptr %4, align 8\l  %33 = call i32 @gzclose(ptr noundef %32)\l  %34 = icmp ne i32 %33, 0\l  br i1 %34, label %35, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x600002e3e1c0:s0 -> Node0x600002e3e210[tooltip="29 -> 35\nProbability 62.50%" ];
+	Node0x600002e3e1c0:s1 -> Node0x600002e3e260[tooltip="29 -> 36\nProbability 37.50%" ];
+	Node0x600002e3e210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{35:\l|  call void @error(ptr noundef @.str.2)\l  br label %36\l}"];
+	Node0x600002e3e210 -> Node0x600002e3e260[tooltip="35 -> 36\nProbability 100.00%" ];
+	Node0x600002e3e260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{36:\l|  ret void\l}"];
+}

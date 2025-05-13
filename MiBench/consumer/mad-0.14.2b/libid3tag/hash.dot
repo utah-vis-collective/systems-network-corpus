@@ -1,0 +1,21 @@
+digraph "CFG for 'hash' function" {
+	label="CFG for 'hash' function";
+
+	Node0x60000064a670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  store i32 0, ptr %5, align 4\l  %6 = load i32, ptr %4, align 4\l  switch i32 %6, label %7 [\l    i32 4, label %8\l    i32 3, label %18\l    i32 2, label %28\l    i32 1, label %38\l  ]\l|{<s0>def|<s1>4|<s2>3|<s3>2|<s4>1}}"];
+	Node0x60000064a670:s0 -> Node0x60000064a6c0[tooltip="2 -> 7\nProbability 20.00%" ];
+	Node0x60000064a670:s1 -> Node0x60000064a710[tooltip="2 -> 8\nProbability 20.00%" ];
+	Node0x60000064a670:s2 -> Node0x60000064a760[tooltip="2 -> 18\nProbability 20.00%" ];
+	Node0x60000064a670:s3 -> Node0x60000064a7b0[tooltip="2 -> 28\nProbability 20.00%" ];
+	Node0x60000064a670:s4 -> Node0x60000064a800[tooltip="2 -> 38\nProbability 20.00%" ];
+	Node0x60000064a6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{7:\l|  br label %8\l}"];
+	Node0x60000064a6c0 -> Node0x60000064a710[tooltip="7 -> 8\nProbability 100.00%" ];
+	Node0x60000064a710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = getelementptr inbounds i8, ptr %9, i64 3\l  %11 = load i8, ptr %10, align 1\l  %12 = zext i8 %11 to i64\l  %13 = getelementptr inbounds [256 x i8], ptr @hash.asso_values, i64 0, i64\l... %12\l  %14 = load i8, ptr %13, align 1\l  %15 = zext i8 %14 to i32\l  %16 = load i32, ptr %5, align 4\l  %17 = add nsw i32 %16, %15\l  store i32 %17, ptr %5, align 4\l  br label %18\l}"];
+	Node0x60000064a710 -> Node0x60000064a760[tooltip="8 -> 18\nProbability 100.00%" ];
+	Node0x60000064a760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = getelementptr inbounds i8, ptr %19, i64 2\l  %21 = load i8, ptr %20, align 1\l  %22 = zext i8 %21 to i64\l  %23 = getelementptr inbounds [256 x i8], ptr @hash.asso_values, i64 0, i64\l... %22\l  %24 = load i8, ptr %23, align 1\l  %25 = zext i8 %24 to i32\l  %26 = load i32, ptr %5, align 4\l  %27 = add nsw i32 %26, %25\l  store i32 %27, ptr %5, align 4\l  br label %28\l}"];
+	Node0x60000064a760 -> Node0x60000064a7b0[tooltip="18 -> 28\nProbability 100.00%" ];
+	Node0x60000064a7b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %3, align 8\l  %30 = getelementptr inbounds i8, ptr %29, i64 1\l  %31 = load i8, ptr %30, align 1\l  %32 = zext i8 %31 to i64\l  %33 = getelementptr inbounds [256 x i8], ptr @hash.asso_values, i64 0, i64\l... %32\l  %34 = load i8, ptr %33, align 1\l  %35 = zext i8 %34 to i32\l  %36 = load i32, ptr %5, align 4\l  %37 = add nsw i32 %36, %35\l  store i32 %37, ptr %5, align 4\l  br label %38\l}"];
+	Node0x60000064a7b0 -> Node0x60000064a800[tooltip="28 -> 38\nProbability 100.00%" ];
+	Node0x60000064a800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load ptr, ptr %3, align 8\l  %40 = getelementptr inbounds i8, ptr %39, i64 0\l  %41 = load i8, ptr %40, align 1\l  %42 = zext i8 %41 to i64\l  %43 = getelementptr inbounds [256 x i8], ptr @hash.asso_values, i64 0, i64\l... %42\l  %44 = load i8, ptr %43, align 1\l  %45 = zext i8 %44 to i32\l  %46 = load i32, ptr %5, align 4\l  %47 = add nsw i32 %46, %45\l  store i32 %47, ptr %5, align 4\l  br label %48\l}"];
+	Node0x60000064a800 -> Node0x60000064a850[tooltip="38 -> 48\nProbability 100.00%" ];
+	Node0x60000064a850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = load i32, ptr %5, align 4\l  ret i32 %49\l}"];
+}

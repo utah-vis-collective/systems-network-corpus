@@ -1,0 +1,10 @@
+digraph "CFG for 'warn_notidle' function" {
+	label="CFG for 'warn_notidle' function";
+
+	Node0x6000008a0ff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load i32, ptr @uttstate, align 4\l  %4 = icmp ne i32 %3, 0\l  br i1 %4, label %5, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a0ff0:s0 -> Node0x6000008a1040[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x6000008a0ff0:s1 -> Node0x6000008a1090[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x6000008a1040 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 512, ptr noundef\l... @.str.47)\l  %6 = load ptr, ptr %2, align 8\l  call void (ptr, ...) @_E__pr_warn(ptr noundef @.str.74, ptr noundef %6)\l  br label %7\l}"];
+	Node0x6000008a1040 -> Node0x6000008a1090[tooltip="5 -> 7\nProbability 100.00%" ];
+	Node0x6000008a1090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  ret void\l}"];
+}

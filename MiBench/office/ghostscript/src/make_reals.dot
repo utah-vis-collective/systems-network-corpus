@@ -1,0 +1,14 @@
+digraph "CFG for 'make_reals' function" {
+	label="CFG for 'make_reals' function";
+
+	Node0x600003597160 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  br label %7\l}"];
+	Node0x600003597160 -> Node0x6000035971b0[tooltip="3 -> 7\nProbability 100.00%" ];
+	Node0x6000035971b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %6, align 4\l  %9 = add nsw i32 %8, -1\l  store i32 %9, ptr %6, align 4\l  %10 = icmp ne i32 %8, 0\l  br i1 %10, label %11, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000035971b0:s0 -> Node0x600003597200[tooltip="7 -> 11\nProbability 96.88%" ];
+	Node0x6000035971b0:s1 -> Node0x6000035972a0[tooltip="7 -> 24\nProbability 3.12%" ];
+	Node0x600003597200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = load float, ptr %12, align 4\l  %14 = load ptr, ptr %4, align 8\l  %15 = getelementptr inbounds %struct.ref_s, ptr %14, i32 0, i32 1\l  store float %13, ptr %15, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = getelementptr inbounds %struct.ref_s, ptr %16, i32 0, i32 0\l  %18 = getelementptr inbounds %struct.tas_s, ptr %17, i32 0, i32 0\l  store i16 4096, ptr %18, align 8\l  br label %19\l}"];
+	Node0x600003597200 -> Node0x600003597250[tooltip="11 -> 19\nProbability 100.00%" ];
+	Node0x600003597250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds %struct.ref_s, ptr %20, i32 1\l  store ptr %21, ptr %4, align 8\l  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds float, ptr %22, i32 1\l  store ptr %23, ptr %5, align 8\l  br label %7\l}"];
+	Node0x600003597250 -> Node0x6000035971b0[tooltip="19 -> 7\nProbability 100.00%" ];
+	Node0x6000035972a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  ret void\l}"];
+}

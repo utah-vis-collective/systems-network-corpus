@@ -1,0 +1,10 @@
+digraph "CFG for 'trueRandByte' function" {
+	label="CFG for 'trueRandByte' function";
+
+	Node0x6000012c6800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @trueRandPending, align 4\l  %2 = icmp ne i32 %1, 0\l  br i1 %2, label %3, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c6800:s0 -> Node0x6000012c6850[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x6000012c6800:s1 -> Node0x6000012c68a0[tooltip="0 -> 4\nProbability 37.50%" ];
+	Node0x6000012c6850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  call void @trueRandAccum(i32 noundef 0)\l  br label %4\l}"];
+	Node0x6000012c6850 -> Node0x6000012c68a0[tooltip="3 -> 4\nProbability 100.00%" ];
+	Node0x6000012c68a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = call zeroext i8 @randPoolGetByte()\l  %6 = zext i8 %5 to i32\l  ret i32 %6\l}"];
+}

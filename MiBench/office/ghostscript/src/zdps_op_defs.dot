@@ -1,0 +1,5 @@
+digraph "CFG for 'zdps_op_defs' function" {
+	label="CFG for 'zdps_op_defs' function";
+
+	Node0x6000030d5ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zdps_op_defs.op_defs_\l}"];
+}

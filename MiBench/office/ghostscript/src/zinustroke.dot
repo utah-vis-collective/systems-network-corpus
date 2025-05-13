@@ -1,0 +1,20 @@
+digraph "CFG for 'zinustroke' function" {
+	label="CFG for 'zinustroke' function";
+
+	Node0x600003a864e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca %struct.gx_device_s, align 8\l  store ptr %0, ptr %3, align 8\l  %8 = load ptr, ptr @igs, align 8\l  %9 = call i32 @gs_gsave(ptr noundef %8)\l  store i32 %9, ptr %4, align 4\l  %10 = load i32, ptr %4, align 4\l  %11 = icmp slt i32 %10, 0\l  br i1 %11, label %12, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600003a864e0:s0 -> Node0x600003a86530[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x600003a864e0:s1 -> Node0x600003a86580[tooltip="1 -> 14\nProbability 62.50%" ];
+	Node0x600003a86530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %4, align 4\l  store i32 %13, ptr %2, align 4\l  br label %40\l}"];
+	Node0x600003a86530 -> Node0x600003a866c0[tooltip="12 -> 40\nProbability 100.00%" ];
+	Node0x600003a86580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = call i32 @upath_stroke(ptr noundef %15)\l  store i32 %16, ptr %5, align 4\l  %17 = icmp slt i32 %16, 0\l  br i1 %17, label %27, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600003a86580:s0 -> Node0x600003a86620[tooltip="14 -> 27\nProbability 37.50%" ];
+	Node0x600003a86580:s1 -> Node0x600003a865d0[tooltip="14 -> 18\nProbability 62.50%" ];
+	Node0x600003a865d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = load i32, ptr %5, align 4\l  %21 = sext i32 %20 to i64\l  %22 = sub i64 0, %21\l  %23 = getelementptr inbounds %struct.ref_s, ptr %19, i64 %22\l  %24 = load ptr, ptr %3, align 8\l  %25 = call i32 @in_path(ptr noundef %23, ptr noundef %24, ptr noundef %7)\l  store i32 %25, ptr %6, align 4\l  %26 = icmp slt i32 %25, 0\l  br i1 %26, label %27, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600003a865d0:s0 -> Node0x600003a86620[tooltip="18 -> 27\nProbability 37.50%" ];
+	Node0x600003a865d0:s1 -> Node0x600003a86670[tooltip="18 -> 31\nProbability 62.50%" ];
+	Node0x600003a86620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr @igs, align 8\l  %29 = call i32 @gs_grestore(ptr noundef %28)\l  %30 = load i32, ptr %4, align 4\l  store i32 %30, ptr %2, align 4\l  br label %40\l}"];
+	Node0x600003a86620 -> Node0x600003a866c0[tooltip="27 -> 40\nProbability 100.00%" ];
+	Node0x600003a86670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr @igs, align 8\l  %33 = call i32 @gs_stroke(ptr noundef %32)\l  store i32 %33, ptr %4, align 4\l  %34 = load ptr, ptr %3, align 8\l  %35 = load i32, ptr %6, align 4\l  %36 = load i32, ptr %5, align 4\l  %37 = add nsw i32 %35, %36\l  %38 = load i32, ptr %4, align 4\l  %39 = call i32 @in_upath_result(ptr noundef %34, i32 noundef %37, i32\l... noundef %38)\l  store i32 %39, ptr %2, align 4\l  br label %40\l}"];
+	Node0x600003a86670 -> Node0x600003a866c0[tooltip="31 -> 40\nProbability 100.00%" ];
+	Node0x600003a866c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  %41 = load i32, ptr %2, align 4\l  ret i32 %41\l}"];
+}

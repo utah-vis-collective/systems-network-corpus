@@ -1,0 +1,12 @@
+digraph "CFG for 'hputs' function" {
+	label="CFG for 'hputs' function";
+
+	Node0x600001acc690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  br label %5\l}"];
+	Node0x600001acc690 -> Node0x600001acc6e0[tooltip="2 -> 5\nProbability 100.00%" ];
+	Node0x600001acc6e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %3, align 8\l  %7 = load i8, ptr %6, align 1\l  %8 = icmp ne i8 %7, 0\l  br i1 %8, label %9, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001acc6e0:s0 -> Node0x600001acc730[tooltip="5 -> 9\nProbability 96.88%" ];
+	Node0x600001acc6e0:s1 -> Node0x600001acc780[tooltip="5 -> 17\nProbability 3.12%" ];
+	Node0x600001acc730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds i8, ptr %10, i32 1\l  store ptr %11, ptr %3, align 8\l  %12 = load i8, ptr %10, align 1\l  %13 = sext i8 %12 to i32\l  %14 = and i32 %13, 255\l  %15 = load ptr, ptr %4, align 8\l  %16 = call i32 @hputc(i32 noundef %14, ptr noundef %15)\l  br label %5\l}"];
+	Node0x600001acc730 -> Node0x600001acc6e0[tooltip="9 -> 5\nProbability 100.00%" ];
+	Node0x600001acc780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{17:\l|  ret i32 0\l}"];
+}

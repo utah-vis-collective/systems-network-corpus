@@ -1,0 +1,23 @@
+digraph "CFG for 'cid_si_enum_ptrs' function" {
+	label="CFG for 'cid_si_enum_ptrs' function";
+
+	Node0x6000017fae40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store ptr %3, ptr %9, align 8\l  %10 = load i32, ptr %8, align 4\l  switch i32 %10, label %11 [\l    i32 0, label %12\l    i32 1, label %18\l  ]\l|{<s0>def|<s1>0|<s2>1}}"];
+	Node0x6000017fae40:s0 -> Node0x6000017fae90[tooltip="4 -> 11\nProbability 33.33%" ];
+	Node0x6000017fae40:s1 -> Node0x6000017faee0[tooltip="4 -> 12\nProbability 33.33%" ];
+	Node0x6000017fae40:s2 -> Node0x6000017fafd0[tooltip="4 -> 18\nProbability 33.33%" ];
+	Node0x6000017fae90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  store ptr null, ptr %5, align 8\l  br label %24\l}"];
+	Node0x6000017fae90 -> Node0x6000017fb0c0[tooltip="11 -> 24\nProbability 100.00%" ];
+	Node0x6000017faee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x6000017faee0 -> Node0x6000017faf30[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x6000017faf30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %6, align 8\l  %15 = getelementptr inbounds %struct.gs_cid_system_info_s, ptr %14, i32 0,\l... i32 0\l  %16 = load ptr, ptr %9, align 8\l  store ptr %15, ptr %16, align 8\l  store ptr @ptr_const_string_procs, ptr %5, align 8\l  br label %24\l}"];
+	Node0x6000017faf30 -> Node0x6000017fb0c0[tooltip="13 -> 24\nProbability 100.00%" ];
+	Node0x6000017faf80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{17:\l|  br label %18\l}"];
+	Node0x6000017faf80 -> Node0x6000017fafd0[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x6000017fafd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  br label %19\l}"];
+	Node0x6000017fafd0 -> Node0x6000017fb020[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x6000017fb020 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %6, align 8\l  %21 = getelementptr inbounds %struct.gs_cid_system_info_s, ptr %20, i32 0,\l... i32 1\l  %22 = load ptr, ptr %9, align 8\l  store ptr %21, ptr %22, align 8\l  store ptr @ptr_const_string_procs, ptr %5, align 8\l  br label %24\l}"];
+	Node0x6000017fb020 -> Node0x6000017fb0c0[tooltip="19 -> 24\nProbability 100.00%" ];
+	Node0x6000017fb070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x6000017fb070 -> Node0x6000017fb0c0[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x6000017fb0c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %5, align 8\l  ret ptr %25\l}"];
+}

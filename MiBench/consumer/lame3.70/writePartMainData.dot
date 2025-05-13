@@ -1,0 +1,30 @@
+digraph "CFG for 'writePartMainData' function" {
+	label="CFG for 'writePartMainData' function";
+
+	Node0x6000039dd5e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %7, align 4\l  %8 = load ptr, ptr %4, align 8\l  %9 = icmp ne ptr %8, null\l  %10 = xor i1 %9, true\l  %11 = zext i1 %10 to i32\l  %12 = sext i32 %11 to i64\l  %13 = icmp ne i64 %12, 0\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000039dd5e0:s0 -> Node0x6000039dd630[tooltip="2 -> 14\nProbability 0.00%" ];
+	Node0x6000039dd5e0:s1 -> Node0x6000039dd6d0[tooltip="2 -> 16\nProbability 100.00%" ];
+	Node0x6000039dd630 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{14:\l|  call void @__assert_rtn(ptr noundef @__func__.writePartMainData, ptr\l... noundef @.str, i32 noundef 157, ptr noundef @.str.7) #7\l  unreachable\l}"];
+	Node0x6000039dd680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{15:\l|  br label %17\l}"];
+	Node0x6000039dd680 -> Node0x6000039dd720[tooltip="15 -> 17\nProbability 100.00%" ];
+	Node0x6000039dd6d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  br label %17\l}"];
+	Node0x6000039dd6d0 -> Node0x6000039dd720[tooltip="16 -> 17\nProbability 100.00%" ];
+	Node0x6000039dd720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = icmp ne ptr %18, null\l  %20 = xor i1 %19, true\l  %21 = zext i1 %20 to i32\l  %22 = sext i32 %21 to i64\l  %23 = icmp ne i64 %22, 0\l  br i1 %23, label %24, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000039dd720:s0 -> Node0x6000039dd770[tooltip="17 -> 24\nProbability 0.00%" ];
+	Node0x6000039dd720:s1 -> Node0x6000039dd810[tooltip="17 -> 26\nProbability 100.00%" ];
+	Node0x6000039dd770 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{24:\l|  call void @__assert_rtn(ptr noundef @__func__.writePartMainData, ptr\l... noundef @.str, i32 noundef 158, ptr noundef @.str.8) #7\l  unreachable\l}"];
+	Node0x6000039dd7c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{25:\l|  br label %27\l}"];
+	Node0x6000039dd7c0 -> Node0x6000039dd860[tooltip="25 -> 27\nProbability 100.00%" ];
+	Node0x6000039dd810 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{26:\l|  br label %27\l}"];
+	Node0x6000039dd810 -> Node0x6000039dd860[tooltip="26 -> 27\nProbability 100.00%" ];
+	Node0x6000039dd860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %3, align 8\l  %29 = getelementptr inbounds %struct.BF_BitstreamPart, ptr %28, i32 0, i32 1\l  %30 = load ptr, ptr %29, align 8\l  store ptr %30, ptr %5, align 8\l  store i32 0, ptr %6, align 4\l  br label %31\l}"];
+	Node0x6000039dd860 -> Node0x6000039dd8b0[tooltip="27 -> 31\nProbability 100.00%" ];
+	Node0x6000039dd8b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %6, align 4\l  %33 = load ptr, ptr %3, align 8\l  %34 = getelementptr inbounds %struct.BF_BitstreamPart, ptr %33, i32 0, i32 0\l  %35 = load i32, ptr %34, align 8\l  %36 = icmp ult i32 %32, %35\l  br i1 %36, label %37, label %57\l|{<s0>T|<s1>F}}"];
+	Node0x6000039dd8b0:s0 -> Node0x6000039dd900[tooltip="31 -> 37\nProbability 96.88%" ];
+	Node0x6000039dd8b0:s1 -> Node0x6000039dd9a0[tooltip="31 -> 57\nProbability 3.12%" ];
+	Node0x6000039dd900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %5, align 8\l  %39 = getelementptr inbounds %struct.BF_BitstreamElement, ptr %38, i32 0,\l... i32 0\l  %40 = load i32, ptr %39, align 4\l  %41 = load ptr, ptr %5, align 8\l  %42 = getelementptr inbounds %struct.BF_BitstreamElement, ptr %41, i32 0,\l... i32 1\l  %43 = load i16, ptr %42, align 4\l  %44 = zext i16 %43 to i32\l  %45 = load ptr, ptr %4, align 8\l  call void @WriteMainDataBits(i32 noundef %40, i32 noundef %44, ptr noundef\l... %45)\l  %46 = load ptr, ptr %5, align 8\l  %47 = getelementptr inbounds %struct.BF_BitstreamElement, ptr %46, i32 0,\l... i32 1\l  %48 = load i16, ptr %47, align 4\l  %49 = zext i16 %48 to i32\l  %50 = load i32, ptr %7, align 4\l  %51 = add nsw i32 %50, %49\l  store i32 %51, ptr %7, align 4\l  br label %52\l}"];
+	Node0x6000039dd900 -> Node0x6000039dd950[tooltip="37 -> 52\nProbability 100.00%" ];
+	Node0x6000039dd950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{52:\l|  %53 = load i32, ptr %6, align 4\l  %54 = add i32 %53, 1\l  store i32 %54, ptr %6, align 4\l  %55 = load ptr, ptr %5, align 8\l  %56 = getelementptr inbounds %struct.BF_BitstreamElement, ptr %55, i32 1\l  store ptr %56, ptr %5, align 8\l  br label %31, !llvm.loop !6\l}"];
+	Node0x6000039dd950 -> Node0x6000039dd8b0[tooltip="52 -> 31\nProbability 100.00%" ];
+	Node0x6000039dd9a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{57:\l|  %58 = load i32, ptr %7, align 4\l  ret i32 %58\l}"];
+}

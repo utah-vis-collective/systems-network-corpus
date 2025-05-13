@@ -1,0 +1,5 @@
+digraph "CFG for 'zcrd_l2_op_defs' function" {
+	label="CFG for 'zcrd_l2_op_defs' function";
+
+	Node0x600001726d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zcrd_l2_op_defs.op_defs_\l}"];
+}

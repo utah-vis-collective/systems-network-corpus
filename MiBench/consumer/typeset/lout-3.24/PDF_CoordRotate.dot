@@ -1,0 +1,10 @@
+digraph "CFG for 'PDF_CoordRotate' function" {
+	label="CFG for 'PDF_CoordRotate' function";
+
+	Node0x6000016237a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %4 = load i32, ptr %2, align 4\l  %5 = sdiv i32 %4, 128\l  %6 = srem i32 %5, 360\l  store i32 %6, ptr %3, align 4\l  %7 = load i32, ptr %3, align 4\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000016237a0:s0 -> Node0x6000016237f0[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x6000016237a0:s1 -> Node0x600001623840[tooltip="1 -> 16\nProbability 37.50%" ];
+	Node0x6000016237f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @out_fp, align 8\l  %11 = load i32, ptr %3, align 4\l  %12 = sitofp i32 %11 to double\l  %13 = fmul double %12, 0x400921FB54442D18\l  %14 = fdiv double %13, 1.800000e+02\l  %15 = fptrunc double %14 to float\l  call void @PDFPage_Rotate(ptr noundef %10, float noundef %15)\l  br label %16\l}"];
+	Node0x6000016237f0 -> Node0x600001623840[tooltip="9 -> 16\nProbability 100.00%" ];
+	Node0x600001623840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  store i32 0, ptr @cpexists, align 4\l  ret void\l}"];
+}

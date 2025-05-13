@@ -1,0 +1,17 @@
+digraph "CFG for 'in_path_result' function" {
+	label="CFG for 'in_path_result' function";
+
+	Node0x600003a879d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store i32 %2, ptr %7, align 4\l  %9 = load ptr, ptr @igs, align 8\l  %10 = call i32 @gs_grestore(ptr noundef %9)\l  %11 = load i32, ptr %7, align 4\l  switch i32 %11, label %14 [\l    i32 -8, label %12\l    i32 0, label %13\l  ]\l|{<s0>def|<s1>-8|<s2>0}}"];
+	Node0x600003a879d0:s0 -> Node0x600003a87ac0[tooltip="3 -> 14\nProbability 33.33%" ];
+	Node0x600003a879d0:s1 -> Node0x600003a87a20[tooltip="3 -> 12\nProbability 33.33%" ];
+	Node0x600003a879d0:s2 -> Node0x600003a87a70[tooltip="3 -> 13\nProbability 33.33%" ];
+	Node0x600003a87a20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  store i32 1, ptr %8, align 4\l  br label %16\l}"];
+	Node0x600003a87a20 -> Node0x600003a87b10[tooltip="12 -> 16\nProbability 100.00%" ];
+	Node0x600003a87a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  store i32 0, ptr %8, align 4\l  br label %16\l}"];
+	Node0x600003a87a70 -> Node0x600003a87b10[tooltip="13 -> 16\nProbability 100.00%" ];
+	Node0x600003a87ac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %7, align 4\l  store i32 %15, ptr %4, align 4\l  br label %36\l}"];
+	Node0x600003a87ac0 -> Node0x600003a87b60[tooltip="14 -> 36\nProbability 100.00%" ];
+	Node0x600003a87b10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %6, align 4\l  %18 = add nsw i32 %17, -1\l  store i32 %18, ptr %6, align 4\l  %19 = load i32, ptr %6, align 4\l  %20 = load ptr, ptr @o_stack, align 8\l  %21 = sext i32 %19 to i64\l  %22 = sub i64 0, %21\l  %23 = getelementptr inbounds %struct.ref_s, ptr %20, i64 %22\l  store ptr %23, ptr @o_stack, align 8\l  %24 = load i32, ptr %6, align 4\l  %25 = load ptr, ptr %5, align 8\l  %26 = sext i32 %24 to i64\l  %27 = sub i64 0, %26\l  %28 = getelementptr inbounds %struct.ref_s, ptr %25, i64 %27\l  store ptr %28, ptr %5, align 8\l  %29 = load i32, ptr %8, align 4\l  %30 = trunc i32 %29 to i16\l  %31 = load ptr, ptr %5, align 8\l  %32 = getelementptr inbounds %struct.ref_s, ptr %31, i32 0, i32 1\l  store i16 %30, ptr %32, align 8\l  %33 = load ptr, ptr %5, align 8\l  %34 = getelementptr inbounds %struct.ref_s, ptr %33, i32 0, i32 0\l  %35 = getelementptr inbounds %struct.tas_s, ptr %34, i32 0, i32 0\l  store i16 256, ptr %35, align 8\l  store i32 0, ptr %4, align 4\l  br label %36\l}"];
+	Node0x600003a87b10 -> Node0x600003a87b60[tooltip="16 -> 36\nProbability 100.00%" ];
+	Node0x600003a87b60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %4, align 4\l  ret i32 %37\l}"];
+}

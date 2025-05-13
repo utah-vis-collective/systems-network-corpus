@@ -1,0 +1,5 @@
+digraph "CFG for 'lm3g_raw_score' function" {
+	label="CFG for 'lm3g_raw_score' function";
+
+	Node0x600002539fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load ptr, ptr @lmp, align 8\l  %4 = getelementptr inbounds %struct.lm_s, ptr %3, i32 0, i32 22\l  %5 = load i32, ptr %4, align 8\l  %6 = load i32, ptr %2, align 4\l  %7 = sub nsw i32 %6, %5\l  store i32 %7, ptr %2, align 4\l  %8 = load ptr, ptr @lmp, align 8\l  %9 = getelementptr inbounds %struct.lm_s, ptr %8, i32 0, i32 20\l  %10 = load double, ptr %9, align 8\l  %11 = load i32, ptr %2, align 4\l  %12 = sitofp i32 %11 to double\l  %13 = fmul double %12, %10\l  %14 = fptosi double %13 to i32\l  store i32 %14, ptr %2, align 4\l  %15 = load i32, ptr %2, align 4\l  ret i32 %15\l}"];
+}

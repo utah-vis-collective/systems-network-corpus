@@ -1,0 +1,18 @@
+digraph "CFG for 'gsm_L_mult' function" {
+	label="CFG for 'gsm_L_mult' function";
+
+	Node0x60000085d4a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  store i16 %0, ptr %3, align 2\l  store i16 %1, ptr %4, align 2\l  %5 = load i16, ptr %3, align 2\l  %6 = sext i16 %5 to i32\l  %7 = icmp ne i32 %6, -32768\l  br i1 %7, label %12, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x60000085d4a0:s0 -> Node0x60000085d590[tooltip="2 -> 12\nProbability 50.00%" ];
+	Node0x60000085d4a0:s1 -> Node0x60000085d540[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x60000085d540 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load i16, ptr %4, align 2\l  %10 = sext i16 %9 to i32\l  %11 = icmp ne i32 %10, -32768\l  br label %12\l}"];
+	Node0x60000085d540 -> Node0x60000085d590[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x60000085d590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = phi i1 [ true, %2 ], [ %11, %8 ]\l  %14 = xor i1 %13, true\l  %15 = zext i1 %14 to i32\l  %16 = sext i32 %15 to i64\l  %17 = icmp ne i64 %16, 0\l  br i1 %17, label %18, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x60000085d590:s0 -> Node0x60000085d5e0[tooltip="12 -> 18\nProbability 0.00%" ];
+	Node0x60000085d590:s1 -> Node0x60000085d680[tooltip="12 -> 20\nProbability 100.00%" ];
+	Node0x60000085d5e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{18:\l|  call void @__assert_rtn(ptr noundef @__func__.gsm_L_mult, ptr noundef\l... @.str, i32 noundef 58, ptr noundef @.str.1) #6\l  unreachable\l}"];
+	Node0x60000085d630 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{19:\l|  br label %21\l}"];
+	Node0x60000085d630 -> Node0x60000085d6d0[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x60000085d680 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  br label %21\l}"];
+	Node0x60000085d680 -> Node0x60000085d6d0[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x60000085d6d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i16, ptr %3, align 2\l  %23 = sext i16 %22 to i64\l  %24 = load i16, ptr %4, align 2\l  %25 = sext i16 %24 to i64\l  %26 = mul nsw i64 %23, %25\l  %27 = shl i64 %26, 1\l  ret i64 %27\l}"];
+}

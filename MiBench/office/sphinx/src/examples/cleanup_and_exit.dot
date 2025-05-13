@@ -1,0 +1,25 @@
+digraph "CFG for 'cleanup_and_exit' function" {
+	label="CFG for 'cleanup_and_exit' function";
+
+	Node0x600002b15220 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @ad, align 8\l  %2 = icmp ne ptr %1, null\l  br i1 %2, label %3, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x600002b15220:s0 -> Node0x600002b15270[tooltip="0 -> 3\nProbability 50.00%" ];
+	Node0x600002b15220:s1 -> Node0x600002b152c0[tooltip="0 -> 6\nProbability 50.00%" ];
+	Node0x600002b15270 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @ad, align 8\l  %5 = call i32 @ad_stop_rec(ptr noundef %4)\l  br label %6\l}"];
+	Node0x600002b15270 -> Node0x600002b152c0[tooltip="3 -> 6\nProbability 100.00%" ];
+	Node0x600002b152c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @cont, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600002b152c0:s0 -> Node0x600002b15310[tooltip="6 -> 9\nProbability 50.00%" ];
+	Node0x600002b152c0:s1 -> Node0x600002b15360[tooltip="6 -> 12\nProbability 50.00%" ];
+	Node0x600002b15310 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @cont, align 8\l  %11 = call i32 @cont_ad_close(ptr noundef %10)\l  br label %12\l}"];
+	Node0x600002b15310 -> Node0x600002b15360[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x600002b15360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr @ad, align 8\l  %14 = icmp ne ptr %13, null\l  br i1 %14, label %15, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600002b15360:s0 -> Node0x600002b153b0[tooltip="12 -> 15\nProbability 50.00%" ];
+	Node0x600002b15360:s1 -> Node0x600002b15400[tooltip="12 -> 18\nProbability 50.00%" ];
+	Node0x600002b153b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr @ad, align 8\l  %17 = call i32 @ad_close(ptr noundef %16)\l  br label %18\l}"];
+	Node0x600002b153b0 -> Node0x600002b15400[tooltip="15 -> 18\nProbability 100.00%" ];
+	Node0x600002b15400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr @adfp, align 8\l  %20 = icmp ne ptr %19, null\l  br i1 %20, label %21, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600002b15400:s0 -> Node0x600002b15450[tooltip="18 -> 21\nProbability 50.00%" ];
+	Node0x600002b15400:s1 -> Node0x600002b154a0[tooltip="18 -> 24\nProbability 50.00%" ];
+	Node0x600002b15450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr @adfp, align 8\l  %23 = call i32 @fclose(ptr noundef %22)\l  br label %24\l}"];
+	Node0x600002b15450 -> Node0x600002b154a0[tooltip="21 -> 24\nProbability 100.00%" ];
+	Node0x600002b154a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  call void @exit(i32 noundef 0) #6\l  unreachable\l}"];
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'cont_ad_set_thresh' function" {
+	label="CFG for 'cont_ad_set_thresh' function";
+
+	Node0x600000a7b7a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store i32 %2, ptr %7, align 4\l  %8 = load i32, ptr %6, align 4\l  %9 = icmp slt i32 %8, 0\l  br i1 %9, label %13, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600000a7b7a0:s0 -> Node0x600000a7b840[tooltip="3 -> 13\nProbability 37.50%" ];
+	Node0x600000a7b7a0:s1 -> Node0x600000a7b7f0[tooltip="3 -> 10\nProbability 62.50%" ];
+	Node0x600000a7b7f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %7, align 4\l  %12 = icmp slt i32 %11, 0\l  br i1 %12, label %13, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600000a7b7f0:s0 -> Node0x600000a7b840[tooltip="10 -> 13\nProbability 37.50%" ];
+	Node0x600000a7b7f0:s1 -> Node0x600000a7b890[tooltip="10 -> 18\nProbability 62.50%" ];
+	Node0x600000a7b840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @__stderrp, align 8\l  %15 = load i32, ptr %6, align 4\l  %16 = load i32, ptr %7, align 4\l  %17 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %14, ptr noundef\l... @.str.10, i32 noundef %15, i32 noundef %16) #9\l  store i32 -1, ptr %4, align 4\l  br label %29\l}"];
+	Node0x600000a7b840 -> Node0x600000a7b8e0[tooltip="13 -> 29\nProbability 100.00%" ];
+	Node0x600000a7b890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %6, align 4\l  %20 = mul nsw i32 3, %19\l  %21 = sdiv i32 %20, 2\l  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds %struct.cont_ad_t, ptr %22, i32 0, i32 17\l  store i32 %21, ptr %23, align 4\l  %24 = load i32, ptr %7, align 4\l  %25 = mul nsw i32 3, %24\l  %26 = sdiv i32 %25, 2\l  %27 = load ptr, ptr %5, align 8\l  %28 = getelementptr inbounds %struct.cont_ad_t, ptr %27, i32 0, i32 18\l  store i32 %26, ptr %28, align 8\l  store i32 0, ptr %4, align 4\l  br label %29\l}"];
+	Node0x600000a7b890 -> Node0x600000a7b8e0[tooltip="18 -> 29\nProbability 100.00%" ];
+	Node0x600000a7b8e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %4, align 4\l  ret i32 %30\l}"];
+}

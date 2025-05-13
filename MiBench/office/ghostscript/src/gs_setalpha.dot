@@ -1,0 +1,19 @@
+digraph "CFG for 'gs_setalpha' function" {
+	label="CFG for 'gs_setalpha' function";
+
+	Node0x60000256d810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %5 = load double, ptr %4, align 8\l  %6 = fcmp olt double %5, 0.000000e+00\l  br i1 %6, label %7, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x60000256d810:s0 -> Node0x60000256d860[tooltip="2 -> 7\nProbability 50.00%" ];
+	Node0x60000256d810:s1 -> Node0x60000256d8b0[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x60000256d860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{7:\l|  br label %16\l}"];
+	Node0x60000256d860 -> Node0x60000256d9f0[tooltip="7 -> 16\nProbability 100.00%" ];
+	Node0x60000256d8b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load double, ptr %4, align 8\l  %10 = fcmp ogt double %9, 1.000000e+00\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000256d8b0:s0 -> Node0x60000256d900[tooltip="8 -> 11\nProbability 50.00%" ];
+	Node0x60000256d8b0:s1 -> Node0x60000256d950[tooltip="8 -> 12\nProbability 50.00%" ];
+	Node0x60000256d900 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{11:\l|  br label %14\l}"];
+	Node0x60000256d900 -> Node0x60000256d9a0[tooltip="11 -> 14\nProbability 100.00%" ];
+	Node0x60000256d950 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{12:\l|  %13 = load double, ptr %4, align 8\l  br label %14\l}"];
+	Node0x60000256d950 -> Node0x60000256d9a0[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x60000256d9a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = phi double [ 1.000000e+00, %11 ], [ %13, %12 ]\l  br label %16\l}"];
+	Node0x60000256d9a0 -> Node0x60000256d9f0[tooltip="14 -> 16\nProbability 100.00%" ];
+	Node0x60000256d9f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = phi double [ 0.000000e+00, %7 ], [ %15, %14 ]\l  %18 = fmul double %17, 6.553500e+04\l  %19 = fptoui double %18 to i16\l  %20 = load ptr, ptr %3, align 8\l  %21 = getelementptr inbounds %struct.gs_state_s, ptr %20, i32 0, i32 4\l  store i16 %19, ptr %21, align 4\l  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds %struct.gs_state_s, ptr %22, i32 0, i32 34\l  %24 = load ptr, ptr %23, align 8\l  %25 = getelementptr inbounds %struct.gx_device_color_s, ptr %24, i32 0, i32 0\l  store ptr @gx_dc_procs_none, ptr %25, align 8\l  ret i32 0\l}"];
+}

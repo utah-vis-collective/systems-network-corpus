@@ -1,0 +1,5 @@
+digraph "CFG for '_OSSwapInt32' function" {
+	label="CFG for '_OSSwapInt32' function";
+
+	Node0x600002736490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = call i32 @llvm.bswap.i32(i32 %3)\l  store i32 %4, ptr %2, align 4\l  %5 = load i32, ptr %2, align 4\l  ret i32 %5\l}"];
+}

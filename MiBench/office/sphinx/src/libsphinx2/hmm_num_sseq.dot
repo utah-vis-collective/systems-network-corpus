@@ -1,0 +1,9 @@
+digraph "CFG for 'hmm_num_sseq' function" {
+	label="CFG for 'hmm_num_sseq' function";
+
+	Node0x600000fe8320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @numSSeq, align 4\l  %2 = icmp eq i32 %1, 0\l  br i1 %2, label %3, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x600000fe8320:s0 -> Node0x600000fe8370[tooltip="0 -> 3\nProbability 0.00%" ];
+	Node0x600000fe8320:s1 -> Node0x600000fe83c0[tooltip="0 -> 4\nProbability 100.00%" ];
+	Node0x600000fe8370 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{3:\l|  call void (ptr, ...) @log_error(ptr noundef @.str.16, ptr noundef @.str.2,\l... i32 noundef 1509)\l  call void @exit(i32 noundef -1) #7\l  unreachable\l}"];
+	Node0x600000fe83c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load i32, ptr @numSSeq, align 4\l  ret i32 %5\l}"];
+}

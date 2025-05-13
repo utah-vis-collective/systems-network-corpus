@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__134__uninitialized_allocator_relocateB8ne190107INS_9allocatorIP10_cl_kernelEES3_EEvRT_PT0_S8_S8_' function" {
+	label="CFG for '_ZNSt3__134__uninitialized_allocator_relocateB8ne190107INS_9allocatorIP10_cl_kernelEES3_EEvRT_PT0_S8_S8_' function";
+
+	Node0x60000093eb20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store ptr %3, ptr %8, align 8\l  %9 = load ptr, ptr %8, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = load ptr, ptr %7, align 8\l  %12 = load ptr, ptr %6, align 8\l  %13 = ptrtoint ptr %11 to i64\l  %14 = ptrtoint ptr %12 to i64\l  %15 = sub i64 %13, %14\l  %16 = sdiv exact i64 %15, 8\l  %17 = mul i64 8, %16\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %9, ptr align 8 %10, i64 %17,\l... i1 false)\l  ret void\l}"];
+}

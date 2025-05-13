@@ -1,0 +1,14 @@
+digraph "CFG for 'fwdflat_search' function" {
+	label="CFG for 'fwdflat_search' function";
+
+	Node0x6000008ac0f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  call void @search_fwdflat_start()\l  store i32 0, ptr %3, align 4\l  store i32 0, ptr %4, align 4\l  store i32 0, ptr %5, align 4\l  br label %6\l}"];
+	Node0x6000008ac0f0 -> Node0x6000008ac140[tooltip="1 -> 6\nProbability 100.00%" ];
+	Node0x6000008ac140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %3, align 4\l  %8 = load i32, ptr %2, align 4\l  %9 = icmp slt i32 %7, %8\l  br i1 %9, label %10, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x6000008ac140:s0 -> Node0x6000008ac190[tooltip="6 -> 10\nProbability 96.88%" ];
+	Node0x6000008ac140:s1 -> Node0x6000008ac230[tooltip="6 -> 38\nProbability 3.12%" ];
+	Node0x6000008ac190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @cep_buf, align 8\l  %12 = load i32, ptr %4, align 4\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds float, ptr %11, i64 %13\l  %15 = load ptr, ptr @dcep_buf, align 8\l  %16 = load i32, ptr %4, align 4\l  %17 = sext i32 %16 to i64\l  %18 = getelementptr inbounds float, ptr %15, i64 %17\l  %19 = load ptr, ptr @dcep_80ms_buf, align 8\l  %20 = load i32, ptr %4, align 4\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds float, ptr %19, i64 %21\l  %23 = load ptr, ptr @pcep_buf, align 8\l  %24 = load i32, ptr %5, align 4\l  %25 = sext i32 %24 to i64\l  %26 = getelementptr inbounds float, ptr %23, i64 %25\l  %27 = load ptr, ptr @ddcep_buf, align 8\l  %28 = load i32, ptr %4, align 4\l  %29 = sext i32 %28 to i64\l  %30 = getelementptr inbounds float, ptr %27, i64 %29\l  call void @search_fwdflat_frame(ptr noundef %14, ptr noundef %18, ptr\l... noundef %22, ptr noundef %26, ptr noundef %30)\l  br label %31\l}"];
+	Node0x6000008ac190 -> Node0x6000008ac1e0[tooltip="10 -> 31\nProbability 100.00%" ];
+	Node0x6000008ac1e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %3, align 4\l  %33 = add nsw i32 %32, 1\l  store i32 %33, ptr %3, align 4\l  %34 = load i32, ptr %4, align 4\l  %35 = add nsw i32 %34, 13\l  store i32 %35, ptr %4, align 4\l  %36 = load i32, ptr %5, align 4\l  %37 = add nsw i32 %36, 3\l  store i32 %37, ptr %5, align 4\l  br label %6\l}"];
+	Node0x6000008ac1e0 -> Node0x6000008ac140[tooltip="31 -> 6\nProbability 100.00%" ];
+	Node0x6000008ac230 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{38:\l|  call void @search_fwdflat_finish()\l  ret void\l}"];
+}

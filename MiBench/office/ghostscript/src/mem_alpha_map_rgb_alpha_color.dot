@@ -1,0 +1,15 @@
+digraph "CFG for 'mem_alpha_map_rgb_alpha_color' function" {
+	label="CFG for 'mem_alpha_map_rgb_alpha_color' function";
+
+	Node0x600002aea670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca ptr, align 8\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  %9 = alloca i16, align 2\l  %10 = alloca i16, align 2\l  %11 = alloca i64, align 8\l  store ptr %0, ptr %6, align 8\l  store i16 %1, ptr %7, align 2\l  store i16 %2, ptr %8, align 2\l  store i16 %3, ptr %9, align 2\l  store i16 %4, ptr %10, align 2\l  %12 = load ptr, ptr %6, align 8\l  %13 = load i16, ptr %7, align 2\l  %14 = load i16, ptr %8, align 2\l  %15 = load i16, ptr %9, align 2\l  %16 = call i64 @gx_forward_map_rgb_color(ptr noundef %12, i16 noundef\l... zeroext %13, i16 noundef zeroext %14, i16 noundef zeroext %15)\l  store i64 %16, ptr %11, align 8\l  %17 = load i64, ptr %11, align 8\l  %18 = icmp eq i64 %17, 0\l  br i1 %18, label %22, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600002aea670:s0 -> Node0x600002aea710[tooltip="5 -> 22\nProbability 37.50%" ];
+	Node0x600002aea670:s1 -> Node0x600002aea6c0[tooltip="5 -> 19\nProbability 62.50%" ];
+	Node0x600002aea6c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  %20 = load i64, ptr %11, align 8\l  %21 = icmp eq i64 %20, -1\l  br i1 %21, label %22, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600002aea6c0:s0 -> Node0x600002aea710[tooltip="19 -> 22\nProbability 37.50%" ];
+	Node0x600002aea6c0:s1 -> Node0x600002aea760[tooltip="19 -> 24\nProbability 62.50%" ];
+	Node0x600002aea710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{22:\l|  %23 = load i64, ptr %11, align 8\l  br label %35\l}"];
+	Node0x600002aea710 -> Node0x600002aea7b0[tooltip="22 -> 35\nProbability 100.00%" ];
+	Node0x600002aea760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load i16, ptr %10, align 2\l  %26 = zext i16 %25 to i32\l  %27 = load ptr, ptr %6, align 8\l  %28 = getelementptr inbounds %struct.gx_device_memory_s, ptr %27, i32 0, i32\l... 32\l  %29 = load i32, ptr %28, align 8\l  %30 = sext i32 %29 to i64\l  %31 = sub i64 16, %30\l  %32 = trunc i64 %31 to i32\l  %33 = ashr i32 %26, %32\l  %34 = sext i32 %33 to i64\l  br label %35\l}"];
+	Node0x600002aea760 -> Node0x600002aea7b0[tooltip="24 -> 35\nProbability 100.00%" ];
+	Node0x600002aea7b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = phi i64 [ %23, %22 ], [ %34, %24 ]\l  ret i64 %36\l}"];
+}

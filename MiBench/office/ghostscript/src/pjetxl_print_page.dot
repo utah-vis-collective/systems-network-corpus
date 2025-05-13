@@ -1,0 +1,5 @@
+digraph "CFG for 'pjetxl_print_page' function" {
+	label="CFG for 'pjetxl_print_page' function";
+
+	Node0x600001a721c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %4, align 8\l  %6 = call i32 @\"\\01_fputs\"(ptr noundef @.str.18, ptr noundef %5)\l  %7 = load ptr, ptr %3, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = call i32 @pj_common_print_page(ptr noundef %7, ptr noundef %8, i32\l... noundef -360, ptr noundef @.str.19)\l  ret i32 %9\l}"];
+}

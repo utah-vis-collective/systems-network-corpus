@@ -1,0 +1,12 @@
+digraph "CFG for 'kb_get_senprob_size' function" {
+	label="CFG for 'kb_get_senprob_size' function";
+
+	Node0x600002a8cb40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = load i32, ptr @Use8BitSenProb, align 4\l  %3 = icmp ne i32 %2, 0\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x600002a8cb40:s0 -> Node0x600002a8cb90[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x600002a8cb40:s1 -> Node0x600002a8cbe0[tooltip="0 -> 5\nProbability 37.50%" ];
+	Node0x600002a8cb90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{4:\l|  store i32 8, ptr %1, align 4\l  br label %6\l}"];
+	Node0x600002a8cb90 -> Node0x600002a8cc30[tooltip="4 -> 6\nProbability 100.00%" ];
+	Node0x600002a8cbe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  store i32 32, ptr %1, align 4\l  br label %6\l}"];
+	Node0x600002a8cbe0 -> Node0x600002a8cc30[tooltip="5 -> 6\nProbability 100.00%" ];
+	Node0x600002a8cc30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %1, align 4\l  ret i32 %7\l}"];
+}

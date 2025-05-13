@@ -1,0 +1,18 @@
+digraph "CFG for 'zcurrentundercolorremoval' function" {
+	label="CFG for 'zcurrentundercolorremoval' function";
+
+	Node0x600002a76710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  br label %4\l}"];
+	Node0x600002a76710 -> Node0x600002a76760[tooltip="1 -> 4\nProbability 100.00%" ];
+	Node0x600002a76760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.ref_s, ptr %5, i64 1\l  store ptr %6, ptr %3, align 8\l  %7 = load ptr, ptr getelementptr inbounds (%struct.ref_stack_s, ptr\l... @o_stack, i32 0, i32 2), align 8\l  %8 = icmp ugt ptr %6, %7\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600002a76760:s0 -> Node0x600002a767b0[tooltip="4 -> 9\nProbability 50.00%" ];
+	Node0x600002a76760:s1 -> Node0x600002a76800[tooltip="4 -> 10\nProbability 50.00%" ];
+	Node0x600002a767b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i32 1, ptr getelementptr inbounds (%struct.ref_stack_s, ptr\l... @o_stack, i32 0, i32 7), align 8\l  store i32 -16, ptr %2, align 4\l  br label %19\l}"];
+	Node0x600002a767b0 -> Node0x600002a768f0[tooltip="9 -> 19\nProbability 100.00%" ];
+	Node0x600002a76800 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  store ptr %11, ptr @o_stack, align 8\l  br label %12\l}"];
+	Node0x600002a76800 -> Node0x600002a76850[tooltip="10 -> 12\nProbability 100.00%" ];
+	Node0x600002a76850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x600002a76850 -> Node0x600002a768a0[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x600002a768a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = load ptr, ptr @igs, align 8\l  %16 = getelementptr inbounds %struct.gs_state_s, ptr %15, i32 0, i32 44\l  %17 = load ptr, ptr %16, align 8\l  %18 = getelementptr inbounds %struct.int_gstate_s, ptr %17, i32 0, i32 4\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %14, ptr align 8 %18, i64 16,\l... i1 false)\l  store i32 0, ptr %2, align 4\l  br label %19\l}"];
+	Node0x600002a768a0 -> Node0x600002a768f0[tooltip="13 -> 19\nProbability 100.00%" ];
+	Node0x600002a768f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %2, align 4\l  ret i32 %20\l}"];
+}

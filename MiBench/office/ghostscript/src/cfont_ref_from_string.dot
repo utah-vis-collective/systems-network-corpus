@@ -1,0 +1,12 @@
+digraph "CFG for 'cfont_ref_from_string' function" {
+	label="CFG for 'cfont_ref_from_string' function";
+
+	Node0x600001707660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca %struct.scanner_state_s, align 8\l  %8 = alloca %struct.stream_s, align 8\l  %9 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %10 = getelementptr inbounds %struct.scanner_state_s, ptr %7, i32 0, i32 3\l  store i32 0, ptr %10, align 4\l  %11 = getelementptr inbounds %struct.scanner_state_s, ptr %7, i32 0, i32 0\l  store i32 0, ptr %11, align 8\l  %12 = getelementptr inbounds %struct.scanner_state_s, ptr %7, i32 0, i32 2\l  store i32 0, ptr %12, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = load i32, ptr %6, align 4\l  call void @sread_string(ptr noundef %8, ptr noundef %13, i32 noundef %14)\l  %15 = load ptr, ptr %4, align 8\l  %16 = call i32 @scan_token(ptr noundef %8, ptr noundef %15, ptr noundef %7)\l  store i32 %16, ptr %9, align 4\l  %17 = load i32, ptr %9, align 4\l  %18 = icmp sle i32 %17, 0\l  br i1 %18, label %19, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600001707660:s0 -> Node0x6000017076b0[tooltip="3 -> 19\nProbability 50.00%" ];
+	Node0x600001707660:s1 -> Node0x600001707700[tooltip="3 -> 21\nProbability 50.00%" ];
+	Node0x6000017076b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %9, align 4\l  br label %22\l}"];
+	Node0x6000017076b0 -> Node0x600001707750[tooltip="19 -> 22\nProbability 100.00%" ];
+	Node0x600001707700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  br label %22\l}"];
+	Node0x600001707700 -> Node0x600001707750[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x600001707750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = phi i32 [ %20, %19 ], [ -100, %21 ]\l  ret i32 %23\l}"];
+}

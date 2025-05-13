@@ -1,0 +1,46 @@
+digraph "CFG for 'LogLuvGuessDataFmt' function" {
+	label="CFG for 'LogLuvGuessDataFmt' function";
+
+	Node0x600000632d00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.TIFFDirectory, ptr %4, i32 0, i32 8\l  %6 = load i16, ptr %5, align 8\l  %7 = zext i16 %6 to i32\l  %8 = shl i32 %7, 3\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.TIFFDirectory, ptr %9, i32 0, i32 9\l  %11 = load i16, ptr %10, align 2\l  %12 = zext i16 %11 to i32\l  %13 = or i32 %8, %12\l  switch i32 %13, label %18 [\l    i32 259, label %14\l    i32 260, label %15\l    i32 257, label %15\l    i32 258, label %15\l    i32 132, label %16\l    i32 130, label %16\l    i32 129, label %16\l    i32 68, label %17\l    i32 65, label %17\l  ]\l|{<s0>def|<s1>259|<s2>260|<s3>257|<s4>258|<s5>132|<s6>130|<s7>129|<s8>68|<s9>65}}"];
+	Node0x600000632d00:s0 -> Node0x6000006332a0[tooltip="1 -> 18\nProbability 10.00%" ];
+	Node0x600000632d00:s1 -> Node0x6000006330c0[tooltip="1 -> 14\nProbability 10.00%" ];
+	Node0x600000632d00:s2 -> Node0x6000006331b0[tooltip="1 -> 15\nProbability 30.00%" ];
+	Node0x600000632d00:s3 -> Node0x6000006331b0[tooltip="1 -> 15\nProbability 30.00%" ];
+	Node0x600000632d00:s4 -> Node0x6000006331b0[tooltip="1 -> 15\nProbability 30.00%" ];
+	Node0x600000632d00:s5 -> Node0x600000633200[tooltip="1 -> 16\nProbability 30.00%" ];
+	Node0x600000632d00:s6 -> Node0x600000633200[tooltip="1 -> 16\nProbability 30.00%" ];
+	Node0x600000632d00:s7 -> Node0x600000633200[tooltip="1 -> 16\nProbability 30.00%" ];
+	Node0x600000632d00:s8 -> Node0x600000633250[tooltip="1 -> 17\nProbability 20.00%" ];
+	Node0x600000632d00:s9 -> Node0x600000633250[tooltip="1 -> 17\nProbability 20.00%" ];
+	Node0x6000006330c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{14:\l|  store i32 0, ptr %3, align 4\l  br label %19\l}"];
+	Node0x6000006330c0 -> Node0x6000006332f0[tooltip="14 -> 19\nProbability 100.00%" ];
+	Node0x6000006331b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  store i32 2, ptr %3, align 4\l  br label %19\l}"];
+	Node0x6000006331b0 -> Node0x6000006332f0[tooltip="15 -> 19\nProbability 100.00%" ];
+	Node0x600000633200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  store i32 1, ptr %3, align 4\l  br label %19\l}"];
+	Node0x600000633200 -> Node0x6000006332f0[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x600000633250 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  store i32 3, ptr %3, align 4\l  br label %19\l}"];
+	Node0x600000633250 -> Node0x6000006332f0[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x6000006332a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{18:\l|  store i32 -1, ptr %3, align 4\l  br label %19\l}"];
+	Node0x6000006332a0 -> Node0x6000006332f0[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x6000006332f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %2, align 8\l  %21 = getelementptr inbounds %struct.TIFFDirectory, ptr %20, i32 0, i32 15\l  %22 = load i16, ptr %21, align 2\l  %23 = zext i16 %22 to i32\l  switch i32 %23, label %34 [\l    i32 1, label %24\l    i32 3, label %29\l  ]\l|{<s0>def|<s1>1|<s2>3}}"];
+	Node0x6000006332f0:s0 -> Node0x600000633520[tooltip="19 -> 34\nProbability 33.33%" ];
+	Node0x6000006332f0:s1 -> Node0x600000633340[tooltip="19 -> 24\nProbability 33.33%" ];
+	Node0x6000006332f0:s2 -> Node0x600000633430[tooltip="19 -> 29\nProbability 33.33%" ];
+	Node0x600000633340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %3, align 4\l  %26 = icmp ne i32 %25, 2\l  br i1 %26, label %27, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600000633340:s0 -> Node0x600000633390[tooltip="24 -> 27\nProbability 50.00%" ];
+	Node0x600000633340:s1 -> Node0x6000006333e0[tooltip="24 -> 28\nProbability 50.00%" ];
+	Node0x600000633390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{27:\l|  store i32 -1, ptr %3, align 4\l  br label %28\l}"];
+	Node0x600000633390 -> Node0x6000006333e0[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x6000006333e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{28:\l|  br label %35\l}"];
+	Node0x6000006333e0 -> Node0x600000633570[tooltip="28 -> 35\nProbability 100.00%" ];
+	Node0x600000633430 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %3, align 4\l  %31 = icmp eq i32 %30, 2\l  br i1 %31, label %32, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600000633430:s0 -> Node0x600000633480[tooltip="29 -> 32\nProbability 50.00%" ];
+	Node0x600000633430:s1 -> Node0x6000006334d0[tooltip="29 -> 33\nProbability 50.00%" ];
+	Node0x600000633480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{32:\l|  store i32 -1, ptr %3, align 4\l  br label %33\l}"];
+	Node0x600000633480 -> Node0x6000006334d0[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x6000006334d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{33:\l|  br label %35\l}"];
+	Node0x6000006334d0 -> Node0x600000633570[tooltip="33 -> 35\nProbability 100.00%" ];
+	Node0x600000633520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{34:\l|  store i32 -1, ptr %3, align 4\l  br label %35\l}"];
+	Node0x600000633520 -> Node0x600000633570[tooltip="34 -> 35\nProbability 100.00%" ];
+	Node0x600000633570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %3, align 4\l  ret i32 %36\l}"];
+}

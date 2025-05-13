@@ -1,0 +1,26 @@
+digraph "CFG for 'user_from_keyID' function" {
+	label="CFG for 'user_from_keyID' function";
+
+	Node0x600003b043c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr @hashtbl, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %10, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x600003b043c0:s0 -> Node0x600003b04460[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600003b043c0:s1 -> Node0x600003b04410[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x600003b04410 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %3, align 8\l  %9 = call ptr @_user_from_keyID(ptr noundef %8)\l  store ptr %9, ptr %2, align 8\l  br label %39\l}"];
+	Node0x600003b04410 -> Node0x600003b04690[tooltip="7 -> 39\nProbability 100.00%" ];
+	Node0x600003b04460 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @hashtbl, align 8\l  %12 = load ptr, ptr %3, align 8\l  %13 = load i8, ptr %12, align 1\l  %14 = zext i8 %13 to i32\l  %15 = and i32 %14, 255\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds ptr, ptr %11, i64 %16\l  %18 = load ptr, ptr %17, align 8\l  store ptr %18, ptr %4, align 8\l  br label %19\l}"];
+	Node0x600003b04460 -> Node0x600003b044b0[tooltip="10 -> 19\nProbability 100.00%" ];
+	Node0x600003b044b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  %21 = icmp ne ptr %20, null\l  br i1 %21, label %22, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x600003b044b0:s0 -> Node0x600003b04500[tooltip="19 -> 22\nProbability 96.88%" ];
+	Node0x600003b044b0:s1 -> Node0x600003b04640[tooltip="19 -> 38\nProbability 3.12%" ];
+	Node0x600003b04500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  %24 = load ptr, ptr %4, align 8\l  %25 = getelementptr inbounds %struct.hashent, ptr %24, i32 0, i32 1\l  %26 = getelementptr inbounds [8 x i8], ptr %25, i64 0, i64 0\l  %27 = call i32 @memcmp(ptr noundef %23, ptr noundef %26, i64 noundef 8)\l  %28 = icmp eq i32 %27, 0\l  br i1 %28, label %29, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600003b04500:s0 -> Node0x600003b04550[tooltip="22 -> 29\nProbability 3.12%" ];
+	Node0x600003b04500:s1 -> Node0x600003b045a0[tooltip="22 -> 33\nProbability 96.88%" ];
+	Node0x600003b04550 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %4, align 8\l  %31 = getelementptr inbounds %struct.hashent, ptr %30, i32 0, i32 2\l  %32 = load ptr, ptr %31, align 8\l  store ptr %32, ptr %2, align 8\l  br label %39\l}"];
+	Node0x600003b04550 -> Node0x600003b04690[tooltip="29 -> 39\nProbability 100.00%" ];
+	Node0x600003b045a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  br label %34\l}"];
+	Node0x600003b045a0 -> Node0x600003b045f0[tooltip="33 -> 34\nProbability 100.00%" ];
+	Node0x600003b045f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %4, align 8\l  %36 = getelementptr inbounds %struct.hashent, ptr %35, i32 0, i32 0\l  %37 = load ptr, ptr %36, align 8\l  store ptr %37, ptr %4, align 8\l  br label %19\l}"];
+	Node0x600003b045f0 -> Node0x600003b044b0[tooltip="34 -> 19\nProbability 100.00%" ];
+	Node0x600003b04640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{38:\l|  store ptr null, ptr %2, align 8\l  br label %39\l}"];
+	Node0x600003b04640 -> Node0x600003b04690[tooltip="38 -> 39\nProbability 100.00%" ];
+	Node0x600003b04690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %2, align 8\l  ret ptr %40\l}"];
+}

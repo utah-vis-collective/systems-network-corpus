@@ -1,0 +1,5 @@
+digraph "CFG for 'M_gsm_mult' function" {
+	label="CFG for 'M_gsm_mult' function";
+
+	Node0x6000008439d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  store i16 %0, ptr %3, align 2\l  store i16 %1, ptr %4, align 2\l  %5 = load i16, ptr %3, align 2\l  %6 = sext i16 %5 to i64\l  %7 = load i16, ptr %4, align 2\l  %8 = sext i16 %7 to i64\l  %9 = mul nsw i64 %6, %8\l  %10 = call i32 @SASR(i64 noundef %9, i32 noundef 15)\l  %11 = trunc i32 %10 to i16\l  ret i16 %11\l}"];
+}

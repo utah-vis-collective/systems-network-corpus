@@ -1,0 +1,10 @@
+digraph "CFG for 'gettimeofday' function" {
+	label="CFG for 'gettimeofday' function";
+
+	Node0x600001764640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca %struct.tms, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load i64, ptr @gettimeofday.offset, align 8\l  %8 = icmp ne i64 %7, 0\l  br i1 %8, label %15, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600001764640:s0 -> Node0x6000017646e0[tooltip="2 -> 15\nProbability 62.50%" ];
+	Node0x600001764640:s1 -> Node0x600001764690[tooltip="2 -> 9\nProbability 37.50%" ];
+	Node0x600001764690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  %10 = call i64 @time(ptr noundef @gettimeofday.offset)\l  %11 = call i64 @times(ptr noundef %5)\l  %12 = udiv i64 %11, 100\l  %13 = load i64, ptr @gettimeofday.offset, align 8\l  %14 = sub i64 %13, %12\l  store i64 %14, ptr @gettimeofday.offset, align 8\l  br label %15\l}"];
+	Node0x600001764690 -> Node0x6000017646e0[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x6000017646e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = call i64 @times(ptr noundef %5)\l  store i64 %16, ptr %6, align 8\l  %17 = load i64, ptr %6, align 8\l  %18 = sdiv i64 %17, 100\l  %19 = load i64, ptr @gettimeofday.offset, align 8\l  %20 = add nsw i64 %18, %19\l  %21 = load ptr, ptr %3, align 8\l  %22 = getelementptr inbounds %struct.timeval, ptr %21, i32 0, i32 0\l  store i64 %20, ptr %22, align 8\l  %23 = load i64, ptr %6, align 8\l  %24 = srem i64 %23, 100\l  %25 = mul nsw i64 %24, 10000\l  %26 = load ptr, ptr %3, align 8\l  %27 = getelementptr inbounds %struct.timeval, ptr %26, i32 0, i32 1\l  store i64 %25, ptr %27, align 8\l  ret i32 0\l}"];
+}

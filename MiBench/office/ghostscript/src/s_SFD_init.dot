@@ -1,0 +1,5 @@
+digraph "CFG for 's_SFD_init' function" {
+	label="CFG for 's_SFD_init' function";
+
+	Node0x600003609590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.stream_SFD_state_s, ptr %3, i32 0, i32 5\l  store i32 0, ptr %4, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = getelementptr inbounds %struct.stream_SFD_state_s, ptr %5, i32 0, i32 6\l  store i32 0, ptr %6, align 4\l  ret i32 0\l}"];
+}

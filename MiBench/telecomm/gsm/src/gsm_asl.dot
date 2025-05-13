@@ -1,0 +1,22 @@
+digraph "CFG for 'gsm_asl' function" {
+	label="CFG for 'gsm_asl' function";
+
+	Node0x60000256c4b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i32, align 4\l  store i16 %0, ptr %4, align 2\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %5, align 4\l  %7 = icmp sge i32 %6, 16\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000256c4b0:s0 -> Node0x60000256c820[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x60000256c4b0:s1 -> Node0x60000256c870[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x60000256c820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  store i16 0, ptr %3, align 2\l  br label %33\l}"];
+	Node0x60000256c820 -> Node0x60000256ca00[tooltip="8 -> 33\nProbability 100.00%" ];
+	Node0x60000256c870 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %5, align 4\l  %11 = icmp sle i32 %10, -16\l  br i1 %11, label %12, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000256c870:s0 -> Node0x60000256c8c0[tooltip="9 -> 12\nProbability 50.00%" ];
+	Node0x60000256c870:s1 -> Node0x60000256c910[tooltip="9 -> 19\nProbability 50.00%" ];
+	Node0x60000256c8c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{12:\l|  %13 = load i16, ptr %4, align 2\l  %14 = sext i16 %13 to i32\l  %15 = icmp slt i32 %14, 0\l  %16 = zext i1 %15 to i32\l  %17 = sub nsw i32 0, %16\l  %18 = trunc i32 %17 to i16\l  store i16 %18, ptr %3, align 2\l  br label %33\l}"];
+	Node0x60000256c8c0 -> Node0x60000256ca00[tooltip="12 -> 33\nProbability 100.00%" ];
+	Node0x60000256c910 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %5, align 4\l  %21 = icmp slt i32 %20, 0\l  br i1 %21, label %22, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x60000256c910:s0 -> Node0x60000256c960[tooltip="19 -> 22\nProbability 37.50%" ];
+	Node0x60000256c910:s1 -> Node0x60000256c9b0[tooltip="19 -> 27\nProbability 62.50%" ];
+	Node0x60000256c960 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{22:\l|  %23 = load i16, ptr %4, align 2\l  %24 = load i32, ptr %5, align 4\l  %25 = sub nsw i32 0, %24\l  %26 = call signext i16 @gsm_asr(i16 noundef signext %23, i32 noundef %25)\l  store i16 %26, ptr %3, align 2\l  br label %33\l}"];
+	Node0x60000256c960 -> Node0x60000256ca00[tooltip="22 -> 33\nProbability 100.00%" ];
+	Node0x60000256c9b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{27:\l|  %28 = load i16, ptr %4, align 2\l  %29 = sext i16 %28 to i32\l  %30 = load i32, ptr %5, align 4\l  %31 = shl i32 %29, %30\l  %32 = trunc i32 %31 to i16\l  store i16 %32, ptr %3, align 2\l  br label %33\l}"];
+	Node0x60000256c9b0 -> Node0x60000256ca00[tooltip="27 -> 33\nProbability 100.00%" ];
+	Node0x60000256ca00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i16, ptr %3, align 2\l  ret i16 %34\l}"];
+}

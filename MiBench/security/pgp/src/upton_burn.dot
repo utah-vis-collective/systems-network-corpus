@@ -1,0 +1,5 @@
+digraph "CFG for 'upton_burn' function" {
+	label="CFG for 'upton_burn' function";
+
+	Node0x600001f96080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  call void @llvm.memset.p0.i64(ptr align 2 @modulus, i8 0, i64 260, i1\l... false)\l  call void @llvm.memset.p0.i64(ptr align 2 @reciprocal, i8 0, i64 260, i1\l... false)\l  call void @llvm.memset.p0.i64(ptr align 2 @dhi, i8 0, i64 260, i1 false)\l  call void @llvm.memset.p0.i64(ptr align 2 @d_data, i8 0, i64 520, i1 false)\l  call void @llvm.memset.p0.i64(ptr align 2 @e_data, i8 0, i64 520, i1 false)\l  call void @llvm.memset.p0.i64(ptr align 2 @f_data, i8 0, i64 520, i1 false)\l  store i16 0, ptr @nbitsModUNITSIZE, align 2\l  store i16 0, ptr @nbitsDivUNITSIZE, align 2\l  store i16 0, ptr @nbits, align 2\l  ret void\l}"];
+}

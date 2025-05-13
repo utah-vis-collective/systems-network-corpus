@@ -1,0 +1,17 @@
+digraph "CFG for 'pdf_do_image' function" {
+	label="CFG for 'pdf_do_image' function";
+
+	Node0x600003033bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = call i32 @pdf_open_contents(ptr noundef %9, i32 noundef 1)\l  store i32 %10, ptr %8, align 4\l  %11 = load i32, ptr %8, align 4\l  %12 = icmp slt i32 %11, 0\l  br i1 %12, label %13, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600003033bb0:s0 -> Node0x600003033c00[tooltip="3 -> 13\nProbability 37.50%" ];
+	Node0x600003033bb0:s1 -> Node0x600003033c50[tooltip="3 -> 15\nProbability 62.50%" ];
+	Node0x600003033c00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %8, align 4\l  store i32 %14, ptr %4, align 4\l  br label %29\l}"];
+	Node0x600003033c00 -> Node0x600003033d40[tooltip="13 -> 29\nProbability 100.00%" ];
+	Node0x600003033c50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %7, align 8\l  %17 = icmp ne ptr %16, null\l  br i1 %17, label %18, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600003033c50:s0 -> Node0x600003033ca0[tooltip="15 -> 18\nProbability 62.50%" ];
+	Node0x600003033c50:s1 -> Node0x600003033cf0[tooltip="15 -> 21\nProbability 37.50%" ];
+	Node0x600003033ca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %5, align 8\l  %20 = load ptr, ptr %7, align 8\l  call void @pdf_put_image_matrix(ptr noundef %19, ptr noundef %20)\l  br label %21\l}"];
+	Node0x600003033ca0 -> Node0x600003033cf0[tooltip="18 -> 21\nProbability 100.00%" ];
+	Node0x600003033cf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %22, i32 0, i32 26\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %6, align 8\l  %26 = getelementptr inbounds %struct.pdf_resource_s, ptr %25, i32 0, i32 3\l  %27 = load i64, ptr %26, align 8\l  %28 = call ptr @pprintld1(ptr noundef %24, ptr noundef @.str.63, i64 noundef\l... %27)\l  store i32 0, ptr %4, align 4\l  br label %29\l}"];
+	Node0x600003033cf0 -> Node0x600003033d40[tooltip="21 -> 29\nProbability 100.00%" ];
+	Node0x600003033d40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %4, align 4\l  ret i32 %30\l}"];
+}

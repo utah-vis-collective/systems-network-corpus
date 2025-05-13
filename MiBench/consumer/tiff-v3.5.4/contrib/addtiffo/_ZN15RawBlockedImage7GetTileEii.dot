@@ -1,0 +1,12 @@
+digraph "CFG for '_ZN15RawBlockedImage7GetTileEii' function" {
+	label="CFG for '_ZN15RawBlockedImage7GetTileEii' function";
+
+	Node0x6000004ef020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store i32 %2, ptr %7, align 4\l  %9 = load ptr, ptr %5, align 8\l  %10 = load i32, ptr %6, align 4\l  %11 = load i32, ptr %7, align 4\l  %12 = call noundef ptr @_ZN15RawBlockedImage11GetRawBlockEii(ptr noundef\l... nonnull align 8 dereferenceable(96) %9, i32 noundef %10, i32 noundef %11)\l  store ptr %12, ptr %8, align 8\l  %13 = load ptr, ptr %8, align 8\l  %14 = icmp ne ptr %13, null\l  br i1 %14, label %15, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000004ef020:s0 -> Node0x6000004ef160[tooltip="3 -> 15\nProbability 62.50%" ];
+	Node0x6000004ef020:s1 -> Node0x6000004ef1b0[tooltip="3 -> 19\nProbability 37.50%" ];
+	Node0x6000004ef160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %8, align 8\l  %17 = getelementptr inbounds %class.RawBlock, ptr %16, i32 0, i32 4\l  %18 = load ptr, ptr %17, align 8\l  store ptr %18, ptr %4, align 8\l  br label %20\l}"];
+	Node0x6000004ef160 -> Node0x6000004ef200[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x6000004ef1b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  store ptr null, ptr %4, align 8\l  br label %20\l}"];
+	Node0x6000004ef1b0 -> Node0x6000004ef200[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x6000004ef200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %4, align 8\l  ret ptr %21\l}"];
+}

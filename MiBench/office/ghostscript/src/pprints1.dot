@@ -1,0 +1,5 @@
+digraph "CFG for 'pprints1' function" {
+	label="CFG for 'pprints1' function";
+
+	Node0x600003362800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = call ptr @pprintf_scan(ptr noundef %8, ptr noundef %9)\l  store ptr %10, ptr %7, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = load ptr, ptr %6, align 8\l  %13 = call i32 @pputs(ptr noundef %11, ptr noundef %12)\l  %14 = load ptr, ptr %4, align 8\l  %15 = load ptr, ptr %7, align 8\l  %16 = getelementptr inbounds i8, ptr %15, i64 2\l  %17 = call ptr @pprintf_scan(ptr noundef %14, ptr noundef %16)\l  ret ptr %17\l}"];
+}

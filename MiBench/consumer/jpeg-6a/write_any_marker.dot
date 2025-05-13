@@ -1,0 +1,17 @@
+digraph "CFG for 'write_any_marker' function" {
+	label="CFG for 'write_any_marker' function";
+
+	Node0x6000003220d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  %9 = load i32, ptr %8, align 4\l  %10 = icmp ule i32 %9, 65533\l  br i1 %10, label %11, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x6000003220d0:s0 -> Node0x600000322120[tooltip="4 -> 11\nProbability 50.00%" ];
+	Node0x6000003220d0:s1 -> Node0x600000322260[tooltip="4 -> 29\nProbability 50.00%" ];
+	Node0x600000322120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = load i32, ptr %6, align 4\l  call void @emit_marker(ptr noundef %12, i32 noundef %13)\l  %14 = load ptr, ptr %5, align 8\l  %15 = load i32, ptr %8, align 4\l  %16 = add i32 %15, 2\l  call void @emit_2bytes(ptr noundef %14, i32 noundef %16)\l  br label %17\l}"];
+	Node0x600000322120 -> Node0x600000322170[tooltip="11 -> 17\nProbability 100.00%" ];
+	Node0x600000322170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %8, align 4\l  %19 = add i32 %18, -1\l  store i32 %19, ptr %8, align 4\l  %20 = icmp ne i32 %18, 0\l  br i1 %20, label %21, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600000322170:s0 -> Node0x6000003221c0[tooltip="17 -> 21\nProbability 96.88%" ];
+	Node0x600000322170:s1 -> Node0x600000322210[tooltip="17 -> 28\nProbability 3.12%" ];
+	Node0x6000003221c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  %23 = load ptr, ptr %7, align 8\l  %24 = load i8, ptr %23, align 1\l  %25 = zext i8 %24 to i32\l  call void @emit_byte(ptr noundef %22, i32 noundef %25)\l  %26 = load ptr, ptr %7, align 8\l  %27 = getelementptr inbounds i8, ptr %26, i32 1\l  store ptr %27, ptr %7, align 8\l  br label %17, !llvm.loop !6\l}"];
+	Node0x6000003221c0 -> Node0x600000322170[tooltip="21 -> 17\nProbability 100.00%" ];
+	Node0x600000322210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{28:\l|  br label %29\l}"];
+	Node0x600000322210 -> Node0x600000322260[tooltip="28 -> 29\nProbability 100.00%" ];
+	Node0x600000322260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{29:\l|  ret void\l}"];
+}

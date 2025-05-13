@@ -1,0 +1,21 @@
+digraph "CFG for 'ext_missing' function" {
+	label="CFG for 'ext_missing' function";
+
+	Node0x60000196f4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = call i64 @strlen(ptr noundef %7) #8\l  %9 = getelementptr inbounds i8, ptr %6, i64 %8\l  store ptr %9, ptr %5, align 8\l  store ptr @ext_missing.extensions, ptr %4, align 8\l  br label %10\l}"];
+	Node0x60000196f4d0 -> Node0x60000196f520[tooltip="1 -> 10\nProbability 100.00%" ];
+	Node0x60000196f520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  %12 = load ptr, ptr %11, align 8\l  %13 = icmp ne ptr %12, null\l  br i1 %13, label %14, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x60000196f520:s0 -> Node0x60000196f570[tooltip="10 -> 14\nProbability 96.88%" ];
+	Node0x60000196f520:s1 -> Node0x60000196f6b0[tooltip="10 -> 29\nProbability 3.12%" ];
+	Node0x60000196f570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %5, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = load ptr, ptr %16, align 8\l  %18 = load ptr, ptr %5, align 8\l  %19 = call i64 @llvm.objectsize.i64.p0(ptr %18, i1 false, i1 true, i1 false)\l  %20 = call ptr @__strcpy_chk(ptr noundef %15, ptr noundef %17, i64 noundef\l... %19) #8\l  %21 = load ptr, ptr %3, align 8\l  %22 = call zeroext i8 @file_exists(ptr noundef %21)\l  %23 = icmp ne i8 %22, 0\l  br i1 %23, label %24, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x60000196f570:s0 -> Node0x60000196f5c0[tooltip="14 -> 24\nProbability 3.12%" ];
+	Node0x60000196f570:s1 -> Node0x60000196f610[tooltip="14 -> 25\nProbability 96.88%" ];
+	Node0x60000196f5c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  store i32 0, ptr %2, align 4\l  br label %30\l}"];
+	Node0x60000196f5c0 -> Node0x60000196f700[tooltip="24 -> 30\nProbability 100.00%" ];
+	Node0x60000196f610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  br label %26\l}"];
+	Node0x60000196f610 -> Node0x60000196f660[tooltip="25 -> 26\nProbability 100.00%" ];
+	Node0x60000196f660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %4, align 8\l  %28 = getelementptr inbounds ptr, ptr %27, i32 1\l  store ptr %28, ptr %4, align 8\l  br label %10\l}"];
+	Node0x60000196f660 -> Node0x60000196f520[tooltip="26 -> 10\nProbability 100.00%" ];
+	Node0x60000196f6b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{29:\l|  store i32 1, ptr %2, align 4\l  br label %30\l}"];
+	Node0x60000196f6b0 -> Node0x60000196f700[tooltip="29 -> 30\nProbability 100.00%" ];
+	Node0x60000196f700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %2, align 4\l  ret i32 %31\l}"];
+}

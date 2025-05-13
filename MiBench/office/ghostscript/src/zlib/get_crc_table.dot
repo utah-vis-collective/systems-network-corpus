@@ -1,0 +1,5 @@
+digraph "CFG for 'get_crc_table' function" {
+	label="CFG for 'get_crc_table' function";
+
+	Node0x60000227de50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @crc_table\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'mem_stat_mark' function" {
+	label="CFG for 'mem_stat_mark' function";
+
+	Node0x60000257ef80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  %4 = load i32, ptr %3, align 4\l  %5 = icmp slt i32 %4, 0\l  br i1 %5, label %6, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x60000257ef80:s0 -> Node0x60000257efd0[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x60000257ef80:s1 -> Node0x60000257f020[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x60000257efd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  store i32 0, ptr @mem_stat_mark_curr, align 4\l  store i32 -1, ptr %2, align 4\l  br label %17\l}"];
+	Node0x60000257efd0 -> Node0x60000257f160[tooltip="6 -> 17\nProbability 100.00%" ];
+	Node0x60000257f020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %3, align 4\l  %9 = icmp eq i32 %8, 0\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x60000257f020:s0 -> Node0x60000257f070[tooltip="7 -> 10\nProbability 37.50%" ];
+	Node0x60000257f020:s1 -> Node0x60000257f0c0[tooltip="7 -> 11\nProbability 62.50%" ];
+	Node0x60000257f070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{10:\l|  store i32 0, ptr @mem_stat_mark_curr, align 4\l  store i32 0, ptr %2, align 4\l  br label %17\l}"];
+	Node0x60000257f070 -> Node0x60000257f160[tooltip="10 -> 17\nProbability 100.00%" ];
+	Node0x60000257f0c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  br label %12\l}"];
+	Node0x60000257f0c0 -> Node0x60000257f110[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x60000257f110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %3, align 4\l  store i32 %13, ptr @mem_stat_mark_curr, align 4\l  %14 = load i32, ptr @mem_stat_mark_many, align 4\l  %15 = add nsw i32 %14, 1\l  store i32 %15, ptr @mem_stat_mark_many, align 4\l  %16 = load i32, ptr %3, align 4\l  store i32 %16, ptr %2, align 4\l  br label %17\l}"];
+	Node0x60000257f110 -> Node0x60000257f160[tooltip="12 -> 17\nProbability 100.00%" ];
+	Node0x60000257f160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %2, align 4\l  ret i32 %18\l}"];
+}

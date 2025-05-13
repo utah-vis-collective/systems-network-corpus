@@ -1,0 +1,21 @@
+digraph "CFG for 'zconcatmatrix' function" {
+	label="CFG for 'zconcatmatrix' function";
+
+	Node0x600001bd24e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca %struct.gs_matrix_s, align 4\l  %5 = alloca %struct.gs_matrix_s, align 4\l  %6 = alloca %struct.gs_matrix_s, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds %struct.ref_s, ptr %8, i64 -2\l  %10 = call i32 @read_matrix(ptr noundef %9, ptr noundef %4)\l  store i32 %10, ptr %7, align 4\l  %11 = icmp slt i32 %10, 0\l  br i1 %11, label %24, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd24e0:s0 -> Node0x600001bd2620[tooltip="1 -> 24\nProbability 37.50%" ];
+	Node0x600001bd24e0:s1 -> Node0x600001bd2530[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x600001bd2530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds %struct.ref_s, ptr %13, i64 -1\l  %15 = call i32 @read_matrix(ptr noundef %14, ptr noundef %5)\l  store i32 %15, ptr %7, align 4\l  %16 = icmp slt i32 %15, 0\l  br i1 %16, label %24, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd2530:s0 -> Node0x600001bd2620[tooltip="12 -> 24\nProbability 37.50%" ];
+	Node0x600001bd2530:s1 -> Node0x600001bd2580[tooltip="12 -> 17\nProbability 62.50%" ];
+	Node0x600001bd2580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = call i32 @gs_matrix_multiply(ptr noundef %4, ptr noundef %5, ptr\l... noundef %6)\l  store i32 %18, ptr %7, align 4\l  %19 = icmp slt i32 %18, 0\l  br i1 %19, label %24, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd2580:s0 -> Node0x600001bd2620[tooltip="17 -> 24\nProbability 37.50%" ];
+	Node0x600001bd2580:s1 -> Node0x600001bd25d0[tooltip="17 -> 20\nProbability 62.50%" ];
+	Node0x600001bd25d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %3, align 8\l  %22 = call i32 @write_matrix(ptr noundef %21, ptr noundef %6)\l  store i32 %22, ptr %7, align 4\l  %23 = icmp slt i32 %22, 0\l  br i1 %23, label %24, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd25d0:s0 -> Node0x600001bd2620[tooltip="20 -> 24\nProbability 37.50%" ];
+	Node0x600001bd25d0:s1 -> Node0x600001bd2670[tooltip="20 -> 26\nProbability 62.50%" ];
+	Node0x600001bd2620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %7, align 4\l  store i32 %25, ptr %2, align 4\l  br label %33\l}"];
+	Node0x600001bd2620 -> Node0x600001bd26c0[tooltip="24 -> 33\nProbability 100.00%" ];
+	Node0x600001bd2670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %3, align 8\l  %28 = getelementptr inbounds %struct.ref_s, ptr %27, i64 -2\l  %29 = load ptr, ptr %3, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %28, ptr align 8 %29, i64 16,\l... i1 false)\l  %30 = load ptr, ptr @o_stack, align 8\l  %31 = getelementptr inbounds %struct.ref_s, ptr %30, i64 -2\l  store ptr %31, ptr @o_stack, align 8\l  %32 = load i32, ptr %7, align 4\l  store i32 %32, ptr %2, align 4\l  br label %33\l}"];
+	Node0x600001bd2670 -> Node0x600001bd26c0[tooltip="26 -> 33\nProbability 100.00%" ];
+	Node0x600001bd26c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %2, align 4\l  ret i32 %34\l}"];
+}

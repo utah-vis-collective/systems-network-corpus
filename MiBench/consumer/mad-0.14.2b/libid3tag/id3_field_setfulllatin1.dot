@@ -1,0 +1,12 @@
+digraph "CFG for 'id3_field_setfulllatin1' function" {
+	label="CFG for 'id3_field_setfulllatin1' function";
+
+	Node0x600001e51860 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = load i32, ptr %6, align 8\l  %8 = icmp ne i32 %7, 2\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001e51860:s0 -> Node0x600001e518b0[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x600001e51860:s1 -> Node0x600001e51900[tooltip="2 -> 10\nProbability 50.00%" ];
+	Node0x600001e518b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i32 -1, ptr %3, align 4\l  br label %15\l}"];
+	Node0x600001e518b0 -> Node0x600001e51950[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x600001e51900 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  call void @id3_field_finish(ptr noundef %11)\l  %12 = load ptr, ptr %4, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = call i32 @set_latin1(ptr noundef %12, ptr noundef %13)\l  store i32 %14, ptr %3, align 4\l  br label %15\l}"];
+	Node0x600001e51900 -> Node0x600001e51950[tooltip="10 -> 15\nProbability 100.00%" ];
+	Node0x600001e51950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %3, align 4\l  ret i32 %16\l}"];
+}

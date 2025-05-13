@@ -1,0 +1,12 @@
+digraph "CFG for 'mem_alpha_map_color_rgb' function" {
+	label="CFG for 'mem_alpha_map_color_rgb' function";
+
+	Node0x600002aea4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = load i64, ptr %5, align 8\l  %9 = icmp eq i64 %8, 0\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600002aea4e0:s0 -> Node0x600002aea530[tooltip="3 -> 10\nProbability 37.50%" ];
+	Node0x600002aea4e0:s1 -> Node0x600002aea580[tooltip="3 -> 12\nProbability 62.50%" ];
+	Node0x600002aea530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load i64, ptr %5, align 8\l  br label %13\l}"];
+	Node0x600002aea530 -> Node0x600002aea5d0[tooltip="10 -> 13\nProbability 100.00%" ];
+	Node0x600002aea580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x600002aea580 -> Node0x600002aea5d0[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x600002aea5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = phi i64 [ %11, %10 ], [ 1, %12 ]\l  %15 = load ptr, ptr %6, align 8\l  %16 = call i32 @gx_forward_map_color_rgb(ptr noundef %7, i64 noundef %14,\l... ptr noundef %15)\l  ret i32 %16\l}"];
+}

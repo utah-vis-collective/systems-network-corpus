@@ -1,0 +1,27 @@
+digraph "CFG for 'gdev_mem_word_device_for_bits' function" {
+	label="CFG for 'gdev_mem_word_device_for_bits' function";
+
+	Node0x6000008b6ad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  %4 = load i32, ptr %3, align 4\l  switch i32 %4, label %11 [\l    i32 1, label %5\l    i32 2, label %6\l    i32 4, label %7\l    i32 8, label %8\l    i32 24, label %9\l    i32 32, label %10\l  ]\l|{<s0>def|<s1>1|<s2>2|<s3>4|<s4>8|<s5>24|<s6>32}}"];
+	Node0x6000008b6ad0:s0 -> Node0x6000008b6d00[tooltip="1 -> 11\nProbability 14.29%" ];
+	Node0x6000008b6ad0:s1 -> Node0x6000008b6b20[tooltip="1 -> 5\nProbability 14.29%" ];
+	Node0x6000008b6ad0:s2 -> Node0x6000008b6b70[tooltip="1 -> 6\nProbability 14.29%" ];
+	Node0x6000008b6ad0:s3 -> Node0x6000008b6bc0[tooltip="1 -> 7\nProbability 14.29%" ];
+	Node0x6000008b6ad0:s4 -> Node0x6000008b6c10[tooltip="1 -> 8\nProbability 14.29%" ];
+	Node0x6000008b6ad0:s5 -> Node0x6000008b6c60[tooltip="1 -> 9\nProbability 14.29%" ];
+	Node0x6000008b6ad0:s6 -> Node0x6000008b6cb0[tooltip="1 -> 10\nProbability 14.29%" ];
+	Node0x6000008b6b20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{5:\l|  store ptr @mem_mono_word_device, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6b20 -> Node0x6000008b6d50[tooltip="5 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{6:\l|  store ptr @mem_mapped2_word_device, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6b70 -> Node0x6000008b6d50[tooltip="6 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6bc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{7:\l|  store ptr @mem_mapped4_word_device, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6bc0 -> Node0x6000008b6d50[tooltip="7 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6c10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{8:\l|  store ptr @mem_mapped8_word_device, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6c10 -> Node0x6000008b6d50[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{9:\l|  store ptr @mem_true24_word_device, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6c60 -> Node0x6000008b6d50[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{10:\l|  store ptr @mem_true32_word_device, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6cb0 -> Node0x6000008b6d50[tooltip="10 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6d00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{11:\l|  store ptr null, ptr %2, align 8\l  br label %12\l}"];
+	Node0x6000008b6d00 -> Node0x6000008b6d50[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x6000008b6d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  ret ptr %13\l}"];
+}

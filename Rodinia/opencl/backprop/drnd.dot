@@ -1,0 +1,5 @@
+digraph "CFG for 'drnd' function" {
+	label="CFG for 'drnd' function";
+
+	Node0x6000032de0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 @rand()\l  %2 = sitofp i32 %1 to float\l  %3 = fdiv float %2, 0x41E0000000000000\l  ret float %3\l}"];
+}

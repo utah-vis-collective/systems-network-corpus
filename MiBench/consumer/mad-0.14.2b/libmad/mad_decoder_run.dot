@@ -1,0 +1,25 @@
+digraph "CFG for 'mad_decoder_run' function" {
+	label="CFG for 'mad_decoder_run' function";
+
+	Node0x600000a32080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr null, ptr %7, align 8\l  %8 = load i32, ptr %5, align 4\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.mad_decoder, ptr %9, i32 0, i32 0\l  store i32 %8, ptr %10, align 8\l  switch i32 %8, label %13 [\l    i32 0, label %11\l    i32 1, label %12\l  ]\l|{<s0>def|<s1>0|<s2>1}}"];
+	Node0x600000a32080:s0 -> Node0x600000a32170[tooltip="2 -> 13\nProbability 33.33%" ];
+	Node0x600000a32080:s1 -> Node0x600000a320d0[tooltip="2 -> 11\nProbability 33.33%" ];
+	Node0x600000a32080:s2 -> Node0x600000a32120[tooltip="2 -> 12\nProbability 33.33%" ];
+	Node0x600000a320d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  store ptr @run_sync, ptr %7, align 8\l  br label %13\l}"];
+	Node0x600000a320d0 -> Node0x600000a32170[tooltip="11 -> 13\nProbability 100.00%" ];
+	Node0x600000a32120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x600000a32120 -> Node0x600000a32170[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x600000a32170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %7, align 8\l  %15 = icmp eq ptr %14, null\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600000a32170:s0 -> Node0x600000a321c0[tooltip="13 -> 16\nProbability 37.50%" ];
+	Node0x600000a32170:s1 -> Node0x600000a32210[tooltip="13 -> 17\nProbability 62.50%" ];
+	Node0x600000a321c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  store i32 -1, ptr %3, align 4\l  br label %36\l}"];
+	Node0x600000a321c0 -> Node0x600000a32300[tooltip="16 -> 36\nProbability 100.00%" ];
+	Node0x600000a32210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = call ptr @malloc(i64 noundef 45264) #3\l  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds %struct.mad_decoder, ptr %19, i32 0, i32 3\l  store ptr %18, ptr %20, align 8\l  %21 = load ptr, ptr %4, align 8\l  %22 = getelementptr inbounds %struct.mad_decoder, ptr %21, i32 0, i32 3\l  %23 = load ptr, ptr %22, align 8\l  %24 = icmp eq ptr %23, null\l  br i1 %24, label %25, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000a32210:s0 -> Node0x600000a32260[tooltip="17 -> 25\nProbability 37.50%" ];
+	Node0x600000a32210:s1 -> Node0x600000a322b0[tooltip="17 -> 26\nProbability 62.50%" ];
+	Node0x600000a32260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  store i32 -1, ptr %3, align 4\l  br label %36\l}"];
+	Node0x600000a32260 -> Node0x600000a32300[tooltip="25 -> 36\nProbability 100.00%" ];
+	Node0x600000a322b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %7, align 8\l  %28 = load ptr, ptr %4, align 8\l  %29 = call i32 %27(ptr noundef %28)\l  store i32 %29, ptr %6, align 4\l  %30 = load ptr, ptr %4, align 8\l  %31 = getelementptr inbounds %struct.mad_decoder, ptr %30, i32 0, i32 3\l  %32 = load ptr, ptr %31, align 8\l  call void @free(ptr noundef %32)\l  %33 = load ptr, ptr %4, align 8\l  %34 = getelementptr inbounds %struct.mad_decoder, ptr %33, i32 0, i32 3\l  store ptr null, ptr %34, align 8\l  %35 = load i32, ptr %6, align 4\l  store i32 %35, ptr %3, align 4\l  br label %36\l}"];
+	Node0x600000a322b0 -> Node0x600000a32300[tooltip="26 -> 36\nProbability 100.00%" ];
+	Node0x600000a32300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %3, align 4\l  ret i32 %37\l}"];
+}

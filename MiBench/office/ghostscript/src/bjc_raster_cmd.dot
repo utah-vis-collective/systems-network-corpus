@@ -1,0 +1,46 @@
+digraph "CFG for 'bjc_raster_cmd' function" {
+	label="CFG for 'bjc_raster_cmd' function";
+
+	Node0x60000152ecb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  store i32 %0, ptr %6, align 4\l  store i32 %1, ptr %7, align 4\l  store ptr %2, ptr %8, align 8\l  store ptr %3, ptr %9, align 8\l  store ptr %4, ptr %10, align 8\l  %11 = load ptr, ptr %9, align 8\l  %12 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %11, i32 0, i32\l... 41\l  %13 = getelementptr inbounds %struct.bjc_params, ptr %12, i32 0, i32 7\l  %14 = load i32, ptr %13, align 4\l  %15 = icmp eq i32 %14, 0\l  br i1 %15, label %16, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x60000152ecb0:s0 -> Node0x60000152ed50[tooltip="5 -> 16\nProbability 37.50%" ];
+	Node0x60000152ecb0:s1 -> Node0x60000152eda0[tooltip="5 -> 21\nProbability 62.50%" ];
+	Node0x60000152ed50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %7, align 4\l  %18 = load ptr, ptr %8, align 8\l  %19 = load ptr, ptr %10, align 8\l  %20 = call i32 @bjc_raster_cmd_sub(i8 noundef signext 75, i32 noundef %17,\l... ptr noundef %18, ptr noundef %19)\l  br label %100\l}"];
+	Node0x60000152ed50 -> Node0x60000152f250[tooltip="16 -> 100\nProbability 100.00%" ];
+	Node0x60000152eda0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %9, align 8\l  %23 = getelementptr inbounds %struct.gx_device_printer_s, ptr %22, i32 0,\l... i32 7\l  %24 = getelementptr inbounds %struct.gx_device_color_info_s, ptr %23, i32 0,\l... i32 0\l  %25 = load i32, ptr %24, align 8\l  %26 = icmp eq i32 %25, 1\l  br i1 %26, label %27, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x60000152eda0:s0 -> Node0x60000152edf0[tooltip="21 -> 27\nProbability 50.00%" ];
+	Node0x60000152eda0:s1 -> Node0x60000152f110[tooltip="21 -> 77\nProbability 50.00%" ];
+	Node0x60000152edf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %9, align 8\l  %29 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %28, i32 0, i32\l... 41\l  %30 = getelementptr inbounds %struct.bjc_params, ptr %29, i32 0, i32 7\l  %31 = load i32, ptr %30, align 4\l  %32 = and i32 %31, 8\l  %33 = icmp ne i32 %32, 0\l  br i1 %33, label %34, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x60000152edf0:s0 -> Node0x60000152ee40[tooltip="27 -> 34\nProbability 50.00%" ];
+	Node0x60000152edf0:s1 -> Node0x60000152ee90[tooltip="27 -> 39\nProbability 50.00%" ];
+	Node0x60000152ee40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %7, align 4\l  %36 = load ptr, ptr %8, align 8\l  %37 = load ptr, ptr %10, align 8\l  %38 = call i32 @bjc_raster_cmd_sub(i8 noundef signext 75, i32 noundef %35,\l... ptr noundef %36, ptr noundef %37)\l  br label %76\l}"];
+	Node0x60000152ee40 -> Node0x60000152f0c0[tooltip="34 -> 76\nProbability 100.00%" ];
+	Node0x60000152ee90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %9, align 8\l  %41 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %40, i32 0, i32\l... 41\l  %42 = getelementptr inbounds %struct.bjc_params, ptr %41, i32 0, i32 7\l  %43 = load i32, ptr %42, align 4\l  %44 = and i32 %43, 4\l  %45 = icmp ne i32 %44, 0\l  br i1 %45, label %46, label %51\l|{<s0>T|<s1>F}}"];
+	Node0x60000152ee90:s0 -> Node0x60000152eee0[tooltip="39 -> 46\nProbability 50.00%" ];
+	Node0x60000152ee90:s1 -> Node0x60000152ef30[tooltip="39 -> 51\nProbability 50.00%" ];
+	Node0x60000152eee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{46:\l|  %47 = load i32, ptr %7, align 4\l  %48 = load ptr, ptr %8, align 8\l  %49 = load ptr, ptr %10, align 8\l  %50 = call i32 @bjc_raster_cmd_sub(i8 noundef signext 89, i32 noundef %47,\l... ptr noundef %48, ptr noundef %49)\l  br label %51\l}"];
+	Node0x60000152eee0 -> Node0x60000152ef30[tooltip="46 -> 51\nProbability 100.00%" ];
+	Node0x60000152ef30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{51:\l|  %52 = load ptr, ptr %9, align 8\l  %53 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %52, i32 0, i32\l... 41\l  %54 = getelementptr inbounds %struct.bjc_params, ptr %53, i32 0, i32 7\l  %55 = load i32, ptr %54, align 4\l  %56 = and i32 %55, 2\l  %57 = icmp ne i32 %56, 0\l  br i1 %57, label %58, label %63\l|{<s0>T|<s1>F}}"];
+	Node0x60000152ef30:s0 -> Node0x60000152ef80[tooltip="51 -> 58\nProbability 50.00%" ];
+	Node0x60000152ef30:s1 -> Node0x60000152efd0[tooltip="51 -> 63\nProbability 50.00%" ];
+	Node0x60000152ef80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{58:\l|  %59 = load i32, ptr %7, align 4\l  %60 = load ptr, ptr %8, align 8\l  %61 = load ptr, ptr %10, align 8\l  %62 = call i32 @bjc_raster_cmd_sub(i8 noundef signext 77, i32 noundef %59,\l... ptr noundef %60, ptr noundef %61)\l  br label %63\l}"];
+	Node0x60000152ef80 -> Node0x60000152efd0[tooltip="58 -> 63\nProbability 100.00%" ];
+	Node0x60000152efd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{63:\l|  %64 = load ptr, ptr %9, align 8\l  %65 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %64, i32 0, i32\l... 41\l  %66 = getelementptr inbounds %struct.bjc_params, ptr %65, i32 0, i32 7\l  %67 = load i32, ptr %66, align 4\l  %68 = and i32 %67, 1\l  %69 = icmp ne i32 %68, 0\l  br i1 %69, label %70, label %75\l|{<s0>T|<s1>F}}"];
+	Node0x60000152efd0:s0 -> Node0x60000152f020[tooltip="63 -> 70\nProbability 50.00%" ];
+	Node0x60000152efd0:s1 -> Node0x60000152f070[tooltip="63 -> 75\nProbability 50.00%" ];
+	Node0x60000152f020 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{70:\l|  %71 = load i32, ptr %7, align 4\l  %72 = load ptr, ptr %8, align 8\l  %73 = load ptr, ptr %10, align 8\l  %74 = call i32 @bjc_raster_cmd_sub(i8 noundef signext 67, i32 noundef %71,\l... ptr noundef %72, ptr noundef %73)\l  br label %75\l}"];
+	Node0x60000152f020 -> Node0x60000152f070[tooltip="70 -> 75\nProbability 100.00%" ];
+	Node0x60000152f070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{75:\l|  br label %76\l}"];
+	Node0x60000152f070 -> Node0x60000152f0c0[tooltip="75 -> 76\nProbability 100.00%" ];
+	Node0x60000152f0c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{76:\l|  br label %99\l}"];
+	Node0x60000152f0c0 -> Node0x60000152f200[tooltip="76 -> 99\nProbability 100.00%" ];
+	Node0x60000152f110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{77:\l|  %78 = load ptr, ptr %9, align 8\l  %79 = getelementptr inbounds %struct.gx_device_bjc800_s, ptr %78, i32 0, i32\l... 41\l  %80 = getelementptr inbounds %struct.bjc_params, ptr %79, i32 0, i32 7\l  %81 = load i32, ptr %80, align 4\l  %82 = load i32, ptr %6, align 4\l  %83 = sext i32 %82 to i64\l  %84 = getelementptr inbounds [4 x i8], ptr @bjc_raster_cmd.ymckCodes, i64 0,\l... i64 %83\l  %85 = load i8, ptr %84, align 1\l  %86 = zext i8 %85 to i32\l  %87 = and i32 %81, %86\l  %88 = icmp ne i32 %87, 0\l  br i1 %88, label %89, label %98\l|{<s0>T|<s1>F}}"];
+	Node0x60000152f110:s0 -> Node0x60000152f160[tooltip="77 -> 89\nProbability 62.50%" ];
+	Node0x60000152f110:s1 -> Node0x60000152f1b0[tooltip="77 -> 98\nProbability 37.50%" ];
+	Node0x60000152f160 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{89:\l|  %90 = load i32, ptr %6, align 4\l  %91 = sext i32 %90 to i64\l  %92 = getelementptr inbounds [5 x i8], ptr @.str.109, i64 0, i64 %91\l  %93 = load i8, ptr %92, align 1\l  %94 = load i32, ptr %7, align 4\l  %95 = load ptr, ptr %8, align 8\l  %96 = load ptr, ptr %10, align 8\l  %97 = call i32 @bjc_raster_cmd_sub(i8 noundef signext %93, i32 noundef %94,\l... ptr noundef %95, ptr noundef %96)\l  br label %98\l}"];
+	Node0x60000152f160 -> Node0x60000152f1b0[tooltip="89 -> 98\nProbability 100.00%" ];
+	Node0x60000152f1b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{98:\l|  br label %99\l}"];
+	Node0x60000152f1b0 -> Node0x60000152f200[tooltip="98 -> 99\nProbability 100.00%" ];
+	Node0x60000152f200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{99:\l|  br label %100\l}"];
+	Node0x60000152f200 -> Node0x60000152f250[tooltip="99 -> 100\nProbability 100.00%" ];
+	Node0x60000152f250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{100:\l|  ret i32 0\l}"];
+}

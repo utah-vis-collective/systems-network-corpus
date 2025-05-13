@@ -1,0 +1,14 @@
+digraph "CFG for 'usage' function" {
+	label="CFG for 'usage' function";
+
+	Node0x6000037404b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{0:\l|  %1 = alloca [1024 x i8], align 1\l  %2 = alloca i32, align 4\l  %3 = load ptr, ptr @__stderrp, align 8\l  %4 = getelementptr inbounds [1024 x i8], ptr %1, i64 0, i64 0\l  call void @setbuf(ptr noundef %3, ptr noundef %4)\l  store i32 0, ptr %2, align 4\l  br label %5\l}"];
+	Node0x6000037404b0 -> Node0x600003740500[tooltip="0 -> 5\nProbability 100.00%" ];
+	Node0x600003740500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %2, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds [15 x ptr], ptr @stuff, i64 0, i64 %7\l  %9 = load ptr, ptr %8, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600003740500:s0 -> Node0x600003740550[tooltip="5 -> 11\nProbability 100.00%" ];
+	Node0x600003740500:s1 -> Node0x6000037405f0[tooltip="5 -> 21\nProbability 0.00%" ];
+	Node0x600003740550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @__stderrp, align 8\l  %13 = load i32, ptr %2, align 4\l  %14 = sext i32 %13 to i64\l  %15 = getelementptr inbounds [15 x ptr], ptr @stuff, i64 0, i64 %14\l  %16 = load ptr, ptr %15, align 8\l  %17 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %12, ptr noundef\l... @.str.25, ptr noundef %16) #4\l  br label %18\l}"];
+	Node0x600003740550 -> Node0x6000037405a0[tooltip="11 -> 18\nProbability 100.00%" ];
+	Node0x6000037405a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %2, align 4\l  %20 = add nsw i32 %19, 1\l  store i32 %20, ptr %2, align 4\l  br label %5\l}"];
+	Node0x6000037405a0 -> Node0x600003740500[tooltip="18 -> 5\nProbability 100.00%" ];
+	Node0x6000037405f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{21:\l|  call void @exit(i32 noundef -1) #5\l  unreachable\l}"];
+}

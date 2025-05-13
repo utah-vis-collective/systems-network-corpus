@@ -1,0 +1,5 @@
+digraph "CFG for 'arg_error' function" {
+	label="CFG for 'arg_error' function";
+
+	Node0x6000007adef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  call void @signon_msg()\l  %1 = load ptr, ptr @pgpout, align 8\l  %2 = call ptr @LANG(ptr noundef @.str.134)\l  %3 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %1, ptr noundef %2) #10\l  store i32 5, ptr @errorLvl, align 4\l  call void @user_error()\l  ret void\l}"];
+}

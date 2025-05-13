@@ -1,0 +1,5 @@
+digraph "CFG for 'clearscreen' function" {
+	label="CFG for 'clearscreen' function";
+
+	Node0x6000007a7930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @pgpout, align 8\l  %2 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %1, ptr noundef @.str.84)\l... #10\l  %3 = load ptr, ptr @pgpout, align 8\l  %4 = call i32 @fflush(ptr noundef %3)\l  ret void\l}"];
+}

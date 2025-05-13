@@ -1,0 +1,15 @@
+digraph "CFG for 'png_read_sBIT' function" {
+	label="CFG for 'png_read_sBIT' function";
+
+	Node0x600002336760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600002336760:s0 -> Node0x6000023367b0[tooltip="3 -> 9\nProbability 62.50%" ];
+	Node0x600002336760:s1 -> Node0x600002336800[tooltip="3 -> 12\nProbability 37.50%" ];
+	Node0x6000023367b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %5, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %13, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000023367b0:s0 -> Node0x600002336850[tooltip="9 -> 13\nProbability 62.50%" ];
+	Node0x6000023367b0:s1 -> Node0x600002336800[tooltip="9 -> 12\nProbability 37.50%" ];
+	Node0x600002336800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  br label %25\l}"];
+	Node0x600002336800 -> Node0x6000023368a0[tooltip="12 -> 25\nProbability 100.00%" ];
+	Node0x600002336850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds %struct.png_info_struct, ptr %14, i32 0, i32 20\l  %16 = load ptr, ptr %6, align 8\l  %17 = load ptr, ptr %5, align 8\l  %18 = getelementptr inbounds %struct.png_info_struct, ptr %17, i32 0, i32 20\l  %19 = call i64 @llvm.objectsize.i64.p0(ptr %18, i1 false, i1 true, i1 false)\l  %20 = call ptr @__memcpy_chk(ptr noundef %15, ptr noundef %16, i64 noundef\l... 5, i64 noundef %19) #4\l  %21 = load ptr, ptr %5, align 8\l  %22 = getelementptr inbounds %struct.png_info_struct, ptr %21, i32 0, i32 2\l  %23 = load i64, ptr %22, align 8\l  %24 = or i64 %23, 2\l  store i64 %24, ptr %22, align 8\l  br label %25\l}"];
+	Node0x600002336850 -> Node0x6000023368a0[tooltip="13 -> 25\nProbability 100.00%" ];
+	Node0x6000023368a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  ret void\l}"];
+}

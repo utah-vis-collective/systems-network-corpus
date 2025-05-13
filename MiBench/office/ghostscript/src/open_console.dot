@@ -1,0 +1,22 @@
+digraph "CFG for 'open_console' function" {
+	label="CFG for 'open_console' function";
+
+	Node0x6000034ca4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = load i32, ptr @console_fd, align 4\l  %3 = icmp ne i32 %2, -1\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x6000034ca4e0:s0 -> Node0x6000034ca580[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x6000034ca4e0:s1 -> Node0x6000034ca5d0[tooltip="0 -> 5\nProbability 37.50%" ];
+	Node0x6000034ca580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{4:\l|  br label %25\l}"];
+	Node0x6000034ca580 -> Node0x6000034ca760[tooltip="4 -> 25\nProbability 100.00%" ];
+	Node0x6000034ca5d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  %6 = call ptr @getenv(ptr noundef @.str.7)\l  store ptr %6, ptr %1, align 8\l  %7 = load ptr, ptr %1, align 8\l  %8 = icmp eq ptr %7, null\l  br i1 %8, label %14, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000034ca5d0:s0 -> Node0x6000034ca670[tooltip="5 -> 14\nProbability 37.50%" ];
+	Node0x6000034ca5d0:s1 -> Node0x6000034ca620[tooltip="5 -> 9\nProbability 62.50%" ];
+	Node0x6000034ca620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %1, align 8\l  %11 = load i8, ptr %10, align 1\l  %12 = sext i8 %11 to i32\l  %13 = icmp eq i32 %12, 0\l  br i1 %13, label %14, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000034ca620:s0 -> Node0x6000034ca670[tooltip="9 -> 14\nProbability 37.50%" ];
+	Node0x6000034ca620:s1 -> Node0x6000034ca6c0[tooltip="9 -> 15\nProbability 62.50%" ];
+	Node0x6000034ca670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{14:\l|  store ptr @.str.8, ptr %1, align 8\l  br label %15\l}"];
+	Node0x6000034ca670 -> Node0x6000034ca6c0[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x6000034ca6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %1, align 8\l  %17 = call i32 (ptr, i32, ...) @open(ptr noundef %16, i32 noundef 0)\l  store i32 %17, ptr @console_fd, align 4\l  %18 = load i32, ptr @console_fd, align 4\l  %19 = icmp eq i32 %18, -1\l  br i1 %19, label %20, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000034ca6c0:s0 -> Node0x6000034ca710[tooltip="15 -> 20\nProbability 0.00%" ];
+	Node0x6000034ca6c0:s1 -> Node0x6000034ca760[tooltip="15 -> 25\nProbability 100.00%" ];
+	Node0x6000034ca710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f2cab570" fontname="Courier",label="{20:\l|  %21 = call i32 @ega_close(ptr noundef null)\l  %22 = load ptr, ptr @gs_stderr, align 8\l  %23 = load ptr, ptr %1, align 8\l  %24 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %22, ptr noundef\l... @.str.9, ptr noundef %23) #5\l  call void @perror(ptr noundef @.str.10) #6\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x6000034ca760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  ret void\l}"];
+}

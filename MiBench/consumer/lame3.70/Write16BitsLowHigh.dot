@@ -1,0 +1,5 @@
+digraph "CFG for 'Write16BitsLowHigh' function" {
+	label="CFG for 'Write16BitsLowHigh' function";
+
+	Node0x600003e0a710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load i32, ptr %4, align 4\l  %6 = and i32 %5, 255\l  %7 = load ptr, ptr %3, align 8\l  %8 = call i32 @putc(i32 noundef %6, ptr noundef %7)\l  %9 = load i32, ptr %4, align 4\l  %10 = ashr i32 %9, 8\l  %11 = and i32 %10, 255\l  %12 = load ptr, ptr %3, align 8\l  %13 = call i32 @putc(i32 noundef %11, ptr noundef %12)\l  ret void\l}"];
+}

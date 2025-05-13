@@ -1,0 +1,14 @@
+digraph "CFG for '_Z10intshufflePii' function" {
+	label="CFG for '_Z10intshufflePii' function";
+
+	Node0x600000902e40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i64, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  store i64 0, ptr %5, align 8\l  br label %8\l}"];
+	Node0x600000902e40 -> Node0x600000902e90[tooltip="2 -> 8\nProbability 100.00%" ];
+	Node0x600000902e90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i64, ptr %5, align 8\l  %10 = load i32, ptr %4, align 4\l  %11 = sext i32 %10 to i64\l  %12 = icmp slt i64 %9, %11\l  br i1 %12, label %13, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600000902e90:s0 -> Node0x600000902ee0[tooltip="8 -> 13\nProbability 96.88%" ];
+	Node0x600000902e90:s1 -> Node0x600000902f80[tooltip="8 -> 40\nProbability 3.12%" ];
+	Node0x600000902ee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = call i64 @lrand48()\l  %15 = load i32, ptr %4, align 4\l  %16 = sext i32 %15 to i64\l  %17 = load i64, ptr %5, align 8\l  %18 = sub nsw i64 %16, %17\l  %19 = srem i64 %14, %18\l  %20 = load i64, ptr %5, align 8\l  %21 = add nsw i64 %19, %20\l  store i64 %21, ptr %6, align 8\l  %22 = load ptr, ptr %3, align 8\l  %23 = load i64, ptr %5, align 8\l  %24 = getelementptr inbounds i32, ptr %22, i64 %23\l  %25 = load i32, ptr %24, align 4\l  store i32 %25, ptr %7, align 4\l  %26 = load ptr, ptr %3, align 8\l  %27 = load i64, ptr %6, align 8\l  %28 = getelementptr inbounds i32, ptr %26, i64 %27\l  %29 = load i32, ptr %28, align 4\l  %30 = load ptr, ptr %3, align 8\l  %31 = load i64, ptr %5, align 8\l  %32 = getelementptr inbounds i32, ptr %30, i64 %31\l  store i32 %29, ptr %32, align 4\l  %33 = load i32, ptr %7, align 4\l  %34 = load ptr, ptr %3, align 8\l  %35 = load i64, ptr %6, align 8\l  %36 = getelementptr inbounds i32, ptr %34, i64 %35\l  store i32 %33, ptr %36, align 4\l  br label %37\l}"];
+	Node0x600000902ee0 -> Node0x600000902f30[tooltip="13 -> 37\nProbability 100.00%" ];
+	Node0x600000902f30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load i64, ptr %5, align 8\l  %39 = add nsw i64 %38, 1\l  store i64 %39, ptr %5, align 8\l  br label %8, !llvm.loop !6\l}"];
+	Node0x600000902f30 -> Node0x600000902e90[tooltip="37 -> 8\nProbability 100.00%" ];
+	Node0x600000902f80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{40:\l|  ret void\l}"];
+}

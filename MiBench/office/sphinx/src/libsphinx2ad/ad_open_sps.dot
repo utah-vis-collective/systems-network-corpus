@@ -1,0 +1,5 @@
+digraph "CFG for 'ad_open_sps' function" {
+	label="CFG for 'ad_open_sps' function";
+
+	Node0x6000029b9ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load ptr, ptr @__stderrp, align 8\l  %4 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %3, ptr noundef @.str) #2\l  ret ptr null\l}"];
+}

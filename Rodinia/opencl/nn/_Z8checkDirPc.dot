@@ -1,0 +1,15 @@
+digraph "CFG for '_Z8checkDirPc' function" {
+	label="CFG for '_Z8checkDirPc' function";
+
+	Node0x600001eee350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca %struct.stat, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i32 @\"\\01_stat\"(ptr noundef %4, ptr noundef %3)\l  %6 = icmp ne i32 %5, 0\l  br i1 %6, label %7, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001eee350:s0 -> Node0x600001eee3a0[tooltip="1 -> 7\nProbability 0.00%" ];
+	Node0x600001eee350:s1 -> Node0x600001eee3f0[tooltip="1 -> 10\nProbability 100.00%" ];
+	Node0x600001eee3a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = call i32 (ptr, ...) @printf(ptr noundef @.str.3, ptr noundef %8)\l  call void @exit(i32 noundef -1) #7\l  unreachable\l}"];
+	Node0x600001eee3f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = getelementptr inbounds %struct.stat, ptr %3, i32 0, i32 1\l  %12 = load i16, ptr %11, align 4\l  %13 = zext i16 %12 to i32\l  %14 = and i32 16384, %13\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %19, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001eee3f0:s0 -> Node0x600001eee490[tooltip="10 -> 19\nProbability 100.00%" ];
+	Node0x600001eee3f0:s1 -> Node0x600001eee440[tooltip="10 -> 16\nProbability 0.00%" ];
+	Node0x600001eee440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %2, align 8\l  %18 = call i32 (ptr, ...) @printf(ptr noundef @.str.4, ptr noundef %17)\l  call void @exit(i32 noundef -1) #7\l  unreachable\l}"];
+	Node0x600001eee490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  br label %20\l}"];
+	Node0x600001eee490 -> Node0x600001eee4e0[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x600001eee4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

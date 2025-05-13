@@ -1,0 +1,12 @@
+digraph "CFG for 'search_hyp_free' function" {
+	label="CFG for 'search_hyp_free' function";
+
+	Node0x600002afa170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  br label %4\l}"];
+	Node0x600002afa170 -> Node0x600002afa1c0[tooltip="1 -> 4\nProbability 100.00%" ];
+	Node0x600002afa1c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr %2, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %7, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600002afa1c0:s0 -> Node0x600002afa210[tooltip="4 -> 7\nProbability 96.88%" ];
+	Node0x600002afa1c0:s1 -> Node0x600002afa260[tooltip="4 -> 13\nProbability 3.12%" ];
+	Node0x600002afa210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.search_hyp_s, ptr %8, i32 0, i32 7\l  %10 = load ptr, ptr %9, align 8\l  store ptr %10, ptr %3, align 8\l  %11 = load ptr, ptr %2, align 8\l  call void @listelem_free(ptr noundef %11, i32 noundef 56)\l  %12 = load ptr, ptr %3, align 8\l  store ptr %12, ptr %2, align 8\l  br label %4\l}"];
+	Node0x600002afa210 -> Node0x600002afa1c0[tooltip="7 -> 4\nProbability 100.00%" ];
+	Node0x600002afa260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{13:\l|  ret void\l}"];
+}

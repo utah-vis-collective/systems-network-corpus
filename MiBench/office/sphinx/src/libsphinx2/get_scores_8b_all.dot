@@ -1,0 +1,5 @@
+digraph "CFG for 'get_scores_8b_all' function" {
+	label="CFG for 'get_scores_8b_all' function";
+
+	Node0x600001f43a70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr @__stdoutp, align 8\l  %6 = call i32 @fflush(ptr noundef %5)\l  %7 = load ptr, ptr @__stderrp, align 8\l  %8 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %7, ptr noundef @.str.22,\l... ptr noundef @.str.7, i32 noundef 1107) #8\l  call void @exit(i32 noundef -1) #9\l  unreachable\l}"];
+}

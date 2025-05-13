@@ -1,0 +1,18 @@
+digraph "CFG for 'inflateSyncPoint' function" {
+	label="CFG for 'inflateSyncPoint' function";
+
+	Node0x60000284a9e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr %3, align 8\l  %5 = icmp eq ptr %4, null\l  br i1 %5, label %18, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x60000284a9e0:s0 -> Node0x60000284aad0[tooltip="1 -> 18\nProbability 37.50%" ];
+	Node0x60000284a9e0:s1 -> Node0x60000284aa30[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x60000284aa30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.z_stream_s, ptr %7, i32 0, i32 7\l  %9 = load ptr, ptr %8, align 8\l  %10 = icmp eq ptr %9, null\l  br i1 %10, label %18, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x60000284aa30:s0 -> Node0x60000284aad0[tooltip="6 -> 18\nProbability 37.50%" ];
+	Node0x60000284aa30:s1 -> Node0x60000284aa80[tooltip="6 -> 11\nProbability 62.50%" ];
+	Node0x60000284aa80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.z_stream_s, ptr %12, i32 0, i32 7\l  %14 = load ptr, ptr %13, align 8\l  %15 = getelementptr inbounds %struct.internal_state, ptr %14, i32 0, i32 4\l  %16 = load ptr, ptr %15, align 8\l  %17 = icmp eq ptr %16, null\l  br i1 %17, label %18, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000284aa80:s0 -> Node0x60000284aad0[tooltip="11 -> 18\nProbability 37.50%" ];
+	Node0x60000284aa80:s1 -> Node0x60000284ab20[tooltip="11 -> 19\nProbability 62.50%" ];
+	Node0x60000284aad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  store i32 -2, ptr %2, align 4\l  br label %26\l}"];
+	Node0x60000284aad0 -> Node0x60000284ab70[tooltip="18 -> 26\nProbability 100.00%" ];
+	Node0x60000284ab20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %3, align 8\l  %21 = getelementptr inbounds %struct.z_stream_s, ptr %20, i32 0, i32 7\l  %22 = load ptr, ptr %21, align 8\l  %23 = getelementptr inbounds %struct.internal_state, ptr %22, i32 0, i32 4\l  %24 = load ptr, ptr %23, align 8\l  %25 = call i32 @inflate_blocks_sync_point(ptr noundef %24)\l  store i32 %25, ptr %2, align 4\l  br label %26\l}"];
+	Node0x60000284ab20 -> Node0x60000284ab70[tooltip="19 -> 26\nProbability 100.00%" ];
+	Node0x60000284ab70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %2, align 4\l  ret i32 %27\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'SCVQSetSenoneCompression' function" {
+	label="CFG for 'SCVQSetSenoneCompression' function";
+
+	Node0x600001f45c70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = icmp ne i32 %3, 8\l  br i1 %4, label %5, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001f45c70:s0 -> Node0x600001f45e50[tooltip="1 -> 5\nProbability 50.00%" ];
+	Node0x600001f45c70:s1 -> Node0x600001f45ef0[tooltip="1 -> 14\nProbability 50.00%" ];
+	Node0x600001f45e50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %2, align 4\l  %7 = icmp ne i32 %6, 32\l  br i1 %7, label %8, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001f45e50:s0 -> Node0x600001f45ea0[tooltip="5 -> 8\nProbability 0.00%" ];
+	Node0x600001f45e50:s1 -> Node0x600001f45ef0[tooltip="5 -> 14\nProbability 100.00%" ];
+	Node0x600001f45ea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr @__stdoutp, align 8\l  %10 = call i32 @fflush(ptr noundef %9)\l  %11 = load ptr, ptr @__stderrp, align 8\l  %12 = load i32, ptr %2, align 4\l  %13 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %11, ptr noundef\l... @.str.15, ptr noundef @.str.7, i32 noundef 1683, i32 noundef %12) #8\l  call void @exit(i32 noundef -1) #9\l  unreachable\l}"];
+	Node0x600001f45ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %2, align 4\l  store i32 %15, ptr @prob_size, align 4\l  ret void\l}"];
+}

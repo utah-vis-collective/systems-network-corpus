@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt12length_errorC2B8ne190107EPKc' function" {
+	label="CFG for '_ZNSt12length_errorC2B8ne190107EPKc' function";
+
+	Node0x60000093e2b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = call noundef ptr @_ZNSt11logic_errorC2EPKc(ptr noundef nonnull align 8\l... dereferenceable(16) %5, ptr noundef %6)\l  store ptr getelementptr inbounds inrange(-16, 24) (\{ [5 x ptr] \}, ptr\l... @_ZTVSt12length_error, i32 0, i32 0, i32 2), ptr %5, align 8\l  ret ptr %5\l}"];
+}

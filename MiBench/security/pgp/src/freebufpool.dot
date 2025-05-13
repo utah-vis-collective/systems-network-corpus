@@ -1,0 +1,17 @@
+digraph "CFG for 'freebufpool' function" {
+	label="CFG for 'freebufpool' function";
+
+	Node0x600003b077a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = load i8, ptr @verbose, align 1\l  %3 = icmp ne i8 %2, 0\l  br i1 %3, label %4, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600003b077a0:s0 -> Node0x600003b077f0[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x600003b077a0:s1 -> Node0x600003b07840[tooltip="0 -> 9\nProbability 37.50%" ];
+	Node0x600003b077f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr @pgpout, align 8\l  %6 = load i64, ptr @totalsize, align 8\l  %7 = sdiv i64 %6, 1024\l  %8 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %5, ptr noundef @.str.83,\l... i64 noundef %7) #5\l  br label %9\l}"];
+	Node0x600003b077f0 -> Node0x600003b07840[tooltip="4 -> 9\nProbability 100.00%" ];
+	Node0x600003b07840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  store i64 0, ptr @totalsize, align 8\l  br label %10\l}"];
+	Node0x600003b07840 -> Node0x600003b07890[tooltip="9 -> 10\nProbability 100.00%" ];
+	Node0x600003b07890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @bufpool, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600003b07890:s0 -> Node0x600003b078e0[tooltip="10 -> 13\nProbability 96.88%" ];
+	Node0x600003b07890:s1 -> Node0x600003b07930[tooltip="10 -> 19\nProbability 3.12%" ];
+	Node0x600003b078e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @bufpool, align 8\l  store ptr %14, ptr %1, align 8\l  %15 = load ptr, ptr @bufpool, align 8\l  %16 = getelementptr inbounds %struct.bufpool, ptr %15, i32 0, i32 0\l  %17 = load ptr, ptr %16, align 8\l  store ptr %17, ptr @bufpool, align 8\l  %18 = load ptr, ptr %1, align 8\l  call void @free(ptr noundef %18)\l  br label %10\l}"];
+	Node0x600003b078e0 -> Node0x600003b07890[tooltip="13 -> 10\nProbability 100.00%" ];
+	Node0x600003b07930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  store i32 0, ptr @hashleft, align 4\l  store i32 0, ptr @strleft, align 4\l  store i32 0, ptr @nleft, align 4\l  ret void\l}"];
+}

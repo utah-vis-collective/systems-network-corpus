@@ -1,0 +1,5 @@
+digraph "CFG for 'ega_int_handler' function" {
+	label="CFG for 'ega_int_handler' function";
+
+	Node0x6000034ca0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = call i32 @ega_close(ptr noundef null)\l  %4 = load ptr, ptr @gs_stderr, align 8\l  %5 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %4, ptr noundef @.str.6)\l... #5\l  call void @exit(i32 noundef 1) #6\l  unreachable\l}"];
+}

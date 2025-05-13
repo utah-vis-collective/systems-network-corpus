@@ -1,0 +1,15 @@
+digraph "CFG for 'read_tag' function" {
+	label="CFG for 'read_tag' function";
+
+	Node0x600002d8ae90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  store ptr null, ptr %6, align 8\l  %7 = load i64, ptr %4, align 8\l  %8 = call ptr @malloc(i64 noundef %7) #6\l  store ptr %8, ptr %5, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8ae90:s0 -> Node0x600002d8aee0[tooltip="2 -> 11\nProbability 62.50%" ];
+	Node0x600002d8ae90:s1 -> Node0x600002d8afd0[tooltip="2 -> 23\nProbability 37.50%" ];
+	Node0x600002d8aee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = load i64, ptr %4, align 8\l  %14 = load ptr, ptr %3, align 8\l  %15 = call i64 @fread(ptr noundef %12, i64 noundef %13, i64 noundef 1, ptr\l... noundef %14)\l  %16 = icmp eq i64 %15, 1\l  br i1 %16, label %17, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8aee0:s0 -> Node0x600002d8af30[tooltip="11 -> 17\nProbability 50.00%" ];
+	Node0x600002d8aee0:s1 -> Node0x600002d8af80[tooltip="11 -> 21\nProbability 50.00%" ];
+	Node0x600002d8af30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %5, align 8\l  %19 = load i64, ptr %4, align 8\l  %20 = call ptr @id3_tag_parse(ptr noundef %18, i64 noundef %19)\l  store ptr %20, ptr %6, align 8\l  br label %21\l}"];
+	Node0x600002d8af30 -> Node0x600002d8af80[tooltip="17 -> 21\nProbability 100.00%" ];
+	Node0x600002d8af80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  call void @free(ptr noundef %22)\l  br label %23\l}"];
+	Node0x600002d8af80 -> Node0x600002d8afd0[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x600002d8afd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %6, align 8\l  ret ptr %24\l}"];
+}

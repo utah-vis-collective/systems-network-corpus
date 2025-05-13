@@ -1,0 +1,5 @@
+digraph "CFG for 'PopScope' function" {
+	label="CFG for 'PopScope' function";
+
+	Node0x60000037e490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @scope_top, align 4\l  %2 = add nsw i32 %1, -1\l  store i32 %2, ptr @scope_top, align 4\l  ret void\l}"];
+}

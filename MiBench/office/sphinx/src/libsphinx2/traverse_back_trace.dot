@@ -1,0 +1,5 @@
+digraph "CFG for 'traverse_back_trace' function" {
+	label="CFG for 'traverse_back_trace' function";
+
+	Node0x600000d395e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store ptr %3, ptr %8, align 8\l  call void @llvm.va_start.p0(ptr %10)\l  %11 = load ptr, ptr %5, align 8\l  %12 = load i32, ptr %6, align 4\l  %13 = load ptr, ptr %7, align 8\l  %14 = load ptr, ptr %8, align 8\l  %15 = load ptr, ptr %10, align 8\l  %16 = call i32 @va_traverse_back_trace(ptr noundef %11, i32 noundef %12, ptr\l... noundef %13, ptr noundef %14, ptr noundef %15)\l  store i32 %16, ptr %9, align 4\l  call void @llvm.va_end.p0(ptr %10)\l  %17 = load i32, ptr %9, align 4\l  ret i32 %17\l}"];
+}

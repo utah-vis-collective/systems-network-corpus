@@ -1,0 +1,32 @@
+digraph "CFG for 'init_fft' function" {
+	label="CFG for 'init_fft' function";
+
+	Node0x600002732f80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca float, align 4\l  store float 0x3FD921FB60000000, ptr %2, align 4\l  store i32 0, ptr %1, align 4\l  br label %3\l}"];
+	Node0x600002732f80 -> Node0x600002732fd0[tooltip="0 -> 3\nProbability 100.00%" ];
+	Node0x600002732fd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = load i32, ptr %1, align 4\l  %5 = icmp slt i32 %4, 4\l  br i1 %5, label %6, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600002732fd0:s0 -> Node0x600002733020[tooltip="3 -> 6\nProbability 96.88%" ];
+	Node0x600002732fd0:s1 -> Node0x6000027330c0[tooltip="3 -> 31\nProbability 3.12%" ];
+	Node0x600002733020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load float, ptr %2, align 4\l  %8 = fpext float %7 to double\l  %9 = call double @llvm.cos.f64(double %8)\l  %10 = fptrunc double %9 to float\l  %11 = load i32, ptr %1, align 4\l  %12 = mul nsw i32 %11, 2\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds [8 x float], ptr @costab, i64 0, i64 %13\l  store float %10, ptr %14, align 4\l  %15 = load float, ptr %2, align 4\l  %16 = fpext float %15 to double\l  %17 = call double @llvm.sin.f64(double %16)\l  %18 = fptrunc double %17 to float\l  %19 = load i32, ptr %1, align 4\l  %20 = mul nsw i32 %19, 2\l  %21 = add nsw i32 %20, 1\l  %22 = sext i32 %21 to i64\l  %23 = getelementptr inbounds [8 x float], ptr @costab, i64 0, i64 %22\l  store float %18, ptr %23, align 4\l  %24 = load float, ptr %2, align 4\l  %25 = fpext float %24 to double\l  %26 = fmul double %25, 2.500000e-01\l  %27 = fptrunc double %26 to float\l  store float %27, ptr %2, align 4\l  br label %28\l}"];
+	Node0x600002733020 -> Node0x600002733070[tooltip="6 -> 28\nProbability 100.00%" ];
+	Node0x600002733070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %1, align 4\l  %30 = add nsw i32 %29, 1\l  store i32 %30, ptr %1, align 4\l  br label %3, !llvm.loop !6\l}"];
+	Node0x600002733070 -> Node0x600002732fd0[tooltip="28 -> 3\nProbability 100.00%" ];
+	Node0x6000027330c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  store i32 0, ptr %1, align 4\l  br label %32\l}"];
+	Node0x6000027330c0 -> Node0x600002733110[tooltip="31 -> 32\nProbability 100.00%" ];
+	Node0x600002733110 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %1, align 4\l  %34 = icmp slt i32 %33, 512\l  br i1 %34, label %35, label %51\l|{<s0>T|<s1>F}}"];
+	Node0x600002733110:s0 -> Node0x600002733160[tooltip="32 -> 35\nProbability 96.88%" ];
+	Node0x600002733110:s1 -> Node0x600002733200[tooltip="32 -> 51\nProbability 3.12%" ];
+	Node0x600002733160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %1, align 4\l  %37 = sitofp i32 %36 to double\l  %38 = fadd double %37, 5.000000e-01\l  %39 = fmul double 0x401921FB54442D18, %38\l  %40 = fdiv double %39, 1.024000e+03\l  %41 = call double @llvm.cos.f64(double %40)\l  %42 = fsub double 1.000000e+00, %41\l  %43 = fmul double 5.000000e-01, %42\l  %44 = fptrunc double %43 to float\l  %45 = load i32, ptr %1, align 4\l  %46 = sext i32 %45 to i64\l  %47 = getelementptr inbounds [512 x float], ptr @window, i64 0, i64 %46\l  store float %44, ptr %47, align 4\l  br label %48\l}"];
+	Node0x600002733160 -> Node0x6000027331b0[tooltip="35 -> 48\nProbability 100.00%" ];
+	Node0x6000027331b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = load i32, ptr %1, align 4\l  %50 = add nsw i32 %49, 1\l  store i32 %50, ptr %1, align 4\l  br label %32, !llvm.loop !8\l}"];
+	Node0x6000027331b0 -> Node0x600002733110[tooltip="48 -> 32\nProbability 100.00%" ];
+	Node0x600002733200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{51:\l|  store i32 0, ptr %1, align 4\l  br label %52\l}"];
+	Node0x600002733200 -> Node0x600002733250[tooltip="51 -> 52\nProbability 100.00%" ];
+	Node0x600002733250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{52:\l|  %53 = load i32, ptr %1, align 4\l  %54 = icmp slt i32 %53, 128\l  br i1 %54, label %55, label %71\l|{<s0>T|<s1>F}}"];
+	Node0x600002733250:s0 -> Node0x6000027332a0[tooltip="52 -> 55\nProbability 96.88%" ];
+	Node0x600002733250:s1 -> Node0x600002733340[tooltip="52 -> 71\nProbability 3.12%" ];
+	Node0x6000027332a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{55:\l|  %56 = load i32, ptr %1, align 4\l  %57 = sitofp i32 %56 to double\l  %58 = fadd double %57, 5.000000e-01\l  %59 = fmul double 0x401921FB54442D18, %58\l  %60 = fdiv double %59, 2.560000e+02\l  %61 = call double @llvm.cos.f64(double %60)\l  %62 = fsub double 1.000000e+00, %61\l  %63 = fmul double 5.000000e-01, %62\l  %64 = fptrunc double %63 to float\l  %65 = load i32, ptr %1, align 4\l  %66 = sext i32 %65 to i64\l  %67 = getelementptr inbounds [128 x float], ptr @window_s, i64 0, i64 %66\l  store float %64, ptr %67, align 4\l  br label %68\l}"];
+	Node0x6000027332a0 -> Node0x6000027332f0[tooltip="55 -> 68\nProbability 100.00%" ];
+	Node0x6000027332f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{68:\l|  %69 = load i32, ptr %1, align 4\l  %70 = add nsw i32 %69, 1\l  store i32 %70, ptr %1, align 4\l  br label %52, !llvm.loop !9\l}"];
+	Node0x6000027332f0 -> Node0x600002733250[tooltip="68 -> 52\nProbability 100.00%" ];
+	Node0x600002733340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{71:\l|  ret void\l}"];
+}

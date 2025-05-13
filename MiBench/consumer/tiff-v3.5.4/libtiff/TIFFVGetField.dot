@@ -1,0 +1,18 @@
+digraph "CFG for 'TIFFVGetField' function" {
+	label="CFG for 'TIFFVGetField' function";
+
+	Node0x6000015d28f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load i64, ptr %5, align 8\l  %10 = call ptr @_TIFFFindFieldInfo(ptr noundef %8, i64 noundef %9, i32\l... noundef 0)\l  store ptr %10, ptr %7, align 8\l  %11 = load ptr, ptr %7, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d28f0:s0 -> Node0x6000015d2940[tooltip="3 -> 13\nProbability 62.50%" ];
+	Node0x6000015d28f0:s1 -> Node0x6000015d2a30[tooltip="3 -> 45\nProbability 37.50%" ];
+	Node0x6000015d2940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load i64, ptr %5, align 8\l  %15 = icmp ugt i64 %14, 65535\l  br i1 %15, label %37, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d2940:s0 -> Node0x6000015d29e0[tooltip="13 -> 37\nProbability 50.00%" ];
+	Node0x6000015d2940:s1 -> Node0x6000015d2990[tooltip="13 -> 16\nProbability 50.00%" ];
+	Node0x6000015d2990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.tiff, ptr %17, i32 0, i32 6\l  %19 = getelementptr inbounds %struct.TIFFDirectory, ptr %18, i32 0, i32 0\l  %20 = load ptr, ptr %7, align 8\l  %21 = getelementptr inbounds %struct.TIFFFieldInfo, ptr %20, i32 0, i32 4\l  %22 = load i16, ptr %21, align 8\l  %23 = zext i16 %22 to i32\l  %24 = sdiv i32 %23, 32\l  %25 = sext i32 %24 to i64\l  %26 = getelementptr inbounds [3 x i64], ptr %19, i64 0, i64 %25\l  %27 = load i64, ptr %26, align 8\l  %28 = load ptr, ptr %7, align 8\l  %29 = getelementptr inbounds %struct.TIFFFieldInfo, ptr %28, i32 0, i32 4\l  %30 = load i16, ptr %29, align 8\l  %31 = zext i16 %30 to i32\l  %32 = and i32 %31, 31\l  %33 = zext i32 %32 to i64\l  %34 = shl i64 1, %33\l  %35 = and i64 %27, %34\l  %36 = icmp ne i64 %35, 0\l  br i1 %36, label %37, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d2990:s0 -> Node0x6000015d29e0[tooltip="16 -> 37\nProbability 62.50%" ];
+	Node0x6000015d2990:s1 -> Node0x6000015d2a30[tooltip="16 -> 45\nProbability 37.50%" ];
+	Node0x6000015d29e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %4, align 8\l  %39 = getelementptr inbounds %struct.tiff, ptr %38, i32 0, i32 58\l  %40 = load ptr, ptr %39, align 8\l  %41 = load ptr, ptr %4, align 8\l  %42 = load i64, ptr %5, align 8\l  %43 = load ptr, ptr %6, align 8\l  %44 = call i32 %40(ptr noundef %41, i64 noundef %42, ptr noundef %43)\l  br label %46\l}"];
+	Node0x6000015d29e0 -> Node0x6000015d2a80[tooltip="37 -> 46\nProbability 100.00%" ];
+	Node0x6000015d2a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{45:\l|  br label %46\l}"];
+	Node0x6000015d2a30 -> Node0x6000015d2a80[tooltip="45 -> 46\nProbability 100.00%" ];
+	Node0x6000015d2a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{46:\l|  %47 = phi i32 [ %44, %37 ], [ 0, %45 ]\l  ret i32 %47\l}"];
+}

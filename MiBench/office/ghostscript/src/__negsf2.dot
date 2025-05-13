@@ -1,0 +1,5 @@
+digraph "CFG for '__negsf2' function" {
+	label="CFG for '__negsf2' function";
+
+	Node0x600000b265d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca float, align 4\l  %3 = alloca i64, align 8\l  store float %0, ptr %2, align 4\l  %4 = load i64, ptr %2, align 4\l  %5 = xor i64 %4, 2147483648\l  store i64 %5, ptr %3, align 8\l  %6 = load float, ptr %3, align 8\l  ret float %6\l}"];
+}

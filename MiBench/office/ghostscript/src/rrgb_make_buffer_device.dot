@@ -1,0 +1,12 @@
+digraph "CFG for 'rrgb_make_buffer_device' function" {
+	label="CFG for 'rrgb_make_buffer_device' function";
+
+	Node0x600001374640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store i32 %3, ptr %9, align 4\l  %11 = load ptr, ptr %6, align 8\l  %12 = load ptr, ptr %7, align 8\l  %13 = load ptr, ptr %8, align 8\l  %14 = load i32, ptr %9, align 4\l  %15 = call i32 @gx_default_make_buffer_device(ptr noundef %11, ptr noundef\l... %12, ptr noundef %13, i32 noundef %14)\l  store i32 %15, ptr %10, align 4\l  %16 = load i32, ptr %10, align 4\l  %17 = icmp slt i32 %16, 0\l  br i1 %17, label %18, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001374640:s0 -> Node0x600001374690[tooltip="4 -> 18\nProbability 37.50%" ];
+	Node0x600001374640:s1 -> Node0x6000013746e0[tooltip="4 -> 20\nProbability 62.50%" ];
+	Node0x600001374690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %10, align 4\l  store i32 %19, ptr %5, align 4\l  br label %25\l}"];
+	Node0x600001374690 -> Node0x600001374730[tooltip="18 -> 25\nProbability 100.00%" ];
+	Node0x6000013746e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %6, align 8\l  %22 = getelementptr inbounds %struct.gx_device_memory_s, ptr %21, i32 0, i32\l... 21\l  %23 = getelementptr inbounds %struct.gx_device_procs_s, ptr %22, i32 0, i32\l... 35\l  store ptr @rrgb_strip_copy_rop, ptr %23, align 8\l  %24 = load i32, ptr %10, align 4\l  store i32 %24, ptr %5, align 4\l  br label %25\l}"];
+	Node0x6000013746e0 -> Node0x600001374730[tooltip="20 -> 25\nProbability 100.00%" ];
+	Node0x600001374730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %5, align 4\l  ret i32 %26\l}"];
+}

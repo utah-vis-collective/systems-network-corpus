@@ -1,0 +1,9 @@
+digraph "CFG for 'salloc' function" {
+	label="CFG for 'salloc' function";
+
+	Node0x60000371da40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = call i64 @strlen(ptr noundef %5) #6\l  %7 = add i64 %6, 1\l  %8 = trunc i64 %7 to i32\l  store i32 %8, ptr %3, align 4\l  %9 = load i32, ptr %3, align 4\l  %10 = sext i32 %9 to i64\l  %11 = call ptr @malloc(i64 noundef %10) #7\l  store ptr %11, ptr %4, align 8\l  %12 = icmp eq ptr %11, null\l  br i1 %12, label %13, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000371da40:s0 -> Node0x60000371dae0[tooltip="1 -> 13\nProbability 0.00%" ];
+	Node0x60000371da40:s1 -> Node0x60000371db30[tooltip="1 -> 15\nProbability 100.00%" ];
+	Node0x60000371dae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{13:\l|  %14 = call i32 (ptr, ...) @printf(ptr noundef @.str, ptr noundef @.str.1,\l... i32 noundef 68)\l  call void @exit(i32 noundef -1) #8\l  unreachable\l}"];
+	Node0x60000371db30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %4, align 8\l  %17 = load ptr, ptr %2, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = call i64 @llvm.objectsize.i64.p0(ptr %18, i1 false, i1 true, i1 false)\l  %20 = call ptr @__strcpy_chk(ptr noundef %16, ptr noundef %17, i64 noundef\l... %19) #6\l  %21 = load ptr, ptr %4, align 8\l  ret ptr %21\l}"];
+}

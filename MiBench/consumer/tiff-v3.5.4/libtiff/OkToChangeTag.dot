@@ -1,0 +1,23 @@
+digraph "CFG for 'OkToChangeTag' function" {
+	label="CFG for 'OkToChangeTag' function";
+
+	Node0x6000015d2620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = load i64, ptr %5, align 8\l  %9 = call ptr @_TIFFFindFieldInfo(ptr noundef %7, i64 noundef %8, i32\l... noundef 0)\l  store ptr %9, ptr %6, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %21, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d2620:s0 -> Node0x6000015d26c0[tooltip="2 -> 21\nProbability 62.50%" ];
+	Node0x6000015d2620:s1 -> Node0x6000015d2670[tooltip="2 -> 12\nProbability 37.50%" ];
+	Node0x6000015d2670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %4, align 8\l  %14 = getelementptr inbounds %struct.tiff, ptr %13, i32 0, i32 0\l  %15 = load ptr, ptr %14, align 8\l  %16 = load i64, ptr %5, align 8\l  %17 = icmp ugt i64 %16, 65535\l  %18 = zext i1 %17 to i64\l  %19 = select i1 %17, ptr @.str.5, ptr @.str.6\l  %20 = load i64, ptr %5, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef @.str.3, ptr noundef\l... @.str.4, ptr noundef %15, ptr noundef %19, i64 noundef %20)\l  store i32 0, ptr %3, align 4\l  br label %43\l}"];
+	Node0x6000015d2670 -> Node0x6000015d2850[tooltip="12 -> 43\nProbability 100.00%" ];
+	Node0x6000015d26c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load i64, ptr %5, align 8\l  %23 = icmp ne i64 %22, 257\l  br i1 %23, label %24, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d26c0:s0 -> Node0x6000015d2710[tooltip="21 -> 24\nProbability 50.00%" ];
+	Node0x6000015d26c0:s1 -> Node0x6000015d2800[tooltip="21 -> 42\nProbability 50.00%" ];
+	Node0x6000015d2710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %4, align 8\l  %26 = getelementptr inbounds %struct.tiff, ptr %25, i32 0, i32 3\l  %27 = load i64, ptr %26, align 8\l  %28 = and i64 %27, 64\l  %29 = icmp ne i64 %28, 0\l  br i1 %29, label %30, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d2710:s0 -> Node0x6000015d2760[tooltip="24 -> 30\nProbability 50.00%" ];
+	Node0x6000015d2710:s1 -> Node0x6000015d2800[tooltip="24 -> 42\nProbability 50.00%" ];
+	Node0x6000015d2760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %6, align 8\l  %32 = getelementptr inbounds %struct.TIFFFieldInfo, ptr %31, i32 0, i32 5\l  %33 = load i8, ptr %32, align 2\l  %34 = icmp ne i8 %33, 0\l  br i1 %34, label %42, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x6000015d2760:s0 -> Node0x6000015d2800[tooltip="30 -> 42\nProbability 62.50%" ];
+	Node0x6000015d2760:s1 -> Node0x6000015d27b0[tooltip="30 -> 35\nProbability 37.50%" ];
+	Node0x6000015d27b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %4, align 8\l  %37 = getelementptr inbounds %struct.tiff, ptr %36, i32 0, i32 0\l  %38 = load ptr, ptr %37, align 8\l  %39 = load ptr, ptr %6, align 8\l  %40 = getelementptr inbounds %struct.TIFFFieldInfo, ptr %39, i32 0, i32 7\l  %41 = load ptr, ptr %40, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef @.str.3, ptr noundef\l... @.str.7, ptr noundef %38, ptr noundef %41)\l  store i32 0, ptr %3, align 4\l  br label %43\l}"];
+	Node0x6000015d27b0 -> Node0x6000015d2850[tooltip="35 -> 43\nProbability 100.00%" ];
+	Node0x6000015d2800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{42:\l|  store i32 1, ptr %3, align 4\l  br label %43\l}"];
+	Node0x6000015d2800 -> Node0x6000015d2850[tooltip="42 -> 43\nProbability 100.00%" ];
+	Node0x6000015d2850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %3, align 4\l  ret i32 %44\l}"];
+}

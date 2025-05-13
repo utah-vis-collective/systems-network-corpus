@@ -1,0 +1,41 @@
+digraph "CFG for 'combineout' function" {
+	label="CFG for 'combineout' function";
+
+	Node0x60000244f610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e8765c70" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = load ptr, ptr @hashtbl, align 8\l  %4 = getelementptr inbounds %struct.dent, ptr %3, i32 0, i32 3\l  %5 = load i8, ptr %4, align 8\l  %6 = sext i8 %5 to i32\l  %7 = and i32 %6, 1\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %60\l|{<s0>T|<s1>F}}"];
+	Node0x60000244f610:s0 -> Node0x60000244f660[tooltip="0 -> 9\nProbability 50.00%" ];
+	Node0x60000244f610:s1 -> Node0x60000244fac0[tooltip="0 -> 60\nProbability 50.00%" ];
+	Node0x60000244f660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @hashtbl, align 8\l  store ptr %10, ptr %2, align 8\l  br label %11\l}"];
+	Node0x60000244f660 -> Node0x60000244f6b0[tooltip="9 -> 11\nProbability 100.00%" ];
+	Node0x60000244f6b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %2, align 8\l  %13 = icmp ne ptr %12, null\l  br i1 %13, label %14, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x60000244f6b0:s0 -> Node0x60000244f700[tooltip="11 -> 14\nProbability 96.88%" ];
+	Node0x60000244f6b0:s1 -> Node0x60000244fa70[tooltip="11 -> 59\nProbability 3.12%" ];
+	Node0x60000244f700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr @__stdoutp, align 8\l  %16 = load ptr, ptr %2, align 8\l  call void @toutent(ptr noundef %15, ptr noundef %16, i32 noundef 0)\l  %17 = load ptr, ptr %2, align 8\l  %18 = getelementptr inbounds %struct.dent, ptr %17, i32 0, i32 1\l  %19 = load ptr, ptr %18, align 8\l  call void @myfree(ptr noundef %19)\l  %20 = load ptr, ptr %2, align 8\l  %21 = getelementptr inbounds %struct.dent, ptr %20, i32 0, i32 0\l  %22 = load ptr, ptr %21, align 8\l  store ptr %22, ptr %1, align 8\l  br label %23\l}"];
+	Node0x60000244f700 -> Node0x60000244f750[tooltip="14 -> 23\nProbability 100.00%" ];
+	Node0x60000244f750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %2, align 8\l  %25 = getelementptr inbounds %struct.dent, ptr %24, i32 0, i32 3\l  %26 = load i8, ptr %25, align 8\l  %27 = sext i8 %26 to i32\l  %28 = and i32 %27, 16\l  %29 = icmp ne i32 %28, 0\l  br i1 %29, label %30, label %50\l|{<s0>T|<s1>F}}"];
+	Node0x60000244f750:s0 -> Node0x60000244f7a0[tooltip="23 -> 30\nProbability 96.88%" ];
+	Node0x60000244f750:s1 -> Node0x60000244f930[tooltip="23 -> 50\nProbability 3.12%" ];
+	Node0x60000244f7a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %2, align 8\l  %32 = load ptr, ptr @hashtbl, align 8\l  %33 = icmp ne ptr %31, %32\l  br i1 %33, label %34, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x60000244f7a0:s0 -> Node0x60000244f7f0[tooltip="30 -> 34\nProbability 62.50%" ];
+	Node0x60000244f7a0:s1 -> Node0x60000244f840[tooltip="30 -> 36\nProbability 37.50%" ];
+	Node0x60000244f7f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %2, align 8\l  call void @myfree(ptr noundef %35)\l  br label %36\l}"];
+	Node0x60000244f7f0 -> Node0x60000244f840[tooltip="34 -> 36\nProbability 100.00%" ];
+	Node0x60000244f840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %1, align 8\l  store ptr %37, ptr %2, align 8\l  %38 = load ptr, ptr %2, align 8\l  %39 = getelementptr inbounds %struct.dent, ptr %38, i32 0, i32 1\l  %40 = load ptr, ptr %39, align 8\l  %41 = icmp ne ptr %40, null\l  br i1 %41, label %42, label %46\l|{<s0>T|<s1>F}}"];
+	Node0x60000244f840:s0 -> Node0x60000244f890[tooltip="36 -> 42\nProbability 62.50%" ];
+	Node0x60000244f840:s1 -> Node0x60000244f8e0[tooltip="36 -> 46\nProbability 37.50%" ];
+	Node0x60000244f890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{42:\l|  %43 = load ptr, ptr %2, align 8\l  %44 = getelementptr inbounds %struct.dent, ptr %43, i32 0, i32 1\l  %45 = load ptr, ptr %44, align 8\l  call void @myfree(ptr noundef %45)\l  br label %46\l}"];
+	Node0x60000244f890 -> Node0x60000244f8e0[tooltip="42 -> 46\nProbability 100.00%" ];
+	Node0x60000244f8e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{46:\l|  %47 = load ptr, ptr %2, align 8\l  %48 = getelementptr inbounds %struct.dent, ptr %47, i32 0, i32 0\l  %49 = load ptr, ptr %48, align 8\l  store ptr %49, ptr %1, align 8\l  br label %23\l}"];
+	Node0x60000244f8e0 -> Node0x60000244f750[tooltip="46 -> 23\nProbability 100.00%" ];
+	Node0x60000244f930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{50:\l|  %51 = load ptr, ptr %2, align 8\l  %52 = load ptr, ptr @hashtbl, align 8\l  %53 = icmp ne ptr %51, %52\l  br i1 %53, label %54, label %56\l|{<s0>T|<s1>F}}"];
+	Node0x60000244f930:s0 -> Node0x60000244f980[tooltip="50 -> 54\nProbability 62.50%" ];
+	Node0x60000244f930:s1 -> Node0x60000244f9d0[tooltip="50 -> 56\nProbability 37.50%" ];
+	Node0x60000244f980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{54:\l|  %55 = load ptr, ptr %2, align 8\l  call void @myfree(ptr noundef %55)\l  br label %56\l}"];
+	Node0x60000244f980 -> Node0x60000244f9d0[tooltip="54 -> 56\nProbability 100.00%" ];
+	Node0x60000244f9d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{56:\l|  br label %57\l}"];
+	Node0x60000244f9d0 -> Node0x60000244fa20[tooltip="56 -> 57\nProbability 100.00%" ];
+	Node0x60000244fa20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{57:\l|  %58 = load ptr, ptr %1, align 8\l  store ptr %58, ptr %2, align 8\l  br label %11\l}"];
+	Node0x60000244fa20 -> Node0x60000244f6b0[tooltip="57 -> 11\nProbability 100.00%" ];
+	Node0x60000244fa70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{59:\l|  br label %60\l}"];
+	Node0x60000244fa70 -> Node0x60000244fac0[tooltip="59 -> 60\nProbability 100.00%" ];
+	Node0x60000244fac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e8765c70" fontname="Courier",label="{60:\l|  %61 = load ptr, ptr @hashtbl, align 8\l  %62 = getelementptr inbounds %struct.dent, ptr %61, i32 0, i32 3\l  store i8 0, ptr %62, align 8\l  %63 = load ptr, ptr @hashtbl, align 8\l  %64 = getelementptr inbounds %struct.dent, ptr %63, i32 0, i32 1\l  store ptr null, ptr %64, align 8\l  ret void\l}"];
+}

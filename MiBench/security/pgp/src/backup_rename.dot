@@ -1,0 +1,17 @@
+digraph "CFG for 'backup_rename' function" {
+	label="CFG for 'backup_rename' function";
+
+	Node0x6000011eb6b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca [256 x i8], align 1\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = call zeroext i8 @is_tempfile(ptr noundef %6)\l  %8 = icmp ne i8 %7, 0\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000011eb6b0:s0 -> Node0x6000011eb700[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x6000011eb6b0:s1 -> Node0x6000011eb750[tooltip="2 -> 12\nProbability 37.50%" ];
+	Node0x6000011eb700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %4, align 8\l  %11 = call i32 @remove(ptr noundef %10)\l  br label %27\l}"];
+	Node0x6000011eb700 -> Node0x6000011eb840[tooltip="9 -> 27\nProbability 100.00%" ];
+	Node0x6000011eb750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %4, align 8\l  %14 = call zeroext i8 @file_exists(ptr noundef %13)\l  %15 = icmp ne i8 %14, 0\l  br i1 %15, label %16, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000011eb750:s0 -> Node0x6000011eb7a0[tooltip="12 -> 16\nProbability 62.50%" ];
+	Node0x6000011eb750:s1 -> Node0x6000011eb7f0[tooltip="12 -> 26\nProbability 37.50%" ];
+	Node0x6000011eb7a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = getelementptr inbounds [256 x i8], ptr %5, i64 0, i64 0\l  %18 = load ptr, ptr %4, align 8\l  %19 = call ptr @__strcpy_chk(ptr noundef %17, ptr noundef %18, i64 noundef\l... 256) #7\l  %20 = getelementptr inbounds [256 x i8], ptr %5, i64 0, i64 0\l  call void @force_extension(ptr noundef %20, ptr noundef @BAK_EXTENSION)\l  %21 = getelementptr inbounds [256 x i8], ptr %5, i64 0, i64 0\l  %22 = call i32 @remove(ptr noundef %21)\l  %23 = load ptr, ptr %4, align 8\l  %24 = getelementptr inbounds [256 x i8], ptr %5, i64 0, i64 0\l  %25 = call i32 @rename(ptr noundef %23, ptr noundef %24)\l  br label %26\l}"];
+	Node0x6000011eb7a0 -> Node0x6000011eb7f0[tooltip="16 -> 26\nProbability 100.00%" ];
+	Node0x6000011eb7f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  br label %27\l}"];
+	Node0x6000011eb7f0 -> Node0x6000011eb840[tooltip="26 -> 27\nProbability 100.00%" ];
+	Node0x6000011eb840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %3, align 8\l  %29 = load ptr, ptr %4, align 8\l  %30 = call i32 @rename2(ptr noundef %28, ptr noundef %29)\l  ret i32 %30\l}"];
+}

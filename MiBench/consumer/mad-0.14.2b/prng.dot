@@ -1,0 +1,5 @@
+digraph "CFG for 'prng' function" {
+	label="CFG for 'prng' function";
+
+	Node0x6000022df660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  store i64 %0, ptr %2, align 8\l  %3 = load i64, ptr %2, align 8\l  %4 = mul i64 %3, 1664525\l  %5 = add i64 %4, 1013904223\l  %6 = and i64 %5, 4294967295\l  ret i64 %6\l}"];
+}

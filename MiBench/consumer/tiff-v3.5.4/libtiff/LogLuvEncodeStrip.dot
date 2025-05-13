@@ -1,0 +1,25 @@
+digraph "CFG for 'LogLuvEncodeStrip' function" {
+	label="CFG for 'LogLuvEncodeStrip' function";
+
+	Node0x60000062c0a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca i16, align 2\l  %9 = alloca i64, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store i64 %2, ptr %7, align 8\l  store i16 %3, ptr %8, align 2\l  %10 = load ptr, ptr %5, align 8\l  %11 = call i64 @TIFFScanlineSize(ptr noundef %10)\l  store i64 %11, ptr %9, align 8\l  %12 = load i64, ptr %7, align 8\l  %13 = load i64, ptr %9, align 8\l  %14 = srem i64 %12, %13\l  %15 = icmp eq i64 %14, 0\l  %16 = xor i1 %15, true\l  %17 = zext i1 %16 to i32\l  %18 = sext i32 %17 to i64\l  %19 = icmp ne i64 %18, 0\l  br i1 %19, label %20, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x60000062c0a0:s0 -> Node0x60000062c0f0[tooltip="4 -> 20\nProbability 0.00%" ];
+	Node0x60000062c0a0:s1 -> Node0x60000062c190[tooltip="4 -> 22\nProbability 100.00%" ];
+	Node0x60000062c0f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{20:\l|  call void @__assert_rtn(ptr noundef @__func__.LogLuvEncodeStrip, ptr\l... noundef @.str, i32 noundef 577, ptr noundef @.str.17) #5\l  unreachable\l}"];
+	Node0x60000062c140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{21:\l|  br label %23\l}"];
+	Node0x60000062c140 -> Node0x60000062c1e0[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x60000062c190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  br label %23\l}"];
+	Node0x60000062c190 -> Node0x60000062c1e0[tooltip="22 -> 23\nProbability 100.00%" ];
+	Node0x60000062c1e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x60000062c1e0 -> Node0x60000062c230[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x60000062c230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i64, ptr %7, align 8\l  %26 = icmp ne i64 %25, 0\l  br i1 %26, label %27, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x60000062c230:s0 -> Node0x60000062c280[tooltip="24 -> 27\nProbability 62.50%" ];
+	Node0x60000062c230:s1 -> Node0x60000062c2d0[tooltip="24 -> 37\nProbability 37.50%" ];
+	Node0x60000062c280 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %5, align 8\l  %29 = getelementptr inbounds %struct.tiff, ptr %28, i32 0, i32 27\l  %30 = load ptr, ptr %29, align 8\l  %31 = load ptr, ptr %5, align 8\l  %32 = load ptr, ptr %6, align 8\l  %33 = load i64, ptr %9, align 8\l  %34 = load i16, ptr %8, align 2\l  %35 = call i32 %30(ptr noundef %31, ptr noundef %32, i64 noundef %33, i16\l... noundef zeroext %34)\l  %36 = icmp eq i32 %35, 0\l  br label %37\l}"];
+	Node0x60000062c280 -> Node0x60000062c2d0[tooltip="27 -> 37\nProbability 100.00%" ];
+	Node0x60000062c2d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = phi i1 [ false, %24 ], [ %36, %27 ]\l  br i1 %38, label %39, label %46\l|{<s0>T|<s1>F}}"];
+	Node0x60000062c2d0:s0 -> Node0x60000062c320[tooltip="37 -> 39\nProbability 96.88%" ];
+	Node0x60000062c2d0:s1 -> Node0x60000062c370[tooltip="37 -> 46\nProbability 3.12%" ];
+	Node0x60000062c320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load i64, ptr %9, align 8\l  %41 = load ptr, ptr %6, align 8\l  %42 = getelementptr inbounds i8, ptr %41, i64 %40\l  store ptr %42, ptr %6, align 8\l  %43 = load i64, ptr %9, align 8\l  %44 = load i64, ptr %7, align 8\l  %45 = sub nsw i64 %44, %43\l  store i64 %45, ptr %7, align 8\l  br label %24\l}"];
+	Node0x60000062c320 -> Node0x60000062c230[tooltip="39 -> 24\nProbability 100.00%" ];
+	Node0x60000062c370 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{46:\l|  %47 = load i64, ptr %7, align 8\l  %48 = icmp eq i64 %47, 0\l  %49 = zext i1 %48 to i32\l  ret i32 %49\l}"];
+}

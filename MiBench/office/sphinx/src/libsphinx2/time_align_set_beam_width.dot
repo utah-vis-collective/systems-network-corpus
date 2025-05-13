@@ -1,0 +1,19 @@
+digraph "CFG for 'time_align_set_beam_width' function" {
+	label="CFG for 'time_align_set_beam_width' function";
+
+	Node0x600000d223f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  store double %0, ptr %2, align 8\l  %3 = load double, ptr %2, align 8\l  %4 = fcmp oeq double %3, 0.000000e+00\l  br i1 %4, label %5, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x600000d223f0:s0 -> Node0x600000d22440[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x600000d223f0:s1 -> Node0x600000d22490[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x600000d22440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  br label %23\l}"];
+	Node0x600000d22440 -> Node0x600000d225d0[tooltip="5 -> 23\nProbability 100.00%" ];
+	Node0x600000d22490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = load double, ptr %2, align 8\l  %8 = fcmp ogt double %7, 1.000000e+00\l  br i1 %8, label %9, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600000d22490:s0 -> Node0x600000d224e0[tooltip="6 -> 9\nProbability 50.00%" ];
+	Node0x600000d22490:s1 -> Node0x600000d22530[tooltip="6 -> 15\nProbability 50.00%" ];
+	Node0x600000d224e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{9:\l|  %10 = load double, ptr %2, align 8\l  %11 = call double @llvm.log.f64(double %10)\l  %12 = fdiv double %11, 0x3F1A368D04E0BA6A\l  %13 = fadd double %12, 5.000000e-01\l  %14 = fptosi double %13 to i32\l  br label %21\l}"];
+	Node0x600000d224e0 -> Node0x600000d22580[tooltip="9 -> 21\nProbability 100.00%" ];
+	Node0x600000d22530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{15:\l|  %16 = load double, ptr %2, align 8\l  %17 = call double @llvm.log.f64(double %16)\l  %18 = fdiv double %17, 0x3F1A368D04E0BA6A\l  %19 = fsub double %18, 5.000000e-01\l  %20 = fptosi double %19 to i32\l  br label %21\l}"];
+	Node0x600000d22530 -> Node0x600000d22580[tooltip="15 -> 21\nProbability 100.00%" ];
+	Node0x600000d22580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{21:\l|  %22 = phi i32 [ %14, %9 ], [ %20, %15 ]\l  br label %23\l}"];
+	Node0x600000d22580 -> Node0x600000d225d0[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x600000d225d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = phi i32 [ -690810000, %5 ], [ %22, %21 ]\l  %25 = mul nsw i32 8, %24\l  store i32 %25, ptr @beam_width, align 4\l  ret void\l}"];
+}

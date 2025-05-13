@@ -1,0 +1,15 @@
+digraph "CFG for 'null_open' function" {
+	label="CFG for 'null_open' function";
+
+	Node0x6000023aa260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store ptr %3, ptr %9, align 8\l  %10 = load ptr, ptr %7, align 8\l  %11 = getelementptr inbounds i8, ptr %10, i64 0\l  %12 = load i8, ptr %11, align 1\l  %13 = sext i8 %12 to i32\l  %14 = icmp eq i32 %13, 119\l  br i1 %14, label %15, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000023aa260:s0 -> Node0x6000023aa2b0[tooltip="4 -> 15\nProbability 50.00%" ];
+	Node0x6000023aa260:s1 -> Node0x6000023aa300[tooltip="4 -> 21\nProbability 50.00%" ];
+	Node0x6000023aa2b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %7, align 8\l  %17 = getelementptr inbounds i8, ptr %16, i64 1\l  %18 = load i8, ptr %17, align 1\l  %19 = sext i8 %18 to i32\l  %20 = icmp eq i32 %19, 0\l  br i1 %20, label %22, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000023aa2b0:s0 -> Node0x6000023aa350[tooltip="15 -> 22\nProbability 37.50%" ];
+	Node0x6000023aa2b0:s1 -> Node0x6000023aa300[tooltip="15 -> 21\nProbability 62.50%" ];
+	Node0x6000023aa300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  store i32 -9, ptr %5, align 4\l  br label %32\l}"];
+	Node0x6000023aa300 -> Node0x6000023aa3a0[tooltip="21 -> 32\nProbability 100.00%" ];
+	Node0x6000023aa350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{22:\l|  %23 = call i64 @strlen(ptr noundef @gp_null_file_name) #3\l  %24 = trunc i64 %23 to i32\l  %25 = load ptr, ptr %7, align 8\l  %26 = load ptr, ptr %8, align 8\l  %27 = load ptr, ptr %6, align 8\l  %28 = getelementptr inbounds %struct.gx_io_device_s, ptr %27, i32 0, i32 2\l  %29 = getelementptr inbounds %struct.gx_io_device_procs_s, ptr %28, i32 0,\l... i32 3\l  %30 = load ptr, ptr %29, align 8\l  %31 = call i32 @file_open_stream(ptr noundef @gp_null_file_name, i32 noundef\l... %24, ptr noundef %25, i32 noundef 256, ptr noundef %26, ptr noundef %30)\l  store i32 %31, ptr %5, align 4\l  br label %32\l}"];
+	Node0x6000023aa350 -> Node0x6000023aa3a0[tooltip="22 -> 32\nProbability 100.00%" ];
+	Node0x6000023aa3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %5, align 4\l  ret i32 %33\l}"];
+}

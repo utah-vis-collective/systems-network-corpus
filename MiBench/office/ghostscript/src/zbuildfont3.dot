@@ -1,0 +1,22 @@
+digraph "CFG for 'zbuildfont3' function" {
+	label="CFG for 'zbuildfont3' function";
+
+	Node0x600001b16580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca %struct.build_proc_refs_s, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.ref_s, ptr %7, i32 0, i32 0\l  %9 = getelementptr inbounds %struct.tas_s, ptr %8, i32 0, i32 0\l  %10 = getelementptr inbounds i8, ptr %9, i64 1\l  %11 = load i8, ptr %10, align 1\l  %12 = zext i8 %11 to i32\l  %13 = icmp eq i32 %12, 2\l  br i1 %13, label %17, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001b16580:s0 -> Node0x600001b16620[tooltip="1 -> 17\nProbability 50.00%" ];
+	Node0x600001b16580:s1 -> Node0x600001b165d0[tooltip="1 -> 14\nProbability 50.00%" ];
+	Node0x600001b165d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = call i32 @check_type_failed(ptr noundef %15)\l  store i32 %16, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001b165d0 -> Node0x600001b167b0[tooltip="14 -> 34\nProbability 100.00%" ];
+	Node0x600001b16620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = call i32 @build_gs_font_procs(ptr noundef %18, ptr noundef %5)\l  store i32 %19, ptr %4, align 4\l  %20 = load i32, ptr %4, align 4\l  %21 = icmp slt i32 %20, 0\l  br i1 %21, label %22, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600001b16620:s0 -> Node0x600001b16670[tooltip="17 -> 22\nProbability 37.50%" ];
+	Node0x600001b16620:s1 -> Node0x600001b166c0[tooltip="17 -> 24\nProbability 62.50%" ];
+	Node0x600001b16670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %4, align 4\l  store i32 %23, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001b16670 -> Node0x600001b167b0[tooltip="22 -> 34\nProbability 100.00%" ];
+	Node0x600001b166c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %3, align 8\l  %26 = call i32 @build_gs_simple_font(ptr noundef %25, ptr noundef %6, i32\l... noundef 3, ptr noundef @st_gs_font_base, ptr noundef %5, i32 noundef 0)\l  store i32 %26, ptr %4, align 4\l  %27 = load i32, ptr %4, align 4\l  %28 = icmp slt i32 %27, 0\l  br i1 %28, label %29, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600001b166c0:s0 -> Node0x600001b16710[tooltip="24 -> 29\nProbability 37.50%" ];
+	Node0x600001b166c0:s1 -> Node0x600001b16760[tooltip="24 -> 31\nProbability 62.50%" ];
+	Node0x600001b16710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %4, align 4\l  store i32 %30, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001b16710 -> Node0x600001b167b0[tooltip="29 -> 34\nProbability 100.00%" ];
+	Node0x600001b16760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %6, align 8\l  %33 = call i32 @define_gs_font(ptr noundef %32)\l  store i32 %33, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001b16760 -> Node0x600001b167b0[tooltip="31 -> 34\nProbability 100.00%" ];
+	Node0x600001b167b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %2, align 4\l  ret i32 %35\l}"];
+}

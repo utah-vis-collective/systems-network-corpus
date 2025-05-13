@@ -1,0 +1,5 @@
+digraph "CFG for 'query_topsen_thresh' function" {
+	label="CFG for 'query_topsen_thresh' function";
+
+	Node0x6000031fa8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @topsen_thresh, align 4\l  ret i32 %1\l}"];
+}

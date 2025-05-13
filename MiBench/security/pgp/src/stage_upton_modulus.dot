@@ -1,0 +1,5 @@
+digraph "CFG for 'stage_upton_modulus' function" {
+	label="CFG for 'stage_upton_modulus' function";
+
+	Node0x600001f95ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load i16, ptr @global_precision, align 2\l  %5 = sext i16 %4 to i32\l  %6 = shl i32 %5, 1\l  %7 = sext i32 %6 to i64\l  %8 = call ptr @__memcpy_chk(ptr noundef @modulus, ptr noundef %3, i64\l... noundef %7, i64 noundef 260) #5\l  %9 = call i32 @mp_recip(ptr noundef @reciprocal, ptr noundef @modulus)\l  %10 = call i32 @countbits(ptr noundef @modulus)\l  %11 = trunc i32 %10 to i16\l  store i16 %11, ptr @nbits, align 2\l  %12 = load i16, ptr @nbits, align 2\l  %13 = sext i16 %12 to i32\l  %14 = sdiv i32 %13, 16\l  %15 = trunc i32 %14 to i16\l  store i16 %15, ptr @nbitsDivUNITSIZE, align 2\l  %16 = load i16, ptr @nbits, align 2\l  %17 = sext i16 %16 to i32\l  %18 = srem i32 %17, 16\l  %19 = trunc i32 %18 to i16\l  store i16 %19, ptr @nbitsModUNITSIZE, align 2\l  ret i32 0\l}"];
+}

@@ -1,0 +1,17 @@
+digraph "CFG for 'build_gs_cid_font' function" {
+	label="CFG for 'build_gs_cid_font' function";
+
+	Node0x600000aae210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  %10 = load ptr, ptr %5, align 8\l  %11 = getelementptr inbounds %struct.ref_s, ptr %10, i32 0, i32 0\l  %12 = getelementptr inbounds %struct.tas_s, ptr %11, i32 0, i32 0\l  %13 = getelementptr inbounds i8, ptr %12, i64 1\l  %14 = load i8, ptr %13, align 1\l  %15 = zext i8 %14 to i32\l  %16 = icmp eq i32 %15, 2\l  br i1 %16, label %20, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600000aae210:s0 -> Node0x600000aae2b0[tooltip="3 -> 20\nProbability 50.00%" ];
+	Node0x600000aae210:s1 -> Node0x600000aae260[tooltip="3 -> 17\nProbability 50.00%" ];
+	Node0x600000aae260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %5, align 8\l  %19 = call i32 @check_type_failed(ptr noundef %18)\l  store i32 %19, ptr %4, align 4\l  br label %32\l}"];
+	Node0x600000aae260 -> Node0x600000aae3a0[tooltip="17 -> 32\nProbability 100.00%" ];
+	Node0x600000aae2b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %5, align 8\l  %22 = load i32, ptr %6, align 4\l  %23 = load ptr, ptr %7, align 8\l  %24 = call i32 @build_gs_simple_font(ptr noundef %21, ptr noundef %9, i32\l... noundef %22, ptr noundef @st_gs_font_base, ptr noundef %23, i32 noundef 7)\l  store i32 %24, ptr %8, align 4\l  %25 = load i32, ptr %8, align 4\l  %26 = icmp slt i32 %25, 0\l  br i1 %26, label %27, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600000aae2b0:s0 -> Node0x600000aae300[tooltip="20 -> 27\nProbability 37.50%" ];
+	Node0x600000aae2b0:s1 -> Node0x600000aae350[tooltip="20 -> 29\nProbability 62.50%" ];
+	Node0x600000aae300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %8, align 4\l  store i32 %28, ptr %4, align 4\l  br label %32\l}"];
+	Node0x600000aae300 -> Node0x600000aae3a0[tooltip="27 -> 32\nProbability 100.00%" ];
+	Node0x600000aae350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %9, align 8\l  %31 = call i32 @define_gs_font(ptr noundef %30)\l  store i32 %31, ptr %4, align 4\l  br label %32\l}"];
+	Node0x600000aae350 -> Node0x600000aae3a0[tooltip="29 -> 32\nProbability 100.00%" ];
+	Node0x600000aae3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %4, align 4\l  ret i32 %33\l}"];
+}

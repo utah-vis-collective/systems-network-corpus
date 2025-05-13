@@ -1,0 +1,12 @@
+digraph "CFG for 'TIFFSetCompressionScheme' function" {
+	label="CFG for 'TIFFSetCompressionScheme' function";
+
+	Node0x6000007da990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = trunc i32 %6 to i16\l  %8 = call ptr @TIFFFindCODEC(i16 noundef zeroext %7)\l  store ptr %8, ptr %5, align 8\l  %9 = load ptr, ptr %3, align 8\l  call void @_TIFFSetDefaultCompressionState(ptr noundef %9)\l  %10 = load ptr, ptr %5, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %12, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000007da990:s0 -> Node0x6000007da9e0[tooltip="2 -> 12\nProbability 62.50%" ];
+	Node0x6000007da990:s1 -> Node0x6000007daa30[tooltip="2 -> 19\nProbability 37.50%" ];
+	Node0x6000007da9e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = getelementptr inbounds %struct.TIFFCodec, ptr %13, i32 0, i32 2\l  %15 = load ptr, ptr %14, align 8\l  %16 = load ptr, ptr %3, align 8\l  %17 = load i32, ptr %4, align 4\l  %18 = call i32 %15(ptr noundef %16, i32 noundef %17)\l  br label %20\l}"];
+	Node0x6000007da9e0 -> Node0x6000007daa80[tooltip="12 -> 20\nProbability 100.00%" ];
+	Node0x6000007daa30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  br label %20\l}"];
+	Node0x6000007daa30 -> Node0x6000007daa80[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x6000007daa80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = phi i32 [ %18, %12 ], [ 1, %19 ]\l  ret i32 %21\l}"];
+}

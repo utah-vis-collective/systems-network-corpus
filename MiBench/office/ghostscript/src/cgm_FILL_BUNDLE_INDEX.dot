@@ -1,0 +1,5 @@
+digraph "CFG for 'cgm_FILL_BUNDLE_INDEX' function" {
+	label="CFG for 'cgm_FILL_BUNDLE_INDEX' function";
+
+	Node0x6000024c1950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load ptr, ptr %3, align 8\l  call void @begin_command(ptr noundef %5, i32 noundef 661)\l  %6 = load ptr, ptr %3, align 8\l  %7 = load i32, ptr %4, align 4\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds %struct.cgm_state_s, ptr %8, i32 0, i32 2\l  %10 = getelementptr inbounds %struct.cgm_metafile_elements_s, ptr %9, i32 0,\l... i32 5\l  %11 = load i32, ptr %10, align 4\l  call void @put_int(ptr noundef %6, i32 noundef %7, i32 noundef %11)\l  %12 = load i32, ptr %4, align 4\l  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds %struct.cgm_state_s, ptr %13, i32 0, i32 29\l  store i32 %12, ptr %14, align 4\l  %15 = load ptr, ptr %3, align 8\l  %16 = call i32 @end_command(ptr noundef %15)\l  ret i32 %16\l}"];
+}

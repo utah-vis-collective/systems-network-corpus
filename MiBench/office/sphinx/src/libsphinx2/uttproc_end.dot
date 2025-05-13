@@ -1,0 +1,22 @@
+digraph "CFG for 'uttproc_end' function" {
+	label="CFG for 'uttproc_end' function";
+
+	Node0x6000008bb340 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = load i32, ptr @uttstate, align 4\l  %3 = icmp ne i32 %2, 0\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x6000008bb340:s0 -> Node0x6000008bb390[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x6000008bb340:s1 -> Node0x6000008bb3e0[tooltip="0 -> 5\nProbability 37.50%" ];
+	Node0x6000008bb390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{4:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 868, ptr noundef\l... @.str.1)\l  call void (ptr, ...) @_E__pr_warn(ptr noundef @.str.9)\l  store i32 -1, ptr %1, align 4\l  br label %18\l}"];
+	Node0x6000008bb390 -> Node0x6000008bb570[tooltip="4 -> 18\nProbability 100.00%" ];
+	Node0x6000008bb3e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr @matchfp, align 8\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %8, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x6000008bb3e0:s0 -> Node0x6000008bb430[tooltip="5 -> 8\nProbability 62.50%" ];
+	Node0x6000008bb3e0:s1 -> Node0x6000008bb480[tooltip="5 -> 11\nProbability 37.50%" ];
+	Node0x6000008bb430 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr @matchfp, align 8\l  %10 = call i32 @fclose(ptr noundef %9)\l  br label %11\l}"];
+	Node0x6000008bb430 -> Node0x6000008bb480[tooltip="8 -> 11\nProbability 100.00%" ];
+	Node0x6000008bb480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @matchsegfp, align 8\l  %13 = icmp ne ptr %12, null\l  br i1 %13, label %14, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000008bb480:s0 -> Node0x6000008bb4d0[tooltip="11 -> 14\nProbability 62.50%" ];
+	Node0x6000008bb480:s1 -> Node0x6000008bb520[tooltip="11 -> 17\nProbability 37.50%" ];
+	Node0x6000008bb4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr @matchsegfp, align 8\l  %16 = call i32 @fclose(ptr noundef %15)\l  br label %17\l}"];
+	Node0x6000008bb4d0 -> Node0x6000008bb520[tooltip="14 -> 17\nProbability 100.00%" ];
+	Node0x6000008bb520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  call void @timing_end()\l  store i32 0, ptr %1, align 4\l  br label %18\l}"];
+	Node0x6000008bb520 -> Node0x6000008bb570[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x6000008bb570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %1, align 4\l  ret i32 %19\l}"];
+}

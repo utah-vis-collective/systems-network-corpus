@@ -1,0 +1,5 @@
+digraph "CFG for 'dclean' function" {
+	label="CFG for 'dclean' function";
+
+	Node0x600003dc9e00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  store double %0, ptr %2, align 8\l  %3 = load double, ptr %2, align 8\l  store double %3, ptr @dclean.y, align 8\l  %4 = load double, ptr @dclean.y, align 8\l  ret double %4\l}"];
+}

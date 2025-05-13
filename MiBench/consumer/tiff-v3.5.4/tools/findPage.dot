@@ -1,0 +1,27 @@
+digraph "CFG for 'findPage' function" {
+	label="CFG for 'findPage' function";
+
+	Node0x600000e27b10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i16, align 2\l  %7 = alloca i16, align 2\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i16 -1, ptr %6, align 2\l  store i16 -1, ptr %7, align 2\l  %8 = load ptr, ptr %4, align 8\l  %9 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %8, i64 noundef 297,\l... ptr noundef %6, ptr noundef %7)\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600000e27b10:s0 -> Node0x600000e27b60[tooltip="2 -> 11\nProbability 62.50%" ];
+	Node0x600000e27b10:s1 -> Node0x600000e27d90[tooltip="2 -> 34\nProbability 37.50%" ];
+	Node0x600000e27b60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  br label %12\l}"];
+	Node0x600000e27b60 -> Node0x600000e27bb0[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600000e27bb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i16, ptr %6, align 2\l  %14 = zext i16 %13 to i32\l  %15 = load i32, ptr %5, align 4\l  %16 = icmp ne i32 %14, %15\l  br i1 %16, label %17, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600000e27bb0:s0 -> Node0x600000e27c00[tooltip="12 -> 17\nProbability 50.00%" ];
+	Node0x600000e27bb0:s1 -> Node0x600000e27ca0[tooltip="12 -> 25\nProbability 50.00%" ];
+	Node0x600000e27c00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %4, align 8\l  %19 = call i32 @TIFFReadDirectory(ptr noundef %18)\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600000e27c00:s0 -> Node0x600000e27c50[tooltip="17 -> 21\nProbability 62.50%" ];
+	Node0x600000e27c00:s1 -> Node0x600000e27ca0[tooltip="17 -> 25\nProbability 37.50%" ];
+	Node0x600000e27c50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %4, align 8\l  %23 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %22, i64 noundef\l... 297, ptr noundef %6, ptr noundef %7)\l  %24 = icmp ne i32 %23, 0\l  br label %25\l}"];
+	Node0x600000e27c50 -> Node0x600000e27ca0[tooltip="21 -> 25\nProbability 100.00%" ];
+	Node0x600000e27ca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = phi i1 [ false, %17 ], [ false, %12 ], [ %24, %21 ]\l  br i1 %26, label %27, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600000e27ca0:s0 -> Node0x600000e27cf0[tooltip="25 -> 27\nProbability 96.88%" ];
+	Node0x600000e27ca0:s1 -> Node0x600000e27d40[tooltip="25 -> 28\nProbability 3.12%" ];
+	Node0x600000e27cf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  br label %12\l}"];
+	Node0x600000e27cf0 -> Node0x600000e27bb0[tooltip="27 -> 12\nProbability 100.00%" ];
+	Node0x600000e27d40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{28:\l|  %29 = load i16, ptr %6, align 2\l  %30 = zext i16 %29 to i32\l  %31 = load i32, ptr %5, align 4\l  %32 = icmp eq i32 %30, %31\l  %33 = zext i1 %32 to i32\l  store i32 %33, ptr %3, align 4\l  br label %40\l}"];
+	Node0x600000e27d40 -> Node0x600000e27de0[tooltip="28 -> 40\nProbability 100.00%" ];
+	Node0x600000e27d90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %4, align 8\l  %36 = load i32, ptr %5, align 4\l  %37 = sub nsw i32 %36, 1\l  %38 = trunc i32 %37 to i16\l  %39 = call i32 @TIFFSetDirectory(ptr noundef %35, i16 noundef zeroext %38)\l  store i32 %39, ptr %3, align 4\l  br label %40\l}"];
+	Node0x600000e27d90 -> Node0x600000e27de0[tooltip="34 -> 40\nProbability 100.00%" ];
+	Node0x600000e27de0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{40:\l|  %41 = load i32, ptr %3, align 4\l  ret i32 %41\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'trueRandFlush' function" {
+	label="CFG for 'trueRandFlush' function";
+
+	Node0x6000012c7070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i64 @noise()\l  call void @randPoolStir()\l  call void @randPoolStir()\l  call void @randPoolStir()\l  call void @randPoolStir()\l  ret void\l}"];
+}

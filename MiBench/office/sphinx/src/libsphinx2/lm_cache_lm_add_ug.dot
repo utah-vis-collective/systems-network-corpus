@@ -1,0 +1,17 @@
+digraph "CFG for 'lm_cache_lm_add_ug' function" {
+	label="CFG for 'lm_cache_lm_add_ug' function";
+
+	Node0x60000344a760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  %5 = load ptr, ptr @clm, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %8, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x60000344a760:s0 -> Node0x60000344a800[tooltip="1 -> 8\nProbability 62.50%" ];
+	Node0x60000344a760:s1 -> Node0x60000344a7b0[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x60000344a7b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{7:\l|  br label %27\l}"];
+	Node0x60000344a7b0 -> Node0x60000344a8f0[tooltip="7 -> 27\nProbability 100.00%" ];
+	Node0x60000344a800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = call ptr @lm_get_current()\l  store ptr %9, ptr %4, align 8\l  %10 = load i32, ptr %2, align 4\l  %11 = call i32 @lm3g_ug_score(i32 noundef %10)\l  %12 = sitofp i32 %11 to double\l  %13 = load ptr, ptr %4, align 8\l  %14 = getelementptr inbounds %struct.lm_s, ptr %13, i32 0, i32 20\l  %15 = load double, ptr %14, align 8\l  %16 = fmul double %12, %15\l  %17 = fptosi double %16 to i32\l  store i32 %17, ptr %3, align 4\l  %18 = load i32, ptr %3, align 4\l  %19 = load ptr, ptr @clm, align 8\l  %20 = getelementptr inbounds %struct.cache_lm_t, ptr %19, i32 0, i32 9\l  %21 = load i32, ptr %20, align 4\l  %22 = icmp sge i32 %18, %21\l  br i1 %22, label %23, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x60000344a800:s0 -> Node0x60000344a850[tooltip="8 -> 23\nProbability 50.00%" ];
+	Node0x60000344a800:s1 -> Node0x60000344a8a0[tooltip="8 -> 24\nProbability 50.00%" ];
+	Node0x60000344a850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  br label %27\l}"];
+	Node0x60000344a850 -> Node0x60000344a8f0[tooltip="23 -> 27\nProbability 100.00%" ];
+	Node0x60000344a8a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr @clm, align 8\l  %26 = load i32, ptr %2, align 4\l  call void @cache_lm_add_ug(ptr noundef %25, i32 noundef %26)\l  br label %27\l}"];
+	Node0x60000344a8a0 -> Node0x60000344a8f0[tooltip="24 -> 27\nProbability 100.00%" ];
+	Node0x60000344a8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  ret void\l}"];
+}

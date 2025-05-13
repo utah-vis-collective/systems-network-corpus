@@ -1,0 +1,12 @@
+digraph "CFG for 'Luv32toXYZ' function" {
+	label="CFG for 'Luv32toXYZ' function";
+
+	Node0x600000631270 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.logLuvState, ptr %9, i32 0, i32 2\l  %11 = load ptr, ptr %10, align 8\l  store ptr %11, ptr %7, align 8\l  %12 = load ptr, ptr %5, align 8\l  store ptr %12, ptr %8, align 8\l  br label %13\l}"];
+	Node0x600000631270 -> Node0x600000631310[tooltip="3 -> 13\nProbability 100.00%" ];
+	Node0x600000631310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %6, align 4\l  %15 = add nsw i32 %14, -1\l  store i32 %15, ptr %6, align 4\l  %16 = icmp sgt i32 %14, 0\l  br i1 %16, label %17, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600000631310:s0 -> Node0x600000631360[tooltip="13 -> 17\nProbability 96.88%" ];
+	Node0x600000631310:s1 -> Node0x6000006313b0[tooltip="13 -> 24\nProbability 3.12%" ];
+	Node0x600000631360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %7, align 8\l  %19 = getelementptr inbounds i64, ptr %18, i32 1\l  store ptr %19, ptr %7, align 8\l  %20 = load i64, ptr %18, align 8\l  %21 = load ptr, ptr %8, align 8\l  call void @pix32toXYZ(i64 noundef %20, ptr noundef %21)\l  %22 = load ptr, ptr %8, align 8\l  %23 = getelementptr inbounds float, ptr %22, i64 3\l  store ptr %23, ptr %8, align 8\l  br label %13\l}"];
+	Node0x600000631360 -> Node0x600000631310[tooltip="17 -> 13\nProbability 100.00%" ];
+	Node0x6000006313b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  ret void\l}"];
+}

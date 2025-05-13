@@ -1,0 +1,5 @@
+digraph "CFG for 'Fatal' function" {
+	label="CFG for 'Fatal' function";
+
+	Node0x6000001a3020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  call void @llvm.va_start.p0(ptr %3)\l  %4 = load ptr, ptr @__stderrp, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = load ptr, ptr %3, align 8\l  call void @vError(ptr noundef %4, ptr noundef %5, ptr noundef %6)\l  call void @llvm.va_end.p0(ptr %3)\l  call void @exit(i32 noundef -1) #7\l  unreachable\l}"];
+}

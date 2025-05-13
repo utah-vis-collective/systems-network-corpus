@@ -1,0 +1,17 @@
+digraph "CFG for 'context_frames' function" {
+	label="CFG for 'context_frames' function";
+
+	Node0x60000202ead0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = load i32, ptr @context_word, align 4\l  %3 = icmp slt i32 %2, 0\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x60000202ead0:s0 -> Node0x60000202eb20[tooltip="0 -> 4\nProbability 37.50%" ];
+	Node0x60000202ead0:s1 -> Node0x60000202eb70[tooltip="0 -> 5\nProbability 62.50%" ];
+	Node0x60000202eb20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{4:\l|  store i32 0, ptr %1, align 4\l  br label %10\l}"];
+	Node0x60000202eb20 -> Node0x60000202ec60[tooltip="4 -> 10\nProbability 100.00%" ];
+	Node0x60000202eb70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr getelementptr inbounds ([2 x i32], ptr @context_word,\l... i64 0, i64 1), align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000202eb70:s0 -> Node0x60000202ebc0[tooltip="5 -> 8\nProbability 37.50%" ];
+	Node0x60000202eb70:s1 -> Node0x60000202ec10[tooltip="5 -> 9\nProbability 62.50%" ];
+	Node0x60000202ebc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{8:\l|  store i32 2, ptr %1, align 4\l  br label %10\l}"];
+	Node0x60000202ebc0 -> Node0x60000202ec60[tooltip="8 -> 10\nProbability 100.00%" ];
+	Node0x60000202ec10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i32 3, ptr %1, align 4\l  br label %10\l}"];
+	Node0x60000202ec10 -> Node0x60000202ec60[tooltip="9 -> 10\nProbability 100.00%" ];
+	Node0x60000202ec60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %1, align 4\l  ret i32 %11\l}"];
+}

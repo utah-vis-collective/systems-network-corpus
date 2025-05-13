@@ -1,0 +1,14 @@
+digraph "CFG for 'sleep' function" {
+	label="CFG for 'sleep' function";
+
+	Node0x6000023e9ef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i64, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca i64, align 8\l  store i32 %0, ptr %2, align 4\l  %6 = call i64 @time(ptr noundef %3)\l  %7 = load i64, ptr %3, align 8\l  %8 = load i32, ptr %2, align 4\l  %9 = zext i32 %8 to i64\l  %10 = add nsw i64 %7, %9\l  store i64 %10, ptr %5, align 8\l  br label %11\l}"];
+	Node0x6000023e9ef0 -> Node0x6000023e9ea0[tooltip="1 -> 11\nProbability 100.00%" ];
+	Node0x6000023e9ea0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = call i64 @time(ptr noundef %4)\l  %13 = load i64, ptr %4, align 8\l  %14 = load i64, ptr %5, align 8\l  %15 = icmp sgt i64 %13, %14\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000023e9ea0:s0 -> Node0x6000023e9f40[tooltip="11 -> 16\nProbability 3.12%" ];
+	Node0x6000023e9ea0:s1 -> Node0x6000023e9f90[tooltip="11 -> 17\nProbability 96.88%" ];
+	Node0x6000023e9f40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  br label %18\l}"];
+	Node0x6000023e9f40 -> Node0x6000023e9fe0[tooltip="16 -> 18\nProbability 100.00%" ];
+	Node0x6000023e9f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  br label %11\l}"];
+	Node0x6000023e9f90 -> Node0x6000023e9ea0[tooltip="17 -> 11\nProbability 100.00%" ];
+	Node0x6000023e9fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  ret i32 0\l}"];
+}

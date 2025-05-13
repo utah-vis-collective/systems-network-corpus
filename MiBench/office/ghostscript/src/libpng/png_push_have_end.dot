@@ -1,0 +1,10 @@
+digraph "CFG for 'png_push_have_end' function" {
+	label="CFG for 'png_push_have_end' function";
+
+	Node0x6000037e0e60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.png_struct_def, ptr %5, i32 0, i32 73\l  %7 = load ptr, ptr %6, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000037e0e60:s0 -> Node0x6000037e0eb0[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x6000037e0e60:s1 -> Node0x6000037e0f00[tooltip="2 -> 15\nProbability 37.50%" ];
+	Node0x6000037e0eb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds %struct.png_struct_def, ptr %10, i32 0, i32 73\l  %12 = load ptr, ptr %11, align 8\l  %13 = load ptr, ptr %3, align 8\l  %14 = load ptr, ptr %4, align 8\l  call void %12(ptr noundef %13, ptr noundef %14)\l  br label %15\l}"];
+	Node0x6000037e0eb0 -> Node0x6000037e0f00[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x6000037e0f00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  ret void\l}"];
+}

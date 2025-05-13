@@ -1,0 +1,14 @@
+digraph "CFG for 'TIFFDefaultRefBlackWhite' function" {
+	label="CFG for 'TIFFDefaultRefBlackWhite' function";
+
+	Node0x60000116ee40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = call ptr @_TIFFmalloc(i64 noundef 24)\l  %5 = load ptr, ptr %2, align 8\l  %6 = getelementptr inbounds %struct.TIFFDirectory, ptr %5, i32 0, i32 53\l  store ptr %4, ptr %6, align 8\l  store i32 0, ptr %3, align 4\l  br label %7\l}"];
+	Node0x60000116ee40 -> Node0x60000116ee90[tooltip="1 -> 7\nProbability 100.00%" ];
+	Node0x60000116ee90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %3, align 4\l  %9 = icmp slt i32 %8, 3\l  br i1 %9, label %10, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x60000116ee90:s0 -> Node0x60000116eee0[tooltip="7 -> 10\nProbability 96.88%" ];
+	Node0x60000116ee90:s1 -> Node0x60000116ef80[tooltip="7 -> 38\nProbability 3.12%" ];
+	Node0x60000116eee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds %struct.TIFFDirectory, ptr %11, i32 0, i32 53\l  %13 = load ptr, ptr %12, align 8\l  %14 = load i32, ptr %3, align 4\l  %15 = mul nsw i32 2, %14\l  %16 = add nsw i32 %15, 0\l  %17 = sext i32 %16 to i64\l  %18 = getelementptr inbounds float, ptr %13, i64 %17\l  store float 0.000000e+00, ptr %18, align 4\l  %19 = load ptr, ptr %2, align 8\l  %20 = getelementptr inbounds %struct.TIFFDirectory, ptr %19, i32 0, i32 8\l  %21 = load i16, ptr %20, align 8\l  %22 = zext i16 %21 to i32\l  %23 = zext i32 %22 to i64\l  %24 = shl i64 1, %23\l  %25 = sub nsw i64 %24, 1\l  %26 = sitofp i64 %25 to float\l  %27 = load ptr, ptr %2, align 8\l  %28 = getelementptr inbounds %struct.TIFFDirectory, ptr %27, i32 0, i32 53\l  %29 = load ptr, ptr %28, align 8\l  %30 = load i32, ptr %3, align 4\l  %31 = mul nsw i32 2, %30\l  %32 = add nsw i32 %31, 1\l  %33 = sext i32 %32 to i64\l  %34 = getelementptr inbounds float, ptr %29, i64 %33\l  store float %26, ptr %34, align 4\l  br label %35\l}"];
+	Node0x60000116eee0 -> Node0x60000116ef30[tooltip="10 -> 35\nProbability 100.00%" ];
+	Node0x60000116ef30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %3, align 4\l  %37 = add nsw i32 %36, 1\l  store i32 %37, ptr %3, align 4\l  br label %7\l}"];
+	Node0x60000116ef30 -> Node0x60000116ee90[tooltip="35 -> 7\nProbability 100.00%" ];
+	Node0x60000116ef80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{38:\l|  ret void\l}"];
+}

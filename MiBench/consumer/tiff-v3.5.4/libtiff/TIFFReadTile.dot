@@ -1,0 +1,15 @@
+digraph "CFG for 'TIFFReadTile' function" {
+	label="CFG for 'TIFFReadTile' function";
+
+	Node0x600002f0a3f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca i64, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca i64, align 8\l  %11 = alloca i64, align 8\l  %12 = alloca i64, align 8\l  %13 = alloca i16, align 2\l  store ptr %0, ptr %8, align 8\l  store ptr %1, ptr %9, align 8\l  store i64 %2, ptr %10, align 8\l  store i64 %3, ptr %11, align 8\l  store i64 %4, ptr %12, align 8\l  store i16 %5, ptr %13, align 2\l  %14 = load ptr, ptr %8, align 8\l  %15 = call i32 @TIFFCheckRead(ptr noundef %14, i32 noundef 1)\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %17, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600002f0a3f0:s0 -> Node0x600002f0a440[tooltip="6 -> 17\nProbability 62.50%" ];
+	Node0x600002f0a3f0:s1 -> Node0x600002f0a490[tooltip="6 -> 25\nProbability 37.50%" ];
+	Node0x600002f0a440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %8, align 8\l  %19 = load i64, ptr %10, align 8\l  %20 = load i64, ptr %11, align 8\l  %21 = load i64, ptr %12, align 8\l  %22 = load i16, ptr %13, align 2\l  %23 = call i32 @TIFFCheckTile(ptr noundef %18, i64 noundef %19, i64 noundef\l... %20, i64 noundef %21, i16 noundef zeroext %22)\l  %24 = icmp ne i32 %23, 0\l  br i1 %24, label %26, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600002f0a440:s0 -> Node0x600002f0a4e0[tooltip="17 -> 26\nProbability 62.50%" ];
+	Node0x600002f0a440:s1 -> Node0x600002f0a490[tooltip="17 -> 25\nProbability 37.50%" ];
+	Node0x600002f0a490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{25:\l|  store i64 -1, ptr %7, align 8\l  br label %36\l}"];
+	Node0x600002f0a490 -> Node0x600002f0a530[tooltip="25 -> 36\nProbability 100.00%" ];
+	Node0x600002f0a4e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %8, align 8\l  %28 = load ptr, ptr %8, align 8\l  %29 = load i64, ptr %10, align 8\l  %30 = load i64, ptr %11, align 8\l  %31 = load i64, ptr %12, align 8\l  %32 = load i16, ptr %13, align 2\l  %33 = call i64 @TIFFComputeTile(ptr noundef %28, i64 noundef %29, i64\l... noundef %30, i64 noundef %31, i16 noundef zeroext %32)\l  %34 = load ptr, ptr %9, align 8\l  %35 = call i64 @TIFFReadEncodedTile(ptr noundef %27, i64 noundef %33, ptr\l... noundef %34, i64 noundef -1)\l  store i64 %35, ptr %7, align 8\l  br label %36\l}"];
+	Node0x600002f0a4e0 -> Node0x600002f0a530[tooltip="26 -> 36\nProbability 100.00%" ];
+	Node0x600002f0a530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i64, ptr %7, align 8\l  ret i64 %37\l}"];
+}

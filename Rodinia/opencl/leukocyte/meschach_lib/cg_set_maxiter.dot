@@ -1,0 +1,12 @@
+digraph "CFG for 'cg_set_maxiter' function" {
+	label="CFG for 'cg_set_maxiter' function";
+
+	Node0x6000023edef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  %5 = load i32, ptr %3, align 4\l  %6 = icmp slt i32 %5, 2\l  br i1 %6, label %7, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000023edef0:s0 -> Node0x6000023edf40[tooltip="1 -> 7\nProbability 50.00%" ];
+	Node0x6000023edef0:s1 -> Node0x6000023edf90[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x6000023edf40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{7:\l|  %8 = load i32, ptr @max_iter, align 4\l  store i32 %8, ptr %2, align 4\l  br label %13\l}"];
+	Node0x6000023edf40 -> Node0x6000023edfe0[tooltip="7 -> 13\nProbability 100.00%" ];
+	Node0x6000023edf90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr @max_iter, align 4\l  store i32 %10, ptr %4, align 4\l  %11 = load i32, ptr %3, align 4\l  store i32 %11, ptr @max_iter, align 4\l  %12 = load i32, ptr %4, align 4\l  store i32 %12, ptr %2, align 4\l  br label %13\l}"];
+	Node0x6000023edf90 -> Node0x6000023edfe0[tooltip="9 -> 13\nProbability 100.00%" ];
+	Node0x6000023edfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %2, align 4\l  ret i32 %14\l}"];
+}

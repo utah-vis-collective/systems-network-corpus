@@ -1,0 +1,12 @@
+digraph "CFG for '_Z11roundDoubled' function" {
+	label="CFG for '_Z11roundDoubled' function";
+
+	Node0x600003cfe850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  %3 = alloca double, align 8\l  %4 = alloca i32, align 4\l  store double %0, ptr %3, align 8\l  %5 = load double, ptr %3, align 8\l  %6 = fptosi double %5 to i32\l  store i32 %6, ptr %4, align 4\l  %7 = load double, ptr %3, align 8\l  %8 = load i32, ptr %4, align 4\l  %9 = sitofp i32 %8 to double\l  %10 = fsub double %7, %9\l  %11 = fcmp olt double %10, 5.000000e-01\l  br i1 %11, label %12, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600003cfe850:s0 -> Node0x600003cfe8a0[tooltip="1 -> 12\nProbability 50.00%" ];
+	Node0x600003cfe850:s1 -> Node0x600003cfe8f0[tooltip="1 -> 15\nProbability 50.00%" ];
+	Node0x600003cfe8a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %4, align 4\l  %14 = sitofp i32 %13 to double\l  store double %14, ptr %2, align 8\l  br label %19\l}"];
+	Node0x600003cfe8a0 -> Node0x600003cfe940[tooltip="12 -> 19\nProbability 100.00%" ];
+	Node0x600003cfe8f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %4, align 4\l  %17 = add nsw i32 %16, 1\l  store i32 %17, ptr %4, align 4\l  %18 = sitofp i32 %16 to double\l  store double %18, ptr %2, align 8\l  br label %19\l}"];
+	Node0x600003cfe8f0 -> Node0x600003cfe940[tooltip="15 -> 19\nProbability 100.00%" ];
+	Node0x600003cfe940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load double, ptr %2, align 8\l  ret double %20\l}"];
+}

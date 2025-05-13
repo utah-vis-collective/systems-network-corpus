@@ -1,0 +1,5 @@
+digraph "CFG for 'dict_term' function" {
+	label="CFG for 'dict_term' function";
+
+	Node0x600002ad9fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret void\l}"];
+}

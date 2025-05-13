@@ -1,0 +1,36 @@
+digraph "CFG for 'emit_restart' function" {
+	label="CFG for 'emit_restart' function";
+
+	Node0x600000a99630 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load ptr, ptr %3, align 8\l  call void @emit_eobrun(ptr noundef %6)\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %7, i32 0,\l... i32 1\l  %9 = load i32, ptr %8, align 8\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %40, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600000a99630:s0 -> Node0x600000a99810[tooltip="2 -> 40\nProbability 62.50%" ];
+	Node0x600000a99630:s1 -> Node0x600000a99680[tooltip="2 -> 11\nProbability 37.50%" ];
+	Node0x600000a99680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  call void @flush_bits(ptr noundef %12)\l  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %13, i32 0,\l... i32 2\l  %15 = load ptr, ptr %14, align 8\l  %16 = getelementptr inbounds i8, ptr %15, i32 1\l  store ptr %16, ptr %14, align 8\l  store i8 -1, ptr %15, align 1\l  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %17, i32 0,\l... i32 3\l  %19 = load i64, ptr %18, align 8\l  %20 = add i64 %19, -1\l  store i64 %20, ptr %18, align 8\l  %21 = icmp eq i64 %20, 0\l  br i1 %21, label %22, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600000a99680:s0 -> Node0x600000a996d0[tooltip="11 -> 22\nProbability 37.50%" ];
+	Node0x600000a99680:s1 -> Node0x600000a99720[tooltip="11 -> 24\nProbability 62.50%" ];
+	Node0x600000a996d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  call void @dump_buffer(ptr noundef %23)\l  br label %24\l}"];
+	Node0x600000a996d0 -> Node0x600000a99720[tooltip="22 -> 24\nProbability 100.00%" ];
+	Node0x600000a99720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %4, align 4\l  %26 = add nsw i32 208, %25\l  %27 = trunc i32 %26 to i8\l  %28 = load ptr, ptr %3, align 8\l  %29 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %28, i32 0,\l... i32 2\l  %30 = load ptr, ptr %29, align 8\l  %31 = getelementptr inbounds i8, ptr %30, i32 1\l  store ptr %31, ptr %29, align 8\l  store i8 %27, ptr %30, align 1\l  %32 = load ptr, ptr %3, align 8\l  %33 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %32, i32 0,\l... i32 3\l  %34 = load i64, ptr %33, align 8\l  %35 = add i64 %34, -1\l  store i64 %35, ptr %33, align 8\l  %36 = icmp eq i64 %35, 0\l  br i1 %36, label %37, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x600000a99720:s0 -> Node0x600000a99770[tooltip="24 -> 37\nProbability 37.50%" ];
+	Node0x600000a99720:s1 -> Node0x600000a997c0[tooltip="24 -> 39\nProbability 62.50%" ];
+	Node0x600000a99770 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %3, align 8\l  call void @dump_buffer(ptr noundef %38)\l  br label %39\l}"];
+	Node0x600000a99770 -> Node0x600000a997c0[tooltip="37 -> 39\nProbability 100.00%" ];
+	Node0x600000a997c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{39:\l|  br label %40\l}"];
+	Node0x600000a997c0 -> Node0x600000a99810[tooltip="39 -> 40\nProbability 100.00%" ];
+	Node0x600000a99810 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %3, align 8\l  %42 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %41, i32 0,\l... i32 6\l  %43 = load ptr, ptr %42, align 8\l  %44 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %43, i32 0,\l... i32 47\l  %45 = load i32, ptr %44, align 4\l  %46 = icmp eq i32 %45, 0\l  br i1 %46, label %47, label %66\l|{<s0>T|<s1>F}}"];
+	Node0x600000a99810:s0 -> Node0x600000a99860[tooltip="40 -> 47\nProbability 37.50%" ];
+	Node0x600000a99810:s1 -> Node0x600000a999f0[tooltip="40 -> 66\nProbability 62.50%" ];
+	Node0x600000a99860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{47:\l|  store i32 0, ptr %5, align 4\l  br label %48\l}"];
+	Node0x600000a99860 -> Node0x600000a998b0[tooltip="47 -> 48\nProbability 100.00%" ];
+	Node0x600000a998b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = load i32, ptr %5, align 4\l  %50 = load ptr, ptr %3, align 8\l  %51 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %50, i32 0,\l... i32 6\l  %52 = load ptr, ptr %51, align 8\l  %53 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %52, i32 0,\l... i32 41\l  %54 = load i32, ptr %53, align 4\l  %55 = icmp slt i32 %49, %54\l  br i1 %55, label %56, label %65\l|{<s0>T|<s1>F}}"];
+	Node0x600000a998b0:s0 -> Node0x600000a99900[tooltip="48 -> 56\nProbability 96.88%" ];
+	Node0x600000a998b0:s1 -> Node0x600000a999a0[tooltip="48 -> 65\nProbability 3.12%" ];
+	Node0x600000a99900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{56:\l|  %57 = load ptr, ptr %3, align 8\l  %58 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %57, i32 0,\l... i32 7\l  %59 = load i32, ptr %5, align 4\l  %60 = sext i32 %59 to i64\l  %61 = getelementptr inbounds [4 x i32], ptr %58, i64 0, i64 %60\l  store i32 0, ptr %61, align 4\l  br label %62\l}"];
+	Node0x600000a99900 -> Node0x600000a99950[tooltip="56 -> 62\nProbability 100.00%" ];
+	Node0x600000a99950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{62:\l|  %63 = load i32, ptr %5, align 4\l  %64 = add nsw i32 %63, 1\l  store i32 %64, ptr %5, align 4\l  br label %48\l}"];
+	Node0x600000a99950 -> Node0x600000a998b0[tooltip="62 -> 48\nProbability 100.00%" ];
+	Node0x600000a999a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{65:\l|  br label %71\l}"];
+	Node0x600000a999a0 -> Node0x600000a99a40[tooltip="65 -> 71\nProbability 100.00%" ];
+	Node0x600000a999f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{66:\l|  %67 = load ptr, ptr %3, align 8\l  %68 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %67, i32 0,\l... i32 9\l  store i32 0, ptr %68, align 4\l  %69 = load ptr, ptr %3, align 8\l  %70 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %69, i32 0,\l... i32 10\l  store i32 0, ptr %70, align 8\l  br label %71\l}"];
+	Node0x600000a999f0 -> Node0x600000a99a40[tooltip="66 -> 71\nProbability 100.00%" ];
+	Node0x600000a99a40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{71:\l|  ret void\l}"];
+}

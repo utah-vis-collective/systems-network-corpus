@@ -1,0 +1,19 @@
+digraph "CFG for 'feat_alloc' function" {
+	label="CFG for 'feat_alloc' function";
+
+	Node0x6000008bafd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = load ptr, ptr @cep_buf, align 8\l  %3 = icmp ne ptr %2, null\l  br i1 %3, label %33, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x6000008bafd0:s0 -> Node0x6000008bb1b0[tooltip="0 -> 33\nProbability 62.50%" ];
+	Node0x6000008bafd0:s1 -> Node0x6000008bb020[tooltip="0 -> 4\nProbability 37.50%" ];
+	Node0x6000008bb020 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = call ptr @_CM_calloc(i32 noundef 78000, i32 noundef 4, ptr noundef\l... @.str, i32 noundef 448)\l  store ptr %5, ptr @cep_buf, align 8\l  %6 = call ptr @_CM_calloc(i32 noundef 78000, i32 noundef 4, ptr noundef\l... @.str, i32 noundef 449)\l  store ptr %6, ptr @dcep_buf, align 8\l  %7 = call ptr @_CM_calloc(i32 noundef 78000, i32 noundef 4, ptr noundef\l... @.str, i32 noundef 450)\l  store ptr %7, ptr @dcep_80ms_buf, align 8\l  %8 = call ptr @_CM_calloc(i32 noundef 18000, i32 noundef 4, ptr noundef\l... @.str, i32 noundef 451)\l  store ptr %8, ptr @pcep_buf, align 8\l  %9 = call ptr @_CM_calloc(i32 noundef 78000, i32 noundef 4, ptr noundef\l... @.str, i32 noundef 452)\l  store ptr %9, ptr @ddcep_buf, align 8\l  %10 = call ptr @_CM_calloc(i32 noundef 6010, i32 noundef 8, ptr noundef\l... @.str, i32 noundef 454)\l  store ptr %10, ptr @mfcbuf, align 8\l  %11 = call ptr @_CM_calloc(i32 noundef 78130, i32 noundef 4, ptr noundef\l... @.str, i32 noundef 455)\l  %12 = load ptr, ptr @mfcbuf, align 8\l  %13 = getelementptr inbounds ptr, ptr %12, i64 0\l  store ptr %11, ptr %13, align 8\l  store i32 1, ptr %1, align 4\l  br label %14\l}"];
+	Node0x6000008bb020 -> Node0x6000008bb070[tooltip="4 -> 14\nProbability 100.00%" ];
+	Node0x6000008bb070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %1, align 4\l  %16 = icmp slt i32 %15, 6010\l  br i1 %16, label %17, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x6000008bb070:s0 -> Node0x6000008bb0c0[tooltip="14 -> 17\nProbability 96.88%" ];
+	Node0x6000008bb070:s1 -> Node0x6000008bb160[tooltip="14 -> 32\nProbability 3.12%" ];
+	Node0x6000008bb0c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr @mfcbuf, align 8\l  %19 = load i32, ptr %1, align 4\l  %20 = sub nsw i32 %19, 1\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds ptr, ptr %18, i64 %21\l  %23 = load ptr, ptr %22, align 8\l  %24 = getelementptr inbounds float, ptr %23, i64 13\l  %25 = load ptr, ptr @mfcbuf, align 8\l  %26 = load i32, ptr %1, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds ptr, ptr %25, i64 %27\l  store ptr %24, ptr %28, align 8\l  br label %29\l}"];
+	Node0x6000008bb0c0 -> Node0x6000008bb110[tooltip="17 -> 29\nProbability 100.00%" ];
+	Node0x6000008bb110 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %1, align 4\l  %31 = add nsw i32 %30, 1\l  store i32 %31, ptr %1, align 4\l  br label %14\l}"];
+	Node0x6000008bb110 -> Node0x6000008bb070[tooltip="29 -> 14\nProbability 100.00%" ];
+	Node0x6000008bb160 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{32:\l|  br label %33\l}"];
+	Node0x6000008bb160 -> Node0x6000008bb1b0[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x6000008bb1b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{33:\l|  ret void\l}"];
+}

@@ -1,0 +1,24 @@
+digraph "CFG for 'PDFFile_WritePagesObject' function" {
+	label="CFG for 'PDFFile_WritePagesObject' function";
+
+	Node0x600000536df0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr @g_page_block_list, align 8\l  store ptr %6, ptr %4, align 8\l  %7 = load i32, ptr @g_PDF_debug, align 4\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600000536df0:s0 -> Node0x600000536e40[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x600000536df0:s1 -> Node0x600000536e90[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x600000536e40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %2, align 8\l  %11 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %10, ptr noundef\l... @.str.169) #7\l  br label %12\l}"];
+	Node0x600000536e40 -> Node0x600000536e90[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x600000536e90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  %14 = load i32, ptr @g_pages_root, align 4\l  call void @PDFObject_WriteObj(ptr noundef %13, i32 noundef %14)\l  %15 = load ptr, ptr %2, align 8\l  %16 = call i32 @\"\\01_fputs\"(ptr noundef @.str.45, ptr noundef %15)\l  %17 = load ptr, ptr %2, align 8\l  %18 = call i32 @\"\\01_fputs\"(ptr noundef @.str.170, ptr noundef %17)\l  %19 = load ptr, ptr %2, align 8\l  %20 = call i32 @\"\\01_fputs\"(ptr noundef @.str.171, ptr noundef %19)\l  store i32 0, ptr %3, align 4\l  br label %21\l}"];
+	Node0x600000536e90 -> Node0x600000536ee0[tooltip="12 -> 21\nProbability 100.00%" ];
+	Node0x600000536ee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %3, align 4\l  %23 = load i32, ptr @g_page_count, align 4\l  %24 = icmp ult i32 %22, %23\l  br i1 %24, label %25, label %47\l|{<s0>T|<s1>F}}"];
+	Node0x600000536ee0:s0 -> Node0x600000536f30[tooltip="21 -> 25\nProbability 96.88%" ];
+	Node0x600000536ee0:s1 -> Node0x600000537070[tooltip="21 -> 47\nProbability 3.12%" ];
+	Node0x600000536f30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %3, align 4\l  %27 = urem i32 %26, 64\l  store i32 %27, ptr %5, align 4\l  %28 = load ptr, ptr %2, align 8\l  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds %struct.t_page_block, ptr %29, i32 0, i32 1\l  %31 = load i32, ptr %5, align 4\l  %32 = sext i32 %31 to i64\l  %33 = getelementptr inbounds [64 x i32], ptr %30, i64 0, i64 %32\l  %34 = load i32, ptr %33, align 4\l  call void @PDFObject_WriteRef(ptr noundef %28, i32 noundef %34)\l  %35 = load i32, ptr %5, align 4\l  %36 = icmp eq i32 %35, 63\l  br i1 %36, label %37, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600000536f30:s0 -> Node0x600000536f80[tooltip="25 -> 37\nProbability 50.00%" ];
+	Node0x600000536f30:s1 -> Node0x600000536fd0[tooltip="25 -> 41\nProbability 50.00%" ];
+	Node0x600000536f80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %4, align 8\l  %39 = getelementptr inbounds %struct.t_page_block, ptr %38, i32 0, i32 0\l  %40 = load ptr, ptr %39, align 8\l  store ptr %40, ptr %4, align 8\l  br label %41\l}"];
+	Node0x600000536f80 -> Node0x600000536fd0[tooltip="37 -> 41\nProbability 100.00%" ];
+	Node0x600000536fd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr %2, align 8\l  %43 = call i32 @\"\\01_fputs\"(ptr noundef @.str.40, ptr noundef %42)\l  br label %44\l}"];
+	Node0x600000536fd0 -> Node0x600000537020[tooltip="41 -> 44\nProbability 100.00%" ];
+	Node0x600000537020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{44:\l|  %45 = load i32, ptr %3, align 4\l  %46 = add i32 %45, 1\l  store i32 %46, ptr %3, align 4\l  br label %21\l}"];
+	Node0x600000537020 -> Node0x600000536ee0[tooltip="44 -> 21\nProbability 100.00%" ];
+	Node0x600000537070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{47:\l|  %48 = load ptr, ptr %2, align 8\l  %49 = load i32, ptr @g_page_count, align 4\l  %50 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %48, ptr noundef\l... @.str.172, i32 noundef %49) #7\l  %51 = load ptr, ptr %2, align 8\l  %52 = load i32, ptr @g_doc_h_bound, align 4\l  %53 = load i32, ptr @g_doc_v_bound, align 4\l  %54 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %51, ptr noundef\l... @.str.173, i32 noundef %52, i32 noundef %53) #7\l  %55 = load ptr, ptr %2, align 8\l  %56 = call i32 @\"\\01_fputs\"(ptr noundef @.str.41, ptr noundef %55)\l  ret void\l}"];
+}

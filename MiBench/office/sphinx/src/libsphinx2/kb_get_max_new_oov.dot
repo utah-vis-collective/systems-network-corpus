@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_max_new_oov' function" {
+	label="CFG for 'kb_get_max_new_oov' function";
+
+	Node0x600002a8cdc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @max_new_oov, align 4\l  ret i32 %1\l}"];
+}

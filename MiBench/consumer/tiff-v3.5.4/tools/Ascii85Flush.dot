@@ -1,0 +1,17 @@
+digraph "CFG for 'Ascii85Flush' function" {
+	label="CFG for 'Ascii85Flush' function";
+
+	Node0x6000014256d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load i32, ptr @ascii85count, align 4\l  %5 = icmp sgt i32 %4, 0\l  br i1 %5, label %6, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000014256d0:s0 -> Node0x600001425720[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x6000014256d0:s1 -> Node0x600001425860[tooltip="1 -> 26\nProbability 37.50%" ];
+	Node0x600001425720 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load i32, ptr @ascii85count, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds [10 x i8], ptr @ascii85buf, i64 0, i64 %8\l  call void @_TIFFmemset(ptr noundef %9, i32 noundef 0, i64 noundef 3)\l  %10 = call ptr @Ascii85Encode(ptr noundef @ascii85buf)\l  store ptr %10, ptr %3, align 8\l  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds i8, ptr %11, i64 0\l  %13 = load i8, ptr %12, align 1\l  %14 = sext i8 %13 to i32\l  %15 = icmp eq i32 %14, 122\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001425720:s0 -> Node0x600001425770[tooltip="6 -> 16\nProbability 50.00%" ];
+	Node0x600001425720:s1 -> Node0x6000014257c0[tooltip="6 -> 17\nProbability 50.00%" ];
+	Node0x600001425770 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  br label %19\l}"];
+	Node0x600001425770 -> Node0x600001425810[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x6000014257c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  br label %19\l}"];
+	Node0x6000014257c0 -> Node0x600001425810[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x600001425810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  %20 = phi ptr [ @.str.63, %16 ], [ %18, %17 ]\l  %21 = load i32, ptr @ascii85count, align 4\l  %22 = add nsw i32 %21, 1\l  %23 = sext i32 %22 to i64\l  %24 = load ptr, ptr %2, align 8\l  %25 = call i64 @\"\\01_fwrite\"(ptr noundef %20, i64 noundef %23, i64 noundef\l... 1, ptr noundef %24)\l  br label %26\l}"];
+	Node0x600001425810 -> Node0x600001425860[tooltip="19 -> 26\nProbability 100.00%" ];
+	Node0x600001425860 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %2, align 8\l  %28 = call i32 @\"\\01_fputs\"(ptr noundef @.str.64, ptr noundef %27)\l  ret void\l}"];
+}

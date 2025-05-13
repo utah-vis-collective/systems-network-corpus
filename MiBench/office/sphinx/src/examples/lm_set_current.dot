@@ -1,0 +1,38 @@
+digraph "CFG for 'lm_set_current' function" {
+	label="CFG for 'lm_set_current' function";
+
+	Node0x60000102e120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = call i32 @lmname_to_id(ptr noundef %5)\l  store i32 %6, ptr %4, align 4\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000102e120:s0 -> Node0x60000102e170[tooltip="1 -> 8\nProbability 37.50%" ];
+	Node0x60000102e120:s1 -> Node0x60000102e1c0[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x60000102e170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{8:\l|  store i32 -1, ptr %2, align 4\l  br label %82\l}"];
+	Node0x60000102e170 -> Node0x60000102e580[tooltip="8 -> 82\nProbability 100.00%" ];
+	Node0x60000102e1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @lmset, align 8\l  %11 = load i32, ptr %4, align 4\l  %12 = sext i32 %11 to i64\l  %13 = getelementptr inbounds %struct.lmset_s, ptr %10, i64 %12\l  %14 = getelementptr inbounds %struct.lmset_s, ptr %13, i32 0, i32 1\l  %15 = load ptr, ptr %14, align 8\l  store ptr %15, ptr @lmp, align 8\l  store i32 0, ptr %4, align 4\l  br label %16\l}"];
+	Node0x60000102e1c0 -> Node0x60000102e210[tooltip="9 -> 16\nProbability 100.00%" ];
+	Node0x60000102e210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %4, align 4\l  %18 = load ptr, ptr @lmp, align 8\l  %19 = getelementptr inbounds %struct.lm_s, ptr %18, i32 0, i32 15\l  %20 = load i32, ptr %19, align 8\l  %21 = icmp slt i32 %17, %20\l  br i1 %21, label %22, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x60000102e210:s0 -> Node0x60000102e260[tooltip="16 -> 22\nProbability 96.88%" ];
+	Node0x60000102e210:s1 -> Node0x60000102e300[tooltip="16 -> 32\nProbability 3.12%" ];
+	Node0x60000102e260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr @lmp, align 8\l  %24 = getelementptr inbounds %struct.lm_s, ptr %23, i32 0, i32 10\l  %25 = load ptr, ptr %24, align 8\l  %26 = load i32, ptr %4, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds i32, ptr %25, i64 %27\l  store i32 -2147483648, ptr %28, align 4\l  br label %29\l}"];
+	Node0x60000102e260 -> Node0x60000102e2b0[tooltip="22 -> 29\nProbability 100.00%" ];
+	Node0x60000102e2b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %4, align 4\l  %31 = add nsw i32 %30, 1\l  store i32 %31, ptr %4, align 4\l  br label %16\l}"];
+	Node0x60000102e2b0 -> Node0x60000102e210[tooltip="29 -> 16\nProbability 100.00%" ];
+	Node0x60000102e300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{32:\l|  store i32 0, ptr %4, align 4\l  br label %33\l}"];
+	Node0x60000102e300 -> Node0x60000102e350[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x60000102e350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %4, align 4\l  %35 = load ptr, ptr @lmp, align 8\l  %36 = getelementptr inbounds %struct.lm_s, ptr %35, i32 0, i32 12\l  %37 = load i32, ptr %36, align 4\l  %38 = icmp slt i32 %34, %37\l  br i1 %38, label %39, label %81\l|{<s0>T|<s1>F}}"];
+	Node0x60000102e350:s0 -> Node0x60000102e3a0[tooltip="33 -> 39\nProbability 96.88%" ];
+	Node0x60000102e350:s1 -> Node0x60000102e530[tooltip="33 -> 81\nProbability 3.12%" ];
+	Node0x60000102e3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr @lmp, align 8\l  %41 = getelementptr inbounds %struct.lm_s, ptr %40, i32 0, i32 0\l  %42 = load ptr, ptr %41, align 8\l  %43 = load i32, ptr %4, align 4\l  %44 = sext i32 %43 to i64\l  %45 = getelementptr inbounds %struct.unigram_s, ptr %42, i64 %44\l  %46 = getelementptr inbounds %struct.unigram_s, ptr %45, i32 0, i32 0\l  %47 = load i32, ptr %46, align 4\l  %48 = icmp sge i32 %47, 0\l  br i1 %48, label %49, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x60000102e3a0:s0 -> Node0x60000102e3f0[tooltip="39 -> 49\nProbability 50.00%" ];
+	Node0x60000102e3a0:s1 -> Node0x60000102e490[tooltip="39 -> 77\nProbability 50.00%" ];
+	Node0x60000102e3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{49:\l|  %50 = load ptr, ptr @lmp, align 8\l  %51 = getelementptr inbounds %struct.lm_s, ptr %50, i32 0, i32 0\l  %52 = load ptr, ptr %51, align 8\l  %53 = load i32, ptr %4, align 4\l  %54 = sext i32 %53 to i64\l  %55 = getelementptr inbounds %struct.unigram_s, ptr %52, i64 %54\l  %56 = getelementptr inbounds %struct.unigram_s, ptr %55, i32 0, i32 0\l  %57 = load i32, ptr %56, align 4\l  %58 = load ptr, ptr @lmp, align 8\l  %59 = getelementptr inbounds %struct.lm_s, ptr %58, i32 0, i32 15\l  %60 = load i32, ptr %59, align 8\l  %61 = icmp slt i32 %57, %60\l  br i1 %61, label %62, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x60000102e3f0:s0 -> Node0x60000102e440[tooltip="49 -> 62\nProbability 50.00%" ];
+	Node0x60000102e3f0:s1 -> Node0x60000102e490[tooltip="49 -> 77\nProbability 50.00%" ];
+	Node0x60000102e440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{62:\l|  %63 = load i32, ptr %4, align 4\l  %64 = load ptr, ptr @lmp, align 8\l  %65 = getelementptr inbounds %struct.lm_s, ptr %64, i32 0, i32 10\l  %66 = load ptr, ptr %65, align 8\l  %67 = load ptr, ptr @lmp, align 8\l  %68 = getelementptr inbounds %struct.lm_s, ptr %67, i32 0, i32 0\l  %69 = load ptr, ptr %68, align 8\l  %70 = load i32, ptr %4, align 4\l  %71 = sext i32 %70 to i64\l  %72 = getelementptr inbounds %struct.unigram_s, ptr %69, i64 %71\l  %73 = getelementptr inbounds %struct.unigram_s, ptr %72, i32 0, i32 0\l  %74 = load i32, ptr %73, align 4\l  %75 = sext i32 %74 to i64\l  %76 = getelementptr inbounds i32, ptr %66, i64 %75\l  store i32 %63, ptr %76, align 4\l  br label %77\l}"];
+	Node0x60000102e440 -> Node0x60000102e490[tooltip="62 -> 77\nProbability 100.00%" ];
+	Node0x60000102e490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{77:\l|  br label %78\l}"];
+	Node0x60000102e490 -> Node0x60000102e4e0[tooltip="77 -> 78\nProbability 100.00%" ];
+	Node0x60000102e4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{78:\l|  %79 = load i32, ptr %4, align 4\l  %80 = add nsw i32 %79, 1\l  store i32 %80, ptr %4, align 4\l  br label %33\l}"];
+	Node0x60000102e4e0 -> Node0x60000102e350[tooltip="78 -> 33\nProbability 100.00%" ];
+	Node0x60000102e530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{81:\l|  store i32 0, ptr %2, align 4\l  br label %82\l}"];
+	Node0x60000102e530 -> Node0x60000102e580[tooltip="81 -> 82\nProbability 100.00%" ];
+	Node0x60000102e580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{82:\l|  %83 = load i32, ptr %2, align 4\l  ret i32 %83\l}"];
+}

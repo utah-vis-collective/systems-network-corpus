@@ -1,0 +1,21 @@
+digraph "CFG for 'PDFFont_IsOneOfTheBase14Fonts' function" {
+	label="CFG for 'PDFFont_IsOneOfTheBase14Fonts' function";
+
+	Node0x6000005326c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 0, ptr %4, align 4\l  br label %5\l}"];
+	Node0x6000005326c0 -> Node0x600000532710[tooltip="1 -> 5\nProbability 100.00%" ];
+	Node0x600000532710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %4, align 4\l  %7 = icmp slt i32 %6, 14\l  br i1 %7, label %8, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600000532710:s0 -> Node0x600000532760[tooltip="5 -> 8\nProbability 96.88%" ];
+	Node0x600000532710:s1 -> Node0x6000005328a0[tooltip="5 -> 21\nProbability 3.12%" ];
+	Node0x600000532760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %4, align 4\l  %10 = sext i32 %9 to i64\l  %11 = getelementptr inbounds [14 x ptr], ptr @g_standard_base_14_fonts, i64\l... 0, i64 %10\l  %12 = load ptr, ptr %11, align 8\l  %13 = load ptr, ptr %3, align 8\l  %14 = call i32 @strcmp(ptr noundef %12, ptr noundef %13) #7\l  %15 = icmp eq i32 %14, 0\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600000532760:s0 -> Node0x6000005327b0[tooltip="8 -> 16\nProbability 3.12%" ];
+	Node0x600000532760:s1 -> Node0x600000532800[tooltip="8 -> 17\nProbability 96.88%" ];
+	Node0x6000005327b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  store i32 1, ptr %2, align 4\l  br label %22\l}"];
+	Node0x6000005327b0 -> Node0x6000005328f0[tooltip="16 -> 22\nProbability 100.00%" ];
+	Node0x600000532800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  br label %18\l}"];
+	Node0x600000532800 -> Node0x600000532850[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x600000532850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %4, align 4\l  %20 = add nsw i32 %19, 1\l  store i32 %20, ptr %4, align 4\l  br label %5\l}"];
+	Node0x600000532850 -> Node0x600000532710[tooltip="18 -> 5\nProbability 100.00%" ];
+	Node0x6000005328a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  store i32 0, ptr %2, align 4\l  br label %22\l}"];
+	Node0x6000005328a0 -> Node0x6000005328f0[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x6000005328f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %2, align 4\l  ret i32 %23\l}"];
+}

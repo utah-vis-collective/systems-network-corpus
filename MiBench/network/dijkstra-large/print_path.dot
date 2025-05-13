@@ -1,0 +1,10 @@
+digraph "CFG for 'print_path' function" {
+	label="CFG for 'print_path' function";
+
+	Node0x6000035d20d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load ptr, ptr %3, align 8\l  %6 = load i32, ptr %4, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds %struct._NODE, ptr %5, i64 %7\l  %9 = getelementptr inbounds %struct._NODE, ptr %8, i32 0, i32 1\l  %10 = load i32, ptr %9, align 4\l  %11 = icmp ne i32 %10, 9999\l  br i1 %11, label %12, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000035d20d0:s0 -> Node0x6000035d2120[tooltip="2 -> 12\nProbability 50.00%" ];
+	Node0x6000035d20d0:s1 -> Node0x6000035d2170[tooltip="2 -> 20\nProbability 50.00%" ];
+	Node0x6000035d2120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  %14 = load ptr, ptr %3, align 8\l  %15 = load i32, ptr %4, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds %struct._NODE, ptr %14, i64 %16\l  %18 = getelementptr inbounds %struct._NODE, ptr %17, i32 0, i32 1\l  %19 = load i32, ptr %18, align 4\l  call void @print_path(ptr noundef %13, i32 noundef %19)\l  br label %20\l}"];
+	Node0x6000035d2120 -> Node0x6000035d2170[tooltip="12 -> 20\nProbability 100.00%" ];
+	Node0x6000035d2170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %4, align 4\l  %22 = call i32 (ptr, ...) @printf(ptr noundef @.str, i32 noundef %21)\l  %23 = load ptr, ptr @__stdoutp, align 8\l  %24 = call i32 @fflush(ptr noundef %23)\l  ret void\l}"];
+}

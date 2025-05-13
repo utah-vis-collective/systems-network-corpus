@@ -1,0 +1,19 @@
+digraph "CFG for 'd_save' function" {
+	label="CFG for 'd_save' function";
+
+	Node0x6000017ba4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca double, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca %struct.matlab, align 8\l  %8 = alloca double, align 8\l  store ptr %0, ptr %4, align 8\l  store double %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %9 = load double, ptr %5, align 8\l  store double %9, ptr %8, align 8\l  %10 = getelementptr inbounds %struct.matlab, ptr %7, i32 0, i32 0\l  store i64 1000, ptr %10, align 8\l  %11 = getelementptr inbounds %struct.matlab, ptr %7, i32 0, i32 1\l  store i64 1, ptr %11, align 8\l  %12 = getelementptr inbounds %struct.matlab, ptr %7, i32 0, i32 2\l  store i64 1, ptr %12, align 8\l  %13 = getelementptr inbounds %struct.matlab, ptr %7, i32 0, i32 3\l  store i64 0, ptr %13, align 8\l  %14 = load ptr, ptr %6, align 8\l  %15 = icmp eq ptr %14, null\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000017ba4e0:s0 -> Node0x6000017ba850[tooltip="3 -> 16\nProbability 37.50%" ];
+	Node0x6000017ba4e0:s1 -> Node0x6000017ba8a0[tooltip="3 -> 17\nProbability 62.50%" ];
+	Node0x6000017ba850 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  br label %21\l}"];
+	Node0x6000017ba850 -> Node0x6000017ba8f0[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x6000017ba8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %6, align 8\l  %19 = call i64 @strlen(ptr noundef %18) #4\l  %20 = add i64 %19, 1\l  br label %21\l}"];
+	Node0x6000017ba8a0 -> Node0x6000017ba8f0[tooltip="17 -> 21\nProbability 100.00%" ];
+	Node0x6000017ba8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = phi i64 [ 1, %16 ], [ %20, %17 ]\l  %23 = getelementptr inbounds %struct.matlab, ptr %7, i32 0, i32 4\l  store i64 %22, ptr %23, align 8\l  %24 = load ptr, ptr %4, align 8\l  %25 = call i64 @\"\\01_fwrite\"(ptr noundef %7, i64 noundef 40, i64 noundef 1,\l... ptr noundef %24)\l  %26 = load ptr, ptr %6, align 8\l  %27 = icmp eq ptr %26, null\l  br i1 %27, label %28, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x6000017ba8f0:s0 -> Node0x6000017ba940[tooltip="21 -> 28\nProbability 37.50%" ];
+	Node0x6000017ba8f0:s1 -> Node0x6000017ba990[tooltip="21 -> 31\nProbability 62.50%" ];
+	Node0x6000017ba940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %4, align 8\l  %30 = call i64 @\"\\01_fwrite\"(ptr noundef @.str.2, i64 noundef 1, i64 noundef\l... 1, ptr noundef %29)\l  br label %39\l}"];
+	Node0x6000017ba940 -> Node0x6000017ba9e0[tooltip="28 -> 39\nProbability 100.00%" ];
+	Node0x6000017ba990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %6, align 8\l  %33 = getelementptr inbounds %struct.matlab, ptr %7, i32 0, i32 4\l  %34 = load i64, ptr %33, align 8\l  %35 = trunc i64 %34 to i32\l  %36 = sext i32 %35 to i64\l  %37 = load ptr, ptr %4, align 8\l  %38 = call i64 @\"\\01_fwrite\"(ptr noundef %32, i64 noundef 1, i64 noundef\l... %36, ptr noundef %37)\l  br label %39\l}"];
+	Node0x6000017ba990 -> Node0x6000017ba9e0[tooltip="31 -> 39\nProbability 100.00%" ];
+	Node0x6000017ba9e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %4, align 8\l  %41 = call i64 @\"\\01_fwrite\"(ptr noundef %8, i64 noundef 8, i64 noundef 1,\l... ptr noundef %40)\l  %42 = load double, ptr %5, align 8\l  ret double %42\l}"];
+}

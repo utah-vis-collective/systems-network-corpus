@@ -1,0 +1,5 @@
+digraph "CFG for 'tell' function" {
+	label="CFG for 'tell' function";
+
+	Node0x6000009d3a70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = sext i32 %3 to i64\l  %5 = inttoptr i64 %4 to ptr\l  %6 = call i64 @ftell(ptr noundef %5)\l  %7 = trunc i64 %6 to i32\l  ret i32 %7\l}"];
+}

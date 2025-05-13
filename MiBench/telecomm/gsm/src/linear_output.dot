@@ -1,0 +1,5 @@
+digraph "CFG for 'linear_output' function" {
+	label="CFG for 'linear_output' function";
+
+	Node0x600001239ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr @out, align 8\l  %5 = call i64 @\"\\01_fwrite\"(ptr noundef %3, i64 noundef 2, i64 noundef 160,\l... ptr noundef %4)\l  %6 = icmp ne i64 %5, 160\l  %7 = zext i1 %6 to i32\l  %8 = sub nsw i32 0, %7\l  ret i32 %8\l}"];
+}

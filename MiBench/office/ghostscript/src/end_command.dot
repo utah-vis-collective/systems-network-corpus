@@ -1,0 +1,5 @@
+digraph "CFG for 'end_command' function" {
+	label="CFG for 'end_command' function";
+
+	Node0x6000024c55e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @write_command(ptr noundef %3, i32 noundef 1)\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.cgm_state_s, ptr %4, i32 0, i32 44\l  %6 = load i32, ptr %5, align 4\l  ret i32 %6\l}"];
+}

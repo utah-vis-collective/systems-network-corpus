@@ -1,0 +1,38 @@
+digraph "CFG for 'jpeg_suppress_tables' function" {
+	label="CFG for 'jpeg_suppress_tables' function";
+
+	Node0x60000332a490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  store i32 0, ptr %5, align 4\l  br label %8\l}"];
+	Node0x60000332a490 -> Node0x60000332a4e0[tooltip="2 -> 8\nProbability 100.00%" ];
+	Node0x60000332a4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %5, align 4\l  %10 = icmp slt i32 %9, 4\l  br i1 %10, label %11, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x60000332a4e0:s0 -> Node0x60000332a530[tooltip="8 -> 11\nProbability 96.88%" ];
+	Node0x60000332a4e0:s1 -> Node0x60000332a670[tooltip="8 -> 27\nProbability 3.12%" ];
+	Node0x60000332a530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %12, i32 0,\l... i32 15\l  %14 = load i32, ptr %5, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds [4 x ptr], ptr %13, i64 0, i64 %15\l  %17 = load ptr, ptr %16, align 8\l  store ptr %17, ptr %6, align 8\l  %18 = icmp ne ptr %17, null\l  br i1 %18, label %19, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x60000332a530:s0 -> Node0x60000332a580[tooltip="11 -> 19\nProbability 62.50%" ];
+	Node0x60000332a530:s1 -> Node0x60000332a5d0[tooltip="11 -> 23\nProbability 37.50%" ];
+	Node0x60000332a580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %4, align 4\l  %21 = load ptr, ptr %6, align 8\l  %22 = getelementptr inbounds %struct.JQUANT_TBL, ptr %21, i32 0, i32 1\l  store i32 %20, ptr %22, align 4\l  br label %23\l}"];
+	Node0x60000332a580 -> Node0x60000332a5d0[tooltip="19 -> 23\nProbability 100.00%" ];
+	Node0x60000332a5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x60000332a5d0 -> Node0x60000332a620[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x60000332a620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %5, align 4\l  %26 = add nsw i32 %25, 1\l  store i32 %26, ptr %5, align 4\l  br label %8\l}"];
+	Node0x60000332a620 -> Node0x60000332a4e0[tooltip="24 -> 8\nProbability 100.00%" ];
+	Node0x60000332a670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  store i32 0, ptr %5, align 4\l  br label %28\l}"];
+	Node0x60000332a670 -> Node0x60000332a6c0[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x60000332a6c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %5, align 4\l  %30 = icmp slt i32 %29, 4\l  br i1 %30, label %31, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x60000332a6c0:s0 -> Node0x60000332a710[tooltip="28 -> 31\nProbability 96.88%" ];
+	Node0x60000332a6c0:s1 -> Node0x60000332a8f0[tooltip="28 -> 59\nProbability 3.12%" ];
+	Node0x60000332a710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %3, align 8\l  %33 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %32, i32 0,\l... i32 16\l  %34 = load i32, ptr %5, align 4\l  %35 = sext i32 %34 to i64\l  %36 = getelementptr inbounds [4 x ptr], ptr %33, i64 0, i64 %35\l  %37 = load ptr, ptr %36, align 8\l  store ptr %37, ptr %7, align 8\l  %38 = icmp ne ptr %37, null\l  br i1 %38, label %39, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x60000332a710:s0 -> Node0x60000332a760[tooltip="31 -> 39\nProbability 62.50%" ];
+	Node0x60000332a710:s1 -> Node0x60000332a7b0[tooltip="31 -> 43\nProbability 37.50%" ];
+	Node0x60000332a760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{39:\l|  %40 = load i32, ptr %4, align 4\l  %41 = load ptr, ptr %7, align 8\l  %42 = getelementptr inbounds %struct.JHUFF_TBL, ptr %41, i32 0, i32 2\l  store i32 %40, ptr %42, align 4\l  br label %43\l}"];
+	Node0x60000332a760 -> Node0x60000332a7b0[tooltip="39 -> 43\nProbability 100.00%" ];
+	Node0x60000332a7b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %3, align 8\l  %45 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %44, i32 0,\l... i32 17\l  %46 = load i32, ptr %5, align 4\l  %47 = sext i32 %46 to i64\l  %48 = getelementptr inbounds [4 x ptr], ptr %45, i64 0, i64 %47\l  %49 = load ptr, ptr %48, align 8\l  store ptr %49, ptr %7, align 8\l  %50 = icmp ne ptr %49, null\l  br i1 %50, label %51, label %55\l|{<s0>T|<s1>F}}"];
+	Node0x60000332a7b0:s0 -> Node0x60000332a800[tooltip="43 -> 51\nProbability 62.50%" ];
+	Node0x60000332a7b0:s1 -> Node0x60000332a850[tooltip="43 -> 55\nProbability 37.50%" ];
+	Node0x60000332a800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{51:\l|  %52 = load i32, ptr %4, align 4\l  %53 = load ptr, ptr %7, align 8\l  %54 = getelementptr inbounds %struct.JHUFF_TBL, ptr %53, i32 0, i32 2\l  store i32 %52, ptr %54, align 4\l  br label %55\l}"];
+	Node0x60000332a800 -> Node0x60000332a850[tooltip="51 -> 55\nProbability 100.00%" ];
+	Node0x60000332a850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{55:\l|  br label %56\l}"];
+	Node0x60000332a850 -> Node0x60000332a8a0[tooltip="55 -> 56\nProbability 100.00%" ];
+	Node0x60000332a8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{56:\l|  %57 = load i32, ptr %5, align 4\l  %58 = add nsw i32 %57, 1\l  store i32 %58, ptr %5, align 4\l  br label %28\l}"];
+	Node0x60000332a8a0 -> Node0x60000332a6c0[tooltip="56 -> 28\nProbability 100.00%" ];
+	Node0x60000332a8f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{59:\l|  ret void\l}"];
+}

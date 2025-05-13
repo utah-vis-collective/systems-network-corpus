@@ -1,0 +1,12 @@
+digraph "CFG for 'crcbytes' function" {
+	label="CFG for 'crcbytes' function";
+
+	Node0x600001c165d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i64 %2, ptr %6, align 8\l  br label %7\l}"];
+	Node0x600001c165d0 -> Node0x600001c16620[tooltip="3 -> 7\nProbability 100.00%" ];
+	Node0x600001c16620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i64, ptr %6, align 8\l  %9 = shl i64 %8, 8\l  %10 = load i64, ptr %6, align 8\l  %11 = lshr i64 %10, 16\l  %12 = trunc i64 %11 to i8\l  %13 = zext i8 %12 to i32\l  %14 = load ptr, ptr %4, align 8\l  %15 = getelementptr inbounds i8, ptr %14, i32 1\l  store ptr %15, ptr %4, align 8\l  %16 = load i8, ptr %14, align 1\l  %17 = zext i8 %16 to i32\l  %18 = xor i32 %13, %17\l  %19 = sext i32 %18 to i64\l  %20 = getelementptr inbounds [256 x i64], ptr @crctable, i64 0, i64 %19\l  %21 = load i64, ptr %20, align 8\l  %22 = xor i64 %9, %21\l  store i64 %22, ptr %6, align 8\l  br label %23\l}"];
+	Node0x600001c16620 -> Node0x600001c16670[tooltip="7 -> 23\nProbability 100.00%" ];
+	Node0x600001c16670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %5, align 4\l  %25 = add i32 %24, -1\l  store i32 %25, ptr %5, align 4\l  %26 = icmp ne i32 %25, 0\l  br i1 %26, label %7, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600001c16670:s0 -> Node0x600001c16620[tooltip="23 -> 7\nProbability 96.88%" ];
+	Node0x600001c16670:s1 -> Node0x600001c166c0[tooltip="23 -> 27\nProbability 3.12%" ];
+	Node0x600001c166c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  %28 = load i64, ptr %6, align 8\l  %29 = and i64 %28, 16777215\l  ret i64 %29\l}"];
+}

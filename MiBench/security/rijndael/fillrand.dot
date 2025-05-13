@@ -1,0 +1,24 @@
+digraph "CFG for 'fillrand' function" {
+	label="CFG for 'fillrand' function";
+
+	Node0x600001b7e120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load i64, ptr @fillrand.mt, align 8\l  %7 = icmp ne i64 %6, 0\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600001b7e120:s0 -> Node0x600001b7e170[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x600001b7e120:s1 -> Node0x600001b7e1c0[tooltip="2 -> 9\nProbability 37.50%" ];
+	Node0x600001b7e170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{8:\l|  store i64 0, ptr @fillrand.mt, align 8\l  store i64 60147, ptr @fillrand.a, align 8\l  store i64 13822, ptr getelementptr inbounds ([2 x i64], ptr @fillrand.a, i64\l... 0, i64 1), align 8\l  br label %9\l}"];
+	Node0x600001b7e170 -> Node0x600001b7e1c0[tooltip="8 -> 9\nProbability 100.00%" ];
+	Node0x600001b7e1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  store i32 0, ptr %5, align 4\l  br label %10\l}"];
+	Node0x600001b7e1c0 -> Node0x600001b7e210[tooltip="9 -> 10\nProbability 100.00%" ];
+	Node0x600001b7e210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %5, align 4\l  %12 = load i32, ptr %4, align 4\l  %13 = icmp slt i32 %11, %12\l  br i1 %13, label %14, label %44\l|{<s0>T|<s1>F}}"];
+	Node0x600001b7e210:s0 -> Node0x600001b7e260[tooltip="10 -> 14\nProbability 96.88%" ];
+	Node0x600001b7e210:s1 -> Node0x600001b7e3a0[tooltip="10 -> 44\nProbability 3.12%" ];
+	Node0x600001b7e260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i64, ptr @fillrand.count, align 8\l  %16 = icmp eq i64 %15, 4\l  br i1 %16, label %17, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600001b7e260:s0 -> Node0x600001b7e2b0[tooltip="14 -> 17\nProbability 50.00%" ];
+	Node0x600001b7e260:s1 -> Node0x600001b7e300[tooltip="14 -> 32\nProbability 50.00%" ];
+	Node0x600001b7e2b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load i64, ptr @fillrand.a, align 8\l  %19 = and i64 %18, 65535\l  %20 = mul i64 36969, %19\l  %21 = load i64, ptr @fillrand.a, align 8\l  %22 = lshr i64 %21, 16\l  %23 = add i64 %20, %22\l  store i64 %23, ptr @fillrand.a, align 8\l  %24 = shl i64 %23, 16\l  %25 = load i64, ptr getelementptr inbounds ([2 x i64], ptr @fillrand.a, i64\l... 0, i64 1), align 8\l  %26 = and i64 %25, 65535\l  %27 = mul i64 18000, %26\l  %28 = load i64, ptr getelementptr inbounds ([2 x i64], ptr @fillrand.a, i64\l... 0, i64 1), align 8\l  %29 = lshr i64 %28, 16\l  %30 = add i64 %27, %29\l  store i64 %30, ptr getelementptr inbounds ([2 x i64], ptr @fillrand.a, i64\l... 0, i64 1), align 8\l  %31 = add i64 %24, %30\l  store i64 %31, ptr @fillrand.r, align 1\l  store i64 0, ptr @fillrand.count, align 8\l  br label %32\l}"];
+	Node0x600001b7e2b0 -> Node0x600001b7e300[tooltip="17 -> 32\nProbability 100.00%" ];
+	Node0x600001b7e300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i64, ptr @fillrand.count, align 8\l  %34 = add i64 %33, 1\l  store i64 %34, ptr @fillrand.count, align 8\l  %35 = getelementptr inbounds [4 x i8], ptr @fillrand.r, i64 0, i64 %33\l  %36 = load i8, ptr %35, align 1\l  %37 = load ptr, ptr %3, align 8\l  %38 = load i32, ptr %5, align 4\l  %39 = sext i32 %38 to i64\l  %40 = getelementptr inbounds i8, ptr %37, i64 %39\l  store i8 %36, ptr %40, align 1\l  br label %41\l}"];
+	Node0x600001b7e300 -> Node0x600001b7e350[tooltip="32 -> 41\nProbability 100.00%" ];
+	Node0x600001b7e350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %5, align 4\l  %43 = add nsw i32 %42, 1\l  store i32 %43, ptr %5, align 4\l  br label %10\l}"];
+	Node0x600001b7e350 -> Node0x600001b7e210[tooltip="41 -> 10\nProbability 100.00%" ];
+	Node0x600001b7e3a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{44:\l|  ret void\l}"];
+}

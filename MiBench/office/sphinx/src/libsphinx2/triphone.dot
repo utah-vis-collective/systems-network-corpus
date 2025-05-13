@@ -1,0 +1,40 @@
+digraph "CFG for 'triphone' function" {
+	label="CFG for 'triphone' function";
+
+	Node0x600000d37480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca [64 x i8], align 1\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  %11 = alloca ptr, align 8\l  %12 = alloca i32, align 4\l  store i32 %0, ptr %5, align 4\l  store i32 %1, ptr %6, align 4\l  store i32 %2, ptr %7, align 4\l  %13 = load i32, ptr %5, align 4\l  %14 = icmp ne i32 %13, -1\l  %15 = xor i1 %14, true\l  %16 = zext i1 %15 to i32\l  %17 = sext i32 %16 to i64\l  %18 = icmp ne i64 %17, 0\l  br i1 %18, label %19, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600000d37480:s0 -> Node0x600000d374d0[tooltip="3 -> 19\nProbability 0.00%" ];
+	Node0x600000d37480:s1 -> Node0x600000d37570[tooltip="3 -> 21\nProbability 100.00%" ];
+	Node0x600000d374d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{19:\l|  call void @__assert_rtn(ptr noundef @__func__.triphone, ptr noundef\l... @.str.23, i32 noundef 727, ptr noundef @.str.48) #9\l  unreachable\l}"];
+	Node0x600000d37520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{20:\l|  br label %22\l}"];
+	Node0x600000d37520 -> Node0x600000d375c0[tooltip="20 -> 22\nProbability 100.00%" ];
+	Node0x600000d37570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  br label %22\l}"];
+	Node0x600000d37570 -> Node0x600000d375c0[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x600000d375c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %6, align 4\l  %24 = icmp ne i32 %23, -1\l  %25 = xor i1 %24, true\l  %26 = zext i1 %25 to i32\l  %27 = sext i32 %26 to i64\l  %28 = icmp ne i64 %27, 0\l  br i1 %28, label %29, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600000d375c0:s0 -> Node0x600000d37610[tooltip="22 -> 29\nProbability 0.00%" ];
+	Node0x600000d375c0:s1 -> Node0x600000d376b0[tooltip="22 -> 31\nProbability 100.00%" ];
+	Node0x600000d37610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{29:\l|  call void @__assert_rtn(ptr noundef @__func__.triphone, ptr noundef\l... @.str.23, i32 noundef 728, ptr noundef @.str.49) #9\l  unreachable\l}"];
+	Node0x600000d37660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{30:\l|  br label %32\l}"];
+	Node0x600000d37660 -> Node0x600000d37700[tooltip="30 -> 32\nProbability 100.00%" ];
+	Node0x600000d376b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  br label %32\l}"];
+	Node0x600000d376b0 -> Node0x600000d37700[tooltip="31 -> 32\nProbability 100.00%" ];
+	Node0x600000d37700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %7, align 4\l  %34 = icmp ne i32 %33, -1\l  %35 = xor i1 %34, true\l  %36 = zext i1 %35 to i32\l  %37 = sext i32 %36 to i64\l  %38 = icmp ne i64 %37, 0\l  br i1 %38, label %39, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600000d37700:s0 -> Node0x600000d37750[tooltip="32 -> 39\nProbability 0.00%" ];
+	Node0x600000d37700:s1 -> Node0x600000d377f0[tooltip="32 -> 41\nProbability 100.00%" ];
+	Node0x600000d37750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{39:\l|  call void @__assert_rtn(ptr noundef @__func__.triphone, ptr noundef\l... @.str.23, i32 noundef 729, ptr noundef @.str.50) #9\l  unreachable\l}"];
+	Node0x600000d377a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{40:\l|  br label %42\l}"];
+	Node0x600000d377a0 -> Node0x600000d37840[tooltip="40 -> 42\nProbability 100.00%" ];
+	Node0x600000d377f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  br label %42\l}"];
+	Node0x600000d377f0 -> Node0x600000d37840[tooltip="41 -> 42\nProbability 100.00%" ];
+	Node0x600000d37840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{42:\l|  %43 = load i32, ptr %5, align 4\l  %44 = call ptr @phone_from_id(i32 noundef %43)\l  store ptr %44, ptr %9, align 8\l  %45 = load i32, ptr %6, align 4\l  %46 = call ptr @phone_from_id(i32 noundef %45)\l  store ptr %46, ptr %10, align 8\l  %47 = load i32, ptr %7, align 4\l  %48 = call ptr @phone_from_id(i32 noundef %47)\l  store ptr %48, ptr %11, align 8\l  %49 = getelementptr inbounds [64 x i8], ptr %8, i64 0, i64 0\l  %50 = load ptr, ptr %9, align 8\l  %51 = load ptr, ptr %10, align 8\l  %52 = load ptr, ptr %11, align 8\l  %53 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %49, i32\l... noundef 0, i64 noundef 64, ptr noundef @.str.53, ptr noundef %50, ptr noundef\l... %51, ptr noundef %52)\l  %54 = getelementptr inbounds [64 x i8], ptr %8, i64 0, i64 0\l  %55 = call i32 @phone_to_id(ptr noundef %54, i32 noundef 0)\l  store i32 %55, ptr %12, align 4\l  %56 = load i32, ptr %12, align 4\l  %57 = icmp ne i32 %56, -1\l  br i1 %57, label %58, label %60\l|{<s0>T|<s1>F}}"];
+	Node0x600000d37840:s0 -> Node0x600000d37890[tooltip="42 -> 58\nProbability 62.50%" ];
+	Node0x600000d37840:s1 -> Node0x600000d378e0[tooltip="42 -> 60\nProbability 37.50%" ];
+	Node0x600000d37890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{58:\l|  %59 = load i32, ptr %12, align 4\l  store i32 %59, ptr %4, align 4\l  br label %78\l}"];
+	Node0x600000d37890 -> Node0x600000d379d0[tooltip="58 -> 78\nProbability 100.00%" ];
+	Node0x600000d378e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{60:\l|  %61 = getelementptr inbounds [64 x i8], ptr %8, i64 0, i64 0\l  %62 = load ptr, ptr %9, align 8\l  %63 = load ptr, ptr %10, align 8\l  %64 = load ptr, ptr %11, align 8\l  %65 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %61, i32\l... noundef 0, i64 noundef 64, ptr noundef @.str.53, ptr noundef %62, ptr noundef\l... %63, ptr noundef %64)\l  %66 = getelementptr inbounds [64 x i8], ptr %8, i64 0, i64 0\l  %67 = call i32 @phone_to_id(ptr noundef %66, i32 noundef 0)\l  store i32 %67, ptr %12, align 4\l  %68 = load i32, ptr %12, align 4\l  %69 = icmp ne i32 %68, -1\l  br i1 %69, label %70, label %77\l|{<s0>T|<s1>F}}"];
+	Node0x600000d378e0:s0 -> Node0x600000d37930[tooltip="60 -> 70\nProbability 100.00%" ];
+	Node0x600000d378e0:s1 -> Node0x600000d37980[tooltip="60 -> 77\nProbability 0.00%" ];
+	Node0x600000d37930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{70:\l|  %71 = load ptr, ptr %9, align 8\l  %72 = load ptr, ptr %10, align 8\l  %73 = load ptr, ptr %11, align 8\l  %74 = getelementptr inbounds [64 x i8], ptr %8, i64 0, i64 0\l  %75 = call i32 (ptr, ...) @printf(ptr noundef @.str.60, ptr noundef %71, ptr\l... noundef %72, ptr noundef %73, ptr noundef %74)\l  %76 = load i32, ptr %12, align 4\l  store i32 %76, ptr %4, align 4\l  br label %78\l}"];
+	Node0x600000d37930 -> Node0x600000d379d0[tooltip="70 -> 78\nProbability 100.00%" ];
+	Node0x600000d37980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f2cab570" fontname="Courier",label="{77:\l|  call void @__assert_rtn(ptr noundef @__func__.triphone, ptr noundef\l... @.str.23, i32 noundef 750, ptr noundef @.str.58) #9\l  unreachable\l}"];
+	Node0x600000d379d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{78:\l|  %79 = load i32, ptr %4, align 4\l  ret i32 %79\l}"];
+}

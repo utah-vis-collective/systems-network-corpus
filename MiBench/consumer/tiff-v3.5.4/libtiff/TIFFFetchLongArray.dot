@@ -1,0 +1,12 @@
+digraph "CFG for 'TIFFFetchLongArray' function" {
+	label="CFG for 'TIFFFetchLongArray' function";
+
+	Node0x6000036af7a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %8 = load ptr, ptr %6, align 8\l  %9 = getelementptr inbounds %struct.TIFFDirEntry, ptr %8, i32 0, i32 2\l  %10 = load i64, ptr %9, align 8\l  %11 = icmp eq i64 %10, 1\l  br i1 %11, label %12, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000036af7a0:s0 -> Node0x6000036af7f0[tooltip="3 -> 12\nProbability 50.00%" ];
+	Node0x6000036af7a0:s1 -> Node0x6000036af840[tooltip="3 -> 18\nProbability 50.00%" ];
+	Node0x6000036af7f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %6, align 8\l  %14 = getelementptr inbounds %struct.TIFFDirEntry, ptr %13, i32 0, i32 3\l  %15 = load i64, ptr %14, align 8\l  %16 = load ptr, ptr %7, align 8\l  %17 = getelementptr inbounds i64, ptr %16, i64 0\l  store i64 %15, ptr %17, align 8\l  store i32 1, ptr %4, align 4\l  br label %25\l}"];
+	Node0x6000036af7f0 -> Node0x6000036af890[tooltip="12 -> 25\nProbability 100.00%" ];
+	Node0x6000036af840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %5, align 8\l  %20 = load ptr, ptr %6, align 8\l  %21 = load ptr, ptr %7, align 8\l  %22 = call i64 @TIFFFetchData(ptr noundef %19, ptr noundef %20, ptr noundef\l... %21)\l  %23 = icmp ne i64 %22, 0\l  %24 = zext i1 %23 to i32\l  store i32 %24, ptr %4, align 4\l  br label %25\l}"];
+	Node0x6000036af840 -> Node0x6000036af890[tooltip="18 -> 25\nProbability 100.00%" ];
+	Node0x6000036af890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %4, align 4\l  ret i32 %26\l}"];
+}

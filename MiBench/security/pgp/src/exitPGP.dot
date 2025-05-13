@@ -1,0 +1,33 @@
+digraph "CFG for 'exitPGP' function" {
+	label="CFG for 'exitPGP' function";
+
+	Node0x6000007b7480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca [4096 x i8], align 1\l  %4 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  %5 = load i8, ptr @verbose, align 1\l  %6 = icmp ne i8 %5, 0\l  br i1 %6, label %7, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x6000007b7480:s0 -> Node0x6000007b74d0[tooltip="1 -> 7\nProbability 50.00%" ];
+	Node0x6000007b7480:s1 -> Node0x6000007b7520[tooltip="1 -> 11\nProbability 50.00%" ];
+	Node0x6000007b74d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr @pgpout, align 8\l  %9 = load i32, ptr %2, align 4\l  %10 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %8, ptr noundef\l... @.str.41, i32 noundef %9) #10\l  br label %11\l}"];
+	Node0x6000007b74d0 -> Node0x6000007b7520[tooltip="7 -> 11\nProbability 100.00%" ];
+	Node0x6000007b7520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @passwds, align 8\l  store ptr %12, ptr %4, align 8\l  br label %13\l}"];
+	Node0x6000007b7520 -> Node0x6000007b7570[tooltip="11 -> 13\nProbability 100.00%" ];
+	Node0x6000007b7570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  %15 = icmp ne ptr %14, null\l  br i1 %15, label %16, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x6000007b7570:s0 -> Node0x6000007b75c0[tooltip="13 -> 16\nProbability 100.00%" ];
+	Node0x6000007b7570:s1 -> Node0x6000007b7660[tooltip="13 -> 29\nProbability 0.00%" ];
+	Node0x6000007b75c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.hashedpw, ptr %17, i32 0, i32 1\l  %19 = getelementptr inbounds [16 x i8], ptr %18, i64 0, i64 0\l  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds %struct.hashedpw, ptr %20, i32 0, i32 1\l  %22 = getelementptr inbounds [16 x i8], ptr %21, i64 0, i64 0\l  %23 = call i64 @llvm.objectsize.i64.p0(ptr %22, i1 false, i1 true, i1 false)\l  %24 = call ptr @__memset_chk(ptr noundef %19, i32 noundef 0, i64 noundef 16,\l... i64 noundef %23) #10\l  br label %25\l}"];
+	Node0x6000007b75c0 -> Node0x6000007b7610[tooltip="16 -> 25\nProbability 100.00%" ];
+	Node0x6000007b7610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %4, align 8\l  %27 = getelementptr inbounds %struct.hashedpw, ptr %26, i32 0, i32 0\l  %28 = load ptr, ptr %27, align 8\l  store ptr %28, ptr %4, align 8\l  br label %13\l}"];
+	Node0x6000007b7610 -> Node0x6000007b7570[tooltip="25 -> 13\nProbability 100.00%" ];
+	Node0x6000007b7660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr @keypasswds, align 8\l  store ptr %30, ptr %4, align 8\l  br label %31\l}"];
+	Node0x6000007b7660 -> Node0x6000007b76b0[tooltip="29 -> 31\nProbability 100.00%" ];
+	Node0x6000007b76b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %4, align 8\l  %33 = icmp ne ptr %32, null\l  br i1 %33, label %34, label %47\l|{<s0>T|<s1>F}}"];
+	Node0x6000007b76b0:s0 -> Node0x6000007b7700[tooltip="31 -> 34\nProbability 100.00%" ];
+	Node0x6000007b76b0:s1 -> Node0x6000007b77a0[tooltip="31 -> 47\nProbability 0.00%" ];
+	Node0x6000007b7700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %4, align 8\l  %36 = getelementptr inbounds %struct.hashedpw, ptr %35, i32 0, i32 1\l  %37 = getelementptr inbounds [16 x i8], ptr %36, i64 0, i64 0\l  %38 = load ptr, ptr %4, align 8\l  %39 = getelementptr inbounds %struct.hashedpw, ptr %38, i32 0, i32 1\l  %40 = getelementptr inbounds [16 x i8], ptr %39, i64 0, i64 0\l  %41 = call i64 @llvm.objectsize.i64.p0(ptr %40, i1 false, i1 true, i1 false)\l  %42 = call ptr @__memset_chk(ptr noundef %37, i32 noundef 0, i64 noundef 16,\l... i64 noundef %41) #10\l  br label %43\l}"];
+	Node0x6000007b7700 -> Node0x6000007b7750[tooltip="34 -> 43\nProbability 100.00%" ];
+	Node0x6000007b7750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %4, align 8\l  %45 = getelementptr inbounds %struct.hashedpw, ptr %44, i32 0, i32 0\l  %46 = load ptr, ptr %45, align 8\l  store ptr %46, ptr %4, align 8\l  br label %31\l}"];
+	Node0x6000007b7750 -> Node0x6000007b76b0[tooltip="43 -> 31\nProbability 100.00%" ];
+	Node0x6000007b77a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{47:\l|  call void @cleanup_tmpf()\l  %48 = call i32 @cryptRandOpen(ptr noundef null)\l  %49 = icmp sge i32 %48, 0\l  br i1 %49, label %50, label %51\l|{<s0>T|<s1>F}}"];
+	Node0x6000007b77a0:s0 -> Node0x6000007b77f0[tooltip="47 -> 50\nProbability 50.00%" ];
+	Node0x6000007b77a0:s1 -> Node0x6000007b7840[tooltip="47 -> 51\nProbability 50.00%" ];
+	Node0x6000007b77f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{50:\l|  call void @cryptRandSave(ptr noundef null)\l  br label %51\l}"];
+	Node0x6000007b77f0 -> Node0x6000007b7840[tooltip="50 -> 51\nProbability 100.00%" ];
+	Node0x6000007b7840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{51:\l|  %52 = getelementptr inbounds [4096 x i8], ptr %3, i64 0, i64 0\l  call void @llvm.memset.p0.i64(ptr align 1 %52, i8 0, i64 4096, i1 false)\l  %53 = load i32, ptr %2, align 4\l  call void @exit(i32 noundef %53) #11\l  unreachable\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'mk_phone_map' function" {
+	label="CFG for 'mk_phone_map' function";
+
+	Node0x6000012f7f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = call i32 @phone_count()\l  store i32 %4, ptr %1, align 4\l  store i32 0, ptr %2, align 4\l  %5 = load ptr, ptr @PhoneMap, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %7, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000012f7f20:s0 -> Node0x6000012f7f70[tooltip="0 -> 7\nProbability 62.50%" ];
+	Node0x6000012f7f20:s1 -> Node0x6000012f0000[tooltip="0 -> 9\nProbability 37.50%" ];
+	Node0x6000012f7f70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr @PhoneMap, align 8\l  call void @free(ptr noundef %8)\l  br label %9\l}"];
+	Node0x6000012f7f70 -> Node0x6000012f0000[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x6000012f0000 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %1, align 4\l  %11 = call ptr @_CM_calloc(i32 noundef %10, i32 noundef 4, ptr noundef\l... @.str.1, i32 noundef 287)\l  store ptr %11, ptr @PhoneMap, align 8\l  store i32 0, ptr %3, align 4\l  br label %12\l}"];
+	Node0x6000012f0000 -> Node0x6000012f0050[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x6000012f0050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %3, align 4\l  %14 = load i32, ptr %1, align 4\l  %15 = icmp slt i32 %13, %14\l  br i1 %15, label %16, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000012f0050:s0 -> Node0x6000012f00a0[tooltip="12 -> 16\nProbability 96.88%" ];
+	Node0x6000012f0050:s1 -> Node0x6000012f0140[tooltip="12 -> 25\nProbability 3.12%" ];
+	Node0x6000012f00a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %3, align 4\l  %18 = load ptr, ptr @PhoneMap, align 8\l  %19 = load i32, ptr %3, align 4\l  %20 = sext i32 %19 to i64\l  %21 = getelementptr inbounds i32, ptr %18, i64 %20\l  store i32 %17, ptr %21, align 4\l  br label %22\l}"];
+	Node0x6000012f00a0 -> Node0x6000012f00f0[tooltip="16 -> 22\nProbability 100.00%" ];
+	Node0x6000012f00f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %3, align 4\l  %24 = add nsw i32 %23, 1\l  store i32 %24, ptr %3, align 4\l  br label %12\l}"];
+	Node0x6000012f00f0 -> Node0x6000012f0050[tooltip="22 -> 12\nProbability 100.00%" ];
+	Node0x6000012f0140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %2, align 4\l  call void (ptr, ...) @log_info(ptr noundef @.str.12, i32 noundef %26)\l  ret void\l}"];
+}

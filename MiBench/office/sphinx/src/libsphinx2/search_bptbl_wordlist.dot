@@ -1,0 +1,21 @@
+digraph "CFG for 'search_bptbl_wordlist' function" {
+	label="CFG for 'search_bptbl_wordlist' function";
+
+	Node0x60000200bf70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  %8 = load ptr, ptr @BPTableIdx, align 8\l  %9 = load i32, ptr %5, align 4\l  %10 = sext i32 %9 to i64\l  %11 = getelementptr inbounds i32, ptr %8, i64 %10\l  %12 = load i32, ptr %11, align 4\l  store i32 %12, ptr %7, align 4\l  %13 = load i32, ptr @BPIdx, align 4\l  %14 = sub nsw i32 %13, 1\l  store i32 %14, ptr %6, align 4\l  br label %15\l}"];
+	Node0x60000200bf70 -> Node0x600002014000[tooltip="2 -> 15\nProbability 100.00%" ];
+	Node0x600002014000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %6, align 4\l  %17 = load i32, ptr %7, align 4\l  %18 = icmp sge i32 %16, %17\l  br i1 %18, label %19, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x600002014000:s0 -> Node0x600002014050[tooltip="15 -> 19\nProbability 96.88%" ];
+	Node0x600002014000:s1 -> Node0x600002014190[tooltip="15 -> 42\nProbability 3.12%" ];
+	Node0x600002014050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %4, align 4\l  %21 = load ptr, ptr @WordDict, align 8\l  %22 = getelementptr inbounds %struct._dict, ptr %21, i32 0, i32 2\l  %23 = load ptr, ptr %22, align 8\l  %24 = load ptr, ptr @BPTable, align 8\l  %25 = load i32, ptr %6, align 4\l  %26 = sext i32 %25 to i64\l  %27 = getelementptr inbounds %struct.bptbl_s, ptr %24, i64 %26\l  %28 = getelementptr inbounds %struct.bptbl_s, ptr %27, i32 0, i32 1\l  %29 = load i32, ptr %28, align 4\l  %30 = sext i32 %29 to i64\l  %31 = getelementptr inbounds ptr, ptr %23, i64 %30\l  %32 = load ptr, ptr %31, align 8\l  %33 = getelementptr inbounds %struct.dict_entry, ptr %32, i32 0, i32 7\l  %34 = load i32, ptr %33, align 4\l  %35 = icmp eq i32 %20, %34\l  br i1 %35, label %36, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x600002014050:s0 -> Node0x6000020140a0[tooltip="19 -> 36\nProbability 3.12%" ];
+	Node0x600002014050:s1 -> Node0x6000020140f0[tooltip="19 -> 38\nProbability 96.88%" ];
+	Node0x6000020140a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %6, align 4\l  store i32 %37, ptr %3, align 4\l  br label %43\l}"];
+	Node0x6000020140a0 -> Node0x6000020141e0[tooltip="36 -> 43\nProbability 100.00%" ];
+	Node0x6000020140f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  br label %39\l}"];
+	Node0x6000020140f0 -> Node0x600002014140[tooltip="38 -> 39\nProbability 100.00%" ];
+	Node0x600002014140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load i32, ptr %6, align 4\l  %41 = add nsw i32 %40, -1\l  store i32 %41, ptr %6, align 4\l  br label %15\l}"];
+	Node0x600002014140 -> Node0x600002014000[tooltip="39 -> 15\nProbability 100.00%" ];
+	Node0x600002014190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{42:\l|  store i32 -1, ptr %3, align 4\l  br label %43\l}"];
+	Node0x600002014190 -> Node0x6000020141e0[tooltip="42 -> 43\nProbability 100.00%" ];
+	Node0x6000020141e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %3, align 4\l  ret i32 %44\l}"];
+}

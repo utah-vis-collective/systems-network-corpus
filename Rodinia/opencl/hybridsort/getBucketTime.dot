@@ -1,0 +1,5 @@
+digraph "CFG for 'getBucketTime' function" {
+	label="CFG for 'getBucketTime' function";
+
+	Node0x600002009a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load double, ptr @sum, align 8\l  ret double %1\l}"];
+}

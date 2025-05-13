@@ -1,0 +1,5 @@
+digraph "CFG for 'MapIsLowerCase' function" {
+	label="CFG for 'MapIsLowerCase' function";
+
+	Node0x60000269bb60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i8, align 1\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i8 %0, ptr %3, align 1\l  store i32 %1, ptr %4, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = zext i32 %6 to i64\l  %8 = getelementptr inbounds [20 x ptr], ptr @MapTable, i64 0, i64 %7\l  %9 = load ptr, ptr %8, align 8\l  %10 = getelementptr inbounds %struct.mapvec, ptr %9, i32 0, i32 7\l  %11 = getelementptr inbounds [4 x [256 x i8]], ptr %10, i64 0, i64 0\l  %12 = load i8, ptr %3, align 1\l  %13 = zext i8 %12 to i64\l  %14 = getelementptr inbounds [256 x i8], ptr %11, i64 0, i64 %13\l  %15 = load i8, ptr %14, align 1\l  %16 = zext i8 %15 to i32\l  %17 = icmp ne i32 %16, 0\l  %18 = zext i1 %17 to i32\l  store i32 %18, ptr %5, align 4\l  %19 = load i32, ptr %5, align 4\l  ret i32 %19\l}"];
+}

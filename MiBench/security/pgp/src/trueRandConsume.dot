@@ -1,0 +1,13 @@
+digraph "CFG for 'trueRandConsume' function" {
+	label="CFG for 'trueRandConsume' function";
+
+	Node0x6000012c7480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr @trueRandBits, align 4\l  %4 = load i32, ptr %2, align 4\l  %5 = icmp uge i32 %3, %4\l  %6 = xor i1 %5, true\l  %7 = zext i1 %6 to i32\l  %8 = sext i32 %7 to i64\l  %9 = icmp ne i64 %8, 0\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7480:s0 -> Node0x6000012c74d0[tooltip="1 -> 10\nProbability 0.00%" ];
+	Node0x6000012c7480:s1 -> Node0x6000012c7570[tooltip="1 -> 12\nProbability 100.00%" ];
+	Node0x6000012c74d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{10:\l|  call void @__assert_rtn(ptr noundef @__func__.trueRandConsume, ptr noundef\l... @.str.2, i32 noundef 392, ptr noundef @.str.3) #5\l  unreachable\l}"];
+	Node0x6000012c7520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{11:\l|  br label %13\l}"];
+	Node0x6000012c7520 -> Node0x6000012c75c0[tooltip="11 -> 13\nProbability 100.00%" ];
+	Node0x6000012c7570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x6000012c7570 -> Node0x6000012c75c0[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x6000012c75c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %2, align 4\l  %15 = load i32, ptr @trueRandBits, align 4\l  %16 = sub i32 %15, %14\l  store i32 %16, ptr @trueRandBits, align 4\l  ret void\l}"];
+}

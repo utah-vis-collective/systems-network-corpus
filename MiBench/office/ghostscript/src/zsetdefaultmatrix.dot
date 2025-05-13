@@ -1,0 +1,24 @@
+digraph "CFG for 'zsetdefaultmatrix' function" {
+	label="CFG for 'zsetdefaultmatrix' function";
+
+	Node0x600001bd3610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca %struct.gs_matrix_s, align 4\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.ref_s, ptr %6, i32 0, i32 0\l  %8 = getelementptr inbounds %struct.tas_s, ptr %7, i32 0, i32 0\l  %9 = getelementptr inbounds i8, ptr %8, i64 1\l  %10 = load i8, ptr %9, align 1\l  %11 = zext i8 %10 to i32\l  %12 = icmp eq i32 %11, 14\l  br i1 %12, label %13, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd3610:s0 -> Node0x600001bd3660[tooltip="1 -> 13\nProbability 50.00%" ];
+	Node0x600001bd3610:s1 -> Node0x600001bd36b0[tooltip="1 -> 16\nProbability 50.00%" ];
+	Node0x600001bd3660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @igs, align 8\l  %15 = call i32 @gs_setdefaultmatrix(ptr noundef %14, ptr noundef null)\l  store i32 %15, ptr %4, align 4\l  br label %26\l}"];
+	Node0x600001bd3660 -> Node0x600001bd37a0[tooltip="13 -> 26\nProbability 100.00%" ];
+	Node0x600001bd36b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = call i32 @read_matrix(ptr noundef %17, ptr noundef %5)\l  store i32 %18, ptr %4, align 4\l  %19 = load i32, ptr %4, align 4\l  %20 = icmp slt i32 %19, 0\l  br i1 %20, label %21, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd36b0:s0 -> Node0x600001bd3700[tooltip="16 -> 21\nProbability 37.50%" ];
+	Node0x600001bd36b0:s1 -> Node0x600001bd3750[tooltip="16 -> 23\nProbability 62.50%" ];
+	Node0x600001bd3700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %4, align 4\l  store i32 %22, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001bd3700 -> Node0x600001bd3890[tooltip="21 -> 34\nProbability 100.00%" ];
+	Node0x600001bd3750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr @igs, align 8\l  %25 = call i32 @gs_setdefaultmatrix(ptr noundef %24, ptr noundef %5)\l  store i32 %25, ptr %4, align 4\l  br label %26\l}"];
+	Node0x600001bd3750 -> Node0x600001bd37a0[tooltip="23 -> 26\nProbability 100.00%" ];
+	Node0x600001bd37a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %4, align 4\l  %28 = icmp slt i32 %27, 0\l  br i1 %28, label %29, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600001bd37a0:s0 -> Node0x600001bd37f0[tooltip="26 -> 29\nProbability 37.50%" ];
+	Node0x600001bd37a0:s1 -> Node0x600001bd3840[tooltip="26 -> 31\nProbability 62.50%" ];
+	Node0x600001bd37f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %4, align 4\l  store i32 %30, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001bd37f0 -> Node0x600001bd3890[tooltip="29 -> 34\nProbability 100.00%" ];
+	Node0x600001bd3840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr @o_stack, align 8\l  %33 = getelementptr inbounds %struct.ref_s, ptr %32, i64 -1\l  store ptr %33, ptr @o_stack, align 8\l  store i32 0, ptr %2, align 4\l  br label %34\l}"];
+	Node0x600001bd3840 -> Node0x600001bd3890[tooltip="31 -> 34\nProbability 100.00%" ];
+	Node0x600001bd3890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %2, align 4\l  ret i32 %35\l}"];
+}

@@ -1,0 +1,28 @@
+digraph "CFG for 'PrintShort' function" {
+	label="CFG for 'PrintShort' function";
+
+	Node0x6000001bdd60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  store ptr @.str.134, ptr %7, align 8\l  %8 = load i16, ptr @hdr, align 8\l  %9 = zext i16 %8 to i32\l  %10 = icmp ne i32 %9, 18761\l  br i1 %10, label %11, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x6000001bdd60:s0 -> Node0x6000001bddb0[tooltip="3 -> 11\nProbability 50.00%" ];
+	Node0x6000001bdd60:s1 -> Node0x6000001bdef0[tooltip="3 -> 34\nProbability 50.00%" ];
+	Node0x6000001bddb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %6, align 8\l  %13 = getelementptr inbounds %struct.TIFFDirEntry, ptr %12, i32 0, i32 2\l  %14 = load i64, ptr %13, align 8\l  switch i64 %14, label %33 [\l    i64 2, label %15\l    i64 1, label %24\l  ]\l|{<s0>def|<s1>2|<s2>1}}"];
+	Node0x6000001bddb0:s0 -> Node0x6000001bdea0[tooltip="11 -> 33\nProbability 33.33%" ];
+	Node0x6000001bddb0:s1 -> Node0x6000001bde00[tooltip="11 -> 15\nProbability 33.33%" ];
+	Node0x6000001bddb0:s2 -> Node0x6000001bde50[tooltip="11 -> 24\nProbability 33.33%" ];
+	Node0x6000001bde00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %4, align 8\l  %17 = load ptr, ptr %5, align 8\l  %18 = load ptr, ptr %7, align 8\l  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.TIFFDirEntry, ptr %19, i32 0, i32 3\l  %21 = load i64, ptr %20, align 8\l  %22 = and i64 %21, 65535\l  %23 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %16, ptr noundef %17,\l... ptr noundef %18, i64 noundef %22) #7\l  store ptr @.str.135, ptr %7, align 8\l  br label %24\l}"];
+	Node0x6000001bde00 -> Node0x6000001bde50[tooltip="15 -> 24\nProbability 100.00%" ];
+	Node0x6000001bde50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %4, align 8\l  %26 = load ptr, ptr %5, align 8\l  %27 = load ptr, ptr %7, align 8\l  %28 = load ptr, ptr %6, align 8\l  %29 = getelementptr inbounds %struct.TIFFDirEntry, ptr %28, i32 0, i32 3\l  %30 = load i64, ptr %29, align 8\l  %31 = lshr i64 %30, 16\l  %32 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %25, ptr noundef %26,\l... ptr noundef %27, i64 noundef %31) #7\l  br label %33\l}"];
+	Node0x6000001bde50 -> Node0x6000001bdea0[tooltip="24 -> 33\nProbability 100.00%" ];
+	Node0x6000001bdea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{33:\l|  br label %57\l}"];
+	Node0x6000001bdea0 -> Node0x6000001be030[tooltip="33 -> 57\nProbability 100.00%" ];
+	Node0x6000001bdef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %6, align 8\l  %36 = getelementptr inbounds %struct.TIFFDirEntry, ptr %35, i32 0, i32 2\l  %37 = load i64, ptr %36, align 8\l  switch i64 %37, label %56 [\l    i64 2, label %38\l    i64 1, label %47\l  ]\l|{<s0>def|<s1>2|<s2>1}}"];
+	Node0x6000001bdef0:s0 -> Node0x6000001bdfe0[tooltip="34 -> 56\nProbability 33.33%" ];
+	Node0x6000001bdef0:s1 -> Node0x6000001bdf40[tooltip="34 -> 38\nProbability 33.33%" ];
+	Node0x6000001bdef0:s2 -> Node0x6000001bdf90[tooltip="34 -> 47\nProbability 33.33%" ];
+	Node0x6000001bdf40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{38:\l|  %39 = load ptr, ptr %4, align 8\l  %40 = load ptr, ptr %5, align 8\l  %41 = load ptr, ptr %7, align 8\l  %42 = load ptr, ptr %6, align 8\l  %43 = getelementptr inbounds %struct.TIFFDirEntry, ptr %42, i32 0, i32 3\l  %44 = load i64, ptr %43, align 8\l  %45 = lshr i64 %44, 16\l  %46 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %39, ptr noundef %40,\l... ptr noundef %41, i64 noundef %45) #7\l  store ptr @.str.135, ptr %7, align 8\l  br label %47\l}"];
+	Node0x6000001bdf40 -> Node0x6000001bdf90[tooltip="38 -> 47\nProbability 100.00%" ];
+	Node0x6000001bdf90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{47:\l|  %48 = load ptr, ptr %4, align 8\l  %49 = load ptr, ptr %5, align 8\l  %50 = load ptr, ptr %7, align 8\l  %51 = load ptr, ptr %6, align 8\l  %52 = getelementptr inbounds %struct.TIFFDirEntry, ptr %51, i32 0, i32 3\l  %53 = load i64, ptr %52, align 8\l  %54 = and i64 %53, 65535\l  %55 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %48, ptr noundef %49,\l... ptr noundef %50, i64 noundef %54) #7\l  br label %56\l}"];
+	Node0x6000001bdf90 -> Node0x6000001bdfe0[tooltip="47 -> 56\nProbability 100.00%" ];
+	Node0x6000001bdfe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{56:\l|  br label %57\l}"];
+	Node0x6000001bdfe0 -> Node0x6000001be030[tooltip="56 -> 57\nProbability 100.00%" ];
+	Node0x6000001be030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{57:\l|  ret void\l}"];
+}

@@ -1,0 +1,9 @@
+digraph "CFG for 'openFile' function" {
+	label="CFG for 'openFile' function";
+
+	Node0x600002c16f80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call ptr @\"\\01_fopen\"(ptr noundef %4, ptr noundef @.str.13)\l  store ptr %5, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = icmp eq ptr %6, null\l  br i1 %7, label %8, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600002c16f80:s0 -> Node0x600002c16fd0[tooltip="1 -> 8\nProbability 0.00%" ];
+	Node0x600002c16f80:s1 -> Node0x600002c17020[tooltip="1 -> 12\nProbability 100.00%" ];
+	Node0x600002c16fd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr @__stderrp, align 8\l  %10 = load ptr, ptr %2, align 8\l  %11 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %9, ptr noundef\l... @.str.14, ptr noundef %10) #4\l  call void @exit(i32 noundef -1) #5\l  unreachable\l}"];
+	Node0x600002c17020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  ret ptr %13\l}"];
+}

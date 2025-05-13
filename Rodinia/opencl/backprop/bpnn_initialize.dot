@@ -1,0 +1,5 @@
+digraph "CFG for 'bpnn_initialize' function" {
+	label="CFG for 'bpnn_initialize' function";
+
+	Node0x6000032dea80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = call i32 (ptr, ...) @printf(ptr noundef @.str.2, i32 noundef %3)\l  %5 = load i32, ptr %2, align 4\l  call void @srand(i32 noundef %5)\l  ret void\l}"];
+}

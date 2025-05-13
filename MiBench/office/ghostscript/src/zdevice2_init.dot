@@ -1,0 +1,5 @@
+digraph "CFG for 'zdevice2_init' function" {
+	label="CFG for 'zdevice2_init' function";
+
+	Node0x6000001083c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store ptr @z2copy_gstate, ptr getelementptr inbounds ([21 x ptr], ptr\l... @zcopy_procs, i64 0, i64 9), align 8\l  ret void\l}"];
+}

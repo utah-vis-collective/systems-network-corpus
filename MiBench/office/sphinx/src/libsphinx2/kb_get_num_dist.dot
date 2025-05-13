@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_num_dist' function" {
+	label="CFG for 'kb_get_num_dist' function";
+
+	Node0x600002a8c000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 5\l}"];
+}

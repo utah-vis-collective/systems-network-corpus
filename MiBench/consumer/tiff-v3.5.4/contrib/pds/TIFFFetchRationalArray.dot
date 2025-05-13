@@ -1,0 +1,29 @@
+digraph "CFG for 'TIFFFetchRationalArray' function" {
+	label="CFG for 'TIFFFetchRationalArray' function";
+
+	Node0x600003042080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  %9 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  store i32 0, ptr %7, align 4\l  %10 = load ptr, ptr %4, align 8\l  %11 = load ptr, ptr %5, align 8\l  %12 = getelementptr inbounds %struct.TIFFDirEntry, ptr %11, i32 0, i32 2\l  %13 = load i64, ptr %12, align 8\l  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds %struct.TIFFDirEntry, ptr %14, i32 0, i32 1\l  %16 = load i16, ptr %15, align 2\l  %17 = zext i16 %16 to i64\l  %18 = getelementptr inbounds [0 x i32], ptr @tiffDataWidth, i64 0, i64 %17\l  %19 = load i32, ptr %18, align 4\l  %20 = sext i32 %19 to i64\l  %21 = mul i64 %13, %20\l  %22 = call ptr @CheckMalloc(ptr noundef %10, i64 noundef %21, ptr noundef\l... @.str.10)\l  store ptr %22, ptr %8, align 8\l  %23 = load ptr, ptr %8, align 8\l  %24 = icmp ne ptr %23, null\l  br i1 %24, label %25, label %67\l|{<s0>T|<s1>F}}"];
+	Node0x600003042080:s0 -> Node0x6000030420d0[tooltip="3 -> 25\nProbability 62.50%" ];
+	Node0x600003042080:s1 -> Node0x6000030423a0[tooltip="3 -> 67\nProbability 37.50%" ];
+	Node0x6000030420d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %4, align 8\l  %27 = load ptr, ptr %5, align 8\l  %28 = load ptr, ptr %8, align 8\l  %29 = call i64 @TIFFFetchData(ptr noundef %26, ptr noundef %27, ptr noundef\l... %28)\l  %30 = icmp ne i64 %29, 0\l  br i1 %30, label %31, label %65\l|{<s0>T|<s1>F}}"];
+	Node0x6000030420d0:s0 -> Node0x600003042120[tooltip="25 -> 31\nProbability 62.50%" ];
+	Node0x6000030420d0:s1 -> Node0x600003042350[tooltip="25 -> 65\nProbability 37.50%" ];
+	Node0x600003042120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{31:\l|  store i64 0, ptr %9, align 8\l  br label %32\l}"];
+	Node0x600003042120 -> Node0x600003042170[tooltip="31 -> 32\nProbability 100.00%" ];
+	Node0x600003042170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i64, ptr %9, align 8\l  %34 = load ptr, ptr %5, align 8\l  %35 = getelementptr inbounds %struct.TIFFDirEntry, ptr %34, i32 0, i32 2\l  %36 = load i64, ptr %35, align 8\l  %37 = icmp ult i64 %33, %36\l  br i1 %37, label %38, label %64\l|{<s0>T|<s1>F}}"];
+	Node0x600003042170:s0 -> Node0x6000030421c0[tooltip="32 -> 38\nProbability 96.88%" ];
+	Node0x600003042170:s1 -> Node0x600003042300[tooltip="32 -> 64\nProbability 3.12%" ];
+	Node0x6000030421c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load ptr, ptr %4, align 8\l  %40 = load ptr, ptr %5, align 8\l  %41 = load ptr, ptr %8, align 8\l  %42 = load i64, ptr %9, align 8\l  %43 = mul i64 2, %42\l  %44 = add i64 %43, 0\l  %45 = getelementptr inbounds i64, ptr %41, i64 %44\l  %46 = load i64, ptr %45, align 8\l  %47 = load ptr, ptr %8, align 8\l  %48 = load i64, ptr %9, align 8\l  %49 = mul i64 2, %48\l  %50 = add i64 %49, 1\l  %51 = getelementptr inbounds i64, ptr %47, i64 %50\l  %52 = load i64, ptr %51, align 8\l  %53 = load ptr, ptr %6, align 8\l  %54 = load i64, ptr %9, align 8\l  %55 = getelementptr inbounds float, ptr %53, i64 %54\l  %56 = call i32 @cvtRational(ptr noundef %39, ptr noundef %40, i64 noundef\l... %46, i64 noundef %52, ptr noundef %55)\l  store i32 %56, ptr %7, align 4\l  %57 = load i32, ptr %7, align 4\l  %58 = icmp ne i32 %57, 0\l  br i1 %58, label %60, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x6000030421c0:s0 -> Node0x600003042260[tooltip="38 -> 60\nProbability 96.88%" ];
+	Node0x6000030421c0:s1 -> Node0x600003042210[tooltip="38 -> 59\nProbability 3.12%" ];
+	Node0x600003042210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{59:\l|  br label %64\l}"];
+	Node0x600003042210 -> Node0x600003042300[tooltip="59 -> 64\nProbability 100.00%" ];
+	Node0x600003042260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{60:\l|  br label %61\l}"];
+	Node0x600003042260 -> Node0x6000030422b0[tooltip="60 -> 61\nProbability 100.00%" ];
+	Node0x6000030422b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{61:\l|  %62 = load i64, ptr %9, align 8\l  %63 = add i64 %62, 1\l  store i64 %63, ptr %9, align 8\l  br label %32\l}"];
+	Node0x6000030422b0 -> Node0x600003042170[tooltip="61 -> 32\nProbability 100.00%" ];
+	Node0x600003042300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{64:\l|  br label %65\l}"];
+	Node0x600003042300 -> Node0x600003042350[tooltip="64 -> 65\nProbability 100.00%" ];
+	Node0x600003042350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{65:\l|  %66 = load ptr, ptr %8, align 8\l  call void @_TIFFfree(ptr noundef %66)\l  br label %67\l}"];
+	Node0x600003042350 -> Node0x6000030423a0[tooltip="65 -> 67\nProbability 100.00%" ];
+	Node0x6000030423a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{67:\l|  %68 = load i32, ptr %7, align 4\l  ret i32 %68\l}"];
+}

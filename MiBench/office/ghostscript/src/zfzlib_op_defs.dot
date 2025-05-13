@@ -1,0 +1,5 @@
+digraph "CFG for 'zfzlib_op_defs' function" {
+	label="CFG for 'zfzlib_op_defs' function";
+
+	Node0x600000f59e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zfzlib_op_defs.op_defs_\l}"];
+}

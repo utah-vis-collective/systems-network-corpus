@@ -1,0 +1,14 @@
+digraph "CFG for 'LanguageInit' function" {
+	label="CFG for 'LanguageInit' function";
+
+	Node0x600001a0e440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = call ptr @ltab_new(i32 noundef 100)\l  store ptr %2, ptr @names_tab, align 8\l  store i32 0, ptr @lang_count, align 4\l  store i32 100, ptr @lang_tabsize, align 4\l  %3 = call ptr @malloc(i64 noundef 800) #5\l  store ptr %3, ptr @hyph_tab, align 8\l  %4 = call ptr @malloc(i64 noundef 800) #5\l  store ptr %4, ptr @canonical_tab, align 8\l  store i32 0, ptr %1, align 4\l  br label %5\l}"];
+	Node0x600001a0e440 -> Node0x600001a0e490[tooltip="0 -> 5\nProbability 100.00%" ];
+	Node0x600001a0e490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %1, align 4\l  %7 = icmp slt i32 %6, 256\l  br i1 %7, label %8, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600001a0e490:s0 -> Node0x600001a0e4e0[tooltip="5 -> 8\nProbability 96.88%" ];
+	Node0x600001a0e490:s1 -> Node0x600001a0e580[tooltip="5 -> 15\nProbability 3.12%" ];
+	Node0x600001a0e4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %1, align 4\l  %10 = sext i32 %9 to i64\l  %11 = getelementptr inbounds [256 x i32], ptr @LanguageSentenceEnds, i64 0,\l... i64 %10\l  store i32 0, ptr %11, align 4\l  br label %12\l}"];
+	Node0x600001a0e4e0 -> Node0x600001a0e530[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x600001a0e530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %1, align 4\l  %14 = add nsw i32 %13, 1\l  store i32 %14, ptr %1, align 4\l  br label %5\l}"];
+	Node0x600001a0e530 -> Node0x600001a0e490[tooltip="12 -> 5\nProbability 100.00%" ];
+	Node0x600001a0e580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{15:\l|  ret void\l}"];
+}

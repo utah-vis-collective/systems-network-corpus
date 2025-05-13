@@ -1,0 +1,5 @@
+digraph "CFG for '_OSSwapInt16' function" {
+	label="CFG for '_OSSwapInt16' function";
+
+	Node0x600002736bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i16, align 2\l  store i16 %0, ptr %2, align 2\l  %3 = load i16, ptr %2, align 2\l  %4 = zext i16 %3 to i32\l  %5 = shl i32 %4, 8\l  %6 = load i16, ptr %2, align 2\l  %7 = zext i16 %6 to i32\l  %8 = ashr i32 %7, 8\l  %9 = or i32 %5, %8\l  %10 = trunc i32 %9 to i16\l  ret i16 %10\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'swap_bwords' function" {
+	label="CFG for 'swap_bwords' function";
+
+	Node0x6000010699f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i8, align 1\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = sdiv i32 %6, 2\l  store i32 %7, ptr %4, align 4\l  br label %8\l}"];
+	Node0x6000010699f0 -> Node0x600001069a40[tooltip="2 -> 8\nProbability 100.00%" ];
+	Node0x600001069a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %4, align 4\l  %10 = icmp sgt i32 %9, 0\l  br i1 %10, label %11, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600001069a40:s0 -> Node0x600001069a90[tooltip="8 -> 11\nProbability 96.88%" ];
+	Node0x600001069a40:s1 -> Node0x600001069b30[tooltip="8 -> 28\nProbability 3.12%" ];
+	Node0x600001069a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds i8, ptr %12, i64 0\l  %14 = load i8, ptr %13, align 1\l  store i8 %14, ptr %5, align 1\l  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds i8, ptr %15, i64 1\l  %17 = load i8, ptr %16, align 1\l  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds i8, ptr %18, i64 0\l  store i8 %17, ptr %19, align 1\l  %20 = load i8, ptr %5, align 1\l  %21 = load ptr, ptr %3, align 8\l  %22 = getelementptr inbounds i8, ptr %21, i64 1\l  store i8 %20, ptr %22, align 1\l  br label %23\l}"];
+	Node0x600001069a90 -> Node0x600001069ae0[tooltip="11 -> 23\nProbability 100.00%" ];
+	Node0x600001069ae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %4, align 4\l  %25 = add nsw i32 %24, -1\l  store i32 %25, ptr %4, align 4\l  %26 = load ptr, ptr %3, align 8\l  %27 = getelementptr inbounds i8, ptr %26, i64 2\l  store ptr %27, ptr %3, align 8\l  br label %8\l}"];
+	Node0x600001069ae0 -> Node0x600001069a40[tooltip="23 -> 8\nProbability 100.00%" ];
+	Node0x600001069b30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{28:\l|  ret void\l}"];
+}

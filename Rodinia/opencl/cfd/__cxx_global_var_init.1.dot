@@ -1,0 +1,33 @@
+digraph "CFG for '__cxx_global_var_init.1' function" {
+	label="CFG for '__cxx_global_var_init.1' function";
+
+	Node0x600000d11900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr @kernel_names, ptr %1, align 8\l  %4 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) @kernel_names, ptr\l... noundef @.str)\l          to label %5 unwind label %15\l}"];
+	Node0x600000d11900 -> Node0x600000d11950[tooltip="0 -> 5\nProbability 100.00%" ];
+	Node0x600000d11900 -> Node0x600000d11ae0[tooltip="0 -> 15\nProbability 0.00%" ];
+	Node0x600000d11950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  store ptr getelementptr inbounds (%\"class.std::__1::basic_string\", ptr\l... @kernel_names, i64 1), ptr %1, align 8\l  %6 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) getelementptr\l... inbounds (%\"class.std::__1::basic_string\", ptr @kernel_names, i64 1), ptr\l... noundef @.str.2)\l          to label %7 unwind label %15\l}"];
+	Node0x600000d11950 -> Node0x600000d119a0[tooltip="5 -> 7\nProbability 100.00%" ];
+	Node0x600000d11950 -> Node0x600000d11ae0[tooltip="5 -> 15\nProbability 0.00%" ];
+	Node0x600000d119a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  store ptr getelementptr inbounds (%\"class.std::__1::basic_string\", ptr\l... @kernel_names, i64 2), ptr %1, align 8\l  %8 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) getelementptr\l... inbounds (%\"class.std::__1::basic_string\", ptr @kernel_names, i64 2), ptr\l... noundef @.str.3)\l          to label %9 unwind label %15\l}"];
+	Node0x600000d119a0 -> Node0x600000d119f0[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x600000d119a0 -> Node0x600000d11ae0[tooltip="7 -> 15\nProbability 0.00%" ];
+	Node0x600000d119f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  store ptr getelementptr inbounds (%\"class.std::__1::basic_string\", ptr\l... @kernel_names, i64 3), ptr %1, align 8\l  %10 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) getelementptr\l... inbounds (%\"class.std::__1::basic_string\", ptr @kernel_names, i64 3), ptr\l... noundef @.str.4)\l          to label %11 unwind label %15\l}"];
+	Node0x600000d119f0 -> Node0x600000d11a40[tooltip="9 -> 11\nProbability 100.00%" ];
+	Node0x600000d119f0 -> Node0x600000d11ae0[tooltip="9 -> 15\nProbability 0.00%" ];
+	Node0x600000d11a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  store ptr getelementptr inbounds (%\"class.std::__1::basic_string\", ptr\l... @kernel_names, i64 4), ptr %1, align 8\l  %12 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B8ne190107IL\l...i0EEEPKc(ptr noundef nonnull align 8 dereferenceable(24) getelementptr\l... inbounds (%\"class.std::__1::basic_string\", ptr @kernel_names, i64 4), ptr\l... noundef @.str.5)\l          to label %13 unwind label %15\l}"];
+	Node0x600000d11a40 -> Node0x600000d11a90[tooltip="11 -> 13\nProbability 100.00%" ];
+	Node0x600000d11a40 -> Node0x600000d11ae0[tooltip="11 -> 15\nProbability 0.00%" ];
+	Node0x600000d11a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = call i32 @__cxa_atexit(ptr @__cxx_global_array_dtor, ptr null, ptr\l... @__dso_handle) #5\l  ret void\l}"];
+	Node0x600000d11ae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b59970" fontname="Courier",label="{15:\l|  %16 = landingpad \{ ptr, i32 \}\l          cleanup\l  %17 = extractvalue \{ ptr, i32 \} %16, 0\l  store ptr %17, ptr %2, align 8\l  %18 = extractvalue \{ ptr, i32 \} %16, 1\l  store i32 %18, ptr %3, align 4\l  %19 = load ptr, ptr %1, align 8\l  %20 = icmp eq ptr @kernel_names, %19\l  br i1 %20, label %28, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600000d11ae0:s0 -> Node0x600000d11c20[tooltip="15 -> 28\nProbability 37.50%" ];
+	Node0x600000d11ae0:s1 -> Node0x600000d11b30[tooltip="15 -> 21\nProbability 62.50%" ];
+	Node0x600000d11b30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{21:\l|  br label %22\l}"];
+	Node0x600000d11b30 -> Node0x600000d11b80[tooltip="21 -> 22\nProbability 100.00%" ];
+	Node0x600000d11b80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4987a70" fontname="Courier",label="{22:\l|  %23 = phi ptr [ %24, %22 ], [ %19, %21 ]\l  %24 = getelementptr inbounds %\"class.std::__1::basic_string\", ptr %23, i64 -1\l  %25 = call noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(ptr\l... noundef nonnull align 8 dereferenceable(24) %24) #5\l  %26 = icmp eq ptr %24, @kernel_names\l  br i1 %26, label %27, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600000d11b80:s0 -> Node0x600000d11bd0[tooltip="22 -> 27\nProbability 3.12%" ];
+	Node0x600000d11b80:s1 -> Node0x600000d11b80[tooltip="22 -> 22\nProbability 96.88%" ];
+	Node0x600000d11bd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{27:\l|  br label %28\l}"];
+	Node0x600000d11bd0 -> Node0x600000d11c20[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x600000d11c20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b59970" fontname="Courier",label="{28:\l|  br label %29\l}"];
+	Node0x600000d11c20 -> Node0x600000d11c70[tooltip="28 -> 29\nProbability 100.00%" ];
+	Node0x600000d11c70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b59970" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %2, align 8\l  %31 = load i32, ptr %3, align 4\l  %32 = insertvalue \{ ptr, i32 \} poison, ptr %30, 0\l  %33 = insertvalue \{ ptr, i32 \} %32, i32 %31, 1\l  resume \{ ptr, i32 \} %33\l}"];
+}

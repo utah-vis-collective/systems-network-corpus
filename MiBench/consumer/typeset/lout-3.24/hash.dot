@@ -1,0 +1,14 @@
+digraph "CFG for 'hash' function" {
+	label="CFG for 'hash' function";
+
+	Node0x6000005a7d40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  store i32 0, ptr %4, align 4\l  store i32 0, ptr %3, align 4\l  br label %5\l}"];
+	Node0x6000005a7d40 -> Node0x6000005a7d90[tooltip="1 -> 5\nProbability 100.00%" ];
+	Node0x6000005a7d90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %2, align 8\l  %7 = load i32, ptr %3, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds i8, ptr %6, i64 %8\l  %10 = load i8, ptr %9, align 1\l  %11 = sext i8 %10 to i32\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000005a7d90:s0 -> Node0x6000005a7de0[tooltip="5 -> 13\nProbability 96.88%" ];
+	Node0x6000005a7d90:s1 -> Node0x6000005a7e80[tooltip="5 -> 25\nProbability 3.12%" ];
+	Node0x6000005a7de0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %2, align 8\l  %15 = load i32, ptr %3, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds i8, ptr %14, i64 %16\l  %18 = load i8, ptr %17, align 1\l  %19 = sext i8 %18 to i32\l  %20 = load i32, ptr %4, align 4\l  %21 = add nsw i32 %20, %19\l  store i32 %21, ptr %4, align 4\l  br label %22\l}"];
+	Node0x6000005a7de0 -> Node0x6000005a7e30[tooltip="13 -> 22\nProbability 100.00%" ];
+	Node0x6000005a7e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %3, align 4\l  %24 = add nsw i32 %23, 1\l  store i32 %24, ptr %3, align 4\l  br label %5\l}"];
+	Node0x6000005a7e30 -> Node0x6000005a7d90[tooltip="22 -> 5\nProbability 100.00%" ];
+	Node0x6000005a7e80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %4, align 4\l  %27 = srem i32 %26, 609\l  ret i32 %27\l}"];
+}

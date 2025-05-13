@@ -1,0 +1,15 @@
+digraph "CFG for 'agc_emax_update' function" {
+	label="CFG for 'agc_emax_update' function";
+
+	Node0x6000018ea030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @obs_frame, align 4\l  %2 = icmp ne i32 %1, 0\l  br i1 %2, label %3, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000018ea030:s0 -> Node0x6000018ea080[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x6000018ea030:s1 -> Node0x6000018ea170[tooltip="0 -> 21\nProbability 37.50%" ];
+	Node0x6000018ea080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load float, ptr @obs_max, align 4\l  %5 = load float, ptr @obs_max_sum, align 4\l  %6 = fadd float %5, %4\l  store float %6, ptr @obs_max_sum, align 4\l  %7 = load i32, ptr @obs_utt, align 4\l  %8 = add nsw i32 %7, 1\l  store i32 %8, ptr @obs_utt, align 4\l  %9 = load float, ptr @obs_max_sum, align 4\l  %10 = load i32, ptr @obs_utt, align 4\l  %11 = sitofp i32 %10 to float\l  %12 = fdiv float %9, %11\l  store float %12, ptr @max, align 4\l  %13 = load i32, ptr @obs_utt, align 4\l  %14 = icmp eq i32 %13, 8\l  br i1 %14, label %15, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000018ea080:s0 -> Node0x6000018ea0d0[tooltip="3 -> 15\nProbability 50.00%" ];
+	Node0x6000018ea080:s1 -> Node0x6000018ea120[tooltip="3 -> 20\nProbability 50.00%" ];
+	Node0x6000018ea0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  %16 = load float, ptr @obs_max_sum, align 4\l  %17 = fpext float %16 to double\l  %18 = fmul double %17, 5.000000e-01\l  %19 = fptrunc double %18 to float\l  store float %19, ptr @obs_max_sum, align 4\l  store i32 4, ptr @obs_utt, align 4\l  br label %20\l}"];
+	Node0x6000018ea0d0 -> Node0x6000018ea120[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x6000018ea120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  br label %21\l}"];
+	Node0x6000018ea120 -> Node0x6000018ea170[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x6000018ea170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load float, ptr @obs_max, align 4\l  %23 = fpext float %22 to double\l  %24 = load float, ptr @max, align 4\l  %25 = fpext float %24 to double\l  %26 = call i32 @E_INFO(ptr noundef @.str.1, double noundef %23, double\l... noundef %25)\l  store float -1.000000e+03, ptr @obs_max, align 4\l  store i32 0, ptr @obs_frame, align 4\l  ret void\l}"];
+}

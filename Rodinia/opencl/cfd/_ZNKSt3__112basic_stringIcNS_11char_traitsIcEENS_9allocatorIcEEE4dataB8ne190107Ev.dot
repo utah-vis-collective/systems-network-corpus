@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB8ne190107Ev' function" {
+	label="CFG for '_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB8ne190107Ev' function";
+
+	Node0x600000d03020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call noundef ptr\l... @_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__get_point\l...erB8ne190107Ev(ptr noundef nonnull align 8 dereferenceable(24) %3) #5\l  %5 = call noundef ptr @_ZNSt3__112__to_addressB8ne190107IKcEEPT_S3_(ptr\l... noundef %4) #5\l  ret ptr %5\l}"];
+}

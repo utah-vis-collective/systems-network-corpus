@@ -1,0 +1,47 @@
+digraph "CFG for 'gs_sethsbcolor' function" {
+	label="CFG for 'gs_sethsbcolor' function";
+
+	Node0x600000331f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca double, align 8\l  %7 = alloca double, align 8\l  %8 = alloca double, align 8\l  %9 = alloca [3 x float], align 4\l  store ptr %0, ptr %5, align 8\l  store double %1, ptr %6, align 8\l  store double %2, ptr %7, align 8\l  store double %3, ptr %8, align 8\l  %10 = load double, ptr %6, align 8\l  %11 = fcmp olt double %10, 0.000000e+00\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600000331f40:s0 -> Node0x600000331f90[tooltip="4 -> 12\nProbability 50.00%" ];
+	Node0x600000331f40:s1 -> Node0x600000331fe0[tooltip="4 -> 13\nProbability 50.00%" ];
+	Node0x600000331f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  br label %21\l}"];
+	Node0x600000331f90 -> Node0x600000332120[tooltip="12 -> 21\nProbability 100.00%" ];
+	Node0x600000331fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load double, ptr %6, align 8\l  %15 = fcmp ogt double %14, 1.000000e+00\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600000331fe0:s0 -> Node0x600000332030[tooltip="13 -> 16\nProbability 50.00%" ];
+	Node0x600000331fe0:s1 -> Node0x600000332080[tooltip="13 -> 17\nProbability 50.00%" ];
+	Node0x600000332030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  br label %19\l}"];
+	Node0x600000332030 -> Node0x6000003320d0[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x600000332080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load double, ptr %6, align 8\l  br label %19\l}"];
+	Node0x600000332080 -> Node0x6000003320d0[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x6000003320d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = phi double [ 1.000000e+00, %16 ], [ %18, %17 ]\l  br label %21\l}"];
+	Node0x6000003320d0 -> Node0x600000332120[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x600000332120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = phi double [ 0.000000e+00, %12 ], [ %20, %19 ]\l  %23 = load double, ptr %7, align 8\l  %24 = fcmp olt double %23, 0.000000e+00\l  br i1 %24, label %25, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000332120:s0 -> Node0x600000332170[tooltip="21 -> 25\nProbability 50.00%" ];
+	Node0x600000332120:s1 -> Node0x6000003321c0[tooltip="21 -> 26\nProbability 50.00%" ];
+	Node0x600000332170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{25:\l|  br label %34\l}"];
+	Node0x600000332170 -> Node0x600000332300[tooltip="25 -> 34\nProbability 100.00%" ];
+	Node0x6000003321c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load double, ptr %7, align 8\l  %28 = fcmp ogt double %27, 1.000000e+00\l  br i1 %28, label %29, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x6000003321c0:s0 -> Node0x600000332210[tooltip="26 -> 29\nProbability 50.00%" ];
+	Node0x6000003321c0:s1 -> Node0x600000332260[tooltip="26 -> 30\nProbability 50.00%" ];
+	Node0x600000332210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{29:\l|  br label %32\l}"];
+	Node0x600000332210 -> Node0x6000003322b0[tooltip="29 -> 32\nProbability 100.00%" ];
+	Node0x600000332260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{30:\l|  %31 = load double, ptr %7, align 8\l  br label %32\l}"];
+	Node0x600000332260 -> Node0x6000003322b0[tooltip="30 -> 32\nProbability 100.00%" ];
+	Node0x6000003322b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{32:\l|  %33 = phi double [ 1.000000e+00, %29 ], [ %31, %30 ]\l  br label %34\l}"];
+	Node0x6000003322b0 -> Node0x600000332300[tooltip="32 -> 34\nProbability 100.00%" ];
+	Node0x600000332300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = phi double [ 0.000000e+00, %25 ], [ %33, %32 ]\l  %36 = load double, ptr %8, align 8\l  %37 = fcmp olt double %36, 0.000000e+00\l  br i1 %37, label %38, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x600000332300:s0 -> Node0x600000332350[tooltip="34 -> 38\nProbability 50.00%" ];
+	Node0x600000332300:s1 -> Node0x6000003323a0[tooltip="34 -> 39\nProbability 50.00%" ];
+	Node0x600000332350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{38:\l|  br label %47\l}"];
+	Node0x600000332350 -> Node0x6000003324e0[tooltip="38 -> 47\nProbability 100.00%" ];
+	Node0x6000003323a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{39:\l|  %40 = load double, ptr %8, align 8\l  %41 = fcmp ogt double %40, 1.000000e+00\l  br i1 %41, label %42, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x6000003323a0:s0 -> Node0x6000003323f0[tooltip="39 -> 42\nProbability 50.00%" ];
+	Node0x6000003323a0:s1 -> Node0x600000332440[tooltip="39 -> 43\nProbability 50.00%" ];
+	Node0x6000003323f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{42:\l|  br label %45\l}"];
+	Node0x6000003323f0 -> Node0x600000332490[tooltip="42 -> 45\nProbability 100.00%" ];
+	Node0x600000332440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{43:\l|  %44 = load double, ptr %8, align 8\l  br label %45\l}"];
+	Node0x600000332440 -> Node0x600000332490[tooltip="43 -> 45\nProbability 100.00%" ];
+	Node0x600000332490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{45:\l|  %46 = phi double [ 1.000000e+00, %42 ], [ %44, %43 ]\l  br label %47\l}"];
+	Node0x600000332490 -> Node0x6000003324e0[tooltip="45 -> 47\nProbability 100.00%" ];
+	Node0x6000003324e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  %48 = phi double [ 0.000000e+00, %38 ], [ %46, %45 ]\l  %49 = getelementptr inbounds [3 x float], ptr %9, i64 0, i64 0\l  call void @color_hsb_to_rgb(double noundef %22, double noundef %35, double\l... noundef %48, ptr noundef %49)\l  %50 = load ptr, ptr %5, align 8\l  %51 = getelementptr inbounds [3 x float], ptr %9, i64 0, i64 0\l  %52 = load float, ptr %51, align 4\l  %53 = fpext float %52 to double\l  %54 = getelementptr inbounds [3 x float], ptr %9, i64 0, i64 1\l  %55 = load float, ptr %54, align 4\l  %56 = fpext float %55 to double\l  %57 = getelementptr inbounds [3 x float], ptr %9, i64 0, i64 2\l  %58 = load float, ptr %57, align 4\l  %59 = fpext float %58 to double\l  %60 = call i32 @gs_setrgbcolor(ptr noundef %50, double noundef %53, double\l... noundef %56, double noundef %59)\l  ret i32 %60\l}"];
+}

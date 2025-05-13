@@ -1,0 +1,14 @@
+digraph "CFG for 'free_all_rc' function" {
+	label="CFG for 'free_all_rc' function";
+
+	Node0x6000020374d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  %5 = load ptr, ptr @word_chan, align 8\l  %6 = load i32, ptr %2, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds ptr, ptr %5, i64 %7\l  %9 = load ptr, ptr %8, align 8\l  store ptr %9, ptr %3, align 8\l  br label %10\l}"];
+	Node0x6000020374d0 -> Node0x600002037520[tooltip="1 -> 10\nProbability 100.00%" ];
+	Node0x600002037520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002037520:s0 -> Node0x600002037570[tooltip="10 -> 13\nProbability 96.88%" ];
+	Node0x600002037520:s1 -> Node0x600002037610[tooltip="10 -> 20\nProbability 3.12%" ];
+	Node0x600002037570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = getelementptr inbounds %struct.CHAN_S, ptr %14, i32 0, i32 0\l  %16 = load ptr, ptr %15, align 8\l  store ptr %16, ptr %4, align 8\l  %17 = load ptr, ptr %3, align 8\l  call void @listelem_free(ptr noundef %17, i32 noundef 88)\l  br label %18\l}"];
+	Node0x600002037570 -> Node0x6000020375c0[tooltip="13 -> 18\nProbability 100.00%" ];
+	Node0x6000020375c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  store ptr %19, ptr %3, align 8\l  br label %10\l}"];
+	Node0x6000020375c0 -> Node0x600002037520[tooltip="18 -> 10\nProbability 100.00%" ];
+	Node0x600002037610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr @word_chan, align 8\l  %22 = load i32, ptr %2, align 4\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds ptr, ptr %21, i64 %23\l  store ptr null, ptr %24, align 8\l  ret void\l}"];
+}

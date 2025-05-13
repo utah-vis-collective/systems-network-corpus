@@ -1,0 +1,10 @@
+digraph "CFG for 'mem_close' function" {
+	label="CFG for 'mem_close' function";
+
+	Node0x6000008b7d90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.gx_device_memory_s, ptr %3, i32 0, i32 28\l  %5 = load ptr, ptr %4, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %7, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000008b7d90:s0 -> Node0x6000008b7de0[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x6000008b7d90:s1 -> Node0x6000008b7e30[tooltip="1 -> 20\nProbability 37.50%" ];
+	Node0x6000008b7de0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = getelementptr inbounds %struct.gx_device_memory_s, ptr %8, i32 0, i32 28\l  %10 = load ptr, ptr %9, align 8\l  %11 = getelementptr inbounds %struct.gs_memory_s, ptr %10, i32 0, i32 0\l  %12 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %11, i32 0, i32\l... 11\l  %13 = load ptr, ptr %12, align 8\l  %14 = load ptr, ptr %2, align 8\l  %15 = getelementptr inbounds %struct.gx_device_memory_s, ptr %14, i32 0, i32\l... 28\l  %16 = load ptr, ptr %15, align 8\l  %17 = load ptr, ptr %2, align 8\l  %18 = getelementptr inbounds %struct.gx_device_memory_s, ptr %17, i32 0, i32\l... 26\l  %19 = load ptr, ptr %18, align 8\l  call void %13(ptr noundef %16, ptr noundef %19, ptr noundef @.str.2)\l  br label %20\l}"];
+	Node0x6000008b7de0 -> Node0x6000008b7e30[tooltip="7 -> 20\nProbability 100.00%" ];
+	Node0x6000008b7e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  ret i32 0\l}"];
+}

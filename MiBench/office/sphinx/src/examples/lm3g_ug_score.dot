@@ -1,0 +1,10 @@
+digraph "CFG for 'lm3g_ug_score' function" {
+	label="CFG for 'lm3g_ug_score' function";
+
+	Node0x600001024050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %4 = load ptr, ptr @lmp, align 8\l  %5 = getelementptr inbounds %struct.lm_s, ptr %4, i32 0, i32 10\l  %6 = load ptr, ptr %5, align 8\l  %7 = load i32, ptr %2, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds i32, ptr %6, i64 %8\l  %10 = load i32, ptr %9, align 4\l  store i32 %10, ptr %3, align 4\l  %11 = icmp slt i32 %10, 0\l  br i1 %11, label %12, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001024050:s0 -> Node0x6000010240a0[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x600001024050:s1 -> Node0x6000010240f0[tooltip="1 -> 14\nProbability 62.50%" ];
+	Node0x6000010240a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %2, align 4\l  call void (i32, ptr, ...) @quit(i32 noundef -1, ptr noundef @.str.140, ptr\l... noundef @.str.3, i32 noundef 1700, i32 noundef %13)\l  br label %14\l}"];
+	Node0x6000010240a0 -> Node0x6000010240f0[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x6000010240f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr @lmp, align 8\l  %16 = getelementptr inbounds %struct.lm_s, ptr %15, i32 0, i32 0\l  %17 = load ptr, ptr %16, align 8\l  %18 = load i32, ptr %3, align 4\l  %19 = sext i32 %18 to i64\l  %20 = getelementptr inbounds %struct.unigram_s, ptr %17, i64 %19\l  %21 = getelementptr inbounds %struct.unigram_s, ptr %20, i32 0, i32 1\l  %22 = load i32, ptr %21, align 4\l  ret i32 %22\l}"];
+}

@@ -1,0 +1,29 @@
+digraph "CFG for 'BF_BitstreamFrame' function" {
+	label="CFG for 'BF_BitstreamFrame' function";
+
+	Node0x6000039da3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.BF_FrameData, ptr %5, i32 0, i32 1\l  %7 = load i32, ptr %6, align 4\l  %8 = icmp sle i32 %7, 2\l  %9 = xor i1 %8, true\l  %10 = zext i1 %9 to i32\l  %11 = sext i32 %10 to i64\l  %12 = icmp ne i64 %11, 0\l  br i1 %12, label %13, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x6000039da3a0:s0 -> Node0x6000039da3f0[tooltip="2 -> 13\nProbability 0.00%" ];
+	Node0x6000039da3a0:s1 -> Node0x6000039da490[tooltip="2 -> 15\nProbability 100.00%" ];
+	Node0x6000039da3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{13:\l|  call void @__assert_rtn(ptr noundef @__func__.BF_BitstreamFrame, ptr\l... noundef @.str, i32 noundef 59, ptr noundef @.str.1) #7\l  unreachable\l}"];
+	Node0x6000039da440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{14:\l|  br label %16\l}"];
+	Node0x6000039da440 -> Node0x6000039da4e0[tooltip="14 -> 16\nProbability 100.00%" ];
+	Node0x6000039da490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  br label %16\l}"];
+	Node0x6000039da490 -> Node0x6000039da4e0[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x6000039da4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds %struct.BF_FrameData, ptr %17, i32 0, i32 2\l  %19 = load i32, ptr %18, align 8\l  %20 = icmp sle i32 %19, 2\l  %21 = xor i1 %20, true\l  %22 = zext i1 %21 to i32\l  %23 = sext i32 %22 to i64\l  %24 = icmp ne i64 %23, 0\l  br i1 %24, label %25, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x6000039da4e0:s0 -> Node0x6000039da530[tooltip="16 -> 25\nProbability 0.00%" ];
+	Node0x6000039da4e0:s1 -> Node0x6000039da5d0[tooltip="16 -> 27\nProbability 100.00%" ];
+	Node0x6000039da530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{25:\l|  call void @__assert_rtn(ptr noundef @__func__.BF_BitstreamFrame, ptr\l... noundef @.str, i32 noundef 60, ptr noundef @.str.2) #7\l  unreachable\l}"];
+	Node0x6000039da580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{26:\l|  br label %28\l}"];
+	Node0x6000039da580 -> Node0x6000039da620[tooltip="26 -> 28\nProbability 100.00%" ];
+	Node0x6000039da5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  br label %28\l}"];
+	Node0x6000039da5d0 -> Node0x6000039da620[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x6000039da620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %3, align 8\l  %30 = call i32 @store_side_info(ptr noundef %29)\l  %31 = load ptr, ptr %4, align 8\l  %32 = getelementptr inbounds %struct.BF_FrameResults, ptr %31, i32 0, i32 0\l  store i32 %30, ptr %32, align 4\l  %33 = load ptr, ptr %3, align 8\l  %34 = load ptr, ptr %4, align 8\l  %35 = call i32 @main_data(ptr noundef %33, ptr noundef %34)\l  %36 = load ptr, ptr %4, align 8\l  %37 = getelementptr inbounds %struct.BF_FrameResults, ptr %36, i32 0, i32 1\l  store i32 %35, ptr %37, align 4\l  %38 = load i32, ptr @BitsRemaining, align 4\l  %39 = srem i32 %38, 8\l  %40 = icmp eq i32 %39, 0\l  %41 = xor i1 %40, true\l  %42 = zext i1 %41 to i32\l  %43 = sext i32 %42 to i64\l  %44 = icmp ne i64 %43, 0\l  br i1 %44, label %45, label %47\l|{<s0>T|<s1>F}}"];
+	Node0x6000039da620:s0 -> Node0x6000039da670[tooltip="28 -> 45\nProbability 0.00%" ];
+	Node0x6000039da620:s1 -> Node0x6000039da710[tooltip="28 -> 47\nProbability 100.00%" ];
+	Node0x6000039da670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{45:\l|  call void @__assert_rtn(ptr noundef @__func__.BF_BitstreamFrame, ptr\l... noundef @.str, i32 noundef 74, ptr noundef @.str.3) #7\l  unreachable\l}"];
+	Node0x6000039da6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{46:\l|  br label %48\l}"];
+	Node0x6000039da6c0 -> Node0x6000039da760[tooltip="46 -> 48\nProbability 100.00%" ];
+	Node0x6000039da710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  br label %48\l}"];
+	Node0x6000039da710 -> Node0x6000039da760[tooltip="47 -> 48\nProbability 100.00%" ];
+	Node0x6000039da760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = call i32 @side_queue_elements(ptr noundef @forwardFrameLength, ptr\l... noundef @forwardSILength)\l  store i32 %49, ptr @elements, align 4\l  %50 = load i32, ptr @BitsRemaining, align 4\l  %51 = sdiv i32 %50, 8\l  %52 = load i32, ptr @forwardFrameLength, align 4\l  %53 = sdiv i32 %52, 8\l  %54 = add nsw i32 %51, %53\l  %55 = load i32, ptr @forwardSILength, align 4\l  %56 = sdiv i32 %55, 8\l  %57 = sub nsw i32 %54, %56\l  %58 = load ptr, ptr %4, align 8\l  %59 = getelementptr inbounds %struct.BF_FrameResults, ptr %58, i32 0, i32 2\l  store i32 %57, ptr %59, align 4\l  ret void\l}"];
+}

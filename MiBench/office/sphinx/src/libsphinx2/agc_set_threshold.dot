@@ -1,0 +1,5 @@
+digraph "CFG for 'agc_set_threshold' function" {
+	label="CFG for 'agc_set_threshold' function";
+
+	Node0x600001bb6530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca float, align 4\l  store float %0, ptr %2, align 4\l  %3 = load float, ptr %2, align 4\l  store float %3, ptr @agc_thresh, align 4\l  ret void\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'gx_point_scale_exp2' function" {
+	label="CFG for 'gx_point_scale_exp2' function";
+
+	Node0x600000870550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %7 = load i32, ptr %5, align 4\l  %8 = icmp sge i32 %7, 0\l  br i1 %8, label %9, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000870550:s0 -> Node0x6000008705a0[tooltip="3 -> 9\nProbability 50.00%" ];
+	Node0x600000870550:s1 -> Node0x6000008705f0[tooltip="3 -> 16\nProbability 50.00%" ];
+	Node0x6000008705a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %5, align 4\l  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %11, i32 0, i32 0\l  %13 = load i64, ptr %12, align 8\l  %14 = zext i32 %10 to i64\l  %15 = shl i64 %13, %14\l  store i64 %15, ptr %12, align 8\l  br label %24\l}"];
+	Node0x6000008705a0 -> Node0x600000870640[tooltip="9 -> 24\nProbability 100.00%" ];
+	Node0x6000008705f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %5, align 4\l  %18 = sub nsw i32 0, %17\l  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %19, i32 0, i32 0\l  %21 = load i64, ptr %20, align 8\l  %22 = zext i32 %18 to i64\l  %23 = ashr i64 %21, %22\l  store i64 %23, ptr %20, align 8\l  br label %24\l}"];
+	Node0x6000008705f0 -> Node0x600000870640[tooltip="16 -> 24\nProbability 100.00%" ];
+	Node0x600000870640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %6, align 4\l  %26 = icmp sge i32 %25, 0\l  br i1 %26, label %27, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600000870640:s0 -> Node0x600000870690[tooltip="24 -> 27\nProbability 50.00%" ];
+	Node0x600000870640:s1 -> Node0x6000008706e0[tooltip="24 -> 34\nProbability 50.00%" ];
+	Node0x600000870690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %6, align 4\l  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %29, i32 0, i32 1\l  %31 = load i64, ptr %30, align 8\l  %32 = zext i32 %28 to i64\l  %33 = shl i64 %31, %32\l  store i64 %33, ptr %30, align 8\l  br label %42\l}"];
+	Node0x600000870690 -> Node0x600000870730[tooltip="27 -> 42\nProbability 100.00%" ];
+	Node0x6000008706e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %6, align 4\l  %36 = sub nsw i32 0, %35\l  %37 = load ptr, ptr %4, align 8\l  %38 = getelementptr inbounds %struct.gs_fixed_point_s, ptr %37, i32 0, i32 1\l  %39 = load i64, ptr %38, align 8\l  %40 = zext i32 %36 to i64\l  %41 = ashr i64 %39, %40\l  store i64 %41, ptr %38, align 8\l  br label %42\l}"];
+	Node0x6000008706e0 -> Node0x600000870730[tooltip="34 -> 42\nProbability 100.00%" ];
+	Node0x600000870730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{42:\l|  ret void\l}"];
+}

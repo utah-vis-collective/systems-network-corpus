@@ -1,0 +1,12 @@
+digraph "CFG for 'checkkeyID' function" {
+	label="CFG for 'checkkeyID' function";
+
+	Node0x6000011f2c60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i8, align 1\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca [8 x i8], align 1\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = icmp eq ptr %7, null\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000011f2c60:s0 -> Node0x6000011f2cb0[tooltip="2 -> 9\nProbability 37.50%" ];
+	Node0x6000011f2c60:s1 -> Node0x6000011f2d00[tooltip="2 -> 10\nProbability 62.50%" ];
+	Node0x6000011f2cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  store i8 1, ptr %3, align 1\l  br label %20\l}"];
+	Node0x6000011f2cb0 -> Node0x6000011f2d50[tooltip="9 -> 20\nProbability 100.00%" ];
+	Node0x6000011f2d00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = getelementptr inbounds [8 x i8], ptr %6, i64 0, i64 0\l  %12 = load ptr, ptr %5, align 8\l  call void @extract_keyID(ptr noundef %11, ptr noundef %12)\l  %13 = load ptr, ptr %4, align 8\l  %14 = getelementptr inbounds [8 x i8], ptr %6, i64 0, i64 0\l  %15 = call i32 @memcmp(ptr noundef %13, ptr noundef %14, i64 noundef 8)\l  %16 = icmp ne i32 %15, 0\l  %17 = xor i1 %16, true\l  %18 = zext i1 %17 to i32\l  %19 = trunc i32 %18 to i8\l  store i8 %19, ptr %3, align 1\l  br label %20\l}"];
+	Node0x6000011f2d00 -> Node0x6000011f2d50[tooltip="10 -> 20\nProbability 100.00%" ];
+	Node0x6000011f2d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i8, ptr %3, align 1\l  ret i8 %21\l}"];
+}

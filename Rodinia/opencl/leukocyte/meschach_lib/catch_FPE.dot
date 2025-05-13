@@ -1,0 +1,5 @@
+digraph "CFG for 'catch_FPE' function" {
+	label="CFG for 'catch_FPE' function";
+
+	Node0x600001be8190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call ptr @signal(i32 noundef 8, ptr noundef @float_error)\l  ret void\l}"];
+}

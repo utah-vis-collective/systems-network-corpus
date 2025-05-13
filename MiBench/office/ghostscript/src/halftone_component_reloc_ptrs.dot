@@ -1,0 +1,10 @@
+digraph "CFG for 'halftone_component_reloc_ptrs' function" {
+	label="CFG for 'halftone_component_reloc_ptrs' function";
+
+	Node0x6000013be490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.gs_halftone_component_s, ptr %7, i32 0,\l... i32 1\l  %9 = load i32, ptr %8, align 4\l  %10 = icmp eq i32 %9, 4\l  br i1 %10, label %11, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000013be490:s0 -> Node0x6000013be4e0[tooltip="3 -> 11\nProbability 50.00%" ];
+	Node0x6000013be490:s1 -> Node0x6000013be530[tooltip="3 -> 16\nProbability 50.00%" ];
+	Node0x6000013be4e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.gs_halftone_component_s, ptr %12, i32\l... 0, i32 2\l  %14 = getelementptr inbounds %struct.gs_threshold_halftone_s, ptr %13, i32\l... 0, i32 2\l  %15 = load ptr, ptr %6, align 8\l  call void @gs_reloc_const_string(ptr noundef %14, ptr noundef %15)\l  br label %16\l}"];
+	Node0x6000013be4e0 -> Node0x6000013be530[tooltip="11 -> 16\nProbability 100.00%" ];
+	Node0x6000013be530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  ret void\l}"];
+}

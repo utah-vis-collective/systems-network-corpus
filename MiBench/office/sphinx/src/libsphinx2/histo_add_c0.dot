@@ -1,0 +1,47 @@
+digraph "CFG for 'histo_add_c0' function" {
+	label="CFG for 'histo_add_c0' function";
+
+	Node0x600001bb7cf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca float, align 4\l  %4 = alloca i32, align 4\l  store float %0, ptr %3, align 4\l  %5 = load float, ptr %3, align 4\l  %6 = load float, ptr @noise_level, align 4\l  %7 = fcmp olt float %5, %6\l  br i1 %7, label %8, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600001bb7cf0:s0 -> Node0x600001bb7d40[tooltip="1 -> 8\nProbability 50.00%" ];
+	Node0x600001bb7cf0:s1 -> Node0x600001bb7d90[tooltip="1 -> 11\nProbability 50.00%" ];
+	Node0x600001bb7d40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr @noise_frm_cnt, align 4\l  %10 = add nsw i32 %9, 1\l  store i32 %10, ptr @noise_frm_cnt, align 4\l  br label %12\l}"];
+	Node0x600001bb7d40 -> Node0x600001bb7de0[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x600001bb7d90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  store i32 0, ptr @noise_frm_cnt, align 4\l  br label %12\l}"];
+	Node0x600001bb7d90 -> Node0x600001bb7de0[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600001bb7de0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load float, ptr %3, align 4\l  %14 = load float, ptr @observed_min, align 4\l  %15 = fcmp olt float %13, %14\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600001bb7de0:s0 -> Node0x600001bb7e30[tooltip="12 -> 16\nProbability 50.00%" ];
+	Node0x600001bb7de0:s1 -> Node0x600001bb7e80[tooltip="12 -> 18\nProbability 50.00%" ];
+	Node0x600001bb7e30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load float, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600001bb7e30 -> Node0x600001bb7ed0[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600001bb7e80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load float, ptr @observed_min, align 4\l  br label %20\l}"];
+	Node0x600001bb7e80 -> Node0x600001bb7ed0[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x600001bb7ed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = phi float [ %17, %16 ], [ %19, %18 ]\l  store float %21, ptr @observed_min, align 4\l  %22 = load float, ptr %3, align 4\l  %23 = load float, ptr @observed_max, align 4\l  %24 = fcmp ogt float %22, %23\l  br i1 %24, label %25, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600001bb7ed0:s0 -> Node0x600001bb7f20[tooltip="20 -> 25\nProbability 50.00%" ];
+	Node0x600001bb7ed0:s1 -> Node0x600001bb7f70[tooltip="20 -> 27\nProbability 50.00%" ];
+	Node0x600001bb7f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{25:\l|  %26 = load float, ptr %3, align 4\l  br label %29\l}"];
+	Node0x600001bb7f20 -> Node0x600001ba8000[tooltip="25 -> 29\nProbability 100.00%" ];
+	Node0x600001bb7f70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load float, ptr @observed_max, align 4\l  br label %29\l}"];
+	Node0x600001bb7f70 -> Node0x600001ba8000[tooltip="27 -> 29\nProbability 100.00%" ];
+	Node0x600001ba8000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = phi float [ %26, %25 ], [ %28, %27 ]\l  store float %30, ptr @observed_max, align 4\l  %31 = load float, ptr @min_energy, align 4\l  %32 = load float, ptr %3, align 4\l  %33 = fcmp ogt float %31, %32\l  br i1 %33, label %34, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x600001ba8000:s0 -> Node0x600001ba8050[tooltip="29 -> 34\nProbability 50.00%" ];
+	Node0x600001ba8000:s1 -> Node0x600001ba80a0[tooltip="29 -> 36\nProbability 50.00%" ];
+	Node0x600001ba8050 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{34:\l|  %35 = load float, ptr @min_energy, align 4\l  br label %38\l}"];
+	Node0x600001ba8050 -> Node0x600001ba80f0[tooltip="34 -> 38\nProbability 100.00%" ];
+	Node0x600001ba80a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{36:\l|  %37 = load float, ptr %3, align 4\l  br label %38\l}"];
+	Node0x600001ba80a0 -> Node0x600001ba80f0[tooltip="36 -> 38\nProbability 100.00%" ];
+	Node0x600001ba80f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = phi float [ %35, %34 ], [ %37, %36 ]\l  store float %39, ptr %3, align 4\l  %40 = load float, ptr @max_energy, align 4\l  %41 = load float, ptr %3, align 4\l  %42 = fcmp olt float %40, %41\l  br i1 %42, label %43, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x600001ba80f0:s0 -> Node0x600001ba8140[tooltip="38 -> 43\nProbability 50.00%" ];
+	Node0x600001ba80f0:s1 -> Node0x600001ba8190[tooltip="38 -> 45\nProbability 50.00%" ];
+	Node0x600001ba8140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{43:\l|  %44 = load float, ptr @max_energy, align 4\l  br label %47\l}"];
+	Node0x600001ba8140 -> Node0x600001ba81e0[tooltip="43 -> 47\nProbability 100.00%" ];
+	Node0x600001ba8190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{45:\l|  %46 = load float, ptr %3, align 4\l  br label %47\l}"];
+	Node0x600001ba8190 -> Node0x600001ba81e0[tooltip="45 -> 47\nProbability 100.00%" ];
+	Node0x600001ba81e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  %48 = phi float [ %44, %43 ], [ %46, %45 ]\l  store float %48, ptr %3, align 4\l  %49 = load float, ptr @min_energy, align 4\l  %50 = load float, ptr %3, align 4\l  %51 = fsub float %50, %49\l  store float %51, ptr %3, align 4\l  %52 = load float, ptr %3, align 4\l  %53 = load float, ptr @dynamic_range, align 4\l  %54 = fdiv float %52, %53\l  %55 = fpext float %54 to double\l  %56 = fmul double %55, 1.000000e+03\l  %57 = fptosi double %56 to i32\l  store i32 %57, ptr %4, align 4\l  %58 = load i32, ptr %4, align 4\l  %59 = sext i32 %58 to i64\l  %60 = getelementptr inbounds [1001 x i32], ptr @histo, i64 0, i64 %59\l  %61 = load i32, ptr %60, align 4\l  %62 = add nsw i32 %61, 1\l  store i32 %62, ptr %60, align 4\l  %63 = load i32, ptr @noise_frm_cnt, align 4\l  %64 = icmp slt i32 %63, 5\l  br i1 %64, label %65, label %66\l|{<s0>T|<s1>F}}"];
+	Node0x600001ba81e0:s0 -> Node0x600001ba8230[tooltip="47 -> 65\nProbability 50.00%" ];
+	Node0x600001ba81e0:s1 -> Node0x600001ba8280[tooltip="47 -> 66\nProbability 50.00%" ];
+	Node0x600001ba8230 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{65:\l|  store i32 1, ptr %2, align 4\l  br label %69\l}"];
+	Node0x600001ba8230 -> Node0x600001ba82d0[tooltip="65 -> 69\nProbability 100.00%" ];
+	Node0x600001ba8280 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{66:\l|  %67 = load i32, ptr @noise_frames_discarded, align 4\l  %68 = add nsw i32 %67, 1\l  store i32 %68, ptr @noise_frames_discarded, align 4\l  store i32 0, ptr %2, align 4\l  br label %69\l}"];
+	Node0x600001ba8280 -> Node0x600001ba82d0[tooltip="66 -> 69\nProbability 100.00%" ];
+	Node0x600001ba82d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{69:\l|  %70 = load i32, ptr %2, align 4\l  ret i32 %70\l}"];
+}

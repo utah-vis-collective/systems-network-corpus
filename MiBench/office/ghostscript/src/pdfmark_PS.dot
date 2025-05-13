@@ -1,0 +1,44 @@
+digraph "CFG for 'pdfmark_PS' function" {
+	label="CFG for 'pdfmark_PS' function";
+
+	Node0x600000ff4a00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  %11 = alloca %struct.gs_param_string_s, align 8\l  %12 = alloca %struct.gs_param_string_s, align 8\l  %13 = alloca i32, align 4\l  %14 = alloca ptr, align 8\l  %15 = alloca i32, align 4\l  %16 = alloca i64, align 8\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store i32 %2, ptr %8, align 4\l  store ptr %3, ptr %9, align 8\l  %17 = load ptr, ptr %6, align 8\l  %18 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %17, i32 0, i32 26\l  %19 = load ptr, ptr %18, align 8\l  store ptr %19, ptr %10, align 8\l  %20 = load ptr, ptr %7, align 8\l  %21 = load i32, ptr %8, align 4\l  %22 = call i32 @pdfmark_find_key(ptr noundef @.str.48, ptr noundef %20, i32\l... noundef %21, ptr noundef %11)\l  %23 = icmp ne i32 %22, 0\l  br i1 %23, label %25, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4a00:s0 -> Node0x600000ff4aa0[tooltip="4 -> 25\nProbability 62.50%" ];
+	Node0x600000ff4a00:s1 -> Node0x600000ff4a50[tooltip="4 -> 24\nProbability 37.50%" ];
+	Node0x600000ff4a50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  store i32 -15, ptr %5, align 4\l  br label %97\l}"];
+	Node0x600000ff4a50 -> Node0x600000ff4f00[tooltip="24 -> 97\nProbability 100.00%" ];
+	Node0x600000ff4aa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %7, align 8\l  %27 = load i32, ptr %8, align 4\l  %28 = call i32 @pdfmark_find_key(ptr noundef @.str.49, ptr noundef %26, i32\l... noundef %27, ptr noundef %12)\l  %29 = getelementptr inbounds %struct.gs_param_string_s, ptr %12, i32 0, i32 0\l  %30 = load ptr, ptr %29, align 8\l  %31 = icmp eq ptr %30, null\l  br i1 %31, label %32, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4aa0:s0 -> Node0x600000ff4af0[tooltip="25 -> 32\nProbability 37.50%" ];
+	Node0x600000ff4aa0:s1 -> Node0x600000ff4c30[tooltip="25 -> 52\nProbability 62.50%" ];
+	Node0x600000ff4af0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{32:\l|  %33 = getelementptr inbounds %struct.gs_param_string_s, ptr %11, i32 0,\l... i32 1\l  %34 = load i32, ptr %33, align 8\l  %35 = icmp ule i32 %34, 100\l  br i1 %35, label %36, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4af0:s0 -> Node0x600000ff4b40[tooltip="32 -> 36\nProbability 50.00%" ];
+	Node0x600000ff4af0:s1 -> Node0x600000ff4c30[tooltip="32 -> 52\nProbability 50.00%" ];
+	Node0x600000ff4b40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %6, align 8\l  %38 = call i32 @pdf_open_contents(ptr noundef %37, i32 noundef 1)\l  store i32 %38, ptr %13, align 4\l  %39 = load i32, ptr %13, align 4\l  %40 = icmp slt i32 %39, 0\l  br i1 %40, label %41, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4b40:s0 -> Node0x600000ff4b90[tooltip="36 -> 41\nProbability 37.50%" ];
+	Node0x600000ff4b40:s1 -> Node0x600000ff4be0[tooltip="36 -> 43\nProbability 62.50%" ];
+	Node0x600000ff4b90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %13, align 4\l  store i32 %42, ptr %5, align 4\l  br label %97\l}"];
+	Node0x600000ff4b90 -> Node0x600000ff4f00[tooltip="41 -> 97\nProbability 100.00%" ];
+	Node0x600000ff4be0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %10, align 8\l  %45 = getelementptr inbounds %struct.gs_param_string_s, ptr %11, i32 0, i32 0\l  %46 = load ptr, ptr %45, align 8\l  %47 = getelementptr inbounds %struct.gs_param_string_s, ptr %11, i32 0, i32 1\l  %48 = load i32, ptr %47, align 8\l  %49 = call i32 @pwrite(ptr noundef %44, ptr noundef %46, i32 noundef %48)\l  %50 = load ptr, ptr %10, align 8\l  %51 = call i32 @pputs(ptr noundef %50, ptr noundef @.str.50)\l  br label %96\l}"];
+	Node0x600000ff4be0 -> Node0x600000ff4eb0[tooltip="43 -> 96\nProbability 100.00%" ];
+	Node0x600000ff4c30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{52:\l|  %53 = load ptr, ptr %6, align 8\l  %54 = call i32 @pdf_begin_resource(ptr noundef %53, i32 noundef 4, ptr\l... noundef %14)\l  store i32 %54, ptr %15, align 4\l  %55 = load i32, ptr %15, align 4\l  %56 = icmp slt i32 %55, 0\l  br i1 %56, label %57, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4c30:s0 -> Node0x600000ff4c80[tooltip="52 -> 57\nProbability 37.50%" ];
+	Node0x600000ff4c30:s1 -> Node0x600000ff4cd0[tooltip="52 -> 59\nProbability 62.50%" ];
+	Node0x600000ff4c80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{57:\l|  %58 = load i32, ptr %15, align 4\l  store i32 %58, ptr %5, align 4\l  br label %97\l}"];
+	Node0x600000ff4c80 -> Node0x600000ff4f00[tooltip="57 -> 97\nProbability 100.00%" ];
+	Node0x600000ff4cd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{59:\l|  %60 = load ptr, ptr %10, align 8\l  %61 = call i32 @pputs(ptr noundef %60, ptr noundef @.str.51)\l  %62 = getelementptr inbounds %struct.gs_param_string_s, ptr %12, i32 0, i32 0\l  %63 = load ptr, ptr %62, align 8\l  %64 = icmp ne ptr %63, null\l  br i1 %64, label %65, label %80\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4cd0:s0 -> Node0x600000ff4d20[tooltip="59 -> 65\nProbability 62.50%" ];
+	Node0x600000ff4cd0:s1 -> Node0x600000ff4d70[tooltip="59 -> 80\nProbability 37.50%" ];
+	Node0x600000ff4d20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{65:\l|  %66 = load ptr, ptr %6, align 8\l  %67 = call i64 @pdf_obj_ref(ptr noundef %66)\l  store i64 %67, ptr %16, align 8\l  %68 = load ptr, ptr %10, align 8\l  %69 = load i64, ptr %16, align 8\l  %70 = call ptr @pprintld1(ptr noundef %68, ptr noundef @.str.52, i64 noundef\l... %69)\l  %71 = load ptr, ptr %6, align 8\l  %72 = call i32 @pdfmark_write_ps(ptr noundef %71, ptr noundef %11)\l  %73 = load ptr, ptr %6, align 8\l  %74 = load i64, ptr %16, align 8\l  %75 = call i64 @pdf_open_obj(ptr noundef %73, i64 noundef %74)\l  %76 = load ptr, ptr %10, align 8\l  %77 = call i32 @pputs(ptr noundef %76, ptr noundef @.str.53)\l  %78 = load ptr, ptr %6, align 8\l  %79 = call i32 @pdfmark_write_ps(ptr noundef %78, ptr noundef %12)\l  br label %83\l}"];
+	Node0x600000ff4d20 -> Node0x600000ff4dc0[tooltip="65 -> 83\nProbability 100.00%" ];
+	Node0x600000ff4d70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{80:\l|  %81 = load ptr, ptr %6, align 8\l  %82 = call i32 @pdfmark_write_ps(ptr noundef %81, ptr noundef %11)\l  br label %83\l}"];
+	Node0x600000ff4d70 -> Node0x600000ff4dc0[tooltip="80 -> 83\nProbability 100.00%" ];
+	Node0x600000ff4dc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{83:\l|  %84 = load ptr, ptr %6, align 8\l  %85 = call i32 @pdf_open_contents(ptr noundef %84, i32 noundef 1)\l  store i32 %85, ptr %15, align 4\l  %86 = load i32, ptr %15, align 4\l  %87 = icmp slt i32 %86, 0\l  br i1 %87, label %88, label %90\l|{<s0>T|<s1>F}}"];
+	Node0x600000ff4dc0:s0 -> Node0x600000ff4e10[tooltip="83 -> 88\nProbability 37.50%" ];
+	Node0x600000ff4dc0:s1 -> Node0x600000ff4e60[tooltip="83 -> 90\nProbability 62.50%" ];
+	Node0x600000ff4e10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{88:\l|  %89 = load i32, ptr %15, align 4\l  store i32 %89, ptr %5, align 4\l  br label %97\l}"];
+	Node0x600000ff4e10 -> Node0x600000ff4f00[tooltip="88 -> 97\nProbability 100.00%" ];
+	Node0x600000ff4e60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{90:\l|  %91 = load ptr, ptr %10, align 8\l  %92 = load ptr, ptr %14, align 8\l  %93 = getelementptr inbounds %struct.pdf_resource_s, ptr %92, i32 0, i32 3\l  %94 = load i64, ptr %93, align 8\l  %95 = call ptr @pprintld1(ptr noundef %91, ptr noundef @.str.54, i64 noundef\l... %94)\l  br label %96\l}"];
+	Node0x600000ff4e60 -> Node0x600000ff4eb0[tooltip="90 -> 96\nProbability 100.00%" ];
+	Node0x600000ff4eb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{96:\l|  store i32 0, ptr %5, align 4\l  br label %97\l}"];
+	Node0x600000ff4eb0 -> Node0x600000ff4f00[tooltip="96 -> 97\nProbability 100.00%" ];
+	Node0x600000ff4f00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{97:\l|  %98 = load i32, ptr %5, align 4\l  ret i32 %98\l}"];
+}

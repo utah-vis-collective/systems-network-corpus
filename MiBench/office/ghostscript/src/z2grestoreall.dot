@@ -1,0 +1,23 @@
+digraph "CFG for 'z2grestoreall' function" {
+	label="CFG for 'z2grestoreall' function";
+
+	Node0x60000010f390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  br label %5\l}"];
+	Node0x60000010f390 -> Node0x60000010f3e0[tooltip="1 -> 5\nProbability 100.00%" ];
+	Node0x60000010f3e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr @igs, align 8\l  %7 = load ptr, ptr @igs, align 8\l  %8 = call ptr @gs_state_saved(ptr noundef %7)\l  %9 = call i32 @restore_page_device(ptr noundef %6, ptr noundef %8)\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %24, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x60000010f3e0:s0 -> Node0x60000010f520[tooltip="5 -> 24\nProbability 3.12%" ];
+	Node0x60000010f3e0:s1 -> Node0x60000010f430[tooltip="5 -> 11\nProbability 96.88%" ];
+	Node0x60000010f430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @igs, align 8\l  %13 = call ptr @gs_state_saved(ptr noundef %12)\l  %14 = call ptr @gs_state_saved(ptr noundef %13)\l  %15 = icmp ne ptr %14, null\l  %16 = xor i1 %15, true\l  %17 = zext i1 %16 to i32\l  store i32 %17, ptr %4, align 4\l  %18 = load ptr, ptr @igs, align 8\l  %19 = call i32 @gs_grestore(ptr noundef %18)\l  %20 = load i32, ptr %4, align 4\l  %21 = icmp ne i32 %20, 0\l  br i1 %21, label %22, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x60000010f430:s0 -> Node0x60000010f480[tooltip="11 -> 22\nProbability 3.12%" ];
+	Node0x60000010f430:s1 -> Node0x60000010f4d0[tooltip="11 -> 23\nProbability 96.88%" ];
+	Node0x60000010f480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  br label %27\l}"];
+	Node0x60000010f480 -> Node0x60000010f5c0[tooltip="22 -> 27\nProbability 100.00%" ];
+	Node0x60000010f4d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  br label %26\l}"];
+	Node0x60000010f4d0 -> Node0x60000010f570[tooltip="23 -> 26\nProbability 100.00%" ];
+	Node0x60000010f520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  %25 = call i32 @push_callout(ptr noundef @.str.21)\l  store i32 %25, ptr %2, align 4\l  br label %28\l}"];
+	Node0x60000010f520 -> Node0x60000010f610[tooltip="24 -> 28\nProbability 100.00%" ];
+	Node0x60000010f570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  br label %5\l}"];
+	Node0x60000010f570 -> Node0x60000010f3e0[tooltip="26 -> 5\nProbability 100.00%" ];
+	Node0x60000010f5c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  store i32 0, ptr %2, align 4\l  br label %28\l}"];
+	Node0x60000010f5c0 -> Node0x60000010f610[tooltip="27 -> 28\nProbability 100.00%" ];
+	Node0x60000010f610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %2, align 4\l  ret i32 %29\l}"];
+}

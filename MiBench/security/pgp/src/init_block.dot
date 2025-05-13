@@ -1,0 +1,32 @@
+digraph "CFG for 'init_block' function" {
+	label="CFG for 'init_block' function";
+
+	Node0x600001263480 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  store i32 0, ptr %1, align 4\l  br label %2\l}"];
+	Node0x600001263480 -> Node0x6000012634d0[tooltip="0 -> 2\nProbability 100.00%" ];
+	Node0x6000012634d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load i32, ptr %1, align 4\l  %4 = icmp slt i32 %3, 286\l  br i1 %4, label %5, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000012634d0:s0 -> Node0x600001263520[tooltip="2 -> 5\nProbability 96.88%" ];
+	Node0x6000012634d0:s1 -> Node0x6000012635c0[tooltip="2 -> 13\nProbability 3.12%" ];
+	Node0x600001263520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %1, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds [573 x %struct.ct_data], ptr @dyn_ltree, i64 0,\l... i64 %7\l  %9 = getelementptr inbounds %struct.ct_data, ptr %8, i32 0, i32 0\l  store i16 0, ptr %9, align 2\l  br label %10\l}"];
+	Node0x600001263520 -> Node0x600001263570[tooltip="5 -> 10\nProbability 100.00%" ];
+	Node0x600001263570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %1, align 4\l  %12 = add nsw i32 %11, 1\l  store i32 %12, ptr %1, align 4\l  br label %2\l}"];
+	Node0x600001263570 -> Node0x6000012634d0[tooltip="10 -> 2\nProbability 100.00%" ];
+	Node0x6000012635c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{13:\l|  store i32 0, ptr %1, align 4\l  br label %14\l}"];
+	Node0x6000012635c0 -> Node0x600001263610[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x600001263610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %1, align 4\l  %16 = icmp slt i32 %15, 30\l  br i1 %16, label %17, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600001263610:s0 -> Node0x600001263660[tooltip="14 -> 17\nProbability 96.88%" ];
+	Node0x600001263610:s1 -> Node0x600001263700[tooltip="14 -> 25\nProbability 3.12%" ];
+	Node0x600001263660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %1, align 4\l  %19 = sext i32 %18 to i64\l  %20 = getelementptr inbounds [61 x %struct.ct_data], ptr @dyn_dtree, i64 0,\l... i64 %19\l  %21 = getelementptr inbounds %struct.ct_data, ptr %20, i32 0, i32 0\l  store i16 0, ptr %21, align 2\l  br label %22\l}"];
+	Node0x600001263660 -> Node0x6000012636b0[tooltip="17 -> 22\nProbability 100.00%" ];
+	Node0x6000012636b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %1, align 4\l  %24 = add nsw i32 %23, 1\l  store i32 %24, ptr %1, align 4\l  br label %14\l}"];
+	Node0x6000012636b0 -> Node0x600001263610[tooltip="22 -> 14\nProbability 100.00%" ];
+	Node0x600001263700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  store i32 0, ptr %1, align 4\l  br label %26\l}"];
+	Node0x600001263700 -> Node0x600001263750[tooltip="25 -> 26\nProbability 100.00%" ];
+	Node0x600001263750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %1, align 4\l  %28 = icmp slt i32 %27, 19\l  br i1 %28, label %29, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x600001263750:s0 -> Node0x6000012637a0[tooltip="26 -> 29\nProbability 96.88%" ];
+	Node0x600001263750:s1 -> Node0x600001263840[tooltip="26 -> 37\nProbability 3.12%" ];
+	Node0x6000012637a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %1, align 4\l  %31 = sext i32 %30 to i64\l  %32 = getelementptr inbounds [39 x %struct.ct_data], ptr @bl_tree, i64 0,\l... i64 %31\l  %33 = getelementptr inbounds %struct.ct_data, ptr %32, i32 0, i32 0\l  store i16 0, ptr %33, align 2\l  br label %34\l}"];
+	Node0x6000012637a0 -> Node0x6000012637f0[tooltip="29 -> 34\nProbability 100.00%" ];
+	Node0x6000012637f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %1, align 4\l  %36 = add nsw i32 %35, 1\l  store i32 %36, ptr %1, align 4\l  br label %26\l}"];
+	Node0x6000012637f0 -> Node0x600001263750[tooltip="34 -> 26\nProbability 100.00%" ];
+	Node0x600001263840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{37:\l|  store i16 1, ptr getelementptr inbounds ([573 x %struct.ct_data], ptr\l... @dyn_ltree, i64 0, i64 256), align 2\l  store i64 0, ptr @static_len, align 8\l  store i64 0, ptr @opt_len, align 8\l  store i32 0, ptr @last_flags, align 4\l  store i32 0, ptr @last_dist, align 4\l  store i32 0, ptr @last_lit, align 4\l  store i8 0, ptr @flags, align 1\l  store i8 1, ptr @flag_bit, align 1\l  ret void\l}"];
+}

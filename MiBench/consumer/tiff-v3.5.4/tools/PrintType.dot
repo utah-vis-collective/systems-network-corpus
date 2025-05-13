@@ -1,0 +1,12 @@
+digraph "CFG for 'PrintType' function" {
+	label="CFG for 'PrintType' function";
+
+	Node0x6000001bc5f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i16, align 2\l  store ptr %0, ptr %3, align 8\l  store i16 %1, ptr %4, align 2\l  %5 = load i16, ptr %4, align 2\l  %6 = zext i16 %5 to i64\l  %7 = icmp ult i64 %6, 13\l  br i1 %7, label %8, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000001bc5f0:s0 -> Node0x6000001bc640[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x6000001bc5f0:s1 -> Node0x6000001bc690[tooltip="2 -> 17\nProbability 50.00%" ];
+	Node0x6000001bc640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = load i16, ptr %4, align 2\l  %11 = zext i16 %10 to i64\l  %12 = getelementptr inbounds [13 x ptr], ptr @PrintType.typenames, i64 0,\l... i64 %11\l  %13 = load ptr, ptr %12, align 8\l  %14 = load i16, ptr %4, align 2\l  %15 = zext i16 %14 to i32\l  %16 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %9, ptr noundef\l... @.str.29, ptr noundef %13, i32 noundef %15) #7\l  br label %24\l}"];
+	Node0x6000001bc640 -> Node0x6000001bc6e0[tooltip="8 -> 24\nProbability 100.00%" ];
+	Node0x6000001bc690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = load i16, ptr %4, align 2\l  %20 = zext i16 %19 to i32\l  %21 = load i16, ptr %4, align 2\l  %22 = zext i16 %21 to i32\l  %23 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %18, ptr noundef\l... @.str.30, i32 noundef %20, i32 noundef %22) #7\l  br label %24\l}"];
+	Node0x6000001bc690 -> Node0x6000001bc6e0[tooltip="17 -> 24\nProbability 100.00%" ];
+	Node0x6000001bc6e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  ret void\l}"];
+}

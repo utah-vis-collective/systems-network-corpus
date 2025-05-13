@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__fits_in_ssoB8ne190107Em' function" {
+	label="CFG for '_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE13__fits_in_ssoB8ne190107Em' function";
+
+	Node0x60000093f430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  store i64 %0, ptr %2, align 8\l  %3 = load i64, ptr %2, align 8\l  %4 = icmp ult i64 %3, 23\l  ret i1 %4\l}"];
+}

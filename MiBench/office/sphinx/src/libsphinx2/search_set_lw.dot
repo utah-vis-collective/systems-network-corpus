@@ -1,0 +1,5 @@
+digraph "CFG for 'search_set_lw' function" {
+	label="CFG for 'search_set_lw' function";
+
+	Node0x600002005770 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca double, align 8\l  %5 = alloca double, align 8\l  %6 = alloca double, align 8\l  store double %0, ptr %4, align 8\l  store double %1, ptr %5, align 8\l  store double %2, ptr %6, align 8\l  %7 = load double, ptr %4, align 8\l  store double %7, ptr @fwdtree_lw, align 8\l  %8 = load double, ptr %5, align 8\l  store double %8, ptr @fwdflat_lw, align 8\l  %9 = load double, ptr %6, align 8\l  store double %9, ptr @bestpath_lw, align 8\l  %10 = load double, ptr @fwdtree_lw, align 8\l  %11 = load double, ptr @fwdflat_lw, align 8\l  %12 = load double, ptr @bestpath_lw, align 8\l  call void (ptr, ...) @log_info(ptr noundef @.str.55, ptr noundef @.str.6,\l... i32 noundef 2764, double noundef %10, double noundef %11, double noundef %12)\l  ret void\l}"];
+}

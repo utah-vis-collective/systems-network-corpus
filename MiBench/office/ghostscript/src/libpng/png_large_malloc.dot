@@ -1,0 +1,20 @@
+digraph "CFG for 'png_large_malloc' function" {
+	label="CFG for 'png_large_malloc' function";
+
+	Node0x600001a524e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001a524e0:s0 -> Node0x600001a52530[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x600001a524e0:s1 -> Node0x600001a52580[tooltip="2 -> 12\nProbability 37.50%" ];
+	Node0x600001a52530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load i64, ptr %5, align 8\l  %11 = icmp ne i64 %10, 0\l  br i1 %11, label %13, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52530:s0 -> Node0x600001a525d0[tooltip="9 -> 13\nProbability 62.50%" ];
+	Node0x600001a52530:s1 -> Node0x600001a52580[tooltip="9 -> 12\nProbability 37.50%" ];
+	Node0x600001a52580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  store ptr null, ptr %3, align 8\l  br label %22\l}"];
+	Node0x600001a52580 -> Node0x600001a526c0[tooltip="12 -> 22\nProbability 100.00%" ];
+	Node0x600001a525d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load i64, ptr %5, align 8\l  %15 = call ptr @malloc(i64 noundef %14) #6\l  store ptr %15, ptr %6, align 8\l  %16 = load ptr, ptr %6, align 8\l  %17 = icmp eq ptr %16, null\l  br i1 %17, label %18, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001a525d0:s0 -> Node0x600001a52620[tooltip="13 -> 18\nProbability 37.50%" ];
+	Node0x600001a525d0:s1 -> Node0x600001a52670[tooltip="13 -> 20\nProbability 62.50%" ];
+	Node0x600001a52620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  call void @png_error(ptr noundef %19, ptr noundef @.str)\l  br label %20\l}"];
+	Node0x600001a52620 -> Node0x600001a52670[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x600001a52670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %6, align 8\l  store ptr %21, ptr %3, align 8\l  br label %22\l}"];
+	Node0x600001a52670 -> Node0x600001a526c0[tooltip="20 -> 22\nProbability 100.00%" ];
+	Node0x600001a526c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  ret ptr %23\l}"];
+}

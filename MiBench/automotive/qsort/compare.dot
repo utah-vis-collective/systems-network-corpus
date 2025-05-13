@@ -1,0 +1,12 @@
+digraph "CFG for 'compare' function" {
+	label="CFG for 'compare' function";
+
+	Node0x6000010f20d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca double, align 8\l  %6 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.my3DVertexStruct, ptr %7, i32 0, i32 3\l  %9 = load double, ptr %8, align 8\l  store double %9, ptr %5, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.my3DVertexStruct, ptr %10, i32 0, i32 3\l  %12 = load double, ptr %11, align 8\l  store double %12, ptr %6, align 8\l  %13 = load double, ptr %5, align 8\l  %14 = load double, ptr %6, align 8\l  %15 = fcmp ogt double %13, %14\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000010f20d0:s0 -> Node0x6000010f2120[tooltip="2 -> 16\nProbability 50.00%" ];
+	Node0x6000010f20d0:s1 -> Node0x6000010f2170[tooltip="2 -> 17\nProbability 50.00%" ];
+	Node0x6000010f2120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  br label %23\l}"];
+	Node0x6000010f2120 -> Node0x6000010f21c0[tooltip="16 -> 23\nProbability 100.00%" ];
+	Node0x6000010f2170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load double, ptr %5, align 8\l  %19 = load double, ptr %6, align 8\l  %20 = fcmp oeq double %18, %19\l  %21 = zext i1 %20 to i64\l  %22 = select i1 %20, i32 0, i32 -1\l  br label %23\l}"];
+	Node0x6000010f2170 -> Node0x6000010f21c0[tooltip="17 -> 23\nProbability 100.00%" ];
+	Node0x6000010f21c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = phi i32 [ 1, %16 ], [ %22, %17 ]\l  ret i32 %24\l}"];
+}

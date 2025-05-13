@@ -1,0 +1,22 @@
+digraph "CFG for 'restore_check_operand' function" {
+	label="CFG for 'restore_check_operand' function";
+
+	Node0x600000ca2b20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i64, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.ref_s, ptr %9, i32 0, i32 0\l  %11 = getelementptr inbounds %struct.tas_s, ptr %10, i32 0, i32 0\l  %12 = getelementptr inbounds i8, ptr %11, i64 1\l  %13 = load i8, ptr %12, align 1\l  %14 = zext i8 %13 to i32\l  %15 = icmp eq i32 %14, 17\l  br i1 %15, label %19, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000ca2b20:s0 -> Node0x600000ca2bc0[tooltip="2 -> 19\nProbability 50.00%" ];
+	Node0x600000ca2b20:s1 -> Node0x600000ca2b70[tooltip="2 -> 16\nProbability 50.00%" ];
+	Node0x600000ca2b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = call i32 @check_type_failed(ptr noundef %17)\l  store i32 %18, ptr %3, align 4\l  br label %38\l}"];
+	Node0x600000ca2b70 -> Node0x600000ca2d50[tooltip="16 -> 38\nProbability 100.00%" ];
+	Node0x600000ca2bc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds %struct.ref_s, ptr %20, i32 0, i32 1\l  %22 = load ptr, ptr %21, align 8\l  store ptr %22, ptr %6, align 8\l  %23 = load ptr, ptr %6, align 8\l  %24 = icmp eq ptr %23, null\l  br i1 %24, label %25, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000ca2bc0:s0 -> Node0x600000ca2c10[tooltip="19 -> 25\nProbability 37.50%" ];
+	Node0x600000ca2bc0:s1 -> Node0x600000ca2c60[tooltip="19 -> 26\nProbability 62.50%" ];
+	Node0x600000ca2c10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  store i32 -11, ptr %3, align 4\l  br label %38\l}"];
+	Node0x600000ca2c10 -> Node0x600000ca2d50[tooltip="25 -> 38\nProbability 100.00%" ];
+	Node0x600000ca2c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %4, align 8\l  %28 = getelementptr inbounds %struct.ref_s, ptr %27, i32 0, i32 1\l  %29 = load i64, ptr %28, align 8\l  store i64 %29, ptr %7, align 8\l  %30 = load i64, ptr %7, align 8\l  %31 = call ptr @alloc_find_save(ptr noundef @gs_imemory, i64 noundef %30)\l  store ptr %31, ptr %8, align 8\l  %32 = load ptr, ptr %8, align 8\l  %33 = icmp eq ptr %32, null\l  br i1 %33, label %34, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x600000ca2c60:s0 -> Node0x600000ca2cb0[tooltip="26 -> 34\nProbability 37.50%" ];
+	Node0x600000ca2c60:s1 -> Node0x600000ca2d00[tooltip="26 -> 35\nProbability 62.50%" ];
+	Node0x600000ca2cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{34:\l|  store i32 -11, ptr %3, align 4\l  br label %38\l}"];
+	Node0x600000ca2cb0 -> Node0x600000ca2d50[tooltip="34 -> 38\nProbability 100.00%" ];
+	Node0x600000ca2d00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %8, align 8\l  %37 = load ptr, ptr %5, align 8\l  store ptr %36, ptr %37, align 8\l  store i32 0, ptr %3, align 4\l  br label %38\l}"];
+	Node0x600000ca2d00 -> Node0x600000ca2d50[tooltip="35 -> 38\nProbability 100.00%" ];
+	Node0x600000ca2d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %3, align 4\l  ret i32 %39\l}"];
+}

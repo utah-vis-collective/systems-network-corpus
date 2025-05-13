@@ -1,0 +1,28 @@
+digraph "CFG for 'TIFFClose' function" {
+	label="CFG for 'TIFFClose' function";
+
+	Node0x600000f25ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.tiff, ptr %3, i32 0, i32 2\l  %5 = load i32, ptr %4, align 4\l  %6 = icmp ne i32 %5, 0\l  br i1 %6, label %7, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600000f25ef0:s0 -> Node0x600000f25f40[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x600000f25ef0:s1 -> Node0x600000f25f90[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600000f25f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = call i32 @TIFFFlush(ptr noundef %8)\l  br label %10\l}"];
+	Node0x600000f25f40 -> Node0x600000f25f90[tooltip="7 -> 10\nProbability 100.00%" ];
+	Node0x600000f25f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds %struct.tiff, ptr %11, i32 0, i32 34\l  %13 = load ptr, ptr %12, align 8\l  %14 = load ptr, ptr %2, align 8\l  call void %13(ptr noundef %14)\l  %15 = load ptr, ptr %2, align 8\l  call void @TIFFFreeDirectory(ptr noundef %15)\l  %16 = load ptr, ptr %2, align 8\l  %17 = getelementptr inbounds %struct.tiff, ptr %16, i32 0, i32 40\l  %18 = load ptr, ptr %17, align 8\l  %19 = icmp ne ptr %18, null\l  br i1 %19, label %20, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600000f25f90:s0 -> Node0x600000f25fe0[tooltip="10 -> 20\nProbability 62.50%" ];
+	Node0x600000f25f90:s1 -> Node0x600000f26080[tooltip="10 -> 30\nProbability 37.50%" ];
+	Node0x600000f25fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %2, align 8\l  %22 = getelementptr inbounds %struct.tiff, ptr %21, i32 0, i32 3\l  %23 = load i64, ptr %22, align 8\l  %24 = and i64 %23, 512\l  %25 = icmp ne i64 %24, 0\l  br i1 %25, label %26, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600000f25fe0:s0 -> Node0x600000f26030[tooltip="20 -> 26\nProbability 50.00%" ];
+	Node0x600000f25fe0:s1 -> Node0x600000f26080[tooltip="20 -> 30\nProbability 50.00%" ];
+	Node0x600000f26030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %2, align 8\l  %28 = getelementptr inbounds %struct.tiff, ptr %27, i32 0, i32 40\l  %29 = load ptr, ptr %28, align 8\l  call void @_TIFFfree(ptr noundef %29)\l  br label %30\l}"];
+	Node0x600000f26030 -> Node0x600000f26080[tooltip="26 -> 30\nProbability 100.00%" ];
+	Node0x600000f26080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %2, align 8\l  %32 = getelementptr inbounds %struct.tiff, ptr %31, i32 0, i32 3\l  %33 = load i64, ptr %32, align 8\l  %34 = and i64 %33, 2048\l  %35 = icmp ne i64 %34, 0\l  br i1 %35, label %36, label %49\l|{<s0>T|<s1>F}}"];
+	Node0x600000f26080:s0 -> Node0x600000f260d0[tooltip="30 -> 36\nProbability 50.00%" ];
+	Node0x600000f26080:s1 -> Node0x600000f26120[tooltip="30 -> 49\nProbability 50.00%" ];
+	Node0x600000f260d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %2, align 8\l  %38 = getelementptr inbounds %struct.tiff, ptr %37, i32 0, i32 47\l  %39 = load ptr, ptr %38, align 8\l  %40 = load ptr, ptr %2, align 8\l  %41 = getelementptr inbounds %struct.tiff, ptr %40, i32 0, i32 48\l  %42 = load ptr, ptr %41, align 8\l  %43 = load ptr, ptr %2, align 8\l  %44 = getelementptr inbounds %struct.tiff, ptr %43, i32 0, i32 44\l  %45 = load ptr, ptr %44, align 8\l  %46 = load ptr, ptr %2, align 8\l  %47 = getelementptr inbounds %struct.tiff, ptr %46, i32 0, i32 45\l  %48 = load i64, ptr %47, align 8\l  call void %39(ptr noundef %42, ptr noundef %45, i64 noundef %48)\l  br label %49\l}"];
+	Node0x600000f260d0 -> Node0x600000f26120[tooltip="36 -> 49\nProbability 100.00%" ];
+	Node0x600000f26120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{49:\l|  %50 = load ptr, ptr %2, align 8\l  %51 = getelementptr inbounds %struct.tiff, ptr %50, i32 0, i32 52\l  %52 = load ptr, ptr %51, align 8\l  %53 = load ptr, ptr %2, align 8\l  %54 = getelementptr inbounds %struct.tiff, ptr %53, i32 0, i32 48\l  %55 = load ptr, ptr %54, align 8\l  %56 = call i32 %52(ptr noundef %55)\l  %57 = load ptr, ptr %2, align 8\l  %58 = getelementptr inbounds %struct.tiff, ptr %57, i32 0, i32 55\l  %59 = load ptr, ptr %58, align 8\l  %60 = icmp ne ptr %59, null\l  br i1 %60, label %61, label %65\l|{<s0>T|<s1>F}}"];
+	Node0x600000f26120:s0 -> Node0x600000f26170[tooltip="49 -> 61\nProbability 62.50%" ];
+	Node0x600000f26120:s1 -> Node0x600000f261c0[tooltip="49 -> 65\nProbability 37.50%" ];
+	Node0x600000f26170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{61:\l|  %62 = load ptr, ptr %2, align 8\l  %63 = getelementptr inbounds %struct.tiff, ptr %62, i32 0, i32 55\l  %64 = load ptr, ptr %63, align 8\l  call void @_TIFFfree(ptr noundef %64)\l  br label %65\l}"];
+	Node0x600000f26170 -> Node0x600000f261c0[tooltip="61 -> 65\nProbability 100.00%" ];
+	Node0x600000f261c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{65:\l|  %66 = load ptr, ptr %2, align 8\l  call void @_TIFFfree(ptr noundef %66)\l  ret void\l}"];
+}

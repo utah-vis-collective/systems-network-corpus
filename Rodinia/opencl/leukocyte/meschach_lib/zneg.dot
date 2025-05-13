@@ -1,0 +1,5 @@
+digraph "CFG for 'zneg' function" {
+	label="CFG for 'zneg' function";
+
+	Node0x600000bd6260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca %struct.complex, align 8\l  %3 = alloca %struct.complex, align 8\l  store [2 x double] %0, ptr %3, align 8\l  %4 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 0\l  %5 = load double, ptr %4, align 8\l  %6 = fneg double %5\l  %7 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 0\l  store double %6, ptr %7, align 8\l  %8 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 1\l  %9 = load double, ptr %8, align 8\l  %10 = fneg double %9\l  %11 = getelementptr inbounds %struct.complex, ptr %3, i32 0, i32 1\l  store double %10, ptr %11, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %2, ptr align 8 %3, i64 16, i1\l... false)\l  %12 = load %struct.complex, ptr %2, align 8\l  ret %struct.complex %12\l}"];
+}

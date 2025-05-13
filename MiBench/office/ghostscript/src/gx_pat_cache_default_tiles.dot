@@ -1,0 +1,5 @@
+digraph "CFG for 'gx_pat_cache_default_tiles' function" {
+	label="CFG for 'gx_pat_cache_default_tiles' function";
+
+	Node0x600002d26260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 5\l}"];
+}

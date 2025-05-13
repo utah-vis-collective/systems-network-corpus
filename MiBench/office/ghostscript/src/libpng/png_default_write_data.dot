@@ -1,0 +1,10 @@
+digraph "CFG for 'png_default_write_data' function" {
+	label="CFG for 'png_default_write_data' function";
+
+	Node0x60000160e440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = load i64, ptr %6, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.png_struct_def, ptr %10, i32 0, i32 6\l  %12 = load ptr, ptr %11, align 8\l  %13 = call i64 @\"\\01_fwrite\"(ptr noundef %8, i64 noundef 1, i64 noundef %9,\l... ptr noundef %12)\l  store i64 %13, ptr %7, align 8\l  %14 = load i64, ptr %7, align 8\l  %15 = load i64, ptr %6, align 8\l  %16 = icmp ne i64 %14, %15\l  br i1 %16, label %17, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000160e440:s0 -> Node0x60000160e490[tooltip="3 -> 17\nProbability 50.00%" ];
+	Node0x60000160e440:s1 -> Node0x60000160e4e0[tooltip="3 -> 19\nProbability 50.00%" ];
+	Node0x60000160e490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %4, align 8\l  call void @png_error(ptr noundef %18, ptr noundef @.str.1)\l  br label %19\l}"];
+	Node0x60000160e490 -> Node0x60000160e4e0[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x60000160e4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  ret void\l}"];
+}

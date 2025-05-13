@@ -1,0 +1,19 @@
+digraph "CFG for 'bit_shifter' function" {
+	label="CFG for 'bit_shifter' function";
+
+	Node0x600001d72440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store i64 %0, ptr %2, align 8\l  store i32 0, ptr %4, align 4\l  store i32 0, ptr %3, align 4\l  br label %5\l}"];
+	Node0x600001d72440 -> Node0x600001d72490[tooltip="1 -> 5\nProbability 100.00%" ];
+	Node0x600001d72490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i64, ptr %2, align 8\l  %7 = icmp ne i64 %6, 0\l  br i1 %7, label %8, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001d72490:s0 -> Node0x600001d724e0[tooltip="5 -> 8\nProbability 62.50%" ];
+	Node0x600001d72490:s1 -> Node0x600001d72530[tooltip="5 -> 12\nProbability 37.50%" ];
+	Node0x600001d724e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %3, align 4\l  %10 = sext i32 %9 to i64\l  %11 = icmp ult i64 %10, 64\l  br label %12\l}"];
+	Node0x600001d724e0 -> Node0x600001d72530[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x600001d72530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = phi i1 [ false, %5 ], [ %11, %8 ]\l  br i1 %13, label %14, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600001d72530:s0 -> Node0x600001d72580[tooltip="12 -> 14\nProbability 96.88%" ];
+	Node0x600001d72530:s1 -> Node0x600001d72620[tooltip="12 -> 25\nProbability 3.12%" ];
+	Node0x600001d72580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i64, ptr %2, align 8\l  %16 = and i64 %15, 1\l  %17 = trunc i64 %16 to i32\l  %18 = load i32, ptr %4, align 4\l  %19 = add nsw i32 %18, %17\l  store i32 %19, ptr %4, align 4\l  br label %20\l}"];
+	Node0x600001d72580 -> Node0x600001d725d0[tooltip="14 -> 20\nProbability 100.00%" ];
+	Node0x600001d725d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  %22 = add nsw i32 %21, 1\l  store i32 %22, ptr %3, align 4\l  %23 = load i64, ptr %2, align 8\l  %24 = ashr i64 %23, 1\l  store i64 %24, ptr %2, align 8\l  br label %5, !llvm.loop !6\l}"];
+	Node0x600001d725d0 -> Node0x600001d72490[tooltip="20 -> 5\nProbability 100.00%" ];
+	Node0x600001d72620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  %26 = load i32, ptr %4, align 4\l  ret i32 %26\l}"];
+}

@@ -1,0 +1,17 @@
+digraph "CFG for 'iodev_os_fopen' function" {
+	label="CFG for 'iodev_os_fopen' function";
+
+	Node0x60000199e3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  %13 = alloca i32, align 4\l  store ptr %0, ptr %8, align 8\l  store ptr %1, ptr %9, align 8\l  store ptr %2, ptr %10, align 8\l  store ptr %3, ptr %11, align 8\l  store ptr %4, ptr %12, align 8\l  store i32 %5, ptr %13, align 4\l  %14 = call ptr @__error()\l  store i32 0, ptr %14, align 4\l  %15 = load ptr, ptr %9, align 8\l  %16 = load ptr, ptr %10, align 8\l  %17 = call ptr @gp_fopen(ptr noundef %15, ptr noundef %16)\l  %18 = load ptr, ptr %11, align 8\l  store ptr %17, ptr %18, align 8\l  %19 = load ptr, ptr %11, align 8\l  %20 = load ptr, ptr %19, align 8\l  %21 = icmp eq ptr %20, null\l  br i1 %21, label %22, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000199e3a0:s0 -> Node0x60000199e3f0[tooltip="6 -> 22\nProbability 37.50%" ];
+	Node0x60000199e3a0:s1 -> Node0x60000199e440[tooltip="6 -> 26\nProbability 62.50%" ];
+	Node0x60000199e3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{22:\l|  %23 = call ptr @__error()\l  %24 = load i32, ptr %23, align 4\l  %25 = call i32 @gs_fopen_errno_to_code(i32 noundef %24)\l  store i32 %25, ptr %7, align 4\l  br label %36\l}"];
+	Node0x60000199e3f0 -> Node0x60000199e530[tooltip="22 -> 36\nProbability 100.00%" ];
+	Node0x60000199e440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %12, align 8\l  %28 = icmp ne ptr %27, null\l  br i1 %28, label %29, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x60000199e440:s0 -> Node0x60000199e490[tooltip="26 -> 29\nProbability 62.50%" ];
+	Node0x60000199e440:s1 -> Node0x60000199e4e0[tooltip="26 -> 35\nProbability 37.50%" ];
+	Node0x60000199e490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %12, align 8\l  %31 = load ptr, ptr %9, align 8\l  %32 = load ptr, ptr %12, align 8\l  %33 = call i64 @llvm.objectsize.i64.p0(ptr %32, i1 false, i1 true, i1 false)\l  %34 = call ptr @__strcpy_chk(ptr noundef %30, ptr noundef %31, i64 noundef\l... %33) #4\l  br label %35\l}"];
+	Node0x60000199e490 -> Node0x60000199e4e0[tooltip="29 -> 35\nProbability 100.00%" ];
+	Node0x60000199e4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{35:\l|  store i32 0, ptr %7, align 4\l  br label %36\l}"];
+	Node0x60000199e4e0 -> Node0x60000199e530[tooltip="35 -> 36\nProbability 100.00%" ];
+	Node0x60000199e530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %7, align 4\l  ret i32 %37\l}"];
+}

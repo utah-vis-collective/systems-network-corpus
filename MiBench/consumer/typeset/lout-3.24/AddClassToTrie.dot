@@ -1,0 +1,21 @@
+digraph "CFG for 'AddClassToTrie' function" {
+	label="CFG for 'AddClassToTrie' function";
+
+	Node0x60000030e6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %5, align 4\l  br label %6\l}"];
+	Node0x60000030e6c0 -> Node0x60000030e710[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x60000030e710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %3, align 8\l  %8 = load i32, ptr %5, align 4\l  %9 = sext i32 %8 to i64\l  %10 = getelementptr inbounds i8, ptr %7, i64 %9\l  %11 = load i8, ptr %10, align 1\l  %12 = zext i8 %11 to i32\l  %13 = icmp ne i32 %12, 0\l  br i1 %13, label %14, label %54\l|{<s0>T|<s1>F}}"];
+	Node0x60000030e710:s0 -> Node0x60000030e760[tooltip="6 -> 14\nProbability 96.88%" ];
+	Node0x60000030e710:s1 -> Node0x60000030e8f0[tooltip="6 -> 54\nProbability 3.12%" ];
+	Node0x60000030e760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %4, align 8\l  %16 = getelementptr inbounds %struct.trie_rec, ptr %15, i32 0, i32 2\l  %17 = load ptr, ptr %3, align 8\l  %18 = load i32, ptr %5, align 4\l  %19 = sext i32 %18 to i64\l  %20 = getelementptr inbounds i8, ptr %17, i64 %19\l  %21 = load i8, ptr %20, align 1\l  %22 = zext i8 %21 to i64\l  %23 = getelementptr inbounds [256 x i8], ptr %16, i64 0, i64 %22\l  %24 = load i8, ptr %23, align 1\l  %25 = zext i8 %24 to i32\l  %26 = icmp eq i32 %25, 0\l  br i1 %26, label %27, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x60000030e760:s0 -> Node0x60000030e7b0[tooltip="14 -> 27\nProbability 37.50%" ];
+	Node0x60000030e760:s1 -> Node0x60000030e800[tooltip="14 -> 41\nProbability 62.50%" ];
+	Node0x60000030e7b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %4, align 8\l  %29 = getelementptr inbounds %struct.trie_rec, ptr %28, i32 0, i32 1\l  %30 = load i32, ptr %29, align 4\l  %31 = trunc i32 %30 to i8\l  %32 = load ptr, ptr %4, align 8\l  %33 = getelementptr inbounds %struct.trie_rec, ptr %32, i32 0, i32 2\l  %34 = load ptr, ptr %3, align 8\l  %35 = load i32, ptr %5, align 4\l  %36 = sext i32 %35 to i64\l  %37 = getelementptr inbounds i8, ptr %34, i64 %36\l  %38 = load i8, ptr %37, align 1\l  %39 = zext i8 %38 to i64\l  %40 = getelementptr inbounds [256 x i8], ptr %33, i64 0, i64 %39\l  store i8 %31, ptr %40, align 1\l  br label %50\l}"];
+	Node0x60000030e7b0 -> Node0x60000030e850[tooltip="27 -> 50\nProbability 100.00%" ];
+	Node0x60000030e800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr @no_fpos, align 8\l  %43 = load ptr, ptr %3, align 8\l  %44 = load i32, ptr %5, align 4\l  %45 = sext i32 %44 to i64\l  %46 = getelementptr inbounds i8, ptr %43, i64 %45\l  %47 = load i8, ptr %46, align 1\l  %48 = zext i8 %47 to i32\l  %49 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 36, i32\l... noundef 6, ptr noundef @.str.162, i32 noundef 0, ptr noundef %42, i32 noundef\l... %48)\l  br label %50\l}"];
+	Node0x60000030e800 -> Node0x60000030e850[tooltip="41 -> 50\nProbability 100.00%" ];
+	Node0x60000030e850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{50:\l|  br label %51\l}"];
+	Node0x60000030e850 -> Node0x60000030e8a0[tooltip="50 -> 51\nProbability 100.00%" ];
+	Node0x60000030e8a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{51:\l|  %52 = load i32, ptr %5, align 4\l  %53 = add nsw i32 %52, 1\l  store i32 %53, ptr %5, align 4\l  br label %6\l}"];
+	Node0x60000030e8a0 -> Node0x60000030e710[tooltip="51 -> 6\nProbability 100.00%" ];
+	Node0x60000030e8f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{54:\l|  %55 = load ptr, ptr %4, align 8\l  %56 = getelementptr inbounds %struct.trie_rec, ptr %55, i32 0, i32 1\l  %57 = load i32, ptr %56, align 4\l  %58 = add nsw i32 %57, 1\l  store i32 %58, ptr %56, align 4\l  ret void\l}"];
+}

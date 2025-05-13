@@ -1,0 +1,14 @@
+digraph "CFG for 'InitAry' function" {
+	label="CFG for 'InitAry' function";
+
+	Node0x600002e328a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  store i32 0, ptr %5, align 4\l  br label %6\l}"];
+	Node0x600002e328a0 -> Node0x600002e32f30[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x600002e32f30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %5, align 4\l  %8 = load i32, ptr %4, align 4\l  %9 = icmp slt i32 %7, %8\l  br i1 %9, label %10, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002e32f30:s0 -> Node0x600002e32f80[tooltip="6 -> 10\nProbability 96.88%" ];
+	Node0x600002e32f30:s1 -> Node0x600002e33020[tooltip="6 -> 20\nProbability 3.12%" ];
+	Node0x600002e32f80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @fp, align 8\l  %12 = load ptr, ptr %3, align 8\l  %13 = load i32, ptr %5, align 4\l  %14 = sext i32 %13 to i64\l  %15 = getelementptr inbounds float, ptr %12, i64 %14\l  %16 = call i32 (ptr, ptr, ...) @fscanf(ptr noundef %11, ptr noundef\l... @.str.12, ptr noundef %15)\l  br label %17\l}"];
+	Node0x600002e32f80 -> Node0x600002e32fd0[tooltip="10 -> 17\nProbability 100.00%" ];
+	Node0x600002e32fd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %5, align 4\l  %19 = add nsw i32 %18, 1\l  store i32 %19, ptr %5, align 4\l  br label %6\l}"];
+	Node0x600002e32fd0 -> Node0x600002e32f30[tooltip="17 -> 6\nProbability 100.00%" ];
+	Node0x600002e33020 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

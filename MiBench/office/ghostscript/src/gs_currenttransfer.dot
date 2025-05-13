@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_currenttransfer' function" {
+	label="CFG for 'gs_currenttransfer' function";
+
+	Node0x60000256ee90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.gs_state_s, ptr %3, i32 0, i32 17\l  %5 = getelementptr inbounds %struct.gx_transfer_colored_s, ptr %4, i32 0,\l... i32 3\l  %6 = load ptr, ptr %5, align 8\l  %7 = getelementptr inbounds %struct.gx_transfer_map_s, ptr %6, i32 0, i32 1\l  %8 = load ptr, ptr %7, align 8\l  ret ptr %8\l}"];
+}

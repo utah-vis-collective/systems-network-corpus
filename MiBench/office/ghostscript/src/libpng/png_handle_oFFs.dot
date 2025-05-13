@@ -1,0 +1,17 @@
+digraph "CFG for 'png_handle_oFFs' function" {
+	label="CFG for 'png_handle_oFFs' function";
+
+	Node0x600001f7d7c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca [9 x i8], align 1\l  %8 = alloca i64, align 8\l  %9 = alloca i64, align 8\l  %10 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.png_struct_def, ptr %11, i32 0, i32 7\l  %13 = load i8, ptr %12, align 8\l  %14 = zext i8 %13 to i32\l  %15 = and i32 %14, 1\l  %16 = icmp ne i32 %15, 0\l  br i1 %16, label %19, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001f7d7c0:s0 -> Node0x600001f7d860[tooltip="3 -> 19\nProbability 50.00%" ];
+	Node0x600001f7d7c0:s1 -> Node0x600001f7d810[tooltip="3 -> 17\nProbability 50.00%" ];
+	Node0x600001f7d810 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %4, align 8\l  call void @png_error(ptr noundef %18, ptr noundef @.str.33)\l  br label %19\l}"];
+	Node0x600001f7d810 -> Node0x600001f7d860[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x600001f7d860 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i64, ptr %6, align 8\l  %21 = icmp ne i64 %20, 9\l  br i1 %21, label %22, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600001f7d860:s0 -> Node0x600001f7d8b0[tooltip="19 -> 22\nProbability 50.00%" ];
+	Node0x600001f7d860:s1 -> Node0x600001f7d900[tooltip="19 -> 26\nProbability 50.00%" ];
+	Node0x600001f7d8b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %4, align 8\l  call void @png_warning(ptr noundef %23, ptr noundef @.str.34)\l  %24 = load ptr, ptr %4, align 8\l  %25 = load i64, ptr %6, align 8\l  call void @png_crc_skip(ptr noundef %24, i64 noundef %25)\l  br label %42\l}"];
+	Node0x600001f7d8b0 -> Node0x600001f7d950[tooltip="22 -> 42\nProbability 100.00%" ];
+	Node0x600001f7d900 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %4, align 8\l  %28 = getelementptr inbounds [9 x i8], ptr %7, i64 0, i64 0\l  call void @png_crc_read(ptr noundef %27, ptr noundef %28, i64 noundef 9)\l  %29 = getelementptr inbounds [9 x i8], ptr %7, i64 0, i64 0\l  %30 = call i64 @png_get_uint_32(ptr noundef %29)\l  store i64 %30, ptr %8, align 8\l  %31 = getelementptr inbounds [9 x i8], ptr %7, i64 0, i64 0\l  %32 = getelementptr inbounds i8, ptr %31, i64 4\l  %33 = call i64 @png_get_uint_32(ptr noundef %32)\l  store i64 %33, ptr %9, align 8\l  %34 = getelementptr inbounds [9 x i8], ptr %7, i64 0, i64 8\l  %35 = load i8, ptr %34, align 1\l  %36 = zext i8 %35 to i32\l  store i32 %36, ptr %10, align 4\l  %37 = load ptr, ptr %4, align 8\l  %38 = load ptr, ptr %5, align 8\l  %39 = load i64, ptr %8, align 8\l  %40 = load i64, ptr %9, align 8\l  %41 = load i32, ptr %10, align 4\l  call void @png_read_oFFs(ptr noundef %37, ptr noundef %38, i64 noundef %39,\l... i64 noundef %40, i32 noundef %41)\l  br label %42\l}"];
+	Node0x600001f7d900 -> Node0x600001f7d950[tooltip="26 -> 42\nProbability 100.00%" ];
+	Node0x600001f7d950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{42:\l|  ret void\l}"];
+}

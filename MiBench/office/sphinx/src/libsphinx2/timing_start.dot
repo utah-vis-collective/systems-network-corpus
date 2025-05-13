@@ -1,0 +1,5 @@
+digraph "CFG for 'timing_start' function" {
+	label="CFG for 'timing_start' function";
+
+	Node0x6000008a4500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 @getrusage(i32 noundef 0, ptr noundef @start)\l  %2 = call i32 @gettimeofday(ptr noundef @e_start, ptr noundef null)\l  ret void\l}"];
+}

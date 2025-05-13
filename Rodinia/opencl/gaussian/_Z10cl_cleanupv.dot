@@ -1,0 +1,15 @@
+digraph "CFG for '_Z10cl_cleanupv' function" {
+	label="CFG for '_Z10cl_cleanupv' function";
+
+	Node0x60000035c870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @_ZL12commandQueue, align 8\l  %2 = icmp ne ptr %1, null\l  br i1 %2, label %3, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x60000035c870:s0 -> Node0x60000035c8c0[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x60000035c870:s1 -> Node0x60000035c910[tooltip="0 -> 6\nProbability 37.50%" ];
+	Node0x60000035c8c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @_ZL12commandQueue, align 8\l  %5 = call i32 @clReleaseCommandQueue(ptr noundef %4)\l  br label %6\l}"];
+	Node0x60000035c8c0 -> Node0x60000035c910[tooltip="3 -> 6\nProbability 100.00%" ];
+	Node0x60000035c910 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @_ZL7context, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000035c910:s0 -> Node0x60000035c960[tooltip="6 -> 9\nProbability 62.50%" ];
+	Node0x60000035c910:s1 -> Node0x60000035c9b0[tooltip="6 -> 12\nProbability 37.50%" ];
+	Node0x60000035c960 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @_ZL7context, align 8\l  %11 = call i32 @clReleaseContext(ptr noundef %10)\l  br label %12\l}"];
+	Node0x60000035c960 -> Node0x60000035c9b0[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x60000035c9b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr @_ZL7devices, align 8\l  call void @free(ptr noundef %13)\l  %14 = load ptr, ptr @_ZL10numDevices, align 8\l  call void @free(ptr noundef %14)\l  %15 = load ptr, ptr @_ZL9platforms, align 8\l  call void @free(ptr noundef %15)\l  ret void\l}"];
+}

@@ -1,0 +1,22 @@
+digraph "CFG for 'PS_PrintUnderline' function" {
+	label="CFG for 'PS_PrintUnderline' function";
+
+	Node0x60000218a350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  store i32 %0, ptr %6, align 4\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store i32 %3, ptr %9, align 4\l  store i32 %4, ptr %10, align 4\l  %11 = load i32, ptr %7, align 4\l  %12 = load i32, ptr @currentcolour, align 4\l  %13 = icmp ne i32 %11, %12\l  br i1 %13, label %14, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x60000218a350:s0 -> Node0x60000218a3a0[tooltip="5 -> 14\nProbability 50.00%" ];
+	Node0x60000218a350:s1 -> Node0x60000218a580[tooltip="5 -> 34\nProbability 50.00%" ];
+	Node0x60000218a3a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %7, align 4\l  store i32 %15, ptr @currentcolour, align 4\l  %16 = load i32, ptr @currentcolour, align 4\l  %17 = icmp ugt i32 %16, 0\l  br i1 %17, label %18, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x60000218a3a0:s0 -> Node0x60000218a3f0[tooltip="14 -> 18\nProbability 50.00%" ];
+	Node0x60000218a3a0:s1 -> Node0x60000218a530[tooltip="14 -> 33\nProbability 50.00%" ];
+	Node0x60000218a3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr @out_fp, align 8\l  %20 = load i32, ptr @currentcolour, align 4\l  %21 = call ptr @ColourCommand(i32 noundef %20)\l  %22 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %19, ptr noundef\l... @.str.168, ptr noundef %21) #5\l  %23 = load i32, ptr @wordcount, align 4\l  %24 = add nsw i32 %23, 1\l  store i32 %24, ptr @wordcount, align 4\l  %25 = icmp sge i32 %24, 5\l  br i1 %25, label %26, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x60000218a3f0:s0 -> Node0x60000218a440[tooltip="18 -> 26\nProbability 50.00%" ];
+	Node0x60000218a3f0:s1 -> Node0x60000218a490[tooltip="18 -> 29\nProbability 50.00%" ];
+	Node0x60000218a440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr @out_fp, align 8\l  %28 = call i32 @putc(i32 noundef 10, ptr noundef %27)\l  store i32 0, ptr @wordcount, align 4\l  br label %32\l}"];
+	Node0x60000218a440 -> Node0x60000218a4e0[tooltip="26 -> 32\nProbability 100.00%" ];
+	Node0x60000218a490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr @out_fp, align 8\l  %31 = call i32 @putc(i32 noundef 32, ptr noundef %30)\l  br label %32\l}"];
+	Node0x60000218a490 -> Node0x60000218a4e0[tooltip="29 -> 32\nProbability 100.00%" ];
+	Node0x60000218a4e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{32:\l|  br label %33\l}"];
+	Node0x60000218a4e0 -> Node0x60000218a530[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x60000218a530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{33:\l|  br label %34\l}"];
+	Node0x60000218a530 -> Node0x60000218a580[tooltip="33 -> 34\nProbability 100.00%" ];
+	Node0x60000218a580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr @out_fp, align 8\l  %36 = load i32, ptr %8, align 4\l  %37 = load i32, ptr %9, align 4\l  %38 = load i32, ptr %10, align 4\l  %39 = load ptr, ptr @finfo, align 8\l  %40 = load i32, ptr %6, align 4\l  %41 = zext i32 %40 to i64\l  %42 = getelementptr inbounds %struct.font_rec, ptr %39, i64 %41\l  %43 = getelementptr inbounds %struct.font_rec, ptr %42, i32 0, i32 7\l  %44 = load i16, ptr %43, align 8\l  %45 = sext i16 %44 to i32\l  %46 = sub nsw i32 %38, %45\l  %47 = load ptr, ptr @finfo, align 8\l  %48 = load i32, ptr %6, align 4\l  %49 = zext i32 %48 to i64\l  %50 = getelementptr inbounds %struct.font_rec, ptr %47, i64 %49\l  %51 = getelementptr inbounds %struct.font_rec, ptr %50, i32 0, i32 8\l  %52 = load i16, ptr %51, align 2\l  %53 = sext i16 %52 to i32\l  %54 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %35, ptr noundef\l... @.str.183, i32 noundef %36, i32 noundef %37, i32 noundef %46, i32 noundef\l... %53) #5\l  ret void\l}"];
+}

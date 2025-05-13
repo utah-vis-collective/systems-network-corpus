@@ -1,0 +1,5 @@
+digraph "CFG for '_Z18cl_getCommandQueuev' function" {
+	label="CFG for '_Z18cl_getCommandQueuev' function";
+
+	Node0x60000035ce10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @_ZL12commandQueue, align 8\l  ret ptr %1\l}"];
+}

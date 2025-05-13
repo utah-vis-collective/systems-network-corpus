@@ -1,0 +1,15 @@
+digraph "CFG for 'pgm_print_page' function" {
+	label="CFG for 'pgm_print_page' function";
+
+	Node0x6000034ce3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.gx_device_pbm_s, ptr %5, i32 0, i32 40\l  %7 = load i8, ptr %6, align 2\l  %8 = zext i8 %7 to i32\l  %9 = icmp eq i32 %8, 0\l  br i1 %9, label %10, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000034ce3a0:s0 -> Node0x6000034ce3f0[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x6000034ce3a0:s1 -> Node0x6000034ce490[tooltip="2 -> 26\nProbability 62.50%" ];
+	Node0x6000034ce3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds %struct.gx_device_pbm_s, ptr %11, i32 0, i32 39\l  %13 = load i8, ptr %12, align 1\l  %14 = zext i8 %13 to i32\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %16, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000034ce3f0:s0 -> Node0x6000034ce440[tooltip="10 -> 16\nProbability 62.50%" ];
+	Node0x6000034ce3f0:s1 -> Node0x6000034ce490[tooltip="10 -> 26\nProbability 37.50%" ];
+	Node0x6000034ce440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds %struct.gx_device_pbm_s, ptr %18, i32 0, i32 36\l  %20 = load i8, ptr %19, align 8\l  %21 = sext i8 %20 to i32\l  %22 = sub nsw i32 %21, 1\l  %23 = trunc i32 %22 to i8\l  %24 = load ptr, ptr %4, align 8\l  %25 = call i32 @pbm_print_page_loop(ptr noundef %17, i8 noundef signext %23,\l... ptr noundef %24, ptr noundef @pxm_pbm_print_row)\l  br label %33\l}"];
+	Node0x6000034ce440 -> Node0x6000034ce4e0[tooltip="16 -> 33\nProbability 100.00%" ];
+	Node0x6000034ce490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %3, align 8\l  %28 = load ptr, ptr %3, align 8\l  %29 = getelementptr inbounds %struct.gx_device_pbm_s, ptr %28, i32 0, i32 36\l  %30 = load i8, ptr %29, align 8\l  %31 = load ptr, ptr %4, align 8\l  %32 = call i32 @pbm_print_page_loop(ptr noundef %27, i8 noundef signext %30,\l... ptr noundef %31, ptr noundef @pgm_print_row)\l  br label %33\l}"];
+	Node0x6000034ce490 -> Node0x6000034ce4e0[tooltip="26 -> 33\nProbability 100.00%" ];
+	Node0x6000034ce4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = phi i32 [ %25, %16 ], [ %32, %26 ]\l  ret i32 %34\l}"];
+}

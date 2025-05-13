@@ -1,0 +1,15 @@
+digraph "CFG for 'read_buf' function" {
+	label="CFG for 'read_buf' function";
+
+	Node0x600003ca60d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %7 = load i32, ptr @ifile, align 4\l  %8 = load ptr, ptr %4, align 8\l  %9 = load i32, ptr %5, align 4\l  %10 = call i32 @read(i32 noundef %7, ptr noundef %8, i32 noundef %9)\l  store i32 %10, ptr %6, align 4\l  %11 = load i32, ptr %6, align 4\l  %12 = icmp eq i32 %11, -1\l  br i1 %12, label %16, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600003ca60d0:s0 -> Node0x600003ca6170[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x600003ca60d0:s1 -> Node0x600003ca6120[tooltip="2 -> 13\nProbability 62.50%" ];
+	Node0x600003ca6120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %6, align 4\l  %15 = icmp eq i32 %14, 0\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600003ca6120:s0 -> Node0x600003ca6170[tooltip="13 -> 16\nProbability 37.50%" ];
+	Node0x600003ca6120:s1 -> Node0x600003ca61c0[tooltip="13 -> 18\nProbability 62.50%" ];
+	Node0x600003ca6170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %6, align 4\l  store i32 %17, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600003ca6170 -> Node0x600003ca6210[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600003ca61c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %6, align 4\l  store i32 %19, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600003ca61c0 -> Node0x600003ca6210[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x600003ca6210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  ret i32 %21\l}"];
+}

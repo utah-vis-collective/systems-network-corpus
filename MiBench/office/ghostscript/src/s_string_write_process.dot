@@ -1,0 +1,5 @@
+digraph "CFG for 's_string_write_process' function" {
+	label="CFG for 's_string_write_process' function";
+
+	Node0x6000032146e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  %9 = load i32, ptr %8, align 4\l  %10 = icmp ne i32 %9, 0\l  %11 = zext i1 %10 to i64\l  %12 = select i1 %10, i32 -1, i32 -2\l  ret i32 %12\l}"];
+}

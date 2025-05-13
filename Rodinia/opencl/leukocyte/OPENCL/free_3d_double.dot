@@ -1,0 +1,20 @@
+digraph "CFG for 'free_3d_double' function" {
+	label="CFG for 'free_3d_double' function";
+
+	Node0x6000024d23a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x6000024d23a0:s0 -> Node0x6000024d23f0[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x6000024d23a0:s1 -> Node0x6000024d2580[tooltip="1 -> 29\nProbability 37.50%" ];
+	Node0x6000024d23f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %2, align 8\l  %7 = getelementptr inbounds ptr, ptr %6, i64 0\l  %8 = load ptr, ptr %7, align 8\l  %9 = icmp ne ptr %8, null\l  br i1 %9, label %10, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x6000024d23f0:s0 -> Node0x6000024d2440[tooltip="5 -> 10\nProbability 62.50%" ];
+	Node0x6000024d23f0:s1 -> Node0x6000024d2530[tooltip="5 -> 27\nProbability 37.50%" ];
+	Node0x6000024d2440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds ptr, ptr %11, i64 0\l  %13 = load ptr, ptr %12, align 8\l  %14 = getelementptr inbounds ptr, ptr %13, i64 0\l  %15 = load ptr, ptr %14, align 8\l  %16 = icmp ne ptr %15, null\l  br i1 %16, label %17, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x6000024d2440:s0 -> Node0x6000024d2490[tooltip="10 -> 17\nProbability 62.50%" ];
+	Node0x6000024d2440:s1 -> Node0x6000024d24e0[tooltip="10 -> 23\nProbability 37.50%" ];
+	Node0x6000024d2490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %2, align 8\l  %19 = getelementptr inbounds ptr, ptr %18, i64 0\l  %20 = load ptr, ptr %19, align 8\l  %21 = getelementptr inbounds ptr, ptr %20, i64 0\l  %22 = load ptr, ptr %21, align 8\l  call void @free(ptr noundef %22)\l  br label %23\l}"];
+	Node0x6000024d2490 -> Node0x6000024d24e0[tooltip="17 -> 23\nProbability 100.00%" ];
+	Node0x6000024d24e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %2, align 8\l  %25 = getelementptr inbounds ptr, ptr %24, i64 0\l  %26 = load ptr, ptr %25, align 8\l  call void @free(ptr noundef %26)\l  br label %27\l}"];
+	Node0x6000024d24e0 -> Node0x6000024d2530[tooltip="23 -> 27\nProbability 100.00%" ];
+	Node0x6000024d2530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %2, align 8\l  call void @free(ptr noundef %28)\l  br label %29\l}"];
+	Node0x6000024d2530 -> Node0x6000024d2580[tooltip="27 -> 29\nProbability 100.00%" ];
+	Node0x6000024d2580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  ret void\l}"];
+}

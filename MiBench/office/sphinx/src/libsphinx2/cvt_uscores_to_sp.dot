@@ -1,0 +1,12 @@
+digraph "CFG for 'cvt_uscores_to_sp' function" {
+	label="CFG for 'cvt_uscores_to_sp' function";
+
+	Node0x600000d228a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = call ptr @salloc(ptr noundef %5)\l  store ptr %6, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  store ptr %7, ptr %4, align 8\l  br label %8\l}"];
+	Node0x600000d228a0 -> Node0x600000d228f0[tooltip="1 -> 8\nProbability 100.00%" ];
+	Node0x600000d228f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds i8, ptr %9, i64 1\l  %11 = call ptr @strchr(ptr noundef %10, i32 noundef 95) #9\l  store ptr %11, ptr %4, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600000d228f0:s0 -> Node0x600000d22940[tooltip="8 -> 13\nProbability 96.88%" ];
+	Node0x600000d228f0:s1 -> Node0x600000d22990[tooltip="8 -> 15\nProbability 3.12%" ];
+	Node0x600000d22940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  store i8 32, ptr %14, align 1\l  br label %8\l}"];
+	Node0x600000d22940 -> Node0x600000d228f0[tooltip="13 -> 8\nProbability 100.00%" ];
+	Node0x600000d22990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %3, align 8\l  ret ptr %16\l}"];
+}

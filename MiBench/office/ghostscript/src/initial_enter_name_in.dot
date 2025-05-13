@@ -1,0 +1,10 @@
+digraph "CFG for 'initial_enter_name_in' function" {
+	label="CFG for 'initial_enter_name_in' function";
+
+	Node0x6000016422b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load ptr, ptr %6, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = load ptr, ptr %5, align 8\l  %11 = call i32 @dict_put_string(ptr noundef %8, ptr noundef %9, ptr noundef\l... %10)\l  store i32 %11, ptr %7, align 4\l  %12 = load i32, ptr %7, align 4\l  %13 = icmp slt i32 %12, 0\l  br i1 %13, label %14, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000016422b0:s0 -> Node0x600001642300[tooltip="3 -> 14\nProbability 37.50%" ];
+	Node0x6000016422b0:s1 -> Node0x600001642350[tooltip="3 -> 24\nProbability 62.50%" ];
+	Node0x600001642300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr @gs_stderr, align 8\l  call void @lprintf_file_and_line(ptr noundef %15, ptr noundef @.str.30, i32\l... noundef 96)\l  %16 = load ptr, ptr @gs_stderr, align 8\l  %17 = load i32, ptr %7, align 4\l  %18 = load ptr, ptr %4, align 8\l  %19 = load ptr, ptr %6, align 8\l  %20 = call i32 @dict_length(ptr noundef %19)\l  %21 = load ptr, ptr %6, align 8\l  %22 = call i32 @dict_maxlength(ptr noundef %21)\l  %23 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %16, ptr noundef\l... @.str.31, i32 noundef %17, ptr noundef %18, i32 noundef %20, i32 noundef %22)\l... #4\l  call void @gs_exit(i32 noundef 1)\l  br label %24\l}"];
+	Node0x600001642300 -> Node0x600001642350[tooltip="14 -> 24\nProbability 100.00%" ];
+	Node0x600001642350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  ret void\l}"];
+}

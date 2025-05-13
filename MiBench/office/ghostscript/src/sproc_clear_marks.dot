@@ -1,0 +1,5 @@
+digraph "CFG for 'sproc_clear_marks' function" {
+	label="CFG for 'sproc_clear_marks' function";
+
+	Node0x6000029e3e30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.stream_proc_state_s, ptr %5, i32 0, i32 5\l  %7 = getelementptr inbounds %struct.ref_s, ptr %6, i32 0, i32 0\l  %8 = getelementptr inbounds %struct.tas_s, ptr %7, i32 0, i32 0\l  %9 = load i16, ptr %8, align 8\l  %10 = zext i16 %9 to i32\l  %11 = and i32 %10, -2\l  %12 = trunc i32 %11 to i16\l  store i16 %12, ptr %8, align 8\l  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds %struct.stream_proc_state_s, ptr %13, i32 0,\l... i32 6\l  %15 = getelementptr inbounds %struct.ref_s, ptr %14, i32 0, i32 0\l  %16 = getelementptr inbounds %struct.tas_s, ptr %15, i32 0, i32 0\l  %17 = load i16, ptr %16, align 8\l  %18 = zext i16 %17 to i32\l  %19 = and i32 %18, -2\l  %20 = trunc i32 %19 to i16\l  store i16 %20, ptr %16, align 8\l  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'phone_len' function" {
+	label="CFG for 'phone_len' function";
+
+	Node0x6000012f69e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = call ptr @list_lookup(ptr noundef @phone_model_len, i32 noundef %3)\l  %5 = ptrtoint ptr %4 to i32\l  ret i32 %5\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'in_utest' function" {
+	label="CFG for 'in_utest' function";
+
+	Node0x600003a819a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca %struct.gx_device_s, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = call i32 @in_upath(ptr noundef %9, ptr noundef %6)\l  store i32 %10, ptr %7, align 4\l  %11 = load i32, ptr %7, align 4\l  %12 = icmp slt i32 %11, 0\l  br i1 %12, label %13, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600003a819a0:s0 -> Node0x600003a819f0[tooltip="2 -> 13\nProbability 37.50%" ];
+	Node0x600003a819a0:s1 -> Node0x600003a81a40[tooltip="2 -> 15\nProbability 62.50%" ];
+	Node0x600003a819f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %7, align 4\l  store i32 %14, ptr %3, align 4\l  br label %23\l}"];
+	Node0x600003a819f0 -> Node0x600003a81a90[tooltip="13 -> 23\nProbability 100.00%" ];
+	Node0x600003a81a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %5, align 8\l  %17 = load ptr, ptr @igs, align 8\l  %18 = call i32 %16(ptr noundef %17)\l  store i32 %18, ptr %8, align 4\l  %19 = load ptr, ptr %4, align 8\l  %20 = load i32, ptr %7, align 4\l  %21 = load i32, ptr %8, align 4\l  %22 = call i32 @in_upath_result(ptr noundef %19, i32 noundef %20, i32\l... noundef %21)\l  store i32 %22, ptr %3, align 4\l  br label %23\l}"];
+	Node0x600003a81a40 -> Node0x600003a81a90[tooltip="15 -> 23\nProbability 100.00%" ];
+	Node0x600003a81a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %3, align 4\l  ret i32 %24\l}"];
+}

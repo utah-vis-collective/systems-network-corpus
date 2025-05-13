@@ -1,0 +1,19 @@
+digraph "CFG for 'z_save' function" {
+	label="CFG for 'z_save' function";
+
+	Node0x600000542da0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca %struct.complex, align 8\l  %5 = alloca %struct.complex, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca %struct.matlab, align 8\l  store [2 x double] %1, ptr %5, align 8\l  store ptr %0, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %9 = getelementptr inbounds %struct.matlab, ptr %8, i32 0, i32 0\l  store i64 1000, ptr %9, align 8\l  %10 = getelementptr inbounds %struct.matlab, ptr %8, i32 0, i32 1\l  store i64 1, ptr %10, align 8\l  %11 = getelementptr inbounds %struct.matlab, ptr %8, i32 0, i32 2\l  store i64 1, ptr %11, align 8\l  %12 = getelementptr inbounds %struct.matlab, ptr %8, i32 0, i32 3\l  store i64 1, ptr %12, align 8\l  %13 = load ptr, ptr %7, align 8\l  %14 = icmp eq ptr %13, null\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000542da0:s0 -> Node0x600000542df0[tooltip="3 -> 15\nProbability 37.50%" ];
+	Node0x600000542da0:s1 -> Node0x600000542e40[tooltip="3 -> 16\nProbability 62.50%" ];
+	Node0x600000542df0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  br label %20\l}"];
+	Node0x600000542df0 -> Node0x600000542e90[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x600000542e40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %7, align 8\l  %18 = call i64 @strlen(ptr noundef %17) #5\l  %19 = add i64 %18, 1\l  br label %20\l}"];
+	Node0x600000542e40 -> Node0x600000542e90[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600000542e90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = phi i64 [ 1, %15 ], [ %19, %16 ]\l  %22 = getelementptr inbounds %struct.matlab, ptr %8, i32 0, i32 4\l  store i64 %21, ptr %22, align 8\l  %23 = load ptr, ptr %6, align 8\l  %24 = call i64 @\"\\01_fwrite\"(ptr noundef %8, i64 noundef 40, i64 noundef 1,\l... ptr noundef %23)\l  %25 = load ptr, ptr %7, align 8\l  %26 = icmp eq ptr %25, null\l  br i1 %26, label %27, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600000542e90:s0 -> Node0x600000542ee0[tooltip="20 -> 27\nProbability 37.50%" ];
+	Node0x600000542e90:s1 -> Node0x600000542f30[tooltip="20 -> 30\nProbability 62.50%" ];
+	Node0x600000542ee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %6, align 8\l  %29 = call i64 @\"\\01_fwrite\"(ptr noundef @.str.2, i64 noundef 1, i64 noundef\l... 1, ptr noundef %28)\l  br label %38\l}"];
+	Node0x600000542ee0 -> Node0x600000542f80[tooltip="27 -> 38\nProbability 100.00%" ];
+	Node0x600000542f30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %7, align 8\l  %32 = getelementptr inbounds %struct.matlab, ptr %8, i32 0, i32 4\l  %33 = load i64, ptr %32, align 8\l  %34 = trunc i64 %33 to i32\l  %35 = sext i32 %34 to i64\l  %36 = load ptr, ptr %6, align 8\l  %37 = call i64 @\"\\01_fwrite\"(ptr noundef %31, i64 noundef 1, i64 noundef\l... %35, ptr noundef %36)\l  br label %38\l}"];
+	Node0x600000542f30 -> Node0x600000542f80[tooltip="30 -> 38\nProbability 100.00%" ];
+	Node0x600000542f80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load ptr, ptr %6, align 8\l  %40 = call i64 @\"\\01_fwrite\"(ptr noundef %5, i64 noundef 16, i64 noundef 1,\l... ptr noundef %39)\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %4, ptr align 8 %5, i64 16, i1\l... false)\l  %41 = load %struct.complex, ptr %4, align 8\l  ret %struct.complex %41\l}"];
+}

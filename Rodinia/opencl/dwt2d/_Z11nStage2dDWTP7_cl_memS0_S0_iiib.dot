@@ -1,0 +1,10 @@
+digraph "CFG for '_Z11nStage2dDWTP7_cl_memS0_S0_iiib' function" {
+	label="CFG for '_Z11nStage2dDWTP7_cl_memS0_S0_iiib' function";
+
+	Node0x6000006303c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  %11 = alloca i32, align 4\l  %12 = alloca i32, align 4\l  %13 = alloca i32, align 4\l  %14 = alloca i8, align 1\l  %15 = alloca i32, align 4\l  store ptr %0, ptr %8, align 8\l  store ptr %1, ptr %9, align 8\l  store ptr %2, ptr %10, align 8\l  store i32 %3, ptr %11, align 4\l  store i32 %4, ptr %12, align 4\l  store i32 %5, ptr %13, align 4\l  %16 = zext i1 %6 to i8\l  store i8 %16, ptr %14, align 1\l  %17 = load i32, ptr %13, align 4\l  %18 = call i32 (ptr, ...) @printf(ptr noundef @.str.71, i32 noundef %17)\l  %19 = load i32, ptr %12, align 4\l  %20 = load i32, ptr %11, align 4\l  %21 = mul nsw i32 %19, %20\l  %22 = sext i32 %21 to i64\l  %23 = mul i64 %22, 4\l  %24 = trunc i64 %23 to i32\l  store i32 %24, ptr %15, align 4\l  %25 = load i8, ptr %14, align 1\l  %26 = trunc i8 %25 to i1\l  br i1 %26, label %27, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x6000006303c0:s0 -> Node0x600000630730[tooltip="7 -> 27\nProbability 50.00%" ];
+	Node0x6000006303c0:s1 -> Node0x600000630780[tooltip="7 -> 33\nProbability 50.00%" ];
+	Node0x600000630730 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %8, align 8\l  %29 = load ptr, ptr %9, align 8\l  %30 = load i32, ptr %11, align 4\l  %31 = load i32, ptr %12, align 4\l  %32 = load i32, ptr %13, align 4\l  call void @_Z6fdwt53P7_cl_memS0_iii(ptr noundef %28, ptr noundef %29, i32\l... noundef %30, i32 noundef %31, i32 noundef %32)\l  br label %33\l}"];
+	Node0x600000630730 -> Node0x600000630780[tooltip="27 -> 33\nProbability 100.00%" ];
+	Node0x600000630780 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  ret i32 0\l}"];
+}

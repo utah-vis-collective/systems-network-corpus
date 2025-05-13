@@ -1,0 +1,5 @@
+digraph "CFG for 'lmSetStartSym' function" {
+	label="CFG for 'lmSetStartSym' function";
+
+	Node0x60000102a850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call ptr @salloc(ptr noundef %3)\l  store ptr %4, ptr @start_sym, align 8\l  ret void\l}"];
+}

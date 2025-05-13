@@ -1,0 +1,5 @@
+digraph "CFG for '_Z13isUsingImagesv' function" {
+	label="CFG for '_Z13isUsingImagesv' function";
+
+	Node0x600001eef160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i8, ptr @_ZL11usingImages, align 1\l  %2 = trunc i8 %1 to i1\l  ret i1 %2\l}"];
+}

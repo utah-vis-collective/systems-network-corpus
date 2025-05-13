@@ -1,0 +1,17 @@
+digraph "CFG for 'AVI_open_input_file' function" {
+	label="CFG for 'AVI_open_input_file' function";
+
+	Node0x6000005a4550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr null, ptr %6, align 8\l  %7 = call ptr @malloc(i64 noundef 1088) #9\l  store ptr %7, ptr %6, align 8\l  %8 = load ptr, ptr %6, align 8\l  %9 = icmp eq ptr %8, null\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x6000005a4550:s0 -> Node0x6000005a45a0[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x6000005a4550:s1 -> Node0x6000005a45f0[tooltip="2 -> 11\nProbability 62.50%" ];
+	Node0x6000005a45a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  store i64 8, ptr @AVI_errno, align 8\l  store ptr null, ptr %3, align 8\l  br label %36\l}"];
+	Node0x6000005a45a0 -> Node0x6000005a46e0[tooltip="10 -> 36\nProbability 100.00%" ];
+	Node0x6000005a45f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %6, align 8\l  %13 = load ptr, ptr %6, align 8\l  %14 = call i64 @llvm.objectsize.i64.p0(ptr %13, i1 false, i1 true, i1 false)\l  %15 = call ptr @__memset_chk(ptr noundef %12, i32 noundef 0, i64 noundef\l... 1088, i64 noundef %14) #10\l  %16 = load ptr, ptr %6, align 8\l  %17 = getelementptr inbounds %struct.avi_t, ptr %16, i32 0, i32 1\l  store i64 1, ptr %17, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = call i32 (ptr, i32, ...) @\"\\01_open\"(ptr noundef %18, i32 noundef 0)\l  %20 = sext i32 %19 to i64\l  %21 = load ptr, ptr %6, align 8\l  %22 = getelementptr inbounds %struct.avi_t, ptr %21, i32 0, i32 0\l  store i64 %20, ptr %22, align 8\l  %23 = load ptr, ptr %6, align 8\l  %24 = getelementptr inbounds %struct.avi_t, ptr %23, i32 0, i32 0\l  %25 = load i64, ptr %24, align 8\l  %26 = icmp slt i64 %25, 0\l  br i1 %26, label %27, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x6000005a45f0:s0 -> Node0x6000005a4640[tooltip="11 -> 27\nProbability 37.50%" ];
+	Node0x6000005a45f0:s1 -> Node0x6000005a4690[tooltip="11 -> 29\nProbability 62.50%" ];
+	Node0x6000005a4640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{27:\l|  store i64 2, ptr @AVI_errno, align 8\l  %28 = load ptr, ptr %6, align 8\l  call void @free(ptr noundef %28)\l  store ptr null, ptr %3, align 8\l  br label %36\l}"];
+	Node0x6000005a4640 -> Node0x6000005a46e0[tooltip="27 -> 36\nProbability 100.00%" ];
+	Node0x6000005a4690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %6, align 8\l  %31 = load i32, ptr %5, align 4\l  %32 = call i32 @avi_parse_input_file(ptr noundef %30, i32 noundef %31)\l  %33 = load ptr, ptr %6, align 8\l  %34 = getelementptr inbounds %struct.avi_t, ptr %33, i32 0, i32 25\l  store i32 0, ptr %34, align 4\l  %35 = load ptr, ptr %6, align 8\l  store ptr %35, ptr %3, align 8\l  br label %36\l}"];
+	Node0x6000005a4690 -> Node0x6000005a46e0[tooltip="29 -> 36\nProbability 100.00%" ];
+	Node0x6000005a46e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %3, align 8\l  ret ptr %37\l}"];
+}

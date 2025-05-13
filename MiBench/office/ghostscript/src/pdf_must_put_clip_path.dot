@@ -1,0 +1,22 @@
+digraph "CFG for 'pdf_must_put_clip_path' function" {
+	label="CFG for 'pdf_must_put_clip_path' function";
+
+	Node0x6000020a1810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %5, align 8\l  %7 = icmp eq ptr %6, null\l  br i1 %7, label %8, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000020a1810:s0 -> Node0x6000020a1860[tooltip="2 -> 8\nProbability 37.50%" ];
+	Node0x6000020a1810:s1 -> Node0x6000020a18b0[tooltip="2 -> 17\nProbability 62.50%" ];
+	Node0x6000020a1860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %9, i32 0, i32 34\l  %11 = load i64, ptr %10, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %12, i32 0, i32 33\l  %14 = load i64, ptr %13, align 8\l  %15 = icmp ne i64 %11, %14\l  %16 = zext i1 %15 to i32\l  store i32 %16, ptr %3, align 4\l  br label %50\l}"];
+	Node0x6000020a1860 -> Node0x6000020a1a40[tooltip="8 -> 50\nProbability 100.00%" ];
+	Node0x6000020a18b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %4, align 8\l  %19 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %18, i32 0, i32 34\l  %20 = load i64, ptr %19, align 8\l  %21 = load ptr, ptr %5, align 8\l  %22 = getelementptr inbounds %struct.gx_clip_path_s, ptr %21, i32 0, i32 7\l  %23 = load i64, ptr %22, align 8\l  %24 = icmp eq i64 %20, %23\l  br i1 %24, label %25, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000020a18b0:s0 -> Node0x6000020a1900[tooltip="17 -> 25\nProbability 50.00%" ];
+	Node0x6000020a18b0:s1 -> Node0x6000020a1950[tooltip="17 -> 26\nProbability 50.00%" ];
+	Node0x6000020a1900 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{25:\l|  store i32 0, ptr %3, align 4\l  br label %50\l}"];
+	Node0x6000020a1900 -> Node0x6000020a1a40[tooltip="25 -> 50\nProbability 100.00%" ];
+	Node0x6000020a1950 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = load ptr, ptr %4, align 8\l  %29 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %28, i32 0, i32 8\l  %30 = load i32, ptr %29, align 8\l  %31 = sext i32 %30 to i64\l  %32 = shl i64 %31, 12\l  %33 = load ptr, ptr %4, align 8\l  %34 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %33, i32 0, i32 9\l  %35 = load i32, ptr %34, align 4\l  %36 = sext i32 %35 to i64\l  %37 = shl i64 %36, 12\l  %38 = call i32 @gx_cpath_includes_rectangle(ptr noundef %27, i64 noundef 0,\l... i64 noundef 0, i64 noundef %32, i64 noundef %37)\l  %39 = icmp ne i32 %38, 0\l  br i1 %39, label %40, label %49\l|{<s0>T|<s1>F}}"];
+	Node0x6000020a1950:s0 -> Node0x6000020a19a0[tooltip="26 -> 40\nProbability 62.50%" ];
+	Node0x6000020a1950:s1 -> Node0x6000020a19f0[tooltip="26 -> 49\nProbability 37.50%" ];
+	Node0x6000020a19a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %4, align 8\l  %42 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %41, i32 0, i32 34\l  %43 = load i64, ptr %42, align 8\l  %44 = load ptr, ptr %4, align 8\l  %45 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %44, i32 0, i32 33\l  %46 = load i64, ptr %45, align 8\l  %47 = icmp ne i64 %43, %46\l  %48 = zext i1 %47 to i32\l  store i32 %48, ptr %3, align 4\l  br label %50\l}"];
+	Node0x6000020a19a0 -> Node0x6000020a1a40[tooltip="40 -> 50\nProbability 100.00%" ];
+	Node0x6000020a19f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{49:\l|  store i32 1, ptr %3, align 4\l  br label %50\l}"];
+	Node0x6000020a19f0 -> Node0x6000020a1a40[tooltip="49 -> 50\nProbability 100.00%" ];
+	Node0x6000020a1a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{50:\l|  %51 = load i32, ptr %3, align 4\l  ret i32 %51\l}"];
+}

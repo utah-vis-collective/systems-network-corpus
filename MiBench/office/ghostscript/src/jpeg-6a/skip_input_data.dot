@@ -1,0 +1,17 @@
+digraph "CFG for 'skip_input_data' function" {
+	label="CFG for 'skip_input_data' function";
+
+	Node0x600001fe6300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %6, i32 0,\l... i32 5\l  %8 = load ptr, ptr %7, align 8\l  store ptr %8, ptr %5, align 8\l  %9 = load i64, ptr %4, align 8\l  %10 = icmp sgt i64 %9, 0\l  br i1 %10, label %11, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600001fe6300:s0 -> Node0x600001fe6350[tooltip="2 -> 11\nProbability 62.50%" ];
+	Node0x600001fe6300:s1 -> Node0x600001fe6490[tooltip="2 -> 41\nProbability 37.50%" ];
+	Node0x600001fe6350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  br label %12\l}"];
+	Node0x600001fe6350 -> Node0x600001fe63a0[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600001fe63a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i64, ptr %4, align 8\l  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds %struct.my_source_mgr, ptr %14, i32 0, i32 0\l  %16 = getelementptr inbounds %struct.jpeg_source_mgr, ptr %15, i32 0, i32 1\l  %17 = load i64, ptr %16, align 8\l  %18 = icmp sgt i64 %13, %17\l  br i1 %18, label %19, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600001fe63a0:s0 -> Node0x600001fe63f0[tooltip="12 -> 19\nProbability 96.88%" ];
+	Node0x600001fe63a0:s1 -> Node0x600001fe6440[tooltip="12 -> 28\nProbability 3.12%" ];
+	Node0x600001fe63f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %5, align 8\l  %21 = getelementptr inbounds %struct.my_source_mgr, ptr %20, i32 0, i32 0\l  %22 = getelementptr inbounds %struct.jpeg_source_mgr, ptr %21, i32 0, i32 1\l  %23 = load i64, ptr %22, align 8\l  %24 = load i64, ptr %4, align 8\l  %25 = sub nsw i64 %24, %23\l  store i64 %25, ptr %4, align 8\l  %26 = load ptr, ptr %3, align 8\l  %27 = call i32 @fill_input_buffer(ptr noundef %26)\l  br label %12\l}"];
+	Node0x600001fe63f0 -> Node0x600001fe63a0[tooltip="19 -> 12\nProbability 100.00%" ];
+	Node0x600001fe6440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{28:\l|  %29 = load i64, ptr %4, align 8\l  %30 = load ptr, ptr %5, align 8\l  %31 = getelementptr inbounds %struct.my_source_mgr, ptr %30, i32 0, i32 0\l  %32 = getelementptr inbounds %struct.jpeg_source_mgr, ptr %31, i32 0, i32 0\l  %33 = load ptr, ptr %32, align 8\l  %34 = getelementptr inbounds i8, ptr %33, i64 %29\l  store ptr %34, ptr %32, align 8\l  %35 = load i64, ptr %4, align 8\l  %36 = load ptr, ptr %5, align 8\l  %37 = getelementptr inbounds %struct.my_source_mgr, ptr %36, i32 0, i32 0\l  %38 = getelementptr inbounds %struct.jpeg_source_mgr, ptr %37, i32 0, i32 1\l  %39 = load i64, ptr %38, align 8\l  %40 = sub i64 %39, %35\l  store i64 %40, ptr %38, align 8\l  br label %41\l}"];
+	Node0x600001fe6440 -> Node0x600001fe6490[tooltip="28 -> 41\nProbability 100.00%" ];
+	Node0x600001fe6490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{41:\l|  ret void\l}"];
+}

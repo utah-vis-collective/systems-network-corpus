@@ -1,0 +1,12 @@
+digraph "CFG for 'id3_utf16_decode' function" {
+	label="CFG for 'id3_utf16_decode' function";
+
+	Node0x6000021e2b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  br label %5\l}"];
+	Node0x6000021e2b70 -> Node0x6000021e2bc0[tooltip="2 -> 5\nProbability 100.00%" ];
+	Node0x6000021e2bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %3, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = call i64 @id3_utf16_decodechar(ptr noundef %6, ptr noundef %7)\l  %9 = load ptr, ptr %3, align 8\l  %10 = getelementptr inbounds i16, ptr %9, i64 %8\l  store ptr %10, ptr %3, align 8\l  br label %11\l}"];
+	Node0x6000021e2bc0 -> Node0x6000021e2c10[tooltip="5 -> 11\nProbability 100.00%" ];
+	Node0x6000021e2c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %4, align 8\l  %13 = getelementptr inbounds i64, ptr %12, i32 1\l  store ptr %13, ptr %4, align 8\l  %14 = load i64, ptr %12, align 8\l  %15 = icmp ne i64 %14, 0\l  br i1 %15, label %5, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000021e2c10:s0 -> Node0x6000021e2bc0[tooltip="11 -> 5\nProbability 96.88%" ];
+	Node0x6000021e2c10:s1 -> Node0x6000021e2c60[tooltip="11 -> 16\nProbability 3.12%" ];
+	Node0x6000021e2c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  ret void\l}"];
+}

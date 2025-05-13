@@ -1,0 +1,15 @@
+digraph "CFG for '__mulsf3' function" {
+	label="CFG for '__mulsf3' function";
+
+	Node0x600000b27f70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca float, align 4\l  %4 = alloca float, align 4\l  %5 = alloca float, align 4\l  %6 = alloca [2 x i64], align 8\l  %7 = alloca [2 x i64], align 8\l  store float %0, ptr %4, align 4\l  store float %1, ptr %5, align 4\l  %8 = load i64, ptr %4, align 4\l  %9 = and i64 %8, 2147483647\l  %10 = icmp ne i64 %9, 0\l  br i1 %10, label %11, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600000b27f70:s0 -> Node0x600000b20000[tooltip="2 -> 11\nProbability 62.50%" ];
+	Node0x600000b27f70:s1 -> Node0x600000b20050[tooltip="2 -> 15\nProbability 37.50%" ];
+	Node0x600000b20000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load i64, ptr %5, align 4\l  %13 = and i64 %12, 2147483647\l  %14 = icmp ne i64 %13, 0\l  br i1 %14, label %16, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x600000b20000:s0 -> Node0x600000b200a0[tooltip="11 -> 16\nProbability 62.50%" ];
+	Node0x600000b20000:s1 -> Node0x600000b20050[tooltip="11 -> 15\nProbability 37.50%" ];
+	Node0x600000b20050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  store float 0.000000e+00, ptr %3, align 4\l  br label %45\l}"];
+	Node0x600000b20050 -> Node0x600000b200f0[tooltip="15 -> 45\nProbability 100.00%" ];
+	Node0x600000b200a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load i64, ptr %4, align 4\l  %18 = and i64 %17, 2147483648\l  %19 = load i64, ptr %4, align 4\l  %20 = and i64 %19, 2147483647\l  %21 = ashr i64 %20, 3\l  %22 = add nsw i64 %18, %21\l  %23 = add nsw i64 %22, 939524096\l  %24 = getelementptr inbounds [2 x i64], ptr %6, i64 0, i64 1\l  store i64 %23, ptr %24, align 8\l  %25 = load i64, ptr %4, align 4\l  %26 = shl i64 %25, 29\l  %27 = getelementptr inbounds [2 x i64], ptr %6, i64 0, i64 0\l  store i64 %26, ptr %27, align 8\l  %28 = load i64, ptr %5, align 4\l  %29 = and i64 %28, 2147483648\l  %30 = load i64, ptr %5, align 4\l  %31 = and i64 %30, 2147483647\l  %32 = ashr i64 %31, 3\l  %33 = add nsw i64 %29, %32\l  %34 = add nsw i64 %33, 939524096\l  %35 = getelementptr inbounds [2 x i64], ptr %7, i64 0, i64 1\l  store i64 %34, ptr %35, align 8\l  %36 = load i64, ptr %5, align 4\l  %37 = shl i64 %36, 29\l  %38 = getelementptr inbounds [2 x i64], ptr %7, i64 0, i64 0\l  store i64 %37, ptr %38, align 8\l  %39 = getelementptr inbounds [2 x i64], ptr %6, i64 0, i64 0\l  %40 = load double, ptr %39, align 8\l  %41 = getelementptr inbounds [2 x i64], ptr %7, i64 0, i64 0\l  %42 = load double, ptr %41, align 8\l  %43 = fmul double %40, %42\l  %44 = fptrunc double %43 to float\l  store float %44, ptr %3, align 4\l  br label %45\l}"];
+	Node0x600000b200a0 -> Node0x600000b200f0[tooltip="16 -> 45\nProbability 100.00%" ];
+	Node0x600000b200f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{45:\l|  %46 = load float, ptr %3, align 4\l  ret float %46\l}"];
+}

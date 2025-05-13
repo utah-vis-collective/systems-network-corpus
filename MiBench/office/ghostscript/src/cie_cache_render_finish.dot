@@ -1,0 +1,29 @@
+digraph "CFG for 'cie_cache_render_finish' function" {
+	label="CFG for 'cie_cache_render_finish' function";
+
+	Node0x6000017275c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.ref_s, ptr %7, i32 0, i32 1\l  %9 = load ptr, ptr %8, align 8\l  store ptr %9, ptr %4, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.gs_cie_render_s, ptr %10, i32 0, i32 11\l  %12 = getelementptr inbounds %struct.anon.0, ptr %11, i32 0, i32 0\l  %13 = getelementptr inbounds %struct.gx_color_lookup_table_s, ptr %12, i32\l... 0, i32 3\l  %14 = load ptr, ptr %13, align 8\l  %15 = icmp ne ptr %14, null\l  br i1 %15, label %16, label %42\l|{<s0>T|<s1>F}}"];
+	Node0x6000017275c0:s0 -> Node0x600001727610[tooltip="1 -> 16\nProbability 62.50%" ];
+	Node0x6000017275c0:s1 -> Node0x6000017277f0[tooltip="1 -> 42\nProbability 37.50%" ];
+	Node0x600001727610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.gs_cie_render_s, ptr %17, i32 0, i32 19\l  %19 = getelementptr inbounds %struct.anon.1, ptr %18, i32 0, i32 3\l  %20 = load i32, ptr %19, align 4\l  %21 = icmp ne i32 %20, 0\l  br i1 %21, label %42, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001727610:s0 -> Node0x6000017277f0[tooltip="16 -> 42\nProbability 62.50%" ];
+	Node0x600001727610:s1 -> Node0x600001727660[tooltip="16 -> 22\nProbability 37.50%" ];
+	Node0x600001727660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  store i32 0, ptr %6, align 4\l  br label %23\l}"];
+	Node0x600001727660 -> Node0x6000017276b0[tooltip="22 -> 23\nProbability 100.00%" ];
+	Node0x6000017276b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %6, align 4\l  %25 = load ptr, ptr %4, align 8\l  %26 = getelementptr inbounds %struct.gs_cie_render_s, ptr %25, i32 0, i32 11\l  %27 = getelementptr inbounds %struct.anon.0, ptr %26, i32 0, i32 0\l  %28 = getelementptr inbounds %struct.gx_color_lookup_table_s, ptr %27, i32\l... 0, i32 2\l  %29 = load i32, ptr %28, align 4\l  %30 = icmp slt i32 %24, %29\l  br i1 %30, label %31, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x6000017276b0:s0 -> Node0x600001727700[tooltip="23 -> 31\nProbability 96.88%" ];
+	Node0x6000017276b0:s1 -> Node0x6000017277a0[tooltip="23 -> 41\nProbability 3.12%" ];
+	Node0x600001727700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %4, align 8\l  %33 = getelementptr inbounds %struct.gs_cie_render_s, ptr %32, i32 0, i32 19\l  %34 = getelementptr inbounds %struct.anon.1, ptr %33, i32 0, i32 2\l  %35 = load i32, ptr %6, align 4\l  %36 = sext i32 %35 to i64\l  %37 = getelementptr inbounds [4 x %union.gx_cie_scalar_cache_s], ptr %34,\l... i64 0, i64 %36\l  call void @gs_cie_cache_to_fracs(ptr noundef %37)\l  br label %38\l}"];
+	Node0x600001727700 -> Node0x600001727750[tooltip="31 -> 38\nProbability 100.00%" ];
+	Node0x600001727750 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %6, align 4\l  %40 = add nsw i32 %39, 1\l  store i32 %40, ptr %6, align 4\l  br label %23\l}"];
+	Node0x600001727750 -> Node0x6000017276b0[tooltip="38 -> 23\nProbability 100.00%" ];
+	Node0x6000017277a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{41:\l|  br label %42\l}"];
+	Node0x6000017277a0 -> Node0x6000017277f0[tooltip="41 -> 42\nProbability 100.00%" ];
+	Node0x6000017277f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{42:\l|  %43 = load ptr, ptr %4, align 8\l  %44 = call i32 @gs_cie_render_complete(ptr noundef %43)\l  store i32 %44, ptr %5, align 4\l  %45 = load i32, ptr %5, align 4\l  %46 = icmp slt i32 %45, 0\l  br i1 %46, label %47, label %49\l|{<s0>T|<s1>F}}"];
+	Node0x6000017277f0:s0 -> Node0x600001727840[tooltip="42 -> 47\nProbability 37.50%" ];
+	Node0x6000017277f0:s1 -> Node0x600001727890[tooltip="42 -> 49\nProbability 62.50%" ];
+	Node0x600001727840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %5, align 4\l  store i32 %48, ptr %2, align 4\l  br label %52\l}"];
+	Node0x600001727840 -> Node0x6000017278e0[tooltip="47 -> 52\nProbability 100.00%" ];
+	Node0x600001727890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{49:\l|  %50 = load ptr, ptr @o_stack, align 8\l  %51 = getelementptr inbounds %struct.ref_s, ptr %50, i64 -1\l  store ptr %51, ptr @o_stack, align 8\l  store i32 0, ptr %2, align 4\l  br label %52\l}"];
+	Node0x600001727890 -> Node0x6000017278e0[tooltip="49 -> 52\nProbability 100.00%" ];
+	Node0x6000017278e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{52:\l|  %53 = load i32, ptr %2, align 4\l  ret i32 %53\l}"];
+}

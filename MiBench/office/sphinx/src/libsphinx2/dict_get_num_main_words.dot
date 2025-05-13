@@ -1,0 +1,5 @@
+digraph "CFG for 'dict_get_num_main_words' function" {
+	label="CFG for 'dict_get_num_main_words' function";
+
+	Node0x600002450000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call ptr @kb_get_lm_end_sym()\l  %5 = call ptr @dictStrToWordId(ptr noundef %3, ptr noundef %4, i32 noundef 0)\l  %6 = ptrtoint ptr %5 to i32\l  ret i32 %6\l}"];
+}

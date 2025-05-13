@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__111char_traitsIcE3eofB8ne190107Ev' function" {
+	label="CFG for '_ZNSt3__111char_traitsIcE3eofB8ne190107Ev' function";
+
+	Node0x600000d03610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 -1\l}"];
+}

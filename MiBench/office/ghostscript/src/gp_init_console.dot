@@ -1,0 +1,5 @@
+digraph "CFG for 'gp_init_console' function" {
+	label="CFG for 'gp_init_console' function";
+
+	Node0x600000c51ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret void\l}"];
+}

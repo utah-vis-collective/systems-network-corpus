@@ -1,0 +1,28 @@
+digraph "CFG for 'sp_zero' function" {
+	label="CFG for 'sp_zero' function";
+
+	Node0x600002679130 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %7 = load ptr, ptr %2, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %11, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600002679130:s0 -> Node0x6000026791d0[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x600002679130:s1 -> Node0x600002679180[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x600002679180 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f08b6e70" fontname="Courier",label="{9:\l|  %10 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 711,\l... ptr noundef @.str.14, i32 noundef 0)\l  br label %11\l}"];
+	Node0x600002679180 -> Node0x6000026791d0[tooltip="9 -> 11\nProbability 100.00%" ];
+	Node0x6000026791d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{11:\l|  store i32 0, ptr %3, align 4\l  br label %12\l}"];
+	Node0x6000026791d0 -> Node0x600002679220[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600002679220 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %3, align 4\l  %14 = load ptr, ptr %2, align 8\l  %15 = getelementptr inbounds %struct.SPMAT, ptr %14, i32 0, i32 0\l  %16 = load i32, ptr %15, align 8\l  %17 = icmp slt i32 %13, %16\l  br i1 %17, label %18, label %50\l|{<s0>T|<s1>F}}"];
+	Node0x600002679220:s0 -> Node0x600002679270[tooltip="12 -> 18\nProbability 96.88%" ];
+	Node0x600002679220:s1 -> Node0x600002679450[tooltip="12 -> 50\nProbability 3.12%" ];
+	Node0x600002679270 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %2, align 8\l  %20 = getelementptr inbounds %struct.SPMAT, ptr %19, i32 0, i32 6\l  %21 = load ptr, ptr %20, align 8\l  %22 = load i32, ptr %3, align 4\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds %struct.SPROW, ptr %21, i64 %23\l  %25 = getelementptr inbounds %struct.SPROW, ptr %24, i32 0, i32 3\l  %26 = load ptr, ptr %25, align 8\l  store ptr %26, ptr %6, align 8\l  %27 = load ptr, ptr %2, align 8\l  %28 = getelementptr inbounds %struct.SPMAT, ptr %27, i32 0, i32 6\l  %29 = load ptr, ptr %28, align 8\l  %30 = load i32, ptr %3, align 4\l  %31 = sext i32 %30 to i64\l  %32 = getelementptr inbounds %struct.SPROW, ptr %29, i64 %31\l  %33 = getelementptr inbounds %struct.SPROW, ptr %32, i32 0, i32 0\l  %34 = load i32, ptr %33, align 8\l  store i32 %34, ptr %5, align 4\l  store i32 0, ptr %4, align 4\l  br label %35\l}"];
+	Node0x600002679270 -> Node0x6000026792c0[tooltip="18 -> 35\nProbability 100.00%" ];
+	Node0x6000026792c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %4, align 4\l  %37 = load i32, ptr %5, align 4\l  %38 = icmp slt i32 %36, %37\l  br i1 %38, label %39, label %46\l|{<s0>T|<s1>F}}"];
+	Node0x6000026792c0:s0 -> Node0x600002679310[tooltip="35 -> 39\nProbability 96.88%" ];
+	Node0x6000026792c0:s1 -> Node0x6000026793b0[tooltip="35 -> 46\nProbability 3.12%" ];
+	Node0x600002679310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %6, align 8\l  %41 = getelementptr inbounds %struct.row_elt, ptr %40, i32 1\l  store ptr %41, ptr %6, align 8\l  %42 = getelementptr inbounds %struct.row_elt, ptr %40, i32 0, i32 3\l  store double 0.000000e+00, ptr %42, align 8\l  br label %43\l}"];
+	Node0x600002679310 -> Node0x600002679360[tooltip="39 -> 43\nProbability 100.00%" ];
+	Node0x600002679360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load i32, ptr %4, align 4\l  %45 = add nsw i32 %44, 1\l  store i32 %45, ptr %4, align 4\l  br label %35\l}"];
+	Node0x600002679360 -> Node0x6000026792c0[tooltip="43 -> 35\nProbability 100.00%" ];
+	Node0x6000026793b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{46:\l|  br label %47\l}"];
+	Node0x6000026793b0 -> Node0x600002679400[tooltip="46 -> 47\nProbability 100.00%" ];
+	Node0x600002679400 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %3, align 4\l  %49 = add nsw i32 %48, 1\l  store i32 %49, ptr %3, align 4\l  br label %12\l}"];
+	Node0x600002679400 -> Node0x600002679220[tooltip="47 -> 12\nProbability 100.00%" ];
+	Node0x600002679450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{50:\l|  %51 = load ptr, ptr %2, align 8\l  ret ptr %51\l}"];
+}

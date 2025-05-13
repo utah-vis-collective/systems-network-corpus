@@ -1,0 +1,12 @@
+digraph "CFG for '_tiffSizeProc' function" {
+	label="CFG for '_tiffSizeProc' function";
+
+	Node0x6000035323a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca %struct.stat, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = ptrtoint ptr %4 to i32\l  %6 = call i32 @\"\\01_fstat\"(i32 noundef %5, ptr noundef %3)\l  %7 = icmp slt i32 %6, 0\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000035323a0:s0 -> Node0x6000035323f0[tooltip="1 -> 8\nProbability 37.50%" ];
+	Node0x6000035323a0:s1 -> Node0x600003532440[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x6000035323f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{8:\l|  br label %12\l}"];
+	Node0x6000035323f0 -> Node0x600003532490[tooltip="8 -> 12\nProbability 100.00%" ];
+	Node0x600003532440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = getelementptr inbounds %struct.stat, ptr %3, i32 0, i32 11\l  %11 = load i64, ptr %10, align 8\l  br label %12\l}"];
+	Node0x600003532440 -> Node0x600003532490[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x600003532490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = phi i64 [ 0, %8 ], [ %11, %9 ]\l  ret i64 %13\l}"];
+}

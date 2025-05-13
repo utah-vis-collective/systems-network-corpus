@@ -1,0 +1,26 @@
+digraph "CFG for '_Z7_clFreeP7_cl_mem' function" {
+	label="CFG for '_Z7_clFreeP7_cl_mem' function";
+
+	Node0x600000d0b840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca double, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca double, align 8\l  store ptr %0, ptr %2, align 8\l  %7 = invoke noundef double @_Z7gettimev()\l          to label %8 unwind label %15\l}"];
+	Node0x600000d0b840 -> Node0x600000d0b890[tooltip="1 -> 8\nProbability 100.00%" ];
+	Node0x600000d0b840 -> Node0x600000d0b980[tooltip="1 -> 15\nProbability 0.00%" ];
+	Node0x600000d0b890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  store double %7, ptr %3, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600000d0b890:s0 -> Node0x600000d0b8e0[tooltip="8 -> 11\nProbability 62.50%" ];
+	Node0x600000d0b890:s1 -> Node0x600000d0ba70[tooltip="8 -> 24\nProbability 37.50%" ];
+	Node0x600000d0b8e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %2, align 8\l  %13 = invoke i32 @clReleaseMemObject(ptr noundef %12)\l          to label %14 unwind label %15\l}"];
+	Node0x600000d0b8e0 -> Node0x600000d0b930[tooltip="11 -> 14\nProbability 100.00%" ];
+	Node0x600000d0b8e0 -> Node0x600000d0b980[tooltip="11 -> 15\nProbability 0.00%" ];
+	Node0x600000d0b930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  store i32 %13, ptr getelementptr inbounds (%struct.oclHandleStruct, ptr\l... @oclHandles, i32 0, i32 4), align 8\l  br label %24\l}"];
+	Node0x600000d0b930 -> Node0x600000d0ba70[tooltip="14 -> 24\nProbability 100.00%" ];
+	Node0x600000d0b980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{15:\l|  %16 = landingpad \{ ptr, i32 \}\l          filter [1 x ptr] [ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE]\l  %17 = extractvalue \{ ptr, i32 \} %16, 0\l  store ptr %17, ptr %4, align 8\l  %18 = extractvalue \{ ptr, i32 \} %16, 1\l  store i32 %18, ptr %5, align 4\l  br label %19\l}"];
+	Node0x600000d0b980 -> Node0x600000d0b9d0[tooltip="15 -> 19\nProbability 100.00%" ];
+	Node0x600000d0b9d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %5, align 4\l  %21 = icmp slt i32 %20, 0\l  br i1 %21, label %22, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600000d0b9d0:s0 -> Node0x600000d0ba20[tooltip="19 -> 22\nProbability 0.00%" ];
+	Node0x600000d0b9d0:s1 -> Node0x600000d0bb10[tooltip="19 -> 32\nProbability 100.00%" ];
+	Node0x600000d0ba20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#9abbff70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %4, align 8\l  call void @__cxa_call_unexpected(ptr %23) #17\l  unreachable\l}"];
+	Node0x600000d0ba70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = invoke noundef double @_Z7gettimev()\l          to label %26 unwind label %15\l}"];
+	Node0x600000d0ba70 -> Node0x600000d0bac0[tooltip="24 -> 26\nProbability 100.00%" ];
+	Node0x600000d0ba70 -> Node0x600000d0b980[tooltip="24 -> 15\nProbability 0.00%" ];
+	Node0x600000d0bac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  store double %25, ptr %6, align 8\l  %27 = load double, ptr %6, align 8\l  %28 = load double, ptr %3, align 8\l  %29 = fsub double %27, %28\l  %30 = load double, ptr @MF, align 8\l  %31 = fadd double %30, %29\l  store double %31, ptr @MF, align 8\l  ret void\l}"];
+	Node0x600000d0bb10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{32:\l|  %33 = load ptr, ptr %4, align 8\l  %34 = load i32, ptr %5, align 4\l  %35 = insertvalue \{ ptr, i32 \} poison, ptr %33, 0\l  %36 = insertvalue \{ ptr, i32 \} %35, i32 %34, 1\l  resume \{ ptr, i32 \} %36\l}"];
+}

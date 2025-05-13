@@ -1,0 +1,15 @@
+digraph "CFG for 'foo_2_free' function" {
+	label="CFG for 'foo_2_free' function";
+
+	Node0x6000036c2fd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000036c2fd0:s0 -> Node0x6000036c3020[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x6000036c2fd0:s1 -> Node0x6000036c3110[tooltip="1 -> 21\nProbability 37.50%" ];
+	Node0x6000036c3020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = call i32 @mem_info_is_on()\l  %7 = icmp ne i32 %6, 0\l  br i1 %7, label %8, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000036c3020:s0 -> Node0x6000036c3070[tooltip="5 -> 8\nProbability 62.50%" ];
+	Node0x6000036c3020:s1 -> Node0x6000036c30c0[tooltip="5 -> 16\nProbability 37.50%" ];
+	Node0x6000036c3070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.FOO_2, ptr %9, i32 0, i32 0\l  %11 = load i32, ptr %10, align 8\l  %12 = sext i32 %11 to i64\l  %13 = mul i64 %12, 16\l  %14 = add i64 16, %13\l  %15 = trunc i64 %14 to i32\l  call void @mem_bytes_list(i32 noundef 2, i32 noundef %15, i32 noundef 0, i32\l... noundef 1)\l  call void @mem_numvar_list(i32 noundef 2, i32 noundef -1, i32 noundef 1)\l  br label %16\l}"];
+	Node0x6000036c3070 -> Node0x6000036c30c0[tooltip="8 -> 16\nProbability 100.00%" ];
+	Node0x6000036c30c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %2, align 8\l  %18 = getelementptr inbounds %struct.FOO_2, ptr %17, i32 0, i32 2\l  %19 = load ptr, ptr %18, align 8\l  call void @free(ptr noundef %19)\l  %20 = load ptr, ptr %2, align 8\l  call void @free(ptr noundef %20)\l  br label %21\l}"];
+	Node0x6000036c30c0 -> Node0x6000036c3110[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x6000036c3110 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  ret i32 0\l}"];
+}

@@ -1,0 +1,17 @@
+digraph "CFG for 'emit_buffered_bits' function" {
+	label="CFG for 'emit_buffered_bits' function";
+
+	Node0x600000a9a620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.phuff_entropy_encoder, ptr %7, i32 0,\l... i32 1\l  %9 = load i32, ptr %8, align 8\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600000a9a620:s0 -> Node0x600000a9a670[tooltip="3 -> 11\nProbability 62.50%" ];
+	Node0x600000a9a620:s1 -> Node0x600000a9a6c0[tooltip="3 -> 12\nProbability 37.50%" ];
+	Node0x600000a9a670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{11:\l|  br label %25\l}"];
+	Node0x600000a9a670 -> Node0x600000a9a7b0[tooltip="11 -> 25\nProbability 100.00%" ];
+	Node0x600000a9a6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{12:\l|  br label %13\l}"];
+	Node0x600000a9a6c0 -> Node0x600000a9a710[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x600000a9a710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %6, align 4\l  %15 = icmp ugt i32 %14, 0\l  br i1 %15, label %16, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600000a9a710:s0 -> Node0x600000a9a760[tooltip="13 -> 16\nProbability 96.88%" ];
+	Node0x600000a9a710:s1 -> Node0x600000a9a7b0[tooltip="13 -> 25\nProbability 3.12%" ];
+	Node0x600000a9a760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = load ptr, ptr %5, align 8\l  %19 = load i8, ptr %18, align 1\l  %20 = sext i8 %19 to i32\l  call void @emit_bits(ptr noundef %17, i32 noundef %20, i32 noundef 1)\l  %21 = load ptr, ptr %5, align 8\l  %22 = getelementptr inbounds i8, ptr %21, i32 1\l  store ptr %22, ptr %5, align 8\l  %23 = load i32, ptr %6, align 4\l  %24 = add i32 %23, -1\l  store i32 %24, ptr %6, align 4\l  br label %13\l}"];
+	Node0x600000a9a760 -> Node0x600000a9a710[tooltip="16 -> 13\nProbability 100.00%" ];
+	Node0x600000a9a7b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{25:\l|  ret void\l}"];
+}

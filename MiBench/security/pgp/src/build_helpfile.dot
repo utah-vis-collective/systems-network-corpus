@@ -1,0 +1,17 @@
+digraph "CFG for 'build_helpfile' function" {
+	label="CFG for 'build_helpfile' function";
+
+	Node0x6000007a79d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = call i32 @strcmp(ptr noundef @language, ptr noundef @.str.136) #10\l  %6 = icmp ne i32 %5, 0\l  br i1 %6, label %7, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000007a79d0:s0 -> Node0x6000007a7a20[tooltip="2 -> 7\nProbability 62.50%" ];
+	Node0x6000007a79d0:s1 -> Node0x6000007a7b10[tooltip="2 -> 21\nProbability 37.50%" ];
+	Node0x6000007a7a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %3, align 8\l  %9 = call ptr @buildfilename(ptr noundef %8, ptr noundef @language)\l  %10 = load ptr, ptr %3, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = load ptr, ptr %3, align 8\l  %13 = call i64 @llvm.objectsize.i64.p0(ptr %12, i1 false, i1 true, i1 false)\l  %14 = call ptr @__strcat_chk(ptr noundef %10, ptr noundef %11, i64 noundef\l... %13) #10\l  %15 = load ptr, ptr %3, align 8\l  call void @force_extension(ptr noundef %15, ptr noundef @HLP_EXTENSION)\l  %16 = load ptr, ptr %3, align 8\l  %17 = call zeroext i8 @file_exists(ptr noundef %16)\l  %18 = icmp ne i8 %17, 0\l  br i1 %18, label %19, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000007a7a20:s0 -> Node0x6000007a7a70[tooltip="7 -> 19\nProbability 62.50%" ];
+	Node0x6000007a7a20:s1 -> Node0x6000007a7ac0[tooltip="7 -> 20\nProbability 37.50%" ];
+	Node0x6000007a7a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  br label %30\l}"];
+	Node0x6000007a7a70 -> Node0x6000007a7b60[tooltip="19 -> 30\nProbability 100.00%" ];
+	Node0x6000007a7ac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  br label %21\l}"];
+	Node0x6000007a7ac0 -> Node0x6000007a7b10[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x6000007a7b10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = call ptr @buildfilename(ptr noundef %22, ptr noundef @.str.137)\l  %24 = load ptr, ptr %3, align 8\l  %25 = load ptr, ptr %4, align 8\l  %26 = load ptr, ptr %3, align 8\l  %27 = call i64 @llvm.objectsize.i64.p0(ptr %26, i1 false, i1 true, i1 false)\l  %28 = call ptr @__strcat_chk(ptr noundef %24, ptr noundef %25, i64 noundef\l... %27) #10\l  %29 = load ptr, ptr %3, align 8\l  call void @force_extension(ptr noundef %29, ptr noundef @HLP_EXTENSION)\l  br label %30\l}"];
+	Node0x6000007a7b10 -> Node0x6000007a7b60[tooltip="21 -> 30\nProbability 100.00%" ];
+	Node0x6000007a7b60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  ret void\l}"];
+}

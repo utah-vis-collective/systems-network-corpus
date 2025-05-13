@@ -1,0 +1,14 @@
+digraph "CFG for '__mltadd__' function" {
+	label="CFG for '__mltadd__' function";
+
+	Node0x60000036a080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca double, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store double %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  store i32 0, ptr %9, align 4\l  br label %10\l}"];
+	Node0x60000036a080 -> Node0x60000036a0d0[tooltip="4 -> 10\nProbability 100.00%" ];
+	Node0x60000036a0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %9, align 4\l  %12 = load i32, ptr %8, align 4\l  %13 = icmp slt i32 %11, %12\l  br i1 %13, label %14, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x60000036a0d0:s0 -> Node0x60000036a120[tooltip="10 -> 14\nProbability 96.88%" ];
+	Node0x60000036a0d0:s1 -> Node0x60000036a1c0[tooltip="10 -> 30\nProbability 3.12%" ];
+	Node0x60000036a120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load double, ptr %7, align 8\l  %16 = load ptr, ptr %6, align 8\l  %17 = load i32, ptr %9, align 4\l  %18 = sext i32 %17 to i64\l  %19 = getelementptr inbounds double, ptr %16, i64 %18\l  %20 = load double, ptr %19, align 8\l  %21 = load ptr, ptr %5, align 8\l  %22 = load i32, ptr %9, align 4\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds double, ptr %21, i64 %23\l  %25 = load double, ptr %24, align 8\l  %26 = call double @llvm.fmuladd.f64(double %15, double %20, double %25)\l  store double %26, ptr %24, align 8\l  br label %27\l}"];
+	Node0x60000036a120 -> Node0x60000036a170[tooltip="14 -> 27\nProbability 100.00%" ];
+	Node0x60000036a170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %9, align 4\l  %29 = add nsw i32 %28, 1\l  store i32 %29, ptr %9, align 4\l  br label %10\l}"];
+	Node0x60000036a170 -> Node0x60000036a0d0[tooltip="27 -> 10\nProbability 100.00%" ];
+	Node0x60000036a1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{30:\l|  ret void\l}"];
+}

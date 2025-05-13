@@ -1,0 +1,5 @@
+digraph "CFG for 'lbp8_print_page' function" {
+	label="CFG for 'lbp8_print_page' function";
+
+	Node0x600002b420d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = load ptr, ptr @lbp8_end, align 8\l  %8 = call i32 @can_print_page(ptr noundef %5, ptr noundef %6, ptr noundef\l... @lbp8_init, i32 noundef 31, ptr noundef %7, i32 noundef 8)\l  ret i32 %8\l}"];
+}

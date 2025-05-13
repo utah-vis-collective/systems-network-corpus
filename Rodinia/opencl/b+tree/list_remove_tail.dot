@@ -1,0 +1,5 @@
+digraph "CFG for 'list_remove_tail' function" {
+	label="CFG for 'list_remove_tail' function";
+
+	Node0x600002033610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.list_t, ptr %4, i32 0, i32 1\l  %6 = load ptr, ptr %5, align 8\l  call void @list_remove_item(ptr noundef %3, ptr noundef %6)\l  ret void\l}"];
+}

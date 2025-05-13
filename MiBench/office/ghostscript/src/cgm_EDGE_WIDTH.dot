@@ -1,0 +1,5 @@
+digraph "CFG for 'cgm_EDGE_WIDTH' function" {
+	label="CFG for 'cgm_EDGE_WIDTH' function";
+
+	Node0x6000024c1b80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  call void @begin_command(ptr noundef %5, i32 noundef 668)\l  %6 = load ptr, ptr %3, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds %struct.cgm_state_s, ptr %8, i32 0, i32 3\l  %10 = getelementptr inbounds %struct.cgm_picture_elements_s, ptr %9, i32 0,\l... i32 5\l  %11 = load i32, ptr %10, align 4\l  call void @put_vdc_r(ptr noundef %6, ptr noundef %7, i32 noundef %11)\l  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.cgm_state_s, ptr %12, i32 0, i32 36\l  %14 = load ptr, ptr %4, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %13, ptr align 8 %14, i64 8, i1\l... false)\l  %15 = load ptr, ptr %3, align 8\l  %16 = call i32 @end_command(ptr noundef %15)\l  ret i32 %16\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 'search_delete_saved_lattice' function" {
+	label="CFG for 'search_delete_saved_lattice' function";
+
+	Node0x600002afcd70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @lattice, align 8\l  %2 = icmp ne ptr %1, null\l  br i1 %2, label %3, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x600002afcd70:s0 -> Node0x600002afcdc0[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x600002afcd70:s1 -> Node0x600002afce10[tooltip="0 -> 5\nProbability 37.50%" ];
+	Node0x600002afcdc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @lattice, align 8\l  call void @destroy_lattice(ptr noundef %4)\l  store ptr null, ptr @lattice, align 8\l  store ptr null, ptr getelementptr inbounds (%struct.permanent_lattice_s, ptr\l... @lattice, i32 0, i32 1), align 8\l  store ptr null, ptr getelementptr inbounds (%struct.permanent_lattice_s, ptr\l... @lattice, i32 0, i32 2), align 8\l  br label %5\l}"];
+	Node0x600002afcdc0 -> Node0x600002afce10[tooltip="3 -> 5\nProbability 100.00%" ];
+	Node0x600002afce10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  ret void\l}"];
+}

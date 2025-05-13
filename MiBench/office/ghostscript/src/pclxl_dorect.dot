@@ -1,0 +1,19 @@
+digraph "CFG for 'pclxl_dorect' function" {
+	label="CFG for 'pclxl_dorect' function";
+
+	Node0x600003ba0410 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  %9 = alloca i64, align 8\l  %10 = alloca i64, align 8\l  %11 = alloca i64, align 8\l  %12 = alloca i32, align 4\l  %13 = alloca ptr, align 8\l  store ptr %0, ptr %7, align 8\l  store i64 %1, ptr %8, align 8\l  store i64 %2, ptr %9, align 8\l  store i64 %3, ptr %10, align 8\l  store i64 %4, ptr %11, align 8\l  store i32 %5, ptr %12, align 4\l  %14 = load ptr, ptr %7, align 8\l  %15 = call ptr @gdev_vector_stream(ptr noundef %14)\l  store ptr %15, ptr %13, align 8\l  %16 = load i32, ptr %12, align 4\l  %17 = and i32 %16, 3\l  %18 = icmp ne i32 %17, 0\l  br i1 %18, label %19, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba0410:s0 -> Node0x600003ba0460[tooltip="6 -> 19\nProbability 62.50%" ];
+	Node0x600003ba0410:s1 -> Node0x600003ba0550[tooltip="6 -> 30\nProbability 37.50%" ];
+	Node0x600003ba0460 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %7, align 8\l  %21 = load i32, ptr %12, align 4\l  call void @pclxl_set_paints(ptr noundef %20, i32 noundef %21)\l  %22 = load ptr, ptr %13, align 8\l  %23 = load i64, ptr %8, align 8\l  %24 = load i64, ptr %9, align 8\l  %25 = load i64, ptr %10, align 8\l  %26 = load i64, ptr %11, align 8\l  call void @put_usq_fixed(ptr noundef %22, i64 noundef %23, i64 noundef %24,\l... i64 noundef %25, i64 noundef %26)\l  br label %27\l}"];
+	Node0x600003ba0460 -> Node0x600003ba04b0[tooltip="19 -> 27\nProbability 100.00%" ];
+	Node0x600003ba04b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %13, align 8\l  call void @put_bytes(ptr noundef %28, ptr noundef @pclxl_dorect.ac_, i32\l... noundef 3)\l  br label %29\l}"];
+	Node0x600003ba04b0 -> Node0x600003ba0500[tooltip="27 -> 29\nProbability 100.00%" ];
+	Node0x600003ba0500 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  br label %30\l}"];
+	Node0x600003ba0500 -> Node0x600003ba0550[tooltip="29 -> 30\nProbability 100.00%" ];
+	Node0x600003ba0550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %12, align 4\l  %32 = and i32 %31, 4\l  %33 = icmp ne i32 %32, 0\l  br i1 %33, label %34, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba0550:s0 -> Node0x600003ba05a0[tooltip="30 -> 34\nProbability 50.00%" ];
+	Node0x600003ba0550:s1 -> Node0x600003ba05f0[tooltip="30 -> 41\nProbability 50.00%" ];
+	Node0x600003ba05a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %13, align 8\l  %36 = load i64, ptr %8, align 8\l  %37 = load i64, ptr %9, align 8\l  %38 = load i64, ptr %10, align 8\l  %39 = load i64, ptr %11, align 8\l  call void @put_usq_fixed(ptr noundef %35, i64 noundef %36, i64 noundef %37,\l... i64 noundef %38, i64 noundef %39)\l  %40 = load ptr, ptr %13, align 8\l  call void @put_bytes(ptr noundef %40, ptr noundef @pclxl_dorect.cr_, i32\l... noundef 7)\l  br label %41\l}"];
+	Node0x600003ba05a0 -> Node0x600003ba05f0[tooltip="34 -> 41\nProbability 100.00%" ];
+	Node0x600003ba05f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  ret i32 0\l}"];
+}

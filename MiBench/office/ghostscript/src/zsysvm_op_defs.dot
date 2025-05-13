@@ -1,0 +1,5 @@
+digraph "CFG for 'zsysvm_op_defs' function" {
+	label="CFG for 'zsysvm_op_defs' function";
+
+	Node0x6000004b5ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zsysvm_op_defs.op_defs_\l}"];
+}

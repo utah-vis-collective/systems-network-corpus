@@ -1,0 +1,15 @@
+digraph "CFG for 'uttproc_feat2rawfr' function" {
+	label="CFG for 'uttproc_feat2rawfr' function";
+
+	Node0x6000008a1ea0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = load i32, ptr @n_featfr, align 4\l  %5 = icmp sge i32 %3, %4\l  br i1 %5, label %6, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a1ea0:s0 -> Node0x6000008a1ef0[tooltip="1 -> 6\nProbability 50.00%" ];
+	Node0x6000008a1ea0:s1 -> Node0x6000008a1f40[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x6000008a1ef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  %7 = load i32, ptr @n_featfr, align 4\l  %8 = sub nsw i32 %7, 1\l  store i32 %8, ptr %2, align 4\l  br label %9\l}"];
+	Node0x6000008a1ef0 -> Node0x6000008a1f40[tooltip="6 -> 9\nProbability 100.00%" ];
+	Node0x6000008a1f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %2, align 4\l  %11 = icmp slt i32 %10, 0\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a1f40:s0 -> Node0x6000008a1f90[tooltip="9 -> 12\nProbability 37.50%" ];
+	Node0x6000008a1f40:s1 -> Node0x6000008a1fe0[tooltip="9 -> 13\nProbability 62.50%" ];
+	Node0x6000008a1f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  store i32 0, ptr %2, align 4\l  br label %13\l}"];
+	Node0x6000008a1f90 -> Node0x6000008a1fe0[tooltip="12 -> 13\nProbability 100.00%" ];
+	Node0x6000008a1fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @comp2rawfr, align 8\l  %15 = load i32, ptr %2, align 4\l  %16 = add nsw i32 %15, 8\l  %17 = sext i32 %16 to i64\l  %18 = getelementptr inbounds i16, ptr %14, i64 %17\l  %19 = load i16, ptr %18, align 2\l  %20 = sext i16 %19 to i32\l  %21 = sub nsw i32 %20, 4\l  ret i32 %21\l}"];
+}

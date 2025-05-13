@@ -1,0 +1,5 @@
+digraph "CFG for 'BF_NewHolderFromBitstreamPart' function" {
+	label="CFG for 'BF_NewHolderFromBitstreamPart' function";
+
+	Node0x6000039dceb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.BF_BitstreamPart, ptr %4, i32 0, i32 0\l  %6 = load i32, ptr %5, align 8\l  %7 = call ptr @BF_newPartHolder(i32 noundef %6)\l  store ptr %7, ptr %3, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = call ptr @BF_LoadHolderFromBitstreamPart(ptr noundef %8, ptr noundef\l... %9)\l  ret ptr %10\l}"];
+}

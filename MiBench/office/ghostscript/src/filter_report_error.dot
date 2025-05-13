@@ -1,0 +1,9 @@
+digraph "CFG for 'filter_report_error' function" {
+	label="CFG for 'filter_report_error' function";
+
+	Node0x600002134000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  br label %5\l}"];
+	Node0x600002134000 -> Node0x600002134050[tooltip="2 -> 5\nProbability 100.00%" ];
+	Node0x600002134050 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  br label %6\l}"];
+	Node0x600002134050 -> Node0x6000021340a0[tooltip="5 -> 6\nProbability 100.00%" ];
+	Node0x6000021340a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %4, align 8\l  %8 = call i32 @gs_errorinfo_put_string(ptr noundef %7)\l  ret i32 %8\l}"];
+}

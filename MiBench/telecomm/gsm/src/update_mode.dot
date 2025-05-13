@@ -1,0 +1,15 @@
+digraph "CFG for 'update_mode' function" {
+	label="CFG for 'update_mode' function";
+
+	Node0x60000253b2a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i16, ptr getelementptr inbounds (%struct.stat, ptr @instat, i32\l... 0, i32 2), align 2\l  %2 = icmp ne i16 %1, 0\l  br i1 %2, label %4, label %3\l|{<s0>T|<s1>F}}"];
+	Node0x60000253b2a0:s0 -> Node0x60000253b340[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x60000253b2a0:s1 -> Node0x60000253b2f0[tooltip="0 -> 3\nProbability 37.50%" ];
+	Node0x60000253b2f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{3:\l|  br label %19\l}"];
+	Node0x60000253b2f0 -> Node0x60000253b3e0[tooltip="3 -> 19\nProbability 100.00%" ];
+	Node0x60000253b340 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr @out, align 8\l  %6 = call i32 @fileno(ptr noundef %5)\l  %7 = load i16, ptr getelementptr inbounds (%struct.stat, ptr @instat, i32 0,\l... i32 1), align 4\l  %8 = zext i16 %7 to i32\l  %9 = and i32 %8, 4095\l  %10 = trunc i32 %9 to i16\l  %11 = call i32 @\"\\01_fchmod\"(i32 noundef %6, i16 noundef zeroext %10)\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000253b340:s0 -> Node0x60000253b390[tooltip="4 -> 13\nProbability 5.88%" ];
+	Node0x60000253b340:s1 -> Node0x60000253b3e0[tooltip="4 -> 19\nProbability 94.12%" ];
+	Node0x60000253b390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @outname, align 8\l  call void @perror(ptr noundef %14) #7\l  %15 = load ptr, ptr @__stderrp, align 8\l  %16 = load ptr, ptr @progname, align 8\l  %17 = load ptr, ptr @outname, align 8\l  %18 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %15, ptr noundef\l... @.str.60, ptr noundef %16, ptr noundef %17) #8\l  br label %19\l}"];
+	Node0x60000253b390 -> Node0x60000253b3e0[tooltip="13 -> 19\nProbability 100.00%" ];
+	Node0x60000253b3e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  ret void\l}"];
+}

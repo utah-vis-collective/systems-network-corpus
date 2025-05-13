@@ -1,0 +1,22 @@
+digraph "CFG for 'uttproc_set_mfclogdir' function" {
+	label="CFG for 'uttproc_set_mfclogdir' function";
+
+	Node0x6000008a2710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  call void @warn_notidle(ptr noundef @.str.55)\l  %4 = load ptr, ptr @mfclogdir, align 8\l  %5 = icmp ne ptr %4, null\l  br i1 %5, label %11, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a2710:s0 -> Node0x6000008a2850[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x6000008a2710:s1 -> Node0x6000008a2760[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x6000008a2760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = call ptr @calloc(i64 noundef 1024, i64 noundef 1) #7\l  store ptr %7, ptr @mfclogdir, align 8\l  %8 = icmp eq ptr %7, null\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a2760:s0 -> Node0x6000008a27b0[tooltip="6 -> 9\nProbability 37.50%" ];
+	Node0x6000008a2760:s1 -> Node0x6000008a2800[tooltip="6 -> 10\nProbability 62.50%" ];
+	Node0x6000008a27b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{9:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 1628, ptr noundef\l... @.str.1)\l  call void (ptr, ...) @_E__pr_warn(ptr noundef @.str.54)\l  store i32 -1, ptr %2, align 4\l  br label %19\l}"];
+	Node0x6000008a27b0 -> Node0x6000008a2940[tooltip="9 -> 19\nProbability 100.00%" ];
+	Node0x6000008a2800 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{10:\l|  br label %11\l}"];
+	Node0x6000008a2800 -> Node0x6000008a2850[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x6000008a2850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @mfclogdir, align 8\l  %13 = icmp ne ptr %12, null\l  br i1 %13, label %14, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a2850:s0 -> Node0x6000008a28a0[tooltip="11 -> 14\nProbability 62.50%" ];
+	Node0x6000008a2850:s1 -> Node0x6000008a28f0[tooltip="11 -> 18\nProbability 37.50%" ];
+	Node0x6000008a28a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr @mfclogdir, align 8\l  %16 = load ptr, ptr %3, align 8\l  %17 = call ptr @strcpy(ptr noundef %15, ptr noundef %16) #8\l  br label %18\l}"];
+	Node0x6000008a28a0 -> Node0x6000008a28f0[tooltip="14 -> 18\nProbability 100.00%" ];
+	Node0x6000008a28f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  store i32 0, ptr %2, align 4\l  br label %19\l}"];
+	Node0x6000008a28f0 -> Node0x6000008a2940[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x6000008a2940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %2, align 4\l  ret i32 %20\l}"];
+}

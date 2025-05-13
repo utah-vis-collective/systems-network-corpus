@@ -1,0 +1,12 @@
+digraph "CFG for 'png_process_data' function" {
+	label="CFG for 'png_process_data' function";
+
+	Node0x6000037fe440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store i64 %3, ptr %8, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = load ptr, ptr %7, align 8\l  %11 = load i64, ptr %8, align 8\l  call void @png_push_restore_buffer(ptr noundef %9, ptr noundef %10, i64\l... noundef %11)\l  br label %12\l}"];
+	Node0x6000037fe440 -> Node0x6000037fe490[tooltip="4 -> 12\nProbability 100.00%" ];
+	Node0x6000037fe490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = getelementptr inbounds %struct.png_struct_def, ptr %13, i32 0, i32 82\l  %15 = load i64, ptr %14, align 8\l  %16 = icmp ne i64 %15, 0\l  br i1 %16, label %17, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000037fe490:s0 -> Node0x6000037fe4e0[tooltip="12 -> 17\nProbability 96.88%" ];
+	Node0x6000037fe490:s1 -> Node0x6000037fe530[tooltip="12 -> 20\nProbability 3.12%" ];
+	Node0x6000037fe4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %5, align 8\l  %19 = load ptr, ptr %6, align 8\l  call void @png_process_some_data(ptr noundef %18, ptr noundef %19)\l  br label %12\l}"];
+	Node0x6000037fe4e0 -> Node0x6000037fe490[tooltip="17 -> 12\nProbability 100.00%" ];
+	Node0x6000037fe530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

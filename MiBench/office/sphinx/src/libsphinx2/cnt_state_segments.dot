@@ -1,0 +1,5 @@
+digraph "CFG for 'cnt_state_segments' function" {
+	label="CFG for 'cnt_state_segments' function";
+
+	Node0x600000d3cff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca ptr, align 8\l  store i32 %0, ptr %6, align 4\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store i32 %3, ptr %9, align 4\l  store ptr %4, ptr %10, align 8\l  %11 = load i32, ptr @n_state_segments, align 4\l  %12 = add nsw i32 %11, 1\l  store i32 %12, ptr @n_state_segments, align 4\l  ret void\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'cie_post_exec_tpqr' function" {
+	label="CFG for 'cie_post_exec_tpqr' function";
+
+	Node0x600001726c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca %struct.ref_s, align 8\l  store ptr %0, ptr %3, align 8\l  %6 = call i32 @ref_stack_counttomark(ptr noundef @o_stack)\l  store i32 %6, ptr %4, align 4\l  %7 = load i32, ptr %4, align 4\l  %8 = icmp ult i32 %7, 2\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001726c10:s0 -> Node0x600001726c60[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x600001726c10:s1 -> Node0x600001726cb0[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x600001726c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i32 -24, ptr %2, align 4\l  br label %15\l}"];
+	Node0x600001726c60 -> Node0x600001726d00[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x600001726cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %5, ptr align 8 %11, i64 16, i1\l... false)\l  %12 = load i32, ptr %4, align 4\l  %13 = sub i32 %12, 1\l  call void @ref_stack_pop(ptr noundef @o_stack, i32 noundef %13)\l  %14 = load ptr, ptr @o_stack, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %14, ptr align 8 %5, i64 16, i1\l... false)\l  store i32 0, ptr %2, align 4\l  br label %15\l}"];
+	Node0x600001726cb0 -> Node0x600001726d00[tooltip="10 -> 15\nProbability 100.00%" ];
+	Node0x600001726d00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %2, align 4\l  ret i32 %16\l}"];
+}

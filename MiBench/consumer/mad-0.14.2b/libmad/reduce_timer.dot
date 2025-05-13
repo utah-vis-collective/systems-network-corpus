@@ -1,0 +1,5 @@
+digraph "CFG for 'reduce_timer' function" {
+	label="CFG for 'reduce_timer' function";
+
+	Node0x6000004be800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.mad_timer_t, ptr %3, i32 0, i32 1\l  %5 = load i64, ptr %4, align 8\l  %6 = udiv i64 %5, 352800000\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.mad_timer_t, ptr %7, i32 0, i32 0\l  %9 = load i64, ptr %8, align 8\l  %10 = add i64 %9, %6\l  store i64 %10, ptr %8, align 8\l  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds %struct.mad_timer_t, ptr %11, i32 0, i32 1\l  %13 = load i64, ptr %12, align 8\l  %14 = urem i64 %13, 352800000\l  store i64 %14, ptr %12, align 8\l  ret void\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 'mad_timer_negate' function" {
+	label="CFG for 'mad_timer_negate' function";
+
+	Node0x6000004bdf40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.mad_timer_t, ptr %3, i32 0, i32 0\l  %5 = load i64, ptr %4, align 8\l  %6 = sub nsw i64 0, %5\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.mad_timer_t, ptr %7, i32 0, i32 0\l  store i64 %6, ptr %8, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.mad_timer_t, ptr %9, i32 0, i32 1\l  %11 = load i64, ptr %10, align 8\l  %12 = icmp ne i64 %11, 0\l  br i1 %12, label %13, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000004bdf40:s0 -> Node0x6000004bdf90[tooltip="1 -> 13\nProbability 62.50%" ];
+	Node0x6000004bdf40:s1 -> Node0x6000004bdfe0[tooltip="1 -> 24\nProbability 37.50%" ];
+	Node0x6000004bdf90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %2, align 8\l  %15 = getelementptr inbounds %struct.mad_timer_t, ptr %14, i32 0, i32 0\l  %16 = load i64, ptr %15, align 8\l  %17 = sub nsw i64 %16, 1\l  store i64 %17, ptr %15, align 8\l  %18 = load ptr, ptr %2, align 8\l  %19 = getelementptr inbounds %struct.mad_timer_t, ptr %18, i32 0, i32 1\l  %20 = load i64, ptr %19, align 8\l  %21 = sub i64 352800000, %20\l  %22 = load ptr, ptr %2, align 8\l  %23 = getelementptr inbounds %struct.mad_timer_t, ptr %22, i32 0, i32 1\l  store i64 %21, ptr %23, align 8\l  br label %24\l}"];
+	Node0x6000004bdf90 -> Node0x6000004bdfe0[tooltip="13 -> 24\nProbability 100.00%" ];
+	Node0x6000004bdfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  ret void\l}"];
+}

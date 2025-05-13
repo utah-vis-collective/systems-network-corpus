@@ -1,0 +1,5 @@
+digraph "CFG for '__subdf3' function" {
+	label="CFG for '__subdf3' function";
+
+	Node0x600000b276b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca double, align 8\l  %4 = alloca double, align 8\l  %5 = alloca [2 x i64], align 8\l  store double %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %6 = getelementptr inbounds i64, ptr %4, i64 1\l  %7 = load i64, ptr %6, align 8\l  %8 = xor i64 %7, 2147483648\l  %9 = getelementptr inbounds [2 x i64], ptr %5, i64 0, i64 1\l  store i64 %8, ptr %9, align 8\l  %10 = getelementptr inbounds i64, ptr %4, i64 0\l  %11 = load i64, ptr %10, align 8\l  %12 = getelementptr inbounds [2 x i64], ptr %5, i64 0, i64 0\l  store i64 %11, ptr %12, align 8\l  %13 = load double, ptr %3, align 8\l  %14 = getelementptr inbounds [2 x i64], ptr %5, i64 0, i64 0\l  %15 = load double, ptr %14, align 8\l  %16 = fadd double %13, %15\l  ret double %16\l}"];
+}

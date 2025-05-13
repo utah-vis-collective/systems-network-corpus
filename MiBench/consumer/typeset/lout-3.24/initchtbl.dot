@@ -1,0 +1,14 @@
+digraph "CFG for 'initchtbl' function" {
+	label="CFG for 'initchtbl' function";
+
+	Node0x600001212670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %5, align 4\l  br label %6\l}"];
+	Node0x600001212670 -> Node0x6000012126c0[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x6000012126c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %4, align 8\l  %8 = load i32, ptr %5, align 4\l  %9 = sext i32 %8 to i64\l  %10 = getelementptr inbounds i8, ptr %7, i64 %9\l  %11 = load i8, ptr %10, align 1\l  %12 = zext i8 %11 to i32\l  %13 = icmp ne i32 %12, 0\l  br i1 %13, label %14, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x6000012126c0:s0 -> Node0x600001212710[tooltip="6 -> 14\nProbability 96.88%" ];
+	Node0x6000012126c0:s1 -> Node0x6000012127b0[tooltip="6 -> 27\nProbability 3.12%" ];
+	Node0x600001212710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %3, align 4\l  %16 = trunc i32 %15 to i8\l  %17 = load ptr, ptr %4, align 8\l  %18 = load i32, ptr %5, align 4\l  %19 = sext i32 %18 to i64\l  %20 = getelementptr inbounds i8, ptr %17, i64 %19\l  %21 = load i8, ptr %20, align 1\l  %22 = zext i8 %21 to i64\l  %23 = getelementptr inbounds [256 x i8], ptr @chtbl, i64 0, i64 %22\l  store i8 %16, ptr %23, align 1\l  br label %24\l}"];
+	Node0x600001212710 -> Node0x600001212760[tooltip="14 -> 24\nProbability 100.00%" ];
+	Node0x600001212760 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %5, align 4\l  %26 = add nsw i32 %25, 1\l  store i32 %26, ptr %5, align 4\l  br label %6\l}"];
+	Node0x600001212760 -> Node0x6000012126c0[tooltip="24 -> 6\nProbability 100.00%" ];
+	Node0x6000012127b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  ret void\l}"];
+}

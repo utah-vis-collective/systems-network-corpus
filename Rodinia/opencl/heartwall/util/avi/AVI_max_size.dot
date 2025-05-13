@@ -1,0 +1,5 @@
+digraph "CFG for 'AVI_max_size' function" {
+	label="CFG for 'AVI_max_size' function";
+
+	Node0x6000005ab160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i64 4278188031\l}"];
+}

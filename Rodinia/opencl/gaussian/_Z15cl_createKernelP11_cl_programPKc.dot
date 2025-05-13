@@ -1,0 +1,5 @@
+digraph "CFG for '_Z15cl_createKernelP11_cl_programPKc' function" {
+	label="CFG for '_Z15cl_createKernelP11_cl_programPKc' function";
+
+	Node0x60000035e580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = call ptr @clCreateKernel(ptr noundef %7, ptr noundef %8, ptr noundef %6)\l  store ptr %9, ptr %5, align 8\l  %10 = load i32, ptr %6, align 4\l  %11 = call noundef i32 @_Z9cl_errChkiPKcb(i32 noundef %10, ptr noundef\l... @.str.64, i1 noundef zeroext true)\l  %12 = load ptr, ptr %5, align 8\l  ret ptr %12\l}"];
+}

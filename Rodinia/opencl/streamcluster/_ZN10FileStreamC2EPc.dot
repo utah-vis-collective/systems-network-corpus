@@ -1,0 +1,18 @@
+digraph "CFG for '_ZN10FileStreamC2EPc' function" {
+	label="CFG for '_ZN10FileStreamC2EPc' function";
+
+	Node0x600000939d60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = call noundef ptr @_ZN7PStreamC2Ev(ptr noundef nonnull align 8\l... dereferenceable(8) %7) #4\l  store ptr getelementptr inbounds inrange(-16, 40) (\{ [7 x ptr] \}, ptr\l... @_ZTV10FileStream, i32 0, i32 0, i32 2), ptr %7, align 8\l  %9 = load ptr, ptr %4, align 8\l  %10 = invoke ptr @\"\\01_fopen\"(ptr noundef %9, ptr noundef @.str.80)\l          to label %11 unwind label %21\l}"];
+	Node0x600000939d60 -> Node0x600000939db0[tooltip="2 -> 11\nProbability 100.00%" ];
+	Node0x600000939d60 -> Node0x600000939ea0[tooltip="2 -> 21\nProbability 0.00%" ];
+	Node0x600000939db0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = getelementptr inbounds %class.FileStream, ptr %7, i32 0, i32 1\l  store ptr %10, ptr %12, align 8\l  %13 = getelementptr inbounds %class.FileStream, ptr %7, i32 0, i32 1\l  %14 = load ptr, ptr %13, align 8\l  %15 = icmp eq ptr %14, null\l  br i1 %15, label %16, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600000939db0:s0 -> Node0x600000939e00[tooltip="11 -> 16\nProbability 0.00%" ];
+	Node0x600000939db0:s1 -> Node0x600000939ef0[tooltip="11 -> 26\nProbability 100.00%" ];
+	Node0x600000939e00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr @__stderrp, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %17, ptr noundef\l... @.str.81, ptr noundef %18) #4\l  invoke void @exit(i32 noundef 1) #21\l          to label %20 unwind label %21\l}"];
+	Node0x600000939e00 -> Node0x600000939e50[tooltip="16 -> 20\nProbability 0.00%" ];
+	Node0x600000939e00 -> Node0x600000939ea0[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x600000939e50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#4f69d970" fontname="Courier",label="{20:\l|  unreachable\l}"];
+	Node0x600000939ea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6bfa670" fontname="Courier",label="{21:\l|  %22 = landingpad \{ ptr, i32 \}\l          cleanup\l  %23 = extractvalue \{ ptr, i32 \} %22, 0\l  store ptr %23, ptr %5, align 8\l  %24 = extractvalue \{ ptr, i32 \} %22, 1\l  store i32 %24, ptr %6, align 4\l  %25 = call noundef ptr @_ZN7PStreamD2Ev(ptr noundef nonnull align 8\l... dereferenceable(8) %7) #4\l  br label %27\l}"];
+	Node0x600000939ea0 -> Node0x600000939f40[tooltip="21 -> 27\nProbability 100.00%" ];
+	Node0x600000939ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  ret ptr %7\l}"];
+	Node0x600000939f40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f6bfa670" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %5, align 8\l  %29 = load i32, ptr %6, align 4\l  %30 = insertvalue \{ ptr, i32 \} poison, ptr %28, 0\l  %31 = insertvalue \{ ptr, i32 \} %30, i32 %29, 1\l  resume \{ ptr, i32 \} %31\l}"];
+}

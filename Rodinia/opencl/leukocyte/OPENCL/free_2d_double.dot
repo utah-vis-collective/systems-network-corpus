@@ -1,0 +1,15 @@
+digraph "CFG for 'free_2d_double' function" {
+	label="CFG for 'free_2d_double' function";
+
+	Node0x6000024d2170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %5, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000024d2170:s0 -> Node0x6000024d2210[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x6000024d2170:s1 -> Node0x6000024d2300[tooltip="1 -> 16\nProbability 37.50%" ];
+	Node0x6000024d2210 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr %2, align 8\l  %7 = getelementptr inbounds ptr, ptr %6, i64 0\l  %8 = load ptr, ptr %7, align 8\l  %9 = icmp ne ptr %8, null\l  br i1 %9, label %10, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000024d2210:s0 -> Node0x6000024d2260[tooltip="5 -> 10\nProbability 62.50%" ];
+	Node0x6000024d2210:s1 -> Node0x6000024d22b0[tooltip="5 -> 14\nProbability 37.50%" ];
+	Node0x6000024d2260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %2, align 8\l  %12 = getelementptr inbounds ptr, ptr %11, i64 0\l  %13 = load ptr, ptr %12, align 8\l  call void @free(ptr noundef %13)\l  br label %14\l}"];
+	Node0x6000024d2260 -> Node0x6000024d22b0[tooltip="10 -> 14\nProbability 100.00%" ];
+	Node0x6000024d22b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %2, align 8\l  call void @free(ptr noundef %15)\l  br label %16\l}"];
+	Node0x6000024d22b0 -> Node0x6000024d2300[tooltip="14 -> 16\nProbability 100.00%" ];
+	Node0x6000024d2300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  ret void\l}"];
+}

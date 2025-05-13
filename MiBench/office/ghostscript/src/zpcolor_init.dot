@@ -1,0 +1,5 @@
+digraph "CFG for 'zpcolor_init' function" {
+	label="CFG for 'zpcolor_init' function";
+
+	Node0x600000187570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @igs, align 8\l  %2 = load ptr, ptr getelementptr inbounds (%struct._ssn, ptr getelementptr\l... inbounds (%struct.gs_dual_memory_s, ptr @gs_imemory, i32 0, i32 1), i32 0,\l... i32 1), align 8\l  %3 = call i32 @gx_pat_cache_default_tiles()\l  %4 = call i64 @gx_pat_cache_default_bits()\l  %5 = call ptr @gx_pattern_alloc_cache(ptr noundef %2, i32 noundef %3, i64\l... noundef %4)\l  call void @gstate_set_pattern_cache(ptr noundef %1, ptr noundef %5)\l  store ptr @st_pattern_instance, ptr @zcolor2_st_pattern_instance_p, align 8\l  ret void\l}"];
+}

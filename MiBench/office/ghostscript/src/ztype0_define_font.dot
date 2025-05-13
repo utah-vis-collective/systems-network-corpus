@@ -1,0 +1,15 @@
+digraph "CFG for 'ztype0_define_font' function" {
+	label="CFG for 'ztype0_define_font' function";
+
+	Node0x60000299fb10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = getelementptr inbounds %struct.gs_font_type0_s, ptr %8, i32 0, i32 18\l  %10 = getelementptr inbounds %struct.gs_type0_data_s, ptr %9, i32 0, i32 9\l  %11 = load ptr, ptr %10, align 8\l  store ptr %11, ptr %6, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = call i32 @gs_type0_define_font(ptr noundef %12, ptr noundef %13)\l  store i32 %14, ptr %7, align 4\l  %15 = load i32, ptr %7, align 4\l  %16 = icmp slt i32 %15, 0\l  br i1 %16, label %24, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000299fb10:s0 -> Node0x60000299fbb0[tooltip="2 -> 24\nProbability 37.50%" ];
+	Node0x60000299fb10:s1 -> Node0x60000299fb60[tooltip="2 -> 17\nProbability 62.50%" ];
+	Node0x60000299fb60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %5, align 8\l  %19 = getelementptr inbounds %struct.gs_font_type0_s, ptr %18, i32 0, i32 18\l  %20 = getelementptr inbounds %struct.gs_type0_data_s, ptr %19, i32 0, i32 9\l  %21 = load ptr, ptr %20, align 8\l  %22 = load ptr, ptr %6, align 8\l  %23 = icmp eq ptr %21, %22\l  br i1 %23, label %24, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000299fb60:s0 -> Node0x60000299fbb0[tooltip="17 -> 24\nProbability 37.50%" ];
+	Node0x60000299fb60:s1 -> Node0x60000299fc00[tooltip="17 -> 26\nProbability 62.50%" ];
+	Node0x60000299fbb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %7, align 4\l  store i32 %25, ptr %3, align 4\l  br label %29\l}"];
+	Node0x60000299fbb0 -> Node0x60000299fc50[tooltip="24 -> 29\nProbability 100.00%" ];
+	Node0x60000299fc00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %5, align 8\l  %28 = call i32 @ztype0_adjust_FDepVector(ptr noundef %27)\l  store i32 %28, ptr %3, align 4\l  br label %29\l}"];
+	Node0x60000299fc00 -> Node0x60000299fc50[tooltip="26 -> 29\nProbability 100.00%" ];
+	Node0x60000299fc50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %3, align 4\l  ret i32 %30\l}"];
+}

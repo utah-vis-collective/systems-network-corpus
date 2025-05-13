@@ -1,0 +1,42 @@
+digraph "CFG for '_Z11allocDevMemiii' function" {
+	label="CFG for '_Z11allocDevMemiii' function";
+
+	Node0x600000900320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca %\"class.std::__1::basic_string\", align 8\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %10 = load i32, ptr %6, align 4\l  %11 = load i32, ptr %4, align 4\l  %12 = mul nsw i32 %10, %11\l  %13 = sext i32 %12 to i64\l  %14 = mul i64 %13, 4\l  %15 = trunc i64 %14 to i32\l  %16 = invoke noundef ptr @_Z9_clMalloci(i32 noundef %15)\l          to label %17 unwind label %44\l}"];
+	Node0x600000900320 -> Node0x600000900370[tooltip="3 -> 17\nProbability 100.00%" ];
+	Node0x600000900320 -> Node0x600000900500[tooltip="3 -> 44\nProbability 0.00%" ];
+	Node0x600000900370 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  store ptr %16, ptr @work_mem_d, align 8\l  %18 = load i32, ptr %4, align 4\l  %19 = sext i32 %18 to i64\l  %20 = mul i64 %19, 4\l  %21 = trunc i64 %20 to i32\l  %22 = invoke noundef ptr @_Z9_clMalloci(i32 noundef %21)\l          to label %23 unwind label %44\l}"];
+	Node0x600000900370 -> Node0x6000009003c0[tooltip="17 -> 23\nProbability 100.00%" ];
+	Node0x600000900370 -> Node0x600000900500[tooltip="17 -> 44\nProbability 0.00%" ];
+	Node0x6000009003c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  store ptr %22, ptr @center_table_d, align 8\l  %24 = load i32, ptr %4, align 4\l  %25 = sext i32 %24 to i64\l  %26 = mul i64 %25, 1\l  %27 = trunc i64 %26 to i32\l  %28 = invoke noundef ptr @_Z9_clMalloci(i32 noundef %27)\l          to label %29 unwind label %44\l}"];
+	Node0x6000009003c0 -> Node0x600000900410[tooltip="23 -> 29\nProbability 100.00%" ];
+	Node0x6000009003c0 -> Node0x600000900500[tooltip="23 -> 44\nProbability 0.00%" ];
+	Node0x600000900410 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  store ptr %28, ptr @switch_membership_d, align 8\l  %30 = load i32, ptr %4, align 4\l  %31 = sext i32 %30 to i64\l  %32 = mul i64 %31, 32\l  %33 = trunc i64 %32 to i32\l  %34 = invoke noundef ptr @_Z9_clMalloci(i32 noundef %33)\l          to label %35 unwind label %44\l}"];
+	Node0x600000900410 -> Node0x600000900460[tooltip="29 -> 35\nProbability 100.00%" ];
+	Node0x600000900410 -> Node0x600000900500[tooltip="29 -> 44\nProbability 0.00%" ];
+	Node0x600000900460 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  store ptr %34, ptr @p_d, align 8\l  %36 = load i32, ptr %4, align 4\l  %37 = load i32, ptr %5, align 4\l  %38 = mul nsw i32 %36, %37\l  %39 = sext i32 %38 to i64\l  %40 = mul i64 %39, 4\l  %41 = trunc i64 %40 to i32\l  %42 = invoke noundef ptr @_Z9_clMalloci(i32 noundef %41)\l          to label %43 unwind label %44\l}"];
+	Node0x600000900460 -> Node0x6000009004b0[tooltip="35 -> 43\nProbability 100.00%" ];
+	Node0x600000900460 -> Node0x600000900500[tooltip="35 -> 44\nProbability 0.00%" ];
+	Node0x6000009004b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  store ptr %42, ptr @coord_d, align 8\l  br label %61\l}"];
+	Node0x6000009004b0 -> Node0x600000900690[tooltip="43 -> 61\nProbability 100.00%" ];
+	Node0x600000900500 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b59970" fontname="Courier",label="{44:\l|  %45 = landingpad \{ ptr, i32 \}\l          catch ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE\l  %46 = extractvalue \{ ptr, i32 \} %45, 0\l  store ptr %46, ptr %7, align 8\l  %47 = extractvalue \{ ptr, i32 \} %45, 1\l  store i32 %47, ptr %8, align 4\l  br label %48\l}"];
+	Node0x600000900500 -> Node0x600000900550[tooltip="44 -> 48\nProbability 100.00%" ];
+	Node0x600000900550 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b59970" fontname="Courier",label="{48:\l|  %49 = load i32, ptr %8, align 4\l  %50 = call i32 @llvm.eh.typeid.for.p0(ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE) #4\l  %51 = icmp eq i32 %49, %50\l  br i1 %51, label %52, label %68\l|{<s0>T|<s1>F}}"];
+	Node0x600000900550:s0 -> Node0x6000009005a0[tooltip="48 -> 52\nProbability 50.00%" ];
+	Node0x600000900550:s1 -> Node0x600000900780[tooltip="48 -> 68\nProbability 50.00%" ];
+	Node0x6000009005a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{52:\l|  %53 = load ptr, ptr %7, align 8\l  %54 = call ptr @__cxa_get_exception_ptr(ptr %53) #4\l  %55 = invoke noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_(ptr\l... noundef nonnull align 8 dereferenceable(24) %9, ptr noundef nonnull align 8\l... dereferenceable(24) %54)\l          to label %56 unwind label %73\l}"];
+	Node0x6000009005a0 -> Node0x6000009005f0[tooltip="52 -> 56\nProbability 100.00%" ];
+	Node0x6000009005a0 -> Node0x6000009007d0[tooltip="52 -> 73\nProbability 0.00%" ];
+	Node0x6000009005f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{56:\l|  %57 = call ptr @__cxa_begin_catch(ptr %53) #4\l  %58 = call noundef nonnull align 1 dereferenceable(1) ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEixB8ne190107Em\l...(ptr noundef nonnull align 8 dereferenceable(24) %9, i64 noundef 0) #4\l  invoke void @_Z4quitPc(ptr noundef %58)\l          to label %59 unwind label %62\l}"];
+	Node0x6000009005f0 -> Node0x600000900640[tooltip="56 -> 59\nProbability 100.00%" ];
+	Node0x6000009005f0 -> Node0x6000009006e0[tooltip="56 -> 62\nProbability 0.00%" ];
+	Node0x600000900640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{59:\l|  %60 = call noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(ptr\l... noundef nonnull align 8 dereferenceable(24) %9) #4\l  call void @__cxa_end_catch()\l  br label %61\l}"];
+	Node0x600000900640 -> Node0x600000900690[tooltip="59 -> 61\nProbability 100.00%" ];
+	Node0x600000900690 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{61:\l|  ret void\l}"];
+	Node0x6000009006e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#9abbff70" fontname="Courier",label="{62:\l|  %63 = landingpad \{ ptr, i32 \}\l          cleanup\l  %64 = extractvalue \{ ptr, i32 \} %63, 0\l  store ptr %64, ptr %7, align 8\l  %65 = extractvalue \{ ptr, i32 \} %63, 1\l  store i32 %65, ptr %8, align 4\l  %66 = call noundef ptr\l... @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(ptr\l... noundef nonnull align 8 dereferenceable(24) %9) #4\l  invoke void @__cxa_end_catch()\l          to label %67 unwind label %73\l}"];
+	Node0x6000009006e0 -> Node0x600000900730[tooltip="62 -> 67\nProbability 100.00%" ];
+	Node0x6000009006e0 -> Node0x6000009007d0[tooltip="62 -> 73\nProbability 0.00%" ];
+	Node0x600000900730 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#9abbff70" fontname="Courier",label="{67:\l|  br label %68\l}"];
+	Node0x600000900730 -> Node0x600000900780[tooltip="67 -> 68\nProbability 100.00%" ];
+	Node0x600000900780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7bca170" fontname="Courier",label="{68:\l|  %69 = load ptr, ptr %7, align 8\l  %70 = load i32, ptr %8, align 4\l  %71 = insertvalue \{ ptr, i32 \} poison, ptr %69, 0\l  %72 = insertvalue \{ ptr, i32 \} %71, i32 %70, 1\l  resume \{ ptr, i32 \} %72\l}"];
+	Node0x6000009007d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#9abbff70" fontname="Courier",label="{73:\l|  %74 = landingpad \{ ptr, i32 \}\l          catch ptr null\l  %75 = extractvalue \{ ptr, i32 \} %74, 0\l  call void @__clang_call_terminate(ptr %75) #21\l  unreachable\l}"];
+}

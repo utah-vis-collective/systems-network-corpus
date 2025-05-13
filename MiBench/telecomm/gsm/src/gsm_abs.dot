@@ -1,0 +1,19 @@
+digraph "CFG for 'gsm_abs' function" {
+	label="CFG for 'gsm_abs' function";
+
+	Node0x60000256ab20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i16, align 2\l  store i16 %0, ptr %2, align 2\l  %3 = load i16, ptr %2, align 2\l  %4 = sext i16 %3 to i32\l  %5 = icmp slt i32 %4, 0\l  br i1 %5, label %6, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000256ab20:s0 -> Node0x60000256ab70[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x60000256ab20:s1 -> Node0x60000256acb0[tooltip="1 -> 17\nProbability 62.50%" ];
+	Node0x60000256ab70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = load i16, ptr %2, align 2\l  %8 = sext i16 %7 to i32\l  %9 = icmp eq i32 %8, -32768\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x60000256ab70:s0 -> Node0x60000256abc0[tooltip="6 -> 10\nProbability 50.00%" ];
+	Node0x60000256ab70:s1 -> Node0x60000256ac10[tooltip="6 -> 11\nProbability 50.00%" ];
+	Node0x60000256abc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{10:\l|  br label %15\l}"];
+	Node0x60000256abc0 -> Node0x60000256ac60[tooltip="10 -> 15\nProbability 100.00%" ];
+	Node0x60000256ac10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{11:\l|  %12 = load i16, ptr %2, align 2\l  %13 = sext i16 %12 to i32\l  %14 = sub nsw i32 0, %13\l  br label %15\l}"];
+	Node0x60000256ac10 -> Node0x60000256ac60[tooltip="11 -> 15\nProbability 100.00%" ];
+	Node0x60000256ac60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  %16 = phi i32 [ 32767, %10 ], [ %14, %11 ]\l  br label %20\l}"];
+	Node0x60000256ac60 -> Node0x60000256ad00[tooltip="15 -> 20\nProbability 100.00%" ];
+	Node0x60000256acb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load i16, ptr %2, align 2\l  %19 = sext i16 %18 to i32\l  br label %20\l}"];
+	Node0x60000256acb0 -> Node0x60000256ad00[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x60000256ad00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = phi i32 [ %16, %15 ], [ %19, %17 ]\l  %22 = trunc i32 %21 to i16\l  ret i16 %22\l}"];
+}

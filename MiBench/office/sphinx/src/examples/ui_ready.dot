@@ -1,0 +1,5 @@
+digraph "CFG for 'ui_ready' function" {
+	label="CFG for 'ui_ready' function";
+
+	Node0x600003e523a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 (ptr, ...) @printf(ptr noundef @.str.12)\l  %2 = load ptr, ptr @__stdoutp, align 8\l  %3 = call i32 @fflush(ptr noundef %2)\l  ret void\l}"];
+}

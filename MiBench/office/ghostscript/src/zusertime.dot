@@ -1,0 +1,18 @@
+digraph "CFG for 'zusertime' function" {
+	label="CFG for 'zusertime' function";
+
+	Node0x6000020f9630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca [2 x i64], align 8\l  store ptr %0, ptr %3, align 8\l  %5 = getelementptr inbounds [2 x i64], ptr %4, i64 0, i64 0\l  call void @gp_get_usertime(ptr noundef %5)\l  br label %6\l}"];
+	Node0x6000020f9630 -> Node0x6000020f9680[tooltip="1 -> 6\nProbability 100.00%" ];
+	Node0x6000020f9680 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.ref_s, ptr %7, i64 1\l  store ptr %8, ptr %3, align 8\l  %9 = load ptr, ptr getelementptr inbounds (%struct.ref_stack_s, ptr\l... @o_stack, i32 0, i32 2), align 8\l  %10 = icmp ugt ptr %8, %9\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000020f9680:s0 -> Node0x6000020f96d0[tooltip="6 -> 11\nProbability 50.00%" ];
+	Node0x6000020f9680:s1 -> Node0x6000020f9720[tooltip="6 -> 12\nProbability 50.00%" ];
+	Node0x6000020f96d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  store i32 1, ptr getelementptr inbounds (%struct.ref_stack_s, ptr\l... @o_stack, i32 0, i32 7), align 8\l  store i32 -16, ptr %2, align 4\l  br label %28\l}"];
+	Node0x6000020f96d0 -> Node0x6000020f9810[tooltip="11 -> 28\nProbability 100.00%" ];
+	Node0x6000020f9720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  store ptr %13, ptr @o_stack, align 8\l  br label %14\l}"];
+	Node0x6000020f9720 -> Node0x6000020f9770[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x6000020f9770 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x6000020f9770 -> Node0x6000020f97c0[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x6000020f97c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = getelementptr inbounds [2 x i64], ptr %4, i64 0, i64 0\l  %17 = load i64, ptr %16, align 8\l  %18 = mul nsw i64 %17, 1000\l  %19 = getelementptr inbounds [2 x i64], ptr %4, i64 0, i64 1\l  %20 = load i64, ptr %19, align 8\l  %21 = sdiv i64 %20, 1000000\l  %22 = add nsw i64 %18, %21\l  %23 = load ptr, ptr %3, align 8\l  %24 = getelementptr inbounds %struct.ref_s, ptr %23, i32 0, i32 1\l  store i64 %22, ptr %24, align 8\l  %25 = load ptr, ptr %3, align 8\l  %26 = getelementptr inbounds %struct.ref_s, ptr %25, i32 0, i32 0\l  %27 = getelementptr inbounds %struct.tas_s, ptr %26, i32 0, i32 0\l  store i16 2816, ptr %27, align 8\l  store i32 0, ptr %2, align 4\l  br label %28\l}"];
+	Node0x6000020f97c0 -> Node0x6000020f9810[tooltip="15 -> 28\nProbability 100.00%" ];
+	Node0x6000020f9810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %2, align 4\l  ret i32 %29\l}"];
+}

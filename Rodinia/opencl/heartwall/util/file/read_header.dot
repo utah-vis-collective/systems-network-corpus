@@ -1,0 +1,24 @@
+digraph "CFG for 'read_header' function" {
+	label="CFG for 'read_header' function";
+
+	Node0x60000031a170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca i8, align 1\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = call ptr @\"\\01_fopen\"(ptr noundef %10, ptr noundef @.str)\l  store ptr %11, ptr %7, align 8\l  %12 = load ptr, ptr %7, align 8\l  %13 = icmp eq ptr %12, null\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x60000031a170:s0 -> Node0x60000031a1c0[tooltip="3 -> 14\nProbability 37.50%" ];
+	Node0x60000031a170:s1 -> Node0x60000031a210[tooltip="3 -> 16\nProbability 62.50%" ];
+	Node0x60000031a1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{14:\l|  %15 = call i32 (ptr, ...) @printf(ptr noundef @.str.1)\l  br label %42\l}"];
+	Node0x60000031a1c0 -> Node0x60000031a3f0[tooltip="14 -> 42\nProbability 100.00%" ];
+	Node0x60000031a210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  store i32 0, ptr %8, align 4\l  br label %17\l}"];
+	Node0x60000031a210 -> Node0x60000031a260[tooltip="16 -> 17\nProbability 100.00%" ];
+	Node0x60000031a260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %8, align 4\l  %19 = icmp slt i32 %18, 1\l  br i1 %19, label %20, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x60000031a260:s0 -> Node0x60000031a2b0[tooltip="17 -> 20\nProbability 96.88%" ];
+	Node0x60000031a260:s1 -> Node0x60000031a3a0[tooltip="17 -> 31\nProbability 3.12%" ];
+	Node0x60000031a2b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %7, align 8\l  %22 = call i32 @fgetc(ptr noundef %21)\l  %23 = trunc i32 %22 to i8\l  store i8 %23, ptr %9, align 1\l  %24 = load i8, ptr %9, align 1\l  %25 = sext i8 %24 to i32\l  %26 = icmp eq i32 %25, 10\l  br i1 %26, label %27, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x60000031a2b0:s0 -> Node0x60000031a300[tooltip="20 -> 27\nProbability 50.00%" ];
+	Node0x60000031a2b0:s1 -> Node0x60000031a350[tooltip="20 -> 30\nProbability 50.00%" ];
+	Node0x60000031a300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %8, align 4\l  %29 = add nsw i32 %28, 1\l  store i32 %29, ptr %8, align 4\l  br label %30\l}"];
+	Node0x60000031a300 -> Node0x60000031a350[tooltip="27 -> 30\nProbability 100.00%" ];
+	Node0x60000031a350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  br label %17\l}"];
+	Node0x60000031a350 -> Node0x60000031a260[tooltip="30 -> 17\nProbability 100.00%" ];
+	Node0x60000031a3a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %7, align 8\l  %33 = load ptr, ptr %5, align 8\l  %34 = getelementptr inbounds i32, ptr %33, i64 0\l  %35 = call i32 (ptr, ptr, ...) @fscanf(ptr noundef %32, ptr noundef @.str.2,\l... ptr noundef %34)\l  %36 = load ptr, ptr %7, align 8\l  %37 = load ptr, ptr %6, align 8\l  %38 = getelementptr inbounds i32, ptr %37, i64 0\l  %39 = call i32 (ptr, ptr, ...) @fscanf(ptr noundef %36, ptr noundef @.str.2,\l... ptr noundef %38)\l  %40 = load ptr, ptr %7, align 8\l  %41 = call i32 @fclose(ptr noundef %40)\l  br label %42\l}"];
+	Node0x60000031a3a0 -> Node0x60000031a3f0[tooltip="31 -> 42\nProbability 100.00%" ];
+	Node0x60000031a3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{42:\l|  ret void\l}"];
+}

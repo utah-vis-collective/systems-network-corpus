@@ -1,0 +1,5 @@
+digraph "CFG for 'write_list' function" {
+	label="CFG for 'write_list' function";
+
+	Node0x600000a89c20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca %struct.string_pattern_s, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = getelementptr inbounds %struct.string_pattern_s, ptr %7, i32 0, i32 0\l  store i32 0, ptr %8, align 4\l  %9 = getelementptr inbounds %struct.string_pattern_s, ptr %7, i32 0, i32 1\l  store i32 0, ptr %9, align 4\l  %10 = getelementptr inbounds %struct.string_pattern_s, ptr %7, i32 0, i32 2\l  %11 = getelementptr inbounds [61 x i8], ptr %10, i64 0, i64 0\l  %12 = load ptr, ptr %6, align 8\l  %13 = call ptr @__strcpy_chk(ptr noundef %11, ptr noundef %12, i64 noundef\l... 61) #10\l  %14 = load ptr, ptr %4, align 8\l  %15 = load ptr, ptr %5, align 8\l  call void @write_list_pattern(ptr noundef %14, ptr noundef %15, ptr noundef\l... %7)\l  ret void\l}"];
+}

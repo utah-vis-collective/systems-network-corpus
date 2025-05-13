@@ -1,0 +1,5 @@
+digraph "CFG for 'psdf_moveto' function" {
+	label="CFG for 'psdf_moveto' function";
+
+	Node0x600002168f00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = alloca ptr, align 8\l  %8 = alloca double, align 8\l  %9 = alloca double, align 8\l  %10 = alloca double, align 8\l  %11 = alloca double, align 8\l  %12 = alloca i32, align 4\l  store ptr %0, ptr %7, align 8\l  store double %1, ptr %8, align 8\l  store double %2, ptr %9, align 8\l  store double %3, ptr %10, align 8\l  store double %4, ptr %11, align 8\l  store i32 %5, ptr %12, align 4\l  %13 = load ptr, ptr %7, align 8\l  %14 = call ptr @gdev_vector_stream(ptr noundef %13)\l  %15 = load double, ptr %10, align 8\l  %16 = load double, ptr %11, align 8\l  %17 = call ptr @pprintg2(ptr noundef %14, ptr noundef @.str.36, double\l... noundef %15, double noundef %16)\l  ret i32 0\l}"];
+}

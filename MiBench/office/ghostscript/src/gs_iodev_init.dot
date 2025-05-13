@@ -1,0 +1,14 @@
+digraph "CFG for 'gs_iodev_init' function" {
+	label="CFG for 'gs_iodev_init' function";
+
+	Node0x60000199e8a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  store ptr @gx_io_device_table, ptr %3, align 8\l  br label %4\l}"];
+	Node0x60000199e8a0 -> Node0x60000199e8f0[tooltip="1 -> 4\nProbability 100.00%" ];
+	Node0x60000199e8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load ptr, ptr %3, align 8\l  %6 = load ptr, ptr %5, align 8\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %8, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x60000199e8f0:s0 -> Node0x60000199e940[tooltip="4 -> 8\nProbability 96.88%" ];
+	Node0x60000199e8f0:s1 -> Node0x60000199e9e0[tooltip="4 -> 21\nProbability 3.12%" ];
+	Node0x60000199e940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = load ptr, ptr %9, align 8\l  %11 = getelementptr inbounds %struct.gx_io_device_s, ptr %10, i32 0, i32 2\l  %12 = getelementptr inbounds %struct.gx_io_device_procs_s, ptr %11, i32 0,\l... i32 0\l  %13 = load ptr, ptr %12, align 8\l  %14 = load ptr, ptr %3, align 8\l  %15 = load ptr, ptr %14, align 8\l  %16 = load ptr, ptr %2, align 8\l  %17 = call i32 %13(ptr noundef %15, ptr noundef %16)\l  br label %18\l}"];
+	Node0x60000199e940 -> Node0x60000199e990[tooltip="8 -> 18\nProbability 100.00%" ];
+	Node0x60000199e990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = getelementptr inbounds ptr, ptr %19, i32 1\l  store ptr %20, ptr %3, align 8\l  br label %4\l}"];
+	Node0x60000199e990 -> Node0x60000199e8f0[tooltip="18 -> 4\nProbability 100.00%" ];
+	Node0x60000199e9e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  ret void\l}"];
+}

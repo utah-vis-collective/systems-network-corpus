@@ -1,0 +1,5 @@
+digraph "CFG for 'hmm_get_psen' function" {
+	label="CFG for 'hmm_get_psen' function";
+
+	Node0x600000fe86e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @numDists, align 8\l  ret ptr %1\l}"];
+}

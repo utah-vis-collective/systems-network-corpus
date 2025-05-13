@@ -1,0 +1,5 @@
+digraph "CFG for '_ZN5timer20get_CPU_speed_in_MHzEv' function" {
+	label="CFG for '_ZN5timer20get_CPU_speed_in_MHzEv' function";
+
+	Node0x600000dbf070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret double 0.000000e+00\l}"];
+}

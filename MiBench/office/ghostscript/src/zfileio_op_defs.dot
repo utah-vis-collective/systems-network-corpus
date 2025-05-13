@@ -1,0 +1,5 @@
+digraph "CFG for 'zfileio_op_defs' function" {
+	label="CFG for 'zfileio_op_defs' function";
+
+	Node0x600001a1bca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zfileio_op_defs.op_defs_\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 'cryptRandByte' function" {
+	label="CFG for 'cryptRandByte' function";
+
+	Node0x6000012c68f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i8, ptr @randSeedOpen, align 1\l  %2 = icmp ne i8 %1, 0\l  br i1 %2, label %5, label %3\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c68f0:s0 -> Node0x6000012c6990[tooltip="0 -> 5\nProbability 62.50%" ];
+	Node0x6000012c68f0:s1 -> Node0x6000012c6940[tooltip="0 -> 3\nProbability 37.50%" ];
+	Node0x6000012c6940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{3:\l|  %4 = call i32 @cryptRandOpen(ptr noundef null)\l  br label %5\l}"];
+	Node0x6000012c6940 -> Node0x6000012c6990[tooltip="3 -> 5\nProbability 100.00%" ];
+	Node0x6000012c6990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = call zeroext i8 @ideaRandByte(ptr noundef @randContext)\l  ret i8 %6\l}"];
+}

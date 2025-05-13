@@ -1,0 +1,17 @@
+digraph "CFG for 'uttfile_close' function" {
+	label="CFG for 'uttfile_close' function";
+
+	Node0x6000031f80f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @adc_input, align 4\l  %2 = icmp ne i32 %1, 0\l  br i1 %2, label %3, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000031f80f0:s0 -> Node0x6000031f8140[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x6000031f80f0:s1 -> Node0x6000031f8230[tooltip="0 -> 10\nProbability 37.50%" ];
+	Node0x6000031f8140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @uttfp, align 8\l  %5 = icmp ne ptr %4, null\l  br i1 %5, label %6, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x6000031f8140:s0 -> Node0x6000031f8190[tooltip="3 -> 6\nProbability 62.50%" ];
+	Node0x6000031f8140:s1 -> Node0x6000031f81e0[tooltip="3 -> 9\nProbability 37.50%" ];
+	Node0x6000031f8190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @uttfp, align 8\l  %8 = call i32 @fclose(ptr noundef %7)\l  br label %9\l}"];
+	Node0x6000031f8190 -> Node0x6000031f81e0[tooltip="6 -> 9\nProbability 100.00%" ];
+	Node0x6000031f81e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  store ptr null, ptr @uttfp, align 8\l  br label %12\l}"];
+	Node0x6000031f81e0 -> Node0x6000031f8280[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x6000031f8230 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @coeff, align 8\l  call void @free(ptr noundef %11)\l  br label %12\l}"];
+	Node0x6000031f8230 -> Node0x6000031f8280[tooltip="10 -> 12\nProbability 100.00%" ];
+	Node0x6000031f8280 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  ret void\l}"];
+}

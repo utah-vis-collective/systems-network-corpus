@@ -1,0 +1,13 @@
+digraph "CFG for 'addslash' function" {
+	label="CFG for 'addslash' function";
+
+	Node0x600001970140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i64 @strlen(ptr noundef %4) #8\l  %6 = trunc i64 %5 to i32\l  store i32 %6, ptr %3, align 4\l  %7 = load i32, ptr %3, align 4\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x600001970140:s0 -> Node0x600001970190[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x600001970140:s1 -> Node0x600001970230[tooltip="1 -> 30\nProbability 37.50%" ];
+	Node0x600001970190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %2, align 8\l  %11 = load i32, ptr %3, align 4\l  %12 = sub nsw i32 %11, 1\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds i8, ptr %10, i64 %13\l  %15 = load i8, ptr %14, align 1\l  %16 = sext i8 %15 to i32\l  %17 = call ptr @strchr(ptr noundef @DIRSEPS, i32 noundef %16) #8\l  %18 = icmp ne ptr %17, null\l  br i1 %18, label %30, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600001970190:s0 -> Node0x600001970230[tooltip="9 -> 30\nProbability 62.50%" ];
+	Node0x600001970190:s1 -> Node0x6000019701e0[tooltip="9 -> 19\nProbability 37.50%" ];
+	Node0x6000019701e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load i8, ptr @DIRSEPS, align 1\l  %21 = load ptr, ptr %2, align 8\l  %22 = load i32, ptr %3, align 4\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds i8, ptr %21, i64 %23\l  store i8 %20, ptr %24, align 1\l  %25 = load ptr, ptr %2, align 8\l  %26 = load i32, ptr %3, align 4\l  %27 = add nsw i32 %26, 1\l  %28 = sext i32 %27 to i64\l  %29 = getelementptr inbounds i8, ptr %25, i64 %28\l  store i8 0, ptr %29, align 1\l  br label %30\l}"];
+	Node0x6000019701e0 -> Node0x600001970230[tooltip="19 -> 30\nProbability 100.00%" ];
+	Node0x600001970230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  ret void\l}"];
+}

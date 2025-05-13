@@ -1,0 +1,5 @@
+digraph "CFG for 'get_ref_sent' function" {
+	label="CFG for 'get_ref_sent' function";
+
+	Node0x6000031fa530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @ref_sentence\l}"];
+}

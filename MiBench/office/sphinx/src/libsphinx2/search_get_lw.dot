@@ -1,0 +1,5 @@
+digraph "CFG for 'search_get_lw' function" {
+	label="CFG for 'search_get_lw' function";
+
+	Node0x600002001770 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load double, ptr @fwdtree_lw, align 8\l  ret double %1\l}"];
+}

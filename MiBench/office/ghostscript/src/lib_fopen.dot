@@ -1,0 +1,12 @@
+digraph "CFG for 'lib_fopen' function" {
+	label="CFG for 'lib_fopen' function";
+
+	Node0x60000212a080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca [129 x i8], align 1\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  store ptr null, ptr %3, align 8\l  %6 = call ptr @gs_getiodevice(i32 noundef 0)\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds [129 x i8], ptr %4, i64 0, i64 0\l  %9 = call i32 @lib_file_fopen(ptr noundef %6, ptr noundef %7, ptr noundef\l... @.str, ptr noundef %3, ptr noundef %8, i32 noundef 129)\l  store i32 %9, ptr %5, align 4\l  %10 = load i32, ptr %5, align 4\l  %11 = icmp slt i32 %10, 0\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x60000212a080:s0 -> Node0x60000212a0d0[tooltip="1 -> 12\nProbability 37.50%" ];
+	Node0x60000212a080:s1 -> Node0x60000212a120[tooltip="1 -> 13\nProbability 62.50%" ];
+	Node0x60000212a0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  br label %15\l}"];
+	Node0x60000212a0d0 -> Node0x60000212a170[tooltip="12 -> 15\nProbability 100.00%" ];
+	Node0x60000212a120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  br label %15\l}"];
+	Node0x60000212a120 -> Node0x60000212a170[tooltip="13 -> 15\nProbability 100.00%" ];
+	Node0x60000212a170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = phi ptr [ null, %12 ], [ %14, %13 ]\l  ret ptr %16\l}"];
+}

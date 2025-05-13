@@ -1,0 +1,5 @@
+digraph "CFG for 'AVI_video_compressor' function" {
+	label="CFG for 'AVI_video_compressor' function";
+
+	Node0x6000005a8230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.avi_t, ptr %3, i32 0, i32 6\l  %5 = getelementptr inbounds [8 x i8], ptr %4, i64 0, i64 0\l  ret ptr %5\l}"];
+}

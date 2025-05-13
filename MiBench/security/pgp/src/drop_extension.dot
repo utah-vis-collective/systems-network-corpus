@@ -1,0 +1,10 @@
+digraph "CFG for 'drop_extension' function" {
+	label="CFG for 'drop_extension' function";
+
+	Node0x600001977520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call zeroext i8 @no_extension(ptr noundef %3)\l  %5 = icmp ne i8 %4, 0\l  br i1 %5, label %9, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x600001977520:s0 -> Node0x6000019775c0[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x600001977520:s1 -> Node0x600001977570[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x600001977570 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  %8 = call ptr @strrchr(ptr noundef %7, i32 noundef 46) #8\l  store i8 0, ptr %8, align 1\l  br label %9\l}"];
+	Node0x600001977570 -> Node0x6000019775c0[tooltip="6 -> 9\nProbability 100.00%" ];
+	Node0x6000019775c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  ret void\l}"];
+}

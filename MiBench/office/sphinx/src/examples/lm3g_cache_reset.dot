@@ -1,0 +1,37 @@
+digraph "CFG for 'lm3g_cache_reset' function" {
+	label="CFG for 'lm3g_cache_reset' function";
+
+	Node0x600001025b30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = load ptr, ptr @lmp, align 8\l  store ptr %6, ptr %2, align 8\l  store i32 0, ptr %1, align 4\l  br label %7\l}"];
+	Node0x600001025b30 -> Node0x600001025b80[tooltip="0 -> 7\nProbability 100.00%" ];
+	Node0x600001025b80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %1, align 4\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.lm_s, ptr %9, i32 0, i32 12\l  %11 = load i32, ptr %10, align 4\l  %12 = icmp slt i32 %8, %11\l  br i1 %12, label %13, label %60\l|{<s0>T|<s1>F}}"];
+	Node0x600001025b80:s0 -> Node0x600001025bd0[tooltip="7 -> 13\nProbability 96.88%" ];
+	Node0x600001025b80:s1 -> Node0x600001025f90[tooltip="7 -> 60\nProbability 3.12%" ];
+	Node0x600001025bd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{13:\l|  store ptr null, ptr %5, align 8\l  %14 = load ptr, ptr %2, align 8\l  %15 = getelementptr inbounds %struct.lm_s, ptr %14, i32 0, i32 23\l  %16 = load ptr, ptr %15, align 8\l  %17 = load i32, ptr %1, align 4\l  %18 = sext i32 %17 to i64\l  %19 = getelementptr inbounds ptr, ptr %16, i64 %18\l  %20 = load ptr, ptr %19, align 8\l  store ptr %20, ptr %3, align 8\l  br label %21\l}"];
+	Node0x600001025bd0 -> Node0x600001025c20[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x600001025c20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = icmp ne ptr %22, null\l  br i1 %23, label %24, label %56\l|{<s0>T|<s1>F}}"];
+	Node0x600001025c20:s0 -> Node0x600001025c70[tooltip="21 -> 24\nProbability 96.88%" ];
+	Node0x600001025c20:s1 -> Node0x600001025ef0[tooltip="21 -> 56\nProbability 3.12%" ];
+	Node0x600001025c70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %3, align 8\l  %26 = getelementptr inbounds %struct.tginfo_s, ptr %25, i32 0, i32 5\l  %27 = load ptr, ptr %26, align 8\l  store ptr %27, ptr %4, align 8\l  %28 = load ptr, ptr %3, align 8\l  %29 = getelementptr inbounds %struct.tginfo_s, ptr %28, i32 0, i32 3\l  %30 = load i32, ptr %29, align 4\l  %31 = icmp ne i32 %30, 0\l  br i1 %31, label %49, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600001025c70:s0 -> Node0x600001025e00[tooltip="24 -> 49\nProbability 62.50%" ];
+	Node0x600001025c70:s1 -> Node0x600001025cc0[tooltip="24 -> 32\nProbability 37.50%" ];
+	Node0x600001025cc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{32:\l|  %33 = load ptr, ptr %3, align 8\l  call void @listelem_free(ptr noundef %33, i64 noundef 32)\l  %34 = load ptr, ptr %5, align 8\l  %35 = icmp ne ptr %34, null\l  br i1 %35, label %36, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600001025cc0:s0 -> Node0x600001025d10[tooltip="32 -> 36\nProbability 62.50%" ];
+	Node0x600001025cc0:s1 -> Node0x600001025d60[tooltip="32 -> 40\nProbability 37.50%" ];
+	Node0x600001025d10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %4, align 8\l  %38 = load ptr, ptr %5, align 8\l  %39 = getelementptr inbounds %struct.tginfo_s, ptr %38, i32 0, i32 5\l  store ptr %37, ptr %39, align 8\l  br label %48\l}"];
+	Node0x600001025d10 -> Node0x600001025db0[tooltip="36 -> 48\nProbability 100.00%" ];
+	Node0x600001025d60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %4, align 8\l  %42 = load ptr, ptr %2, align 8\l  %43 = getelementptr inbounds %struct.lm_s, ptr %42, i32 0, i32 23\l  %44 = load ptr, ptr %43, align 8\l  %45 = load i32, ptr %1, align 4\l  %46 = sext i32 %45 to i64\l  %47 = getelementptr inbounds ptr, ptr %44, i64 %46\l  store ptr %41, ptr %47, align 8\l  br label %48\l}"];
+	Node0x600001025d60 -> Node0x600001025db0[tooltip="40 -> 48\nProbability 100.00%" ];
+	Node0x600001025db0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{48:\l|  br label %53\l}"];
+	Node0x600001025db0 -> Node0x600001025e50[tooltip="48 -> 53\nProbability 100.00%" ];
+	Node0x600001025e00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{49:\l|  %50 = load ptr, ptr %3, align 8\l  %51 = getelementptr inbounds %struct.tginfo_s, ptr %50, i32 0, i32 3\l  store i32 0, ptr %51, align 4\l  %52 = load ptr, ptr %3, align 8\l  store ptr %52, ptr %5, align 8\l  br label %53\l}"];
+	Node0x600001025e00 -> Node0x600001025e50[tooltip="49 -> 53\nProbability 100.00%" ];
+	Node0x600001025e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{53:\l|  br label %54\l}"];
+	Node0x600001025e50 -> Node0x600001025ea0[tooltip="53 -> 54\nProbability 100.00%" ];
+	Node0x600001025ea0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{54:\l|  %55 = load ptr, ptr %4, align 8\l  store ptr %55, ptr %3, align 8\l  br label %21\l}"];
+	Node0x600001025ea0 -> Node0x600001025c20[tooltip="54 -> 21\nProbability 100.00%" ];
+	Node0x600001025ef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{56:\l|  br label %57\l}"];
+	Node0x600001025ef0 -> Node0x600001025f40[tooltip="56 -> 57\nProbability 100.00%" ];
+	Node0x600001025f40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{57:\l|  %58 = load i32, ptr %1, align 4\l  %59 = add nsw i32 %58, 1\l  store i32 %59, ptr %1, align 4\l  br label %7\l}"];
+	Node0x600001025f40 -> Node0x600001025b80[tooltip="57 -> 7\nProbability 100.00%" ];
+	Node0x600001025f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{60:\l|  ret void\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'z2grestore' function" {
+	label="CFG for 'z2grestore' function";
+
+	Node0x60000010f200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr @igs, align 8\l  %5 = load ptr, ptr @igs, align 8\l  %6 = call ptr @gs_state_saved(ptr noundef %5)\l  %7 = call i32 @restore_page_device(ptr noundef %4, ptr noundef %6)\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %12, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000010f200:s0 -> Node0x60000010f2a0[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x60000010f200:s1 -> Node0x60000010f250[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x60000010f250 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @igs, align 8\l  %11 = call i32 @gs_grestore(ptr noundef %10)\l  store i32 %11, ptr %2, align 4\l  br label %14\l}"];
+	Node0x60000010f250 -> Node0x60000010f2f0[tooltip="9 -> 14\nProbability 100.00%" ];
+	Node0x60000010f2a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = call i32 @push_callout(ptr noundef @.str.20)\l  store i32 %13, ptr %2, align 4\l  br label %14\l}"];
+	Node0x60000010f2a0 -> Node0x60000010f2f0[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x60000010f2f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %2, align 4\l  ret i32 %15\l}"];
+}

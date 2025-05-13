@@ -1,0 +1,15 @@
+digraph "CFG for 'error' function" {
+	label="CFG for 'error' function";
+
+	Node0x6000012140a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load i32, ptr @errcount, align 4\l  %4 = add nsw i32 %3, 1\l  store i32 %4, ptr @errcount, align 4\l  %5 = load i8, ptr @langfile, align 1\l  %6 = icmp ne i8 %5, 0\l  br i1 %6, label %7, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000012140a0:s0 -> Node0x6000012140f0[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x6000012140a0:s1 -> Node0x600001214140[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x6000012140f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr @__stderrp, align 8\l  %9 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %8, ptr noundef @.str.7,\l... ptr noundef @langfile) #6\l  br label %10\l}"];
+	Node0x6000012140f0 -> Node0x600001214140[tooltip="7 -> 10\nProbability 100.00%" ];
+	Node0x600001214140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr @line, align 4\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001214140:s0 -> Node0x600001214190[tooltip="10 -> 13\nProbability 62.50%" ];
+	Node0x600001214140:s1 -> Node0x6000012141e0[tooltip="10 -> 17\nProbability 37.50%" ];
+	Node0x600001214190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @__stderrp, align 8\l  %15 = load i32, ptr @line, align 4\l  %16 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %14, ptr noundef\l... @.str.8, i32 noundef %15) #6\l  br label %17\l}"];
+	Node0x600001214190 -> Node0x6000012141e0[tooltip="13 -> 17\nProbability 100.00%" ];
+	Node0x6000012141e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr @__stderrp, align 8\l  %19 = load ptr, ptr %2, align 8\l  %20 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %18, ptr noundef\l... @.str.9, ptr noundef %19) #6\l  ret void\l}"];
+}

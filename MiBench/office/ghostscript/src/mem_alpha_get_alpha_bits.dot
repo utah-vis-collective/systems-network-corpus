@@ -1,0 +1,5 @@
+digraph "CFG for 'mem_alpha_get_alpha_bits' function" {
+	label="CFG for 'mem_alpha_get_alpha_bits' function";
+
+	Node0x600002aea850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.gx_device_memory_s, ptr %5, i32 0, i32 32\l  %7 = load i32, ptr %6, align 8\l  %8 = shl i32 1, %7\l  ret i32 %8\l}"];
+}

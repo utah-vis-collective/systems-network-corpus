@@ -1,0 +1,17 @@
+digraph "CFG for 'BF_FlushBitstream' function" {
+	label="CFG for 'BF_FlushBitstream' function";
+
+	Node0x6000039db8e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load i32, ptr @elements, align 4\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000039db8e0:s0 -> Node0x6000039db930[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x6000039db8e0:s1 -> Node0x6000039dba70[tooltip="2 -> 25\nProbability 37.50%" ];
+	Node0x6000039db930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  %10 = load i32, ptr @forwardFrameLength, align 4\l  %11 = load i32, ptr @forwardSILength, align 4\l  %12 = sub nsw i32 %10, %11\l  store i32 %12, ptr %5, align 4\l  %13 = load i32, ptr %5, align 4\l  %14 = sdiv i32 %13, 32\l  store i32 %14, ptr %6, align 4\l  br label %15\l}"];
+	Node0x6000039db930 -> Node0x6000039db980[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x6000039db980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %6, align 4\l  %17 = add nsw i32 %16, -1\l  store i32 %17, ptr %6, align 4\l  %18 = icmp ne i32 %16, 0\l  br i1 %18, label %19, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000039db980:s0 -> Node0x6000039db9d0[tooltip="15 -> 19\nProbability 96.88%" ];
+	Node0x6000039db980:s1 -> Node0x6000039dba20[tooltip="15 -> 21\nProbability 3.12%" ];
+	Node0x6000039db9d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %4, align 8\l  call void @WriteMainDataBits(i32 noundef 0, i32 noundef 32, ptr noundef %20)\l  br label %15, !llvm.loop !6\l}"];
+	Node0x6000039db9d0 -> Node0x6000039db980[tooltip="19 -> 15\nProbability 100.00%" ];
+	Node0x6000039dba20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %5, align 4\l  %23 = srem i32 %22, 32\l  %24 = load ptr, ptr %4, align 8\l  call void @WriteMainDataBits(i32 noundef 0, i32 noundef %23, ptr noundef %24)\l  br label %25\l}"];
+	Node0x6000039dba20 -> Node0x6000039dba70[tooltip="21 -> 25\nProbability 100.00%" ];
+	Node0x6000039dba70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{25:\l|  %26 = load i32, ptr @forwardFrameLength, align 4\l  %27 = load i32, ptr @forwardSILength, align 4\l  %28 = sub nsw i32 %26, %27\l  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds %struct.BF_FrameResults, ptr %29, i32 0, i32 1\l  store i32 %28, ptr %30, align 4\l  %31 = load i32, ptr @forwardSILength, align 4\l  %32 = load ptr, ptr %4, align 8\l  %33 = getelementptr inbounds %struct.BF_FrameResults, ptr %32, i32 0, i32 0\l  store i32 %31, ptr %33, align 4\l  %34 = load ptr, ptr %4, align 8\l  %35 = getelementptr inbounds %struct.BF_FrameResults, ptr %34, i32 0, i32 2\l  store i32 0, ptr %35, align 4\l  call void @free_side_queues()\l  store i32 0, ptr @BitCount, align 4\l  store i32 0, ptr @ThisFrameSize, align 4\l  store i32 0, ptr @BitsRemaining, align 4\l  ret void\l}"];
+}

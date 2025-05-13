@@ -1,0 +1,31 @@
+digraph "CFG for 'cfont_string_array_create' function" {
+	label="CFG for 'cfont_string_array_create' function";
+
+	Node0x600001707250 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  %11 = alloca ptr, align 8\l  %12 = alloca i32, align 4\l  %13 = alloca %struct.str_enum, align 8\l  %14 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store i32 %2, ptr %8, align 4\l  store i32 %3, ptr %9, align 4\l  %15 = load ptr, ptr @gs_imemory, align 8\l  %16 = load ptr, ptr %6, align 8\l  %17 = load i32, ptr %8, align 4\l  %18 = call i32 @gs_alloc_ref_array(ptr noundef %15, ptr noundef %16, i32\l... noundef 96, i32 noundef %17, ptr noundef @.str.2)\l  store i32 %18, ptr %10, align 4\l  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.ref_s, ptr %19, i32 0, i32 1\l  %21 = load ptr, ptr %20, align 8\l  store ptr %21, ptr %11, align 8\l  %22 = load i32, ptr %10, align 4\l  %23 = icmp slt i32 %22, 0\l  br i1 %23, label %24, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600001707250:s0 -> Node0x6000017072a0[tooltip="4 -> 24\nProbability 37.50%" ];
+	Node0x600001707250:s1 -> Node0x6000017072f0[tooltip="4 -> 26\nProbability 62.50%" ];
+	Node0x6000017072a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %10, align 4\l  store i32 %25, ptr %5, align 4\l  br label %65\l}"];
+	Node0x6000017072a0 -> Node0x6000017075c0[tooltip="24 -> 65\nProbability 100.00%" ];
+	Node0x6000017072f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %7, align 8\l  %28 = getelementptr inbounds %struct.str_enum, ptr %13, i32 0, i32 0\l  store ptr %27, ptr %28, align 8\l  store i32 0, ptr %12, align 4\l  br label %29\l}"];
+	Node0x6000017072f0 -> Node0x600001707340[tooltip="26 -> 29\nProbability 100.00%" ];
+	Node0x600001707340 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load i32, ptr %12, align 4\l  %31 = load i32, ptr %8, align 4\l  %32 = icmp slt i32 %30, %31\l  br i1 %32, label %33, label %64\l|{<s0>T|<s1>F}}"];
+	Node0x600001707340:s0 -> Node0x600001707390[tooltip="29 -> 33\nProbability 96.88%" ];
+	Node0x600001707340:s1 -> Node0x600001707570[tooltip="29 -> 64\nProbability 3.12%" ];
+	Node0x600001707390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = call i32 @cfont_next_string(ptr noundef %13)\l  store i32 %34, ptr %14, align 4\l  %35 = load i32, ptr %14, align 4\l  switch i32 %35, label %36 [\l    i32 1, label %38\l    i32 0, label %47\l  ]\l|{<s0>def|<s1>1|<s2>0}}"];
+	Node0x600001707390:s0 -> Node0x6000017073e0[tooltip="33 -> 36\nProbability 1.59%" ];
+	Node0x600001707390:s1 -> Node0x600001707430[tooltip="33 -> 38\nProbability 49.21%" ];
+	Node0x600001707390:s2 -> Node0x600001707480[tooltip="33 -> 47\nProbability 49.21%" ];
+	Node0x6000017073e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %14, align 4\l  store i32 %37, ptr %5, align 4\l  br label %65\l}"];
+	Node0x6000017073e0 -> Node0x6000017075c0[tooltip="36 -> 65\nProbability 100.00%" ];
+	Node0x600001707430 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %9, align 4\l  %40 = getelementptr inbounds %struct.str_enum, ptr %13, i32 0, i32 1\l  %41 = getelementptr inbounds %struct.ref_s, ptr %40, i32 0, i32 0\l  %42 = getelementptr inbounds %struct.tas_s, ptr %41, i32 0, i32 0\l  %43 = load i16, ptr %42, align 8\l  %44 = zext i16 %43 to i32\l  %45 = or i32 %44, %39\l  %46 = trunc i32 %45 to i16\l  store i16 %46, ptr %42, align 8\l  br label %47\l}"];
+	Node0x600001707430 -> Node0x600001707480[tooltip="38 -> 47\nProbability 100.00%" ];
+	Node0x600001707480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{47:\l|  br label %48\l}"];
+	Node0x600001707480 -> Node0x6000017074d0[tooltip="47 -> 48\nProbability 100.00%" ];
+	Node0x6000017074d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = load i32, ptr getelementptr inbounds (%struct.gs_dual_memory_s, ptr\l... @gs_imemory, i32 0, i32 6), align 4\l  %50 = getelementptr inbounds %struct.str_enum, ptr %13, i32 0, i32 1\l  %51 = getelementptr inbounds %struct.ref_s, ptr %50, i32 0, i32 0\l  %52 = getelementptr inbounds %struct.tas_s, ptr %51, i32 0, i32 0\l  %53 = load i16, ptr %52, align 8\l  %54 = zext i16 %53 to i32\l  %55 = or i32 %54, %49\l  %56 = trunc i32 %55 to i16\l  store i16 %56, ptr %52, align 8\l  %57 = load ptr, ptr %11, align 8\l  %58 = getelementptr inbounds %struct.str_enum, ptr %13, i32 0, i32 1\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %57, ptr align 8 %58, i64 16,\l... i1 false)\l  br label %59\l}"];
+	Node0x6000017074d0 -> Node0x600001707520[tooltip="48 -> 59\nProbability 100.00%" ];
+	Node0x600001707520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{59:\l|  %60 = load i32, ptr %12, align 4\l  %61 = add nsw i32 %60, 1\l  store i32 %61, ptr %12, align 4\l  %62 = load ptr, ptr %11, align 8\l  %63 = getelementptr inbounds %struct.ref_s, ptr %62, i32 1\l  store ptr %63, ptr %11, align 8\l  br label %29\l}"];
+	Node0x600001707520 -> Node0x600001707340[tooltip="59 -> 29\nProbability 100.00%" ];
+	Node0x600001707570 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{64:\l|  store i32 0, ptr %5, align 4\l  br label %65\l}"];
+	Node0x600001707570 -> Node0x6000017075c0[tooltip="64 -> 65\nProbability 100.00%" ];
+	Node0x6000017075c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{65:\l|  %66 = load i32, ptr %5, align 4\l  ret i32 %66\l}"];
+}

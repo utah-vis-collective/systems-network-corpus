@@ -1,0 +1,12 @@
+digraph "CFG for 'M_gsm_add' function" {
+	label="CFG for 'M_gsm_add' function";
+
+	Node0x6000008435c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i64, align 8\l  store i16 %0, ptr %3, align 2\l  store i16 %1, ptr %4, align 2\l  %6 = load i16, ptr %3, align 2\l  %7 = sext i16 %6 to i64\l  %8 = load i16, ptr %4, align 2\l  %9 = sext i16 %8 to i64\l  %10 = add nsw i64 %7, %9\l  store i64 %10, ptr %5, align 8\l  %11 = sub nsw i64 %10, -32768\l  %12 = icmp ugt i64 %11, 65535\l  br i1 %12, label %13, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000008435c0:s0 -> Node0x600000843610[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x6000008435c0:s1 -> Node0x600000843660[tooltip="2 -> 19\nProbability 50.00%" ];
+	Node0x600000843610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load i64, ptr %5, align 8\l  %15 = icmp sgt i64 %14, 0\l  %16 = zext i1 %15 to i64\l  %17 = select i1 %15, i32 32767, i32 -32768\l  %18 = sext i32 %17 to i64\l  br label %21\l}"];
+	Node0x600000843610 -> Node0x6000008436b0[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x600000843660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load i64, ptr %5, align 8\l  br label %21\l}"];
+	Node0x600000843660 -> Node0x6000008436b0[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x6000008436b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = phi i64 [ %18, %13 ], [ %20, %19 ]\l  %23 = trunc i64 %22 to i16\l  ret i16 %23\l}"];
+}

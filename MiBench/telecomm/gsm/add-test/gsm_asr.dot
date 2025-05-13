@@ -1,0 +1,27 @@
+digraph "CFG for 'gsm_asr' function" {
+	label="CFG for 'gsm_asr' function";
+
+	Node0x60000085f160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca i16, align 2\l  %5 = alloca i32, align 4\l  store i16 %0, ptr %4, align 2\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %5, align 4\l  %7 = icmp sge i32 %6, 16\l  br i1 %7, label %8, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f160:s0 -> Node0x60000085f1b0[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x60000085f160:s1 -> Node0x60000085f200[tooltip="2 -> 15\nProbability 50.00%" ];
+	Node0x60000085f1b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load i16, ptr %4, align 2\l  %10 = sext i16 %9 to i32\l  %11 = icmp slt i32 %10, 0\l  %12 = zext i1 %11 to i32\l  %13 = sub nsw i32 0, %12\l  %14 = trunc i32 %13 to i16\l  store i16 %14, ptr %3, align 2\l  br label %49\l}"];
+	Node0x60000085f1b0 -> Node0x60000085f430[tooltip="8 -> 49\nProbability 100.00%" ];
+	Node0x60000085f200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %5, align 4\l  %17 = icmp sle i32 %16, -16\l  br i1 %17, label %18, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f200:s0 -> Node0x60000085f250[tooltip="15 -> 18\nProbability 50.00%" ];
+	Node0x60000085f200:s1 -> Node0x60000085f2a0[tooltip="15 -> 19\nProbability 50.00%" ];
+	Node0x60000085f250 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  store i16 0, ptr %3, align 2\l  br label %49\l}"];
+	Node0x60000085f250 -> Node0x60000085f430[tooltip="18 -> 49\nProbability 100.00%" ];
+	Node0x60000085f2a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %5, align 4\l  %21 = icmp slt i32 %20, 0\l  br i1 %21, label %22, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f2a0:s0 -> Node0x60000085f2f0[tooltip="19 -> 22\nProbability 37.50%" ];
+	Node0x60000085f2a0:s1 -> Node0x60000085f340[tooltip="19 -> 29\nProbability 62.50%" ];
+	Node0x60000085f2f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{22:\l|  %23 = load i16, ptr %4, align 2\l  %24 = sext i16 %23 to i32\l  %25 = load i32, ptr %5, align 4\l  %26 = sub nsw i32 0, %25\l  %27 = shl i32 %24, %26\l  %28 = trunc i32 %27 to i16\l  store i16 %28, ptr %3, align 2\l  br label %49\l}"];
+	Node0x60000085f2f0 -> Node0x60000085f430[tooltip="22 -> 49\nProbability 100.00%" ];
+	Node0x60000085f340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{29:\l|  %30 = load i16, ptr %4, align 2\l  %31 = sext i16 %30 to i32\l  %32 = icmp sge i32 %31, 0\l  br i1 %32, label %33, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x60000085f340:s0 -> Node0x60000085f390[tooltip="29 -> 33\nProbability 50.00%" ];
+	Node0x60000085f340:s1 -> Node0x60000085f3e0[tooltip="29 -> 39\nProbability 50.00%" ];
+	Node0x60000085f390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{33:\l|  %34 = load i16, ptr %4, align 2\l  %35 = sext i16 %34 to i32\l  %36 = load i32, ptr %5, align 4\l  %37 = ashr i32 %35, %36\l  %38 = trunc i32 %37 to i16\l  store i16 %38, ptr %3, align 2\l  br label %49\l}"];
+	Node0x60000085f390 -> Node0x60000085f430[tooltip="33 -> 49\nProbability 100.00%" ];
+	Node0x60000085f3e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{39:\l|  %40 = load i16, ptr %4, align 2\l  %41 = zext i16 %40 to i32\l  %42 = sub nsw i32 0, %41\l  %43 = load i32, ptr %5, align 4\l  %44 = ashr i32 %42, %43\l  %45 = trunc i32 %44 to i16\l  %46 = sext i16 %45 to i32\l  %47 = sub nsw i32 0, %46\l  %48 = trunc i32 %47 to i16\l  store i16 %48, ptr %3, align 2\l  br label %49\l}"];
+	Node0x60000085f3e0 -> Node0x60000085f430[tooltip="39 -> 49\nProbability 100.00%" ];
+	Node0x60000085f430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{49:\l|  %50 = load i16, ptr %3, align 2\l  ret i16 %50\l}"];
+}

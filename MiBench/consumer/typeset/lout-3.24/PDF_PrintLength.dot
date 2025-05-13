@@ -1,0 +1,5 @@
+digraph "CFG for 'PDF_PrintLength' function" {
+	label="CFG for 'PDF_PrintLength' function";
+
+	Node0x600001621f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %7 = load ptr, ptr %4, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = call i64 @llvm.objectsize.i64.p0(ptr %8, i1 false, i1 true, i1 false)\l  %10 = load i32, ptr %5, align 4\l  %11 = sitofp i32 %10 to float\l  %12 = fdiv float %11, 5.670000e+02\l  %13 = fpext float %12 to double\l  %14 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %7, i32\l... noundef 0, i64 noundef %9, ptr noundef @.str.9, double noundef %13)\l  ret void\l}"];
+}

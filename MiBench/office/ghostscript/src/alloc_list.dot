@@ -1,0 +1,13 @@
+digraph "CFG for 'alloc_list' function" {
+	label="CFG for 'alloc_list' function";
+
+	Node0x600000a89360 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.string_list_s, ptr %3, i32 0, i32 2\l  store i32 0, ptr %4, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = getelementptr inbounds %struct.string_list_s, ptr %5, i32 0, i32 0\l  %7 = load i32, ptr %6, align 8\l  %8 = sext i32 %7 to i64\l  %9 = call ptr @calloc(i64 noundef %8, i64 noundef 16) #10\l  %10 = load ptr, ptr %2, align 8\l  %11 = getelementptr inbounds %struct.string_list_s, ptr %10, i32 0, i32 3\l  store ptr %9, ptr %11, align 8\l  %12 = load ptr, ptr %2, align 8\l  %13 = getelementptr inbounds %struct.string_list_s, ptr %12, i32 0, i32 3\l  %14 = load ptr, ptr %13, align 8\l  %15 = icmp ne ptr %14, null\l  %16 = xor i1 %15, true\l  %17 = zext i1 %16 to i32\l  %18 = sext i32 %17 to i64\l  %19 = icmp ne i64 %18, 0\l  br i1 %19, label %20, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600000a89360:s0 -> Node0x600000a89590[tooltip="1 -> 20\nProbability 0.00%" ];
+	Node0x600000a89360:s1 -> Node0x600000a89630[tooltip="1 -> 22\nProbability 100.00%" ];
+	Node0x600000a89590 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{20:\l|  call void @__assert_rtn(ptr noundef @__func__.alloc_list, ptr noundef\l... @.str.12, i32 noundef 300, ptr noundef @.str.13) #11\l  unreachable\l}"];
+	Node0x600000a895e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{21:\l|  br label %23\l}"];
+	Node0x600000a895e0 -> Node0x600000a89680[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x600000a89630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  br label %23\l}"];
+	Node0x600000a89630 -> Node0x600000a89680[tooltip="22 -> 23\nProbability 100.00%" ];
+	Node0x600000a89680 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  ret i32 0\l}"];
+}

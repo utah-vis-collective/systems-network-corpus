@@ -1,0 +1,10 @@
+digraph "CFG for 'addToContextTable' function" {
+	label="CFG for 'addToContextTable' function";
+
+	Node0x600002450960 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = call i32 @hash_lookup(ptr noundef %9, ptr noundef %10, ptr noundef %7)\l  %12 = icmp eq i32 -1, %11\l  br i1 %12, label %13, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600002450960:s0 -> Node0x6000024509b0[tooltip="3 -> 13\nProbability 50.00%" ];
+	Node0x600002450960:s1 -> Node0x600002450a00[tooltip="3 -> 27\nProbability 50.00%" ];
+	Node0x6000024509b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  %15 = call ptr @salloc(ptr noundef %14)\l  store ptr %15, ptr %8, align 8\l  %16 = load ptr, ptr %5, align 8\l  %17 = getelementptr inbounds %struct.hash_t, ptr %16, i32 0, i32 2\l  %18 = load i32, ptr %17, align 8\l  %19 = sext i32 %18 to i64\l  %20 = inttoptr i64 %19 to ptr\l  store ptr %20, ptr %7, align 8\l  %21 = load ptr, ptr %6, align 8\l  %22 = load ptr, ptr %8, align 8\l  call void @list_insert(ptr noundef %21, ptr noundef %22)\l  %23 = load ptr, ptr %5, align 8\l  %24 = load ptr, ptr %8, align 8\l  %25 = load ptr, ptr %7, align 8\l  %26 = call i32 @hash_add(ptr noundef %23, ptr noundef %24, ptr noundef %25)\l  br label %27\l}"];
+	Node0x6000024509b0 -> Node0x600002450a00[tooltip="13 -> 27\nProbability 100.00%" ];
+	Node0x600002450a00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %7, align 8\l  %29 = ptrtoint ptr %28 to i32\l  ret i32 %29\l}"];
+}

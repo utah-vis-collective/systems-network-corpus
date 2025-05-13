@@ -1,0 +1,5 @@
+digraph "CFG for 'setImage' function" {
+	label="CFG for 'setImage' function";
+
+	Node0x60000159d950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %7 = load i64, ptr %5, align 8\l  %8 = uitofp i64 %7 to double\l  %9 = load i64, ptr @tnw, align 8\l  %10 = uitofp i64 %9 to double\l  %11 = fdiv double %8, %10\l  %12 = call double @llvm.ceil.f64(double %11)\l  %13 = fptoui double %12 to i16\l  store i16 %13, ptr @filterWidth, align 2\l  %14 = load i64, ptr %5, align 8\l  %15 = trunc i64 %14 to i16\l  call void @setupStepTables(i16 noundef zeroext %15)\l  %16 = load ptr, ptr %4, align 8\l  %17 = load i64, ptr %5, align 8\l  %18 = load i64, ptr %6, align 8\l  call void @setImage1(ptr noundef %16, i64 noundef %17, i64 noundef %18)\l  ret void\l}"];
+}

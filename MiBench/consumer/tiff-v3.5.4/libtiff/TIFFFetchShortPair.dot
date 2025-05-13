@@ -1,0 +1,20 @@
+digraph "CFG for 'TIFFFetchShortPair' function" {
+	label="CFG for 'TIFFFetchShortPair' function";
+
+	Node0x6000036ad810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca [2 x i16], align 2\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %6, align 4\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.TIFFDirEntry, ptr %7, i32 0, i32 1\l  %9 = load i16, ptr %8, align 2\l  %10 = zext i16 %9 to i32\l  switch i32 %10, label %21 [\l    i32 3, label %11\l    i32 8, label %11\l    i32 1, label %16\l    i32 6, label %16\l  ]\l|{<s0>def|<s1>3|<s2>8|<s3>1|<s4>6}}"];
+	Node0x6000036ad810:s0 -> Node0x6000036ad900[tooltip="2 -> 21\nProbability 20.00%" ];
+	Node0x6000036ad810:s1 -> Node0x6000036ad860[tooltip="2 -> 11\nProbability 40.00%" ];
+	Node0x6000036ad810:s2 -> Node0x6000036ad860[tooltip="2 -> 11\nProbability 40.00%" ];
+	Node0x6000036ad810:s3 -> Node0x6000036ad8b0[tooltip="2 -> 16\nProbability 40.00%" ];
+	Node0x6000036ad810:s4 -> Node0x6000036ad8b0[tooltip="2 -> 16\nProbability 40.00%" ];
+	Node0x6000036ad860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = load ptr, ptr %4, align 8\l  %14 = getelementptr inbounds [2 x i16], ptr %5, i64 0, i64 0\l  %15 = call i32 @TIFFFetchShortArray(ptr noundef %12, ptr noundef %13, ptr\l... noundef %14)\l  store i32 %15, ptr %6, align 4\l  br label %21\l}"];
+	Node0x6000036ad860 -> Node0x6000036ad900[tooltip="11 -> 21\nProbability 100.00%" ];
+	Node0x6000036ad8b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = getelementptr inbounds [2 x i16], ptr %5, i64 0, i64 0\l  %20 = call i32 @TIFFFetchByteArray(ptr noundef %17, ptr noundef %18, ptr\l... noundef %19)\l  store i32 %20, ptr %6, align 4\l  br label %21\l}"];
+	Node0x6000036ad8b0 -> Node0x6000036ad900[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x6000036ad900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %6, align 4\l  %23 = icmp ne i32 %22, 0\l  br i1 %23, label %24, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x6000036ad900:s0 -> Node0x6000036ad950[tooltip="21 -> 24\nProbability 62.50%" ];
+	Node0x6000036ad900:s1 -> Node0x6000036ad9a0[tooltip="21 -> 37\nProbability 37.50%" ];
+	Node0x6000036ad950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %3, align 8\l  %26 = load ptr, ptr %4, align 8\l  %27 = getelementptr inbounds %struct.TIFFDirEntry, ptr %26, i32 0, i32 0\l  %28 = load i16, ptr %27, align 8\l  %29 = zext i16 %28 to i64\l  %30 = getelementptr inbounds [2 x i16], ptr %5, i64 0, i64 0\l  %31 = load i16, ptr %30, align 2\l  %32 = zext i16 %31 to i32\l  %33 = getelementptr inbounds [2 x i16], ptr %5, i64 0, i64 1\l  %34 = load i16, ptr %33, align 2\l  %35 = zext i16 %34 to i32\l  %36 = call i32 (ptr, i64, ...) @TIFFSetField(ptr noundef %25, i64 noundef\l... %29, i32 noundef %32, i32 noundef %35)\l  br label %37\l}"];
+	Node0x6000036ad950 -> Node0x6000036ad9a0[tooltip="24 -> 37\nProbability 100.00%" ];
+	Node0x6000036ad9a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load i32, ptr %6, align 4\l  ret i32 %38\l}"];
+}

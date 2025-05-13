@@ -1,0 +1,19 @@
+digraph "CFG for 'find_nearest_point' function" {
+	label="CFG for 'find_nearest_point' function";
+
+	Node0x600000bf2030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  %11 = alloca float, align 4\l  %12 = alloca float, align 4\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  store float 0x47EFFFFFE0000000, ptr %11, align 4\l  store i32 0, ptr %10, align 4\l  br label %13\l}"];
+	Node0x600000bf2030 -> Node0x600000bf2080[tooltip="4 -> 13\nProbability 100.00%" ];
+	Node0x600000bf2080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %10, align 4\l  %15 = load i32, ptr %8, align 4\l  %16 = icmp slt i32 %14, %15\l  br i1 %16, label %17, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x600000bf2080:s0 -> Node0x600000bf20d0[tooltip="13 -> 17\nProbability 96.88%" ];
+	Node0x600000bf2080:s1 -> Node0x600000bf2210[tooltip="13 -> 36\nProbability 3.12%" ];
+	Node0x600000bf20d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %5, align 8\l  %19 = load ptr, ptr %7, align 8\l  %20 = load i32, ptr %10, align 4\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds ptr, ptr %19, i64 %21\l  %23 = load ptr, ptr %22, align 8\l  %24 = load i32, ptr %6, align 4\l  %25 = call float @euclid_dist_2(ptr noundef %18, ptr noundef %23, i32\l... noundef %24)\l  store float %25, ptr %12, align 4\l  %26 = load float, ptr %12, align 4\l  %27 = load float, ptr %11, align 4\l  %28 = fcmp olt float %26, %27\l  br i1 %28, label %29, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600000bf20d0:s0 -> Node0x600000bf2120[tooltip="17 -> 29\nProbability 50.00%" ];
+	Node0x600000bf20d0:s1 -> Node0x600000bf2170[tooltip="17 -> 32\nProbability 50.00%" ];
+	Node0x600000bf2120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{29:\l|  %30 = load float, ptr %12, align 4\l  store float %30, ptr %11, align 4\l  %31 = load i32, ptr %10, align 4\l  store i32 %31, ptr %9, align 4\l  br label %32\l}"];
+	Node0x600000bf2120 -> Node0x600000bf2170[tooltip="29 -> 32\nProbability 100.00%" ];
+	Node0x600000bf2170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  br label %33\l}"];
+	Node0x600000bf2170 -> Node0x600000bf21c0[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x600000bf21c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %10, align 4\l  %35 = add nsw i32 %34, 1\l  store i32 %35, ptr %10, align 4\l  br label %13\l}"];
+	Node0x600000bf21c0 -> Node0x600000bf2080[tooltip="33 -> 13\nProbability 100.00%" ];
+	Node0x600000bf2210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %9, align 4\l  ret i32 %37\l}"];
+}

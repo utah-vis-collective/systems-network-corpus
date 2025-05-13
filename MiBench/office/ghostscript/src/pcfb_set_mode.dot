@@ -1,0 +1,5 @@
+digraph "CFG for 'pcfb_set_mode' function" {
+	label="CFG for 'pcfb_set_mode' function";
+
+	Node0x6000021edf40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca %union.REGS, align 2\l  store i32 %0, ptr %2, align 4\l  %4 = getelementptr inbounds %struct.h_regs, ptr %3, i32 0, i32 0\l  store i8 0, ptr %4, align 2\l  %5 = load i32, ptr %2, align 4\l  %6 = trunc i32 %5 to i8\l  %7 = getelementptr inbounds %struct.h_regs, ptr %3, i32 0, i32 1\l  store i8 %6, ptr %7, align 1\l  %8 = call i32 @int86(i32 noundef 16, ptr noundef %3, ptr noundef %3)\l  ret void\l}"];
+}

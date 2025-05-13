@@ -1,0 +1,5 @@
+digraph "CFG for 'phone_count' function" {
+	label="CFG for 'phone_count' function";
+
+	Node0x6000012f6cb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr getelementptr inbounds (%struct.hash_t, ptr @phones,\l... i32 0, i32 2), align 8\l  ret i32 %1\l}"];
+}

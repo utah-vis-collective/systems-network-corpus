@@ -1,0 +1,12 @@
+digraph "CFG for 'EnlargeToConstraint' function" {
+	label="CFG for 'EnlargeToConstraint' function";
+
+	Node0x600001062670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load ptr, ptr %6, align 8\l  %8 = getelementptr inbounds %struct.CONSTRAINT, ptr %7, i32 0, i32 1\l  %9 = load i32, ptr %8, align 4\l  %10 = load ptr, ptr %4, align 8\l  %11 = load i32, ptr %10, align 4\l  %12 = sub nsw i32 %9, %11\l  %13 = load ptr, ptr %6, align 8\l  %14 = getelementptr inbounds %struct.CONSTRAINT, ptr %13, i32 0, i32 2\l  %15 = load i32, ptr %14, align 4\l  %16 = icmp slt i32 %12, %15\l  br i1 %16, label %17, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600001062670:s0 -> Node0x600001062760[tooltip="3 -> 17\nProbability 50.00%" ];
+	Node0x600001062670:s1 -> Node0x6000010627b0[tooltip="3 -> 24\nProbability 50.00%" ];
+	Node0x600001062760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %6, align 8\l  %19 = getelementptr inbounds %struct.CONSTRAINT, ptr %18, i32 0, i32 1\l  %20 = load i32, ptr %19, align 4\l  %21 = load ptr, ptr %4, align 8\l  %22 = load i32, ptr %21, align 4\l  %23 = sub nsw i32 %20, %22\l  br label %28\l}"];
+	Node0x600001062760 -> Node0x600001062800[tooltip="17 -> 28\nProbability 100.00%" ];
+	Node0x6000010627b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %6, align 8\l  %26 = getelementptr inbounds %struct.CONSTRAINT, ptr %25, i32 0, i32 2\l  %27 = load i32, ptr %26, align 4\l  br label %28\l}"];
+	Node0x6000010627b0 -> Node0x600001062800[tooltip="24 -> 28\nProbability 100.00%" ];
+	Node0x600001062800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = phi i32 [ %23, %17 ], [ %27, %24 ]\l  %30 = load ptr, ptr %5, align 8\l  store i32 %29, ptr %30, align 4\l  ret void\l}"];
+}

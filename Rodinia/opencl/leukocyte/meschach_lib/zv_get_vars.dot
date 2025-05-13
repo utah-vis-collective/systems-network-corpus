@@ -1,0 +1,12 @@
+digraph "CFG for 'zv_get_vars' function" {
+	label="CFG for 'zv_get_vars' function";
+
+	Node0x6000014c1400 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  store i32 0, ptr %4, align 4\l  call void @llvm.va_start.p0(ptr %3)\l  br label %7\l}"];
+	Node0x6000014c1400 -> Node0x6000014c1450[tooltip="1 -> 7\nProbability 100.00%" ];
+	Node0x6000014c1450 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = va_arg ptr %3, ptr\l  store ptr %8, ptr %6, align 8\l  %9 = load ptr, ptr %6, align 8\l  store ptr %9, ptr %5, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000014c1450:s0 -> Node0x6000014c14a0[tooltip="7 -> 11\nProbability 96.88%" ];
+	Node0x6000014c1450:s1 -> Node0x6000014c14f0[tooltip="7 -> 17\nProbability 3.12%" ];
+	Node0x6000014c14a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %2, align 4\l  %13 = call ptr @zv_get(i32 noundef %12)\l  %14 = load ptr, ptr %5, align 8\l  store ptr %13, ptr %14, align 8\l  %15 = load i32, ptr %4, align 4\l  %16 = add nsw i32 %15, 1\l  store i32 %16, ptr %4, align 4\l  br label %7\l}"];
+	Node0x6000014c14a0 -> Node0x6000014c1450[tooltip="11 -> 7\nProbability 100.00%" ];
+	Node0x6000014c14f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{17:\l|  call void @llvm.va_end.p0(ptr %3)\l  %18 = load i32, ptr %4, align 4\l  ret i32 %18\l}"];
+}

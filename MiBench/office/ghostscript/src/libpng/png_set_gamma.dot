@@ -1,0 +1,5 @@
+digraph "CFG for 'png_set_gamma' function" {
+	label="CFG for 'png_set_gamma' function";
+
+	Node0x600000d87a70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca double, align 8\l  %6 = alloca double, align 8\l  store ptr %0, ptr %4, align 8\l  store double %1, ptr %5, align 8\l  store double %2, ptr %6, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.png_struct_def, ptr %7, i32 0, i32 10\l  %9 = load i64, ptr %8, align 8\l  %10 = or i64 %9, 8192\l  store i64 %10, ptr %8, align 8\l  %11 = load double, ptr %6, align 8\l  %12 = fptrunc double %11 to float\l  %13 = load ptr, ptr %4, align 8\l  %14 = getelementptr inbounds %struct.png_struct_def, ptr %13, i32 0, i32 59\l  store float %12, ptr %14, align 4\l  %15 = load double, ptr %5, align 8\l  %16 = fptrunc double %15 to float\l  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.png_struct_def, ptr %17, i32 0, i32 60\l  store float %16, ptr %18, align 8\l  ret void\l}"];
+}

@@ -1,0 +1,18 @@
+digraph "CFG for 'deflateCopy' function" {
+	label="CFG for 'deflateCopy' function";
+
+	Node0x600000ad9540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %5, align 8\l  %7 = icmp eq ptr %6, null\l  br i1 %7, label %16, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600000ad9540:s0 -> Node0x600000ad9630[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x600000ad9540:s1 -> Node0x600000ad9590[tooltip="2 -> 8\nProbability 62.50%" ];
+	Node0x600000ad9590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %4, align 8\l  %10 = icmp eq ptr %9, null\l  br i1 %10, label %16, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600000ad9590:s0 -> Node0x600000ad9630[tooltip="8 -> 16\nProbability 37.50%" ];
+	Node0x600000ad9590:s1 -> Node0x600000ad95e0[tooltip="8 -> 11\nProbability 62.50%" ];
+	Node0x600000ad95e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %5, align 8\l  %13 = getelementptr inbounds %struct.z_stream_s, ptr %12, i32 0, i32 7\l  %14 = load ptr, ptr %13, align 8\l  %15 = icmp eq ptr %14, null\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600000ad95e0:s0 -> Node0x600000ad9630[tooltip="11 -> 16\nProbability 37.50%" ];
+	Node0x600000ad95e0:s1 -> Node0x600000ad9680[tooltip="11 -> 17\nProbability 62.50%" ];
+	Node0x600000ad9630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  store i32 -2, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600000ad9630 -> Node0x600000ad96d0[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600000ad9680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %4, align 8\l  %19 = load ptr, ptr %5, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %18, ptr align 8 %19, i64 112,\l... i1 false)\l  store i32 -2, ptr %3, align 4\l  br label %20\l}"];
+	Node0x600000ad9680 -> Node0x600000ad96d0[tooltip="17 -> 20\nProbability 100.00%" ];
+	Node0x600000ad96d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %3, align 4\l  ret i32 %21\l}"];
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'put_r' function" {
+	label="CFG for 'put_r' function";
+
+	Node0x600003ba1f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %7 = load double, ptr %4, align 8\l  %8 = call double @frexp(double noundef %7, ptr noundef %5) #4\l  %9 = fmul double %8, 0x4170000000000000\l  %10 = fptosi double %9 to i64\l  store i64 %10, ptr %6, align 8\l  %11 = load i32, ptr %5, align 4\l  %12 = icmp slt i32 %11, -126\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba1f40:s0 -> Node0x600003ba1f90[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x600003ba1f40:s1 -> Node0x600003ba1fe0[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x600003ba1f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  store i64 0, ptr %6, align 8\l  store i32 0, ptr %5, align 4\l  br label %14\l}"];
+	Node0x600003ba1f90 -> Node0x600003ba1fe0[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x600003ba1fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i64, ptr %6, align 8\l  %16 = icmp slt i64 %15, 0\l  br i1 %16, label %17, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba1fe0:s0 -> Node0x600003ba2030[tooltip="14 -> 17\nProbability 37.50%" ];
+	Node0x600003ba1fe0:s1 -> Node0x600003ba2080[tooltip="14 -> 22\nProbability 62.50%" ];
+	Node0x600003ba2030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %5, align 4\l  %19 = add nsw i32 %18, 128\l  store i32 %19, ptr %5, align 4\l  %20 = load i64, ptr %6, align 8\l  %21 = sub nsw i64 0, %20\l  store i64 %21, ptr %6, align 8\l  br label %22\l}"];
+	Node0x600003ba2030 -> Node0x600003ba2080[tooltip="17 -> 22\nProbability 100.00%" ];
+	Node0x600003ba2080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  %24 = load i64, ptr %6, align 8\l  %25 = trunc i64 %24 to i8\l  %26 = call i32 @spputc(ptr noundef %23, i8 noundef zeroext %25)\l  %27 = load ptr, ptr %3, align 8\l  %28 = load i64, ptr %6, align 8\l  %29 = ashr i64 %28, 8\l  %30 = trunc i64 %29 to i8\l  %31 = call i32 @spputc(ptr noundef %27, i8 noundef zeroext %30)\l  %32 = load ptr, ptr %3, align 8\l  %33 = load i32, ptr %5, align 4\l  %34 = add nsw i32 %33, 127\l  %35 = shl i32 %34, 7\l  %36 = sext i32 %35 to i64\l  %37 = load i64, ptr %6, align 8\l  %38 = ashr i64 %37, 16\l  %39 = and i64 %38, 127\l  %40 = add nsw i64 %36, %39\l  %41 = trunc i64 %40 to i8\l  %42 = call i32 @spputc(ptr noundef %32, i8 noundef zeroext %41)\l  %43 = load ptr, ptr %3, align 8\l  %44 = load i32, ptr %5, align 4\l  %45 = add nsw i32 %44, 127\l  %46 = ashr i32 %45, 1\l  %47 = trunc i32 %46 to i8\l  %48 = call i32 @spputc(ptr noundef %43, i8 noundef zeroext %47)\l  ret void\l}"];
+}

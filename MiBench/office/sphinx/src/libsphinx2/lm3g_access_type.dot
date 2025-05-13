@@ -1,0 +1,5 @@
+digraph "CFG for 'lm3g_access_type' function" {
+	label="CFG for 'lm3g_access_type' function";
+
+	Node0x60000253a030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @lm_last_access_type, align 4\l  ret i32 %1\l}"];
+}

@@ -1,0 +1,9 @@
+digraph "CFG for 'kmalloc' function" {
+	label="CFG for 'kmalloc' function";
+
+	Node0x60000202d180 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store i32 %0, ptr %2, align 4\l  %4 = load i64, ptr @freeptr, align 8\l  %5 = inttoptr i64 %4 to ptr\l  store ptr %5, ptr %3, align 8\l  %6 = load i32, ptr %2, align 4\l  %7 = sext i32 %6 to i64\l  %8 = load i64, ptr @freeptr, align 8\l  %9 = add nsw i64 %8, %7\l  store i64 %9, ptr @freeptr, align 8\l  %10 = load i64, ptr @freeptr, align 8\l  %11 = load i64, ptr @malloc_size, align 8\l  %12 = load ptr, ptr @mem, align 8\l  %13 = ptrtoint ptr %12 to i64\l  %14 = add nsw i64 %11, %13\l  %15 = icmp sgt i64 %10, %14\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000202d180:s0 -> Node0x60000202d1d0[tooltip="1 -> 16\nProbability 0.00%" ];
+	Node0x60000202d180:s1 -> Node0x60000202d220[tooltip="1 -> 18\nProbability 100.00%" ];
+	Node0x60000202d1d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{16:\l|  %17 = call i32 (ptr, ...) @printf(ptr noundef @.str.2)\l  call void @exit(i32 noundef 1) #7\l  unreachable\l}"];
+	Node0x60000202d220 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  ret ptr %19\l}"];
+}

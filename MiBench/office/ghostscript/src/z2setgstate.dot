@@ -1,0 +1,20 @@
+digraph "CFG for 'z2setgstate' function" {
+	label="CFG for 'z2setgstate' function";
+
+	Node0x60000010f340 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr %3, align 8\l  %5 = getelementptr inbounds %struct.ref_s, ptr %4, i32 0, i32 0\l  %6 = getelementptr inbounds %struct.tas_s, ptr %5, i32 0, i32 0\l  %7 = load i16, ptr %6, align 8\l  %8 = zext i16 %7 to i32\l  %9 = and i32 %8, 15872\l  %10 = icmp eq i32 %9, 2048\l  br i1 %10, label %11, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x60000010f340:s0 -> Node0x60000010f930[tooltip="1 -> 11\nProbability 50.00%" ];
+	Node0x60000010f340:s1 -> Node0x60000010f980[tooltip="1 -> 22\nProbability 50.00%" ];
+	Node0x60000010f930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @gs_imemory, align 8\l  %13 = getelementptr inbounds %struct.gs_memory_s, ptr %12, i32 0, i32 0\l  %14 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %13, i32 0, i32\l... 10\l  %15 = load ptr, ptr %14, align 8\l  %16 = load ptr, ptr @gs_imemory, align 8\l  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds %struct.ref_s, ptr %17, i32 0, i32 1\l  %19 = load ptr, ptr %18, align 8\l  %20 = call ptr %15(ptr noundef %16, ptr noundef %19)\l  %21 = icmp eq ptr %20, @st_igstate_obj\l  br i1 %21, label %25, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x60000010f930:s0 -> Node0x60000010f9d0[tooltip="11 -> 25\nProbability 37.50%" ];
+	Node0x60000010f930:s1 -> Node0x60000010f980[tooltip="11 -> 22\nProbability 62.50%" ];
+	Node0x60000010f980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  %24 = call i32 @check_type_failed(ptr noundef %23)\l  store i32 %24, ptr %2, align 4\l  br label %40\l}"];
+	Node0x60000010f980 -> Node0x60000010fac0[tooltip="22 -> 40\nProbability 100.00%" ];
+	Node0x60000010f9d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr @igs, align 8\l  %27 = load ptr, ptr %3, align 8\l  %28 = getelementptr inbounds %struct.ref_s, ptr %27, i32 0, i32 1\l  %29 = load ptr, ptr %28, align 8\l  %30 = getelementptr inbounds %struct.igstate_obj_s, ptr %29, i32 0, i32 0\l  %31 = getelementptr inbounds %struct.ref_s, ptr %30, i32 0, i32 1\l  %32 = load ptr, ptr %31, align 8\l  %33 = call i32 @restore_page_device(ptr noundef %26, ptr noundef %32)\l  %34 = icmp ne i32 %33, 0\l  br i1 %34, label %38, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x60000010f9d0:s0 -> Node0x60000010fa70[tooltip="25 -> 38\nProbability 62.50%" ];
+	Node0x60000010f9d0:s1 -> Node0x60000010fa20[tooltip="25 -> 35\nProbability 37.50%" ];
+	Node0x60000010fa20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %3, align 8\l  %37 = call i32 @zsetgstate(ptr noundef %36)\l  store i32 %37, ptr %2, align 4\l  br label %40\l}"];
+	Node0x60000010fa20 -> Node0x60000010fac0[tooltip="35 -> 40\nProbability 100.00%" ];
+	Node0x60000010fa70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{38:\l|  %39 = call i32 @push_callout(ptr noundef @.str.23)\l  store i32 %39, ptr %2, align 4\l  br label %40\l}"];
+	Node0x60000010fa70 -> Node0x60000010fac0[tooltip="38 -> 40\nProbability 100.00%" ];
+	Node0x60000010fac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  %41 = load i32, ptr %2, align 4\l  ret i32 %41\l}"];
+}

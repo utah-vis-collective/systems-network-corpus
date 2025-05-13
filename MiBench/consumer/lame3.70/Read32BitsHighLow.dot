@@ -1,0 +1,5 @@
+digraph "CFG for 'Read32BitsHighLow' function" {
+	label="CFG for 'Read32BitsHighLow' function";
+
+	Node0x600003e0a990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = call i32 @Read16BitsHighLow(ptr noundef %6)\l  %8 = and i32 65535, %7\l  store i32 %8, ptr %3, align 4\l  %9 = load ptr, ptr %2, align 8\l  %10 = call i32 @Read16BitsHighLow(ptr noundef %9)\l  %11 = and i32 65535, %10\l  store i32 %11, ptr %4, align 4\l  %12 = load i32, ptr %3, align 4\l  %13 = shl i32 %12, 16\l  %14 = load i32, ptr %4, align 4\l  %15 = add nsw i32 %13, %14\l  store i32 %15, ptr %5, align 4\l  %16 = load i32, ptr %5, align 4\l  ret i32 %16\l}"];
+}

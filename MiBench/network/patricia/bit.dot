@@ -1,0 +1,5 @@
+digraph "CFG for 'bit' function" {
+	label="CFG for 'bit' function";
+
+	Node0x60000148ec10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i64, align 8\l  store i32 %0, ptr %3, align 4\l  store i64 %1, ptr %4, align 8\l  %5 = load i64, ptr %4, align 8\l  %6 = load i32, ptr %3, align 4\l  %7 = sub nsw i32 31, %6\l  %8 = shl i32 1, %7\l  %9 = sext i32 %8 to i64\l  %10 = and i64 %5, %9\l  ret i64 %10\l}"];
+}

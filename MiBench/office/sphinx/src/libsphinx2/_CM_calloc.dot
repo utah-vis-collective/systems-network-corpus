@@ -1,0 +1,16 @@
+digraph "CFG for '_CM_calloc' function" {
+	label="CFG for '_CM_calloc' function";
+
+	Node0x600002212260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca ptr, align 8\l  store i32 %0, ptr %6, align 4\l  store i32 %1, ptr %7, align 4\l  store ptr %2, ptr %8, align 8\l  store i32 %3, ptr %9, align 4\l  %11 = load i32, ptr %6, align 4\l  %12 = icmp eq i32 %11, 0\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600002212260:s0 -> Node0x6000022122b0[tooltip="4 -> 13\nProbability 37.50%" ];
+	Node0x600002212260:s1 -> Node0x600002212300[tooltip="4 -> 14\nProbability 62.50%" ];
+	Node0x6000022122b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  store ptr null, ptr %5, align 8\l  br label %31\l}"];
+	Node0x6000022122b0 -> Node0x6000022123f0[tooltip="13 -> 31\nProbability 100.00%" ];
+	Node0x600002212300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %6, align 4\l  %16 = sext i32 %15 to i64\l  %17 = load i32, ptr %7, align 4\l  %18 = sext i32 %17 to i64\l  %19 = call ptr @calloc(i64 noundef %16, i64 noundef %18) #7\l  store ptr %19, ptr %10, align 8\l  %20 = load ptr, ptr %10, align 8\l  %21 = icmp eq ptr %20, null\l  br i1 %21, label %22, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600002212300:s0 -> Node0x600002212350[tooltip="14 -> 22\nProbability 0.00%" ];
+	Node0x600002212300:s1 -> Node0x6000022123a0[tooltip="14 -> 29\nProbability 100.00%" ];
+	Node0x600002212350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr @__stdoutp, align 8\l  %24 = load ptr, ptr %8, align 8\l  %25 = load i32, ptr %9, align 4\l  %26 = load i32, ptr %6, align 4\l  %27 = load i32, ptr %7, align 4\l  %28 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %23, ptr noundef\l... @.str.3, ptr noundef %24, i32 noundef %25, i32 noundef %26, i32 noundef %27)\l... #8\l  call void @exit(i32 noundef -1) #9\l  unreachable\l}"];
+	Node0x6000022123a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %10, align 8\l  store ptr %30, ptr %5, align 8\l  br label %31\l}"];
+	Node0x6000022123a0 -> Node0x6000022123f0[tooltip="29 -> 31\nProbability 100.00%" ];
+	Node0x6000022123f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %5, align 8\l  ret ptr %32\l}"];
+}

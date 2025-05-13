@@ -1,0 +1,5 @@
+digraph "CFG for 'zlibVersion' function" {
+	label="CFG for 'zlibVersion' function";
+
+	Node0x600003dbdf40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @.str.9\l}"];
+}

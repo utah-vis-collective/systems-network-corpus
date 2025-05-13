@@ -1,0 +1,10 @@
+digraph "CFG for 'is_key_ctb' function" {
+	label="CFG for 'is_key_ctb' function";
+
+	Node0x6000011f7020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i8, align 1\l  store i8 %0, ptr %2, align 1\l  %3 = load i8, ptr %2, align 1\l  %4 = zext i8 %3 to i32\l  %5 = icmp eq i32 %4, 153\l  br i1 %5, label %10, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x6000011f7020:s0 -> Node0x6000011f70c0[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x6000011f7020:s1 -> Node0x6000011f7070[tooltip="1 -> 6\nProbability 50.00%" ];
+	Node0x6000011f7070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{6:\l|  %7 = load i8, ptr %2, align 1\l  %8 = zext i8 %7 to i32\l  %9 = icmp eq i32 %8, 149\l  br label %10\l}"];
+	Node0x6000011f7070 -> Node0x6000011f70c0[tooltip="6 -> 10\nProbability 100.00%" ];
+	Node0x6000011f70c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = phi i1 [ true, %1 ], [ %9, %6 ]\l  %12 = zext i1 %11 to i32\l  ret i32 %12\l}"];
+}

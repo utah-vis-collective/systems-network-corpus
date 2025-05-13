@@ -1,0 +1,26 @@
+digraph "CFG for 'png_realloc' function" {
+	label="CFG for 'png_realloc' function";
+
+	Node0x600001a52b70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  %9 = alloca i64, align 8\l  %10 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store i64 %2, ptr %8, align 8\l  store i64 %3, ptr %9, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52b70:s0 -> Node0x600001a52bc0[tooltip="4 -> 13\nProbability 62.50%" ];
+	Node0x600001a52b70:s1 -> Node0x600001a52cb0[tooltip="4 -> 22\nProbability 37.50%" ];
+	Node0x600001a52bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load i64, ptr %9, align 8\l  %15 = icmp ne i64 %14, 0\l  br i1 %15, label %16, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52bc0:s0 -> Node0x600001a52c10[tooltip="13 -> 16\nProbability 62.50%" ];
+	Node0x600001a52bc0:s1 -> Node0x600001a52cb0[tooltip="13 -> 22\nProbability 37.50%" ];
+	Node0x600001a52c10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %7, align 8\l  %18 = icmp ne ptr %17, null\l  br i1 %18, label %19, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52c10:s0 -> Node0x600001a52c60[tooltip="16 -> 19\nProbability 62.50%" ];
+	Node0x600001a52c10:s1 -> Node0x600001a52cb0[tooltip="16 -> 22\nProbability 37.50%" ];
+	Node0x600001a52c60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{19:\l|  %20 = load i64, ptr %8, align 8\l  %21 = icmp ne i64 %20, 0\l  br i1 %21, label %23, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52c60:s0 -> Node0x600001a52d00[tooltip="19 -> 23\nProbability 62.50%" ];
+	Node0x600001a52c60:s1 -> Node0x600001a52cb0[tooltip="19 -> 22\nProbability 37.50%" ];
+	Node0x600001a52cb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  store ptr null, ptr %5, align 8\l  br label %33\l}"];
+	Node0x600001a52cb0 -> Node0x600001a52df0[tooltip="22 -> 33\nProbability 100.00%" ];
+	Node0x600001a52d00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %7, align 8\l  %25 = load i64, ptr %8, align 8\l  %26 = call ptr @realloc(ptr noundef %24, i64 noundef %25) #6\l  store ptr %26, ptr %10, align 8\l  %27 = load ptr, ptr %10, align 8\l  %28 = icmp ne ptr %27, null\l  br i1 %28, label %31, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600001a52d00:s0 -> Node0x600001a52da0[tooltip="23 -> 31\nProbability 62.50%" ];
+	Node0x600001a52d00:s1 -> Node0x600001a52d50[tooltip="23 -> 29\nProbability 37.50%" ];
+	Node0x600001a52d50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %6, align 8\l  call void @png_error(ptr noundef %30, ptr noundef @.str.1)\l  br label %31\l}"];
+	Node0x600001a52d50 -> Node0x600001a52da0[tooltip="29 -> 31\nProbability 100.00%" ];
+	Node0x600001a52da0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %10, align 8\l  store ptr %32, ptr %5, align 8\l  br label %33\l}"];
+	Node0x600001a52da0 -> Node0x600001a52df0[tooltip="31 -> 33\nProbability 100.00%" ];
+	Node0x600001a52df0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %5, align 8\l  ret ptr %34\l}"];
+}

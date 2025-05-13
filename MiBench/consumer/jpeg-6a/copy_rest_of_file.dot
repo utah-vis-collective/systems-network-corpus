@@ -1,0 +1,12 @@
+digraph "CFG for 'copy_rest_of_file' function" {
+	label="CFG for 'copy_rest_of_file' function";
+
+	Node0x60000226c690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  br label %2\l}"];
+	Node0x60000226c690 -> Node0x60000226c6e0[tooltip="0 -> 2\nProbability 100.00%" ];
+	Node0x60000226c6e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load ptr, ptr @infile, align 8\l  %4 = call i32 @getc(ptr noundef %3)\l  store i32 %4, ptr %1, align 4\l  %5 = icmp ne i32 %4, -1\l  br i1 %5, label %6, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x60000226c6e0:s0 -> Node0x60000226c730[tooltip="2 -> 6\nProbability 96.88%" ];
+	Node0x60000226c6e0:s1 -> Node0x60000226c780[tooltip="2 -> 10\nProbability 3.12%" ];
+	Node0x60000226c730 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %1, align 4\l  %8 = load ptr, ptr @outfile, align 8\l  %9 = call i32 @putc(i32 noundef %7, ptr noundef %8)\l  br label %2, !llvm.loop !6\l}"];
+	Node0x60000226c730 -> Node0x60000226c6e0[tooltip="6 -> 2\nProbability 100.00%" ];
+	Node0x60000226c780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{10:\l|  ret void\l}"];
+}

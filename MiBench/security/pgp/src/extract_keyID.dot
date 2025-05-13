@@ -1,0 +1,12 @@
+digraph "CFG for 'extract_keyID' function" {
+	label="CFG for 'extract_keyID' function";
+
+	Node0x6000011f72f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca [262 x i8], align 1\l  %6 = alloca i16, align 2\l  %7 = alloca i16, align 2\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %8 = getelementptr inbounds [262 x i8], ptr %5, i64 0, i64 0\l  call void @llvm.memset.p0.i64(ptr align 1 %8, i8 0, i64 10, i1 false)\l  %9 = getelementptr inbounds [262 x i8], ptr %5, i64 0, i64 0\l  %10 = load ptr, ptr %4, align 8\l  %11 = call signext i16 @reg2mpi(ptr noundef %9, ptr noundef %10)\l  %12 = getelementptr inbounds [262 x i8], ptr %5, i64 0, i64 0\l  %13 = load ptr, ptr %4, align 8\l  %14 = call signext i16 @reg2mpi(ptr noundef %12, ptr noundef %13)\l  store i16 %14, ptr %6, align 2\l  %15 = load i16, ptr %6, align 2\l  %16 = sext i16 %15 to i32\l  %17 = add nsw i32 %16, 2\l  %18 = sub nsw i32 %17, 8\l  %19 = trunc i32 %18 to i16\l  store i16 %19, ptr %6, align 2\l  store i16 0, ptr %7, align 2\l  br label %20\l}"];
+	Node0x6000011f72f0 -> Node0x6000011f7340[tooltip="2 -> 20\nProbability 100.00%" ];
+	Node0x6000011f7340 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i16, ptr %7, align 2\l  %22 = sext i16 %21 to i32\l  %23 = icmp slt i32 %22, 8\l  br i1 %23, label %24, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x6000011f7340:s0 -> Node0x6000011f7390[tooltip="20 -> 24\nProbability 96.88%" ];
+	Node0x6000011f7340:s1 -> Node0x6000011f73e0[tooltip="20 -> 35\nProbability 3.12%" ];
+	Node0x6000011f7390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i16, ptr %6, align 2\l  %26 = add i16 %25, 1\l  store i16 %26, ptr %6, align 2\l  %27 = sext i16 %25 to i64\l  %28 = getelementptr inbounds [262 x i8], ptr %5, i64 0, i64 %27\l  %29 = load i8, ptr %28, align 1\l  %30 = load ptr, ptr %3, align 8\l  %31 = load i16, ptr %7, align 2\l  %32 = add i16 %31, 1\l  store i16 %32, ptr %7, align 2\l  %33 = sext i16 %31 to i64\l  %34 = getelementptr inbounds i8, ptr %30, i64 %33\l  store i8 %29, ptr %34, align 1\l  br label %20\l}"];
+	Node0x6000011f7390 -> Node0x6000011f7340[tooltip="24 -> 20\nProbability 100.00%" ];
+	Node0x6000011f73e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{35:\l|  ret void\l}"];
+}

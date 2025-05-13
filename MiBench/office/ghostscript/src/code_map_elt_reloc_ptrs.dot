@@ -1,0 +1,14 @@
+digraph "CFG for 'code_map_elt_reloc_ptrs' function" {
+	label="CFG for 'code_map_elt_reloc_ptrs' function";
+
+	Node0x6000017fac10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  %8 = load i32, ptr %5, align 4\l  %9 = udiv i32 %8, 24\l  store i32 %9, ptr %7, align 4\l  br label %10\l}"];
+	Node0x6000017fac10 -> Node0x6000017fac60[tooltip="3 -> 10\nProbability 100.00%" ];
+	Node0x6000017fac60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %7, align 4\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x6000017fac60:s0 -> Node0x6000017facb0[tooltip="10 -> 13\nProbability 96.88%" ];
+	Node0x6000017fac60:s1 -> Node0x6000017fad50[tooltip="10 -> 22\nProbability 3.12%" ];
+	Node0x6000017facb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr getelementptr inbounds\l... (%struct.gs_memory_struct_type_s, ptr @st_code_map, i32 0, i32 5), align 8\l  %15 = load ptr, ptr %4, align 8\l  %16 = load ptr, ptr %6, align 8\l  call void %14(ptr noundef %15, i32 noundef 24, ptr noundef %16)\l  br label %17\l}"];
+	Node0x6000017facb0 -> Node0x6000017fad00[tooltip="13 -> 17\nProbability 100.00%" ];
+	Node0x6000017fad00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %7, align 4\l  %19 = add i32 %18, -1\l  store i32 %19, ptr %7, align 4\l  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds i8, ptr %20, i64 24\l  store ptr %21, ptr %4, align 8\l  br label %10\l}"];
+	Node0x6000017fad00 -> Node0x6000017fac60[tooltip="17 -> 10\nProbability 100.00%" ];
+	Node0x6000017fad50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

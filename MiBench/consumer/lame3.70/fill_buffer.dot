@@ -1,0 +1,12 @@
+digraph "CFG for 'fill_buffer' function" {
+	label="CFG for 'fill_buffer' function";
+
+	Node0x60000371d860 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  %10 = alloca i32, align 4\l  %11 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store i32 %2, ptr %8, align 4\l  store ptr %3, ptr %9, align 8\l  store i32 %4, ptr %10, align 4\l  %12 = load i32, ptr %8, align 4\l  %13 = load i32, ptr %10, align 4\l  %14 = icmp slt i32 %12, %13\l  br i1 %14, label %15, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000371d860:s0 -> Node0x60000371d9f0[tooltip="5 -> 15\nProbability 50.00%" ];
+	Node0x60000371d860:s1 -> Node0x60000371da40[tooltip="5 -> 17\nProbability 50.00%" ];
+	Node0x60000371d9f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %8, align 4\l  br label %19\l}"];
+	Node0x60000371d9f0 -> Node0x60000371da90[tooltip="15 -> 19\nProbability 100.00%" ];
+	Node0x60000371da40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %10, align 4\l  br label %19\l}"];
+	Node0x60000371da40 -> Node0x60000371da90[tooltip="17 -> 19\nProbability 100.00%" ];
+	Node0x60000371da90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = phi i32 [ %16, %15 ], [ %18, %17 ]\l  store i32 %20, ptr %11, align 4\l  %21 = load ptr, ptr %7, align 8\l  %22 = load ptr, ptr %9, align 8\l  %23 = load i32, ptr %11, align 4\l  %24 = sext i32 %23 to i64\l  %25 = mul i64 2, %24\l  %26 = load ptr, ptr %7, align 8\l  %27 = call i64 @llvm.objectsize.i64.p0(ptr %26, i1 false, i1 true, i1 false)\l  %28 = call ptr @__memcpy_chk(ptr noundef %21, ptr noundef %22, i64 noundef\l... %25, i64 noundef %27) #8\l  %29 = load i32, ptr %11, align 4\l  ret i32 %29\l}"];
+}

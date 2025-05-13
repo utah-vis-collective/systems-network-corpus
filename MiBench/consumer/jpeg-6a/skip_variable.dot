@@ -1,0 +1,16 @@
+digraph "CFG for 'skip_variable' function" {
+	label="CFG for 'skip_variable' function";
+
+	Node0x60000226cf00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = call i32 @read_2_bytes()\l  store i32 %2, ptr %1, align 4\l  %3 = load i32, ptr %1, align 4\l  %4 = icmp ult i32 %3, 2\l  br i1 %4, label %5, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x60000226cf00:s0 -> Node0x60000226cf50[tooltip="0 -> 5\nProbability 0.00%" ];
+	Node0x60000226cf00:s1 -> Node0x60000226cfa0[tooltip="0 -> 8\nProbability 100.00%" ];
+	Node0x60000226cf50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{5:\l|  %6 = load ptr, ptr @__stderrp, align 8\l  %7 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %6, ptr noundef @.str.6,\l... ptr noundef @.str.33) #7\l  call void @exit(i32 noundef 1) #8\l  unreachable\l}"];
+	Node0x60000226cfa0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %1, align 4\l  %10 = sub i32 %9, 2\l  store i32 %10, ptr %1, align 4\l  br label %11\l}"];
+	Node0x60000226cfa0 -> Node0x60000226cff0[tooltip="8 -> 11\nProbability 100.00%" ];
+	Node0x60000226cff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %1, align 4\l  %13 = icmp ugt i32 %12, 0\l  br i1 %13, label %14, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000226cff0:s0 -> Node0x60000226d040[tooltip="11 -> 14\nProbability 96.88%" ];
+	Node0x60000226cff0:s1 -> Node0x60000226d090[tooltip="11 -> 18\nProbability 3.12%" ];
+	Node0x60000226d040 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = call i32 @read_1_byte()\l  %16 = load i32, ptr %1, align 4\l  %17 = add i32 %16, -1\l  store i32 %17, ptr %1, align 4\l  br label %11, !llvm.loop !6\l}"];
+	Node0x60000226d040 -> Node0x60000226cff0[tooltip="14 -> 11\nProbability 100.00%" ];
+	Node0x60000226d090 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  ret void\l}"];
+}

@@ -1,0 +1,17 @@
+digraph "CFG for 'randPoolAddBytes' function" {
+	label="CFG for 'randPoolAddBytes' function";
+
+	Node0x600001a9e5d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  br label %6\l}"];
+	Node0x600001a9e5d0 -> Node0x600001a9e620[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x600001a9e620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %4, align 4\l  %8 = load i32, ptr @randPoolAddPos, align 4\l  %9 = zext i32 %8 to i64\l  %10 = sub i64 768, %9\l  %11 = trunc i64 %10 to i32\l  store i32 %11, ptr %5, align 4\l  %12 = icmp ugt i32 %7, %11\l  br i1 %12, label %13, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x600001a9e620:s0 -> Node0x600001a9e670[tooltip="6 -> 13\nProbability 96.88%" ];
+	Node0x600001a9e620:s1 -> Node0x600001a9e6c0[tooltip="6 -> 26\nProbability 3.12%" ];
+	Node0x600001a9e670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr @randPoolAddPos, align 4\l  %15 = zext i32 %14 to i64\l  %16 = getelementptr inbounds i8, ptr @randPool, i64 %15\l  %17 = load ptr, ptr %3, align 8\l  %18 = load i32, ptr %5, align 4\l  call void @xorbytes(ptr noundef %16, ptr noundef %17, i32 noundef %18)\l  %19 = load i32, ptr %5, align 4\l  %20 = load ptr, ptr %3, align 8\l  %21 = zext i32 %19 to i64\l  %22 = getelementptr inbounds i8, ptr %20, i64 %21\l  store ptr %22, ptr %3, align 8\l  %23 = load i32, ptr %5, align 4\l  %24 = load i32, ptr %4, align 4\l  %25 = sub i32 %24, %23\l  store i32 %25, ptr %4, align 4\l  call void @randPoolStir()\l  br label %6\l}"];
+	Node0x600001a9e670 -> Node0x600001a9e620[tooltip="13 -> 6\nProbability 100.00%" ];
+	Node0x600001a9e6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %4, align 4\l  %28 = icmp ne i32 %27, 0\l  br i1 %28, label %29, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x600001a9e6c0:s0 -> Node0x600001a9e710[tooltip="26 -> 29\nProbability 62.50%" ];
+	Node0x600001a9e6c0:s1 -> Node0x600001a9e760[tooltip="26 -> 38\nProbability 37.50%" ];
+	Node0x600001a9e710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d8564670" fontname="Courier",label="{29:\l|  %30 = load i32, ptr @randPoolAddPos, align 4\l  %31 = zext i32 %30 to i64\l  %32 = getelementptr inbounds i8, ptr @randPool, i64 %31\l  %33 = load ptr, ptr %3, align 8\l  %34 = load i32, ptr %4, align 4\l  call void @xorbytes(ptr noundef %32, ptr noundef %33, i32 noundef %34)\l  %35 = load i32, ptr %4, align 4\l  %36 = load i32, ptr @randPoolAddPos, align 4\l  %37 = add i32 %36, %35\l  store i32 %37, ptr @randPoolAddPos, align 4\l  store i32 768, ptr @randPoolGetPos, align 4\l  br label %38\l}"];
+	Node0x600001a9e710 -> Node0x600001a9e760[tooltip="29 -> 38\nProbability 100.00%" ];
+	Node0x600001a9e760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{38:\l|  ret void\l}"];
+}

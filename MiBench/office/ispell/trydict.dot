@@ -1,0 +1,17 @@
+digraph "CFG for 'trydict' function" {
+	label="CFG for 'trydict' function";
+
+	Node0x6000013bd3b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store ptr %3, ptr %8, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = icmp eq ptr %10, null\l  br i1 %11, label %12, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000013bd3b0:s0 -> Node0x6000013bd450[tooltip="4 -> 12\nProbability 37.50%" ];
+	Node0x6000013bd3b0:s1 -> Node0x6000013bd4a0[tooltip="4 -> 19\nProbability 62.50%" ];
+	Node0x6000013bd450 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = load ptr, ptr %5, align 8\l  %15 = call i64 @llvm.objectsize.i64.p0(ptr %14, i1 false, i1 true, i1 false)\l  %16 = load ptr, ptr %7, align 8\l  %17 = load ptr, ptr %8, align 8\l  %18 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %13, i32\l... noundef 0, i64 noundef %15, ptr noundef @.str.18, ptr noundef %16, ptr\l... noundef %17)\l  br label %27\l}"];
+	Node0x6000013bd450 -> Node0x6000013bd4f0[tooltip="12 -> 27\nProbability 100.00%" ];
+	Node0x6000013bd4a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %5, align 8\l  %21 = load ptr, ptr %5, align 8\l  %22 = call i64 @llvm.objectsize.i64.p0(ptr %21, i1 false, i1 true, i1 false)\l  %23 = load ptr, ptr %6, align 8\l  %24 = load ptr, ptr %7, align 8\l  %25 = load ptr, ptr %8, align 8\l  %26 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %20, i32\l... noundef 0, i64 noundef %22, ptr noundef @.str.6, ptr noundef %23, ptr noundef\l... %24, ptr noundef %25)\l  br label %27\l}"];
+	Node0x6000013bd4a0 -> Node0x6000013bd4f0[tooltip="19 -> 27\nProbability 100.00%" ];
+	Node0x6000013bd4f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %5, align 8\l  %29 = call ptr @\"\\01_fopen\"(ptr noundef %28, ptr noundef @.str.9)\l  store ptr %29, ptr %9, align 8\l  %30 = load ptr, ptr %9, align 8\l  %31 = icmp eq ptr %30, null\l  br i1 %31, label %32, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x6000013bd4f0:s0 -> Node0x6000013bd540[tooltip="27 -> 32\nProbability 37.50%" ];
+	Node0x6000013bd4f0:s1 -> Node0x6000013bd590[tooltip="27 -> 35\nProbability 62.50%" ];
+	Node0x6000013bd540 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{32:\l|  %33 = load ptr, ptr %5, align 8\l  %34 = getelementptr inbounds i8, ptr %33, i64 0\l  store i8 0, ptr %34, align 1\l  br label %35\l}"];
+	Node0x6000013bd540 -> Node0x6000013bd590[tooltip="32 -> 35\nProbability 100.00%" ];
+	Node0x6000013bd590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %9, align 8\l  ret ptr %36\l}"];
+}

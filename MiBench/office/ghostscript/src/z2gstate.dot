@@ -1,0 +1,15 @@
+digraph "CFG for 'z2gstate' function" {
+	label="CFG for 'z2gstate' function";
+
+	Node0x60000010eee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr @igs, align 8\l  %5 = call ptr @gs_state_client_data(ptr noundef %4)\l  %6 = getelementptr inbounds %struct.int_gstate_s, ptr %5, i32 0, i32 9\l  %7 = getelementptr inbounds %struct.ref_s, ptr %6, i32 0, i32 1\l  %8 = load ptr, ptr %7, align 8\l  %9 = load ptr, ptr getelementptr inbounds (%struct.ref_s, ptr\l... @i_null_pagedevice, i32 0, i32 1), align 8\l  %10 = icmp eq ptr %8, %9\l  br i1 %10, label %11, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x60000010eee0:s0 -> Node0x60000010ef30[tooltip="1 -> 11\nProbability 37.50%" ];
+	Node0x60000010eee0:s1 -> Node0x60000010ef80[tooltip="1 -> 21\nProbability 62.50%" ];
+	Node0x60000010ef30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr @igs, align 8\l  %13 = call ptr @gs_currentdevice(ptr noundef %12)\l  %14 = getelementptr inbounds %struct.gx_device_s, ptr %13, i32 0, i32 21\l  %15 = getelementptr inbounds %struct.gx_device_procs_s, ptr %14, i32 0, i32\l... 19\l  %16 = load ptr, ptr %15, align 8\l  %17 = load ptr, ptr @igs, align 8\l  %18 = call ptr @gs_currentdevice(ptr noundef %17)\l  %19 = call ptr %16(ptr noundef %18)\l  %20 = icmp ne ptr %19, null\l  br i1 %20, label %24, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x60000010ef30:s0 -> Node0x60000010efd0[tooltip="11 -> 24\nProbability 62.50%" ];
+	Node0x60000010ef30:s1 -> Node0x60000010ef80[tooltip="11 -> 21\nProbability 37.50%" ];
+	Node0x60000010ef80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = call i32 @zgstate(ptr noundef %22)\l  store i32 %23, ptr %2, align 4\l  br label %26\l}"];
+	Node0x60000010ef80 -> Node0x60000010f020[tooltip="21 -> 26\nProbability 100.00%" ];
+	Node0x60000010efd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{24:\l|  %25 = call i32 @push_callout(ptr noundef @.str.18)\l  store i32 %25, ptr %2, align 4\l  br label %26\l}"];
+	Node0x60000010efd0 -> Node0x60000010f020[tooltip="24 -> 26\nProbability 100.00%" ];
+	Node0x60000010f020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %2, align 4\l  ret i32 %27\l}"];
+}

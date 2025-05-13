@@ -1,0 +1,18 @@
+digraph "CFG for 'id3_util_compress' function" {
+	label="CFG for 'id3_util_compress' function";
+
+	Node0x60000048a990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load i64, ptr %5, align 8\l  %9 = add i64 %8, 12\l  %10 = load ptr, ptr %6, align 8\l  store i64 %9, ptr %10, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = load i64, ptr %11, align 8\l  %13 = udiv i64 %12, 1000\l  %14 = load ptr, ptr %6, align 8\l  %15 = load i64, ptr %14, align 8\l  %16 = add i64 %15, %13\l  store i64 %16, ptr %14, align 8\l  %17 = load ptr, ptr %6, align 8\l  %18 = load i64, ptr %17, align 8\l  %19 = call ptr @malloc(i64 noundef %18) #3\l  store ptr %19, ptr %7, align 8\l  %20 = load ptr, ptr %7, align 8\l  %21 = icmp ne ptr %20, null\l  br i1 %21, label %22, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x60000048a990:s0 -> Node0x60000048a9e0[tooltip="3 -> 22\nProbability 62.50%" ];
+	Node0x60000048a990:s1 -> Node0x60000048ab20[tooltip="3 -> 37\nProbability 37.50%" ];
+	Node0x60000048a9e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %7, align 8\l  %24 = load ptr, ptr %6, align 8\l  %25 = load ptr, ptr %4, align 8\l  %26 = load i64, ptr %5, align 8\l  %27 = call i32 @compress2(ptr noundef %23, ptr noundef %24, ptr noundef %25,\l... i64 noundef %26, i32 noundef 9)\l  %28 = icmp ne i32 %27, 0\l  br i1 %28, label %34, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x60000048a9e0:s0 -> Node0x60000048aa80[tooltip="22 -> 34\nProbability 62.50%" ];
+	Node0x60000048a9e0:s1 -> Node0x60000048aa30[tooltip="22 -> 29\nProbability 37.50%" ];
+	Node0x60000048aa30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %6, align 8\l  %31 = load i64, ptr %30, align 8\l  %32 = load i64, ptr %5, align 8\l  %33 = icmp uge i64 %31, %32\l  br i1 %33, label %34, label %36\l|{<s0>T|<s1>F}}"];
+	Node0x60000048aa30:s0 -> Node0x60000048aa80[tooltip="29 -> 34\nProbability 50.00%" ];
+	Node0x60000048aa30:s1 -> Node0x60000048aad0[tooltip="29 -> 36\nProbability 50.00%" ];
+	Node0x60000048aa80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %7, align 8\l  call void @free(ptr noundef %35)\l  store ptr null, ptr %7, align 8\l  br label %36\l}"];
+	Node0x60000048aa80 -> Node0x60000048aad0[tooltip="34 -> 36\nProbability 100.00%" ];
+	Node0x60000048aad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{36:\l|  br label %37\l}"];
+	Node0x60000048aad0 -> Node0x60000048ab20[tooltip="36 -> 37\nProbability 100.00%" ];
+	Node0x60000048ab20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = load ptr, ptr %7, align 8\l  ret ptr %38\l}"];
+}

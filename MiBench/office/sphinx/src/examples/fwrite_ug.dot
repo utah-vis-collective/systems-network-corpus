@@ -1,0 +1,5 @@
+digraph "CFG for 'fwrite_ug' function" {
+	label="CFG for 'fwrite_ug' function";
+
+	Node0x60000102f2f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca %struct.unigram_s, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %4, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 4 %5, ptr align 4 %6, i64 16, i1\l... false)\l  %7 = load ptr, ptr %3, align 8\l  %8 = call i64 @\"\\01_fwrite\"(ptr noundef %5, i64 noundef 16, i64 noundef 1,\l... ptr noundef %7)\l  ret void\l}"];
+}

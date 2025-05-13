@@ -1,0 +1,26 @@
+digraph "CFG for '_TIFFgetMode' function" {
+	label="CFG for '_TIFFgetMode' function";
+
+	Node0x600003209fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  store i32 -1, ptr %5, align 4\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds i8, ptr %6, i64 0\l  %8 = load i8, ptr %7, align 1\l  %9 = sext i8 %8 to i32\l  switch i32 %9, label %28 [\l    i32 114, label %10\l    i32 119, label %18\l    i32 97, label %18\l  ]\l|{<s0>def|<s1>114|<s2>119|<s3>97}}"];
+	Node0x600003209fe0:s0 -> Node0x60000320a210[tooltip="2 -> 28\nProbability 25.00%" ];
+	Node0x600003209fe0:s1 -> Node0x60000320a030[tooltip="2 -> 10\nProbability 25.00%" ];
+	Node0x600003209fe0:s2 -> Node0x60000320a120[tooltip="2 -> 18\nProbability 50.00%" ];
+	Node0x600003209fe0:s3 -> Node0x60000320a120[tooltip="2 -> 18\nProbability 50.00%" ];
+	Node0x60000320a030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{10:\l|  store i32 0, ptr %5, align 4\l  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds i8, ptr %11, i64 1\l  %13 = load i8, ptr %12, align 1\l  %14 = sext i8 %13 to i32\l  %15 = icmp eq i32 %14, 43\l  br i1 %15, label %16, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000320a030:s0 -> Node0x60000320a080[tooltip="10 -> 16\nProbability 50.00%" ];
+	Node0x60000320a030:s1 -> Node0x60000320a0d0[tooltip="10 -> 17\nProbability 50.00%" ];
+	Node0x60000320a080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{16:\l|  store i32 2, ptr %5, align 4\l  br label %17\l}"];
+	Node0x60000320a080 -> Node0x60000320a0d0[tooltip="16 -> 17\nProbability 100.00%" ];
+	Node0x60000320a0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  br label %31\l}"];
+	Node0x60000320a0d0 -> Node0x60000320a260[tooltip="17 -> 31\nProbability 100.00%" ];
+	Node0x60000320a120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  store i32 514, ptr %5, align 4\l  %19 = load ptr, ptr %3, align 8\l  %20 = getelementptr inbounds i8, ptr %19, i64 0\l  %21 = load i8, ptr %20, align 1\l  %22 = sext i8 %21 to i32\l  %23 = icmp eq i32 %22, 119\l  br i1 %23, label %24, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x60000320a120:s0 -> Node0x60000320a170[tooltip="18 -> 24\nProbability 50.00%" ];
+	Node0x60000320a120:s1 -> Node0x60000320a1c0[tooltip="18 -> 27\nProbability 50.00%" ];
+	Node0x60000320a170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %5, align 4\l  %26 = or i32 %25, 1024\l  store i32 %26, ptr %5, align 4\l  br label %27\l}"];
+	Node0x60000320a170 -> Node0x60000320a1c0[tooltip="24 -> 27\nProbability 100.00%" ];
+	Node0x60000320a1c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  br label %31\l}"];
+	Node0x60000320a1c0 -> Node0x60000320a260[tooltip="27 -> 31\nProbability 100.00%" ];
+	Node0x60000320a210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %4, align 8\l  %30 = load ptr, ptr %3, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %29, ptr noundef @.str, ptr\l... noundef %30)\l  br label %31\l}"];
+	Node0x60000320a210 -> Node0x60000320a260[tooltip="28 -> 31\nProbability 100.00%" ];
+	Node0x60000320a260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %5, align 4\l  ret i32 %32\l}"];
+}

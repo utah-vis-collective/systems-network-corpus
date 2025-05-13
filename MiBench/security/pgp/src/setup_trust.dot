@@ -1,0 +1,17 @@
+digraph "CFG for 'setup_trust' function" {
+	label="CFG for 'setup_trust' function";
+
+	Node0x600003b000a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @marg_min, align 4\l  %2 = icmp eq i32 %1, 0\l  br i1 %2, label %3, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x600003b000a0:s0 -> Node0x600003b000f0[tooltip="0 -> 3\nProbability 37.50%" ];
+	Node0x600003b000a0:s1 -> Node0x600003b00140[tooltip="0 -> 5\nProbability 62.50%" ];
+	Node0x600003b000f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{3:\l|  store i32 0, ptr getelementptr inbounds ([8 x i32], ptr @trust_tbl, i64 0,\l... i64 5), align 4\l  store i32 1, ptr getelementptr inbounds ([8 x i32], ptr @trust_tbl, i64 0,\l... i64 6), align 4\l  %4 = load i32, ptr @compl_min, align 4\l  store i32 %4, ptr @complete_min, align 4\l  br label %17\l}"];
+	Node0x600003b000f0 -> Node0x600003b00230[tooltip="3 -> 17\nProbability 100.00%" ];
+	Node0x600003b00140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr @marg_min, align 4\l  %7 = load i32, ptr @compl_min, align 4\l  %8 = icmp slt i32 %6, %7\l  br i1 %8, label %9, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600003b00140:s0 -> Node0x600003b00190[tooltip="5 -> 9\nProbability 50.00%" ];
+	Node0x600003b00140:s1 -> Node0x600003b001e0[tooltip="5 -> 11\nProbability 50.00%" ];
+	Node0x600003b00190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  %10 = load i32, ptr @compl_min, align 4\l  store i32 %10, ptr @marg_min, align 4\l  br label %11\l}"];
+	Node0x600003b00190 -> Node0x600003b001e0[tooltip="9 -> 11\nProbability 100.00%" ];
+	Node0x600003b001e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load i32, ptr @compl_min, align 4\l  store i32 %12, ptr getelementptr inbounds ([8 x i32], ptr @trust_tbl, i64 0,\l... i64 5), align 4\l  %13 = load i32, ptr @marg_min, align 4\l  store i32 %13, ptr getelementptr inbounds ([8 x i32], ptr @trust_tbl, i64 0,\l... i64 6), align 4\l  %14 = load i32, ptr @compl_min, align 4\l  %15 = load i32, ptr @marg_min, align 4\l  %16 = mul nsw i32 %14, %15\l  store i32 %16, ptr @complete_min, align 4\l  br label %17\l}"];
+	Node0x600003b001e0 -> Node0x600003b00230[tooltip="11 -> 17\nProbability 100.00%" ];
+	Node0x600003b00230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr @complete_min, align 4\l  store i32 %18, ptr getelementptr inbounds ([8 x i32], ptr @trust_tbl, i64 0,\l... i64 7), align 4\l  %19 = load i32, ptr @complete_min, align 4\l  %20 = sdiv i32 %19, 2\l  store i32 %20, ptr @marginal_min, align 4\l  ret void\l}"];
+}

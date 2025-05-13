@@ -1,0 +1,12 @@
+digraph "CFG for 'extend_mem_file' function" {
+	label="CFG for 'extend_mem_file' function";
+
+	Node0x600002833390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  %7 = load i32, ptr %3, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds [20 x ptr], ptr @buf, i64 0, i64 %8\l  %10 = load ptr, ptr %9, align 8\l  %11 = load i32, ptr %4, align 4\l  %12 = sext i32 %11 to i64\l  %13 = call ptr @realloc(ptr noundef %10, i64 noundef %12) #6\l  store ptr %13, ptr %5, align 8\l  %14 = icmp eq ptr %13, null\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600002833390:s0 -> Node0x6000028333e0[tooltip="2 -> 15\nProbability 37.50%" ];
+	Node0x600002833390:s1 -> Node0x600002833430[tooltip="2 -> 16\nProbability 62.50%" ];
+	Node0x6000028333e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  store i32 -1, ptr %6, align 4\l  br label %21\l}"];
+	Node0x6000028333e0 -> Node0x600002833480[tooltip="15 -> 21\nProbability 100.00%" ];
+	Node0x600002833430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %5, align 8\l  %18 = load i32, ptr %3, align 4\l  %19 = sext i32 %18 to i64\l  %20 = getelementptr inbounds [20 x ptr], ptr @buf, i64 0, i64 %19\l  store ptr %17, ptr %20, align 8\l  store i32 0, ptr %6, align 4\l  br label %21\l}"];
+	Node0x600002833430 -> Node0x600002833480[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x600002833480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %6, align 4\l  ret i32 %22\l}"];
+}

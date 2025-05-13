@@ -1,0 +1,12 @@
+digraph "CFG for 'gsm_create' function" {
+	label="CFG for 'gsm_create' function";
+
+	Node0x6000036bde50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = call ptr @malloc(i64 noundef 656) #4\l  store ptr %3, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = icmp ne ptr %4, null\l  br i1 %5, label %8, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x6000036bde50:s0 -> Node0x6000036bdf40[tooltip="0 -> 8\nProbability 62.50%" ];
+	Node0x6000036bde50:s1 -> Node0x6000036bdef0[tooltip="0 -> 6\nProbability 37.50%" ];
+	Node0x6000036bdef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  store ptr %7, ptr %1, align 8\l  br label %16\l}"];
+	Node0x6000036bdef0 -> Node0x6000036bdf90[tooltip="6 -> 16\nProbability 100.00%" ];
+	Node0x6000036bdf40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  %10 = load ptr, ptr %2, align 8\l  %11 = call i64 @llvm.objectsize.i64.p0(ptr %10, i1 false, i1 true, i1 false)\l  %12 = call ptr @__memset_chk(ptr noundef %9, i32 noundef 0, i64 noundef 656,\l... i64 noundef %11) #5\l  %13 = load ptr, ptr %2, align 8\l  %14 = getelementptr inbounds %struct.gsm_state, ptr %13, i32 0, i32 7\l  store i16 40, ptr %14, align 2\l  %15 = load ptr, ptr %2, align 8\l  store ptr %15, ptr %1, align 8\l  br label %16\l}"];
+	Node0x6000036bdf40 -> Node0x6000036bdf90[tooltip="8 -> 16\nProbability 100.00%" ];
+	Node0x6000036bdf90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %1, align 8\l  ret ptr %17\l}"];
+}

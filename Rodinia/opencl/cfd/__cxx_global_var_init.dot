@@ -1,0 +1,5 @@
+digraph "CFG for '__cxx_global_var_init' function" {
+	label="CFG for '__cxx_global_var_init' function";
+
+	Node0x600000d117c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call noundef ptr @_ZN15oclHandleStructC1Ev(ptr noundef nonnull align\l... 8 dereferenceable(104) @oclHandles) #5\l  %2 = call i32 @__cxa_atexit(ptr @_ZN15oclHandleStructD1Ev, ptr @oclHandles,\l... ptr @__dso_handle) #5\l  ret void\l}"];
+}

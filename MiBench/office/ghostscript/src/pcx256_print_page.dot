@@ -1,0 +1,10 @@
+digraph "CFG for 'pcx256_print_page' function" {
+	label="CFG for 'pcx256_print_page' function";
+
+	Node0x600003a3a3f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca %struct.pcx_header_s, align 2\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 2 %5, ptr align 2\l... @pcx_header_prototype, i64 128, i1 false)\l  %7 = getelementptr inbounds %struct.pcx_header_s, ptr %5, i32 0, i32 3\l  store i8 8, ptr %7, align 1\l  %8 = getelementptr inbounds %struct.pcx_header_s, ptr %5, i32 0, i32 12\l  store i8 1, ptr %8, align 1\l  %9 = load ptr, ptr %3, align 8\l  %10 = load ptr, ptr %4, align 8\l  %11 = call i32 @pcx_write_page(ptr noundef %9, ptr noundef %10, ptr noundef\l... %5, i32 noundef 0)\l  store i32 %11, ptr %6, align 4\l  %12 = load i32, ptr %6, align 4\l  %13 = icmp sge i32 %12, 0\l  br i1 %13, label %14, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600003a3a3f0:s0 -> Node0x600003a3a440[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x600003a3a3f0:s1 -> Node0x600003a3a490[tooltip="2 -> 20\nProbability 50.00%" ];
+	Node0x600003a3a440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %4, align 8\l  %16 = call i32 @fputc(i32 noundef 12, ptr noundef %15)\l  %17 = load ptr, ptr %3, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = call i32 @pc_write_palette(ptr noundef %17, i32 noundef 256, ptr\l... noundef %18)\l  store i32 %19, ptr %6, align 4\l  br label %20\l}"];
+	Node0x600003a3a440 -> Node0x600003a3a490[tooltip="14 -> 20\nProbability 100.00%" ];
+	Node0x600003a3a490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %6, align 4\l  ret i32 %21\l}"];
+}

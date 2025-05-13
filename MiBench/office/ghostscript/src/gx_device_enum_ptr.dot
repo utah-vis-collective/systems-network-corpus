@@ -1,0 +1,15 @@
+digraph "CFG for 'gx_device_enum_ptr' function" {
+	label="CFG for 'gx_device_enum_ptr' function";
+
+	Node0x600001eec960 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %4 = load ptr, ptr %3, align 8\l  %5 = icmp eq ptr %4, null\l  br i1 %5, label %11, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x600001eec960:s0 -> Node0x600001eeca00[tooltip="1 -> 11\nProbability 37.50%" ];
+	Node0x600001eec960:s1 -> Node0x600001eec9b0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x600001eec9b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.gx_device_s, ptr %7, i32 0, i32 3\l  %9 = load ptr, ptr %8, align 8\l  %10 = icmp eq ptr %9, null\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001eec9b0:s0 -> Node0x600001eeca00[tooltip="6 -> 11\nProbability 37.50%" ];
+	Node0x600001eec9b0:s1 -> Node0x600001eeca50[tooltip="6 -> 12\nProbability 62.50%" ];
+	Node0x600001eeca00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  store ptr null, ptr %2, align 8\l  br label %14\l}"];
+	Node0x600001eeca00 -> Node0x600001eecaa0[tooltip="11 -> 14\nProbability 100.00%" ];
+	Node0x600001eeca50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  store ptr %13, ptr %2, align 8\l  br label %14\l}"];
+	Node0x600001eeca50 -> Node0x600001eecaa0[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x600001eecaa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %2, align 8\l  ret ptr %15\l}"];
+}

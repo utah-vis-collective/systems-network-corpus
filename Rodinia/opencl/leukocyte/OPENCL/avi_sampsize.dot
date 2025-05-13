@@ -1,0 +1,10 @@
+digraph "CFG for 'avi_sampsize' function" {
+	label="CFG for 'avi_sampsize' function";
+
+	Node0x600000d56df0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.avi_t, ptr %6, i32 0, i32 12\l  %8 = load i32, ptr %4, align 4\l  %9 = sext i32 %8 to i64\l  %10 = getelementptr inbounds [8 x %struct.track_s], ptr %7, i64 0, i64 %9\l  %11 = getelementptr inbounds %struct.track_s, ptr %10, i32 0, i32 3\l  %12 = load i64, ptr %11, align 8\l  %13 = add nsw i64 %12, 7\l  %14 = sdiv i64 %13, 8\l  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.avi_t, ptr %15, i32 0, i32 12\l  %17 = load i32, ptr %4, align 4\l  %18 = sext i32 %17 to i64\l  %19 = getelementptr inbounds [8 x %struct.track_s], ptr %16, i64 0, i64 %18\l  %20 = getelementptr inbounds %struct.track_s, ptr %19, i32 0, i32 1\l  %21 = load i64, ptr %20, align 8\l  %22 = mul nsw i64 %14, %21\l  %23 = trunc i64 %22 to i32\l  store i32 %23, ptr %5, align 4\l  %24 = load i32, ptr %5, align 4\l  %25 = icmp slt i32 %24, 4\l  br i1 %25, label %26, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600000d56df0:s0 -> Node0x600000d56e40[tooltip="2 -> 26\nProbability 50.00%" ];
+	Node0x600000d56df0:s1 -> Node0x600000d56e90[tooltip="2 -> 27\nProbability 50.00%" ];
+	Node0x600000d56e40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  store i32 4, ptr %5, align 4\l  br label %27\l}"];
+	Node0x600000d56e40 -> Node0x600000d56e90[tooltip="26 -> 27\nProbability 100.00%" ];
+	Node0x600000d56e90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %5, align 4\l  ret i32 %28\l}"];
+}

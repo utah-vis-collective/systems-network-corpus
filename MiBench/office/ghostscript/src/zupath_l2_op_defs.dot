@@ -1,0 +1,5 @@
+digraph "CFG for 'zupath_l2_op_defs' function" {
+	label="CFG for 'zupath_l2_op_defs' function";
+
+	Node0x600003a86300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret ptr @zupath_l2_op_defs.op_defs_\l}"];
+}

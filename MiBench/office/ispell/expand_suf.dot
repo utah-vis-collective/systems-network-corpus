@@ -1,0 +1,27 @@
+digraph "CFG for 'expand_suf' function" {
+	label="CFG for 'expand_suf' function";
+
+	Node0x60000133cc80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{6:\l|  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca i32, align 4\l  %11 = alloca i32, align 4\l  %12 = alloca ptr, align 8\l  %13 = alloca i32, align 4\l  %14 = alloca i32, align 4\l  %15 = alloca ptr, align 8\l  store ptr %0, ptr %7, align 8\l  store ptr %1, ptr %8, align 8\l  store ptr %2, ptr %9, align 8\l  store i32 %3, ptr %10, align 4\l  store i32 %4, ptr %11, align 4\l  store ptr %5, ptr %12, align 8\l  %16 = load ptr, ptr @sflaglist, align 8\l  store ptr %16, ptr %15, align 8\l  %17 = load i32, ptr @numsflags, align 4\l  store i32 %17, ptr %13, align 4\l  store i32 0, ptr %14, align 4\l  br label %18\l}"];
+	Node0x60000133cc80 -> Node0x60000133ccd0[tooltip="6 -> 18\nProbability 100.00%" ];
+	Node0x60000133ccd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %13, align 4\l  %20 = icmp sgt i32 %19, 0\l  br i1 %20, label %21, label %66\l|{<s0>T|<s1>F}}"];
+	Node0x60000133ccd0:s0 -> Node0x60000133cd20[tooltip="18 -> 21\nProbability 96.88%" ];
+	Node0x60000133ccd0:s1 -> Node0x60000133cf50[tooltip="18 -> 66\nProbability 3.12%" ];
+	Node0x60000133cd20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %9, align 8\l  %23 = load ptr, ptr %15, align 8\l  %24 = getelementptr inbounds %struct.flagent, ptr %23, i32 0, i32 2\l  %25 = load i16, ptr %24, align 8\l  %26 = sext i16 %25 to i32\l  %27 = sdiv i32 %26, 32\l  %28 = sext i32 %27 to i64\l  %29 = getelementptr inbounds i32, ptr %22, i64 %28\l  %30 = load i32, ptr %29, align 4\l  %31 = load ptr, ptr %15, align 8\l  %32 = getelementptr inbounds %struct.flagent, ptr %31, i32 0, i32 2\l  %33 = load i16, ptr %32, align 8\l  %34 = sext i16 %33 to i32\l  %35 = and i32 %34, 31\l  %36 = shl i32 1, %35\l  %37 = and i32 %30, %36\l  %38 = icmp ne i32 %37, 0\l  br i1 %38, label %39, label %60\l|{<s0>T|<s1>F}}"];
+	Node0x60000133cd20:s0 -> Node0x60000133cd70[tooltip="21 -> 39\nProbability 62.50%" ];
+	Node0x60000133cd20:s1 -> Node0x60000133ceb0[tooltip="21 -> 60\nProbability 37.50%" ];
+	Node0x60000133cd70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{39:\l|  %40 = load i32, ptr %10, align 4\l  %41 = and i32 %40, 1\l  %42 = icmp eq i32 %41, 0\l  br i1 %42, label %50, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x60000133cd70:s0 -> Node0x60000133ce10[tooltip="39 -> 50\nProbability 50.00%" ];
+	Node0x60000133cd70:s1 -> Node0x60000133cdc0[tooltip="39 -> 43\nProbability 50.00%" ];
+	Node0x60000133cdc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %15, align 8\l  %45 = getelementptr inbounds %struct.flagent, ptr %44, i32 0, i32 6\l  %46 = load i16, ptr %45, align 8\l  %47 = sext i16 %46 to i32\l  %48 = and i32 %47, 1\l  %49 = icmp ne i32 %48, 0\l  br i1 %49, label %50, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x60000133cdc0:s0 -> Node0x60000133ce10[tooltip="43 -> 50\nProbability 50.00%" ];
+	Node0x60000133cdc0:s1 -> Node0x60000133ce60[tooltip="43 -> 59\nProbability 50.00%" ];
+	Node0x60000133ce10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{50:\l|  %51 = load ptr, ptr %7, align 8\l  %52 = load ptr, ptr %8, align 8\l  %53 = load ptr, ptr %15, align 8\l  %54 = load i32, ptr %11, align 4\l  %55 = load ptr, ptr %12, align 8\l  %56 = call i32 @pr_suf_expansion(ptr noundef %51, ptr noundef %52, ptr\l... noundef %53, i32 noundef %54, ptr noundef %55)\l  %57 = load i32, ptr %14, align 4\l  %58 = add nsw i32 %57, %56\l  store i32 %58, ptr %14, align 4\l  br label %59\l}"];
+	Node0x60000133ce10 -> Node0x60000133ce60[tooltip="50 -> 59\nProbability 100.00%" ];
+	Node0x60000133ce60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{59:\l|  br label %60\l}"];
+	Node0x60000133ce60 -> Node0x60000133ceb0[tooltip="59 -> 60\nProbability 100.00%" ];
+	Node0x60000133ceb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{60:\l|  br label %61\l}"];
+	Node0x60000133ceb0 -> Node0x60000133cf00[tooltip="60 -> 61\nProbability 100.00%" ];
+	Node0x60000133cf00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{61:\l|  %62 = load ptr, ptr %15, align 8\l  %63 = getelementptr inbounds %struct.flagent, ptr %62, i32 1\l  store ptr %63, ptr %15, align 8\l  %64 = load i32, ptr %13, align 4\l  %65 = add nsw i32 %64, -1\l  store i32 %65, ptr %13, align 4\l  br label %18\l}"];
+	Node0x60000133cf00 -> Node0x60000133ccd0[tooltip="61 -> 18\nProbability 100.00%" ];
+	Node0x60000133cf50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{66:\l|  %67 = load i32, ptr %14, align 4\l  ret i32 %67\l}"];
+}

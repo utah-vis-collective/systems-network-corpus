@@ -1,0 +1,13 @@
+digraph "CFG for 'pclxl_setlinewidth' function" {
+	label="CFG for 'pclxl_setlinewidth' function";
+
+	Node0x600003ba6fd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = call ptr @gdev_vector_stream(ptr noundef %6)\l  store ptr %7, ptr %5, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = load double, ptr %4, align 8\l  %10 = fptoui double %9 to i32\l  call void @put_us(ptr noundef %8, i32 noundef %10)\l  br label %11\l}"];
+	Node0x600003ba6fd0 -> Node0x600003ba7390[tooltip="2 -> 11\nProbability 100.00%" ];
+	Node0x600003ba7390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  br label %12\l}"];
+	Node0x600003ba7390 -> Node0x600003ba73e0[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600003ba73e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  call void @put_bytes(ptr noundef %13, ptr noundef @pclxl_setlinewidth.ac_,\l... i32 noundef 3)\l  br label %14\l}"];
+	Node0x600003ba73e0 -> Node0x600003ba7430[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x600003ba7430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x600003ba7430 -> Node0x600003ba7480[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x600003ba7480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  ret i32 0\l}"];
+}

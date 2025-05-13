@@ -1,0 +1,12 @@
+digraph "CFG for 'file_close_disable' function" {
+	label="CFG for 'file_close_disable' function";
+
+	Node0x60000212b570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.stream_s, ptr %5, i32 0, i32 24\l  %7 = load ptr, ptr %6, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = call i32 %7(ptr noundef %8)\l  store i32 %9, ptr %4, align 4\l  %10 = load i32, ptr %4, align 4\l  %11 = icmp ne i32 %10, 0\l  br i1 %11, label %12, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x60000212b570:s0 -> Node0x60000212b5c0[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x60000212b570:s1 -> Node0x60000212b610[tooltip="1 -> 14\nProbability 37.50%" ];
+	Node0x60000212b5c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %4, align 4\l  store i32 %13, ptr %2, align 4\l  br label %32\l}"];
+	Node0x60000212b5c0 -> Node0x60000212b660[tooltip="12 -> 32\nProbability 100.00%" ];
+	Node0x60000212b610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.stream_s, ptr %15, i32 0, i32 17\l  %17 = load i16, ptr %16, align 8\l  %18 = zext i16 %17 to i32\l  %19 = load ptr, ptr %3, align 8\l  %20 = getelementptr inbounds %struct.stream_s, ptr %19, i32 0, i32 18\l  %21 = load i16, ptr %20, align 2\l  %22 = zext i16 %21 to i32\l  %23 = or i32 %18, %22\l  %24 = add nsw i32 %23, 1\l  %25 = trunc i32 %24 to i16\l  %26 = load ptr, ptr %3, align 8\l  %27 = getelementptr inbounds %struct.stream_s, ptr %26, i32 0, i32 18\l  store i16 %25, ptr %27, align 2\l  %28 = load ptr, ptr %3, align 8\l  %29 = getelementptr inbounds %struct.stream_s, ptr %28, i32 0, i32 17\l  store i16 %25, ptr %29, align 8\l  %30 = load ptr, ptr %3, align 8\l  %31 = call i32 @file_close_finish(ptr noundef %30)\l  store i32 %31, ptr %2, align 4\l  br label %32\l}"];
+	Node0x60000212b610 -> Node0x60000212b660[tooltip="14 -> 32\nProbability 100.00%" ];
+	Node0x60000212b660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %2, align 4\l  ret i32 %33\l}"];
+}

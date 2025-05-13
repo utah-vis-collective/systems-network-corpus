@@ -1,0 +1,5 @@
+digraph "CFG for 'dictwd_in_lm' function" {
+	label="CFG for 'dictwd_in_lm' function";
+
+	Node0x600002537cf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load ptr, ptr @lmp, align 8\l  %4 = getelementptr inbounds %struct.lm_s, ptr %3, i32 0, i32 10\l  %5 = load ptr, ptr %4, align 8\l  %6 = load i32, ptr %2, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds i32, ptr %5, i64 %7\l  %9 = load i32, ptr %8, align 4\l  %10 = icmp sge i32 %9, 0\l  %11 = zext i1 %10 to i32\l  ret i32 %11\l}"];
+}

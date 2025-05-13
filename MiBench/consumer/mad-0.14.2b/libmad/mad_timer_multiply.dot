@@ -1,0 +1,22 @@
+digraph "CFG for 'mad_timer_multiply' function" {
+	label="CFG for 'mad_timer_multiply' function";
+
+	Node0x6000004bed50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca %struct.mad_timer_t, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  %7 = load i64, ptr %4, align 8\l  store i64 %7, ptr %6, align 8\l  %8 = load i64, ptr %4, align 8\l  %9 = icmp slt i64 %8, 0\l  br i1 %9, label %10, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000004bed50:s0 -> Node0x6000004beda0[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x6000004bed50:s1 -> Node0x6000004bedf0[tooltip="2 -> 14\nProbability 62.50%" ];
+	Node0x6000004beda0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{10:\l|  %11 = load i64, ptr %4, align 8\l  %12 = sub nsw i64 0, %11\l  store i64 %12, ptr %6, align 8\l  %13 = load ptr, ptr %3, align 8\l  call void @mad_timer_negate(ptr noundef %13)\l  br label %14\l}"];
+	Node0x6000004beda0 -> Node0x6000004bedf0[tooltip="10 -> 14\nProbability 100.00%" ];
+	Node0x6000004bedf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %5, ptr align 8 %15, i64 16, i1\l... false)\l  %16 = load ptr, ptr %3, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %16, ptr align 8\l... @mad_timer_zero, i64 16, i1 false)\l  br label %17\l}"];
+	Node0x6000004bedf0 -> Node0x6000004bee40[tooltip="14 -> 17\nProbability 100.00%" ];
+	Node0x6000004bee40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i64, ptr %6, align 8\l  %19 = icmp ne i64 %18, 0\l  br i1 %19, label %20, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x6000004bee40:s0 -> Node0x6000004bee90[tooltip="17 -> 20\nProbability 96.88%" ];
+	Node0x6000004bee40:s1 -> Node0x6000004bef80[tooltip="17 -> 31\nProbability 3.12%" ];
+	Node0x6000004bee90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i64, ptr %6, align 8\l  %22 = and i64 %21, 1\l  %23 = icmp ne i64 %22, 0\l  br i1 %23, label %24, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x6000004bee90:s0 -> Node0x6000004beee0[tooltip="20 -> 24\nProbability 50.00%" ];
+	Node0x6000004bee90:s1 -> Node0x6000004bef30[tooltip="20 -> 27\nProbability 50.00%" ];
+	Node0x6000004beee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %3, align 8\l  %26 = load [2 x i64], ptr %5, align 8\l  call void @mad_timer_add(ptr noundef %25, [2 x i64] %26)\l  br label %27\l}"];
+	Node0x6000004beee0 -> Node0x6000004bef30[tooltip="24 -> 27\nProbability 100.00%" ];
+	Node0x6000004bef30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load [2 x i64], ptr %5, align 8\l  call void @mad_timer_add(ptr noundef %5, [2 x i64] %28)\l  %29 = load i64, ptr %6, align 8\l  %30 = lshr i64 %29, 1\l  store i64 %30, ptr %6, align 8\l  br label %17\l}"];
+	Node0x6000004bef30 -> Node0x6000004bee40[tooltip="27 -> 17\nProbability 100.00%" ];
+	Node0x6000004bef80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  ret void\l}"];
+}

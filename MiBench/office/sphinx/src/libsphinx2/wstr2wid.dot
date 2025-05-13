@@ -1,0 +1,12 @@
+digraph "CFG for 'wstr2wid' function" {
+	label="CFG for 'wstr2wid' function";
+
+	Node0x60000253a080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = getelementptr inbounds %struct.lm_s, ptr %7, i32 0, i32 24\l  %9 = load ptr, ptr %5, align 8\l  %10 = call i32 @hash_lookup(ptr noundef %8, ptr noundef %9, ptr noundef %6)\l  %11 = icmp ne i32 %10, 0\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x60000253a080:s0 -> Node0x60000253a0d0[tooltip="2 -> 12\nProbability 62.50%" ];
+	Node0x60000253a080:s1 -> Node0x60000253a120[tooltip="2 -> 13\nProbability 37.50%" ];
+	Node0x60000253a0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  store i32 -1, ptr %3, align 4\l  br label %16\l}"];
+	Node0x60000253a0d0 -> Node0x60000253a170[tooltip="12 -> 16\nProbability 100.00%" ];
+	Node0x60000253a120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %6, align 8\l  %15 = ptrtoint ptr %14 to i32\l  store i32 %15, ptr %3, align 4\l  br label %16\l}"];
+	Node0x60000253a120 -> Node0x60000253a170[tooltip="13 -> 16\nProbability 100.00%" ];
+	Node0x60000253a170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %3, align 4\l  ret i32 %17\l}"];
+}

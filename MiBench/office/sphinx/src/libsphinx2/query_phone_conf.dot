@@ -1,0 +1,5 @@
+digraph "CFG for 'query_phone_conf' function" {
+	label="CFG for 'query_phone_conf' function";
+
+	Node0x6000031fab70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @phone_conf, align 4\l  ret i32 %1\l}"];
+}

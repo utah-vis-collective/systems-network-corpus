@@ -1,0 +1,5 @@
+digraph "CFG for 'InitFormatBitStream' function" {
+	label="CFG for 'InitFormatBitStream' function";
+
+	Node0x6000039da300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store i32 0, ptr @BitCount, align 4\l  store i32 0, ptr @ThisFrameSize, align 4\l  store i32 0, ptr @BitsRemaining, align 4\l  ret void\l}"];
+}

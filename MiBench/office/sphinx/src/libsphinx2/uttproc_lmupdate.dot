@@ -1,0 +1,17 @@
+digraph "CFG for 'uttproc_lmupdate' function" {
+	label="CFG for 'uttproc_lmupdate' function";
+
+	Node0x6000008a0e10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  call void @warn_notidle(ptr noundef @.str.37)\l  %6 = load ptr, ptr %3, align 8\l  %7 = call ptr @lm_name2lm(ptr noundef %6)\l  store ptr %7, ptr %4, align 8\l  %8 = icmp eq ptr %7, null\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a0e10:s0 -> Node0x6000008a0e60[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x6000008a0e10:s1 -> Node0x6000008a0eb0[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x6000008a0e60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  store i32 -1, ptr %2, align 4\l  br label %17\l}"];
+	Node0x6000008a0e60 -> Node0x6000008a0fa0[tooltip="9 -> 17\nProbability 100.00%" ];
+	Node0x6000008a0eb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = call ptr @lm_get_current()\l  store ptr %11, ptr %5, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = icmp eq ptr %12, %13\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a0eb0:s0 -> Node0x6000008a0f00[tooltip="10 -> 15\nProbability 37.50%" ];
+	Node0x6000008a0eb0:s1 -> Node0x6000008a0f50[tooltip="10 -> 16\nProbability 62.50%" ];
+	Node0x6000008a0f00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{15:\l|  call void @search_set_current_lm()\l  br label %16\l}"];
+	Node0x6000008a0f00 -> Node0x6000008a0f50[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x6000008a0f50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  store i32 0, ptr %2, align 4\l  br label %17\l}"];
+	Node0x6000008a0f50 -> Node0x6000008a0fa0[tooltip="16 -> 17\nProbability 100.00%" ];
+	Node0x6000008a0fa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %2, align 4\l  ret i32 %18\l}"];
+}

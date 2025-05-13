@@ -1,0 +1,14 @@
+digraph "CFG for 'alloc_fs_workspace' function" {
+	label="CFG for 'alloc_fs_workspace' function";
+
+	Node0x600000bcb980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %6, i32 0,\l... i32 83\l  %8 = load ptr, ptr %7, align 8\l  store ptr %8, ptr %3, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %9, i32 0,\l... i32 26\l  %11 = load i32, ptr %10, align 8\l  %12 = add i32 %11, 2\l  %13 = zext i32 %12 to i64\l  %14 = mul i64 %13, 2\l  store i64 %14, ptr %4, align 8\l  store i32 0, ptr %5, align 4\l  br label %15\l}"];
+	Node0x600000bcb980 -> Node0x600000bcb9d0[tooltip="1 -> 15\nProbability 100.00%" ];
+	Node0x600000bcb9d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %5, align 4\l  %17 = load ptr, ptr %2, align 8\l  %18 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %17, i32 0,\l... i32 28\l  %19 = load i32, ptr %18, align 8\l  %20 = icmp slt i32 %16, %19\l  br i1 %20, label %21, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x600000bcb9d0:s0 -> Node0x600000bcba20[tooltip="15 -> 21\nProbability 96.88%" ];
+	Node0x600000bcb9d0:s1 -> Node0x600000bcbac0[tooltip="15 -> 38\nProbability 3.12%" ];
+	Node0x600000bcba20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %2, align 8\l  %23 = getelementptr inbounds %struct.jpeg_decompress_struct, ptr %22, i32 0,\l... i32 1\l  %24 = load ptr, ptr %23, align 8\l  %25 = getelementptr inbounds %struct.jpeg_memory_mgr, ptr %24, i32 0, i32 1\l  %26 = load ptr, ptr %25, align 8\l  %27 = load ptr, ptr %2, align 8\l  %28 = load i64, ptr %4, align 8\l  %29 = call ptr %26(ptr noundef %27, i32 noundef 1, i64 noundef %28)\l  %30 = load ptr, ptr %3, align 8\l  %31 = getelementptr inbounds %struct.my_cquantizer, ptr %30, i32 0, i32 8\l  %32 = load i32, ptr %5, align 4\l  %33 = sext i32 %32 to i64\l  %34 = getelementptr inbounds [4 x ptr], ptr %31, i64 0, i64 %33\l  store ptr %29, ptr %34, align 8\l  br label %35\l}"];
+	Node0x600000bcba20 -> Node0x600000bcba70[tooltip="21 -> 35\nProbability 100.00%" ];
+	Node0x600000bcba70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %5, align 4\l  %37 = add nsw i32 %36, 1\l  store i32 %37, ptr %5, align 4\l  br label %15, !llvm.loop !6\l}"];
+	Node0x600000bcba70 -> Node0x600000bcb9d0[tooltip="35 -> 15\nProbability 100.00%" ];
+	Node0x600000bcbac0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{38:\l|  ret void\l}"];
+}

@@ -1,0 +1,19 @@
+digraph "CFG for 'clamp' function" {
+	label="CFG for 'clamp' function";
+
+	Node0x60000159e1c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca float, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store float %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %7 = load float, ptr %4, align 4\l  %8 = load i32, ptr %5, align 4\l  %9 = sitofp i32 %8 to float\l  %10 = fcmp olt float %7, %9\l  br i1 %10, label %11, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x60000159e1c0:s0 -> Node0x60000159e530[tooltip="3 -> 11\nProbability 50.00%" ];
+	Node0x60000159e1c0:s1 -> Node0x60000159e580[tooltip="3 -> 13\nProbability 50.00%" ];
+	Node0x60000159e530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %5, align 4\l  br label %25\l}"];
+	Node0x60000159e530 -> Node0x60000159e6c0[tooltip="11 -> 25\nProbability 100.00%" ];
+	Node0x60000159e580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load float, ptr %4, align 4\l  %15 = load i32, ptr %6, align 4\l  %16 = sitofp i32 %15 to float\l  %17 = fcmp ogt float %14, %16\l  br i1 %17, label %18, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x60000159e580:s0 -> Node0x60000159e5d0[tooltip="13 -> 18\nProbability 50.00%" ];
+	Node0x60000159e580:s1 -> Node0x60000159e620[tooltip="13 -> 20\nProbability 50.00%" ];
+	Node0x60000159e5d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %6, align 4\l  br label %23\l}"];
+	Node0x60000159e5d0 -> Node0x60000159e670[tooltip="18 -> 23\nProbability 100.00%" ];
+	Node0x60000159e620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  %21 = load float, ptr %4, align 4\l  %22 = fptosi float %21 to i32\l  br label %23\l}"];
+	Node0x60000159e620 -> Node0x60000159e670[tooltip="20 -> 23\nProbability 100.00%" ];
+	Node0x60000159e670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{23:\l|  %24 = phi i32 [ %19, %18 ], [ %22, %20 ]\l  br label %25\l}"];
+	Node0x60000159e670 -> Node0x60000159e6c0[tooltip="23 -> 25\nProbability 100.00%" ];
+	Node0x60000159e6c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = phi i32 [ %12, %11 ], [ %24, %23 ]\l  ret i32 %26\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'SwapBytesInWords' function" {
+	label="CFG for 'SwapBytesInWords' function";
+
+	Node0x600001f9f4d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i16, align 2\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  store ptr %6, ptr %8, align 8\l  store i32 0, ptr %5, align 4\l  br label %9\l}"];
+	Node0x600001f9f4d0 -> Node0x600001f9f520[tooltip="2 -> 9\nProbability 100.00%" ];
+	Node0x600001f9f520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %5, align 4\l  %11 = load i32, ptr %4, align 4\l  %12 = icmp slt i32 %10, %11\l  br i1 %12, label %13, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600001f9f520:s0 -> Node0x600001f9f570[tooltip="9 -> 13\nProbability 96.88%" ];
+	Node0x600001f9f520:s1 -> Node0x600001f9f610[tooltip="9 -> 31\nProbability 3.12%" ];
+	Node0x600001f9f570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = load i16, ptr %14, align 2\l  store i16 %15, ptr %6, align 2\l  %16 = load ptr, ptr %3, align 8\l  %17 = getelementptr inbounds i16, ptr %16, i32 1\l  store ptr %17, ptr %3, align 8\l  store ptr %16, ptr %7, align 8\l  %18 = load ptr, ptr %8, align 8\l  %19 = getelementptr inbounds i8, ptr %18, i64 1\l  %20 = load i8, ptr %19, align 1\l  %21 = load ptr, ptr %7, align 8\l  %22 = getelementptr inbounds i8, ptr %21, i64 0\l  store i8 %20, ptr %22, align 1\l  %23 = load ptr, ptr %8, align 8\l  %24 = getelementptr inbounds i8, ptr %23, i64 0\l  %25 = load i8, ptr %24, align 1\l  %26 = load ptr, ptr %7, align 8\l  %27 = getelementptr inbounds i8, ptr %26, i64 1\l  store i8 %25, ptr %27, align 1\l  br label %28\l}"];
+	Node0x600001f9f570 -> Node0x600001f9f5c0[tooltip="13 -> 28\nProbability 100.00%" ];
+	Node0x600001f9f5c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %5, align 4\l  %30 = add nsw i32 %29, 1\l  store i32 %30, ptr %5, align 4\l  br label %9, !llvm.loop !6\l}"];
+	Node0x600001f9f5c0 -> Node0x600001f9f520[tooltip="28 -> 9\nProbability 100.00%" ];
+	Node0x600001f9f610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  ret void\l}"];
+}

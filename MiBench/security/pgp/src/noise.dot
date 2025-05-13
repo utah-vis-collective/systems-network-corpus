@@ -1,0 +1,5 @@
+digraph "CFG for 'noise' function" {
+	label="CFG for 'noise' function";
+
+	Node0x60000112def0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i64, align 8\l  %2 = alloca i64, align 8\l  %3 = alloca i64, align 8\l  %4 = call i64 @\"\\01_clock\"()\l  store i64 %4, ptr %3, align 8\l  call void @randPoolAddBytes(ptr noundef %3, i32 noundef 8)\l  %5 = call i64 @time(ptr noundef null)\l  store i64 %5, ptr %2, align 8\l  call void @randPoolAddBytes(ptr noundef %2, i32 noundef 8)\l  %6 = load i64, ptr %1, align 8\l  ret i64 %6\l}"];
+}

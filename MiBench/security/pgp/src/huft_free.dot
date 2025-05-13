@@ -1,0 +1,12 @@
+digraph "CFG for 'huft_free' function" {
+	label="CFG for 'huft_free' function";
+
+	Node0x6000031dfb60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  store ptr %5, ptr %3, align 8\l  br label %6\l}"];
+	Node0x6000031dfb60 -> Node0x6000031dfc00[tooltip="1 -> 6\nProbability 100.00%" ];
+	Node0x6000031dfc00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %3, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000031dfc00:s0 -> Node0x6000031dfc50[tooltip="6 -> 9\nProbability 96.88%" ];
+	Node0x6000031dfc00:s1 -> Node0x6000031dfca0[tooltip="6 -> 16\nProbability 3.12%" ];
+	Node0x6000031dfc50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %3, align 8\l  %11 = getelementptr inbounds %struct.huft, ptr %10, i32 -1\l  store ptr %11, ptr %3, align 8\l  %12 = getelementptr inbounds %struct.huft, ptr %11, i32 0, i32 2\l  %13 = load ptr, ptr %12, align 8\l  store ptr %13, ptr %4, align 8\l  %14 = load ptr, ptr %3, align 8\l  call void @free(ptr noundef %14)\l  %15 = load ptr, ptr %4, align 8\l  store ptr %15, ptr %3, align 8\l  br label %6\l}"];
+	Node0x6000031dfc50 -> Node0x6000031dfc00[tooltip="9 -> 6\nProbability 100.00%" ];
+	Node0x6000031dfca0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{16:\l|  ret i32 0\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'Plain_PrintLength' function" {
+	label="CFG for 'Plain_PrintLength' function";
+
+	Node0x600001289f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %7 = load i32, ptr %6, align 4\l  %8 = icmp eq i32 %7, 0\l  br i1 %8, label %9, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600001289f40:s0 -> Node0x600001289f90[tooltip="3 -> 9\nProbability 37.50%" ];
+	Node0x600001289f40:s1 -> Node0x600001289fe0[tooltip="3 -> 20\nProbability 62.50%" ];
+	Node0x600001289f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %4, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = call i64 @llvm.objectsize.i64.p0(ptr %11, i1 false, i1 true, i1 false)\l  %13 = load i32, ptr %5, align 4\l  %14 = sitofp i32 %13 to float\l  %15 = load i32, ptr @PlainCharWidth, align 4\l  %16 = sitofp i32 %15 to float\l  %17 = fdiv float %14, %16\l  %18 = fpext float %17 to double\l  %19 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %10, i32\l... noundef 0, i64 noundef %12, ptr noundef @.str.1, double noundef %18)\l  br label %31\l}"];
+	Node0x600001289f90 -> Node0x60000128a030[tooltip="9 -> 31\nProbability 100.00%" ];
+	Node0x600001289fe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %4, align 8\l  %22 = load ptr, ptr %4, align 8\l  %23 = call i64 @llvm.objectsize.i64.p0(ptr %22, i1 false, i1 true, i1 false)\l  %24 = load i32, ptr %5, align 4\l  %25 = sitofp i32 %24 to float\l  %26 = load i32, ptr @PlainCharHeight, align 4\l  %27 = sitofp i32 %26 to float\l  %28 = fdiv float %25, %27\l  %29 = fpext float %28 to double\l  %30 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef %21, i32\l... noundef 0, i64 noundef %23, ptr noundef @.str.2, double noundef %29)\l  br label %31\l}"];
+	Node0x600001289fe0 -> Node0x60000128a030[tooltip="20 -> 31\nProbability 100.00%" ];
+	Node0x60000128a030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  ret void\l}"];
+}

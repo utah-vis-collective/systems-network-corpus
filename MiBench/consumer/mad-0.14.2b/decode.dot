@@ -1,0 +1,5 @@
+digraph "CFG for 'decode' function" {
+	label="CFG for 'decode' function";
+
+	Node0x600000166440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca %struct.buffer, align 8\l  %6 = alloca %struct.mad_decoder, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds %struct.buffer, ptr %5, i32 0, i32 0\l  store ptr %8, ptr %9, align 8\l  %10 = load i64, ptr %4, align 8\l  %11 = getelementptr inbounds %struct.buffer, ptr %5, i32 0, i32 1\l  store i64 %10, ptr %11, align 8\l  call void @mad_decoder_init(ptr noundef %6, ptr noundef %5, ptr noundef\l... @input, ptr noundef null, ptr noundef null, ptr noundef @output, ptr noundef\l... @error, ptr noundef null)\l  %12 = call i32 @mad_decoder_run(ptr noundef %6, i32 noundef 0)\l  store i32 %12, ptr %7, align 4\l  %13 = call i32 @mad_decoder_finish(ptr noundef %6)\l  %14 = load i32, ptr %7, align 4\l  ret i32 %14\l}"];
+}

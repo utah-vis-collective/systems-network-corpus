@@ -1,0 +1,5 @@
+digraph "CFG for '__negdf2' function" {
+	label="CFG for '__negdf2' function";
+
+	Node0x600000b26580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  %3 = alloca [2 x i64], align 8\l  store double %0, ptr %2, align 8\l  %4 = getelementptr inbounds i64, ptr %2, i64 1\l  %5 = load i64, ptr %4, align 8\l  %6 = xor i64 %5, 2147483648\l  %7 = getelementptr inbounds [2 x i64], ptr %3, i64 0, i64 1\l  store i64 %6, ptr %7, align 8\l  %8 = getelementptr inbounds i64, ptr %2, i64 0\l  %9 = load i64, ptr %8, align 8\l  %10 = getelementptr inbounds [2 x i64], ptr %3, i64 0, i64 0\l  store i64 %9, ptr %10, align 8\l  %11 = getelementptr inbounds [2 x i64], ptr %3, i64 0, i64 0\l  %12 = load double, ptr %11, align 8\l  ret double %12\l}"];
+}

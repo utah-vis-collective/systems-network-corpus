@@ -1,0 +1,27 @@
+digraph "CFG for 'png_write_tEXt' function" {
+	label="CFG for 'png_write_tEXt' function";
+
+	Node0x6000023adb30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i64, align 8\l  %9 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store i64 %3, ptr %8, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = call i64 @strlen(ptr noundef %10) #4\l  %12 = trunc i64 %11 to i32\l  store i32 %12, ptr %9, align 4\l  %13 = load i32, ptr %9, align 4\l  %14 = icmp eq i32 %13, 0\l  br i1 %14, label %15, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000023adb30:s0 -> Node0x6000023adb80[tooltip="4 -> 15\nProbability 37.50%" ];
+	Node0x6000023adb30:s1 -> Node0x6000023adbd0[tooltip="4 -> 17\nProbability 62.50%" ];
+	Node0x6000023adb80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %5, align 8\l  call void @png_warning(ptr noundef %16, ptr noundef @.str.20)\l  br label %48\l}"];
+	Node0x6000023adb80 -> Node0x6000023ade00[tooltip="15 -> 48\nProbability 100.00%" ];
+	Node0x6000023adbd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %9, align 4\l  %19 = icmp sgt i32 %18, 80\l  br i1 %19, label %20, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x6000023adbd0:s0 -> Node0x6000023adc20[tooltip="17 -> 20\nProbability 50.00%" ];
+	Node0x6000023adbd0:s1 -> Node0x6000023adc70[tooltip="17 -> 24\nProbability 50.00%" ];
+	Node0x6000023adc20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %5, align 8\l  call void @png_warning(ptr noundef %21, ptr noundef @.str.21)\l  %22 = load ptr, ptr %6, align 8\l  %23 = getelementptr inbounds i8, ptr %22, i64 80\l  store i8 0, ptr %23, align 1\l  store i32 80, ptr %9, align 4\l  br label %24\l}"];
+	Node0x6000023adc20 -> Node0x6000023adc70[tooltip="20 -> 24\nProbability 100.00%" ];
+	Node0x6000023adc70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{24:\l|  br label %25\l}"];
+	Node0x6000023adc70 -> Node0x6000023adcc0[tooltip="24 -> 25\nProbability 100.00%" ];
+	Node0x6000023adcc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %5, align 8\l  %27 = load i32, ptr %9, align 4\l  %28 = sext i32 %27 to i64\l  %29 = load i64, ptr %8, align 8\l  %30 = add i64 %28, %29\l  %31 = add i64 %30, 1\l  call void @png_write_chunk_start(ptr noundef %26, ptr noundef @png_tEXt, i64\l... noundef %31)\l  %32 = load ptr, ptr %5, align 8\l  %33 = load ptr, ptr %6, align 8\l  %34 = load i32, ptr %9, align 4\l  %35 = add nsw i32 %34, 1\l  %36 = sext i32 %35 to i64\l  call void @png_write_chunk_data(ptr noundef %32, ptr noundef %33, i64\l... noundef %36)\l  %37 = load ptr, ptr %7, align 8\l  %38 = icmp ne ptr %37, null\l  br i1 %38, label %39, label %46\l|{<s0>T|<s1>F}}"];
+	Node0x6000023adcc0:s0 -> Node0x6000023add10[tooltip="25 -> 39\nProbability 62.50%" ];
+	Node0x6000023adcc0:s1 -> Node0x6000023addb0[tooltip="25 -> 46\nProbability 37.50%" ];
+	Node0x6000023add10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{39:\l|  %40 = load i64, ptr %8, align 8\l  %41 = icmp ne i64 %40, 0\l  br i1 %41, label %42, label %46\l|{<s0>T|<s1>F}}"];
+	Node0x6000023add10:s0 -> Node0x6000023add60[tooltip="39 -> 42\nProbability 62.50%" ];
+	Node0x6000023add10:s1 -> Node0x6000023addb0[tooltip="39 -> 46\nProbability 37.50%" ];
+	Node0x6000023add60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{42:\l|  %43 = load ptr, ptr %5, align 8\l  %44 = load ptr, ptr %7, align 8\l  %45 = load i64, ptr %8, align 8\l  call void @png_write_chunk_data(ptr noundef %43, ptr noundef %44, i64\l... noundef %45)\l  br label %46\l}"];
+	Node0x6000023add60 -> Node0x6000023addb0[tooltip="42 -> 46\nProbability 100.00%" ];
+	Node0x6000023addb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{46:\l|  %47 = load ptr, ptr %5, align 8\l  call void @png_write_chunk_end(ptr noundef %47)\l  br label %48\l}"];
+	Node0x6000023addb0 -> Node0x6000023ade00[tooltip="46 -> 48\nProbability 100.00%" ];
+	Node0x6000023ade00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  ret void\l}"];
+}

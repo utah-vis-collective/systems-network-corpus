@@ -1,0 +1,14 @@
+digraph "CFG for 'WriteLines' function" {
+	label="CFG for 'WriteLines' function";
+
+	Node0x600003cf6940 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  store i32 0, ptr %7, align 4\l  br label %8\l}"];
+	Node0x600003cf6940 -> Node0x600003cf6990[tooltip="3 -> 8\nProbability 100.00%" ];
+	Node0x600003cf6990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load i32, ptr %7, align 4\l  %10 = load i32, ptr %6, align 4\l  %11 = icmp slt i32 %9, %10\l  br i1 %11, label %12, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x600003cf6990:s0 -> Node0x600003cf69e0[tooltip="8 -> 12\nProbability 96.88%" ];
+	Node0x600003cf6990:s1 -> Node0x600003cf6a80[tooltip="8 -> 25\nProbability 3.12%" ];
+	Node0x600003cf69e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  %14 = load i32, ptr %7, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds ptr, ptr %13, i64 %15\l  %17 = load ptr, ptr %16, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = call i32 @\"\\01_fputs\"(ptr noundef %17, ptr noundef %18)\l  %20 = load ptr, ptr %4, align 8\l  %21 = call i32 @\"\\01_fputs\"(ptr noundef @.str.2, ptr noundef %20)\l  br label %22\l}"];
+	Node0x600003cf69e0 -> Node0x600003cf6a30[tooltip="12 -> 22\nProbability 100.00%" ];
+	Node0x600003cf6a30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %7, align 4\l  %24 = add nsw i32 %23, 1\l  store i32 %24, ptr %7, align 4\l  br label %8\l}"];
+	Node0x600003cf6a30 -> Node0x600003cf6990[tooltip="22 -> 8\nProbability 100.00%" ];
+	Node0x600003cf6a80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{25:\l|  ret void\l}"];
+}

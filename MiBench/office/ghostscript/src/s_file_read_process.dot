@@ -1,0 +1,21 @@
+digraph "CFG for 's_file_read_process' function" {
+	label="CFG for 's_file_read_process' function";
+
+	Node0x6000009a6b20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  %10 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  store i32 %3, ptr %8, align 4\l  %11 = load ptr, ptr %5, align 8\l  %12 = getelementptr inbounds %struct.stream_s, ptr %11, i32 0, i32 22\l  %13 = load ptr, ptr %12, align 8\l  store ptr %13, ptr %9, align 8\l  %14 = load ptr, ptr %7, align 8\l  %15 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %14, i32 0,\l... i32 1\l  %16 = load ptr, ptr %15, align 8\l  %17 = getelementptr inbounds i8, ptr %16, i64 1\l  %18 = load ptr, ptr %7, align 8\l  %19 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %18, i32 0,\l... i32 2\l  %20 = load ptr, ptr %19, align 8\l  %21 = load ptr, ptr %7, align 8\l  %22 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %21, i32 0,\l... i32 1\l  %23 = load ptr, ptr %22, align 8\l  %24 = ptrtoint ptr %20 to i64\l  %25 = ptrtoint ptr %23 to i64\l  %26 = sub i64 %24, %25\l  %27 = trunc i64 %26 to i32\l  %28 = zext i32 %27 to i64\l  %29 = load ptr, ptr %9, align 8\l  %30 = call i64 @fread(ptr noundef %17, i64 noundef 1, i64 noundef %28, ptr\l... noundef %29)\l  %31 = trunc i64 %30 to i32\l  store i32 %31, ptr %10, align 4\l  %32 = load i32, ptr %10, align 4\l  %33 = icmp slt i32 %32, 0\l  br i1 %33, label %34, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x6000009a6b20:s0 -> Node0x6000009a6b70[tooltip="4 -> 34\nProbability 37.50%" ];
+	Node0x6000009a6b20:s1 -> Node0x6000009a6bc0[tooltip="4 -> 35\nProbability 62.50%" ];
+	Node0x6000009a6b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{34:\l|  store i32 0, ptr %10, align 4\l  br label %35\l}"];
+	Node0x6000009a6b70 -> Node0x6000009a6bc0[tooltip="34 -> 35\nProbability 100.00%" ];
+	Node0x6000009a6bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %10, align 4\l  %37 = load ptr, ptr %7, align 8\l  %38 = getelementptr inbounds %struct.stream_cursor_write_s, ptr %37, i32 0,\l... i32 1\l  %39 = load ptr, ptr %38, align 8\l  %40 = sext i32 %36 to i64\l  %41 = getelementptr inbounds i8, ptr %39, i64 %40\l  store ptr %41, ptr %38, align 8\l  br label %42\l}"];
+	Node0x6000009a6bc0 -> Node0x6000009a6c10[tooltip="35 -> 42\nProbability 100.00%" ];
+	Node0x6000009a6c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{42:\l|  br label %43\l}"];
+	Node0x6000009a6c10 -> Node0x6000009a6c60[tooltip="42 -> 43\nProbability 100.00%" ];
+	Node0x6000009a6c60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %9, align 8\l  %45 = call i32 @ferror(ptr noundef %44)\l  %46 = icmp ne i32 %45, 0\l  br i1 %46, label %47, label %48\l|{<s0>T|<s1>F}}"];
+	Node0x6000009a6c60:s0 -> Node0x6000009a6cb0[tooltip="43 -> 47\nProbability 62.50%" ];
+	Node0x6000009a6c60:s1 -> Node0x6000009a6d00[tooltip="43 -> 48\nProbability 37.50%" ];
+	Node0x6000009a6cb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{47:\l|  br label %54\l}"];
+	Node0x6000009a6cb0 -> Node0x6000009a6d50[tooltip="47 -> 54\nProbability 100.00%" ];
+	Node0x6000009a6d00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{48:\l|  %49 = load ptr, ptr %9, align 8\l  %50 = call i32 @feof(ptr noundef %49)\l  %51 = icmp ne i32 %50, 0\l  %52 = zext i1 %51 to i64\l  %53 = select i1 %51, i32 -1, i32 1\l  br label %54\l}"];
+	Node0x6000009a6d00 -> Node0x6000009a6d50[tooltip="48 -> 54\nProbability 100.00%" ];
+	Node0x6000009a6d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{54:\l|  %55 = phi i32 [ -2, %47 ], [ %53, %48 ]\l  ret i32 %55\l}"];
+}

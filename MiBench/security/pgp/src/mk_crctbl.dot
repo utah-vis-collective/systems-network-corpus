@@ -1,0 +1,21 @@
+digraph "CFG for 'mk_crctbl' function" {
+	label="CFG for 'mk_crctbl' function";
+
+	Node0x600001c167b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i64, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store i64 %0, ptr %2, align 8\l  store ptr @crctable, ptr %6, align 8\l  store ptr @crctable, ptr %5, align 8\l  %7 = load ptr, ptr %6, align 8\l  %8 = getelementptr inbounds i64, ptr %7, i32 1\l  store ptr %8, ptr %6, align 8\l  store i64 0, ptr %7, align 8\l  %9 = load i64, ptr %2, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = getelementptr inbounds i64, ptr %10, i32 1\l  store ptr %11, ptr %6, align 8\l  store i64 %9, ptr %10, align 8\l  store i32 1, ptr %3, align 4\l  br label %12\l}"];
+	Node0x600001c167b0 -> Node0x600001c16800[tooltip="1 -> 12\nProbability 100.00%" ];
+	Node0x600001c16800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %3, align 4\l  %14 = icmp slt i32 %13, 128\l  br i1 %14, label %15, label %48\l|{<s0>T|<s1>F}}"];
+	Node0x600001c16800:s0 -> Node0x600001c16850[tooltip="12 -> 15\nProbability 96.88%" ];
+	Node0x600001c16800:s1 -> Node0x600001c169e0[tooltip="12 -> 48\nProbability 3.12%" ];
+	Node0x600001c16850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %5, align 8\l  %17 = getelementptr inbounds i64, ptr %16, i32 1\l  store ptr %17, ptr %5, align 8\l  %18 = load i64, ptr %17, align 8\l  store i64 %18, ptr %4, align 8\l  %19 = load i64, ptr %4, align 8\l  %20 = and i64 %19, 8388608\l  %21 = icmp ne i64 %20, 0\l  br i1 %21, label %22, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600001c16850:s0 -> Node0x600001c168a0[tooltip="15 -> 22\nProbability 50.00%" ];
+	Node0x600001c16850:s1 -> Node0x600001c168f0[tooltip="15 -> 33\nProbability 50.00%" ];
+	Node0x600001c168a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{22:\l|  %23 = load i64, ptr %4, align 8\l  %24 = shl i64 %23, 1\l  store i64 %24, ptr %4, align 8\l  %25 = load i64, ptr %4, align 8\l  %26 = load i64, ptr %2, align 8\l  %27 = xor i64 %25, %26\l  %28 = load ptr, ptr %6, align 8\l  %29 = getelementptr inbounds i64, ptr %28, i32 1\l  store ptr %29, ptr %6, align 8\l  store i64 %27, ptr %28, align 8\l  %30 = load i64, ptr %4, align 8\l  %31 = load ptr, ptr %6, align 8\l  %32 = getelementptr inbounds i64, ptr %31, i32 1\l  store ptr %32, ptr %6, align 8\l  store i64 %30, ptr %31, align 8\l  br label %44\l}"];
+	Node0x600001c168a0 -> Node0x600001c16940[tooltip="22 -> 44\nProbability 100.00%" ];
+	Node0x600001c168f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{33:\l|  %34 = load i64, ptr %4, align 8\l  %35 = shl i64 %34, 1\l  store i64 %35, ptr %4, align 8\l  %36 = load i64, ptr %4, align 8\l  %37 = load ptr, ptr %6, align 8\l  %38 = getelementptr inbounds i64, ptr %37, i32 1\l  store ptr %38, ptr %6, align 8\l  store i64 %36, ptr %37, align 8\l  %39 = load i64, ptr %4, align 8\l  %40 = load i64, ptr %2, align 8\l  %41 = xor i64 %39, %40\l  %42 = load ptr, ptr %6, align 8\l  %43 = getelementptr inbounds i64, ptr %42, i32 1\l  store ptr %43, ptr %6, align 8\l  store i64 %41, ptr %42, align 8\l  br label %44\l}"];
+	Node0x600001c168f0 -> Node0x600001c16940[tooltip="33 -> 44\nProbability 100.00%" ];
+	Node0x600001c16940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{44:\l|  br label %45\l}"];
+	Node0x600001c16940 -> Node0x600001c16990[tooltip="44 -> 45\nProbability 100.00%" ];
+	Node0x600001c16990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{45:\l|  %46 = load i32, ptr %3, align 4\l  %47 = add nsw i32 %46, 1\l  store i32 %47, ptr %3, align 4\l  br label %12\l}"];
+	Node0x600001c16990 -> Node0x600001c16800[tooltip="45 -> 12\nProbability 100.00%" ];
+	Node0x600001c169e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{48:\l|  ret void\l}"];
+}

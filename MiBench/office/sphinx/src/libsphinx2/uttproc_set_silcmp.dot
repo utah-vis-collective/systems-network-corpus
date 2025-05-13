@@ -1,0 +1,10 @@
+digraph "CFG for 'uttproc_set_silcmp' function" {
+	label="CFG for 'uttproc_set_silcmp' function";
+
+	Node0x6000008a1a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  call void @warn_notidle(ptr noundef @.str.46)\l  %3 = load i32, ptr %2, align 4\l  %4 = icmp ne i32 %3, 0\l  br i1 %4, label %5, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a1a90:s0 -> Node0x6000008a1ae0[tooltip="1 -> 5\nProbability 62.50%" ];
+	Node0x6000008a1a90:s1 -> Node0x6000008a1b30[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x6000008a1ae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{5:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 1488, ptr noundef\l... @.str.47)\l  call void (ptr, ...) @_E__pr_warn(ptr noundef @.str.48)\l  br label %6\l}"];
+	Node0x6000008a1ae0 -> Node0x6000008a1b30[tooltip="5 -> 6\nProbability 100.00%" ];
+	Node0x6000008a1b30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %2, align 4\l  store i32 %7, ptr @silcomp, align 4\l  ret i32 0\l}"];
+}

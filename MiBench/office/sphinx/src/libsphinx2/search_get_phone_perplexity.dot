@@ -1,0 +1,5 @@
+digraph "CFG for 'search_get_phone_perplexity' function" {
+	label="CFG for 'search_get_phone_perplexity' function";
+
+	Node0x600002001540 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @phone_perplexity, align 8\l  ret ptr %1\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'bbox_add_int_rect' function" {
+	label="CFG for 'bbox_add_int_rect' function";
+
+	Node0x60000323af30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  store ptr %0, ptr %6, align 8\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store i32 %3, ptr %9, align 4\l  store i32 %4, ptr %10, align 4\l  %11 = load ptr, ptr %6, align 8\l  %12 = load i32, ptr %7, align 4\l  %13 = sext i32 %12 to i64\l  %14 = shl i64 %13, 12\l  %15 = load i32, ptr %8, align 4\l  %16 = sext i32 %15 to i64\l  %17 = shl i64 %16, 12\l  %18 = load i32, ptr %9, align 4\l  %19 = sext i32 %18 to i64\l  %20 = shl i64 %19, 12\l  %21 = load i32, ptr %10, align 4\l  %22 = sext i32 %21 to i64\l  %23 = shl i64 %22, 12\l  call void @bbox_add_rect(ptr noundef %11, i64 noundef %14, i64 noundef %17,\l... i64 noundef %20, i64 noundef %23)\l  ret void\l}"];
+}

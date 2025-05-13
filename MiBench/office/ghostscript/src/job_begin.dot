@@ -1,0 +1,17 @@
+digraph "CFG for 'job_begin' function" {
+	label="CFG for 'job_begin' function";
+
+	Node0x600002c5d270 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = load ptr, ptr @igs, align 8\l  %4 = call i32 @gs_erasepage(ptr noundef %3)\l  store i32 %4, ptr %2, align 4\l  %5 = icmp slt i32 %4, 0\l  br i1 %5, label %6, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600002c5d270:s0 -> Node0x600002c5d2c0[tooltip="0 -> 6\nProbability 37.50%" ];
+	Node0x600002c5d270:s1 -> Node0x600002c5d310[tooltip="0 -> 8\nProbability 62.50%" ];
+	Node0x600002c5d2c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %2, align 4\l  store i32 %7, ptr %1, align 4\l  br label %18\l}"];
+	Node0x600002c5d2c0 -> Node0x600002c5d400[tooltip="6 -> 18\nProbability 100.00%" ];
+	Node0x600002c5d310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr @o_stack, align 8\l  %10 = call i32 @zsave(ptr noundef %9)\l  store i32 %10, ptr %2, align 4\l  %11 = load i32, ptr %2, align 4\l  %12 = icmp eq i32 %11, 0\l  br i1 %12, label %13, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600002c5d310:s0 -> Node0x600002c5d360[tooltip="8 -> 13\nProbability 37.50%" ];
+	Node0x600002c5d310:s1 -> Node0x600002c5d3b0[tooltip="8 -> 16\nProbability 62.50%" ];
+	Node0x600002c5d360 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @o_stack, align 8\l  %15 = getelementptr inbounds %struct.ref_s, ptr %14, i32 -1\l  store ptr %15, ptr @o_stack, align 8\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 @job_save, ptr align 8 %14, i64\l... 16, i1 false)\l  br label %16\l}"];
+	Node0x600002c5d360 -> Node0x600002c5d3b0[tooltip="13 -> 16\nProbability 100.00%" ];
+	Node0x600002c5d3b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %2, align 4\l  store i32 %17, ptr %1, align 4\l  br label %18\l}"];
+	Node0x600002c5d3b0 -> Node0x600002c5d400[tooltip="16 -> 18\nProbability 100.00%" ];
+	Node0x600002c5d400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %1, align 4\l  ret i32 %19\l}"];
+}

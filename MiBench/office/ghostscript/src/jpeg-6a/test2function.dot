@@ -1,0 +1,5 @@
+digraph "CFG for 'test2function' function" {
+	label="CFG for 'test2function' function";
+
+	Node0x600000476260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 0\l}"];
+}

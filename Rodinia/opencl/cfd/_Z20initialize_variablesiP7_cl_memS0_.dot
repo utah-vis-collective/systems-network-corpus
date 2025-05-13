@@ -1,0 +1,24 @@
+digraph "CFG for '_Z20initialize_variablesiP7_cl_memS0_' function" {
+	label="CFG for '_Z20initialize_variablesiP7_cl_memS0_' function";
+
+	Node0x600000d04f50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  %11 = alloca ptr, align 8\l  %12 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %13 = load i32, ptr %4, align 4\l  store i32 %13, ptr %7, align 4\l  store i32 192, ptr %8, align 4\l  store i32 1, ptr %9, align 4\l  store i32 0, ptr %10, align 4\l  %14 = load i32, ptr %9, align 4\l  %15 = load i32, ptr %10, align 4\l  %16 = add nsw i32 %15, 1\l  store i32 %16, ptr %10, align 4\l  %17 = load ptr, ptr %5, align 8\l  invoke void @_Z10_clSetArgsiiPvi(i32 noundef %14, i32 noundef %15, ptr\l... noundef %17, i32 noundef 0)\l          to label %18 unwind label %32\l}"];
+	Node0x600000d04f50 -> Node0x600000d04fa0[tooltip="3 -> 18\nProbability 100.00%" ];
+	Node0x600000d04f50 -> Node0x600000d050e0[tooltip="3 -> 32\nProbability 0.00%" ];
+	Node0x600000d04fa0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %9, align 4\l  %20 = load i32, ptr %10, align 4\l  %21 = add nsw i32 %20, 1\l  store i32 %21, ptr %10, align 4\l  %22 = load ptr, ptr %6, align 8\l  invoke void @_Z10_clSetArgsiiPvi(i32 noundef %19, i32 noundef %20, ptr\l... noundef %22, i32 noundef 0)\l          to label %23 unwind label %32\l}"];
+	Node0x600000d04fa0 -> Node0x600000d04ff0[tooltip="18 -> 23\nProbability 100.00%" ];
+	Node0x600000d04fa0 -> Node0x600000d050e0[tooltip="18 -> 32\nProbability 0.00%" ];
+	Node0x600000d04ff0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i32, ptr %9, align 4\l  %25 = load i32, ptr %10, align 4\l  %26 = add nsw i32 %25, 1\l  store i32 %26, ptr %10, align 4\l  invoke void @_Z10_clSetArgsiiPvi(i32 noundef %24, i32 noundef %25, ptr\l... noundef %4, i32 noundef 4)\l          to label %27 unwind label %32\l}"];
+	Node0x600000d04ff0 -> Node0x600000d05040[tooltip="23 -> 27\nProbability 100.00%" ];
+	Node0x600000d04ff0 -> Node0x600000d050e0[tooltip="23 -> 32\nProbability 0.00%" ];
+	Node0x600000d05040 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %9, align 4\l  %29 = load i32, ptr %7, align 4\l  %30 = load i32, ptr %8, align 4\l  invoke void @_Z15_clInvokeKerneliii(i32 noundef %28, i32 noundef %29, i32\l... noundef %30)\l          to label %31 unwind label %32\l}"];
+	Node0x600000d05040 -> Node0x600000d05090[tooltip="27 -> 31\nProbability 100.00%" ];
+	Node0x600000d05040 -> Node0x600000d050e0[tooltip="27 -> 32\nProbability 0.00%" ];
+	Node0x600000d05090 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  ret void\l}"];
+	Node0x600000d050e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b99e70" fontname="Courier",label="{32:\l|  %33 = landingpad \{ ptr, i32 \}\l          filter [1 x ptr] [ptr\l... @_ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE]\l  %34 = extractvalue \{ ptr, i32 \} %33, 0\l  store ptr %34, ptr %11, align 8\l  %35 = extractvalue \{ ptr, i32 \} %33, 1\l  store i32 %35, ptr %12, align 4\l  br label %36\l}"];
+	Node0x600000d050e0 -> Node0x600000d05130[tooltip="32 -> 36\nProbability 100.00%" ];
+	Node0x600000d05130 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b99e70" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %12, align 4\l  %38 = icmp slt i32 %37, 0\l  br i1 %38, label %39, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600000d05130:s0 -> Node0x600000d05180[tooltip="36 -> 39\nProbability 0.00%" ];
+	Node0x600000d05130:s1 -> Node0x600000d051d0[tooltip="36 -> 41\nProbability 100.00%" ];
+	Node0x600000d05180 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#9ebeff70" fontname="Courier",label="{39:\l|  %40 = load ptr, ptr %11, align 8\l  call void @__cxa_call_unexpected(ptr %40) #17\l  unreachable\l}"];
+	Node0x600000d051d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b99e70" fontname="Courier",label="{41:\l|  %42 = load ptr, ptr %11, align 8\l  %43 = load i32, ptr %12, align 4\l  %44 = insertvalue \{ ptr, i32 \} poison, ptr %42, 0\l  %45 = insertvalue \{ ptr, i32 \} %44, i32 %43, 1\l  resume \{ ptr, i32 \} %45\l}"];
+}

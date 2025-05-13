@@ -1,0 +1,14 @@
+digraph "CFG for '_Z10InitPerRuniPf' function" {
+	label="CFG for '_Z10InitPerRuniPf' function";
+
+	Node0x6000038afd40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store ptr %1, ptr %4, align 8\l  store i32 0, ptr %5, align 4\l  br label %6\l}"];
+	Node0x6000038afd40 -> Node0x6000038afd90[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x6000038afd90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %5, align 4\l  %8 = load i32, ptr %3, align 4\l  %9 = load i32, ptr %3, align 4\l  %10 = mul nsw i32 %8, %9\l  %11 = icmp slt i32 %7, %10\l  br i1 %11, label %12, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x6000038afd90:s0 -> Node0x6000038afde0[tooltip="6 -> 12\nProbability 96.88%" ];
+	Node0x6000038afd90:s1 -> Node0x6000038afe80[tooltip="6 -> 20\nProbability 3.12%" ];
+	Node0x6000038afde0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %4, align 8\l  %14 = load i32, ptr %5, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds float, ptr %13, i64 %15\l  store float 0.000000e+00, ptr %16, align 4\l  br label %17\l}"];
+	Node0x6000038afde0 -> Node0x6000038afe30[tooltip="12 -> 17\nProbability 100.00%" ];
+	Node0x6000038afe30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load i32, ptr %5, align 4\l  %19 = add nsw i32 %18, 1\l  store i32 %19, ptr %5, align 4\l  br label %6, !llvm.loop !6\l}"];
+	Node0x6000038afe30 -> Node0x6000038afd90[tooltip="17 -> 6\nProbability 100.00%" ];
+	Node0x6000038afe80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{20:\l|  ret void\l}"];
+}

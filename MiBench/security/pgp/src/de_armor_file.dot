@@ -1,0 +1,22 @@
+digraph "CFG for 'de_armor_file' function" {
+	label="CFG for 'de_armor_file' function";
+
+	Node0x600001c11810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load i8, ptr @verbose, align 1\l  %9 = icmp ne i8 %8, 0\l  br i1 %9, label %10, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600001c11810:s0 -> Node0x600001c11860[tooltip="3 -> 10\nProbability 62.50%" ];
+	Node0x600001c11810:s1 -> Node0x600001c118b0[tooltip="3 -> 17\nProbability 37.50%" ];
+	Node0x600001c11860 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @pgpout, align 8\l  %12 = load ptr, ptr %4, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = load ptr, ptr %6, align 8\l  %15 = load i64, ptr %14, align 8\l  %16 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %11, ptr noundef\l... @.str.27, ptr noundef %12, ptr noundef %13, i64 noundef %15) #5\l  br label %17\l}"];
+	Node0x600001c11860 -> Node0x600001c118b0[tooltip="10 -> 17\nProbability 100.00%" ];
+	Node0x600001c118b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %6, align 8\l  %19 = icmp ne ptr %18, null\l  br i1 %19, label %20, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600001c118b0:s0 -> Node0x600001c11900[tooltip="17 -> 20\nProbability 62.50%" ];
+	Node0x600001c118b0:s1 -> Node0x600001c11950[tooltip="17 -> 23\nProbability 37.50%" ];
+	Node0x600001c11900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %6, align 8\l  %22 = load i64, ptr %21, align 8\l  br label %24\l}"];
+	Node0x600001c11900 -> Node0x600001c119a0[tooltip="20 -> 24\nProbability 100.00%" ];
+	Node0x600001c11950 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x600001c11950 -> Node0x600001c119a0[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x600001c119a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = phi i64 [ %22, %20 ], [ 0, %23 ]\l  store i64 %25, ptr @infile_line, align 8\l  %26 = load ptr, ptr %4, align 8\l  %27 = load ptr, ptr %5, align 8\l  %28 = call i32 @darmor_file(ptr noundef %26, ptr noundef %27)\l  store i32 %28, ptr %7, align 4\l  %29 = load ptr, ptr %6, align 8\l  %30 = icmp ne ptr %29, null\l  br i1 %30, label %31, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600001c119a0:s0 -> Node0x600001c119f0[tooltip="24 -> 31\nProbability 62.50%" ];
+	Node0x600001c119a0:s1 -> Node0x600001c11a40[tooltip="24 -> 34\nProbability 37.50%" ];
+	Node0x600001c119f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{31:\l|  %32 = load i64, ptr @infile_line, align 8\l  %33 = load ptr, ptr %6, align 8\l  store i64 %32, ptr %33, align 8\l  br label %34\l}"];
+	Node0x600001c119f0 -> Node0x600001c11a40[tooltip="31 -> 34\nProbability 100.00%" ];
+	Node0x600001c11a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %7, align 4\l  ret i32 %35\l}"];
+}

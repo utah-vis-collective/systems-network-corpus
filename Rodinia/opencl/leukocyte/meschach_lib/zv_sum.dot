@@ -1,0 +1,19 @@
+digraph "CFG for 'zv_sum' function" {
+	label="CFG for 'zv_sum' function";
+
+	Node0x600000d8fcf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca %struct.complex, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = icmp ne ptr %5, null\l  br i1 %6, label %9, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8fcf0:s0 -> Node0x600000d8fd90[tooltip="1 -> 9\nProbability 62.50%" ];
+	Node0x600000d8fcf0:s1 -> Node0x600000d8fd40[tooltip="1 -> 7\nProbability 37.50%" ];
+	Node0x600000d8fd40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{7:\l|  %8 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 429,\l... ptr noundef @.str.12, i32 noundef 0)\l  br label %9\l}"];
+	Node0x600000d8fd40 -> Node0x600000d8fd90[tooltip="7 -> 9\nProbability 100.00%" ];
+	Node0x600000d8fd90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  %10 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 1\l  store double 0.000000e+00, ptr %10, align 8\l  %11 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 0\l  store double 0.000000e+00, ptr %11, align 8\l  store i32 0, ptr %4, align 4\l  br label %12\l}"];
+	Node0x600000d8fd90 -> Node0x600000d8fde0[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x600000d8fde0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %4, align 4\l  %14 = load ptr, ptr %3, align 8\l  %15 = getelementptr inbounds %struct.ZVEC, ptr %14, i32 0, i32 0\l  %16 = load i32, ptr %15, align 8\l  %17 = icmp ult i32 %13, %16\l  br i1 %17, label %18, label %44\l|{<s0>T|<s1>F}}"];
+	Node0x600000d8fde0:s0 -> Node0x600000d8fe30[tooltip="12 -> 18\nProbability 96.88%" ];
+	Node0x600000d8fde0:s1 -> Node0x600000d8fed0[tooltip="12 -> 44\nProbability 3.12%" ];
+	Node0x600000d8fe30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = getelementptr inbounds %struct.ZVEC, ptr %19, i32 0, i32 2\l  %21 = load ptr, ptr %20, align 8\l  %22 = load i32, ptr %4, align 4\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds %struct.complex, ptr %21, i64 %23\l  %25 = getelementptr inbounds %struct.complex, ptr %24, i32 0, i32 0\l  %26 = load double, ptr %25, align 8\l  %27 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 0\l  %28 = load double, ptr %27, align 8\l  %29 = fadd double %28, %26\l  store double %29, ptr %27, align 8\l  %30 = load ptr, ptr %3, align 8\l  %31 = getelementptr inbounds %struct.ZVEC, ptr %30, i32 0, i32 2\l  %32 = load ptr, ptr %31, align 8\l  %33 = load i32, ptr %4, align 4\l  %34 = sext i32 %33 to i64\l  %35 = getelementptr inbounds %struct.complex, ptr %32, i64 %34\l  %36 = getelementptr inbounds %struct.complex, ptr %35, i32 0, i32 1\l  %37 = load double, ptr %36, align 8\l  %38 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 1\l  %39 = load double, ptr %38, align 8\l  %40 = fadd double %39, %37\l  store double %40, ptr %38, align 8\l  br label %41\l}"];
+	Node0x600000d8fe30 -> Node0x600000d8fe80[tooltip="18 -> 41\nProbability 100.00%" ];
+	Node0x600000d8fe80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %4, align 4\l  %43 = add nsw i32 %42, 1\l  store i32 %43, ptr %4, align 4\l  br label %12\l}"];
+	Node0x600000d8fe80 -> Node0x600000d8fde0[tooltip="41 -> 12\nProbability 100.00%" ];
+	Node0x600000d8fed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{44:\l|  %45 = load %struct.complex, ptr %2, align 8\l  ret %struct.complex %45\l}"];
+}

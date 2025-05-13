@@ -1,0 +1,12 @@
+digraph "CFG for 'ljet5_close' function" {
+	label="CFG for 'ljet5_close' function";
+
+	Node0x600000acec60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = call i32 @gdev_prn_open_printer(ptr noundef %6, i32 noundef 1)\l  store i32 %7, ptr %4, align 4\l  %8 = load i32, ptr %4, align 4\l  %9 = icmp slt i32 %8, 0\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600000acec60:s0 -> Node0x600000acecb0[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600000acec60:s1 -> Node0x600000aced00[tooltip="1 -> 12\nProbability 62.50%" ];
+	Node0x600000acecb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %4, align 4\l  store i32 %11, ptr %2, align 4\l  br label %20\l}"];
+	Node0x600000acecb0 -> Node0x600000aced50[tooltip="10 -> 20\nProbability 100.00%" ];
+	Node0x600000aced00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %3, align 8\l  %14 = getelementptr inbounds %struct.gx_device_printer_s, ptr %13, i32 0,\l... i32 32\l  %15 = load ptr, ptr %14, align 8\l  store ptr %15, ptr %5, align 8\l  %16 = load ptr, ptr %5, align 8\l  %17 = call i64 @\"\\01_fwrite\"(ptr noundef @ljet5_close.stream_trailer, i64\l... noundef 1, i64 noundef 11, ptr noundef %16)\l  %18 = load ptr, ptr %3, align 8\l  %19 = call i32 @gdev_prn_close(ptr noundef %18)\l  store i32 %19, ptr %2, align 4\l  br label %20\l}"];
+	Node0x600000aced00 -> Node0x600000aced50[tooltip="12 -> 20\nProbability 100.00%" ];
+	Node0x600000aced50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %2, align 4\l  ret i32 %21\l}"];
+}

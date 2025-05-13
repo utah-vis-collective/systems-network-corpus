@@ -1,0 +1,12 @@
+digraph "CFG for 'dict_spot_results' function" {
+	label="CFG for 'dict_spot_results' function";
+
+	Node0x600001fe8c30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = getelementptr inbounds %struct.gs_spot_halftone_s, ptr %8, i32 0, i32 0\l  %10 = getelementptr inbounds %struct.gs_screen_halftone_s, ptr %9, i32 0,\l... i32 3\l  %11 = load float, ptr %10, align 8\l  %12 = fpext float %11 to double\l  %13 = call i32 @dict_real_result(ptr noundef %7, ptr noundef @.str.22,\l... double noundef %12)\l  store i32 %13, ptr %6, align 4\l  %14 = load i32, ptr %6, align 4\l  %15 = icmp slt i32 %14, 0\l  br i1 %15, label %16, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x600001fe8c30:s0 -> Node0x600001fe8c80[tooltip="2 -> 16\nProbability 37.50%" ];
+	Node0x600001fe8c30:s1 -> Node0x600001fe8cd0[tooltip="2 -> 18\nProbability 62.50%" ];
+	Node0x600001fe8c80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %6, align 4\l  store i32 %17, ptr %3, align 4\l  br label %26\l}"];
+	Node0x600001fe8c80 -> Node0x600001fe8d20[tooltip="16 -> 26\nProbability 100.00%" ];
+	Node0x600001fe8cd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %4, align 8\l  %20 = load ptr, ptr %5, align 8\l  %21 = getelementptr inbounds %struct.gs_spot_halftone_s, ptr %20, i32 0, i32\l... 0\l  %22 = getelementptr inbounds %struct.gs_screen_halftone_s, ptr %21, i32 0,\l... i32 4\l  %23 = load float, ptr %22, align 4\l  %24 = fpext float %23 to double\l  %25 = call i32 @dict_real_result(ptr noundef %19, ptr noundef @.str.23,\l... double noundef %24)\l  store i32 %25, ptr %3, align 4\l  br label %26\l}"];
+	Node0x600001fe8cd0 -> Node0x600001fe8d20[tooltip="18 -> 26\nProbability 100.00%" ];
+	Node0x600001fe8d20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %3, align 4\l  ret i32 %27\l}"];
+}

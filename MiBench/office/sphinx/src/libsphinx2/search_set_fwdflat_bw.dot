@@ -1,0 +1,33 @@
+digraph "CFG for 'search_set_fwdflat_bw' function" {
+	label="CFG for 'search_set_fwdflat_bw' function";
+
+	Node0x600002003f20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca double, align 8\l  %4 = alloca double, align 8\l  store double %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %5 = load double, ptr %3, align 8\l  %6 = fcmp oeq double %5, 0.000000e+00\l  br i1 %6, label %7, label %8\l|{<s0>T|<s1>F}}"];
+	Node0x600002003f20:s0 -> Node0x600002003f70[tooltip="2 -> 7\nProbability 62.50%" ];
+	Node0x600002003f20:s1 -> Node0x60000200c000[tooltip="2 -> 8\nProbability 37.50%" ];
+	Node0x600002003f70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{7:\l|  br label %25\l}"];
+	Node0x600002003f70 -> Node0x60000200c140[tooltip="7 -> 25\nProbability 100.00%" ];
+	Node0x60000200c000 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{8:\l|  %9 = load double, ptr %3, align 8\l  %10 = fcmp ogt double %9, 1.000000e+00\l  br i1 %10, label %11, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x60000200c000:s0 -> Node0x60000200c050[tooltip="8 -> 11\nProbability 50.00%" ];
+	Node0x60000200c000:s1 -> Node0x60000200c0a0[tooltip="8 -> 17\nProbability 50.00%" ];
+	Node0x60000200c050 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{11:\l|  %12 = load double, ptr %3, align 8\l  %13 = call double @llvm.log.f64(double %12)\l  %14 = fdiv double %13, 0x3F1A368D04E0BA6A\l  %15 = fadd double %14, 5.000000e-01\l  %16 = fptosi double %15 to i32\l  br label %23\l}"];
+	Node0x60000200c050 -> Node0x60000200c0f0[tooltip="11 -> 23\nProbability 100.00%" ];
+	Node0x60000200c0a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{17:\l|  %18 = load double, ptr %3, align 8\l  %19 = call double @llvm.log.f64(double %18)\l  %20 = fdiv double %19, 0x3F1A368D04E0BA6A\l  %21 = fsub double %20, 5.000000e-01\l  %22 = fptosi double %21 to i32\l  br label %23\l}"];
+	Node0x60000200c0a0 -> Node0x60000200c0f0[tooltip="17 -> 23\nProbability 100.00%" ];
+	Node0x60000200c0f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  %24 = phi i32 [ %16, %11 ], [ %22, %17 ]\l  br label %25\l}"];
+	Node0x60000200c0f0 -> Node0x60000200c140[tooltip="23 -> 25\nProbability 100.00%" ];
+	Node0x60000200c140 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = phi i32 [ -690810000, %7 ], [ %24, %23 ]\l  %27 = mul nsw i32 8, %26\l  store i32 %27, ptr @FwdflatLogBeamWidth, align 4\l  %28 = load double, ptr %4, align 8\l  %29 = fcmp oeq double %28, 0.000000e+00\l  br i1 %29, label %30, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x60000200c140:s0 -> Node0x60000200c190[tooltip="25 -> 30\nProbability 62.50%" ];
+	Node0x60000200c140:s1 -> Node0x60000200c1e0[tooltip="25 -> 31\nProbability 37.50%" ];
+	Node0x60000200c190 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{30:\l|  br label %48\l}"];
+	Node0x60000200c190 -> Node0x60000200c320[tooltip="30 -> 48\nProbability 100.00%" ];
+	Node0x60000200c1e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{31:\l|  %32 = load double, ptr %4, align 8\l  %33 = fcmp ogt double %32, 1.000000e+00\l  br i1 %33, label %34, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x60000200c1e0:s0 -> Node0x60000200c230[tooltip="31 -> 34\nProbability 50.00%" ];
+	Node0x60000200c1e0:s1 -> Node0x60000200c280[tooltip="31 -> 40\nProbability 50.00%" ];
+	Node0x60000200c230 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{34:\l|  %35 = load double, ptr %4, align 8\l  %36 = call double @llvm.log.f64(double %35)\l  %37 = fdiv double %36, 0x3F1A368D04E0BA6A\l  %38 = fadd double %37, 5.000000e-01\l  %39 = fptosi double %38 to i32\l  br label %46\l}"];
+	Node0x60000200c230 -> Node0x60000200c2d0[tooltip="34 -> 46\nProbability 100.00%" ];
+	Node0x60000200c280 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{40:\l|  %41 = load double, ptr %4, align 8\l  %42 = call double @llvm.log.f64(double %41)\l  %43 = fdiv double %42, 0x3F1A368D04E0BA6A\l  %44 = fsub double %43, 5.000000e-01\l  %45 = fptosi double %44 to i32\l  br label %46\l}"];
+	Node0x60000200c280 -> Node0x60000200c2d0[tooltip="40 -> 46\nProbability 100.00%" ];
+	Node0x60000200c2d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{46:\l|  %47 = phi i32 [ %39, %34 ], [ %45, %40 ]\l  br label %48\l}"];
+	Node0x60000200c2d0 -> Node0x60000200c320[tooltip="46 -> 48\nProbability 100.00%" ];
+	Node0x60000200c320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = phi i32 [ -690810000, %30 ], [ %47, %46 ]\l  %50 = mul nsw i32 8, %49\l  store i32 %50, ptr @FwdflatLogWordBeamWidth, align 4\l  %51 = load double, ptr %3, align 8\l  %52 = load i32, ptr @FwdflatLogBeamWidth, align 4\l  %53 = load double, ptr %4, align 8\l  %54 = load i32, ptr @FwdflatLogWordBeamWidth, align 4\l  call void (ptr, ...) @log_info(ptr noundef @.str.82, ptr noundef @.str.6,\l... i32 noundef 3778, double noundef %51, i32 noundef %52, double noundef %53,\l... i32 noundef %54)\l  ret void\l}"];
+}

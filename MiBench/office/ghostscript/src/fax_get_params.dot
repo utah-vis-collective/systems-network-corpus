@@ -1,0 +1,5 @@
+digraph "CFG for 'fax_get_params' function" {
+	label="CFG for 'fax_get_params' function";
+
+	Node0x6000014dc7d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca %struct.fax_strings_s, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load ptr, ptr %4, align 8\l  %8 = call i32 @fax_xfer_params(ptr noundef %6, ptr noundef %7, ptr noundef\l... %5)\l  ret i32 %8\l}"];
+}

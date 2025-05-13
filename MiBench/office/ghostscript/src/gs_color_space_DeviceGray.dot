@@ -1,0 +1,5 @@
+digraph "CFG for 'gs_color_space_DeviceGray' function" {
+	label="CFG for 'gs_color_space_DeviceGray' function";
+
+	Node0x60000256cf50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @gs_cs_static_DeviceGray, align 8\l  ret ptr %1\l}"];
+}

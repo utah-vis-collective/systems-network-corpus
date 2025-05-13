@@ -1,0 +1,10 @@
+digraph "CFG for 'randPoolGetByte' function" {
+	label="CFG for 'randPoolGetByte' function";
+
+	Node0x600001a9ebc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @randPoolGetPos, align 4\l  %2 = zext i32 %1 to i64\l  %3 = icmp eq i64 %2, 768\l  br i1 %3, label %4, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x600001a9ebc0:s0 -> Node0x600001a9ec10[tooltip="0 -> 4\nProbability 50.00%" ];
+	Node0x600001a9ebc0:s1 -> Node0x600001a9ec60[tooltip="0 -> 5\nProbability 50.00%" ];
+	Node0x600001a9ec10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{4:\l|  call void @randPoolStir()\l  br label %5\l}"];
+	Node0x600001a9ec10 -> Node0x600001a9ec60[tooltip="4 -> 5\nProbability 100.00%" ];
+	Node0x600001a9ec60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr @randPoolGetPos, align 4\l  %7 = add i32 %6, 1\l  store i32 %7, ptr @randPoolGetPos, align 4\l  %8 = zext i32 %6 to i64\l  %9 = getelementptr inbounds i8, ptr @randPool, i64 %8\l  %10 = load i8, ptr %9, align 1\l  ret i8 %10\l}"];
+}

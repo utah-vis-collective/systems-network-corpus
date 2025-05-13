@@ -1,0 +1,5 @@
+digraph "CFG for 'setupLumaTables' function" {
+	label="CFG for 'setupLumaTables' function";
+
+	Node0x6000038937a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load float, ptr @ycbcrCoeffs, align 4\l  %2 = call ptr @setupLuma(float noundef %1)\l  store ptr %2, ptr @lumaRed, align 8\l  %3 = load float, ptr getelementptr inbounds ([3 x float], ptr @ycbcrCoeffs,\l... i64 0, i64 1), align 4\l  %4 = call ptr @setupLuma(float noundef %3)\l  store ptr %4, ptr @lumaGreen, align 8\l  %5 = load float, ptr getelementptr inbounds ([3 x float], ptr @ycbcrCoeffs,\l... i64 0, i64 2), align 4\l  %6 = call ptr @setupLuma(float noundef %5)\l  store ptr %6, ptr @lumaBlue, align 8\l  ret void\l}"];
+}

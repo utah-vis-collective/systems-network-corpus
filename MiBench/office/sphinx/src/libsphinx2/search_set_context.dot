@@ -1,0 +1,5 @@
+digraph "CFG for 'search_set_context' function" {
+	label="CFG for 'search_set_context' function";
+
+	Node0x600002032580 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  %5 = load i32, ptr %3, align 4\l  store i32 %5, ptr @context_word, align 4\l  %6 = load i32, ptr %4, align 4\l  store i32 %6, ptr getelementptr inbounds ([2 x i32], ptr @context_word, i64\l... 0, i64 1), align 4\l  ret void\l}"];
+}

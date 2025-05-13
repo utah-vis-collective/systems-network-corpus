@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__114__split_bufferIP10_cl_kernelRNS_9allocatorIS2_EEE17__destruct_at_endB8ne190107EPS2_' function" {
+	label="CFG for '_ZNSt3__114__split_bufferIP10_cl_kernelRNS_9allocatorIS2_EEE17__destruct_at_endB8ne190107EPS2_' function";
+
+	Node0x600000d3efd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca %\"struct.std::__1::integral_constant\", align 1\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load ptr, ptr %4, align 8\l  call void\l... @_ZNSt3__114__split_bufferIP10_cl_kernelRNS_9allocatorIS2_EEE17__destruct_at_e\l...ndB8ne190107EPS2_NS_17integral_constantIbLb0EEE(ptr noundef nonnull align 8\l... dereferenceable(40) %6, ptr noundef %7) #5\l  ret void\l}"];
+}

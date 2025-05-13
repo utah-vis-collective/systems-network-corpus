@@ -1,0 +1,17 @@
+digraph "CFG for 'pix16toY' function" {
+	label="CFG for 'pix16toY' function";
+
+	Node0x600000634640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca double, align 8\l  store i32 %0, ptr %3, align 4\l  %6 = load i32, ptr %3, align 4\l  %7 = and i32 %6, 32767\l  store i32 %7, ptr %4, align 4\l  %8 = load i32, ptr %4, align 4\l  %9 = icmp ne i32 %8, 0\l  br i1 %9, label %11, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600000634640:s0 -> Node0x6000006346e0[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x600000634640:s1 -> Node0x600000634690[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600000634690 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  store double 0.000000e+00, ptr %2, align 8\l  br label %25\l}"];
+	Node0x600000634690 -> Node0x6000006347d0[tooltip="10 -> 25\nProbability 100.00%" ];
+	Node0x6000006346e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %4, align 4\l  %13 = sitofp i32 %12 to double\l  %14 = fadd double %13, 5.000000e-01\l  %15 = call double @llvm.fmuladd.f64(double 0x3F662E42FEFA39EF, double %14,\l... double 0xC0462E42FEFA39EF)\l  %16 = call double @llvm.exp.f64(double %15)\l  store double %16, ptr %5, align 8\l  %17 = load i32, ptr %3, align 4\l  %18 = and i32 %17, 32768\l  %19 = icmp ne i32 %18, 0\l  br i1 %19, label %20, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x6000006346e0:s0 -> Node0x600000634730[tooltip="11 -> 20\nProbability 50.00%" ];
+	Node0x6000006346e0:s1 -> Node0x600000634780[tooltip="11 -> 23\nProbability 50.00%" ];
+	Node0x600000634730 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load double, ptr %5, align 8\l  %22 = fneg double %21\l  store double %22, ptr %2, align 8\l  br label %25\l}"];
+	Node0x600000634730 -> Node0x6000006347d0[tooltip="20 -> 25\nProbability 100.00%" ];
+	Node0x600000634780 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  %24 = load double, ptr %5, align 8\l  store double %24, ptr %2, align 8\l  br label %25\l}"];
+	Node0x600000634780 -> Node0x6000006347d0[tooltip="23 -> 25\nProbability 100.00%" ];
+	Node0x6000006347d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  %26 = load double, ptr %2, align 8\l  ret double %26\l}"];
+}

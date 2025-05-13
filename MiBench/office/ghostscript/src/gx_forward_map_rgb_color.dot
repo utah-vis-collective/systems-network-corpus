@@ -1,0 +1,12 @@
+digraph "CFG for 'gx_forward_map_rgb_color' function" {
+	label="CFG for 'gx_forward_map_rgb_color' function";
+
+	Node0x600003d9b980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i16, align 2\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i16 %1, ptr %6, align 2\l  store i16 %2, ptr %7, align 2\l  store i16 %3, ptr %8, align 2\l  %10 = load ptr, ptr %5, align 8\l  %11 = getelementptr inbounds %struct.gx_device_forward_s, ptr %10, i32 0,\l... i32 22\l  %12 = load ptr, ptr %11, align 8\l  store ptr %12, ptr %9, align 8\l  %13 = load ptr, ptr %9, align 8\l  %14 = icmp eq ptr %13, null\l  br i1 %14, label %15, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600003d9b980:s0 -> Node0x600003d9b9d0[tooltip="4 -> 15\nProbability 37.50%" ];
+	Node0x600003d9b980:s1 -> Node0x600003d9ba20[tooltip="4 -> 21\nProbability 62.50%" ];
+	Node0x600003d9b9d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %5, align 8\l  %17 = load i16, ptr %6, align 2\l  %18 = load i16, ptr %7, align 2\l  %19 = load i16, ptr %8, align 2\l  %20 = call i64 @gx_default_w_b_map_rgb_color(ptr noundef %16, i16 noundef\l... zeroext %17, i16 noundef zeroext %18, i16 noundef zeroext %19)\l  br label %31\l}"];
+	Node0x600003d9b9d0 -> Node0x600003d9ba70[tooltip="15 -> 31\nProbability 100.00%" ];
+	Node0x600003d9ba20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %9, align 8\l  %23 = getelementptr inbounds %struct.gx_device_s, ptr %22, i32 0, i32 21\l  %24 = getelementptr inbounds %struct.gx_device_procs_s, ptr %23, i32 0, i32 5\l  %25 = load ptr, ptr %24, align 8\l  %26 = load ptr, ptr %9, align 8\l  %27 = load i16, ptr %6, align 2\l  %28 = load i16, ptr %7, align 2\l  %29 = load i16, ptr %8, align 2\l  %30 = call i64 %25(ptr noundef %26, i16 noundef zeroext %27, i16 noundef\l... zeroext %28, i16 noundef zeroext %29)\l  br label %31\l}"];
+	Node0x600003d9ba20 -> Node0x600003d9ba70[tooltip="21 -> 31\nProbability 100.00%" ];
+	Node0x600003d9ba70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = phi i64 [ %20, %15 ], [ %30, %21 ]\l  ret i64 %32\l}"];
+}

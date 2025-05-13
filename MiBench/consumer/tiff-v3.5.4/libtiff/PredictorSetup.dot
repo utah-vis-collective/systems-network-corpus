@@ -1,0 +1,39 @@
+digraph "CFG for 'PredictorSetup' function" {
+	label="CFG for 'PredictorSetup' function";
+
+	Node0x6000002f99a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.tiff, ptr %6, i32 0, i32 37\l  %8 = load ptr, ptr %7, align 8\l  store ptr %8, ptr %4, align 8\l  %9 = load ptr, ptr %3, align 8\l  %10 = getelementptr inbounds %struct.tiff, ptr %9, i32 0, i32 6\l  store ptr %10, ptr %5, align 8\l  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.TIFFPredictorState, ptr %11, i32 0, i32\l... 0\l  %13 = load i32, ptr %12, align 8\l  %14 = icmp eq i32 %13, 1\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000002f99a0:s0 -> Node0x6000002f9d10[tooltip="1 -> 15\nProbability 50.00%" ];
+	Node0x6000002f99a0:s1 -> Node0x6000002f9d60[tooltip="1 -> 16\nProbability 50.00%" ];
+	Node0x6000002f9d10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  store i32 1, ptr %2, align 4\l  br label %80\l}"];
+	Node0x6000002f9d10 -> Node0x6000002fa120[tooltip="15 -> 80\nProbability 100.00%" ];
+	Node0x6000002f9d60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.TIFFPredictorState, ptr %17, i32 0, i32\l... 0\l  %19 = load i32, ptr %18, align 8\l  %20 = icmp ne i32 %19, 2\l  br i1 %20, label %21, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x6000002f9d60:s0 -> Node0x6000002f9db0[tooltip="16 -> 21\nProbability 50.00%" ];
+	Node0x6000002f9d60:s1 -> Node0x6000002f9e00[tooltip="16 -> 28\nProbability 50.00%" ];
+	Node0x6000002f9db0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds %struct.tiff, ptr %22, i32 0, i32 0\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %4, align 8\l  %26 = getelementptr inbounds %struct.TIFFPredictorState, ptr %25, i32 0, i32\l... 0\l  %27 = load i32, ptr %26, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %24, ptr noundef @.str.5,\l... i32 noundef %27)\l  store i32 0, ptr %2, align 4\l  br label %80\l}"];
+	Node0x6000002f9db0 -> Node0x6000002fa120[tooltip="21 -> 80\nProbability 100.00%" ];
+	Node0x6000002f9e00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %5, align 8\l  %30 = getelementptr inbounds %struct.TIFFDirectory, ptr %29, i32 0, i32 8\l  %31 = load i16, ptr %30, align 8\l  %32 = zext i16 %31 to i32\l  %33 = icmp ne i32 %32, 8\l  br i1 %33, label %34, label %48\l|{<s0>T|<s1>F}}"];
+	Node0x6000002f9e00:s0 -> Node0x6000002f9e50[tooltip="28 -> 34\nProbability 50.00%" ];
+	Node0x6000002f9e00:s1 -> Node0x6000002f9ef0[tooltip="28 -> 48\nProbability 50.00%" ];
+	Node0x6000002f9e50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{34:\l|  %35 = load ptr, ptr %5, align 8\l  %36 = getelementptr inbounds %struct.TIFFDirectory, ptr %35, i32 0, i32 8\l  %37 = load i16, ptr %36, align 8\l  %38 = zext i16 %37 to i32\l  %39 = icmp ne i32 %38, 16\l  br i1 %39, label %40, label %48\l|{<s0>T|<s1>F}}"];
+	Node0x6000002f9e50:s0 -> Node0x6000002f9ea0[tooltip="34 -> 40\nProbability 50.00%" ];
+	Node0x6000002f9e50:s1 -> Node0x6000002f9ef0[tooltip="34 -> 48\nProbability 50.00%" ];
+	Node0x6000002f9ea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %3, align 8\l  %42 = getelementptr inbounds %struct.tiff, ptr %41, i32 0, i32 0\l  %43 = load ptr, ptr %42, align 8\l  %44 = load ptr, ptr %5, align 8\l  %45 = getelementptr inbounds %struct.TIFFDirectory, ptr %44, i32 0, i32 8\l  %46 = load i16, ptr %45, align 8\l  %47 = zext i16 %46 to i32\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %43, ptr noundef @.str.6,\l... i32 noundef %47)\l  store i32 0, ptr %2, align 4\l  br label %80\l}"];
+	Node0x6000002f9ea0 -> Node0x6000002fa120[tooltip="40 -> 80\nProbability 100.00%" ];
+	Node0x6000002f9ef0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{48:\l|  %49 = load ptr, ptr %5, align 8\l  %50 = getelementptr inbounds %struct.TIFFDirectory, ptr %49, i32 0, i32 24\l  %51 = load i16, ptr %50, align 2\l  %52 = zext i16 %51 to i32\l  %53 = icmp eq i32 %52, 1\l  br i1 %53, label %54, label %59\l|{<s0>T|<s1>F}}"];
+	Node0x6000002f9ef0:s0 -> Node0x6000002f9f40[tooltip="48 -> 54\nProbability 50.00%" ];
+	Node0x6000002f9ef0:s1 -> Node0x6000002f9f90[tooltip="48 -> 59\nProbability 50.00%" ];
+	Node0x6000002f9f40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{54:\l|  %55 = load ptr, ptr %5, align 8\l  %56 = getelementptr inbounds %struct.TIFFDirectory, ptr %55, i32 0, i32 15\l  %57 = load i16, ptr %56, align 2\l  %58 = zext i16 %57 to i32\l  br label %60\l}"];
+	Node0x6000002f9f40 -> Node0x6000002f9fe0[tooltip="54 -> 60\nProbability 100.00%" ];
+	Node0x6000002f9f90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{59:\l|  br label %60\l}"];
+	Node0x6000002f9f90 -> Node0x6000002f9fe0[tooltip="59 -> 60\nProbability 100.00%" ];
+	Node0x6000002f9fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{60:\l|  %61 = phi i32 [ %58, %54 ], [ 1, %59 ]\l  %62 = load ptr, ptr %4, align 8\l  %63 = getelementptr inbounds %struct.TIFFPredictorState, ptr %62, i32 0, i32\l... 1\l  store i32 %61, ptr %63, align 4\l  %64 = load ptr, ptr %3, align 8\l  %65 = getelementptr inbounds %struct.tiff, ptr %64, i32 0, i32 3\l  %66 = load i64, ptr %65, align 8\l  %67 = and i64 %66, 1024\l  %68 = icmp ne i64 %67, 0\l  br i1 %68, label %69, label %74\l|{<s0>T|<s1>F}}"];
+	Node0x6000002f9fe0:s0 -> Node0x6000002fa030[tooltip="60 -> 69\nProbability 50.00%" ];
+	Node0x6000002f9fe0:s1 -> Node0x6000002fa080[tooltip="60 -> 74\nProbability 50.00%" ];
+	Node0x6000002fa030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{69:\l|  %70 = load ptr, ptr %3, align 8\l  %71 = call i64 @TIFFTileRowSize(ptr noundef %70)\l  %72 = load ptr, ptr %4, align 8\l  %73 = getelementptr inbounds %struct.TIFFPredictorState, ptr %72, i32 0, i32\l... 2\l  store i64 %71, ptr %73, align 8\l  br label %79\l}"];
+	Node0x6000002fa030 -> Node0x6000002fa0d0[tooltip="69 -> 79\nProbability 100.00%" ];
+	Node0x6000002fa080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{74:\l|  %75 = load ptr, ptr %3, align 8\l  %76 = call i64 @TIFFScanlineSize(ptr noundef %75)\l  %77 = load ptr, ptr %4, align 8\l  %78 = getelementptr inbounds %struct.TIFFPredictorState, ptr %77, i32 0, i32\l... 2\l  store i64 %76, ptr %78, align 8\l  br label %79\l}"];
+	Node0x6000002fa080 -> Node0x6000002fa0d0[tooltip="74 -> 79\nProbability 100.00%" ];
+	Node0x6000002fa0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{79:\l|  store i32 1, ptr %2, align 4\l  br label %80\l}"];
+	Node0x6000002fa0d0 -> Node0x6000002fa120[tooltip="79 -> 80\nProbability 100.00%" ];
+	Node0x6000002fa120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{80:\l|  %81 = load i32, ptr %2, align 4\l  ret i32 %81\l}"];
+}

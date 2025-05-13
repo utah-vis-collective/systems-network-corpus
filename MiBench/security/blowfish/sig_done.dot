@@ -1,0 +1,5 @@
+digraph "CFG for 'sig_done' function" {
+	label="CFG for 'sig_done' function";
+
+	Node0x600001ba20d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = call ptr @signal(i32 noundef 14, ptr noundef @sig_done)\l  store i64 0, ptr @run, align 8\l  ret void\l}"];
+}

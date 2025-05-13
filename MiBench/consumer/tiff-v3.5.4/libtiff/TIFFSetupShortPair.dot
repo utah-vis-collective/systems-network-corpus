@@ -1,0 +1,5 @@
+digraph "CFG for 'TIFFSetupShortPair' function" {
+	label="CFG for 'TIFFSetupShortPair' function";
+
+	Node0x6000017e3840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca [2 x i16], align 2\l  store ptr %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load i64, ptr %5, align 8\l  %10 = getelementptr inbounds [2 x i16], ptr %7, i64 0, i64 0\l  %11 = getelementptr inbounds [2 x i16], ptr %7, i64 0, i64 1\l  %12 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %8, i64 noundef %9,\l... ptr noundef %10, ptr noundef %11)\l  %13 = load ptr, ptr %4, align 8\l  %14 = load i64, ptr %5, align 8\l  %15 = load ptr, ptr %6, align 8\l  %16 = getelementptr inbounds [2 x i16], ptr %7, i64 0, i64 0\l  %17 = call i32 @TIFFWriteShortArray(ptr noundef %13, i32 noundef 3, i64\l... noundef %14, ptr noundef %15, i64 noundef 2, ptr noundef %16)\l  ret i32 %17\l}"];
+}

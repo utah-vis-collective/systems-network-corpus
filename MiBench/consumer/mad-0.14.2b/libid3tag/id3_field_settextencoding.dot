@@ -1,0 +1,12 @@
+digraph "CFG for 'id3_field_settextencoding' function" {
+	label="CFG for 'id3_field_settextencoding' function";
+
+	Node0x600001e510e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load ptr, ptr %4, align 8\l  %7 = load i32, ptr %6, align 8\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001e510e0:s0 -> Node0x600001e51130[tooltip="2 -> 9\nProbability 62.50%" ];
+	Node0x600001e510e0:s1 -> Node0x600001e51180[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x600001e51130 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  store i32 -1, ptr %3, align 4\l  br label %16\l}"];
+	Node0x600001e51130 -> Node0x600001e511d0[tooltip="9 -> 16\nProbability 100.00%" ];
+	Node0x600001e51180 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  call void @id3_field_finish(ptr noundef %11)\l  %12 = load i32, ptr %5, align 4\l  %13 = zext i32 %12 to i64\l  %14 = load ptr, ptr %4, align 8\l  %15 = getelementptr inbounds %struct.anon, ptr %14, i32 0, i32 1\l  store i64 %13, ptr %15, align 8\l  store i32 0, ptr %3, align 4\l  br label %16\l}"];
+	Node0x600001e51180 -> Node0x600001e511d0[tooltip="10 -> 16\nProbability 100.00%" ];
+	Node0x600001e511d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %3, align 4\l  ret i32 %17\l}"];
+}

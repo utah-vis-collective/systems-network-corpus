@@ -1,0 +1,12 @@
+digraph "CFG for 'BF_addEntry' function" {
+	label="CFG for 'BF_addEntry' function";
+
+	Node0x6000039dd4a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca %struct.BF_BitstreamElement, align 4\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store i32 %2, ptr %7, align 4\l  %9 = load i32, ptr %6, align 4\l  %10 = getelementptr inbounds %struct.BF_BitstreamElement, ptr %8, i32 0, i32\l... 0\l  store i32 %9, ptr %10, align 4\l  %11 = load i32, ptr %7, align 4\l  %12 = trunc i32 %11 to i16\l  %13 = getelementptr inbounds %struct.BF_BitstreamElement, ptr %8, i32 0, i32\l... 1\l  store i16 %12, ptr %13, align 4\l  %14 = load i32, ptr %7, align 4\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %16, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000039dd4a0:s0 -> Node0x6000039dd4f0[tooltip="3 -> 16\nProbability 62.50%" ];
+	Node0x6000039dd4a0:s1 -> Node0x6000039dd540[tooltip="3 -> 19\nProbability 37.50%" ];
+	Node0x6000039dd4f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %5, align 8\l  %18 = call ptr @BF_addElement(ptr noundef %17, ptr noundef %8)\l  store ptr %18, ptr %4, align 8\l  br label %21\l}"];
+	Node0x6000039dd4f0 -> Node0x6000039dd590[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x6000039dd540 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %5, align 8\l  store ptr %20, ptr %4, align 8\l  br label %21\l}"];
+	Node0x6000039dd540 -> Node0x6000039dd590[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x6000039dd590 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %4, align 8\l  ret ptr %22\l}"];
+}

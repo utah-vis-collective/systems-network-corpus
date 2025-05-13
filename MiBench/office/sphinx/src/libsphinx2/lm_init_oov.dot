@@ -1,0 +1,24 @@
+digraph "CFG for 'lm_init_oov' function" {
+	label="CFG for 'lm_init_oov' function";
+
+	Node0x6000025359a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store i32 0, ptr %4, align 4\l  store i32 -1, ptr %5, align 4\l  %7 = call ptr @lm_name2lm(ptr noundef @.str.26)\l  store ptr %7, ptr %6, align 8\l  %8 = call i32 @dict_get_first_initial_oov()\l  store i32 %8, ptr %4, align 4\l  %9 = call i32 @dict_get_last_initial_oov()\l  store i32 %9, ptr %5, align 4\l  %10 = load i32, ptr %5, align 4\l  %11 = load i32, ptr %4, align 4\l  %12 = sub nsw i32 %10, %11\l  %13 = add nsw i32 %12, 1\l  call void (ptr, ...) @log_info(ptr noundef @.str.27, ptr noundef @.str, i32\l... noundef 1124, i32 noundef %13)\l  %14 = call double @kb_get_oov_ugprob()\l  store double %14, ptr @oov_ugprob, align 8\l  %15 = load i32, ptr %4, align 4\l  store i32 %15, ptr %1, align 4\l  br label %16\l}"];
+	Node0x6000025359a0 -> Node0x6000025359f0[tooltip="0 -> 16\nProbability 100.00%" ];
+	Node0x6000025359f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %1, align 4\l  %18 = load i32, ptr %5, align 4\l  %19 = icmp sle i32 %17, %18\l  br i1 %19, label %20, label %44\l|{<s0>T|<s1>F}}"];
+	Node0x6000025359f0:s0 -> Node0x600002535a40[tooltip="16 -> 20\nProbability 96.88%" ];
+	Node0x6000025359f0:s1 -> Node0x600002535c20[tooltip="16 -> 44\nProbability 3.12%" ];
+	Node0x600002535a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr @WordDict, align 8\l  %22 = load i32, ptr %1, align 4\l  %23 = call i32 @dictid_to_baseid(ptr noundef %21, i32 noundef %22)\l  store i32 %23, ptr %3, align 4\l  %24 = load i32, ptr %1, align 4\l  %25 = icmp eq i32 %23, %24\l  br i1 %25, label %26, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600002535a40:s0 -> Node0x600002535a90[tooltip="20 -> 26\nProbability 50.00%" ];
+	Node0x600002535a40:s1 -> Node0x600002535b80[tooltip="20 -> 40\nProbability 50.00%" ];
+	Node0x600002535a90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %6, align 8\l  %28 = load i32, ptr %1, align 4\l  %29 = call i32 @lm_add_word(ptr noundef %27, i32 noundef %28)\l  store i32 %29, ptr %2, align 4\l  %30 = icmp sge i32 %29, 0\l  br i1 %30, label %31, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x600002535a90:s0 -> Node0x600002535ae0[tooltip="26 -> 31\nProbability 50.00%" ];
+	Node0x600002535a90:s1 -> Node0x600002535b30[tooltip="26 -> 39\nProbability 50.00%" ];
+	Node0x600002535ae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %2, align 4\l  %33 = load ptr, ptr %6, align 8\l  %34 = getelementptr inbounds %struct.lm_s, ptr %33, i32 0, i32 10\l  %35 = load ptr, ptr %34, align 8\l  %36 = load i32, ptr %1, align 4\l  %37 = sext i32 %36 to i64\l  %38 = getelementptr inbounds i32, ptr %35, i64 %37\l  store i32 %32, ptr %38, align 4\l  br label %39\l}"];
+	Node0x600002535ae0 -> Node0x600002535b30[tooltip="31 -> 39\nProbability 100.00%" ];
+	Node0x600002535b30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{39:\l|  br label %40\l}"];
+	Node0x600002535b30 -> Node0x600002535b80[tooltip="39 -> 40\nProbability 100.00%" ];
+	Node0x600002535b80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  br label %41\l}"];
+	Node0x600002535b80 -> Node0x600002535bd0[tooltip="40 -> 41\nProbability 100.00%" ];
+	Node0x600002535bd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %1, align 4\l  %43 = add nsw i32 %42, 1\l  store i32 %43, ptr %1, align 4\l  br label %16\l}"];
+	Node0x600002535bd0 -> Node0x6000025359f0[tooltip="41 -> 16\nProbability 100.00%" ];
+	Node0x600002535c20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{44:\l|  ret void\l}"];
+}

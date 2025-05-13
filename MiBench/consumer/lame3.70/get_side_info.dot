@@ -1,0 +1,13 @@
+digraph "CFG for 'get_side_info' function" {
+	label="CFG for 'get_side_info' function";
+
+	Node0x6000039ddea0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca ptr, align 8\l  %2 = alloca ptr, align 8\l  %3 = load ptr, ptr @side_queue_free, align 8\l  store ptr %3, ptr %1, align 8\l  %4 = load ptr, ptr @side_queue_head, align 8\l  store ptr %4, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = icmp ne ptr %5, null\l  %7 = xor i1 %6, true\l  %8 = zext i1 %7 to i32\l  %9 = sext i32 %8 to i64\l  %10 = icmp ne i64 %9, 0\l  br i1 %10, label %11, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000039ddea0:s0 -> Node0x6000039de210[tooltip="0 -> 11\nProbability 0.00%" ];
+	Node0x6000039ddea0:s1 -> Node0x6000039de2b0[tooltip="0 -> 13\nProbability 100.00%" ];
+	Node0x6000039de210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{11:\l|  call void @__assert_rtn(ptr noundef @__func__.get_side_info, ptr noundef\l... @.str, i32 noundef 384, ptr noundef @.str.13) #7\l  unreachable\l}"];
+	Node0x6000039de260 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{12:\l|  br label %14\l}"];
+	Node0x6000039de260 -> Node0x6000039de300[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x6000039de2b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  br label %14\l}"];
+	Node0x6000039de2b0 -> Node0x6000039de300[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x6000039de300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %2, align 8\l  %16 = getelementptr inbounds %struct.side_info_link, ptr %15, i32 0, i32 0\l  %17 = load ptr, ptr %16, align 8\l  store ptr %17, ptr @side_queue_head, align 8\l  %18 = load ptr, ptr %2, align 8\l  store ptr %18, ptr @side_queue_free, align 8\l  %19 = load ptr, ptr %1, align 8\l  %20 = load ptr, ptr %2, align 8\l  %21 = getelementptr inbounds %struct.side_info_link, ptr %20, i32 0, i32 0\l  store ptr %19, ptr %21, align 8\l  %22 = load ptr, ptr %2, align 8\l  %23 = getelementptr inbounds %struct.side_info_link, ptr %22, i32 0, i32 1\l  ret ptr %23\l}"];
+}

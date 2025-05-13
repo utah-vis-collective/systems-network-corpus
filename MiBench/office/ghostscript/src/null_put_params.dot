@@ -1,0 +1,17 @@
+digraph "CFG for 'null_put_params' function" {
+	label="CFG for 'null_put_params' function";
+
+	Node0x600003d9df90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = getelementptr inbounds %struct.gx_device_forward_s, ptr %8, i32 0, i32\l... 22\l  %10 = load ptr, ptr %9, align 8\l  store ptr %10, ptr %6, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = icmp ne ptr %11, null\l  br i1 %12, label %13, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600003d9df90:s0 -> Node0x600003d9dfe0[tooltip="2 -> 13\nProbability 62.50%" ];
+	Node0x600003d9df90:s1 -> Node0x600003d9e030[tooltip="2 -> 21\nProbability 37.50%" ];
+	Node0x600003d9dfe0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %6, align 8\l  %15 = getelementptr inbounds %struct.gx_device_s, ptr %14, i32 0, i32 21\l  %16 = getelementptr inbounds %struct.gx_device_procs_s, ptr %15, i32 0, i32\l... 14\l  %17 = load ptr, ptr %16, align 8\l  %18 = load ptr, ptr %6, align 8\l  %19 = load ptr, ptr %5, align 8\l  %20 = call i32 %17(ptr noundef %18, ptr noundef %19)\l  store i32 %20, ptr %3, align 4\l  br label %35\l}"];
+	Node0x600003d9dfe0 -> Node0x600003d9e120[tooltip="13 -> 35\nProbability 100.00%" ];
+	Node0x600003d9e030 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %4, align 8\l  %23 = load ptr, ptr %5, align 8\l  %24 = call i32 @gx_default_put_params(ptr noundef %22, ptr noundef %23)\l  store i32 %24, ptr %7, align 4\l  %25 = load i32, ptr %7, align 4\l  %26 = icmp slt i32 %25, 0\l  br i1 %26, label %27, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600003d9e030:s0 -> Node0x600003d9e080[tooltip="21 -> 27\nProbability 37.50%" ];
+	Node0x600003d9e030:s1 -> Node0x600003d9e0d0[tooltip="21 -> 29\nProbability 62.50%" ];
+	Node0x600003d9e080 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %7, align 4\l  store i32 %28, ptr %3, align 4\l  br label %35\l}"];
+	Node0x600003d9e080 -> Node0x600003d9e120[tooltip="27 -> 35\nProbability 100.00%" ];
+	Node0x600003d9e0d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %4, align 8\l  %31 = getelementptr inbounds %struct.gx_device_s, ptr %30, i32 0, i32 9\l  store i32 0, ptr %31, align 4\l  %32 = load ptr, ptr %4, align 8\l  %33 = getelementptr inbounds %struct.gx_device_s, ptr %32, i32 0, i32 8\l  store i32 0, ptr %33, align 8\l  %34 = load i32, ptr %7, align 4\l  store i32 %34, ptr %3, align 4\l  br label %35\l}"];
+	Node0x600003d9e0d0 -> Node0x600003d9e120[tooltip="29 -> 35\nProbability 100.00%" ];
+	Node0x600003d9e120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load i32, ptr %3, align 4\l  ret i32 %36\l}"];
+}

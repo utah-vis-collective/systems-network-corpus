@@ -1,0 +1,17 @@
+digraph "CFG for 'gdev_vector_update_log_op' function" {
+	label="CFG for 'gdev_vector_update_log_op' function";
+
+	Node0x6000009d38e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %8 = load i32, ptr %5, align 4\l  %9 = load ptr, ptr %4, align 8\l  %10 = getelementptr inbounds %struct.gx_device_vector_s, ptr %9, i32 0, i32\l... 29\l  %11 = getelementptr inbounds %struct.gs_imager_state_s, ptr %10, i32 0, i32 3\l  %12 = load i32, ptr %11, align 8\l  %13 = xor i32 %8, %12\l  store i32 %13, ptr %6, align 4\l  %14 = load i32, ptr %6, align 4\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %16, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d38e0:s0 -> Node0x6000009d3930[tooltip="2 -> 16\nProbability 62.50%" ];
+	Node0x6000009d38e0:s1 -> Node0x6000009d3a20[tooltip="2 -> 35\nProbability 37.50%" ];
+	Node0x6000009d3930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = getelementptr inbounds %struct.gx_device_vector_s, ptr %17, i32 0, i32\l... 23\l  %19 = load ptr, ptr %18, align 8\l  %20 = getelementptr inbounds %struct.gx_device_vector_procs_s, ptr %19, i32\l... 0, i32 7\l  %21 = load ptr, ptr %20, align 8\l  %22 = load ptr, ptr %4, align 8\l  %23 = load i32, ptr %5, align 4\l  %24 = load i32, ptr %6, align 4\l  %25 = call i32 %21(ptr noundef %22, i32 noundef %23, i32 noundef %24)\l  store i32 %25, ptr %7, align 4\l  %26 = load i32, ptr %7, align 4\l  %27 = icmp slt i32 %26, 0\l  br i1 %27, label %28, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d3930:s0 -> Node0x6000009d3980[tooltip="16 -> 28\nProbability 37.50%" ];
+	Node0x6000009d3930:s1 -> Node0x6000009d39d0[tooltip="16 -> 30\nProbability 62.50%" ];
+	Node0x6000009d3980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %7, align 4\l  store i32 %29, ptr %3, align 4\l  br label %36\l}"];
+	Node0x6000009d3980 -> Node0x6000009d3a70[tooltip="28 -> 36\nProbability 100.00%" ];
+	Node0x6000009d39d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{30:\l|  %31 = load i32, ptr %5, align 4\l  %32 = load ptr, ptr %4, align 8\l  %33 = getelementptr inbounds %struct.gx_device_vector_s, ptr %32, i32 0, i32\l... 29\l  %34 = getelementptr inbounds %struct.gs_imager_state_s, ptr %33, i32 0, i32 3\l  store i32 %31, ptr %34, align 8\l  br label %35\l}"];
+	Node0x6000009d39d0 -> Node0x6000009d3a20[tooltip="30 -> 35\nProbability 100.00%" ];
+	Node0x6000009d3a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{35:\l|  store i32 0, ptr %3, align 4\l  br label %36\l}"];
+	Node0x6000009d3a20 -> Node0x6000009d3a70[tooltip="35 -> 36\nProbability 100.00%" ];
+	Node0x6000009d3a70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %3, align 4\l  ret i32 %37\l}"];
+}

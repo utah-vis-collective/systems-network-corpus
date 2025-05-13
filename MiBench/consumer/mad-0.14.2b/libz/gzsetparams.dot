@@ -1,0 +1,25 @@
+digraph "CFG for 'gzsetparams' function" {
+	label="CFG for 'gzsetparams' function";
+
+	Node0x600001033480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i32 %1, ptr %6, align 4\l  store i32 %2, ptr %7, align 4\l  %9 = load ptr, ptr %5, align 8\l  store ptr %9, ptr %8, align 8\l  %10 = load ptr, ptr %8, align 8\l  %11 = icmp eq ptr %10, null\l  br i1 %11, label %18, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600001033480:s0 -> Node0x600001033520[tooltip="3 -> 18\nProbability 37.50%" ];
+	Node0x600001033480:s1 -> Node0x6000010334d0[tooltip="3 -> 12\nProbability 62.50%" ];
+	Node0x6000010334d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %8, align 8\l  %14 = getelementptr inbounds %struct.gz_stream, ptr %13, i32 0, i32 10\l  %15 = load i8, ptr %14, align 4\l  %16 = sext i8 %15 to i32\l  %17 = icmp ne i32 %16, 119\l  br i1 %17, label %18, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000010334d0:s0 -> Node0x600001033520[tooltip="12 -> 18\nProbability 50.00%" ];
+	Node0x6000010334d0:s1 -> Node0x600001033570[tooltip="12 -> 19\nProbability 50.00%" ];
+	Node0x600001033520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  store i32 -2, ptr %4, align 4\l  br label %53\l}"];
+	Node0x600001033520 -> Node0x600001033700[tooltip="18 -> 53\nProbability 100.00%" ];
+	Node0x600001033570 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %8, align 8\l  %21 = getelementptr inbounds %struct.gz_stream, ptr %20, i32 0, i32 0\l  %22 = getelementptr inbounds %struct.z_stream_s, ptr %21, i32 0, i32 4\l  %23 = load i32, ptr %22, align 8\l  %24 = icmp eq i32 %23, 0\l  br i1 %24, label %25, label %47\l|{<s0>T|<s1>F}}"];
+	Node0x600001033570:s0 -> Node0x6000010335c0[tooltip="19 -> 25\nProbability 37.50%" ];
+	Node0x600001033570:s1 -> Node0x6000010336b0[tooltip="19 -> 47\nProbability 62.50%" ];
+	Node0x6000010335c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %8, align 8\l  %27 = getelementptr inbounds %struct.gz_stream, ptr %26, i32 0, i32 5\l  %28 = load ptr, ptr %27, align 8\l  %29 = load ptr, ptr %8, align 8\l  %30 = getelementptr inbounds %struct.gz_stream, ptr %29, i32 0, i32 0\l  %31 = getelementptr inbounds %struct.z_stream_s, ptr %30, i32 0, i32 3\l  store ptr %28, ptr %31, align 8\l  %32 = load ptr, ptr %8, align 8\l  %33 = getelementptr inbounds %struct.gz_stream, ptr %32, i32 0, i32 5\l  %34 = load ptr, ptr %33, align 8\l  %35 = load ptr, ptr %8, align 8\l  %36 = getelementptr inbounds %struct.gz_stream, ptr %35, i32 0, i32 3\l  %37 = load ptr, ptr %36, align 8\l  %38 = call i64 @\"\\01_fwrite\"(ptr noundef %34, i64 noundef 1, i64 noundef\l... 16384, ptr noundef %37)\l  %39 = icmp ne i64 %38, 16384\l  br i1 %39, label %40, label %43\l|{<s0>T|<s1>F}}"];
+	Node0x6000010335c0:s0 -> Node0x600001033610[tooltip="25 -> 40\nProbability 50.00%" ];
+	Node0x6000010335c0:s1 -> Node0x600001033660[tooltip="25 -> 43\nProbability 50.00%" ];
+	Node0x600001033610 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %8, align 8\l  %42 = getelementptr inbounds %struct.gz_stream, ptr %41, i32 0, i32 1\l  store i32 -1, ptr %42, align 8\l  br label %43\l}"];
+	Node0x600001033610 -> Node0x600001033660[tooltip="40 -> 43\nProbability 100.00%" ];
+	Node0x600001033660 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %8, align 8\l  %45 = getelementptr inbounds %struct.gz_stream, ptr %44, i32 0, i32 0\l  %46 = getelementptr inbounds %struct.z_stream_s, ptr %45, i32 0, i32 4\l  store i32 16384, ptr %46, align 8\l  br label %47\l}"];
+	Node0x600001033660 -> Node0x6000010336b0[tooltip="43 -> 47\nProbability 100.00%" ];
+	Node0x6000010336b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{47:\l|  %48 = load ptr, ptr %8, align 8\l  %49 = getelementptr inbounds %struct.gz_stream, ptr %48, i32 0, i32 0\l  %50 = load i32, ptr %6, align 4\l  %51 = load i32, ptr %7, align 4\l  %52 = call i32 @deflateParams(ptr noundef %49, i32 noundef %50, i32 noundef\l... %51)\l  store i32 %52, ptr %4, align 4\l  br label %53\l}"];
+	Node0x6000010336b0 -> Node0x600001033700[tooltip="47 -> 53\nProbability 100.00%" ];
+	Node0x600001033700 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{53:\l|  %54 = load i32, ptr %4, align 4\l  ret i32 %54\l}"];
+}

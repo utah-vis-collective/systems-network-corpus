@@ -1,0 +1,5 @@
+digraph "CFG for 'puthexbyte' function" {
+	label="CFG for 'puthexbyte' function";
+
+	Node0x600000307a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i8, align 1\l  store i8 %0, ptr %2, align 1\l  %3 = load i8, ptr %2, align 1\l  %4 = zext i8 %3 to i32\l  %5 = ashr i32 %4, 4\l  %6 = sext i32 %5 to i64\l  %7 = getelementptr inbounds [17 x i8], ptr @puthexbyte.nibs, i64 0, i64 %6\l  %8 = load i8, ptr %7, align 1\l  %9 = sext i8 %8 to i32\l  %10 = call i32 @putchar(i32 noundef %9)\l  %11 = load i8, ptr %2, align 1\l  %12 = zext i8 %11 to i32\l  %13 = and i32 %12, 15\l  %14 = sext i32 %13 to i64\l  %15 = getelementptr inbounds [17 x i8], ptr @puthexbyte.nibs, i64 0, i64 %14\l  %16 = load i8, ptr %15, align 1\l  %17 = sext i8 %16 to i32\l  %18 = call i32 @putchar(i32 noundef %17)\l  ret void\l}"];
+}

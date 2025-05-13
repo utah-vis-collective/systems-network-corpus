@@ -1,0 +1,12 @@
+digraph "CFG for 'iter_std_stop_crit' function" {
+	label="CFG for 'iter_std_stop_crit' function";
+
+	Node0x60000353a3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca double, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store double %1, ptr %7, align 8\l  store ptr %2, ptr %8, align 8\l  store ptr %3, ptr %9, align 8\l  %10 = load double, ptr %7, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = getelementptr inbounds %struct.Iter_data, ptr %11, i32 0, i32 18\l  %13 = load double, ptr %12, align 8\l  %14 = load ptr, ptr %6, align 8\l  %15 = getelementptr inbounds %struct.Iter_data, ptr %14, i32 0, i32 5\l  %16 = load double, ptr %15, align 8\l  %17 = fmul double %13, %16\l  %18 = fcmp ole double %10, %17\l  br i1 %18, label %19, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x60000353a3a0:s0 -> Node0x60000353a3f0[tooltip="4 -> 19\nProbability 50.00%" ];
+	Node0x60000353a3a0:s1 -> Node0x60000353a440[tooltip="4 -> 20\nProbability 50.00%" ];
+	Node0x60000353a3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  store i32 1, ptr %5, align 4\l  br label %21\l}"];
+	Node0x60000353a3f0 -> Node0x60000353a490[tooltip="19 -> 21\nProbability 100.00%" ];
+	Node0x60000353a440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{20:\l|  store i32 0, ptr %5, align 4\l  br label %21\l}"];
+	Node0x60000353a440 -> Node0x60000353a490[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x60000353a490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %5, align 4\l  ret i32 %22\l}"];
+}

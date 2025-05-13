@@ -1,0 +1,22 @@
+digraph "CFG for 'gzclose' function" {
+	label="CFG for 'gzclose' function";
+
+	Node0x600002d8d9a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  store ptr %6, ptr %5, align 8\l  %7 = load ptr, ptr %5, align 8\l  %8 = icmp eq ptr %7, null\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8d9a0:s0 -> Node0x600002d8da40[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x600002d8d9a0:s1 -> Node0x600002d8da90[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600002d8da40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  store i32 -2, ptr %2, align 4\l  br label %41\l}"];
+	Node0x600002d8da40 -> Node0x600002d8dc20[tooltip="9 -> 41\nProbability 100.00%" ];
+	Node0x600002d8da90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %5, align 8\l  %12 = getelementptr inbounds %struct.gz_stream, ptr %11, i32 0, i32 10\l  %13 = load i8, ptr %12, align 4\l  %14 = sext i8 %13 to i32\l  %15 = icmp eq i32 %14, 119\l  br i1 %15, label %16, label %38\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8da90:s0 -> Node0x600002d8dae0[tooltip="10 -> 16\nProbability 50.00%" ];
+	Node0x600002d8da90:s1 -> Node0x600002d8dbd0[tooltip="10 -> 38\nProbability 50.00%" ];
+	Node0x600002d8dae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = call i32 @gzflush(ptr noundef %17, i32 noundef 4)\l  store i32 %18, ptr %4, align 4\l  %19 = load i32, ptr %4, align 4\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8dae0:s0 -> Node0x600002d8db30[tooltip="16 -> 21\nProbability 62.50%" ];
+	Node0x600002d8dae0:s1 -> Node0x600002d8db80[tooltip="16 -> 24\nProbability 37.50%" ];
+	Node0x600002d8db30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = call i32 @destroy(ptr noundef %22)\l  store i32 %23, ptr %2, align 4\l  br label %41\l}"];
+	Node0x600002d8db30 -> Node0x600002d8dc20[tooltip="21 -> 41\nProbability 100.00%" ];
+	Node0x600002d8db80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %5, align 8\l  %26 = getelementptr inbounds %struct.gz_stream, ptr %25, i32 0, i32 3\l  %27 = load ptr, ptr %26, align 8\l  %28 = load ptr, ptr %5, align 8\l  %29 = getelementptr inbounds %struct.gz_stream, ptr %28, i32 0, i32 6\l  %30 = load i64, ptr %29, align 8\l  call void @putLong(ptr noundef %27, i64 noundef %30)\l  %31 = load ptr, ptr %5, align 8\l  %32 = getelementptr inbounds %struct.gz_stream, ptr %31, i32 0, i32 3\l  %33 = load ptr, ptr %32, align 8\l  %34 = load ptr, ptr %5, align 8\l  %35 = getelementptr inbounds %struct.gz_stream, ptr %34, i32 0, i32 0\l  %36 = getelementptr inbounds %struct.z_stream_s, ptr %35, i32 0, i32 2\l  %37 = load i64, ptr %36, align 8\l  call void @putLong(ptr noundef %33, i64 noundef %37)\l  br label %38\l}"];
+	Node0x600002d8db80 -> Node0x600002d8dbd0[tooltip="24 -> 38\nProbability 100.00%" ];
+	Node0x600002d8dbd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{38:\l|  %39 = load ptr, ptr %3, align 8\l  %40 = call i32 @destroy(ptr noundef %39)\l  store i32 %40, ptr %2, align 4\l  br label %41\l}"];
+	Node0x600002d8dbd0 -> Node0x600002d8dc20[tooltip="38 -> 41\nProbability 100.00%" ];
+	Node0x600002d8dc20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i32, ptr %2, align 4\l  ret i32 %42\l}"];
+}

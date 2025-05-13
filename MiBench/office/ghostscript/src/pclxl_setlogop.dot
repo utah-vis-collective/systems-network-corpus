@@ -1,0 +1,32 @@
+digraph "CFG for 'pclxl_setlogop' function" {
+	label="CFG for 'pclxl_setlogop' function";
+
+	Node0x600003ba7f20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %8 = load ptr, ptr %4, align 8\l  %9 = call ptr @gdev_vector_stream(ptr noundef %8)\l  store ptr %9, ptr %7, align 8\l  %10 = load i32, ptr %6, align 4\l  %11 = and i32 %10, 256\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba7f20:s0 -> Node0x600003ba7f70[tooltip="3 -> 13\nProbability 50.00%" ];
+	Node0x600003ba7f20:s1 -> Node0x600003ba00a0[tooltip="3 -> 24\nProbability 50.00%" ];
+	Node0x600003ba7f70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %7, align 8\l  %15 = load i32, ptr %5, align 4\l  %16 = and i32 %15, 256\l  %17 = icmp ne i32 %16, 0\l  %18 = zext i1 %17 to i64\l  %19 = select i1 %17, i32 1, i32 0\l  %20 = trunc i32 %19 to i8\l  call void @put_ub(ptr noundef %14, i8 noundef zeroext %20)\l  br label %21\l}"];
+	Node0x600003ba7f70 -> Node0x600003ba0000[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x600003ba0000 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %7, align 8\l  call void @put_bytes(ptr noundef %22, ptr noundef @pclxl_setlogop.ac_, i32\l... noundef 3)\l  br label %23\l}"];
+	Node0x600003ba0000 -> Node0x600003ba0050[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x600003ba0050 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x600003ba0050 -> Node0x600003ba00a0[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x600003ba00a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %6, align 4\l  %26 = and i32 %25, 512\l  %27 = icmp ne i32 %26, 0\l  br i1 %27, label %28, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba00a0:s0 -> Node0x600003ba00f0[tooltip="24 -> 28\nProbability 50.00%" ];
+	Node0x600003ba00a0:s1 -> Node0x600003ba01e0[tooltip="24 -> 39\nProbability 50.00%" ];
+	Node0x600003ba00f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %7, align 8\l  %30 = load i32, ptr %5, align 4\l  %31 = and i32 %30, 512\l  %32 = icmp ne i32 %31, 0\l  %33 = zext i1 %32 to i64\l  %34 = select i1 %32, i32 1, i32 0\l  %35 = trunc i32 %34 to i8\l  call void @put_ub(ptr noundef %29, i8 noundef zeroext %35)\l  br label %36\l}"];
+	Node0x600003ba00f0 -> Node0x600003ba0140[tooltip="28 -> 36\nProbability 100.00%" ];
+	Node0x600003ba0140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{36:\l|  %37 = load ptr, ptr %7, align 8\l  call void @put_bytes(ptr noundef %37, ptr noundef @pclxl_setlogop.ac_.4, i32\l... noundef 3)\l  br label %38\l}"];
+	Node0x600003ba0140 -> Node0x600003ba0190[tooltip="36 -> 38\nProbability 100.00%" ];
+	Node0x600003ba0190 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{38:\l|  br label %39\l}"];
+	Node0x600003ba0190 -> Node0x600003ba01e0[tooltip="38 -> 39\nProbability 100.00%" ];
+	Node0x600003ba01e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{39:\l|  %40 = load i32, ptr %6, align 4\l  %41 = and i32 %40, 255\l  %42 = icmp ne i32 %41, 0\l  br i1 %42, label %43, label %51\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba01e0:s0 -> Node0x600003ba0230[tooltip="39 -> 43\nProbability 62.50%" ];
+	Node0x600003ba01e0:s1 -> Node0x600003ba0320[tooltip="39 -> 51\nProbability 37.50%" ];
+	Node0x600003ba0230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{43:\l|  %44 = load ptr, ptr %7, align 8\l  %45 = load i32, ptr %5, align 4\l  %46 = and i32 %45, 255\l  %47 = trunc i32 %46 to i8\l  call void @put_ub(ptr noundef %44, i8 noundef zeroext %47)\l  br label %48\l}"];
+	Node0x600003ba0230 -> Node0x600003ba0280[tooltip="43 -> 48\nProbability 100.00%" ];
+	Node0x600003ba0280 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{48:\l|  %49 = load ptr, ptr %7, align 8\l  call void @put_bytes(ptr noundef %49, ptr noundef @pclxl_setlogop.ac_.5, i32\l... noundef 3)\l  br label %50\l}"];
+	Node0x600003ba0280 -> Node0x600003ba02d0[tooltip="48 -> 50\nProbability 100.00%" ];
+	Node0x600003ba02d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{50:\l|  br label %51\l}"];
+	Node0x600003ba02d0 -> Node0x600003ba0320[tooltip="50 -> 51\nProbability 100.00%" ];
+	Node0x600003ba0320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{51:\l|  ret i32 0\l}"];
+}

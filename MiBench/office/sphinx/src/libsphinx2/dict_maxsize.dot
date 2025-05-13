@@ -1,0 +1,5 @@
+digraph "CFG for 'dict_maxsize' function" {
+	label="CFG for 'dict_maxsize' function";
+
+	Node0x600002a8ce10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @word_dict, align 8\l  %2 = getelementptr inbounds %struct._dict, ptr %1, i32 0, i32 0\l  %3 = getelementptr inbounds %struct.hash_t, ptr %2, i32 0, i32 0\l  %4 = load i32, ptr %3, align 8\l  ret i32 %4\l}"];
+}

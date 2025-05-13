@@ -1,0 +1,19 @@
+digraph "CFG for 'lm_bg_score' function" {
+	label="CFG for 'lm_bg_score' function";
+
+	Node0x60000344a300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  %10 = load ptr, ptr @clm, align 8\l  %11 = icmp ne ptr %10, null\l  br i1 %11, label %16, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000344a300:s0 -> Node0x60000344a3a0[tooltip="2 -> 16\nProbability 62.50%" ];
+	Node0x60000344a300:s1 -> Node0x60000344a350[tooltip="2 -> 12\nProbability 37.50%" ];
+	Node0x60000344a350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %4, align 4\l  %14 = load i32, ptr %5, align 4\l  %15 = call i32 @lm3g_bg_score(i32 noundef %13, i32 noundef %14)\l  store i32 %15, ptr %3, align 4\l  br label %50\l}"];
+	Node0x60000344a350 -> Node0x60000344a4e0[tooltip="12 -> 50\nProbability 100.00%" ];
+	Node0x60000344a3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = call ptr @lm_get_current()\l  store ptr %17, ptr %9, align 8\l  %18 = load ptr, ptr @clm, align 8\l  %19 = load i32, ptr %4, align 4\l  %20 = load i32, ptr %5, align 4\l  %21 = call i32 @cache_lm_score(ptr noundef %18, i32 noundef %19, i32 noundef\l... %20, ptr noundef %8)\l  store i32 %21, ptr %6, align 4\l  %22 = load ptr, ptr %9, align 8\l  %23 = getelementptr inbounds %struct.lm_s, ptr %22, i32 0, i32 19\l  %24 = load double, ptr %23, align 8\l  %25 = load i32, ptr %6, align 4\l  %26 = sitofp i32 %25 to double\l  %27 = fmul double %26, %24\l  %28 = fptosi double %27 to i32\l  store i32 %28, ptr %6, align 4\l  %29 = load i32, ptr %4, align 4\l  %30 = load i32, ptr %5, align 4\l  %31 = call i32 @lm3g_bg_score(i32 noundef %29, i32 noundef %30)\l  store i32 %31, ptr %7, align 4\l  %32 = load i32, ptr %8, align 4\l  %33 = sitofp i32 %32 to double\l  %34 = load ptr, ptr %9, align 8\l  %35 = getelementptr inbounds %struct.lm_s, ptr %34, i32 0, i32 19\l  %36 = load double, ptr %35, align 8\l  %37 = load i32, ptr %7, align 4\l  %38 = sitofp i32 %37 to double\l  %39 = call double @llvm.fmuladd.f64(double %33, double %36, double %38)\l  %40 = fptosi double %39 to i32\l  store i32 %40, ptr %7, align 4\l  %41 = load i32, ptr %6, align 4\l  %42 = load i32, ptr %7, align 4\l  %43 = icmp sgt i32 %41, %42\l  br i1 %43, label %44, label %46\l|{<s0>T|<s1>F}}"];
+	Node0x60000344a3a0:s0 -> Node0x60000344a3f0[tooltip="16 -> 44\nProbability 50.00%" ];
+	Node0x60000344a3a0:s1 -> Node0x60000344a440[tooltip="16 -> 46\nProbability 50.00%" ];
+	Node0x60000344a3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{44:\l|  %45 = load i32, ptr %6, align 4\l  br label %48\l}"];
+	Node0x60000344a3f0 -> Node0x60000344a490[tooltip="44 -> 48\nProbability 100.00%" ];
+	Node0x60000344a440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{46:\l|  %47 = load i32, ptr %7, align 4\l  br label %48\l}"];
+	Node0x60000344a440 -> Node0x60000344a490[tooltip="46 -> 48\nProbability 100.00%" ];
+	Node0x60000344a490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{48:\l|  %49 = phi i32 [ %45, %44 ], [ %47, %46 ]\l  store i32 %49, ptr %3, align 4\l  br label %50\l}"];
+	Node0x60000344a490 -> Node0x60000344a4e0[tooltip="48 -> 50\nProbability 100.00%" ];
+	Node0x60000344a4e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{50:\l|  %51 = load i32, ptr %3, align 4\l  ret i32 %51\l}"];
+}

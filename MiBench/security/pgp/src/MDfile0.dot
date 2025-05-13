@@ -1,0 +1,12 @@
+digraph "CFG for 'MDfile0' function" {
+	label="CFG for 'MDfile0' function";
+
+	Node0x6000014f2440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca [1024 x i8], align 1\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  call void @MD5Init(ptr noundef %7)\l  br label %8\l}"];
+	Node0x6000014f2440 -> Node0x6000014f2490[tooltip="2 -> 8\nProbability 100.00%" ];
+	Node0x6000014f2490 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = getelementptr inbounds [1024 x i8], ptr %6, i64 0, i64 0\l  %10 = load ptr, ptr %4, align 8\l  %11 = call i64 @fread(ptr noundef %9, i64 noundef 1, i64 noundef 1024, ptr\l... noundef %10)\l  %12 = trunc i64 %11 to i32\l  store i32 %12, ptr %5, align 4\l  %13 = icmp ne i32 %12, 0\l  br i1 %13, label %14, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000014f2490:s0 -> Node0x6000014f24e0[tooltip="8 -> 14\nProbability 96.88%" ];
+	Node0x6000014f2490:s1 -> Node0x6000014f2530[tooltip="8 -> 18\nProbability 3.12%" ];
+	Node0x6000014f24e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds [1024 x i8], ptr %6, i64 0, i64 0\l  %17 = load i32, ptr %5, align 4\l  call void @MD5Update(ptr noundef %15, ptr noundef %16, i32 noundef %17)\l  br label %8\l}"];
+	Node0x6000014f24e0 -> Node0x6000014f2490[tooltip="14 -> 8\nProbability 100.00%" ];
+	Node0x6000014f2530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{18:\l|  ret i32 0\l}"];
+}

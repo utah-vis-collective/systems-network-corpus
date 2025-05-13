@@ -1,0 +1,5 @@
+digraph "CFG for 'cube' function" {
+	label="CFG for 'cube' function";
+
+	Node0x600003ada260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca double, align 8\l  store double %0, ptr %2, align 8\l  %3 = load double, ptr %2, align 8\l  %4 = load double, ptr %2, align 8\l  %5 = fmul double %3, %4\l  %6 = load double, ptr %2, align 8\l  %7 = fmul double %5, %6\l  ret double %7\l}"];
+}

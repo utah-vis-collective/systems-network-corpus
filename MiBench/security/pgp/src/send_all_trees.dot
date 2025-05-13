@@ -1,0 +1,14 @@
+digraph "CFG for 'send_all_trees' function" {
+	label="CFG for 'send_all_trees' function";
+
+	Node0x600001265310 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %8 = load i32, ptr %4, align 4\l  %9 = sub nsw i32 %8, 257\l  call void @send_bits(i32 noundef %9, i32 noundef 5)\l  %10 = load i32, ptr %5, align 4\l  %11 = sub nsw i32 %10, 1\l  call void @send_bits(i32 noundef %11, i32 noundef 5)\l  %12 = load i32, ptr %6, align 4\l  %13 = sub nsw i32 %12, 4\l  call void @send_bits(i32 noundef %13, i32 noundef 4)\l  store i32 0, ptr %7, align 4\l  br label %14\l}"];
+	Node0x600001265310 -> Node0x6000012653b0[tooltip="3 -> 14\nProbability 100.00%" ];
+	Node0x6000012653b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %7, align 4\l  %16 = load i32, ptr %6, align 4\l  %17 = icmp slt i32 %15, %16\l  br i1 %17, label %18, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x6000012653b0:s0 -> Node0x600001265400[tooltip="14 -> 18\nProbability 96.88%" ];
+	Node0x6000012653b0:s1 -> Node0x6000012654a0[tooltip="14 -> 31\nProbability 3.12%" ];
+	Node0x600001265400 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %7, align 4\l  %20 = sext i32 %19 to i64\l  %21 = getelementptr inbounds [19 x i8], ptr @bl_order, i64 0, i64 %20\l  %22 = load i8, ptr %21, align 1\l  %23 = zext i8 %22 to i64\l  %24 = getelementptr inbounds [39 x %struct.ct_data], ptr @bl_tree, i64 0,\l... i64 %23\l  %25 = getelementptr inbounds %struct.ct_data, ptr %24, i32 0, i32 1\l  %26 = load i16, ptr %25, align 2\l  %27 = zext i16 %26 to i32\l  call void @send_bits(i32 noundef %27, i32 noundef 3)\l  br label %28\l}"];
+	Node0x600001265400 -> Node0x600001265450[tooltip="18 -> 28\nProbability 100.00%" ];
+	Node0x600001265450 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{28:\l|  %29 = load i32, ptr %7, align 4\l  %30 = add nsw i32 %29, 1\l  store i32 %30, ptr %7, align 4\l  br label %14\l}"];
+	Node0x600001265450 -> Node0x6000012653b0[tooltip="28 -> 14\nProbability 100.00%" ];
+	Node0x6000012654a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %4, align 4\l  %33 = sub nsw i32 %32, 1\l  call void @send_tree(ptr noundef @dyn_ltree, i32 noundef %33)\l  %34 = load i32, ptr %5, align 4\l  %35 = sub nsw i32 %34, 1\l  call void @send_tree(ptr noundef @dyn_dtree, i32 noundef %35)\l  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_models' function" {
+	label="CFG for 'kb_get_models' function";
+
+	Node0x600002a8c230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @smds, align 8\l  ret ptr %1\l}"];
+}

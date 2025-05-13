@@ -1,0 +1,20 @@
+digraph "CFG for 'load_kernel_source' function" {
+	label="CFG for 'load_kernel_source' function";
+
+	Node0x600000f49f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = call ptr @\"\\01_fopen\"(ptr noundef %6, ptr noundef @.str)\l  store ptr %7, ptr %3, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = icmp eq ptr %8, null\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600000f49f90:s0 -> Node0x600000f49fe0[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600000f49f90:s1 -> Node0x600000f4a030[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x600000f49fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  call void @fatal(ptr noundef @.str.1)\l  br label %11\l}"];
+	Node0x600000f49fe0 -> Node0x600000f4a030[tooltip="10 -> 11\nProbability 100.00%" ];
+	Node0x600000f4a030 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = call i32 @fseek(ptr noundef %12, i64 noundef 0, i32 noundef 2)\l  %14 = icmp ne i32 %13, 0\l  br i1 %14, label %15, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600000f4a030:s0 -> Node0x600000f4a080[tooltip="11 -> 15\nProbability 62.50%" ];
+	Node0x600000f4a030:s1 -> Node0x600000f4a0d0[tooltip="11 -> 16\nProbability 37.50%" ];
+	Node0x600000f4a080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  call void @fatal(ptr noundef @.str.2)\l  br label %16\l}"];
+	Node0x600000f4a080 -> Node0x600000f4a0d0[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x600000f4a0d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = call i64 @ftell(ptr noundef %17)\l  store i64 %18, ptr %4, align 8\l  %19 = load i64, ptr %4, align 8\l  %20 = add i64 %19, 1\l  %21 = call ptr @malloc(i64 noundef %20) #5\l  store ptr %21, ptr %5, align 8\l  %22 = load ptr, ptr %3, align 8\l  %23 = call i32 @fseek(ptr noundef %22, i64 noundef 0, i32 noundef 0)\l  %24 = load ptr, ptr %5, align 8\l  %25 = load i64, ptr %4, align 8\l  %26 = load ptr, ptr %3, align 8\l  %27 = call i64 @fread(ptr noundef %24, i64 noundef 1, i64 noundef %25, ptr\l... noundef %26)\l  %28 = load i64, ptr %4, align 8\l  %29 = icmp ne i64 %27, %28\l  br i1 %29, label %30, label %31\l|{<s0>T|<s1>F}}"];
+	Node0x600000f4a0d0:s0 -> Node0x600000f4a120[tooltip="16 -> 30\nProbability 50.00%" ];
+	Node0x600000f4a0d0:s1 -> Node0x600000f4a170[tooltip="16 -> 31\nProbability 50.00%" ];
+	Node0x600000f4a120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{30:\l|  call void @fatal(ptr noundef @.str.2)\l  br label %31\l}"];
+	Node0x600000f4a120 -> Node0x600000f4a170[tooltip="30 -> 31\nProbability 100.00%" ];
+	Node0x600000f4a170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load ptr, ptr %5, align 8\l  %33 = load i64, ptr %4, align 8\l  %34 = getelementptr inbounds i8, ptr %32, i64 %33\l  store i8 0, ptr %34, align 1\l  %35 = load ptr, ptr %5, align 8\l  ret ptr %35\l}"];
+}

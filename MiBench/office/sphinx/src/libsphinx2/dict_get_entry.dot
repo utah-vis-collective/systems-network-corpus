@@ -1,0 +1,12 @@
+digraph "CFG for 'dict_get_entry' function" {
+	label="CFG for 'dict_get_entry' function";
+
+	Node0x60000244fac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %5 = load i32, ptr %4, align 4\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct._dict, ptr %6, i32 0, i32 1\l  %8 = load i32, ptr %7, align 8\l  %9 = icmp slt i32 %5, %8\l  br i1 %9, label %10, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x60000244fac0:s0 -> Node0x60000244fb10[tooltip="2 -> 10\nProbability 50.00%" ];
+	Node0x60000244fac0:s1 -> Node0x60000244fb60[tooltip="2 -> 18\nProbability 50.00%" ];
+	Node0x60000244fb10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds %struct._dict, ptr %11, i32 0, i32 2\l  %13 = load ptr, ptr %12, align 8\l  %14 = load i32, ptr %4, align 4\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds ptr, ptr %13, i64 %15\l  %17 = load ptr, ptr %16, align 8\l  br label %19\l}"];
+	Node0x60000244fb10 -> Node0x60000244fbb0[tooltip="10 -> 19\nProbability 100.00%" ];
+	Node0x60000244fb60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{18:\l|  br label %19\l}"];
+	Node0x60000244fb60 -> Node0x60000244fbb0[tooltip="18 -> 19\nProbability 100.00%" ];
+	Node0x60000244fbb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = phi ptr [ %17, %10 ], [ null, %18 ]\l  ret ptr %20\l}"];
+}

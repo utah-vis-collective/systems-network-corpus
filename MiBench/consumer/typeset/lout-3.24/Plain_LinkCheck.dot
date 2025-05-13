@@ -1,0 +1,5 @@
+digraph "CFG for 'Plain_LinkCheck' function" {
+	label="CFG for 'Plain_LinkCheck' function";
+
+	Node0x6000012942d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret void\l}"];
+}

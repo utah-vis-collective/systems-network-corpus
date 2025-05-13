@@ -1,0 +1,10 @@
+digraph "CFG for 'bjc_v_skip' function" {
+	label="CFG for 'bjc_v_skip' function";
+
+	Node0x600001510550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store i32 %0, ptr %4, align 4\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %7 = load i32, ptr %4, align 4\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600001510550:s0 -> Node0x600001510690[tooltip="3 -> 9\nProbability 62.50%" ];
+	Node0x600001510550:s1 -> Node0x6000015106e0[tooltip="3 -> 24\nProbability 37.50%" ];
+	Node0x600001510690 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr %6, align 8\l  %11 = call i32 @\"\\01_fputs\"(ptr noundef @.str.101, ptr noundef %10)\l  %12 = load ptr, ptr %6, align 8\l  %13 = call i32 @putc(i32 noundef 2, ptr noundef %12)\l  %14 = load ptr, ptr %6, align 8\l  %15 = call i32 @putc(i32 noundef 0, ptr noundef %14)\l  %16 = load i32, ptr %4, align 4\l  %17 = sdiv i32 %16, 256\l  %18 = load ptr, ptr %6, align 8\l  %19 = call i32 @putc(i32 noundef %17, ptr noundef %18)\l  %20 = load i32, ptr %4, align 4\l  %21 = srem i32 %20, 256\l  %22 = load ptr, ptr %6, align 8\l  %23 = call i32 @putc(i32 noundef %21, ptr noundef %22)\l  br label %24\l}"];
+	Node0x600001510690 -> Node0x6000015106e0[tooltip="9 -> 24\nProbability 100.00%" ];
+	Node0x6000015106e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  ret i32 0\l}"];
+}

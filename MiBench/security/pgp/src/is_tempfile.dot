@@ -1,0 +1,19 @@
+digraph "CFG for 'is_tempfile' function" {
+	label="CFG for 'is_tempfile' function";
+
+	Node0x6000019772f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call ptr @strrchr(ptr noundef %4, i32 noundef 46) #8\l  store ptr %5, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = icmp ne ptr %6, null\l  br i1 %7, label %8, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x6000019772f0:s0 -> Node0x600001977340[tooltip="1 -> 8\nProbability 62.50%" ];
+	Node0x6000019772f0:s1 -> Node0x600001977480[tooltip="1 -> 34\nProbability 37.50%" ];
+	Node0x600001977340 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = getelementptr inbounds i8, ptr %9, i64 1\l  %11 = load i8, ptr %10, align 1\l  %12 = sext i8 %11 to i32\l  %13 = icmp eq i32 %12, 36\l  br i1 %13, label %14, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600001977340:s0 -> Node0x600001977390[tooltip="8 -> 14\nProbability 50.00%" ];
+	Node0x600001977340:s1 -> Node0x600001977480[tooltip="8 -> 34\nProbability 50.00%" ];
+	Node0x600001977390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds i8, ptr %15, i64 2\l  %17 = load i8, ptr %16, align 1\l  %18 = sext i8 %17 to i32\l  %19 = call i32 @isdigit(i32 noundef %18) #9\l  %20 = icmp ne i32 %19, 0\l  br i1 %20, label %21, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x600001977390:s0 -> Node0x6000019773e0[tooltip="14 -> 21\nProbability 62.50%" ];
+	Node0x600001977390:s1 -> Node0x600001977480[tooltip="14 -> 34\nProbability 37.50%" ];
+	Node0x6000019773e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %3, align 8\l  %23 = getelementptr inbounds i8, ptr %22, i64 3\l  %24 = load i8, ptr %23, align 1\l  %25 = sext i8 %24 to i32\l  %26 = call i32 @isdigit(i32 noundef %25) #9\l  %27 = icmp ne i32 %26, 0\l  br i1 %27, label %28, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x6000019773e0:s0 -> Node0x600001977430[tooltip="21 -> 28\nProbability 62.50%" ];
+	Node0x6000019773e0:s1 -> Node0x600001977480[tooltip="21 -> 34\nProbability 37.50%" ];
+	Node0x600001977430 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %3, align 8\l  %30 = getelementptr inbounds i8, ptr %29, i64 4\l  %31 = load i8, ptr %30, align 1\l  %32 = sext i8 %31 to i32\l  %33 = icmp eq i32 %32, 0\l  br label %34\l}"];
+	Node0x600001977430 -> Node0x600001977480[tooltip="28 -> 34\nProbability 100.00%" ];
+	Node0x600001977480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = phi i1 [ false, %21 ], [ false, %14 ], [ false, %8 ], [ false, %1 ],\l... [ %33, %28 ]\l  %36 = zext i1 %35 to i32\l  %37 = trunc i32 %36 to i8\l  ret i8 %37\l}"];
+}

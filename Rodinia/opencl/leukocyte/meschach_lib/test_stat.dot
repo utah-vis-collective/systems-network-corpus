@@ -1,0 +1,15 @@
+digraph "CFG for 'test_stat' function" {
+	label="CFG for 'test_stat' function";
+
+	Node0x6000004d30c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load ptr, ptr @test_stat.work, align 8\l  %4 = icmp ne ptr %3, null\l  br i1 %4, label %16, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x6000004d30c0:s0 -> Node0x6000004d3160[tooltip="1 -> 16\nProbability 62.50%" ];
+	Node0x6000004d30c0:s1 -> Node0x6000004d3110[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x6000004d3110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  %6 = call ptr @m3d_get(i32 noundef 10, i32 noundef 10, i32 noundef 10)\l  store ptr %6, ptr @test_stat.work, align 8\l  %7 = call i32 @mem_stat_reg_list(ptr noundef @test_stat.work, i32 noundef 0,\l... i32 noundef 3, ptr noundef inttoptr (i64 48 to ptr), i32 noundef ptrtoint\l... (ptr @m3d_free to i32))\l  %8 = load ptr, ptr @test_stat.work, align 8\l  %9 = getelementptr inbounds %struct.MAT3D, ptr %8, i32 0, i32 6\l  %10 = load ptr, ptr %9, align 8\l  %11 = getelementptr inbounds ptr, ptr %10, i64 9\l  %12 = load ptr, ptr %11, align 8\l  %13 = getelementptr inbounds ptr, ptr %12, i64 9\l  %14 = load ptr, ptr %13, align 8\l  %15 = getelementptr inbounds double, ptr %14, i64 9\l  store double -3.140000e+00, ptr %15, align 8\l  br label %16\l}"];
+	Node0x6000004d3110 -> Node0x6000004d3160[tooltip="5 -> 16\nProbability 100.00%" ];
+	Node0x6000004d3160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i32, ptr %2, align 4\l  %18 = icmp eq i32 %17, 9\l  br i1 %18, label %19, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x6000004d3160:s0 -> Node0x6000004d31b0[tooltip="16 -> 19\nProbability 50.00%" ];
+	Node0x6000004d3160:s1 -> Node0x6000004d3200[tooltip="16 -> 30\nProbability 50.00%" ];
+	Node0x6000004d31b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr @test_stat.work, align 8\l  %21 = getelementptr inbounds %struct.MAT3D, ptr %20, i32 0, i32 6\l  %22 = load ptr, ptr %21, align 8\l  %23 = getelementptr inbounds ptr, ptr %22, i64 9\l  %24 = load ptr, ptr %23, align 8\l  %25 = getelementptr inbounds ptr, ptr %24, i64 9\l  %26 = load ptr, ptr %25, align 8\l  %27 = getelementptr inbounds double, ptr %26, i64 9\l  %28 = load double, ptr %27, align 8\l  %29 = call i32 (ptr, ...) @printf(ptr noundef @.str.3, double noundef %28)\l  br label %30\l}"];
+	Node0x6000004d31b0 -> Node0x6000004d3200[tooltip="19 -> 30\nProbability 100.00%" ];
+	Node0x6000004d3200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{30:\l|  ret void\l}"];
+}

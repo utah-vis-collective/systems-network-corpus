@@ -1,0 +1,15 @@
+digraph "CFG for 'ref_param_read_signal_error' function" {
+	label="CFG for 'ref_param_read_signal_error' function";
+
+	Node0x6000017aad50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca %struct.iparam_loc_s, align 8\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store i32 %2, ptr %7, align 4\l  %9 = load ptr, ptr %5, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = call i32 @ref_param_read(ptr noundef %9, ptr noundef %10, ptr noundef\l... %8, i32 noundef -1)\l  %12 = load i32, ptr %7, align 4\l  %13 = getelementptr inbounds %struct.iparam_loc_s, ptr %8, i32 0, i32 1\l  %14 = load ptr, ptr %13, align 8\l  store i32 %12, ptr %14, align 4\l  %15 = load ptr, ptr %5, align 8\l  %16 = load ptr, ptr %6, align 8\l  %17 = call i32 @ref_param_read_get_policy(ptr noundef %15, ptr noundef %16)\l  switch i32 %17, label %20 [\l    i32 1, label %18\l    i32 2, label %19\l  ]\l|{<s0>def|<s1>1|<s2>2}}"];
+	Node0x6000017aad50:s0 -> Node0x6000017aae40[tooltip="3 -> 20\nProbability 33.33%" ];
+	Node0x6000017aad50:s1 -> Node0x6000017aada0[tooltip="3 -> 18\nProbability 33.33%" ];
+	Node0x6000017aad50:s2 -> Node0x6000017aadf0[tooltip="3 -> 19\nProbability 33.33%" ];
+	Node0x6000017aada0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  store i32 0, ptr %4, align 4\l  br label %22\l}"];
+	Node0x6000017aada0 -> Node0x6000017aae90[tooltip="18 -> 22\nProbability 100.00%" ];
+	Node0x6000017aadf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  store i32 -26, ptr %4, align 4\l  br label %22\l}"];
+	Node0x6000017aadf0 -> Node0x6000017aae90[tooltip="19 -> 22\nProbability 100.00%" ];
+	Node0x6000017aae40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %7, align 4\l  store i32 %21, ptr %4, align 4\l  br label %22\l}"];
+	Node0x6000017aae40 -> Node0x6000017aae90[tooltip="20 -> 22\nProbability 100.00%" ];
+	Node0x6000017aae90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %4, align 4\l  ret i32 %23\l}"];
+}

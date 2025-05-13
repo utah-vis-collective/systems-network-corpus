@@ -1,0 +1,17 @@
+digraph "CFG for 'uttproc_set_lm' function" {
+	label="CFG for 'uttproc_set_lm' function";
+
+	Node0x6000008a1770 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  call void @warn_notidle(ptr noundef @.str.40)\l  %4 = load ptr, ptr %3, align 8\l  %5 = icmp eq ptr %4, null\l  br i1 %5, label %6, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a1770:s0 -> Node0x6000008a17c0[tooltip="1 -> 6\nProbability 37.50%" ];
+	Node0x6000008a1770:s1 -> Node0x6000008a1810[tooltip="1 -> 7\nProbability 62.50%" ];
+	Node0x6000008a17c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{6:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 1437, ptr noundef\l... @.str.3)\l  call void (ptr, ...) @_E__die_error(ptr noundef @.str.41)\l  br label %7\l}"];
+	Node0x6000008a17c0 -> Node0x6000008a1810[tooltip="6 -> 7\nProbability 100.00%" ];
+	Node0x6000008a1810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %3, align 8\l  %9 = call i32 @lm_set_current(ptr noundef %8)\l  %10 = icmp slt i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a1810:s0 -> Node0x6000008a1860[tooltip="7 -> 11\nProbability 37.50%" ];
+	Node0x6000008a1810:s1 -> Node0x6000008a18b0[tooltip="7 -> 12\nProbability 62.50%" ];
+	Node0x6000008a1860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  store i32 -1, ptr %2, align 4\l  br label %14\l}"];
+	Node0x6000008a1860 -> Node0x6000008a1900[tooltip="11 -> 14\nProbability 100.00%" ];
+	Node0x6000008a18b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{12:\l|  call void @search_set_current_lm()\l  call void @_E__pr_info_header(ptr noundef @.str, i64 noundef 1443, ptr\l... noundef @.str.7)\l  %13 = load ptr, ptr %3, align 8\l  call void (ptr, ...) @_E__pr_info(ptr noundef @.str.42, ptr noundef %13)\l  store i32 0, ptr %2, align 4\l  br label %14\l}"];
+	Node0x6000008a18b0 -> Node0x6000008a1900[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x6000008a1900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %2, align 4\l  ret i32 %15\l}"];
+}

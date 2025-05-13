@@ -1,0 +1,27 @@
+digraph "CFG for 'zclosefile' function" {
+	label="CFG for 'zclosefile' function";
+
+	Node0x600001a1a300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = getelementptr inbounds %struct.ref_s, ptr %6, i32 0, i32 0\l  %8 = getelementptr inbounds %struct.tas_s, ptr %7, i32 0, i32 0\l  %9 = getelementptr inbounds i8, ptr %8, i64 1\l  %10 = load i8, ptr %9, align 1\l  %11 = zext i8 %10 to i32\l  %12 = icmp eq i32 %11, 3\l  br i1 %12, label %16, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600001a1a300:s0 -> Node0x600001a1a3a0[tooltip="1 -> 16\nProbability 50.00%" ];
+	Node0x600001a1a300:s1 -> Node0x600001a1a350[tooltip="1 -> 13\nProbability 50.00%" ];
+	Node0x600001a1a350 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %3, align 8\l  %15 = call i32 @check_type_failed(ptr noundef %14)\l  store i32 %15, ptr %2, align 4\l  br label %59\l}"];
+	Node0x600001a1a350 -> Node0x600001a1a5d0[tooltip="13 -> 59\nProbability 100.00%" ];
+	Node0x600001a1a3a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds %struct.ref_s, ptr %17, i32 0, i32 1\l  %19 = load ptr, ptr %18, align 8\l  store ptr %19, ptr %4, align 8\l  %20 = load ptr, ptr %4, align 8\l  %21 = getelementptr inbounds %struct.stream_s, ptr %20, i32 0, i32 17\l  %22 = load i16, ptr %21, align 8\l  %23 = zext i16 %22 to i32\l  %24 = load ptr, ptr %4, align 8\l  %25 = getelementptr inbounds %struct.stream_s, ptr %24, i32 0, i32 18\l  %26 = load i16, ptr %25, align 2\l  %27 = zext i16 %26 to i32\l  %28 = or i32 %23, %27\l  %29 = load ptr, ptr %3, align 8\l  %30 = getelementptr inbounds %struct.ref_s, ptr %29, i32 0, i32 0\l  %31 = getelementptr inbounds %struct.tas_s, ptr %30, i32 0, i32 1\l  %32 = load i16, ptr %31, align 2\l  %33 = zext i16 %32 to i32\l  %34 = icmp eq i32 %28, %33\l  br i1 %34, label %35, label %56\l|{<s0>T|<s1>F}}"];
+	Node0x600001a1a3a0:s0 -> Node0x600001a1a3f0[tooltip="16 -> 35\nProbability 50.00%" ];
+	Node0x600001a1a3a0:s1 -> Node0x600001a1a580[tooltip="16 -> 56\nProbability 50.00%" ];
+	Node0x600001a1a3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %4, align 8\l  %37 = call i32 @sclose(ptr noundef %36)\l  store i32 %37, ptr %5, align 4\l  %38 = load i32, ptr %5, align 4\l  %39 = icmp ne i32 %38, 0\l  br i1 %39, label %40, label %55\l|{<s0>T|<s1>F}}"];
+	Node0x600001a1a3f0:s0 -> Node0x600001a1a440[tooltip="35 -> 40\nProbability 62.50%" ];
+	Node0x600001a1a3f0:s1 -> Node0x600001a1a530[tooltip="35 -> 55\nProbability 37.50%" ];
+	Node0x600001a1a440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{40:\l|  %41 = load ptr, ptr %4, align 8\l  %42 = getelementptr inbounds %struct.stream_s, ptr %41, i32 0, i32 9\l  %43 = load i8, ptr %42, align 1\l  %44 = zext i8 %43 to i32\l  %45 = and i32 %44, 2\l  %46 = icmp ne i32 %45, 0\l  br i1 %46, label %47, label %51\l|{<s0>T|<s1>F}}"];
+	Node0x600001a1a440:s0 -> Node0x600001a1a490[tooltip="40 -> 47\nProbability 50.00%" ];
+	Node0x600001a1a440:s1 -> Node0x600001a1a4e0[tooltip="40 -> 51\nProbability 50.00%" ];
+	Node0x600001a1a490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{47:\l|  %48 = load i32, ptr %5, align 4\l  %49 = load ptr, ptr %3, align 8\l  %50 = call i32 @handle_write_status(i32 noundef %48, ptr noundef %49, ptr\l... noundef null, ptr noundef @zclosefile)\l  store i32 %50, ptr %2, align 4\l  br label %59\l}"];
+	Node0x600001a1a490 -> Node0x600001a1a5d0[tooltip="47 -> 59\nProbability 100.00%" ];
+	Node0x600001a1a4e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d0473d70" fontname="Courier",label="{51:\l|  %52 = load i32, ptr %5, align 4\l  %53 = load ptr, ptr %3, align 8\l  %54 = call i32 @handle_read_status(i32 noundef %52, ptr noundef %53, ptr\l... noundef null, ptr noundef @zclosefile)\l  store i32 %54, ptr %2, align 4\l  br label %59\l}"];
+	Node0x600001a1a4e0 -> Node0x600001a1a5d0[tooltip="51 -> 59\nProbability 100.00%" ];
+	Node0x600001a1a530 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{55:\l|  br label %56\l}"];
+	Node0x600001a1a530 -> Node0x600001a1a580[tooltip="55 -> 56\nProbability 100.00%" ];
+	Node0x600001a1a580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{56:\l|  %57 = load ptr, ptr @o_stack, align 8\l  %58 = getelementptr inbounds %struct.ref_s, ptr %57, i64 -1\l  store ptr %58, ptr @o_stack, align 8\l  store i32 0, ptr %2, align 4\l  br label %59\l}"];
+	Node0x600001a1a580 -> Node0x600001a1a5d0[tooltip="56 -> 59\nProbability 100.00%" ];
+	Node0x600001a1a5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{59:\l|  %60 = load i32, ptr %2, align 4\l  ret i32 %60\l}"];
+}

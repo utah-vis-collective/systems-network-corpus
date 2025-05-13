@@ -1,0 +1,10 @@
+digraph "CFG for 'III_FlushBitstream' function" {
+	label="CFG for 'III_FlushBitstream' function";
+
+	Node0x60000334eda0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @PartHoldersInitialized, align 4\l  %2 = icmp ne i32 %1, 0\l  br i1 %2, label %3, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x60000334eda0:s0 -> Node0x60000334edf0[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x60000334eda0:s1 -> Node0x60000334ee40[tooltip="0 -> 6\nProbability 37.50%" ];
+	Node0x60000334edf0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  %4 = load ptr, ptr @frameData, align 8\l  %5 = load ptr, ptr @frameResults, align 8\l  call void @BF_FlushBitstream(ptr noundef %4, ptr noundef %5)\l  br label %6\l}"];
+	Node0x60000334edf0 -> Node0x60000334ee40[tooltip="3 -> 6\nProbability 100.00%" ];
+	Node0x60000334ee40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  ret void\l}"];
+}

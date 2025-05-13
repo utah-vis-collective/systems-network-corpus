@@ -1,0 +1,19 @@
+digraph "CFG for 'mean_norm_acc_sub' function" {
+	label="CFG for 'mean_norm_acc_sub' function";
+
+	Node0x60000332e2b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  store i32 0, ptr %3, align 4\l  br label %4\l}"];
+	Node0x60000332e2b0 -> Node0x60000332e300[tooltip="1 -> 4\nProbability 100.00%" ];
+	Node0x60000332e300 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = load i32, ptr %3, align 4\l  %6 = load i32, ptr @veclen, align 4\l  %7 = icmp slt i32 %5, %6\l  br i1 %7, label %8, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x60000332e300:s0 -> Node0x60000332e350[tooltip="4 -> 8\nProbability 96.88%" ];
+	Node0x60000332e300:s1 -> Node0x60000332e3f0[tooltip="4 -> 34\nProbability 3.12%" ];
+	Node0x60000332e350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %2, align 8\l  %10 = load i32, ptr %3, align 4\l  %11 = sext i32 %10 to i64\l  %12 = getelementptr inbounds float, ptr %9, i64 %11\l  %13 = load float, ptr %12, align 4\l  %14 = load ptr, ptr @sum, align 8\l  %15 = load i32, ptr %3, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds float, ptr %14, i64 %16\l  %18 = load float, ptr %17, align 4\l  %19 = fadd float %18, %13\l  store float %19, ptr %17, align 4\l  %20 = load ptr, ptr @cur_mean, align 8\l  %21 = load i32, ptr %3, align 4\l  %22 = sext i32 %21 to i64\l  %23 = getelementptr inbounds float, ptr %20, i64 %22\l  %24 = load float, ptr %23, align 4\l  %25 = load ptr, ptr %2, align 8\l  %26 = load i32, ptr %3, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds float, ptr %25, i64 %27\l  %29 = load float, ptr %28, align 4\l  %30 = fsub float %29, %24\l  store float %30, ptr %28, align 4\l  br label %31\l}"];
+	Node0x60000332e350 -> Node0x60000332e3a0[tooltip="8 -> 31\nProbability 100.00%" ];
+	Node0x60000332e3a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{31:\l|  %32 = load i32, ptr %3, align 4\l  %33 = add nsw i32 %32, 1\l  store i32 %33, ptr %3, align 4\l  br label %4\l}"];
+	Node0x60000332e3a0 -> Node0x60000332e300[tooltip="31 -> 4\nProbability 100.00%" ];
+	Node0x60000332e3f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{34:\l|  %35 = load i32, ptr @nframe, align 4\l  %36 = add nsw i32 %35, 1\l  store i32 %36, ptr @nframe, align 4\l  %37 = load i32, ptr @nframe, align 4\l  %38 = icmp sgt i32 %37, 800\l  br i1 %38, label %39, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x60000332e3f0:s0 -> Node0x60000332e440[tooltip="34 -> 39\nProbability 50.00%" ];
+	Node0x60000332e3f0:s1 -> Node0x60000332e490[tooltip="34 -> 40\nProbability 50.00%" ];
+	Node0x60000332e440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{39:\l|  call void @mean_norm_shiftwin()\l  br label %40\l}"];
+	Node0x60000332e440 -> Node0x60000332e490[tooltip="39 -> 40\nProbability 100.00%" ];
+	Node0x60000332e490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{40:\l|  ret void\l}"];
+}

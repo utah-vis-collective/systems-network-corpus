@@ -1,0 +1,5 @@
+digraph "CFG for 'chupcase' function" {
+	label="CFG for 'chupcase' function";
+
+	Node0x6000000d04b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call ptr @strtosichar(ptr noundef %4, i32 noundef 1)\l  store ptr %5, ptr %3, align 8\l  %6 = load ptr, ptr %3, align 8\l  call void @upcase(ptr noundef %6)\l  %7 = load ptr, ptr %2, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = load ptr, ptr %2, align 8\l  %10 = call i64 @strlen(ptr noundef %9) #5\l  %11 = add i64 %10, 1\l  %12 = trunc i64 %11 to i32\l  %13 = call i32 @ichartostr(ptr noundef %7, ptr noundef %8, i32 noundef %12,\l... i32 noundef 1)\l  ret void\l}"];
+}

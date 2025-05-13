@@ -1,0 +1,19 @@
+digraph "CFG for 'UnSwitchScope' function" {
+	label="CFG for 'UnSwitchScope' function";
+
+	Node0x60000037e7b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = icmp eq ptr %3, null\l  br i1 %4, label %5, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x60000037e7b0:s0 -> Node0x60000037eb70[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x60000037e7b0:s1 -> Node0x60000037ebc0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x60000037eb70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{5:\l|  call void @PopScope()\l  br label %16\l}"];
+	Node0x60000037eb70 -> Node0x60000037ed00[tooltip="5 -> 16\nProbability 100.00%" ];
+	Node0x60000037ebc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{6:\l|  br label %7\l}"];
+	Node0x60000037ebc0 -> Node0x60000037ec10[tooltip="6 -> 7\nProbability 100.00%" ];
+	Node0x60000037ec10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %2, align 8\l  %9 = load ptr, ptr @StartSym, align 8\l  %10 = icmp ne ptr %8, %9\l  br i1 %10, label %11, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000037ec10:s0 -> Node0x60000037ec60[tooltip="7 -> 11\nProbability 96.88%" ];
+	Node0x60000037ec10:s1 -> Node0x60000037ecb0[tooltip="7 -> 15\nProbability 3.12%" ];
+	Node0x60000037ec60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  call void @PopScope()\l  %12 = load ptr, ptr %2, align 8\l  %13 = getelementptr inbounds %struct.symbol_type, ptr %12, i32 0, i32 3\l  %14 = load ptr, ptr %13, align 8\l  store ptr %14, ptr %2, align 8\l  br label %7\l}"];
+	Node0x60000037ec60 -> Node0x60000037ec10[tooltip="11 -> 7\nProbability 100.00%" ];
+	Node0x60000037ecb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{15:\l|  br label %16\l}"];
+	Node0x60000037ecb0 -> Node0x60000037ed00[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x60000037ed00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{16:\l|  ret void\l}"];
+}

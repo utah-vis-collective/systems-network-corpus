@@ -1,0 +1,5 @@
+digraph "CFG for 'rrgb_map_rgb_color' function" {
+	label="CFG for 'rrgb_map_rgb_color' function";
+
+	Node0x6000013745a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca ptr, align 8\l  %6 = alloca i16, align 2\l  %7 = alloca i16, align 2\l  %8 = alloca i16, align 2\l  store ptr %0, ptr %5, align 8\l  store i16 %1, ptr %6, align 2\l  store i16 %2, ptr %7, align 2\l  store i16 %3, ptr %8, align 2\l  %9 = load i16, ptr %8, align 2\l  %10 = zext i16 %9 to i32\l  %11 = ashr i32 %10, 8\l  %12 = load i16, ptr %7, align 2\l  %13 = zext i16 %12 to i32\l  %14 = ashr i32 %13, 8\l  %15 = shl i32 %14, 8\l  %16 = add i32 %11, %15\l  %17 = zext i32 %16 to i64\l  %18 = load i16, ptr %6, align 2\l  %19 = zext i16 %18 to i32\l  %20 = ashr i32 %19, 8\l  %21 = sext i32 %20 to i64\l  %22 = shl i64 %21, 16\l  %23 = add i64 %17, %22\l  ret i64 %23\l}"];
+}

@@ -1,0 +1,10 @@
+digraph "CFG for 's_process_write_buf' function" {
+	label="CFG for 's_process_write_buf' function";
+
+	Node0x60000320f160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load ptr, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = getelementptr inbounds %struct.stream_s, ptr %7, i32 0, i32 3\l  %9 = load i32, ptr %4, align 4\l  %10 = call i32 @swritebuf(ptr noundef %6, ptr noundef %8, i32 noundef %9)\l  store i32 %10, ptr %5, align 4\l  %11 = load ptr, ptr %3, align 8\l  call void @stream_compact(ptr noundef %11, i32 noundef 0)\l  %12 = load i32, ptr %5, align 4\l  %13 = icmp sge i32 %12, 0\l  br i1 %13, label %14, label %15\l|{<s0>T|<s1>F}}"];
+	Node0x60000320f160:s0 -> Node0x60000320f1b0[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x60000320f160:s1 -> Node0x60000320f200[tooltip="2 -> 15\nProbability 50.00%" ];
+	Node0x60000320f1b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  store i32 0, ptr %5, align 4\l  br label %15\l}"];
+	Node0x60000320f1b0 -> Node0x60000320f200[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x60000320f200 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %5, align 4\l  %17 = trunc i32 %16 to i16\l  %18 = load ptr, ptr %3, align 8\l  %19 = getelementptr inbounds %struct.stream_s, ptr %18, i32 0, i32 7\l  store i16 %17, ptr %19, align 8\l  %20 = load i32, ptr %5, align 4\l  ret i32 %20\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'version_error' function" {
+	label="CFG for 'version_error' function";
+
+	Node0x6000002bbca0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %4, align 4\l  %7 = load i32, ptr %5, align 4\l  %8 = icmp ne i32 %6, %7\l  br i1 %8, label %9, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x6000002bbca0:s0 -> Node0x6000002bbcf0[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x6000002bbca0:s1 -> Node0x6000002bbd40[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x6000002bbcf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @pgpout, align 8\l  %11 = call ptr @LANG(ptr noundef @.str.3)\l  %12 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %10, ptr noundef %11) #8\l  store i32 1, ptr %3, align 4\l  br label %14\l}"];
+	Node0x6000002bbcf0 -> Node0x6000002bbd90[tooltip="9 -> 14\nProbability 100.00%" ];
+	Node0x6000002bbd40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  store i32 0, ptr %3, align 4\l  br label %14\l}"];
+	Node0x6000002bbd40 -> Node0x6000002bbd90[tooltip="13 -> 14\nProbability 100.00%" ];
+	Node0x6000002bbd90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %3, align 4\l  ret i32 %15\l}"];
+}

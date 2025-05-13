@@ -1,0 +1,5 @@
+digraph "CFG for 'kb_get_no_lm_flag' function" {
+	label="CFG for 'kb_get_no_lm_flag' function";
+
+	Node0x600002a8c9b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load i32, ptr @NoLangModel, align 4\l  ret i32 %1\l}"];
+}

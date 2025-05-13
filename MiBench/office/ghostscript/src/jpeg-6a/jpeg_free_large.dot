@@ -1,0 +1,5 @@
+digraph "CFG for 'jpeg_free_large' function" {
+	label="CFG for 'jpeg_free_large' function";
+
+	Node0x600000536080 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %7 = load ptr, ptr %5, align 8\l  call void @free(ptr noundef %7)\l  ret void\l}"];
+}

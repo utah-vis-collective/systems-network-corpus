@@ -1,0 +1,5 @@
+digraph "CFG for 'Ascii85Init' function" {
+	label="CFG for 'Ascii85Init' function";
+
+	Node0x6000014251d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  store i32 72, ptr @ascii85breaklen, align 4\l  store i32 0, ptr @ascii85count, align 4\l  ret void\l}"];
+}

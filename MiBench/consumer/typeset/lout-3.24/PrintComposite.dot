@@ -1,0 +1,12 @@
+digraph "CFG for 'PrintComposite' function" {
+	label="CFG for 'PrintComposite' function";
+
+	Node0x60000218b200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  br label %7\l}"];
+	Node0x60000218b200 -> Node0x60000218b520[tooltip="3 -> 7\nProbability 100.00%" ];
+	Node0x60000218b520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load ptr, ptr %4, align 8\l  %9 = getelementptr inbounds %struct.composite_rec, ptr %8, i32 0, i32 0\l  %10 = load i8, ptr %9, align 2\l  %11 = zext i8 %10 to i32\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %34\l|{<s0>T|<s1>F}}"];
+	Node0x60000218b520:s0 -> Node0x60000218b570[tooltip="7 -> 13\nProbability 96.88%" ];
+	Node0x60000218b520:s1 -> Node0x60000218b5c0[tooltip="7 -> 34\nProbability 3.12%" ];
+	Node0x60000218b570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %6, align 8\l  %15 = load ptr, ptr %4, align 8\l  %16 = getelementptr inbounds %struct.composite_rec, ptr %15, i32 0, i32 1\l  %17 = load i16, ptr %16, align 2\l  %18 = sext i16 %17 to i32\l  %19 = load ptr, ptr %4, align 8\l  %20 = getelementptr inbounds %struct.composite_rec, ptr %19, i32 0, i32 2\l  %21 = load i16, ptr %20, align 2\l  %22 = sext i16 %21 to i32\l  %23 = load ptr, ptr %4, align 8\l  %24 = getelementptr inbounds %struct.composite_rec, ptr %23, i32 0, i32 0\l  %25 = load i8, ptr %24, align 2\l  %26 = zext i8 %25 to i32\l  %27 = load i32, ptr %5, align 4\l  %28 = icmp ne i32 %27, 0\l  %29 = zext i1 %28 to i64\l  %30 = select i1 %28, ptr @.str.181, ptr @.str.182\l  %31 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %14, ptr noundef\l... @.str.180, i32 noundef %18, i32 noundef %22, i32 noundef %26, ptr noundef\l... %30) #5\l  %32 = load ptr, ptr %4, align 8\l  %33 = getelementptr inbounds %struct.composite_rec, ptr %32, i32 1\l  store ptr %33, ptr %4, align 8\l  br label %7\l}"];
+	Node0x60000218b570 -> Node0x60000218b520[tooltip="13 -> 7\nProbability 100.00%" ];
+	Node0x60000218b5c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{34:\l|  ret void\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'zgeneric_init' function" {
+	label="CFG for 'zgeneric_init' function";
+
+	Node0x6000037f1680 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  store i32 0, ptr %1, align 4\l  br label %2\l}"];
+	Node0x6000037f1680 -> Node0x6000037f19a0[tooltip="0 -> 2\nProbability 100.00%" ];
+	Node0x6000037f19a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = load i32, ptr %1, align 4\l  %4 = icmp slt i32 %3, 21\l  br i1 %4, label %5, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000037f19a0:s0 -> Node0x6000037f19f0[tooltip="2 -> 5\nProbability 96.88%" ];
+	Node0x6000037f19a0:s1 -> Node0x6000037f1a90[tooltip="2 -> 12\nProbability 3.12%" ];
+	Node0x6000037f19f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %1, align 4\l  %7 = sext i32 %6 to i64\l  %8 = getelementptr inbounds [21 x ptr], ptr @zcopy_procs, i64 0, i64 %7\l  store ptr @zcopy_invalid, ptr %8, align 8\l  br label %9\l}"];
+	Node0x6000037f19f0 -> Node0x6000037f1a40[tooltip="5 -> 9\nProbability 100.00%" ];
+	Node0x6000037f1a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %1, align 4\l  %11 = add nsw i32 %10, 1\l  store i32 %11, ptr %1, align 4\l  br label %2\l}"];
+	Node0x6000037f1a40 -> Node0x6000037f19a0[tooltip="9 -> 2\nProbability 100.00%" ];
+	Node0x6000037f1a90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{12:\l|  store ptr @zcopy_interval, ptr getelementptr inbounds ([21 x ptr], ptr\l... @zcopy_procs, i64 0, i64 18), align 8\l  store ptr @zcopy_interval, ptr getelementptr inbounds ([21 x ptr], ptr\l... @zcopy_procs, i64 0, i64 4), align 8\l  store ptr @zcopy_dict, ptr getelementptr inbounds ([21 x ptr], ptr\l... @zcopy_procs, i64 0, i64 2), align 8\l  ret void\l}"];
+}

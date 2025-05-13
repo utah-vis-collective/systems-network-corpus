@@ -1,0 +1,12 @@
+digraph "CFG for 'gs_setlinecap' function" {
+	label="CFG for 'gs_setlinecap' function";
+
+	Node0x600003b1a260 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %6 = load i32, ptr %5, align 4\l  %7 = icmp ugt i32 %6, 3\l  br i1 %7, label %8, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600003b1a260:s0 -> Node0x600003b1a2b0[tooltip="2 -> 8\nProbability 50.00%" ];
+	Node0x600003b1a260:s1 -> Node0x600003b1a300[tooltip="2 -> 9\nProbability 50.00%" ];
+	Node0x600003b1a2b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  store i32 -15, ptr %3, align 4\l  br label %14\l}"];
+	Node0x600003b1a2b0 -> Node0x600003b1a350[tooltip="8 -> 14\nProbability 100.00%" ];
+	Node0x600003b1a300 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %5, align 4\l  %11 = load ptr, ptr %4, align 8\l  %12 = getelementptr inbounds %struct.gs_state_s, ptr %11, i32 0, i32 1\l  %13 = getelementptr inbounds %struct.gx_line_params_s, ptr %12, i32 0, i32 1\l  store i32 %10, ptr %13, align 4\l  store i32 0, ptr %3, align 4\l  br label %14\l}"];
+	Node0x600003b1a300 -> Node0x600003b1a350[tooltip="9 -> 14\nProbability 100.00%" ];
+	Node0x600003b1a350 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %3, align 4\l  ret i32 %15\l}"];
+}

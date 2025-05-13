@@ -1,0 +1,22 @@
+digraph "CFG for 'push_callout' function" {
+	label="CFG for 'push_callout' function";
+
+	Node0x600000108460 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %6 = load ptr, ptr @e_stack, align 8\l  %7 = load ptr, ptr getelementptr inbounds (%struct.ref_stack_s, ptr\l... @e_stack, i32 0, i32 2), align 8\l  %8 = getelementptr inbounds %struct.ref_s, ptr %7, i64 -1\l  %9 = icmp ugt ptr %6, %8\l  br i1 %9, label %10, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600000108460:s0 -> Node0x6000001084b0[tooltip="1 -> 10\nProbability 50.00%" ];
+	Node0x600000108460:s1 -> Node0x6000001085a0[tooltip="1 -> 17\nProbability 50.00%" ];
+	Node0x6000001084b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = call i32 @ref_stack_extend(ptr noundef @e_stack, i32 noundef 1)\l  store i32 %11, ptr %5, align 4\l  %12 = load i32, ptr %5, align 4\l  %13 = icmp slt i32 %12, 0\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000001084b0:s0 -> Node0x600000108500[tooltip="10 -> 14\nProbability 37.50%" ];
+	Node0x6000001084b0:s1 -> Node0x600000108550[tooltip="10 -> 16\nProbability 62.50%" ];
+	Node0x600000108500 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %5, align 4\l  store i32 %15, ptr %2, align 4\l  br label %36\l}"];
+	Node0x600000108500 -> Node0x600000108690[tooltip="14 -> 36\nProbability 100.00%" ];
+	Node0x600000108550 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{16:\l|  br label %17\l}"];
+	Node0x600000108550 -> Node0x6000001085a0[tooltip="16 -> 17\nProbability 100.00%" ];
+	Node0x6000001085a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %3, align 8\l  %19 = load ptr, ptr @e_stack, align 8\l  %20 = getelementptr inbounds %struct.ref_s, ptr %19, i64 1\l  %21 = call i32 @name_enter_string(ptr noundef %18, ptr noundef %20)\l  store i32 %21, ptr %4, align 4\l  %22 = load i32, ptr %4, align 4\l  %23 = icmp slt i32 %22, 0\l  br i1 %23, label %24, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x6000001085a0:s0 -> Node0x6000001085f0[tooltip="17 -> 24\nProbability 37.50%" ];
+	Node0x6000001085a0:s1 -> Node0x600000108640[tooltip="17 -> 26\nProbability 62.50%" ];
+	Node0x6000001085f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %4, align 4\l  store i32 %25, ptr %2, align 4\l  br label %36\l}"];
+	Node0x6000001085f0 -> Node0x600000108690[tooltip="24 -> 36\nProbability 100.00%" ];
+	Node0x600000108640 [shape=record,color="#b70d28ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr @e_stack, align 8\l  %28 = getelementptr inbounds %struct.ref_s, ptr %27, i32 1\l  store ptr %28, ptr @e_stack, align 8\l  %29 = load ptr, ptr @e_stack, align 8\l  %30 = getelementptr inbounds %struct.ref_s, ptr %29, i32 0, i32 0\l  %31 = getelementptr inbounds %struct.tas_s, ptr %30, i32 0, i32 0\l  %32 = load i16, ptr %31, align 8\l  %33 = zext i16 %32 to i32\l  %34 = or i32 %33, 128\l  %35 = trunc i32 %34 to i16\l  store i16 %35, ptr %31, align 8\l  store i32 5, ptr %2, align 4\l  br label %36\l}"];
+	Node0x600000108640 -> Node0x600000108690[tooltip="26 -> 36\nProbability 100.00%" ];
+	Node0x600000108690 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{36:\l|  %37 = load i32, ptr %2, align 4\l  ret i32 %37\l}"];
+}

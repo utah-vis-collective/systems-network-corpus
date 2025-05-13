@@ -1,0 +1,15 @@
+digraph "CFG for 'INT_C' function" {
+	label="CFG for 'INT_C' function";
+
+	Node0x600000cf6d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i8, align 1\l  %3 = alloca i8, align 1\l  store i8 %0, ptr %3, align 1\l  %4 = load i8, ptr %3, align 1\l  %5 = sext i8 %4 to i32\l  %6 = and i32 %5, 128\l  %7 = icmp ne i32 %6, 0\l  br i1 %7, label %8, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600000cf6d50:s0 -> Node0x600000cf6da0[tooltip="1 -> 8\nProbability 50.00%" ];
+	Node0x600000cf6d50:s1 -> Node0x600000cf6df0[tooltip="1 -> 11\nProbability 50.00%" ];
+	Node0x600000cf6da0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr @int_c_ptr, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %13, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600000cf6da0:s0 -> Node0x600000cf6e40[tooltip="8 -> 13\nProbability 62.50%" ];
+	Node0x600000cf6da0:s1 -> Node0x600000cf6df0[tooltip="8 -> 11\nProbability 37.50%" ];
+	Node0x600000cf6df0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load i8, ptr %3, align 1\l  store i8 %12, ptr %2, align 1\l  br label %21\l}"];
+	Node0x600000cf6df0 -> Node0x600000cf6e90[tooltip="11 -> 21\nProbability 100.00%" ];
+	Node0x600000cf6e40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @int_c_ptr, align 8\l  %15 = load i8, ptr %3, align 1\l  %16 = sext i8 %15 to i32\l  %17 = and i32 %16, 127\l  %18 = sext i32 %17 to i64\l  %19 = getelementptr inbounds i8, ptr %14, i64 %18\l  %20 = load i8, ptr %19, align 1\l  store i8 %20, ptr %2, align 1\l  br label %21\l}"];
+	Node0x600000cf6e40 -> Node0x600000cf6e90[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x600000cf6e90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i8, ptr %2, align 1\l  ret i8 %22\l}"];
+}

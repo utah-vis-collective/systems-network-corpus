@@ -1,0 +1,14 @@
+digraph "CFG for 'euclid_dist_2' function" {
+	label="CFG for 'euclid_dist_2' function";
+
+	Node0x600000bf1e50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  %8 = alloca float, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  store float 0.000000e+00, ptr %8, align 4\l  store i32 0, ptr %7, align 4\l  br label %9\l}"];
+	Node0x600000bf1e50 -> Node0x600000bf1ef0[tooltip="3 -> 9\nProbability 100.00%" ];
+	Node0x600000bf1ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %7, align 4\l  %11 = load i32, ptr %6, align 4\l  %12 = icmp slt i32 %10, %11\l  br i1 %12, label %13, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x600000bf1ef0:s0 -> Node0x600000bf1f40[tooltip="9 -> 13\nProbability 96.88%" ];
+	Node0x600000bf1ef0:s1 -> Node0x600000bf1fe0[tooltip="9 -> 41\nProbability 3.12%" ];
+	Node0x600000bf1f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %4, align 8\l  %15 = load i32, ptr %7, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds float, ptr %14, i64 %16\l  %18 = load float, ptr %17, align 4\l  %19 = load ptr, ptr %5, align 8\l  %20 = load i32, ptr %7, align 4\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds float, ptr %19, i64 %21\l  %23 = load float, ptr %22, align 4\l  %24 = fsub float %18, %23\l  %25 = load ptr, ptr %4, align 8\l  %26 = load i32, ptr %7, align 4\l  %27 = sext i32 %26 to i64\l  %28 = getelementptr inbounds float, ptr %25, i64 %27\l  %29 = load float, ptr %28, align 4\l  %30 = load ptr, ptr %5, align 8\l  %31 = load i32, ptr %7, align 4\l  %32 = sext i32 %31 to i64\l  %33 = getelementptr inbounds float, ptr %30, i64 %32\l  %34 = load float, ptr %33, align 4\l  %35 = fsub float %29, %34\l  %36 = load float, ptr %8, align 4\l  %37 = call float @llvm.fmuladd.f32(float %24, float %35, float %36)\l  store float %37, ptr %8, align 4\l  br label %38\l}"];
+	Node0x600000bf1f40 -> Node0x600000bf1f90[tooltip="13 -> 38\nProbability 100.00%" ];
+	Node0x600000bf1f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{38:\l|  %39 = load i32, ptr %7, align 4\l  %40 = add nsw i32 %39, 1\l  store i32 %40, ptr %7, align 4\l  br label %9\l}"];
+	Node0x600000bf1f90 -> Node0x600000bf1ef0[tooltip="38 -> 9\nProbability 100.00%" ];
+	Node0x600000bf1fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{41:\l|  %42 = load float, ptr %8, align 4\l  ret float %42\l}"];
+}

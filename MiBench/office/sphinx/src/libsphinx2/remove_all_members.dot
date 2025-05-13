@@ -1,0 +1,5 @@
+digraph "CFG for 'remove_all_members' function" {
+	label="CFG for 'remove_all_members' function";
+
+	Node0x600000fea990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = sext i32 %3 to i64\l  %5 = getelementptr inbounds [5 x i32], ptr @set_size, i64 0, i64 %4\l  store i32 0, ptr %5, align 4\l  ret void\l}"];
+}

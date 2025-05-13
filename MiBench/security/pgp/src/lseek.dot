@@ -1,0 +1,5 @@
+digraph "CFG for 'lseek' function" {
+	label="CFG for 'lseek' function";
+
+	Node0x6000009d31b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i64, align 8\l  %6 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i64 %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %7 = load i32, ptr %4, align 4\l  %8 = sext i32 %7 to i64\l  %9 = inttoptr i64 %8 to ptr\l  %10 = load i64, ptr %5, align 8\l  %11 = load i32, ptr %6, align 4\l  %12 = call i32 @fseek(ptr noundef %9, i64 noundef %10, i32 noundef %11)\l  %13 = sext i32 %12 to i64\l  ret i64 %13\l}"];
+}

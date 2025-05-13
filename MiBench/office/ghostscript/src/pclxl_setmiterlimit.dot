@@ -1,0 +1,20 @@
+digraph "CFG for 'pclxl_setmiterlimit' function" {
+	label="CFG for 'pclxl_setmiterlimit' function";
+
+	Node0x600003ba77f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = call ptr @gdev_vector_stream(ptr noundef %7)\l  store ptr %8, ptr %5, align 8\l  %9 = load double, ptr %4, align 8\l  %10 = fadd double %9, 5.000000e-01\l  %11 = fptosi double %10 to i32\l  store i32 %11, ptr %6, align 4\l  %12 = load ptr, ptr %5, align 8\l  %13 = load i32, ptr %6, align 4\l  %14 = icmp sgt i32 %13, 1\l  br i1 %14, label %15, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600003ba77f0:s0 -> Node0x600003ba7840[tooltip="2 -> 15\nProbability 50.00%" ];
+	Node0x600003ba77f0:s1 -> Node0x600003ba7890[tooltip="2 -> 17\nProbability 50.00%" ];
+	Node0x600003ba7840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %6, align 4\l  br label %18\l}"];
+	Node0x600003ba7840 -> Node0x600003ba78e0[tooltip="15 -> 18\nProbability 100.00%" ];
+	Node0x600003ba7890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{17:\l|  br label %18\l}"];
+	Node0x600003ba7890 -> Node0x600003ba78e0[tooltip="17 -> 18\nProbability 100.00%" ];
+	Node0x600003ba78e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = phi i32 [ %16, %15 ], [ 1, %17 ]\l  call void @put_u(ptr noundef %12, i32 noundef %19)\l  br label %20\l}"];
+	Node0x600003ba78e0 -> Node0x600003ba7930[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x600003ba7930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  br label %21\l}"];
+	Node0x600003ba7930 -> Node0x600003ba7980[tooltip="20 -> 21\nProbability 100.00%" ];
+	Node0x600003ba7980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  call void @put_bytes(ptr noundef %22, ptr noundef @pclxl_setmiterlimit.ac_,\l... i32 noundef 3)\l  br label %23\l}"];
+	Node0x600003ba7980 -> Node0x600003ba79d0[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x600003ba79d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x600003ba79d0 -> Node0x600003ba7a20[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x600003ba7a20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  ret i32 0\l}"];
+}

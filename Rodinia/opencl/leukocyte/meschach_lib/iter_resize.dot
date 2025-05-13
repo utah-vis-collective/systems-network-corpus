@@ -1,0 +1,26 @@
+digraph "CFG for 'iter_resize' function" {
+	label="CFG for 'iter_resize' function";
+
+	Node0x60000353acb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  store i32 %2, ptr %6, align 4\l  %8 = load ptr, ptr %4, align 8\l  %9 = icmp eq ptr %8, null\l  br i1 %9, label %10, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x60000353acb0:s0 -> Node0x60000353ad00[tooltip="3 -> 10\nProbability 37.50%" ];
+	Node0x60000353acb0:s1 -> Node0x60000353ad50[tooltip="3 -> 12\nProbability 62.50%" ];
+	Node0x60000353ad00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = call i32 @ev_err(ptr noundef @.str.2, i32 noundef 8, i32 noundef\l... 170, ptr noundef @.str.4, i32 noundef 0)\l  br label %12\l}"];
+	Node0x60000353ad00 -> Node0x60000353ad50[tooltip="10 -> 12\nProbability 100.00%" ];
+	Node0x60000353ad50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %4, align 8\l  %14 = getelementptr inbounds %struct.Iter_data, ptr %13, i32 0, i32 6\l  %15 = load ptr, ptr %14, align 8\l  store ptr %15, ptr %7, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = getelementptr inbounds %struct.Iter_data, ptr %16, i32 0, i32 6\l  %18 = load ptr, ptr %17, align 8\l  %19 = load i32, ptr %6, align 4\l  %20 = call ptr @v_resize(ptr noundef %18, i32 noundef %19)\l  %21 = load ptr, ptr %4, align 8\l  %22 = getelementptr inbounds %struct.Iter_data, ptr %21, i32 0, i32 6\l  store ptr %20, ptr %22, align 8\l  %23 = load ptr, ptr %4, align 8\l  %24 = getelementptr inbounds %struct.Iter_data, ptr %23, i32 0, i32 0\l  %25 = load i32, ptr %24, align 8\l  %26 = icmp ne i32 %25, 0\l  br i1 %26, label %27, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x60000353ad50:s0 -> Node0x60000353ada0[tooltip="12 -> 27\nProbability 62.50%" ];
+	Node0x60000353ad50:s1 -> Node0x60000353ae40[tooltip="12 -> 35\nProbability 37.50%" ];
+	Node0x60000353ada0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %7, align 8\l  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds %struct.Iter_data, ptr %29, i32 0, i32 6\l  %31 = load ptr, ptr %30, align 8\l  %32 = icmp ne ptr %28, %31\l  br i1 %32, label %33, label %35\l|{<s0>T|<s1>F}}"];
+	Node0x60000353ada0:s0 -> Node0x60000353adf0[tooltip="27 -> 33\nProbability 62.50%" ];
+	Node0x60000353ada0:s1 -> Node0x60000353ae40[tooltip="27 -> 35\nProbability 37.50%" ];
+	Node0x60000353adf0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{33:\l|  %34 = call i32 @ev_err(ptr noundef @.str.2, i32 noundef 4, i32 noundef\l... 175, ptr noundef @.str.4, i32 noundef 1)\l  br label %35\l}"];
+	Node0x60000353adf0 -> Node0x60000353ae40[tooltip="33 -> 35\nProbability 100.00%" ];
+	Node0x60000353ae40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{35:\l|  %36 = load ptr, ptr %4, align 8\l  %37 = getelementptr inbounds %struct.Iter_data, ptr %36, i32 0, i32 7\l  %38 = load ptr, ptr %37, align 8\l  store ptr %38, ptr %7, align 8\l  %39 = load ptr, ptr %4, align 8\l  %40 = getelementptr inbounds %struct.Iter_data, ptr %39, i32 0, i32 7\l  %41 = load ptr, ptr %40, align 8\l  %42 = load i32, ptr %5, align 4\l  %43 = call ptr @v_resize(ptr noundef %41, i32 noundef %42)\l  %44 = load ptr, ptr %4, align 8\l  %45 = getelementptr inbounds %struct.Iter_data, ptr %44, i32 0, i32 7\l  store ptr %43, ptr %45, align 8\l  %46 = load ptr, ptr %4, align 8\l  %47 = getelementptr inbounds %struct.Iter_data, ptr %46, i32 0, i32 1\l  %48 = load i32, ptr %47, align 4\l  %49 = icmp ne i32 %48, 0\l  br i1 %49, label %50, label %58\l|{<s0>T|<s1>F}}"];
+	Node0x60000353ae40:s0 -> Node0x60000353ae90[tooltip="35 -> 50\nProbability 62.50%" ];
+	Node0x60000353ae40:s1 -> Node0x60000353af30[tooltip="35 -> 58\nProbability 37.50%" ];
+	Node0x60000353ae90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{50:\l|  %51 = load ptr, ptr %7, align 8\l  %52 = load ptr, ptr %4, align 8\l  %53 = getelementptr inbounds %struct.Iter_data, ptr %52, i32 0, i32 7\l  %54 = load ptr, ptr %53, align 8\l  %55 = icmp ne ptr %51, %54\l  br i1 %55, label %56, label %58\l|{<s0>T|<s1>F}}"];
+	Node0x60000353ae90:s0 -> Node0x60000353aee0[tooltip="50 -> 56\nProbability 62.50%" ];
+	Node0x60000353ae90:s1 -> Node0x60000353af30[tooltip="50 -> 58\nProbability 37.50%" ];
+	Node0x60000353aee0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{56:\l|  %57 = call i32 @ev_err(ptr noundef @.str.2, i32 noundef 4, i32 noundef\l... 179, ptr noundef @.str.4, i32 noundef 1)\l  br label %58\l}"];
+	Node0x60000353aee0 -> Node0x60000353af30[tooltip="56 -> 58\nProbability 100.00%" ];
+	Node0x60000353af30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{58:\l|  %59 = load ptr, ptr %4, align 8\l  ret ptr %59\l}"];
+}

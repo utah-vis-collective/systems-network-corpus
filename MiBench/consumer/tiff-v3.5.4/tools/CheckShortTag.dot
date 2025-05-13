@@ -1,0 +1,20 @@
+digraph "CFG for 'CheckShortTag' function" {
+	label="CFG for 'CheckShortTag' function";
+
+	Node0x6000005f19f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{4:\l|  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  %9 = alloca ptr, align 8\l  %10 = alloca i16, align 2\l  %11 = alloca i16, align 2\l  store ptr %0, ptr %6, align 8\l  store ptr %1, ptr %7, align 8\l  store i32 %2, ptr %8, align 4\l  store ptr %3, ptr %9, align 8\l  %12 = load ptr, ptr %6, align 8\l  %13 = load ptr, ptr %7, align 8\l  %14 = load i32, ptr %8, align 4\l  %15 = load ptr, ptr %9, align 8\l  %16 = call i32 @checkTag(ptr noundef %12, ptr noundef %13, i32 noundef %14,\l... ptr noundef %15, ptr noundef %10, ptr noundef %11)\l  switch i32 %16, label %32 [\l    i32 1, label %17\l    i32 -1, label %24\l  ]\l|{<s0>def|<s1>1|<s2>-1}}"];
+	Node0x6000005f19f0:s0 -> Node0x6000005f1b80[tooltip="4 -> 32\nProbability 33.33%" ];
+	Node0x6000005f19f0:s1 -> Node0x6000005f1a40[tooltip="4 -> 17\nProbability 33.33%" ];
+	Node0x6000005f19f0:s2 -> Node0x6000005f1ae0[tooltip="4 -> 24\nProbability 33.33%" ];
+	Node0x6000005f1a40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load i16, ptr %10, align 2\l  %19 = zext i16 %18 to i32\l  %20 = load i16, ptr %11, align 2\l  %21 = zext i16 %20 to i32\l  %22 = icmp eq i32 %19, %21\l  br i1 %22, label %23, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x6000005f1a40:s0 -> Node0x6000005f1a90[tooltip="17 -> 23\nProbability 50.00%" ];
+	Node0x6000005f1a40:s1 -> Node0x6000005f1b30[tooltip="17 -> 25\nProbability 50.00%" ];
+	Node0x6000005f1a90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x6000005f1a90 -> Node0x6000005f1ae0[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x6000005f1ae0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{24:\l|  store i32 1, ptr %5, align 4\l  br label %33\l}"];
+	Node0x6000005f1ae0 -> Node0x6000005f1bd0[tooltip="24 -> 33\nProbability 100.00%" ];
+	Node0x6000005f1b30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{25:\l|  %26 = load ptr, ptr %9, align 8\l  %27 = load i16, ptr %10, align 2\l  %28 = zext i16 %27 to i32\l  %29 = load i16, ptr %11, align 2\l  %30 = zext i16 %29 to i32\l  %31 = call i32 (ptr, ...) @printf(ptr noundef @.str.10, ptr noundef %26, i32\l... noundef %28, i32 noundef %30)\l  br label %32\l}"];
+	Node0x6000005f1b30 -> Node0x6000005f1b80[tooltip="25 -> 32\nProbability 100.00%" ];
+	Node0x6000005f1b80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{32:\l|  store i32 0, ptr %5, align 4\l  br label %33\l}"];
+	Node0x6000005f1b80 -> Node0x6000005f1bd0[tooltip="32 -> 33\nProbability 100.00%" ];
+	Node0x6000005f1bd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %5, align 4\l  ret i32 %34\l}"];
+}

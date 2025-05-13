@@ -1,0 +1,19 @@
+digraph "CFG for 'MapPrintEncodings' function" {
+	label="CFG for 'MapPrintEncodings' function";
+
+	Node0x60000269c820 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca ptr, align 8\l  store i32 1, ptr %1, align 4\l  br label %3\l}"];
+	Node0x60000269c820 -> Node0x60000269c870[tooltip="0 -> 3\nProbability 100.00%" ];
+	Node0x60000269c870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = load i32, ptr %1, align 4\l  %5 = load i32, ptr @maptop, align 4\l  %6 = icmp ult i32 %4, %5\l  br i1 %6, label %7, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x60000269c870:s0 -> Node0x60000269c8c0[tooltip="3 -> 7\nProbability 96.88%" ];
+	Node0x60000269c870:s1 -> Node0x60000269ca00[tooltip="3 -> 30\nProbability 3.12%" ];
+	Node0x60000269c8c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %1, align 4\l  %9 = zext i32 %8 to i64\l  %10 = getelementptr inbounds [20 x ptr], ptr @MapTable, i64 0, i64 %9\l  %11 = load ptr, ptr %10, align 8\l  %12 = getelementptr inbounds %struct.mapvec, ptr %11, i32 0, i32 2\l  %13 = load i32, ptr %12, align 4\l  %14 = icmp ne i32 %13, 0\l  br i1 %14, label %15, label %26\l|{<s0>T|<s1>F}}"];
+	Node0x60000269c8c0:s0 -> Node0x60000269c910[tooltip="7 -> 15\nProbability 62.50%" ];
+	Node0x60000269c8c0:s1 -> Node0x60000269c960[tooltip="7 -> 26\nProbability 37.50%" ];
+	Node0x60000269c910 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr @BackEnd, align 8\l  %17 = getelementptr inbounds %struct.back_end_rec, ptr %16, i32 0, i32 14\l  %18 = load ptr, ptr %17, align 8\l  %19 = load i32, ptr %1, align 4\l  call void %18(i32 noundef %19)\l  %20 = load i32, ptr %1, align 4\l  %21 = zext i32 %20 to i64\l  %22 = getelementptr inbounds [20 x ptr], ptr @MapTable, i64 0, i64 %21\l  %23 = load ptr, ptr %22, align 8\l  store ptr %23, ptr %2, align 8\l  %24 = load ptr, ptr %2, align 8\l  %25 = getelementptr inbounds %struct.mapvec, ptr %24, i32 0, i32 3\l  store i32 1, ptr %25, align 8\l  br label %26\l}"];
+	Node0x60000269c910 -> Node0x60000269c960[tooltip="15 -> 26\nProbability 100.00%" ];
+	Node0x60000269c960 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  br label %27\l}"];
+	Node0x60000269c960 -> Node0x60000269c9b0[tooltip="26 -> 27\nProbability 100.00%" ];
+	Node0x60000269c9b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load i32, ptr %1, align 4\l  %29 = add i32 %28, 1\l  store i32 %29, ptr %1, align 4\l  br label %3\l}"];
+	Node0x60000269c9b0 -> Node0x60000269c870[tooltip="27 -> 3\nProbability 100.00%" ];
+	Node0x60000269ca00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{30:\l|  ret void\l}"];
+}

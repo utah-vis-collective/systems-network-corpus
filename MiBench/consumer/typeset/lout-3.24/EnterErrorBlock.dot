@@ -1,0 +1,12 @@
+digraph "CFG for 'EnterErrorBlock' function" {
+	label="CFG for 'EnterErrorBlock' function";
+
+	Node0x600003d1ecb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr @block_top, align 4\l  %4 = icmp slt i32 %3, 20\l  br i1 %4, label %5, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600003d1ecb0:s0 -> Node0x600003d1ed00[tooltip="1 -> 5\nProbability 50.00%" ];
+	Node0x600003d1ecb0:s1 -> Node0x600003d1ed50[tooltip="1 -> 16\nProbability 50.00%" ];
+	Node0x600003d1ed00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{5:\l|  %6 = load i32, ptr %2, align 4\l  %7 = load i32, ptr @block_top, align 4\l  %8 = sext i32 %7 to i64\l  %9 = getelementptr inbounds [20 x i32], ptr @print_block, i64 0, i64 %8\l  store i32 %6, ptr %9, align 4\l  %10 = load i32, ptr @mess_top, align 4\l  %11 = load i32, ptr @block_top, align 4\l  %12 = sext i32 %11 to i64\l  %13 = getelementptr inbounds [20 x i32], ptr @start_block, i64 0, i64 %12\l  store i32 %10, ptr %13, align 4\l  %14 = load i32, ptr @block_top, align 4\l  %15 = add nsw i32 %14, 1\l  store i32 %15, ptr @block_top, align 4\l  br label %19\l}"];
+	Node0x600003d1ed00 -> Node0x600003d1eda0[tooltip="5 -> 19\nProbability 100.00%" ];
+	Node0x600003d1ed50 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr @no_fpos, align 8\l  %18 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 28, i32\l... noundef 3, ptr noundef @.str.3, i32 noundef 1, ptr noundef %17)\l  br label %19\l}"];
+	Node0x600003d1ed50 -> Node0x600003d1eda0[tooltip="16 -> 19\nProbability 100.00%" ];
+	Node0x600003d1eda0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  ret void\l}"];
+}

@@ -1,0 +1,14 @@
+digraph "CFG for 'kb_init_lmclass_dictwid' function" {
+	label="CFG for 'kb_init_lmclass_dictwid' function";
+
+	Node0x600002a8b750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %5 = load ptr, ptr %2, align 8\l  %6 = getelementptr inbounds %struct.lmclass_s, ptr %5, i32 0, i32 1\l  %7 = load ptr, ptr %6, align 8\l  store ptr %7, ptr %3, align 8\l  br label %8\l}"];
+	Node0x600002a8b750 -> Node0x600002a8b840[tooltip="1 -> 8\nProbability 100.00%" ];
+	Node0x600002a8b840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x600002a8b840:s0 -> Node0x600002a8b890[tooltip="8 -> 11\nProbability 96.88%" ];
+	Node0x600002a8b840:s1 -> Node0x600002a8b930[tooltip="8 -> 22\nProbability 3.12%" ];
+	Node0x600002a8b890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.lmclass_word_s, ptr %12, i32 0, i32 0\l  %14 = load ptr, ptr %13, align 8\l  %15 = call i32 @kb_get_word_id(ptr noundef %14)\l  store i32 %15, ptr %4, align 4\l  %16 = load ptr, ptr %3, align 8\l  %17 = load i32, ptr %4, align 4\l  call void @lmclass_set_dictwid(ptr noundef %16, i32 noundef %17)\l  br label %18\l}"];
+	Node0x600002a8b890 -> Node0x600002a8b8e0[tooltip="11 -> 18\nProbability 100.00%" ];
+	Node0x600002a8b8e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %3, align 8\l  %20 = getelementptr inbounds %struct.lmclass_word_s, ptr %19, i32 0, i32 3\l  %21 = load ptr, ptr %20, align 8\l  store ptr %21, ptr %3, align 8\l  br label %8\l}"];
+	Node0x600002a8b8e0 -> Node0x600002a8b840[tooltip="18 -> 8\nProbability 100.00%" ];
+	Node0x600002a8b930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{22:\l|  ret void\l}"];
+}

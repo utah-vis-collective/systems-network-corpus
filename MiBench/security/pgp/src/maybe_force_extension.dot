@@ -1,0 +1,22 @@
+digraph "CFG for 'maybe_force_extension' function" {
+	label="CFG for 'maybe_force_extension' function";
+
+	Node0x600001977d40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = load ptr, ptr %5, align 8\l  %8 = call zeroext i8 @has_extension(ptr noundef %6, ptr noundef %7)\l  %9 = icmp ne i8 %8, 0\l  br i1 %9, label %26, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600001977d40:s0 -> Node0x600001977f20[tooltip="2 -> 26\nProbability 62.50%" ];
+	Node0x600001977d40:s1 -> Node0x600001977d90[tooltip="2 -> 10\nProbability 37.50%" ];
+	Node0x600001977d90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  %12 = call ptr @__strcpy_chk(ptr noundef @maybe_force_extension.newname, ptr\l... noundef %11, i64 noundef 256) #8\l  %13 = load ptr, ptr %5, align 8\l  call void @force_extension(ptr noundef @maybe_force_extension.newname, ptr\l... noundef %13)\l  %14 = call zeroext i8 @file_exists(ptr noundef\l... @maybe_force_extension.newname)\l  %15 = icmp ne i8 %14, 0\l  br i1 %15, label %25, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001977d90:s0 -> Node0x600001977ed0[tooltip="10 -> 25\nProbability 62.50%" ];
+	Node0x600001977d90:s1 -> Node0x600001977de0[tooltip="10 -> 16\nProbability 37.50%" ];
+	Node0x600001977de0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr @pgpout, align 8\l  %18 = call ptr @LANG(ptr noundef @.str.3)\l  %19 = load ptr, ptr %4, align 8\l  %20 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %17, ptr noundef %18,\l... ptr noundef %19, ptr noundef @maybe_force_extension.newname) #8\l  %21 = call zeroext i8 @getyesno(i8 noundef signext 121)\l  %22 = icmp ne i8 %21, 0\l  br i1 %22, label %23, label %24\l|{<s0>T|<s1>F}}"];
+	Node0x600001977de0:s0 -> Node0x600001977e30[tooltip="16 -> 23\nProbability 62.50%" ];
+	Node0x600001977de0:s1 -> Node0x600001977e80[tooltip="16 -> 24\nProbability 37.50%" ];
+	Node0x600001977e30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{23:\l|  store ptr @maybe_force_extension.newname, ptr %3, align 8\l  br label %27\l}"];
+	Node0x600001977e30 -> Node0x600001977f70[tooltip="23 -> 27\nProbability 100.00%" ];
+	Node0x600001977e80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{24:\l|  br label %25\l}"];
+	Node0x600001977e80 -> Node0x600001977ed0[tooltip="24 -> 25\nProbability 100.00%" ];
+	Node0x600001977ed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{25:\l|  br label %26\l}"];
+	Node0x600001977ed0 -> Node0x600001977f20[tooltip="25 -> 26\nProbability 100.00%" ];
+	Node0x600001977f20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  store ptr null, ptr %3, align 8\l  br label %27\l}"];
+	Node0x600001977f20 -> Node0x600001977f70[tooltip="26 -> 27\nProbability 100.00%" ];
+	Node0x600001977f70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %3, align 8\l  ret ptr %28\l}"];
+}

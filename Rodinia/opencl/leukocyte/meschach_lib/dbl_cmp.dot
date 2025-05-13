@@ -1,0 +1,12 @@
+digraph "CFG for 'dbl_cmp' function" {
+	label="CFG for 'dbl_cmp' function";
+
+	Node0x600001f337a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load double, ptr %6, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load double, ptr %8, align 8\l  %10 = fsub double %7, %9\l  store double %10, ptr %5, align 8\l  %11 = load double, ptr %5, align 8\l  %12 = fcmp ogt double %11, 0.000000e+00\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x600001f337a0:s0 -> Node0x600001f337f0[tooltip="2 -> 13\nProbability 50.00%" ];
+	Node0x600001f337a0:s1 -> Node0x600001f33840[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x600001f337f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  br label %19\l}"];
+	Node0x600001f337f0 -> Node0x600001f33890[tooltip="13 -> 19\nProbability 100.00%" ];
+	Node0x600001f33840 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load double, ptr %5, align 8\l  %16 = fcmp olt double %15, 0.000000e+00\l  %17 = zext i1 %16 to i64\l  %18 = select i1 %16, i32 -1, i32 0\l  br label %19\l}"];
+	Node0x600001f33840 -> Node0x600001f33890[tooltip="14 -> 19\nProbability 100.00%" ];
+	Node0x600001f33890 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = phi i32 [ 1, %13 ], [ %18, %14 ]\l  ret i32 %20\l}"];
+}

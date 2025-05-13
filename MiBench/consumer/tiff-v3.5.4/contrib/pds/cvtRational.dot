@@ -1,0 +1,19 @@
+digraph "CFG for 'cvtRational' function" {
+	label="CFG for 'cvtRational' function";
+
+	Node0x600003043250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i64, align 8\l  %10 = alloca i64, align 8\l  %11 = alloca ptr, align 8\l  store ptr %0, ptr %7, align 8\l  store ptr %1, ptr %8, align 8\l  store i64 %2, ptr %9, align 8\l  store i64 %3, ptr %10, align 8\l  store ptr %4, ptr %11, align 8\l  %12 = load i64, ptr %10, align 8\l  %13 = icmp eq i64 %12, 0\l  br i1 %13, label %14, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600003043250:s0 -> Node0x6000030432a0[tooltip="5 -> 14\nProbability 37.50%" ];
+	Node0x600003043250:s1 -> Node0x6000030432f0[tooltip="5 -> 27\nProbability 62.50%" ];
+	Node0x6000030432a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %7, align 8\l  %16 = getelementptr inbounds %struct.tiff, ptr %15, i32 0, i32 0\l  %17 = load ptr, ptr %16, align 8\l  %18 = load ptr, ptr %7, align 8\l  %19 = load ptr, ptr %8, align 8\l  %20 = getelementptr inbounds %struct.TIFFDirEntry, ptr %19, i32 0, i32 0\l  %21 = load i16, ptr %20, align 8\l  %22 = zext i16 %21 to i64\l  %23 = call ptr @_TIFFFieldWithTag(ptr noundef %18, i64 noundef %22)\l  %24 = getelementptr inbounds %struct.TIFFFieldInfo, ptr %23, i32 0, i32 7\l  %25 = load ptr, ptr %24, align 8\l  %26 = load i64, ptr %9, align 8\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef %17, ptr noundef @.str.11,\l... ptr noundef %25, i64 noundef %26)\l  store i32 0, ptr %6, align 4\l  br label %48\l}"];
+	Node0x6000030432a0 -> Node0x600003043430[tooltip="14 -> 48\nProbability 100.00%" ];
+	Node0x6000030432f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %8, align 8\l  %29 = getelementptr inbounds %struct.TIFFDirEntry, ptr %28, i32 0, i32 1\l  %30 = load i16, ptr %29, align 2\l  %31 = zext i16 %30 to i32\l  %32 = icmp eq i32 %31, 5\l  br i1 %32, label %33, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x6000030432f0:s0 -> Node0x600003043340[tooltip="27 -> 33\nProbability 50.00%" ];
+	Node0x6000030432f0:s1 -> Node0x600003043390[tooltip="27 -> 40\nProbability 50.00%" ];
+	Node0x600003043340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{33:\l|  %34 = load i64, ptr %9, align 8\l  %35 = uitofp i64 %34 to float\l  %36 = load i64, ptr %10, align 8\l  %37 = uitofp i64 %36 to float\l  %38 = fdiv float %35, %37\l  %39 = load ptr, ptr %11, align 8\l  store float %38, ptr %39, align 4\l  br label %47\l}"];
+	Node0x600003043340 -> Node0x6000030433e0[tooltip="33 -> 47\nProbability 100.00%" ];
+	Node0x600003043390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{40:\l|  %41 = load i64, ptr %9, align 8\l  %42 = sitofp i64 %41 to float\l  %43 = load i64, ptr %10, align 8\l  %44 = sitofp i64 %43 to float\l  %45 = fdiv float %42, %44\l  %46 = load ptr, ptr %11, align 8\l  store float %45, ptr %46, align 4\l  br label %47\l}"];
+	Node0x600003043390 -> Node0x6000030433e0[tooltip="40 -> 47\nProbability 100.00%" ];
+	Node0x6000030433e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{47:\l|  store i32 1, ptr %6, align 4\l  br label %48\l}"];
+	Node0x6000030433e0 -> Node0x600003043430[tooltip="47 -> 48\nProbability 100.00%" ];
+	Node0x600003043430 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{48:\l|  %49 = load i32, ptr %6, align 4\l  ret i32 %49\l}"];
+}

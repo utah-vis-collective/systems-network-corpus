@@ -1,0 +1,5 @@
+digraph "CFG for 'usagemsg' function" {
+	label="CFG for 'usagemsg' function";
+
+	Node0x6000033bed00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  call void @_E__pr_header(ptr noundef @.str.5, i64 noundef 95, ptr noundef\l... @.str.6)\l  %3 = load ptr, ptr %2, align 8\l  call void (ptr, ...) @_E__die_error(ptr noundef @.str.16, ptr noundef %3)\l  ret void\l}"];
+}

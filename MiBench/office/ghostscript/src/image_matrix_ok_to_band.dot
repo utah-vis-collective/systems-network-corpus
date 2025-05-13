@@ -1,0 +1,26 @@
+digraph "CFG for 'image_matrix_ok_to_band' function" {
+	label="CFG for 'image_matrix_ok_to_band' function";
+
+	Node0x600003239a90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = getelementptr inbounds %struct.gs_matrix_s, ptr %5, i32 0, i32 1\l  %7 = load float, ptr %6, align 4\l  %8 = fpext float %7 to double\l  %9 = fcmp oeq double %8, 0.000000e+00\l  br i1 %9, label %10, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600003239a90:s0 -> Node0x600003239ae0[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x600003239a90:s1 -> Node0x600003239b30[tooltip="1 -> 16\nProbability 37.50%" ];
+	Node0x600003239ae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = getelementptr inbounds %struct.gs_matrix_s, ptr %11, i32 0, i32 2\l  %13 = load float, ptr %12, align 4\l  %14 = fpext float %13 to double\l  %15 = fcmp oeq double %14, 0.000000e+00\l  br i1 %15, label %28, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600003239ae0:s0 -> Node0x600003239bd0[tooltip="10 -> 28\nProbability 62.50%" ];
+	Node0x600003239ae0:s1 -> Node0x600003239b30[tooltip="10 -> 16\nProbability 37.50%" ];
+	Node0x600003239b30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %3, align 8\l  %18 = getelementptr inbounds %struct.gs_matrix_s, ptr %17, i32 0, i32 0\l  %19 = load float, ptr %18, align 4\l  %20 = fpext float %19 to double\l  %21 = fcmp oeq double %20, 0.000000e+00\l  br i1 %21, label %22, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600003239b30:s0 -> Node0x600003239b80[tooltip="16 -> 22\nProbability 62.50%" ];
+	Node0x600003239b30:s1 -> Node0x600003239c20[tooltip="16 -> 29\nProbability 37.50%" ];
+	Node0x600003239b80 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %3, align 8\l  %24 = getelementptr inbounds %struct.gs_matrix_s, ptr %23, i32 0, i32 3\l  %25 = load float, ptr %24, align 4\l  %26 = fpext float %25 to double\l  %27 = fcmp oeq double %26, 0.000000e+00\l  br i1 %27, label %28, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600003239b80:s0 -> Node0x600003239bd0[tooltip="22 -> 28\nProbability 62.50%" ];
+	Node0x600003239b80:s1 -> Node0x600003239c20[tooltip="22 -> 29\nProbability 37.50%" ];
+	Node0x600003239bd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{28:\l|  store i32 1, ptr %2, align 4\l  br label %61\l}"];
+	Node0x600003239bd0 -> Node0x600003239d10[tooltip="28 -> 61\nProbability 100.00%" ];
+	Node0x600003239c20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %3, align 8\l  %31 = getelementptr inbounds %struct.gs_matrix_s, ptr %30, i32 0, i32 0\l  %32 = load float, ptr %31, align 4\l  %33 = fpext float %32 to double\l  %34 = call double @llvm.fabs.f64(double %33)\l  %35 = load ptr, ptr %3, align 8\l  %36 = getelementptr inbounds %struct.gs_matrix_s, ptr %35, i32 0, i32 3\l  %37 = load float, ptr %36, align 4\l  %38 = fpext float %37 to double\l  %39 = call double @llvm.fabs.f64(double %38)\l  %40 = fadd double %34, %39\l  %41 = load ptr, ptr %3, align 8\l  %42 = getelementptr inbounds %struct.gs_matrix_s, ptr %41, i32 0, i32 1\l  %43 = load float, ptr %42, align 4\l  %44 = fpext float %43 to double\l  %45 = call double @llvm.fabs.f64(double %44)\l  %46 = load ptr, ptr %3, align 8\l  %47 = getelementptr inbounds %struct.gs_matrix_s, ptr %46, i32 0, i32 2\l  %48 = load float, ptr %47, align 4\l  %49 = fpext float %48 to double\l  %50 = call double @llvm.fabs.f64(double %49)\l  %51 = fadd double %45, %50\l  %52 = fdiv double %40, %51\l  store double %52, ptr %4, align 8\l  %53 = load double, ptr %4, align 8\l  %54 = fcmp olt double %53, 2.000000e-01\l  br i1 %54, label %58, label %55\l|{<s0>T|<s1>F}}"];
+	Node0x600003239c20:s0 -> Node0x600003239cc0[tooltip="29 -> 58\nProbability 50.00%" ];
+	Node0x600003239c20:s1 -> Node0x600003239c70[tooltip="29 -> 55\nProbability 50.00%" ];
+	Node0x600003239c70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{55:\l|  %56 = load double, ptr %4, align 8\l  %57 = fcmp ogt double %56, 5.000000e+00\l  br label %58\l}"];
+	Node0x600003239c70 -> Node0x600003239cc0[tooltip="55 -> 58\nProbability 100.00%" ];
+	Node0x600003239cc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{58:\l|  %59 = phi i1 [ true, %29 ], [ %57, %55 ]\l  %60 = zext i1 %59 to i32\l  store i32 %60, ptr %2, align 4\l  br label %61\l}"];
+	Node0x600003239cc0 -> Node0x600003239d10[tooltip="58 -> 61\nProbability 100.00%" ];
+	Node0x600003239d10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{61:\l|  %62 = load i32, ptr %2, align 4\l  ret i32 %62\l}"];
+}

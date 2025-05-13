@@ -1,0 +1,5 @@
+digraph "CFG for 'fixed_mult_rem' function" {
+	label="CFG for 'fixed_mult_rem' function";
+
+	Node0x600003b9b2f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i64, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca double, align 8\l  store i64 %0, ptr %4, align 8\l  store i64 %1, ptr %5, align 8\l  store i64 %2, ptr %6, align 8\l  %8 = load i64, ptr %4, align 8\l  %9 = sitofp i64 %8 to double\l  %10 = load i64, ptr %5, align 8\l  %11 = sitofp i64 %10 to double\l  %12 = fmul double %9, %11\l  store double %12, ptr %7, align 8\l  %13 = load double, ptr %7, align 8\l  %14 = load double, ptr %7, align 8\l  %15 = load i64, ptr %6, align 8\l  %16 = sitofp i64 %15 to double\l  %17 = fdiv double %14, %16\l  %18 = call double @llvm.floor.f64(double %17)\l  %19 = load i64, ptr %6, align 8\l  %20 = sitofp i64 %19 to double\l  %21 = fneg double %18\l  %22 = call double @llvm.fmuladd.f64(double %21, double %20, double %13)\l  %23 = fptosi double %22 to i64\l  ret i64 %23\l}"];
+}

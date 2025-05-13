@@ -1,0 +1,5 @@
+digraph "CFG for 'Plain_RestoreGraphicState' function" {
+	label="CFG for 'Plain_RestoreGraphicState' function";
+
+	Node0x600001289c20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret void\l}"];
+}

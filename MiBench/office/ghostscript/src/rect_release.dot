@@ -1,0 +1,10 @@
+digraph "CFG for 'rect_release' function" {
+	label="CFG for 'rect_release' function";
+
+	Node0x6000011cf020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = getelementptr inbounds %struct.local_rects_s, ptr %3, i32 0, i32 0\l  %5 = load ptr, ptr %4, align 8\l  %6 = load ptr, ptr %2, align 8\l  %7 = getelementptr inbounds %struct.local_rects_s, ptr %6, i32 0, i32 2\l  %8 = getelementptr inbounds [5 x %struct.gs_rect_s], ptr %7, i64 0, i64 0\l  %9 = icmp ne ptr %5, %8\l  br i1 %9, label %10, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000011cf020:s0 -> Node0x6000011cf070[tooltip="1 -> 10\nProbability 62.50%" ];
+	Node0x6000011cf020:s1 -> Node0x6000011cf0c0[tooltip="1 -> 19\nProbability 37.50%" ];
+	Node0x6000011cf070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr @gs_imemory, align 8\l  %12 = getelementptr inbounds %struct.gs_memory_s, ptr %11, i32 0, i32 0\l  %13 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %12, i32 0, i32\l... 11\l  %14 = load ptr, ptr %13, align 8\l  %15 = load ptr, ptr @gs_imemory, align 8\l  %16 = load ptr, ptr %2, align 8\l  %17 = getelementptr inbounds %struct.local_rects_s, ptr %16, i32 0, i32 0\l  %18 = load ptr, ptr %17, align 8\l  call void %14(ptr noundef %15, ptr noundef %18, ptr noundef @.str.16)\l  br label %19\l}"];
+	Node0x6000011cf070 -> Node0x6000011cf0c0[tooltip="10 -> 19\nProbability 100.00%" ];
+	Node0x6000011cf0c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  ret void\l}"];
+}

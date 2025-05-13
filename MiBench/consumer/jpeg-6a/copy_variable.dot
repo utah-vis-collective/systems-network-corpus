@@ -1,0 +1,16 @@
+digraph "CFG for 'copy_variable' function" {
+	label="CFG for 'copy_variable' function";
+
+	Node0x60000226c9b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = call i32 @read_2_bytes()\l  store i32 %2, ptr %1, align 4\l  %3 = load i32, ptr %1, align 4\l  call void @write_2_bytes(i32 noundef %3)\l  %4 = load i32, ptr %1, align 4\l  %5 = icmp ult i32 %4, 2\l  br i1 %5, label %6, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x60000226c9b0:s0 -> Node0x60000226ccd0[tooltip="0 -> 6\nProbability 0.00%" ];
+	Node0x60000226c9b0:s1 -> Node0x60000226cd20[tooltip="0 -> 9\nProbability 100.00%" ];
+	Node0x60000226ccd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#e5d8d170" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr @__stderrp, align 8\l  %8 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %7, ptr noundef @.str.6,\l... ptr noundef @.str.33) #7\l  call void @exit(i32 noundef 1) #8\l  unreachable\l}"];
+	Node0x60000226cd20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %1, align 4\l  %11 = sub i32 %10, 2\l  store i32 %11, ptr %1, align 4\l  br label %12\l}"];
+	Node0x60000226cd20 -> Node0x60000226cd70[tooltip="9 -> 12\nProbability 100.00%" ];
+	Node0x60000226cd70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %1, align 4\l  %14 = icmp ugt i32 %13, 0\l  br i1 %14, label %15, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x60000226cd70:s0 -> Node0x60000226cdc0[tooltip="12 -> 15\nProbability 96.88%" ];
+	Node0x60000226cd70:s1 -> Node0x60000226ce10[tooltip="12 -> 19\nProbability 3.12%" ];
+	Node0x60000226cdc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = call i32 @read_1_byte()\l  call void @write_1_byte(i32 noundef %16)\l  %17 = load i32, ptr %1, align 4\l  %18 = add i32 %17, -1\l  store i32 %18, ptr %1, align 4\l  br label %12, !llvm.loop !6\l}"];
+	Node0x60000226cdc0 -> Node0x60000226cd70[tooltip="15 -> 12\nProbability 100.00%" ];
+	Node0x60000226ce10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  ret void\l}"];
+}

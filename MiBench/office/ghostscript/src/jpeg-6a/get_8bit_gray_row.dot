@@ -1,0 +1,14 @@
+digraph "CFG for 'get_8bit_gray_row' function" {
+	label="CFG for 'get_8bit_gray_row' function";
+
+	Node0x600001489ea0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %8 = load ptr, ptr %4, align 8\l  store ptr %8, ptr %5, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = getelementptr inbounds %struct._tga_source_struct, ptr %9, i32 0, i32 0\l  %11 = getelementptr inbounds %struct.cjpeg_source_struct, ptr %10, i32 0,\l... i32 4\l  %12 = load ptr, ptr %11, align 8\l  %13 = getelementptr inbounds ptr, ptr %12, i64 0\l  %14 = load ptr, ptr %13, align 8\l  store ptr %14, ptr %6, align 8\l  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.jpeg_compress_struct, ptr %15, i32 0,\l... i32 6\l  %17 = load i32, ptr %16, align 8\l  store i32 %17, ptr %7, align 4\l  br label %18\l}"];
+	Node0x600001489ea0 -> Node0x600001489ef0[tooltip="2 -> 18\nProbability 100.00%" ];
+	Node0x600001489ef0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %7, align 4\l  %20 = icmp ugt i32 %19, 0\l  br i1 %20, label %21, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x600001489ef0:s0 -> Node0x600001489f40[tooltip="18 -> 21\nProbability 96.88%" ];
+	Node0x600001489ef0:s1 -> Node0x600001489fe0[tooltip="18 -> 37\nProbability 3.12%" ];
+	Node0x600001489f40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds %struct._tga_source_struct, ptr %22, i32 0, i32\l... 5\l  %24 = load ptr, ptr %23, align 8\l  %25 = load ptr, ptr %5, align 8\l  call void %24(ptr noundef %25)\l  %26 = load ptr, ptr %5, align 8\l  %27 = getelementptr inbounds %struct._tga_source_struct, ptr %26, i32 0, i32\l... 6\l  %28 = getelementptr inbounds [4 x i8], ptr %27, i64 0, i64 0\l  %29 = load i8, ptr %28, align 8\l  %30 = zext i8 %29 to i32\l  %31 = trunc i32 %30 to i8\l  %32 = load ptr, ptr %6, align 8\l  %33 = getelementptr inbounds i8, ptr %32, i32 1\l  store ptr %33, ptr %6, align 8\l  store i8 %31, ptr %32, align 1\l  br label %34\l}"];
+	Node0x600001489f40 -> Node0x600001489f90[tooltip="21 -> 34\nProbability 100.00%" ];
+	Node0x600001489f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %7, align 4\l  %36 = add i32 %35, -1\l  store i32 %36, ptr %7, align 4\l  br label %18\l}"];
+	Node0x600001489f90 -> Node0x600001489ef0[tooltip="34 -> 18\nProbability 100.00%" ];
+	Node0x600001489fe0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{37:\l|  ret i32 1\l}"];
+}

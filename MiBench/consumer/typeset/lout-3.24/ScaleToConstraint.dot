@@ -1,0 +1,41 @@
+digraph "CFG for 'ScaleToConstraint' function" {
+	label="CFG for 'ScaleToConstraint' function";
+
+	Node0x6000010628a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca float, align 4\l  %8 = alloca i32, align 4\l  store i32 %0, ptr %4, align 4\l  store i32 %1, ptr %5, align 4\l  store ptr %2, ptr %6, align 8\l  store float 1.000000e+00, ptr %7, align 4\l  %9 = load i32, ptr %4, align 4\l  %10 = icmp sgt i32 %9, 0\l  br i1 %10, label %11, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x6000010628a0:s0 -> Node0x600001062940[tooltip="3 -> 11\nProbability 62.50%" ];
+	Node0x6000010628a0:s1 -> Node0x600001062a80[tooltip="3 -> 33\nProbability 37.50%" ];
+	Node0x600001062940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load float, ptr %7, align 4\l  %13 = load ptr, ptr %6, align 8\l  %14 = getelementptr inbounds %struct.CONSTRAINT, ptr %13, i32 0, i32 0\l  %15 = load i32, ptr %14, align 4\l  %16 = sitofp i32 %15 to float\l  %17 = load i32, ptr %4, align 4\l  %18 = sitofp i32 %17 to float\l  %19 = fdiv float %16, %18\l  %20 = fcmp olt float %12, %19\l  br i1 %20, label %21, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600001062940:s0 -> Node0x600001062990[tooltip="11 -> 21\nProbability 50.00%" ];
+	Node0x600001062940:s1 -> Node0x6000010629e0[tooltip="11 -> 23\nProbability 50.00%" ];
+	Node0x600001062990 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{21:\l|  %22 = load float, ptr %7, align 4\l  br label %31\l}"];
+	Node0x600001062990 -> Node0x600001062a30[tooltip="21 -> 31\nProbability 100.00%" ];
+	Node0x6000010629e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %6, align 8\l  %25 = getelementptr inbounds %struct.CONSTRAINT, ptr %24, i32 0, i32 0\l  %26 = load i32, ptr %25, align 4\l  %27 = sitofp i32 %26 to float\l  %28 = load i32, ptr %4, align 4\l  %29 = sitofp i32 %28 to float\l  %30 = fdiv float %27, %29\l  br label %31\l}"];
+	Node0x6000010629e0 -> Node0x600001062a30[tooltip="23 -> 31\nProbability 100.00%" ];
+	Node0x600001062a30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{31:\l|  %32 = phi float [ %22, %21 ], [ %30, %23 ]\l  store float %32, ptr %7, align 4\l  br label %33\l}"];
+	Node0x600001062a30 -> Node0x600001062a80[tooltip="31 -> 33\nProbability 100.00%" ];
+	Node0x600001062a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = load i32, ptr %4, align 4\l  %35 = load i32, ptr %5, align 4\l  %36 = add nsw i32 %34, %35\l  %37 = icmp sgt i32 %36, 0\l  br i1 %37, label %38, label %64\l|{<s0>T|<s1>F}}"];
+	Node0x600001062a80:s0 -> Node0x600001062ad0[tooltip="33 -> 38\nProbability 62.50%" ];
+	Node0x600001062a80:s1 -> Node0x600001062c10[tooltip="33 -> 64\nProbability 37.50%" ];
+	Node0x600001062ad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{38:\l|  %39 = load float, ptr %7, align 4\l  %40 = load ptr, ptr %6, align 8\l  %41 = getelementptr inbounds %struct.CONSTRAINT, ptr %40, i32 0, i32 1\l  %42 = load i32, ptr %41, align 4\l  %43 = sitofp i32 %42 to float\l  %44 = load i32, ptr %4, align 4\l  %45 = load i32, ptr %5, align 4\l  %46 = add nsw i32 %44, %45\l  %47 = sitofp i32 %46 to float\l  %48 = fdiv float %43, %47\l  %49 = fcmp olt float %39, %48\l  br i1 %49, label %50, label %52\l|{<s0>T|<s1>F}}"];
+	Node0x600001062ad0:s0 -> Node0x600001062b20[tooltip="38 -> 50\nProbability 50.00%" ];
+	Node0x600001062ad0:s1 -> Node0x600001062b70[tooltip="38 -> 52\nProbability 50.00%" ];
+	Node0x600001062b20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{50:\l|  %51 = load float, ptr %7, align 4\l  br label %62\l}"];
+	Node0x600001062b20 -> Node0x600001062bc0[tooltip="50 -> 62\nProbability 100.00%" ];
+	Node0x600001062b70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{52:\l|  %53 = load ptr, ptr %6, align 8\l  %54 = getelementptr inbounds %struct.CONSTRAINT, ptr %53, i32 0, i32 1\l  %55 = load i32, ptr %54, align 4\l  %56 = sitofp i32 %55 to float\l  %57 = load i32, ptr %4, align 4\l  %58 = load i32, ptr %5, align 4\l  %59 = add nsw i32 %57, %58\l  %60 = sitofp i32 %59 to float\l  %61 = fdiv float %56, %60\l  br label %62\l}"];
+	Node0x600001062b70 -> Node0x600001062bc0[tooltip="52 -> 62\nProbability 100.00%" ];
+	Node0x600001062bc0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{62:\l|  %63 = phi float [ %51, %50 ], [ %61, %52 ]\l  store float %63, ptr %7, align 4\l  br label %64\l}"];
+	Node0x600001062bc0 -> Node0x600001062c10[tooltip="62 -> 64\nProbability 100.00%" ];
+	Node0x600001062c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{64:\l|  %65 = load i32, ptr %5, align 4\l  %66 = icmp sgt i32 %65, 0\l  br i1 %66, label %67, label %89\l|{<s0>T|<s1>F}}"];
+	Node0x600001062c10:s0 -> Node0x600001062c60[tooltip="64 -> 67\nProbability 62.50%" ];
+	Node0x600001062c10:s1 -> Node0x600001062da0[tooltip="64 -> 89\nProbability 37.50%" ];
+	Node0x600001062c60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{67:\l|  %68 = load float, ptr %7, align 4\l  %69 = load ptr, ptr %6, align 8\l  %70 = getelementptr inbounds %struct.CONSTRAINT, ptr %69, i32 0, i32 2\l  %71 = load i32, ptr %70, align 4\l  %72 = sitofp i32 %71 to float\l  %73 = load i32, ptr %5, align 4\l  %74 = sitofp i32 %73 to float\l  %75 = fdiv float %72, %74\l  %76 = fcmp olt float %68, %75\l  br i1 %76, label %77, label %79\l|{<s0>T|<s1>F}}"];
+	Node0x600001062c60:s0 -> Node0x600001062cb0[tooltip="67 -> 77\nProbability 50.00%" ];
+	Node0x600001062c60:s1 -> Node0x600001062d00[tooltip="67 -> 79\nProbability 50.00%" ];
+	Node0x600001062cb0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{77:\l|  %78 = load float, ptr %7, align 4\l  br label %87\l}"];
+	Node0x600001062cb0 -> Node0x600001062d50[tooltip="77 -> 87\nProbability 100.00%" ];
+	Node0x600001062d00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{79:\l|  %80 = load ptr, ptr %6, align 8\l  %81 = getelementptr inbounds %struct.CONSTRAINT, ptr %80, i32 0, i32 2\l  %82 = load i32, ptr %81, align 4\l  %83 = sitofp i32 %82 to float\l  %84 = load i32, ptr %5, align 4\l  %85 = sitofp i32 %84 to float\l  %86 = fdiv float %83, %85\l  br label %87\l}"];
+	Node0x600001062d00 -> Node0x600001062d50[tooltip="79 -> 87\nProbability 100.00%" ];
+	Node0x600001062d50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{87:\l|  %88 = phi float [ %78, %77 ], [ %86, %79 ]\l  store float %88, ptr %7, align 4\l  br label %89\l}"];
+	Node0x600001062d50 -> Node0x600001062da0[tooltip="87 -> 89\nProbability 100.00%" ];
+	Node0x600001062da0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{89:\l|  %90 = load float, ptr %7, align 4\l  %91 = fmul float %90, 1.280000e+02\l  %92 = fptosi float %91 to i32\l  store i32 %92, ptr %8, align 4\l  %93 = load i32, ptr %8, align 4\l  ret i32 %93\l}"];
+}

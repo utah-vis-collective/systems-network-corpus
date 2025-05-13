@@ -1,0 +1,17 @@
+digraph "CFG for 'checksignature' function" {
+	label="CFG for 'checksignature' function";
+
+	Node0x600003633930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = alloca i32, align 4\l  %2 = alloca [6 x i8], align 1\l  %3 = getelementptr inbounds [6 x i8], ptr %2, i64 0, i64 0\l  %4 = load ptr, ptr @infile, align 8\l  %5 = call i64 @fread(ptr noundef %3, i64 noundef 1, i64 noundef 6, ptr\l... noundef %4)\l  %6 = getelementptr inbounds [6 x i8], ptr %2, i64 0, i64 0\l  %7 = call i32 @strncmp(ptr noundef %6, ptr noundef @.str.18, i64 noundef 3)\l... #6\l  %8 = icmp ne i32 %7, 0\l  br i1 %8, label %9, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x600003633930:s0 -> Node0x600003633980[tooltip="0 -> 9\nProbability 62.50%" ];
+	Node0x600003633930:s1 -> Node0x6000036339d0[tooltip="0 -> 12\nProbability 37.50%" ];
+	Node0x600003633980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{9:\l|  %10 = load ptr, ptr @__stderrp, align 8\l  %11 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %10, ptr noundef\l... @.str.19) #6\l  store i32 0, ptr %1, align 4\l  br label %20\l}"];
+	Node0x600003633980 -> Node0x600003633ac0[tooltip="9 -> 20\nProbability 100.00%" ];
+	Node0x6000036339d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  %13 = getelementptr inbounds [6 x i8], ptr %2, i64 0, i64 3\l  %14 = call i32 @strncmp(ptr noundef %13, ptr noundef @.str.20, i64 noundef\l... 3) #6\l  %15 = icmp ne i32 %14, 0\l  br i1 %15, label %16, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000036339d0:s0 -> Node0x600003633a20[tooltip="12 -> 16\nProbability 62.50%" ];
+	Node0x6000036339d0:s1 -> Node0x600003633a70[tooltip="12 -> 19\nProbability 37.50%" ];
+	Node0x600003633a20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr @__stderrp, align 8\l  %18 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %17, ptr noundef\l... @.str.21) #6\l  store i32 0, ptr %1, align 4\l  br label %20\l}"];
+	Node0x600003633a20 -> Node0x600003633ac0[tooltip="16 -> 20\nProbability 100.00%" ];
+	Node0x600003633a70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{19:\l|  store i32 1, ptr %1, align 4\l  br label %20\l}"];
+	Node0x600003633a70 -> Node0x600003633ac0[tooltip="19 -> 20\nProbability 100.00%" ];
+	Node0x600003633ac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %1, align 4\l  ret i32 %21\l}"];
+}

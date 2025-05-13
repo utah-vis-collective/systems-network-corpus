@@ -1,0 +1,44 @@
+digraph "CFG for 'Fax3VGetField' function" {
+	label="CFG for 'Fax3VGetField' function";
+
+	Node0x6000005fd680 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca i64, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca ptr, align 8\l  %10 = alloca ptr, align 8\l  %11 = alloca ptr, align 8\l  %12 = alloca ptr, align 8\l  %13 = alloca ptr, align 8\l  %14 = alloca ptr, align 8\l  %15 = alloca ptr, align 8\l  %16 = alloca ptr, align 8\l  %17 = alloca ptr, align 8\l  store ptr %0, ptr %5, align 8\l  store i64 %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %18 = load ptr, ptr %5, align 8\l  %19 = getelementptr inbounds %struct.tiff, ptr %18, i32 0, i32 37\l  %20 = load ptr, ptr %19, align 8\l  store ptr %20, ptr %8, align 8\l  %21 = load i64, ptr %6, align 8\l  switch i64 %21, label %84 [\l    i64 65536, label %22\l    i64 65540, label %28\l    i64 292, label %42\l    i64 293, label %42\l    i64 326, label %48\l    i64 327, label %54\l    i64 328, label %60\l    i64 34908, label %66\l    i64 34909, label %72\l    i64 34910, label %78\l  ]\l|{<s0>def|<s1>65536|<s2>65540|<s3>292|<s4>293|<s5>326|<s6>327|<s7>328|<s8>34908|<s9>34909|<s10>34910}}"];
+	Node0x6000005fd680:s0 -> Node0x6000005fda40[tooltip="3 -> 84\nProbability 9.09%" ];
+	Node0x6000005fd680:s1 -> Node0x6000005fd6d0[tooltip="3 -> 22\nProbability 9.09%" ];
+	Node0x6000005fd680:s2 -> Node0x6000005fd720[tooltip="3 -> 28\nProbability 9.09%" ];
+	Node0x6000005fd680:s3 -> Node0x6000005fd810[tooltip="3 -> 42\nProbability 18.18%" ];
+	Node0x6000005fd680:s4 -> Node0x6000005fd810[tooltip="3 -> 42\nProbability 18.18%" ];
+	Node0x6000005fd680:s5 -> Node0x6000005fd860[tooltip="3 -> 48\nProbability 9.09%" ];
+	Node0x6000005fd680:s6 -> Node0x6000005fd8b0[tooltip="3 -> 54\nProbability 9.09%" ];
+	Node0x6000005fd680:s7 -> Node0x6000005fd900[tooltip="3 -> 60\nProbability 9.09%" ];
+	Node0x6000005fd680:s8 -> Node0x6000005fd950[tooltip="3 -> 66\nProbability 9.09%" ];
+	Node0x6000005fd680:s9 -> Node0x6000005fd9a0[tooltip="3 -> 72\nProbability 9.09%" ];
+	Node0x6000005fd680:s10 -> Node0x6000005fd9f0[tooltip="3 -> 78\nProbability 9.09%" ];
+	Node0x6000005fd6d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %8, align 8\l  %24 = getelementptr inbounds %struct.Fax3BaseState, ptr %23, i32 0, i32 0\l  %25 = load i32, ptr %24, align 8\l  %26 = va_arg ptr %7, ptr\l  store ptr %26, ptr %9, align 8\l  %27 = load ptr, ptr %9, align 8\l  store i32 %25, ptr %27, align 4\l  br label %92\l}"];
+	Node0x6000005fd6d0 -> Node0x6000005fda90[tooltip="22 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd720 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %5, align 8\l  %30 = getelementptr inbounds %struct.tiff, ptr %29, i32 0, i32 2\l  %31 = load i32, ptr %30, align 4\l  %32 = icmp eq i32 %31, 0\l  br i1 %32, label %33, label %41\l|{<s0>T|<s1>F}}"];
+	Node0x6000005fd720:s0 -> Node0x6000005fd770[tooltip="28 -> 33\nProbability 37.50%" ];
+	Node0x6000005fd720:s1 -> Node0x6000005fd7c0[tooltip="28 -> 41\nProbability 62.50%" ];
+	Node0x6000005fd770 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %5, align 8\l  %35 = getelementptr inbounds %struct.tiff, ptr %34, i32 0, i32 37\l  %36 = load ptr, ptr %35, align 8\l  %37 = getelementptr inbounds %struct.Fax3DecodeState, ptr %36, i32 0, i32 5\l  %38 = load ptr, ptr %37, align 8\l  %39 = va_arg ptr %7, ptr\l  store ptr %39, ptr %10, align 8\l  %40 = load ptr, ptr %10, align 8\l  store ptr %38, ptr %40, align 8\l  br label %41\l}"];
+	Node0x6000005fd770 -> Node0x6000005fd7c0[tooltip="33 -> 41\nProbability 100.00%" ];
+	Node0x6000005fd7c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{41:\l|  br label %92\l}"];
+	Node0x6000005fd7c0 -> Node0x6000005fda90[tooltip="41 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd810 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{42:\l|  %43 = load ptr, ptr %8, align 8\l  %44 = getelementptr inbounds %struct.Fax3BaseState, ptr %43, i32 0, i32 6\l  %45 = load i64, ptr %44, align 8\l  %46 = va_arg ptr %7, ptr\l  store ptr %46, ptr %11, align 8\l  %47 = load ptr, ptr %11, align 8\l  store i64 %45, ptr %47, align 8\l  br label %92\l}"];
+	Node0x6000005fd810 -> Node0x6000005fda90[tooltip="42 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{48:\l|  %49 = load ptr, ptr %8, align 8\l  %50 = getelementptr inbounds %struct.Fax3BaseState, ptr %49, i32 0, i32 5\l  %51 = load i64, ptr %50, align 8\l  %52 = va_arg ptr %7, ptr\l  store ptr %52, ptr %12, align 8\l  %53 = load ptr, ptr %12, align 8\l  store i64 %51, ptr %53, align 8\l  br label %92\l}"];
+	Node0x6000005fd860 -> Node0x6000005fda90[tooltip="48 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd8b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{54:\l|  %55 = load ptr, ptr %8, align 8\l  %56 = getelementptr inbounds %struct.Fax3BaseState, ptr %55, i32 0, i32 3\l  %57 = load i16, ptr %56, align 8\l  %58 = va_arg ptr %7, ptr\l  store ptr %58, ptr %13, align 8\l  %59 = load ptr, ptr %13, align 8\l  store i16 %57, ptr %59, align 2\l  br label %92\l}"];
+	Node0x6000005fd8b0 -> Node0x6000005fda90[tooltip="54 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd900 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{60:\l|  %61 = load ptr, ptr %8, align 8\l  %62 = getelementptr inbounds %struct.Fax3BaseState, ptr %61, i32 0, i32 4\l  %63 = load i64, ptr %62, align 8\l  %64 = va_arg ptr %7, ptr\l  store ptr %64, ptr %14, align 8\l  %65 = load ptr, ptr %14, align 8\l  store i64 %63, ptr %65, align 8\l  br label %92\l}"];
+	Node0x6000005fd900 -> Node0x6000005fda90[tooltip="60 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd950 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{66:\l|  %67 = load ptr, ptr %8, align 8\l  %68 = getelementptr inbounds %struct.Fax3BaseState, ptr %67, i32 0, i32 7\l  %69 = load i64, ptr %68, align 8\l  %70 = va_arg ptr %7, ptr\l  store ptr %70, ptr %15, align 8\l  %71 = load ptr, ptr %15, align 8\l  store i64 %69, ptr %71, align 8\l  br label %92\l}"];
+	Node0x6000005fd950 -> Node0x6000005fda90[tooltip="66 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd9a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{72:\l|  %73 = load ptr, ptr %8, align 8\l  %74 = getelementptr inbounds %struct.Fax3BaseState, ptr %73, i32 0, i32 8\l  %75 = load ptr, ptr %74, align 8\l  %76 = va_arg ptr %7, ptr\l  store ptr %76, ptr %16, align 8\l  %77 = load ptr, ptr %16, align 8\l  store ptr %75, ptr %77, align 8\l  br label %92\l}"];
+	Node0x6000005fd9a0 -> Node0x6000005fda90[tooltip="72 -> 92\nProbability 100.00%" ];
+	Node0x6000005fd9f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{78:\l|  %79 = load ptr, ptr %8, align 8\l  %80 = getelementptr inbounds %struct.Fax3BaseState, ptr %79, i32 0, i32 9\l  %81 = load i64, ptr %80, align 8\l  %82 = va_arg ptr %7, ptr\l  store ptr %82, ptr %17, align 8\l  %83 = load ptr, ptr %17, align 8\l  store i64 %81, ptr %83, align 8\l  br label %92\l}"];
+	Node0x6000005fd9f0 -> Node0x6000005fda90[tooltip="78 -> 92\nProbability 100.00%" ];
+	Node0x6000005fda40 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{84:\l|  %85 = load ptr, ptr %8, align 8\l  %86 = getelementptr inbounds %struct.Fax3BaseState, ptr %85, i32 0, i32 10\l  %87 = load ptr, ptr %86, align 8\l  %88 = load ptr, ptr %5, align 8\l  %89 = load i64, ptr %6, align 8\l  %90 = load ptr, ptr %7, align 8\l  %91 = call i32 %87(ptr noundef %88, i64 noundef %89, ptr noundef %90)\l  store i32 %91, ptr %4, align 4\l  br label %93\l}"];
+	Node0x6000005fda40 -> Node0x6000005fdae0[tooltip="84 -> 93\nProbability 100.00%" ];
+	Node0x6000005fda90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{92:\l|  store i32 1, ptr %4, align 4\l  br label %93\l}"];
+	Node0x6000005fda90 -> Node0x6000005fdae0[tooltip="92 -> 93\nProbability 100.00%" ];
+	Node0x6000005fdae0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{93:\l|  %94 = load i32, ptr %4, align 4\l  ret i32 %94\l}"];
+}

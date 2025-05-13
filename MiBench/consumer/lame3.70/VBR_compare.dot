@@ -1,0 +1,16 @@
+digraph "CFG for 'VBR_compare' function" {
+	label="CFG for 'VBR_compare' function";
+
+	Node0x600000637a70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{8:\l|  %9 = alloca i32, align 4\l  %10 = alloca double, align 8\l  %11 = alloca double, align 8\l  %12 = alloca double, align 8\l  %13 = alloca i32, align 4\l  %14 = alloca double, align 8\l  %15 = alloca double, align 8\l  %16 = alloca double, align 8\l  %17 = alloca i32, align 4\l  store i32 %0, ptr %9, align 4\l  store double %1, ptr %10, align 8\l  store double %2, ptr %11, align 8\l  store double %3, ptr %12, align 8\l  store i32 %4, ptr %13, align 4\l  store double %5, ptr %14, align 8\l  store double %6, ptr %15, align 8\l  store double %7, ptr %16, align 8\l  store i32 0, ptr %17, align 4\l  %18 = load i32, ptr %13, align 4\l  %19 = load i32, ptr %9, align 4\l  %20 = icmp sle i32 %18, %19\l  br i1 %20, label %21, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600000637a70:s0 -> Node0x600000637ed0[tooltip="8 -> 21\nProbability 50.00%" ];
+	Node0x600000637a70:s1 -> Node0x600000628000[tooltip="8 -> 33\nProbability 50.00%" ];
+	Node0x600000637ed0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load double, ptr %15, align 8\l  %23 = load double, ptr %11, align 8\l  %24 = fcmp ole double %22, %23\l  br i1 %24, label %25, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600000637ed0:s0 -> Node0x600000637f20[tooltip="21 -> 25\nProbability 50.00%" ];
+	Node0x600000637ed0:s1 -> Node0x600000628000[tooltip="21 -> 33\nProbability 50.00%" ];
+	Node0x600000637f20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{25:\l|  %26 = load double, ptr %14, align 8\l  %27 = load double, ptr %10, align 8\l  %28 = fcmp ole double %26, %27\l  br i1 %28, label %29, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x600000637f20:s0 -> Node0x600000637f70[tooltip="25 -> 29\nProbability 50.00%" ];
+	Node0x600000637f20:s1 -> Node0x600000628000[tooltip="25 -> 33\nProbability 50.00%" ];
+	Node0x600000637f70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{29:\l|  %30 = load double, ptr %16, align 8\l  %31 = load double, ptr %12, align 8\l  %32 = fcmp ole double %30, %31\l  br label %33\l}"];
+	Node0x600000637f70 -> Node0x600000628000[tooltip="29 -> 33\nProbability 100.00%" ];
+	Node0x600000628000 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{33:\l|  %34 = phi i1 [ false, %25 ], [ false, %21 ], [ false, %8 ], [ %32, %29 ]\l  %35 = zext i1 %34 to i32\l  store i32 %35, ptr %17, align 4\l  %36 = load i32, ptr %17, align 4\l  ret i32 %36\l}"];
+}

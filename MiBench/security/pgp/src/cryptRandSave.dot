@@ -1,0 +1,24 @@
+digraph "CFG for 'cryptRandSave' function" {
+	label="CFG for 'cryptRandSave' function";
+
+	Node0x6000012c7110 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load i8, ptr @randSeedOpen, align 1\l  %4 = icmp ne i8 %3, 0\l  br i1 %4, label %6, label %5\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7110:s0 -> Node0x6000012c71b0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x6000012c7110:s1 -> Node0x6000012c7160[tooltip="1 -> 5\nProbability 37.50%" ];
+	Node0x6000012c7160 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{5:\l|  br label %18\l}"];
+	Node0x6000012c7160 -> Node0x6000012c7390[tooltip="5 -> 18\nProbability 100.00%" ];
+	Node0x6000012c71b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load ptr, ptr %2, align 8\l  %8 = icmp ne ptr %7, null\l  br i1 %8, label %9, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c71b0:s0 -> Node0x6000012c7200[tooltip="6 -> 9\nProbability 62.50%" ];
+	Node0x6000012c71b0:s1 -> Node0x6000012c7250[tooltip="6 -> 10\nProbability 37.50%" ];
+	Node0x6000012c7200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  store i8 1, ptr @cryptRandSave.savedwashed, align 1\l  br label %15\l}"];
+	Node0x6000012c7200 -> Node0x6000012c7340[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x6000012c7250 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{10:\l|  %11 = load i8, ptr @cryptRandSave.savedwashed, align 1\l  %12 = icmp ne i8 %11, 0\l  br i1 %12, label %13, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000012c7250:s0 -> Node0x6000012c72a0[tooltip="10 -> 13\nProbability 62.50%" ];
+	Node0x6000012c7250:s1 -> Node0x6000012c72f0[tooltip="10 -> 14\nProbability 37.50%" ];
+	Node0x6000012c72a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{13:\l|  br label %18\l}"];
+	Node0x6000012c72a0 -> Node0x6000012c7390[tooltip="13 -> 18\nProbability 100.00%" ];
+	Node0x6000012c72f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x6000012c72f0 -> Node0x6000012c7340[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x6000012c7340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %2, align 8\l  %17 = call i32 @cryptRandWriteFile(ptr noundef @globalRandseedName, ptr\l... noundef %16, i32 noundef 408)\l  br label %18\l}"];
+	Node0x6000012c7340 -> Node0x6000012c7390[tooltip="15 -> 18\nProbability 100.00%" ];
+	Node0x6000012c7390 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  ret void\l}"];
+}

@@ -1,0 +1,17 @@
+digraph "CFG for 'ref_param_read_array' function" {
+	label="CFG for 'ref_param_read_array' function";
+
+	Node0x6000017aaee0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = load ptr, ptr %6, align 8\l  %11 = load ptr, ptr %7, align 8\l  %12 = call i32 @ref_param_read(ptr noundef %9, ptr noundef %10, ptr noundef\l... %11, i32 noundef 4)\l  store i32 %12, ptr %8, align 4\l  %13 = load i32, ptr %8, align 4\l  %14 = icmp ne i32 %13, 0\l  br i1 %14, label %15, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x6000017aaee0:s0 -> Node0x6000017ab840[tooltip="3 -> 15\nProbability 62.50%" ];
+	Node0x6000017aaee0:s1 -> Node0x6000017ab890[tooltip="3 -> 17\nProbability 37.50%" ];
+	Node0x6000017ab840 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %8, align 4\l  store i32 %16, ptr %4, align 4\l  br label %32\l}"];
+	Node0x6000017ab840 -> Node0x6000017ab980[tooltip="15 -> 32\nProbability 100.00%" ];
+	Node0x6000017ab890 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{17:\l|  %18 = load ptr, ptr %7, align 8\l  %19 = getelementptr inbounds %struct.iparam_loc_s, ptr %18, i32 0, i32 0\l  %20 = load ptr, ptr %19, align 8\l  %21 = getelementptr inbounds %struct.ref_s, ptr %20, i32 0, i32 0\l  %22 = getelementptr inbounds %struct.tas_s, ptr %21, i32 0, i32 0\l  %23 = load i16, ptr %22, align 8\l  %24 = zext i16 %23 to i32\l  %25 = and i32 %24, 32\l  %26 = icmp ne i32 %25, 0\l  br i1 %26, label %31, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x6000017ab890:s0 -> Node0x6000017ab930[tooltip="17 -> 31\nProbability 50.00%" ];
+	Node0x6000017ab890:s1 -> Node0x6000017ab8e0[tooltip="17 -> 27\nProbability 50.00%" ];
+	Node0x6000017ab8e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %7, align 8\l  %29 = getelementptr inbounds %struct.iparam_loc_s, ptr %28, i32 0, i32 1\l  %30 = load ptr, ptr %29, align 8\l  store i32 -7, ptr %30, align 4\l  store i32 -7, ptr %4, align 4\l  br label %32\l}"];
+	Node0x6000017ab8e0 -> Node0x6000017ab980[tooltip="27 -> 32\nProbability 100.00%" ];
+	Node0x6000017ab930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{31:\l|  store i32 0, ptr %4, align 4\l  br label %32\l}"];
+	Node0x6000017ab930 -> Node0x6000017ab980[tooltip="31 -> 32\nProbability 100.00%" ];
+	Node0x6000017ab980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load i32, ptr %4, align 4\l  ret i32 %33\l}"];
+}

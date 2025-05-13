@@ -1,0 +1,12 @@
+digraph "CFG for 'cgm_gs_free' function" {
+	label="CFG for 'cgm_gs_free' function";
+
+	Node0x600001691220 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %7 = load ptr, ptr %3, align 8\l  store ptr %7, ptr %5, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %8, i32 0, i32 3\l  %10 = load ptr, ptr %9, align 8\l  %11 = icmp eq ptr %10, null\l  br i1 %11, label %12, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600001691220:s0 -> Node0x600001691270[tooltip="2 -> 12\nProbability 37.50%" ];
+	Node0x600001691220:s1 -> Node0x6000016912c0[tooltip="2 -> 13\nProbability 62.50%" ];
+	Node0x600001691270 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{12:\l|  br label %17\l}"];
+	Node0x600001691270 -> Node0x600001691310[tooltip="12 -> 17\nProbability 100.00%" ];
+	Node0x6000016912c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr %5, align 8\l  %15 = getelementptr inbounds %struct.gx_device_cgm_s, ptr %14, i32 0, i32 3\l  %16 = load ptr, ptr %15, align 8\l  br label %17\l}"];
+	Node0x6000016912c0 -> Node0x600001691310[tooltip="13 -> 17\nProbability 100.00%" ];
+	Node0x600001691310 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = phi ptr [ @gs_memory_default, %12 ], [ %16, %13 ]\l  store ptr %18, ptr %6, align 8\l  %19 = load ptr, ptr %6, align 8\l  %20 = getelementptr inbounds %struct.gs_memory_s, ptr %19, i32 0, i32 0\l  %21 = getelementptr inbounds %struct.gs_memory_procs_s, ptr %20, i32 0, i32\l... 11\l  %22 = load ptr, ptr %21, align 8\l  %23 = load ptr, ptr %6, align 8\l  %24 = load ptr, ptr %4, align 8\l  call void %22(ptr noundef %23, ptr noundef %24, ptr noundef @.str.7)\l  ret void\l}"];
+}

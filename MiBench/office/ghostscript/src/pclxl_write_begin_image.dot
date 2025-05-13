@@ -1,0 +1,9 @@
+digraph "CFG for 'pclxl_write_begin_image' function" {
+	label="CFG for 'pclxl_write_begin_image' function";
+
+	Node0x600003bad130 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{5:\l|  %6 = alloca ptr, align 8\l  %7 = alloca i32, align 4\l  %8 = alloca i32, align 4\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  %11 = alloca ptr, align 8\l  store ptr %0, ptr %6, align 8\l  store i32 %1, ptr %7, align 4\l  store i32 %2, ptr %8, align 4\l  store i32 %3, ptr %9, align 4\l  store i32 %4, ptr %10, align 4\l  %12 = load ptr, ptr %6, align 8\l  %13 = call ptr @gdev_vector_stream(ptr noundef %12)\l  store ptr %13, ptr %11, align 8\l  %14 = load ptr, ptr %11, align 8\l  %15 = load i32, ptr %7, align 4\l  call void @put_us(ptr noundef %14, i32 noundef %15)\l  %16 = load ptr, ptr %11, align 8\l  call void @put_a(ptr noundef %16, i32 noundef 108)\l  %17 = load ptr, ptr %11, align 8\l  %18 = load i32, ptr %8, align 4\l  call void @put_us(ptr noundef %17, i32 noundef %18)\l  %19 = load ptr, ptr %11, align 8\l  call void @put_a(ptr noundef %19, i32 noundef 107)\l  %20 = load ptr, ptr %11, align 8\l  %21 = load i32, ptr %9, align 4\l  %22 = load i32, ptr %10, align 4\l  call void @put_usp(ptr noundef %20, i32 noundef %21, i32 noundef %22)\l  br label %23\l}"];
+	Node0x600003bad130 -> Node0x600003bad180[tooltip="5 -> 23\nProbability 100.00%" ];
+	Node0x600003bad180 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load ptr, ptr %11, align 8\l  call void @put_bytes(ptr noundef %24, ptr noundef\l... @pclxl_write_begin_image.ac_, i32 noundef 3)\l  br label %25\l}"];
+	Node0x600003bad180 -> Node0x600003bad1d0[tooltip="23 -> 25\nProbability 100.00%" ];
+	Node0x600003bad1d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{25:\l|  ret void\l}"];
+}

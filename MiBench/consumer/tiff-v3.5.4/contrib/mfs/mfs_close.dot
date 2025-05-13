@@ -1,0 +1,12 @@
+digraph "CFG for 'mfs_close' function" {
+	label="CFG for 'mfs_close' function";
+
+	Node0x600002833de0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %4 = load i32, ptr %2, align 4\l  %5 = sext i32 %4 to i64\l  %6 = getelementptr inbounds [20 x i64], ptr @fds, i64 0, i64 %5\l  %7 = load i64, ptr %6, align 8\l  %8 = icmp eq i64 %7, -1\l  br i1 %8, label %9, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600002833de0:s0 -> Node0x600002833e30[tooltip="1 -> 9\nProbability 37.50%" ];
+	Node0x600002833de0:s1 -> Node0x600002833e80[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x600002833e30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{9:\l|  store i32 -1, ptr %3, align 4\l  %10 = call ptr @__error()\l  store i32 9, ptr %10, align 4\l  br label %15\l}"];
+	Node0x600002833e30 -> Node0x600002833ed0[tooltip="9 -> 15\nProbability 100.00%" ];
+	Node0x600002833e80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %2, align 4\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds [20 x i64], ptr @fds, i64 0, i64 %13\l  store i64 -1, ptr %14, align 8\l  store i32 0, ptr %3, align 4\l  br label %15\l}"];
+	Node0x600002833e80 -> Node0x600002833ed0[tooltip="11 -> 15\nProbability 100.00%" ];
+	Node0x600002833ed0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %3, align 4\l  ret i32 %16\l}"];
+}

@@ -1,0 +1,25 @@
+digraph "CFG for 'px_copy' function" {
+	label="CFG for 'px_copy' function";
+
+	Node0x600000056710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %6 = load ptr, ptr %4, align 8\l  %7 = icmp eq ptr %6, null\l  br i1 %7, label %8, label %10\l|{<s0>T|<s1>F}}"];
+	Node0x600000056710:s0 -> Node0x600000056760[tooltip="2 -> 8\nProbability 37.50%" ];
+	Node0x600000056710:s1 -> Node0x6000000567b0[tooltip="2 -> 10\nProbability 62.50%" ];
+	Node0x600000056760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{8:\l|  %9 = call i32 @ev_err(ptr noundef @.str, i32 noundef 8, i32 noundef 99,\l... ptr noundef @.str.3, i32 noundef 0)\l  br label %10\l}"];
+	Node0x600000056760 -> Node0x6000000567b0[tooltip="8 -> 10\nProbability 100.00%" ];
+	Node0x6000000567b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %4, align 8\l  %12 = load ptr, ptr %5, align 8\l  %13 = icmp eq ptr %11, %12\l  br i1 %13, label %14, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000000567b0:s0 -> Node0x600000056800[tooltip="10 -> 14\nProbability 37.50%" ];
+	Node0x6000000567b0:s1 -> Node0x600000056850[tooltip="10 -> 16\nProbability 62.50%" ];
+	Node0x600000056800 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr %5, align 8\l  store ptr %15, ptr %3, align 8\l  br label %51\l}"];
+	Node0x600000056800 -> Node0x600000056990[tooltip="14 -> 51\nProbability 100.00%" ];
+	Node0x600000056850 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %5, align 8\l  %18 = icmp eq ptr %17, null\l  br i1 %18, label %27, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600000056850:s0 -> Node0x6000000568f0[tooltip="16 -> 27\nProbability 37.50%" ];
+	Node0x600000056850:s1 -> Node0x6000000568a0[tooltip="16 -> 19\nProbability 62.50%" ];
+	Node0x6000000568a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %5, align 8\l  %21 = getelementptr inbounds %struct.PERM, ptr %20, i32 0, i32 0\l  %22 = load i32, ptr %21, align 8\l  %23 = load ptr, ptr %4, align 8\l  %24 = getelementptr inbounds %struct.PERM, ptr %23, i32 0, i32 0\l  %25 = load i32, ptr %24, align 8\l  %26 = icmp ne i32 %22, %25\l  br i1 %26, label %27, label %33\l|{<s0>T|<s1>F}}"];
+	Node0x6000000568a0:s0 -> Node0x6000000568f0[tooltip="19 -> 27\nProbability 50.00%" ];
+	Node0x6000000568a0:s1 -> Node0x600000056940[tooltip="19 -> 33\nProbability 50.00%" ];
+	Node0x6000000568f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{27:\l|  %28 = load ptr, ptr %5, align 8\l  %29 = load ptr, ptr %4, align 8\l  %30 = getelementptr inbounds %struct.PERM, ptr %29, i32 0, i32 0\l  %31 = load i32, ptr %30, align 8\l  %32 = call ptr @px_resize(ptr noundef %28, i32 noundef %31)\l  store ptr %32, ptr %5, align 8\l  br label %33\l}"];
+	Node0x6000000568f0 -> Node0x600000056940[tooltip="27 -> 33\nProbability 100.00%" ];
+	Node0x600000056940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{33:\l|  %34 = load ptr, ptr %5, align 8\l  %35 = getelementptr inbounds %struct.PERM, ptr %34, i32 0, i32 2\l  %36 = load ptr, ptr %35, align 8\l  %37 = load ptr, ptr %4, align 8\l  %38 = getelementptr inbounds %struct.PERM, ptr %37, i32 0, i32 2\l  %39 = load ptr, ptr %38, align 8\l  %40 = load ptr, ptr %4, align 8\l  %41 = getelementptr inbounds %struct.PERM, ptr %40, i32 0, i32 0\l  %42 = load i32, ptr %41, align 8\l  %43 = zext i32 %42 to i64\l  %44 = mul i64 %43, 4\l  %45 = load ptr, ptr %5, align 8\l  %46 = getelementptr inbounds %struct.PERM, ptr %45, i32 0, i32 2\l  %47 = load ptr, ptr %46, align 8\l  %48 = call i64 @llvm.objectsize.i64.p0(ptr %47, i1 false, i1 true, i1 false)\l  %49 = call ptr @__memmove_chk(ptr noundef %36, ptr noundef %39, i64 noundef\l... %44, i64 noundef %48) #4\l  %50 = load ptr, ptr %5, align 8\l  store ptr %50, ptr %3, align 8\l  br label %51\l}"];
+	Node0x600000056940 -> Node0x600000056990[tooltip="33 -> 51\nProbability 100.00%" ];
+	Node0x600000056990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{51:\l|  %52 = load ptr, ptr %3, align 8\l  ret ptr %52\l}"];
+}

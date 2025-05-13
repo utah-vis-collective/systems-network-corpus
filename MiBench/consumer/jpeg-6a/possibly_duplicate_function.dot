@@ -1,0 +1,5 @@
+digraph "CFG for 'possibly_duplicate_function' function" {
+	label="CFG for 'possibly_duplicate_function' function";
+
+	Node0x6000034523a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret i32 0\l}"];
+}

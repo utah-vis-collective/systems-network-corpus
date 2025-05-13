@@ -1,0 +1,5 @@
+digraph "CFG for 'png_set_rgbx' function" {
+	label="CFG for 'png_set_rgbx' function";
+
+	Node0x60000325e800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @png_set_filler(ptr noundef %3, i32 noundef 255, i32 noundef 1)\l  ret void\l}"];
+}

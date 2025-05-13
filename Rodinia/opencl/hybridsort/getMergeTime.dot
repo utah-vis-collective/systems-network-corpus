@@ -1,0 +1,5 @@
+digraph "CFG for 'getMergeTime' function" {
+	label="CFG for 'getMergeTime' function";
+
+	Node0x6000034640a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load double, ptr @mergesum, align 8\l  ret double %1\l}"];
+}

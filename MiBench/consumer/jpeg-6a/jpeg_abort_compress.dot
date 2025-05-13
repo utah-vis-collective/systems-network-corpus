@@ -1,0 +1,5 @@
+digraph "CFG for 'jpeg_abort_compress' function" {
+	label="CFG for 'jpeg_abort_compress' function";
+
+	Node0x6000015023f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @jpeg_abort(ptr noundef %3)\l  ret void\l}"];
+}

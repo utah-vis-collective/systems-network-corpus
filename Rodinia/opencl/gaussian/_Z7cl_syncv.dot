@@ -1,0 +1,5 @@
+digraph "CFG for '_Z7cl_syncv' function" {
+	label="CFG for '_Z7cl_syncv' function";
+
+	Node0x60000035ce60 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @_ZL12commandQueue, align 8\l  %2 = call i32 @clFinish(ptr noundef %1)\l  ret void\l}"];
+}

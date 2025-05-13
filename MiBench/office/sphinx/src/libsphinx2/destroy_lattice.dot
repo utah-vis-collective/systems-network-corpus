@@ -1,0 +1,23 @@
+digraph "CFG for 'destroy_lattice' function" {
+	label="CFG for 'destroy_lattice' function";
+
+	Node0x600002aeb520 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %7 = load ptr, ptr %2, align 8\l  store ptr %7, ptr %3, align 8\l  br label %8\l}"];
+	Node0x600002aeb520 -> Node0x600002aeb570[tooltip="1 -> 8\nProbability 100.00%" ];
+	Node0x600002aeb570 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{8:\l|  %9 = load ptr, ptr %3, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %11, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600002aeb570:s0 -> Node0x600002aeb5c0[tooltip="8 -> 11\nProbability 96.88%" ];
+	Node0x600002aeb570:s1 -> Node0x600002aeb7a0[tooltip="8 -> 32\nProbability 3.12%" ];
+	Node0x600002aeb5c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.latnode_s, ptr %12, i32 0, i32 8\l  %14 = load ptr, ptr %13, align 8\l  store ptr %14, ptr %4, align 8\l  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds %struct.latnode_s, ptr %15, i32 0, i32 6\l  %17 = load ptr, ptr %16, align 8\l  store ptr %17, ptr %5, align 8\l  br label %18\l}"];
+	Node0x600002aeb5c0 -> Node0x600002aeb610[tooltip="11 -> 18\nProbability 100.00%" ];
+	Node0x600002aeb610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %5, align 8\l  %20 = icmp ne ptr %19, null\l  br i1 %20, label %21, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x600002aeb610:s0 -> Node0x600002aeb660[tooltip="18 -> 21\nProbability 96.88%" ];
+	Node0x600002aeb610:s1 -> Node0x600002aeb700[tooltip="18 -> 28\nProbability 3.12%" ];
+	Node0x600002aeb660 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %5, align 8\l  %23 = getelementptr inbounds %struct.latlink_s, ptr %22, i32 0, i32 2\l  %24 = load ptr, ptr %23, align 8\l  store ptr %24, ptr %6, align 8\l  %25 = load ptr, ptr %5, align 8\l  call void @listelem_free(ptr noundef %25, i32 noundef 56)\l  br label %26\l}"];
+	Node0x600002aeb660 -> Node0x600002aeb6b0[tooltip="21 -> 26\nProbability 100.00%" ];
+	Node0x600002aeb6b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load ptr, ptr %6, align 8\l  store ptr %27, ptr %5, align 8\l  br label %18\l}"];
+	Node0x600002aeb6b0 -> Node0x600002aeb610[tooltip="26 -> 18\nProbability 100.00%" ];
+	Node0x600002aeb700 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %3, align 8\l  call void @listelem_free(ptr noundef %29, i32 noundef 48)\l  br label %30\l}"];
+	Node0x600002aeb700 -> Node0x600002aeb750[tooltip="28 -> 30\nProbability 100.00%" ];
+	Node0x600002aeb750 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{30:\l|  %31 = load ptr, ptr %4, align 8\l  store ptr %31, ptr %3, align 8\l  br label %8\l}"];
+	Node0x600002aeb750 -> Node0x600002aeb570[tooltip="30 -> 8\nProbability 100.00%" ];
+	Node0x600002aeb7a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ec7f6370" fontname="Courier",label="{32:\l|  ret void\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'gdev_vector_init' function" {
+	label="CFG for 'gdev_vector_init' function";
+
+	Node0x6000009d30c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  call void @gdev_vector_reset(ptr noundef %3)\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.gx_device_vector_s, ptr %4, i32 0, i32 35\l  %6 = getelementptr inbounds %struct.gs_point_s, ptr %5, i32 0, i32 1\l  store double 1.000000e+00, ptr %6, align 8\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.gx_device_vector_s, ptr %7, i32 0, i32 35\l  %9 = getelementptr inbounds %struct.gs_point_s, ptr %8, i32 0, i32 0\l  store double 1.000000e+00, ptr %9, align 8\l  %10 = load ptr, ptr %2, align 8\l  %11 = getelementptr inbounds %struct.gx_device_vector_s, ptr %10, i32 0, i32\l... 36\l  store i32 0, ptr %11, align 8\l  %12 = load ptr, ptr %2, align 8\l  call void @gdev_vector_load_cache(ptr noundef %12)\l  ret void\l}"];
+}

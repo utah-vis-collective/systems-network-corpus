@@ -1,0 +1,13 @@
+digraph "CFG for 'isatty' function" {
+	label="CFG for 'isatty' function";
+
+	Node0x6000009d3070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i32, align 4\l  store i32 %0, ptr %2, align 4\l  %3 = load i32, ptr %2, align 4\l  %4 = load ptr, ptr @__stdinp, align 8\l  %5 = ptrtoint ptr %4 to i32\l  %6 = icmp eq i32 %3, %5\l  br i1 %6, label %17, label %7\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d3070:s0 -> Node0x6000009d3160[tooltip="1 -> 17\nProbability 50.00%" ];
+	Node0x6000009d3070:s1 -> Node0x6000009d30c0[tooltip="1 -> 7\nProbability 50.00%" ];
+	Node0x6000009d30c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{7:\l|  %8 = load i32, ptr %2, align 4\l  %9 = load ptr, ptr @__stdoutp, align 8\l  %10 = ptrtoint ptr %9 to i32\l  %11 = icmp eq i32 %8, %10\l  br i1 %11, label %17, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x6000009d30c0:s0 -> Node0x6000009d3160[tooltip="7 -> 17\nProbability 50.00%" ];
+	Node0x6000009d30c0:s1 -> Node0x6000009d3110[tooltip="7 -> 12\nProbability 50.00%" ];
+	Node0x6000009d3110 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{12:\l|  %13 = load i32, ptr %2, align 4\l  %14 = load ptr, ptr @__stderrp, align 8\l  %15 = ptrtoint ptr %14 to i32\l  %16 = icmp eq i32 %13, %15\l  br label %17\l}"];
+	Node0x6000009d3110 -> Node0x6000009d3160[tooltip="12 -> 17\nProbability 100.00%" ];
+	Node0x6000009d3160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{17:\l|  %18 = phi i1 [ true, %7 ], [ true, %1 ], [ %16, %12 ]\l  %19 = zext i1 %18 to i32\l  ret i32 %19\l}"];
+}

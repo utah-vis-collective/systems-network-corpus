@@ -1,0 +1,13 @@
+digraph "CFG for 'reduce_rational' function" {
+	label="CFG for 'reduce_rational' function";
+
+	Node0x6000004bf930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load i64, ptr %6, align 8\l  %8 = load ptr, ptr %4, align 8\l  %9 = load i64, ptr %8, align 8\l  %10 = call i64 @gcd(i64 noundef %7, i64 noundef %9)\l  store i64 %10, ptr %5, align 8\l  br label %11\l}"];
+	Node0x6000004bf930 -> Node0x6000004bf980[tooltip="2 -> 11\nProbability 100.00%" ];
+	Node0x6000004bf980 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  %12 = load i64, ptr %5, align 8\l  %13 = icmp ne i64 %12, 0\l  br i1 %13, label %15, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000004bf980:s0 -> Node0x6000004bfa20[tooltip="11 -> 15\nProbability 100.00%" ];
+	Node0x6000004bf980:s1 -> Node0x6000004bf9d0[tooltip="11 -> 14\nProbability 0.00%" ];
+	Node0x6000004bf9d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{14:\l|  call void @abort() #5\l  unreachable\l}"];
+	Node0x6000004bfa20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  br label %16\l}"];
+	Node0x6000004bfa20 -> Node0x6000004bfa70[tooltip="15 -> 16\nProbability 100.00%" ];
+	Node0x6000004bfa70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load i64, ptr %5, align 8\l  %18 = load ptr, ptr %3, align 8\l  %19 = load i64, ptr %18, align 8\l  %20 = udiv i64 %19, %17\l  store i64 %20, ptr %18, align 8\l  %21 = load i64, ptr %5, align 8\l  %22 = load ptr, ptr %4, align 8\l  %23 = load i64, ptr %22, align 8\l  %24 = udiv i64 %23, %21\l  store i64 %24, ptr %22, align 8\l  ret void\l}"];
+}

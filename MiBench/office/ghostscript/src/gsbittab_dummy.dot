@@ -1,0 +1,5 @@
+digraph "CFG for 'gsbittab_dummy' function" {
+	label="CFG for 'gsbittab_dummy' function";
+
+	Node0x600000729e50 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  ret void\l}"];
+}

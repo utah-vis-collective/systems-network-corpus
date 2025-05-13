@@ -1,0 +1,12 @@
+digraph "CFG for 'bi_reverse' function" {
+	label="CFG for 'bi_reverse' function";
+
+	Node0x600002a46fd0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  store i32 0, ptr %5, align 4\l  br label %6\l}"];
+	Node0x600002a46fd0 -> Node0x600002a47020[tooltip="2 -> 6\nProbability 100.00%" ];
+	Node0x600002a47020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %3, align 4\l  %8 = and i32 %7, 1\l  %9 = load i32, ptr %5, align 4\l  %10 = or i32 %9, %8\l  store i32 %10, ptr %5, align 4\l  %11 = load i32, ptr %3, align 4\l  %12 = lshr i32 %11, 1\l  store i32 %12, ptr %3, align 4\l  %13 = load i32, ptr %5, align 4\l  %14 = shl i32 %13, 1\l  store i32 %14, ptr %5, align 4\l  br label %15\l}"];
+	Node0x600002a47020 -> Node0x600002a47070[tooltip="6 -> 15\nProbability 100.00%" ];
+	Node0x600002a47070 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  %16 = load i32, ptr %4, align 4\l  %17 = add nsw i32 %16, -1\l  store i32 %17, ptr %4, align 4\l  %18 = icmp sgt i32 %17, 0\l  br i1 %18, label %6, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600002a47070:s0 -> Node0x600002a47020[tooltip="15 -> 6\nProbability 96.88%" ];
+	Node0x600002a47070:s1 -> Node0x600002a470c0[tooltip="15 -> 19\nProbability 3.12%" ];
+	Node0x600002a470c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{19:\l|  %20 = load i32, ptr %5, align 4\l  %21 = lshr i32 %20, 1\l  ret i32 %21\l}"];
+}

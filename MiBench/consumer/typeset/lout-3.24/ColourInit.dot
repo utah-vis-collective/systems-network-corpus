@@ -1,0 +1,5 @@
+digraph "CFG for 'ColourInit' function" {
+	label="CFG for 'ColourInit' function";
+
+	Node0x6000006cdbd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call ptr @ctab_new(i32 noundef 100)\l  store ptr %1, ptr @col_tab, align 8\l  ret void\l}"];
+}

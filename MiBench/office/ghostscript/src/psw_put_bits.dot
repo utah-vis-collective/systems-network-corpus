@@ -1,0 +1,14 @@
+digraph "CFG for 'psw_put_bits' function" {
+	label="CFG for 'psw_put_bits' function";
+
+	Node0x6000028668f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{6:\l|  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  %10 = alloca i32, align 4\l  %11 = alloca i32, align 4\l  %12 = alloca i32, align 4\l  %13 = alloca i32, align 4\l  store ptr %0, ptr %7, align 8\l  store ptr %1, ptr %8, align 8\l  store i32 %2, ptr %9, align 4\l  store i32 %3, ptr %10, align 4\l  store i32 %4, ptr %11, align 4\l  store i32 %5, ptr %12, align 4\l  store i32 0, ptr %13, align 4\l  br label %14\l}"];
+	Node0x6000028668f0 -> Node0x600002866940[tooltip="6 -> 14\nProbability 100.00%" ];
+	Node0x600002866940 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  %15 = load i32, ptr %13, align 4\l  %16 = load i32, ptr %12, align 4\l  %17 = icmp slt i32 %15, %16\l  br i1 %17, label %18, label %37\l|{<s0>T|<s1>F}}"];
+	Node0x600002866940:s0 -> Node0x600002866990[tooltip="14 -> 18\nProbability 96.88%" ];
+	Node0x600002866940:s1 -> Node0x600002866a30[tooltip="14 -> 37\nProbability 3.12%" ];
+	Node0x600002866990 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load ptr, ptr %7, align 8\l  %20 = load ptr, ptr %8, align 8\l  %21 = load i32, ptr %9, align 4\l  %22 = ashr i32 %21, 3\l  %23 = sext i32 %22 to i64\l  %24 = getelementptr inbounds i8, ptr %20, i64 %23\l  %25 = load i32, ptr %13, align 4\l  %26 = load i32, ptr %10, align 4\l  %27 = mul i32 %25, %26\l  %28 = zext i32 %27 to i64\l  %29 = getelementptr inbounds i8, ptr %24, i64 %28\l  %30 = load i32, ptr %11, align 4\l  %31 = add i32 %30, 7\l  %32 = lshr i32 %31, 3\l  %33 = call i32 @pwrite(ptr noundef %19, ptr noundef %29, i32 noundef %32)\l  br label %34\l}"];
+	Node0x600002866990 -> Node0x6000028669e0[tooltip="18 -> 34\nProbability 100.00%" ];
+	Node0x6000028669e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %13, align 4\l  %36 = add nsw i32 %35, 1\l  store i32 %36, ptr %13, align 4\l  br label %14\l}"];
+	Node0x6000028669e0 -> Node0x600002866940[tooltip="34 -> 14\nProbability 100.00%" ];
+	Node0x600002866a30 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{37:\l|  ret void\l}"];
+}

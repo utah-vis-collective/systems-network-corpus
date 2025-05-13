@@ -1,0 +1,18 @@
+digraph "CFG for '_TIFFFieldWithTag' function" {
+	label="CFG for '_TIFFFieldWithTag' function";
+
+	Node0x6000006632a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  %6 = load ptr, ptr %3, align 8\l  %7 = load i64, ptr %4, align 8\l  %8 = call ptr @_TIFFFindFieldInfo(ptr noundef %6, i64 noundef %7, i32\l... noundef 0)\l  store ptr %8, ptr %5, align 8\l  %9 = load ptr, ptr %5, align 8\l  %10 = icmp ne ptr %9, null\l  br i1 %10, label %24, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x6000006632a0:s0 -> Node0x600000663480[tooltip="2 -> 24\nProbability 62.50%" ];
+	Node0x6000006632a0:s1 -> Node0x6000006632f0[tooltip="2 -> 11\nProbability 37.50%" ];
+	Node0x6000006632f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  %12 = load i64, ptr %4, align 8\l  %13 = trunc i64 %12 to i32\l  call void (ptr, ptr, ...) @TIFFError(ptr noundef @.str.4, ptr noundef\l... @.str.5, i32 noundef %13)\l  %14 = load ptr, ptr %5, align 8\l  %15 = icmp ne ptr %14, null\l  %16 = xor i1 %15, true\l  %17 = zext i1 %16 to i32\l  %18 = sext i32 %17 to i64\l  %19 = icmp ne i64 %18, 0\l  br i1 %19, label %20, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x6000006632f0:s0 -> Node0x600000663340[tooltip="11 -> 20\nProbability 0.00%" ];
+	Node0x6000006632f0:s1 -> Node0x6000006633e0[tooltip="11 -> 22\nProbability 100.00%" ];
+	Node0x600000663340 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f2cab570" fontname="Courier",label="{20:\l|  call void @__assert_rtn(ptr noundef @__func__._TIFFFieldWithTag, ptr\l... noundef @.str.6, i32 noundef 398, ptr noundef @.str.7) #4\l  unreachable\l}"];
+	Node0x600000663390 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#3d50c370" fontname="Courier",label="{21:\l|  br label %23\l}"];
+	Node0x600000663390 -> Node0x600000663430[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x6000006633e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{22:\l|  br label %23\l}"];
+	Node0x6000006633e0 -> Node0x600000663430[tooltip="22 -> 23\nProbability 100.00%" ];
+	Node0x600000663430 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{23:\l|  br label %24\l}"];
+	Node0x600000663430 -> Node0x600000663480[tooltip="23 -> 24\nProbability 100.00%" ];
+	Node0x600000663480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load ptr, ptr %5, align 8\l  ret ptr %25\l}"];
+}

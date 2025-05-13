@@ -1,0 +1,5 @@
+digraph "CFG for 'get_lame_version' function" {
+	label="CFG for 'get_lame_version' function";
+
+	Node0x600002829f90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = call i32 (ptr, i32, i64, ptr, ...) @__sprintf_chk(ptr noundef\l... @lpszVersion, i32 noundef 0, i64 noundef 80, ptr noundef @.str.2, i32 noundef\l... 3, i32 noundef 70)\l  ret ptr @lpszVersion\l}"];
+}

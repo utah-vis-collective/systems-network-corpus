@@ -1,0 +1,5 @@
+digraph "CFG for 'bhmi_cleanup' function" {
+	label="CFG for 'bhmi_cleanup' function";
+
+	Node0x600001ce6710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @pat, align 8\l  call void @free(ptr noundef %1)\l  ret void\l}"];
+}

@@ -1,0 +1,13 @@
+digraph "CFG for 'pclxl_setlinecap' function" {
+	label="CFG for 'pclxl_setlinecap' function";
+
+	Node0x600003ba74d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  store ptr %0, ptr %3, align 8\l  store i32 %1, ptr %4, align 4\l  %6 = load ptr, ptr %3, align 8\l  %7 = call ptr @gdev_vector_stream(ptr noundef %6)\l  store ptr %7, ptr %5, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = load i32, ptr %4, align 4\l  %10 = trunc i32 %9 to i8\l  call void @put_ub(ptr noundef %8, i8 noundef zeroext %10)\l  br label %11\l}"];
+	Node0x600003ba74d0 -> Node0x600003ba7520[tooltip="2 -> 11\nProbability 100.00%" ];
+	Node0x600003ba7520 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{11:\l|  br label %12\l}"];
+	Node0x600003ba7520 -> Node0x600003ba7570[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600003ba7570 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %5, align 8\l  call void @put_bytes(ptr noundef %13, ptr noundef @pclxl_setlinecap.ac_, i32\l... noundef 3)\l  br label %14\l}"];
+	Node0x600003ba7570 -> Node0x600003ba75c0[tooltip="12 -> 14\nProbability 100.00%" ];
+	Node0x600003ba75c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{14:\l|  br label %15\l}"];
+	Node0x600003ba75c0 -> Node0x600003ba7610[tooltip="14 -> 15\nProbability 100.00%" ];
+	Node0x600003ba7610 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{15:\l|  ret i32 0\l}"];
+}

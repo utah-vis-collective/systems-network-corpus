@@ -1,0 +1,17 @@
+digraph "CFG for 'query_tag' function" {
+	label="CFG for 'query_tag' function";
+
+	Node0x600002d8a670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca i64, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca [10 x i8], align 1\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  %7 = load ptr, ptr %3, align 8\l  %8 = call i32 @fgetpos(ptr noundef %7, ptr noundef %4)\l  %9 = icmp eq i32 %8, -1\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8a670:s0 -> Node0x600002d8a6c0[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x600002d8a670:s1 -> Node0x600002d8a710[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x600002d8a6c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{10:\l|  store i64 0, ptr %2, align 8\l  br label %23\l}"];
+	Node0x600002d8a6c0 -> Node0x600002d8a800[tooltip="10 -> 23\nProbability 100.00%" ];
+	Node0x600002d8a710 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{11:\l|  %12 = getelementptr inbounds [10 x i8], ptr %5, i64 0, i64 0\l  %13 = getelementptr inbounds [10 x i8], ptr %5, i64 0, i64 0\l  %14 = load ptr, ptr %3, align 8\l  %15 = call i64 @fread(ptr noundef %13, i64 noundef 1, i64 noundef 10, ptr\l... noundef %14)\l  %16 = call i64 @id3_tag_query(ptr noundef %12, i64 noundef %15)\l  store i64 %16, ptr %6, align 8\l  %17 = load ptr, ptr %3, align 8\l  %18 = call i32 @fsetpos(ptr noundef %17, ptr noundef %4)\l  %19 = icmp eq i32 %18, -1\l  br i1 %19, label %20, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x600002d8a710:s0 -> Node0x600002d8a760[tooltip="11 -> 20\nProbability 37.50%" ];
+	Node0x600002d8a710:s1 -> Node0x600002d8a7b0[tooltip="11 -> 21\nProbability 62.50%" ];
+	Node0x600002d8a760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  store i64 0, ptr %2, align 8\l  br label %23\l}"];
+	Node0x600002d8a760 -> Node0x600002d8a800[tooltip="20 -> 23\nProbability 100.00%" ];
+	Node0x600002d8a7b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{21:\l|  %22 = load i64, ptr %6, align 8\l  store i64 %22, ptr %2, align 8\l  br label %23\l}"];
+	Node0x600002d8a7b0 -> Node0x600002d8a800[tooltip="21 -> 23\nProbability 100.00%" ];
+	Node0x600002d8a800 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{23:\l|  %24 = load i64, ptr %2, align 8\l  ret i64 %24\l}"];
+}

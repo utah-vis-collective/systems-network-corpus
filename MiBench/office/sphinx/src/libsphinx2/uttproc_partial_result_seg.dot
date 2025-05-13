@@ -1,0 +1,15 @@
+digraph "CFG for 'uttproc_partial_result_seg' function" {
+	label="CFG for 'uttproc_partial_result_seg' function";
+
+	Node0x6000008a0870 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %7 = load ptr, ptr @utt_seghyp, align 8\l  call void @utt_seghyp_free(ptr noundef %7)\l  store ptr null, ptr @utt_seghyp, align 8\l  %8 = load i32, ptr @uttstate, align 4\l  %9 = icmp ne i32 %8, 1\l  br i1 %9, label %10, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a0870:s0 -> Node0x6000008a08c0[tooltip="2 -> 10\nProbability 50.00%" ];
+	Node0x6000008a0870:s1 -> Node0x6000008a0960[tooltip="2 -> 16\nProbability 50.00%" ];
+	Node0x6000008a08c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{10:\l|  %11 = load i32, ptr @uttstate, align 4\l  %12 = icmp ne i32 %11, 2\l  br i1 %12, label %13, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x6000008a08c0:s0 -> Node0x6000008a0910[tooltip="10 -> 13\nProbability 50.00%" ];
+	Node0x6000008a08c0:s1 -> Node0x6000008a0960[tooltip="10 -> 16\nProbability 50.00%" ];
+	Node0x6000008a0910 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  call void @_E__pr_header(ptr noundef @.str, i64 noundef 1339, ptr noundef\l... @.str.1)\l  call void (ptr, ...) @_E__pr_warn(ptr noundef @.str.32)\l  %14 = load ptr, ptr %4, align 8\l  store i32 -1, ptr %14, align 4\l  %15 = load ptr, ptr %5, align 8\l  store ptr null, ptr %15, align 8\l  store i32 -1, ptr %3, align 4\l  br label %21\l}"];
+	Node0x6000008a0910 -> Node0x6000008a09b0[tooltip="13 -> 21\nProbability 100.00%" ];
+	Node0x6000008a0960 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %4, align 8\l  %18 = call i32 @search_partial_result(ptr noundef %17, ptr noundef %6)\l  call void @build_utt_seghyp()\l  %19 = load ptr, ptr @utt_seghyp, align 8\l  %20 = load ptr, ptr %5, align 8\l  store ptr %19, ptr %20, align 8\l  store i32 0, ptr %3, align 4\l  br label %21\l}"];
+	Node0x6000008a0960 -> Node0x6000008a09b0[tooltip="16 -> 21\nProbability 100.00%" ];
+	Node0x6000008a09b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = load i32, ptr %3, align 4\l  ret i32 %22\l}"];
+}

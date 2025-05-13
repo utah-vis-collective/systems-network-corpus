@@ -1,0 +1,14 @@
+digraph "CFG for 'rrgb_copy_4to3' function" {
+	label="CFG for 'rrgb_copy_4to3' function";
+
+	Node0x600001375180 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca ptr, align 8\l  %8 = alloca ptr, align 8\l  %9 = alloca i32, align 4\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store i32 %2, ptr %6, align 4\l  %10 = load ptr, ptr %5, align 8\l  store ptr %10, ptr %7, align 8\l  %11 = load ptr, ptr %4, align 8\l  store ptr %11, ptr %8, align 8\l  %12 = load i32, ptr %6, align 4\l  store i32 %12, ptr %9, align 4\l  br label %13\l}"];
+	Node0x600001375180 -> Node0x600001375220[tooltip="3 -> 13\nProbability 100.00%" ];
+	Node0x600001375220 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{13:\l|  %14 = load i32, ptr %9, align 4\l  %15 = icmp sgt i32 %14, 0\l  br i1 %15, label %16, label %39\l|{<s0>T|<s1>F}}"];
+	Node0x600001375220:s0 -> Node0x600001375270[tooltip="13 -> 16\nProbability 96.88%" ];
+	Node0x600001375220:s1 -> Node0x600001375310[tooltip="13 -> 39\nProbability 3.12%" ];
+	Node0x600001375270 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %7, align 8\l  %18 = getelementptr inbounds i8, ptr %17, i64 1\l  %19 = load i8, ptr %18, align 1\l  %20 = load ptr, ptr %8, align 8\l  %21 = getelementptr inbounds i8, ptr %20, i64 0\l  store i8 %19, ptr %21, align 1\l  %22 = load ptr, ptr %7, align 8\l  %23 = getelementptr inbounds i8, ptr %22, i64 2\l  %24 = load i8, ptr %23, align 1\l  %25 = load ptr, ptr %8, align 8\l  %26 = getelementptr inbounds i8, ptr %25, i64 1\l  store i8 %24, ptr %26, align 1\l  %27 = load ptr, ptr %7, align 8\l  %28 = getelementptr inbounds i8, ptr %27, i64 3\l  %29 = load i8, ptr %28, align 1\l  %30 = load ptr, ptr %8, align 8\l  %31 = getelementptr inbounds i8, ptr %30, i64 2\l  store i8 %29, ptr %31, align 1\l  br label %32\l}"];
+	Node0x600001375270 -> Node0x6000013752c0[tooltip="16 -> 32\nProbability 100.00%" ];
+	Node0x6000013752c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{32:\l|  %33 = load ptr, ptr %7, align 8\l  %34 = getelementptr inbounds i8, ptr %33, i64 4\l  store ptr %34, ptr %7, align 8\l  %35 = load ptr, ptr %8, align 8\l  %36 = getelementptr inbounds i8, ptr %35, i64 3\l  store ptr %36, ptr %8, align 8\l  %37 = load i32, ptr %9, align 4\l  %38 = add nsw i32 %37, -1\l  store i32 %38, ptr %9, align 4\l  br label %13\l}"];
+	Node0x6000013752c0 -> Node0x600001375220[tooltip="32 -> 13\nProbability 100.00%" ];
+	Node0x600001375310 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{39:\l|  ret void\l}"];
+}

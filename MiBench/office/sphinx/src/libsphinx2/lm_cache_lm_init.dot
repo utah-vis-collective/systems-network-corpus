@@ -1,0 +1,12 @@
+digraph "CFG for 'lm_cache_lm_init' function" {
+	label="CFG for 'lm_cache_lm_init' function";
+
+	Node0x60000344a5d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @clm, align 8\l  %2 = icmp ne ptr %1, null\l  br i1 %2, label %3, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x60000344a5d0:s0 -> Node0x60000344a620[tooltip="0 -> 3\nProbability 62.50%" ];
+	Node0x60000344a5d0:s1 -> Node0x60000344a670[tooltip="0 -> 4\nProbability 37.50%" ];
+	Node0x60000344a620 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{3:\l|  br label %6\l}"];
+	Node0x60000344a620 -> Node0x60000344a6c0[tooltip="3 -> 6\nProbability 100.00%" ];
+	Node0x60000344a670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{4:\l|  %5 = call ptr @cache_lm_init(double noundef 1.000000e-04, double noundef\l... 1.000000e-03, double noundef 4.000000e-02, i32 noundef 100, double noundef\l... 7.000000e-02)\l  store ptr %5, ptr @clm, align 8\l  br label %6\l}"];
+	Node0x60000344a670 -> Node0x60000344a6c0[tooltip="4 -> 6\nProbability 100.00%" ];
+	Node0x60000344a6c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{6:\l|  ret void\l}"];
+}

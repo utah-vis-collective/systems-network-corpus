@@ -1,0 +1,16 @@
+digraph "CFG for 'isCCITTCompression' function" {
+	label="CFG for 'isCCITTCompression' function";
+
+	Node0x600002a30550 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i16, align 2\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = call i32 (ptr, i64, ...) @TIFFGetField(ptr noundef %4, i64 noundef 259,\l... ptr noundef %3)\l  %6 = load i16, ptr %3, align 2\l  %7 = zext i16 %6 to i32\l  %8 = icmp eq i32 %7, 3\l  br i1 %8, label %21, label %9\l|{<s0>T|<s1>F}}"];
+	Node0x600002a30550:s0 -> Node0x600002a30690[tooltip="1 -> 21\nProbability 50.00%" ];
+	Node0x600002a30550:s1 -> Node0x600002a305a0[tooltip="1 -> 9\nProbability 50.00%" ];
+	Node0x600002a305a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{9:\l|  %10 = load i16, ptr %3, align 2\l  %11 = zext i16 %10 to i32\l  %12 = icmp eq i32 %11, 4\l  br i1 %12, label %21, label %13\l|{<s0>T|<s1>F}}"];
+	Node0x600002a305a0:s0 -> Node0x600002a30690[tooltip="9 -> 21\nProbability 50.00%" ];
+	Node0x600002a305a0:s1 -> Node0x600002a305f0[tooltip="9 -> 13\nProbability 50.00%" ];
+	Node0x600002a305f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{13:\l|  %14 = load i16, ptr %3, align 2\l  %15 = zext i16 %14 to i32\l  %16 = icmp eq i32 %15, 2\l  br i1 %16, label %21, label %17\l|{<s0>T|<s1>F}}"];
+	Node0x600002a305f0:s0 -> Node0x600002a30690[tooltip="13 -> 21\nProbability 50.00%" ];
+	Node0x600002a305f0:s1 -> Node0x600002a30640[tooltip="13 -> 17\nProbability 50.00%" ];
+	Node0x600002a30640 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#ca3b3770" fontname="Courier",label="{17:\l|  %18 = load i16, ptr %3, align 2\l  %19 = zext i16 %18 to i32\l  %20 = icmp eq i32 %19, 32771\l  br label %21\l}"];
+	Node0x600002a30640 -> Node0x600002a30690[tooltip="17 -> 21\nProbability 100.00%" ];
+	Node0x600002a30690 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{21:\l|  %22 = phi i1 [ true, %13 ], [ true, %9 ], [ true, %1 ], [ %20, %17 ]\l  %23 = zext i1 %22 to i32\l  ret i32 %23\l}"];
+}

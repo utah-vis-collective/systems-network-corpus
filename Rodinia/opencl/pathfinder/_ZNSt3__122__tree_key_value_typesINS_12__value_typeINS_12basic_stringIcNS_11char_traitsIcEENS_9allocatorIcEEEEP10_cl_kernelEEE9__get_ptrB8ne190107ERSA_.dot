@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__122__tree_key_value_typesINS_12__value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP10_cl_kernelEEE9__get_ptrB8ne190107ERSA_' function" {
+	label="CFG for '_ZNSt3__122__tree_key_value_typesINS_12__value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP10_cl_kernelEEE9__get_ptrB8ne190107ERSA_' function";
+
+	Node0x600001382e40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  store ptr %0, ptr %2, align 8\l  %3 = load ptr, ptr %2, align 8\l  %4 = call noundef nonnull align 8 dereferenceable(32) ptr\l... @_ZNSt3__112__value_typeINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorI\l...cEEEEP10_cl_kernelE11__get_valueB8ne190107Ev(ptr noundef nonnull align 8\l... dereferenceable(32) %3)\l  ret ptr %4\l}"];
+}

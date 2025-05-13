@@ -1,0 +1,29 @@
+digraph "CFG for 'z_finput' function" {
+	label="CFG for 'z_finput' function";
+
+	Node0x6000027723a0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{1:\l|  %2 = alloca %struct.complex, align 8\l  %3 = alloca ptr, align 8\l  %4 = alloca i32, align 4\l  store ptr %0, ptr %3, align 8\l  %5 = load ptr, ptr %3, align 8\l  %6 = call i32 @skipjunk(ptr noundef %5)\l  %7 = load ptr, ptr %3, align 8\l  %8 = call i32 @fileno(ptr noundef %7)\l  %9 = call i32 @isatty(i32 noundef %8)\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %28\l|{<s0>T|<s1>F}}"];
+	Node0x6000027723a0:s0 -> Node0x6000027723f0[tooltip="1 -> 11\nProbability 62.50%" ];
+	Node0x6000027723a0:s1 -> Node0x6000027725d0[tooltip="1 -> 28\nProbability 37.50%" ];
+	Node0x6000027723f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{11:\l|  br label %12\l}"];
+	Node0x6000027723f0 -> Node0x600002772440[tooltip="11 -> 12\nProbability 100.00%" ];
+	Node0x600002772440 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr @__stderrp, align 8\l  %14 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %13, ptr noundef @.str)\l... #3\l  %15 = load ptr, ptr %3, align 8\l  %16 = call ptr @fgets(ptr noundef @line, i32 noundef 81, ptr noundef %15)\l  %17 = icmp eq ptr %16, null\l  br i1 %17, label %18, label %20\l|{<s0>T|<s1>F}}"];
+	Node0x600002772440:s0 -> Node0x600002772490[tooltip="12 -> 18\nProbability 37.50%" ];
+	Node0x600002772440:s1 -> Node0x6000027724e0[tooltip="12 -> 20\nProbability 62.50%" ];
+	Node0x600002772490 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{18:\l|  %19 = call i32 @ev_err(ptr noundef @.str.1, i32 noundef 18, i32 noundef\l... 59, ptr noundef @.str.2, i32 noundef 0)\l  br label %20\l}"];
+	Node0x600002772490 -> Node0x6000027724e0[tooltip="18 -> 20\nProbability 100.00%" ];
+	Node0x6000027724e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 0\l  %22 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 1\l  %23 = call i32 (ptr, ptr, ...) @sscanf(ptr noundef @line, ptr noundef\l... @.str.3, ptr noundef %21, ptr noundef %22)\l  store i32 %23, ptr %4, align 4\l  br label %24\l}"];
+	Node0x6000027724e0 -> Node0x600002772530[tooltip="20 -> 24\nProbability 100.00%" ];
+	Node0x600002772530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{24:\l|  %25 = load i32, ptr %4, align 4\l  %26 = icmp ne i32 %25, 2\l  br i1 %26, label %12, label %27\l|{<s0>T|<s1>F}}"];
+	Node0x600002772530:s0 -> Node0x600002772440[tooltip="24 -> 12\nProbability 96.88%" ];
+	Node0x600002772530:s1 -> Node0x600002772580[tooltip="24 -> 27\nProbability 3.12%" ];
+	Node0x600002772580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{27:\l|  br label %41\l}"];
+	Node0x600002772580 -> Node0x6000027726c0[tooltip="27 -> 41\nProbability 100.00%" ];
+	Node0x6000027725d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{28:\l|  %29 = load ptr, ptr %3, align 8\l  %30 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 0\l  %31 = getelementptr inbounds %struct.complex, ptr %2, i32 0, i32 1\l  %32 = call i32 (ptr, ptr, ...) @fscanf(ptr noundef %29, ptr noundef @.str.4,\l... ptr noundef %30, ptr noundef %31)\l  store i32 %32, ptr %4, align 4\l  %33 = icmp slt i32 %32, 2\l  br i1 %33, label %34, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x6000027725d0:s0 -> Node0x600002772620[tooltip="28 -> 34\nProbability 50.00%" ];
+	Node0x6000027725d0:s1 -> Node0x600002772670[tooltip="28 -> 40\nProbability 50.00%" ];
+	Node0x600002772620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70" fontname="Courier",label="{34:\l|  %35 = load i32, ptr %4, align 4\l  %36 = icmp eq i32 %35, -1\l  %37 = zext i1 %36 to i64\l  %38 = select i1 %36, i32 18, i32 6\l  %39 = call i32 @ev_err(ptr noundef @.str.1, i32 noundef %38, i32 noundef 74,\l... ptr noundef @.str.2, i32 noundef 0)\l  br label %40\l}"];
+	Node0x600002772620 -> Node0x600002772670[tooltip="34 -> 40\nProbability 100.00%" ];
+	Node0x600002772670 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dc5d4a70" fontname="Courier",label="{40:\l|  br label %41\l}"];
+	Node0x600002772670 -> Node0x6000027726c0[tooltip="40 -> 41\nProbability 100.00%" ];
+	Node0x6000027726c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d24b4070" fontname="Courier",label="{41:\l|  %42 = load %struct.complex, ptr %2, align 8\l  ret %struct.complex %42\l}"];
+}

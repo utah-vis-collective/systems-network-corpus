@@ -1,0 +1,5 @@
+digraph "CFG for 'Plain_CoordTranslate' function" {
+	label="CFG for 'Plain_CoordTranslate' function";
+
+	Node0x600001289a40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  ret void\l}"];
+}

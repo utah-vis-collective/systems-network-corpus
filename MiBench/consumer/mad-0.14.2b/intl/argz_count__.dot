@@ -1,0 +1,12 @@
+digraph "CFG for 'argz_count__' function" {
+	label="CFG for 'argz_count__' function";
+
+	Node0x600000a50050 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca i64, align 8\l  %5 = alloca i64, align 8\l  %6 = alloca i64, align 8\l  store ptr %0, ptr %3, align 8\l  store i64 %1, ptr %4, align 8\l  store i64 0, ptr %5, align 8\l  br label %7\l}"];
+	Node0x600000a50050 -> Node0x600000a500a0[tooltip="2 -> 7\nProbability 100.00%" ];
+	Node0x600000a500a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  %8 = load i64, ptr %4, align 8\l  %9 = icmp ugt i64 %8, 0\l  br i1 %9, label %10, label %23\l|{<s0>T|<s1>F}}"];
+	Node0x600000a500a0:s0 -> Node0x600000a500f0[tooltip="7 -> 10\nProbability 96.88%" ];
+	Node0x600000a500a0:s1 -> Node0x600000a50140[tooltip="7 -> 23\nProbability 3.12%" ];
+	Node0x600000a500f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %3, align 8\l  %12 = call i64 @strlen(ptr noundef %11) #6\l  store i64 %12, ptr %6, align 8\l  %13 = load i64, ptr %6, align 8\l  %14 = add i64 %13, 1\l  %15 = load ptr, ptr %3, align 8\l  %16 = getelementptr inbounds i8, ptr %15, i64 %14\l  store ptr %16, ptr %3, align 8\l  %17 = load i64, ptr %6, align 8\l  %18 = add i64 %17, 1\l  %19 = load i64, ptr %4, align 8\l  %20 = sub i64 %19, %18\l  store i64 %20, ptr %4, align 8\l  %21 = load i64, ptr %5, align 8\l  %22 = add i64 %21, 1\l  store i64 %22, ptr %5, align 8\l  br label %7\l}"];
+	Node0x600000a500f0 -> Node0x600000a500a0[tooltip="10 -> 7\nProbability 100.00%" ];
+	Node0x600000a50140 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{23:\l|  %24 = load i64, ptr %5, align 8\l  ret i64 %24\l}"];
+}

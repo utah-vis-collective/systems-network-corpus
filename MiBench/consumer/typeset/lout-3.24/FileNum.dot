@@ -1,0 +1,17 @@
+digraph "CFG for 'FileNum' function" {
+	label="CFG for 'FileNum' function";
+
+	Node0x600003999770 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  %7 = alloca [512 x i8], align 1\l  store ptr %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = call i64 @strlen(ptr noundef %8) #5\l  %10 = load ptr, ptr %4, align 8\l  %11 = call i64 @strlen(ptr noundef %10) #5\l  %12 = add i64 %9, %11\l  %13 = icmp uge i64 %12, 512\l  br i1 %13, label %14, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x600003999770:s0 -> Node0x6000039997c0[tooltip="2 -> 14\nProbability 50.00%" ];
+	Node0x600003999770:s1 -> Node0x600003999810[tooltip="2 -> 19\nProbability 50.00%" ];
+	Node0x6000039997c0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{14:\l|  %15 = load ptr, ptr @no_fpos, align 8\l  %16 = load ptr, ptr %3, align 8\l  %17 = load ptr, ptr %4, align 8\l  %18 = call ptr (i32, i32, ptr, i32, ptr, ...) @Error(i32 noundef 3, i32\l... noundef 6, ptr noundef @.str.6, i32 noundef 1, ptr noundef %15, ptr noundef\l... %16, ptr noundef %17)\l  br label %19\l}"];
+	Node0x6000039997c0 -> Node0x600003999810[tooltip="14 -> 19\nProbability 100.00%" ];
+	Node0x600003999810 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{19:\l|  %20 = getelementptr inbounds [512 x i8], ptr %7, i64 0, i64 0\l  %21 = load ptr, ptr %3, align 8\l  %22 = call ptr @__strcpy_chk(ptr noundef %20, ptr noundef %21, i64 noundef\l... 512) #5\l  %23 = getelementptr inbounds [512 x i8], ptr %7, i64 0, i64 0\l  %24 = load ptr, ptr %4, align 8\l  %25 = call ptr @__strcat_chk(ptr noundef %23, ptr noundef %24, i64 noundef\l... 512) #5\l  %26 = getelementptr inbounds [512 x i8], ptr %7, i64 0, i64 0\l  %27 = load ptr, ptr @file_tab, align 8\l  %28 = call ptr @ftab_retrieve(ptr noundef %26, ptr noundef %27)\l  store ptr %28, ptr %6, align 8\l  %29 = load ptr, ptr %6, align 8\l  %30 = icmp eq ptr %29, null\l  br i1 %30, label %31, label %32\l|{<s0>T|<s1>F}}"];
+	Node0x600003999810:s0 -> Node0x600003999860[tooltip="19 -> 31\nProbability 37.50%" ];
+	Node0x600003999810:s1 -> Node0x6000039998b0[tooltip="19 -> 32\nProbability 62.50%" ];
+	Node0x600003999860 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{31:\l|  br label %37\l}"];
+	Node0x600003999860 -> Node0x600003999900[tooltip="31 -> 37\nProbability 100.00%" ];
+	Node0x6000039998b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{32:\l|  %33 = load ptr, ptr %6, align 8\l  %34 = getelementptr inbounds %struct.word_type, ptr %33, i32 0, i32 2\l  %35 = load i32, ptr %34, align 8\l  %36 = and i32 %35, 4095\l  br label %37\l}"];
+	Node0x6000039998b0 -> Node0x600003999900[tooltip="32 -> 37\nProbability 100.00%" ];
+	Node0x600003999900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{37:\l|  %38 = phi i32 [ 0, %31 ], [ %36, %32 ]\l  store i32 %38, ptr %5, align 4\l  %39 = load i32, ptr %5, align 4\l  %40 = trunc i32 %39 to i16\l  ret i16 %40\l}"];
+}

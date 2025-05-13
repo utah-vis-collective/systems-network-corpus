@@ -1,0 +1,17 @@
+digraph "CFG for 'ref_param_write_string' function" {
+	label="CFG for 'ref_param_write_string' function";
+
+	Node0x6000017af930 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca i32, align 4\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca ptr, align 8\l  %8 = alloca %struct.ref_s, align 8\l  %9 = alloca i32, align 4\l  store ptr %0, ptr %5, align 8\l  store ptr %1, ptr %6, align 8\l  store ptr %2, ptr %7, align 8\l  %10 = load ptr, ptr %5, align 8\l  %11 = load ptr, ptr %6, align 8\l  %12 = call i32 @ref_param_requested(ptr noundef %10, ptr noundef %11)\l  %13 = icmp ne i32 %12, 0\l  br i1 %13, label %15, label %14\l|{<s0>T|<s1>F}}"];
+	Node0x6000017af930:s0 -> Node0x6000017af9d0[tooltip="3 -> 15\nProbability 62.50%" ];
+	Node0x6000017af930:s1 -> Node0x6000017af980[tooltip="3 -> 14\nProbability 37.50%" ];
+	Node0x6000017af980 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{14:\l|  store i32 0, ptr %4, align 4\l  br label %26\l}"];
+	Node0x6000017af980 -> Node0x6000017afac0[tooltip="14 -> 26\nProbability 100.00%" ];
+	Node0x6000017af9d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{15:\l|  %16 = load ptr, ptr %7, align 8\l  %17 = call i32 @ref_param_write_string_value(ptr noundef %8, ptr noundef %16)\l  store i32 %17, ptr %9, align 4\l  %18 = load i32, ptr %9, align 4\l  %19 = icmp slt i32 %18, 0\l  br i1 %19, label %20, label %22\l|{<s0>T|<s1>F}}"];
+	Node0x6000017af9d0:s0 -> Node0x6000017afa20[tooltip="15 -> 20\nProbability 37.50%" ];
+	Node0x6000017af9d0:s1 -> Node0x6000017afa70[tooltip="15 -> 22\nProbability 62.50%" ];
+	Node0x6000017afa20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c5333470" fontname="Courier",label="{20:\l|  %21 = load i32, ptr %9, align 4\l  store i32 %21, ptr %4, align 4\l  br label %26\l}"];
+	Node0x6000017afa20 -> Node0x6000017afac0[tooltip="20 -> 26\nProbability 100.00%" ];
+	Node0x6000017afa70 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{22:\l|  %23 = load ptr, ptr %5, align 8\l  %24 = load ptr, ptr %6, align 8\l  %25 = call i32 @ref_param_write(ptr noundef %23, ptr noundef %24, ptr\l... noundef %8)\l  store i32 %25, ptr %4, align 4\l  br label %26\l}"];
+	Node0x6000017afa70 -> Node0x6000017afac0[tooltip="22 -> 26\nProbability 100.00%" ];
+	Node0x6000017afac0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{26:\l|  %27 = load i32, ptr %4, align 4\l  ret i32 %27\l}"];
+}

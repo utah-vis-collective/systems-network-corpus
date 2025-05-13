@@ -1,0 +1,11 @@
+digraph "CFG for 'mem_alloc' function" {
+	label="CFG for 'mem_alloc' function";
+
+	Node0x600001f9f160 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i64, align 8\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  store i64 %0, ptr %3, align 8\l  store ptr %1, ptr %4, align 8\l  %6 = load i64, ptr %3, align 8\l  %7 = call ptr @malloc(i64 noundef %6) #7\l  store ptr %7, ptr %5, align 8\l  %8 = load ptr, ptr %5, align 8\l  %9 = icmp ne ptr %8, null\l  br i1 %9, label %10, label %16\l|{<s0>T|<s1>F}}"];
+	Node0x600001f9f160:s0 -> Node0x600001f9f1b0[tooltip="2 -> 10\nProbability 100.00%" ];
+	Node0x600001f9f160:s1 -> Node0x600001f9f200[tooltip="2 -> 16\nProbability 0.00%" ];
+	Node0x600001f9f1b0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{10:\l|  %11 = load ptr, ptr %5, align 8\l  %12 = load i64, ptr %3, align 8\l  %13 = load ptr, ptr %5, align 8\l  %14 = call i64 @llvm.objectsize.i64.p0(ptr %13, i1 false, i1 true, i1 false)\l  %15 = call ptr @__memset_chk(ptr noundef %11, i32 noundef 0, i64 noundef\l... %12, i64 noundef %14) #8\l  br label %20\l}"];
+	Node0x600001f9f1b0 -> Node0x600001f9f250[tooltip="10 -> 20\nProbability 100.00%" ];
+	Node0x600001f9f200 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f4c5ad70" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr @__stderrp, align 8\l  %18 = load ptr, ptr %4, align 8\l  %19 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %17, ptr noundef\l... @.str.7, ptr noundef %18) #8\l  call void @exit(i32 noundef 1) #9\l  unreachable\l}"];
+	Node0x600001f9f250 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %5, align 8\l  ret ptr %21\l}"];
+}

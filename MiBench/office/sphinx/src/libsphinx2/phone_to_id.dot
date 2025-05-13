@@ -1,0 +1,17 @@
+digraph "CFG for 'phone_to_id' function" {
+	label="CFG for 'phone_to_id' function";
+
+	Node0x6000012f6a80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca i32, align 4\l  %4 = alloca ptr, align 8\l  %5 = alloca i32, align 4\l  %6 = alloca ptr, align 8\l  store ptr %0, ptr %4, align 8\l  store i32 %1, ptr %5, align 4\l  %7 = load ptr, ptr %4, align 8\l  %8 = call i32 @hash_lookup(ptr noundef @phones, ptr noundef %7, ptr noundef\l... %6)\l  %9 = icmp ne i32 %8, 0\l  br i1 %9, label %10, label %19\l|{<s0>T|<s1>F}}"];
+	Node0x6000012f6a80:s0 -> Node0x6000012f6ad0[tooltip="2 -> 10\nProbability 62.50%" ];
+	Node0x6000012f6a80:s1 -> Node0x6000012f6bc0[tooltip="2 -> 19\nProbability 37.50%" ];
+	Node0x6000012f6ad0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  %11 = load i32, ptr %5, align 4\l  %12 = icmp ne i32 %11, 0\l  br i1 %12, label %13, label %18\l|{<s0>T|<s1>F}}"];
+	Node0x6000012f6ad0:s0 -> Node0x6000012f6b20[tooltip="10 -> 13\nProbability 62.50%" ];
+	Node0x6000012f6ad0:s1 -> Node0x6000012f6b70[tooltip="10 -> 18\nProbability 37.50%" ];
+	Node0x6000012f6b20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#be242e70" fontname="Courier",label="{13:\l|  %14 = load ptr, ptr @__stdoutp, align 8\l  %15 = load ptr, ptr @phone_to_id.rname, align 8\l  %16 = load ptr, ptr %4, align 8\l  %17 = call i32 (ptr, ptr, ...) @fprintf(ptr noundef %14, ptr noundef\l... @.str.6, ptr noundef %15, ptr noundef %16) #4\l  br label %18\l}"];
+	Node0x6000012f6b20 -> Node0x6000012f6b70[tooltip="13 -> 18\nProbability 100.00%" ];
+	Node0x6000012f6b70 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{18:\l|  store i32 -1, ptr %3, align 4\l  br label %22\l}"];
+	Node0x6000012f6b70 -> Node0x6000012f6c10[tooltip="18 -> 22\nProbability 100.00%" ];
+	Node0x6000012f6bc0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{19:\l|  %20 = load ptr, ptr %6, align 8\l  %21 = ptrtoint ptr %20 to i32\l  store i32 %21, ptr %3, align 4\l  br label %22\l}"];
+	Node0x6000012f6bc0 -> Node0x6000012f6c10[tooltip="19 -> 22\nProbability 100.00%" ];
+	Node0x6000012f6c10 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{22:\l|  %23 = load i32, ptr %3, align 4\l  ret i32 %23\l}"];
+}

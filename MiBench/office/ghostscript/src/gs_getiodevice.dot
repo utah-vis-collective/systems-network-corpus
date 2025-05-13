@@ -1,0 +1,15 @@
+digraph "CFG for 'gs_getiodevice' function" {
+	label="CFG for 'gs_getiodevice' function";
+
+	Node0x60000199ef80 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store i32 %0, ptr %3, align 4\l  %4 = load i32, ptr %3, align 4\l  %5 = icmp slt i32 %4, 0\l  br i1 %5, label %10, label %6\l|{<s0>T|<s1>F}}"];
+	Node0x60000199ef80:s0 -> Node0x60000199f020[tooltip="1 -> 10\nProbability 37.50%" ];
+	Node0x60000199ef80:s1 -> Node0x60000199efd0[tooltip="1 -> 6\nProbability 62.50%" ];
+	Node0x60000199efd0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{6:\l|  %7 = load i32, ptr %3, align 4\l  %8 = load i32, ptr @gx_io_device_table_count, align 4\l  %9 = icmp uge i32 %7, %8\l  br i1 %9, label %10, label %11\l|{<s0>T|<s1>F}}"];
+	Node0x60000199efd0:s0 -> Node0x60000199f020[tooltip="6 -> 10\nProbability 50.00%" ];
+	Node0x60000199efd0:s1 -> Node0x60000199f070[tooltip="6 -> 11\nProbability 50.00%" ];
+	Node0x60000199f020 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{10:\l|  store ptr null, ptr %2, align 8\l  br label %16\l}"];
+	Node0x60000199f020 -> Node0x60000199f0c0[tooltip="10 -> 16\nProbability 100.00%" ];
+	Node0x60000199f070 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{11:\l|  %12 = load i32, ptr %3, align 4\l  %13 = sext i32 %12 to i64\l  %14 = getelementptr inbounds [0 x ptr], ptr @gx_io_device_table, i64 0, i64\l... %13\l  %15 = load ptr, ptr %14, align 8\l  store ptr %15, ptr %2, align 8\l  br label %16\l}"];
+	Node0x60000199f070 -> Node0x60000199f0c0[tooltip="11 -> 16\nProbability 100.00%" ];
+	Node0x60000199f0c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{16:\l|  %17 = load ptr, ptr %2, align 8\l  ret ptr %17\l}"];
+}

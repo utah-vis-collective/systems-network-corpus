@@ -1,0 +1,5 @@
+digraph "CFG for 'cgm_CHARACTER_SPACING' function" {
+	label="CFG for 'cgm_CHARACTER_SPACING' function";
+
+	Node0x6000024c16d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca ptr, align 8\l  %4 = alloca double, align 8\l  store ptr %0, ptr %3, align 8\l  store double %1, ptr %4, align 8\l  %5 = load ptr, ptr %3, align 8\l  call void @begin_command(ptr noundef %5, i32 noundef 653)\l  %6 = load ptr, ptr %3, align 8\l  %7 = load double, ptr %4, align 8\l  %8 = load ptr, ptr %3, align 8\l  %9 = getelementptr inbounds %struct.cgm_state_s, ptr %8, i32 0, i32 2\l  %10 = getelementptr inbounds %struct.cgm_metafile_elements_s, ptr %9, i32 0,\l... i32 4\l  call void @put_real(ptr noundef %6, double noundef %7, ptr noundef %10)\l  %11 = load double, ptr %4, align 8\l  %12 = load ptr, ptr %3, align 8\l  %13 = getelementptr inbounds %struct.cgm_state_s, ptr %12, i32 0, i32 22\l  store double %11, ptr %13, align 8\l  %14 = load ptr, ptr %3, align 8\l  %15 = call i32 @end_command(ptr noundef %14)\l  ret i32 %15\l}"];
+}

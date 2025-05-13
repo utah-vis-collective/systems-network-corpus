@@ -1,0 +1,5 @@
+digraph "CFG for 'ref_param_write_float' function" {
+	label="CFG for 'ref_param_write_float' function";
+
+	Node0x6000017af8e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{3:\l|  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca ptr, align 8\l  %7 = alloca %struct.ref_s, align 8\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  store ptr %2, ptr %6, align 8\l  %8 = load ptr, ptr %6, align 8\l  %9 = load float, ptr %8, align 4\l  %10 = getelementptr inbounds %struct.ref_s, ptr %7, i32 0, i32 1\l  store float %9, ptr %10, align 8\l  %11 = getelementptr inbounds %struct.ref_s, ptr %7, i32 0, i32 0\l  %12 = getelementptr inbounds %struct.tas_s, ptr %11, i32 0, i32 0\l  store i16 4096, ptr %12, align 8\l  %13 = load ptr, ptr %4, align 8\l  %14 = load ptr, ptr %5, align 8\l  %15 = call i32 @ref_param_write(ptr noundef %13, ptr noundef %14, ptr\l... noundef %7)\l  ret i32 %15\l}"];
+}

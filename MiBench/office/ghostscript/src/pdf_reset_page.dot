@@ -1,0 +1,14 @@
+digraph "CFG for 'pdf_reset_page' function" {
+	label="CFG for 'pdf_reset_page' function";
+
+	Node0x6000020b20d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{1:\l|  %2 = alloca ptr, align 8\l  %3 = alloca i32, align 4\l  store ptr %0, ptr %2, align 8\l  %4 = load ptr, ptr %2, align 8\l  %5 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %4, i32 0, i32 54\l  store i32 0, ptr %5, align 8\l  %6 = load ptr, ptr %2, align 8\l  call void @pdf_reset_graphics(ptr noundef %6)\l  %7 = load ptr, ptr %2, align 8\l  %8 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %7, i32 0, i32 58\l  store i32 0, ptr %8, align 8\l  store i32 0, ptr %3, align 4\l  br label %9\l}"];
+	Node0x6000020b20d0 -> Node0x6000020b2120[tooltip="1 -> 9\nProbability 100.00%" ];
+	Node0x6000020b2120 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{9:\l|  %10 = load i32, ptr %3, align 4\l  %11 = icmp slt i32 %10, 5\l  br i1 %11, label %12, label %21\l|{<s0>T|<s1>F}}"];
+	Node0x6000020b2120:s0 -> Node0x6000020b2170[tooltip="9 -> 12\nProbability 96.88%" ];
+	Node0x6000020b2120:s1 -> Node0x6000020b2210[tooltip="9 -> 21\nProbability 3.12%" ];
+	Node0x6000020b2170 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{12:\l|  %13 = load ptr, ptr %2, align 8\l  %14 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %13, i32 0, i32 64\l  %15 = load i32, ptr %3, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds [5 x ptr], ptr %14, i64 0, i64 %16\l  store ptr null, ptr %17, align 8\l  br label %18\l}"];
+	Node0x6000020b2170 -> Node0x6000020b21c0[tooltip="12 -> 18\nProbability 100.00%" ];
+	Node0x6000020b21c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{18:\l|  %19 = load i32, ptr %3, align 4\l  %20 = add nsw i32 %19, 1\l  store i32 %20, ptr %3, align 4\l  br label %9\l}"];
+	Node0x6000020b21c0 -> Node0x6000020b2120[tooltip="18 -> 9\nProbability 100.00%" ];
+	Node0x6000020b2210 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{21:\l|  %22 = load ptr, ptr %2, align 8\l  %23 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %22, i32 0, i32 69\l  %24 = getelementptr inbounds %struct.gs_string_s, ptr %23, i32 0, i32 0\l  store ptr null, ptr %24, align 8\l  %25 = load ptr, ptr %2, align 8\l  %26 = getelementptr inbounds %struct.gx_device_pdf_s, ptr %25, i32 0, i32 76\l  call void @llvm.memcpy.p0.p0.i64(ptr align 8 %26, ptr align 8\l... @pdf_reset_page.text_default, i64 32, i1 false)\l  ret void\l}"];
+}

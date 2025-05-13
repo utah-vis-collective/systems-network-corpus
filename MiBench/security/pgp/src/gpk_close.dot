@@ -1,0 +1,12 @@
+digraph "CFG for 'gpk_close' function" {
+	label="CFG for 'gpk_close' function";
+
+	Node0x600001f71900 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{0:\l|  %1 = load ptr, ptr @gpkf, align 8\l  %2 = icmp ne ptr %1, null\l  br i1 %2, label %4, label %3\l|{<s0>T|<s1>F}}"];
+	Node0x600001f71900:s0 -> Node0x600001f719a0[tooltip="0 -> 4\nProbability 62.50%" ];
+	Node0x600001f71900:s1 -> Node0x600001f71950[tooltip="0 -> 3\nProbability 37.50%" ];
+	Node0x600001f71950 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#c32e3170" fontname="Courier",label="{3:\l|  br label %7\l}"];
+	Node0x600001f71950 -> Node0x600001f719f0[tooltip="3 -> 7\nProbability 100.00%" ];
+	Node0x600001f719a0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70" fontname="Courier",label="{4:\l|  store i32 0, ptr @hashleft, align 4\l  store ptr null, ptr @hashtbl, align 8\l  call void @freebufpool()\l  %5 = load ptr, ptr @gpkf, align 8\l  %6 = call i32 @fclose(ptr noundef %5)\l  store ptr null, ptr @gpkf, align 8\l  br label %7\l}"];
+	Node0x600001f719a0 -> Node0x600001f719f0[tooltip="4 -> 7\nProbability 100.00%" ];
+	Node0x600001f719f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{7:\l|  ret void\l}"];
+}

@@ -1,0 +1,24 @@
+digraph "CFG for 'mp_compare' function" {
+	label="CFG for 'mp_compare' function";
+
+	Node0x600001f924e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{2:\l|  %3 = alloca i16, align 2\l  %4 = alloca ptr, align 8\l  %5 = alloca ptr, align 8\l  %6 = alloca i16, align 2\l  store ptr %0, ptr %4, align 8\l  store ptr %1, ptr %5, align 8\l  %7 = load i16, ptr @global_precision, align 2\l  store i16 %7, ptr %6, align 2\l  %8 = load ptr, ptr %4, align 8\l  %9 = load i16, ptr %6, align 2\l  %10 = sext i16 %9 to i32\l  %11 = sext i32 %10 to i64\l  %12 = getelementptr inbounds i16, ptr %8, i64 %11\l  %13 = getelementptr inbounds i16, ptr %12, i64 -1\l  store ptr %13, ptr %4, align 8\l  %14 = load ptr, ptr %5, align 8\l  %15 = load i16, ptr %6, align 2\l  %16 = sext i16 %15 to i32\l  %17 = sext i32 %16 to i64\l  %18 = getelementptr inbounds i16, ptr %14, i64 %17\l  %19 = getelementptr inbounds i16, ptr %18, i64 -1\l  store ptr %19, ptr %5, align 8\l  br label %20\l}"];
+	Node0x600001f924e0 -> Node0x600001f92530[tooltip="2 -> 20\nProbability 100.00%" ];
+	Node0x600001f92530 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{20:\l|  %21 = load ptr, ptr %4, align 8\l  %22 = load i16, ptr %21, align 2\l  %23 = zext i16 %22 to i32\l  %24 = load ptr, ptr %5, align 8\l  %25 = load i16, ptr %24, align 2\l  %26 = zext i16 %25 to i32\l  %27 = icmp slt i32 %23, %26\l  br i1 %27, label %28, label %29\l|{<s0>T|<s1>F}}"];
+	Node0x600001f92530:s0 -> Node0x600001f92580[tooltip="20 -> 28\nProbability 3.12%" ];
+	Node0x600001f92530:s1 -> Node0x600001f925d0[tooltip="20 -> 29\nProbability 96.88%" ];
+	Node0x600001f92580 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{28:\l|  store i16 -1, ptr %3, align 2\l  br label %46\l}"];
+	Node0x600001f92580 -> Node0x600001f92760[tooltip="28 -> 46\nProbability 100.00%" ];
+	Node0x600001f925d0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{29:\l|  %30 = load ptr, ptr %4, align 8\l  %31 = getelementptr inbounds i16, ptr %30, i32 -1\l  store ptr %31, ptr %4, align 8\l  %32 = load i16, ptr %30, align 2\l  %33 = zext i16 %32 to i32\l  %34 = load ptr, ptr %5, align 8\l  %35 = getelementptr inbounds i16, ptr %34, i32 -1\l  store ptr %35, ptr %5, align 8\l  %36 = load i16, ptr %34, align 2\l  %37 = zext i16 %36 to i32\l  %38 = icmp sgt i32 %33, %37\l  br i1 %38, label %39, label %40\l|{<s0>T|<s1>F}}"];
+	Node0x600001f925d0:s0 -> Node0x600001f92620[tooltip="29 -> 39\nProbability 3.12%" ];
+	Node0x600001f925d0:s1 -> Node0x600001f92670[tooltip="29 -> 40\nProbability 96.88%" ];
+	Node0x600001f92620 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{39:\l|  store i16 1, ptr %3, align 2\l  br label %46\l}"];
+	Node0x600001f92620 -> Node0x600001f92760[tooltip="39 -> 46\nProbability 100.00%" ];
+	Node0x600001f92670 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{40:\l|  br label %41\l}"];
+	Node0x600001f92670 -> Node0x600001f926c0[tooltip="40 -> 41\nProbability 100.00%" ];
+	Node0x600001f926c0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{41:\l|  %42 = load i16, ptr %6, align 2\l  %43 = add i16 %42, -1\l  store i16 %43, ptr %6, align 2\l  %44 = icmp ne i16 %43, 0\l  br i1 %44, label %20, label %45\l|{<s0>T|<s1>F}}"];
+	Node0x600001f926c0:s0 -> Node0x600001f92530[tooltip="41 -> 20\nProbability 96.88%" ];
+	Node0x600001f926c0:s1 -> Node0x600001f92710[tooltip="41 -> 45\nProbability 3.12%" ];
+	Node0x600001f92710 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d6524470" fontname="Courier",label="{45:\l|  store i16 0, ptr %3, align 2\l  br label %46\l}"];
+	Node0x600001f92710 -> Node0x600001f92760[tooltip="45 -> 46\nProbability 100.00%" ];
+	Node0x600001f92760 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#cc403a70" fontname="Courier",label="{46:\l|  %47 = load i16, ptr %3, align 2\l  ret i16 %47\l}"];
+}

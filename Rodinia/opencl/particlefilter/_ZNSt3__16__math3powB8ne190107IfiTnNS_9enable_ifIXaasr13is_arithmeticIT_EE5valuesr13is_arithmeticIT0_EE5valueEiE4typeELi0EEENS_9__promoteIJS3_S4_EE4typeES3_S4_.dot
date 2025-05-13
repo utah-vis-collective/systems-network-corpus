@@ -1,0 +1,5 @@
+digraph "CFG for '_ZNSt3__16__math3powB8ne190107IfiTnNS_9enable_ifIXaasr13is_arithmeticIT_EE5valuesr13is_arithmeticIT0_EE5valueEiE4typeELi0EEENS_9__promoteIJS3_S4_EE4typeES3_S4_' function" {
+	label="CFG for '_ZNSt3__16__math3powB8ne190107IfiTnNS_9enable_ifIXaasr13is_arithmeticIT_EE5valuesr13is_arithmeticIT0_EE5valueEiE4typeELi0EEENS_9__promoteIJS3_S4_EE4typeES3_S4_' function";
+
+	Node0x60000182c1e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870" fontname="Courier",label="{2:\l|  %3 = alloca float, align 4\l  %4 = alloca i32, align 4\l  store float %0, ptr %3, align 4\l  store i32 %1, ptr %4, align 4\l  %5 = load float, ptr %3, align 4\l  %6 = fpext float %5 to double\l  %7 = load i32, ptr %4, align 4\l  %8 = sitofp i32 %7 to double\l  %9 = call noundef double @_ZNSt3__16__math3powB8ne190107IiEEddd(double\l... noundef %6, double noundef %8) #10\l  ret double %9\l}"];
+}
